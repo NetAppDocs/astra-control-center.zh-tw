@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head class="at-element-marker">
+  <title>Astra Control Center需求</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Astra Control Center需求" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-tw/astra-control-center/get-started/requirements.html" />
+	<meta property="og:description" content="驗證Kubernetes叢集、應用程式和網頁瀏覽器的支援、開始使用Astra Control Center。" />
+  <meta property="og:image" content="https://docs.netapp.com/zh-tw/astra-control-center/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="驗證Kubernetes叢集、應用程式和網頁瀏覽器的支援、開始使用Astra Control Center。">
+  <meta name="keywords" content=" what are astra kubernetes requirements, astra control requirements, astra supported versions, apps, supported apps, mariadb, mysql, postgres, kubernetes version, ubuntu, image type, networking, environment, operational, operational environment, hosting, host, cluster, clusters, tanzu, tkg, tkgi, grid, kubernetes, k8s"><!-- Icons -->
+  <link rel="icon" href="/zh-tw/astra-control-center/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/astra-control-center/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/zh-tw/astra-control-center/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/astra-control-center/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/astra-control-center/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/zh-tw/astra-control-center/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/zh-tw/astra-control-center/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/zh-tw/astra-control-center/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/zh-tw/astra-control-center/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/zh-tw/astra-control-center/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/zh-tw/astra-control-center/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/astra-control-center/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/astra-control-center/css/custom-dropdown.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/astra-control-center/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/zh-tw/astra-control-center/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/zh-tw/astra-control-center/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/zh-tw/astra-control-center/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-tw/astra-control-center/js/na-search.js'></script><script src='/zh-tw/astra-control-center/js/na-pagenav.js'></script><link rel='stylesheet' href='/zh-tw/astra-control-center/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/astra-control-center/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/zh-tw/astra-control-center/js/na-utility.js'></script>
+  <script src='/zh-tw/astra-control-center/js/clouddocs.js'></script>
+  <script src='/zh-tw/astra-control-center/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/zh-tw/astra-control-center/js/toc.js'></script>
+  <script src='/zh-tw/astra-control-center/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/zh-tw/astra-control-center/js/custom-dropdown.js'></script>
+  <script src='/zh-tw/astra-control-center/js/FileSaver.min.js'></script>
+  <script src='/zh-tw/astra-control-center/js/jszip-utils.min.js'></script>
+  <script src='/zh-tw/astra-control-center/js/jszip.min.js'></script>
+  <script src='/zh-tw/astra-control-center/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Astra Control Center需求](https://docs.netapp.com/zh-tw/astra-control-center/get-started/requirements.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/astra-control-center/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/get-started/requirements.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/astra-control-center/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/astra-control-center/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">在此頁面上</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">產品與解決方案</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">支援與訓練</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">社群</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">部落格</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">客戶成功案例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">聯絡人</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">聯絡人</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/zh-tw/astra-control-center/search.html"
+          data-type="widget" 
+          data-placeholder="搜尋文件" 
+          data-no-results-found="找不到符合 {query} 的相關結果。" 
+          data-did-you-mean="搜尋 {suggestion}。" 
+          data-no-results-found-did-you-mean="找不到符合 {query} 的相關結果。您是否要找的是{suggestion}？" 
+          data-results-found="找到 {hitCount} 筆結果"  
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">繁體中文</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/astra-control-center/get-started/requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/astra-control-center/get-started/requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-center/get-started/requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-tw/astra-control-center/get-started/requirements.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>可用的 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/zh-tw/astra-control-center/pdfs/fullsite-sidebar/Astra_Control_Center文件.pdf" >
+          <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>此文件網站（PDF 格式）</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/版本資訊.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            版本資訊
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/已知問題.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            已知問題
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/開始使用.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            開始使用
+          </a>
+          
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/zh-tw/astra-control-center/pdfs/pages/get-started/requirements.pdf" >
+    <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/安裝總覽.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            安裝總覽
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/設定Astra控制中心.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            設定Astra控制中心
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/使用Astra.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            使用Astra
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/管理應用程式.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            管理應用程式
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/保護應用程式.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            保護應用程式
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/管理應用程式執行掛勾.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            管理應用程式執行掛勾
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/檢視應用程式和叢集健全狀況.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            檢視應用程式和叢集健全狀況
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/管理您的帳戶.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            管理您的帳戶
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/使用REST_API自動化.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            使用REST API自動化
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/部署應用程式.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            部署應用程式
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/astra-control-center/pdfs/sidebar/知識與支援.pdf" 
+            
+          >
+            <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+            知識與支援
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/zh-tw/astra-control-center/images/pdf-zip.png" width="16" height="16"/>
+      <pre>個別 PDF 文件的集合<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/index.html">
+        Astra Control Center文件
+      </a></li><li class="subfolders "><a href="/zh-tw/astra-control-center/release-notes/rn_overview.html">
+        <div class="na-navbar-padding"> 版本資訊</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/release-notes/whats-new.html">
+        此Astra Control Center版本的新功能
+      </a></li><li class="subfolders "><a href="/zh-tw/astra-control-center/release-notes/known-issues.html">
+        <div class="na-navbar-padding"> 已知問題</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/release-notes/known-issues-ads.html">
+        Astra Data Store預覽與此Astra Control Center版本的已知問題
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/release-notes/known-limitations.html">
+        已知限制
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 概念</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/concepts/intro.html">
+        Astra Control簡介
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/concepts/architecture.html">
+        架構與元件
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/concepts/data-protection.html">
+        資料保護
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/concepts/licensing.html">
+        授權
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/concepts/validated-vs-standard.html">
+        已驗證與標準應用程式的比較
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/concepts/choose-class-and-size.html">
+        儲存類別和PV大小
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/concepts/user-roles-namespaces.html">
+        使用者角色和命名空間
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 開始使用</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/requirements.html">
+        Astra Control Center需求
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/quick-start.html">
+        Astra Control Center快速入門
+      </a></li><li class="subfolders "><a href="/zh-tw/astra-control-center/get-started/install_overview.html">
+        <div class="na-navbar-padding"> 安裝總覽</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/install_acc.html">
+        安裝Astra Control Center
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/acc_operatorhub_install.html">
+        使用OpenShift作業系統集線器安裝Astra Control Center
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/install_acc-cvo.html">
+        安裝Astra Control Center搭配Cloud Volumes ONTAP 一套功能性儲存後端
+      </a></li></ul></li><li class="subfolders "><a href="/zh-tw/astra-control-center/get-started/setup_overview.html">
+        <div class="na-navbar-padding"> 設定Astra控制中心</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/add-cluster-reqs.html">
+        新增叢集的必要條件
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/add-custom-tls-certificate.html">
+        新增自訂TLS憑證
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/acc-create-podsecuritypolicy.html">
+        建立自訂Pod安全性原則
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/get-started/faq.html">
+        常見問題集
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 使用Astra</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 管理應用程式</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-apps.html">
+        開始管理應用程式
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/define-custom-app.html">
+        定義自訂應用程式
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 保護應用程式</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/protection-overview.html">
+        保護總覽
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/protect-apps.html">
+        保護應用程式
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/restore-apps.html">
+        還原應用程式
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/clone-apps.html">
+        複製及移轉應用程式
+      </a></li><li class="subfolders "><a href="/zh-tw/astra-control-center/use/execution-hooks.html">
+        <div class="na-navbar-padding"> 管理應用程式執行掛勾</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/execution-hook-examples.html">
+        執行攔截範例
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 檢視應用程式和叢集健全狀況</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/view-dashboard.html">
+        儀表板摘要
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/view-clusters.html">
+        叢集健全狀況與詳細資料
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/view-apps.html">
+        應用程式健全狀況與詳細資料
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 管理您的帳戶</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-users.html">
+        管理使用者
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-roles.html">
+        管理角色
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-notifications.html">
+        管理通知
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-credentials.html">
+        管理認證資料
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/view-account-activity.html">
+        監控帳戶活動
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/update-licenses.html">
+        更新現有授權
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-buckets.html">
+        管理儲存庫
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-backend.html">
+        管理儲存後端
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/monitor-protect.html">
+        監控及保護基礎架構
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/unmanage.html">
+        取消管理應用程式和叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/upgrade-acc.html">
+        升級Astra Control Center
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/uninstall_acc.html">
+        解除安裝Astra Control Center
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 使用REST API自動化</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/rest-api/api-intro.html">
+        簡介
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 部署應用程式</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/solutions/jenkins-deploy-from-helm-chart.html">
+        部署Jenkins
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html">
+        部署MariaDB
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/solutions/mysql-deploy-from-helm-chart.html">
+        部署MySQL
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/solutions/postgres-deploy-from-helm-chart.html">
+        部署Postgres
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 知識與支援</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/support/troubleshooting-acc.html">
+        疑難排解
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/support/get-help.html">
+        取得協助
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/acc-earlier-versions.html">
+        舊版
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/legal-notices.html">
+        法律聲明
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/zh-tw/astra-control-center/">Astra&nbsp;Control&nbsp;Center</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 本繁體中文版使用機器翻譯，譯文僅供參考，若與英文版本牴觸，應以英文版本為準。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Astra Control Center需求</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-05-03 06:05:56 +0000">05/03/2022</time>
+    
+  
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>開始驗證作業環境、應用程式叢集、應用程式、授權和網頁瀏覽器的整備度。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="營運環境需求">營運環境需求</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Center需要下列其中一種作業環境：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kubernetes 1.20至1.23</p>
+</li>
+<li>
+<p>Rancher 2.5.8、2.5.9或2.6（含RKE1）</p>
+</li>
+<li>
+<p>Red Hat OpenShift Container Platform 4.6-8、4.7、4.8或4.9</p>
+</li>
+<li>
+<p>VMware Tanzu Kubernetes Grid 1.4</p>
+</li>
+<li>
+<p>VMware Tanzu Kubernetes Grid整合版1.12.2</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>確保您選擇裝載Astra Control Center的作業環境符合環境正式文件中所述的基本資源需求。除了環境的資源需求之外、Astra Control Center還需要下列資源：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">元件</th>
+<th class="tableblock halign-left valign-top">需求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可擴充的後端儲存容量ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">至少提供300 GB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">工作節點</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FQDN位址</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Control Center的FQDN位址</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Trident</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>已安裝並設定Astra Trident 21.004或更新版本</p>
+</li>
+<li>
+<p>如果Astra Data Store預覽將用作儲存後端、則已安裝並設定Astra Trident 210.1或更新版本</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+這些需求假設Astra Control Center是營運環境中唯一執行的應用程式。如果環境正在執行其他應用程式、請相應調整這些最低需求。
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>映像登錄</strong>：您必須擁有現有的私有Docker映像檔登錄、才能將Astra Control Center建置映像推入其中。您需要提供映像登錄的URL、以便上傳映像。</p>
+</li>
+<li>
+<p>* Astra Trident / ONTAP S基 類組態*：Astra Control Center需要建立儲存類別、並將其設為預設儲存類別。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ONTAP-NAS</p>
+</li>
+<li>
+<p>ONTAP-NAS-flexgroup</p>
+</li>
+<li>
+<p>ONTAP-SAN</p>
+</li>
+<li>
+<p>ONTAP-san經濟型</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>在OpenShift環境中進行應用程式複製時、Astra Control Center需要允許OpenShift掛載磁碟區並變更檔案的擁有權。因此、您必須設定ONTAP 一個不中斷的Volume匯出原則、才能執行這些作業。您可以使用下列命令來執行此作業：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>「匯出原則規則modify -vserver &lt;儲存虛擬機器名稱&gt;-policyname &lt;原則名稱&gt;-rueindex 1 -超級使用者sys」</p>
+</li>
+<li>
+<p>「匯出原則規則修改-vserver &lt;儲存虛擬機器名稱&gt;-policyname &lt;原則名稱&gt;-rueindex 1 -anon 65534」</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+如果您計畫將第二個OpenShift作業環境新增為受管理的運算資源、則必須確保啟用Astra Trident Volume Snapshot功能。若要使用Astra Trident啟用及測試Volume快照、 <a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html" target="_blank" rel="noopener">"請參閱官方的Astra Trident說明"</a>。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="vmware-tanzu-kubernetes-grid叢集需求">VMware Tanzu Kubernetes Grid叢集需求</h3>
+<div class="paragraph">
+<p>在VMware Tanzu Kubernetes Grid（TKG）或Tanzu Kubernetes Grid整合版（TKGi）叢集上裝載Astra Control Center時、請謹記下列考量事項。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>停用要由Astra Control管理的任何應用程式叢集上的TKG或TKGi預設儲存類別強制。您可以編輯命名空間叢集上的「TanzuKubernetesCluster」資源來執行此作業。</p>
+</li>
+<li>
+<p>您必須建立安全原則、讓Astra Control Center能夠在叢集中建立Pod。您可以使用下列命令來執行此作業：</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl config use-context &lt;context-of-workload-cluster&gt;
+kubectl create clusterrolebinding default-tkg-admin-privileged-binding --clusterrole=psp:vmware-system-privileged --group=system:authenticated</pre>
+</div>
+</div>
+</li>
+<li>
+<p>在TKG或TKGi環境中部署Astra Control Center時、請注意Astra Trident的特定需求。如需詳細資訊、請參閱 <a href="https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#other-known-configuration-options" target="_blank" rel="noopener">"Astra Trident文件"</a>。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過期。如果您使用Tanzu產品組合產品、則必須產生一個含有非過期權杖的Tanzu Kubernetes叢集組態檔、以避免Astra Control Center與託管應用程式叢集之間發生連線問題。如需相關指示、請造訪 <a href="https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.2/nsx-application-platform/GUID-52A52C0B-9575-43B6-ADE2-E8640E22C29F.html">"VMware NSxT-T資料中心產品文件。"</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="支援的儲存後端">支援的儲存後端</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Center支援下列儲存後端。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Astra資料儲存區</p>
+</li>
+<li>
+<p>NetApp ONTAP S9.5或更新AFF 版本的功能性和FAS 功能性系統</p>
+</li>
+<li>
+<p>NetApp Cloud Volumes ONTAP</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="應用程式叢集需求">應用程式叢集需求</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Center對於您計畫從Astra Control Center管理的叢集有下列需求。如果您打算管理的叢集是裝載Astra Control Center的作業環境叢集、則也適用這些需求。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kubernetes的最新版本 <a href="https://kubernetes-csi.github.io/docs/snapshot-controller.html" target="_blank" rel="noopener">"Snapshot控制器元件"</a> 已安裝</p>
+</li>
+<li>
+<p>阿斯特拉部落 <a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html" target="_blank" rel="noopener">"volumesnapshotClass物件"</a> 已由系統管理員定義</p>
+</li>
+<li>
+<p>叢集上存在預設的Kubernetes儲存類別</p>
+</li>
+<li>
+<p>至少有一個儲存類別設定為使用Astra Trident</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+您的應用程式叢集應該有一個「kubeconfig．yaml」檔案、只定義一個_context_元素。請參閱的Kubernetes文件 <a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/" target="_blank" rel="noopener">"建立Kbeconfig檔案的相關資訊"</a>。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+在Rancher環境中管理應用程式叢集時、請修改Rancher提供的「kubeconfig」檔案中應用程式叢集的預設內容、以使用控制面內容、而非Rancher API伺服器內容。如此可減少Rancher API伺服器的負載、並改善效能。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="應用程式管理需求">應用程式管理需求</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control具備下列應用程式管理需求：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>授權</strong>：若要使用Astra Control Center管理應用程式、您需要Astra Control Center授權。</p>
+</li>
+<li>
+<p><strong>命名空間</strong>：Astra Control要求應用程式不超過一個命名空間、但命名空間可以包含多個應用程式。</p>
+</li>
+<li>
+<p>* StorageClass *：如果您安裝的應用程式已明確設定StorageClass、且需要複製應用程式、則複製作業的目標叢集必須具有原本指定的StorageClass。將具有明確設定StorageClass的應用程式複製到沒有相同StorageClass的叢集、將會失敗。</p>
+</li>
+<li>
+<p>* Kubernetes資源*：使用未由Astra Control收集之Kubernetes資源的應用程式、可能沒有完整的應用程式資料管理功能。Astra Control會收集下列Kubernetes資源：</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">叢集角色</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ClusterRoleBinding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">組態對應</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CustomResourceDesDefinition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CustomResource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可關係工作</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">示範</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HorizontalPodAutoscaler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">入侵</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">部署組態</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">互鎖Webhook</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PeristentVolume Claim</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Podcast中斷預算</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Podcast範本</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">網路原則</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ReplicaSet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">角色</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">角色繫結</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">路由</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">秘密</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">服務</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">服務帳戶</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">狀態集</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">驗證Webhook</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="支援的應用程式安裝方法">支援的應用程式安裝方法</h3>
+<div class="paragraph">
+<p>Astra Control支援下列應用程式安裝方法：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>資訊清單檔案</strong>：Astra Control支援使用KUbectl從資訊清單檔案安裝的應用程式。例如：</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl apply -f myapp.yaml</pre>
+</div>
+</div>
+</li>
+<li>
+<p>* Helm 3*：如果您使用Helm來安裝應用程式、Astra Control需要Helm版本3。完全支援使用Helm 3（或從Helm 2升級至Helm 3）來管理及複製安裝的應用程式。不支援管理以Helm 2安裝的應用程式。</p>
+</li>
+<li>
+<p><strong>操作員部署的應用程式</strong>：Astra Control支援以命名空間範圍運算子安裝的應用程式。以下是已針對此安裝模式驗證的一些應用程式：</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/k8ssandra/cass-operator/tree/v1.7.1" target="_blank" rel="noopener">"Apache K8ssandra"</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jenkinsci/kubernetes-operator" target="_blank" rel="noopener">"Jenkins CI"</a></p>
+</li>
+<li>
+<p><a href="https://github.com/percona/percona-xtradb-cluster-operator" target="_blank" rel="noopener">"Percona XtraDB叢集"</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+運算子及其安裝的應用程式必須使用相同的命名空間；您可能需要修改運算子的部署.yaml檔案、以確保情況如此。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="存取網際網路">存取網際網路</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您應該判斷是否有外部網際網路存取權。如果您沒有、部分功能可能會受到限制、例如從NetApp Cloud Insights 接收監控和數據資料、或是將支援組合傳送至 <a href="https://mysupport.netapp.com/site/" target="_blank" rel="noopener">"NetApp 支援網站"</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="授權">授權</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。若無授權、您將無法：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>定義自訂應用程式</p>
+</li>
+<li>
+<p>建立現有應用程式的快照或複本</p>
+</li>
+<li>
+<p>設定資料保護原則</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>如果您想要試用Astra控制中心、您可以 <a href="setup_overview.html#add-a-full-or-evaluation-license">"使用90天試用版授權"</a>。</p>
+</div>
+<div class="paragraph">
+<p>若要深入瞭解授權的運作方式、請參閱 <a href="../concepts/licensing.html">"授權"</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="內部部署kubernetes叢集的入口">內部部署Kubernetes叢集的入口</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以選擇網路入侵Astra控制中心的用途類型。依預設、Astra Control Center會將Astra Control Center閘道（服務/網路）部署為整個叢集的資源。Astra Control Center也支援使用服務負載平衡器（如果環境允許）。如果您想要使用服務負載平衡器、但尚未設定一個、則可以使用MetalLB負載平衡器自動將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+如果您要在Tanzu Kubernetes Grid叢集上裝載Astra Control Center、請使用「kubecl Get nslb監 控器-A」命令、查看您是否已設定服務監控器來接受入口流量。如果存在、則不應安裝MetalLB、因為現有的服務監視器將會覆寫任何新的負載平衡器組態。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="網路需求">網路需求</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>裝載Astra Control Center的作業環境會使用下列TCP連接埠進行通訊。您應確保這些連接埠可透過任何防火牆、並設定防火牆、以允許來自Astra網路的任何HTTPS輸出流量。有些連接埠需要在裝載Astra Control Center的環境與每個託管叢集之間進行連線（視情況而定）。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra Control Center則可管理已設定為雙堆疊作業的應用程式和儲存後端。如需雙堆疊叢集需求的詳細資訊、請參閱 <a href="https://kubernetes.io/docs/concepts/services-networking/dual-stack/" target="_blank" rel="noopener">"Kubernetes文件"</a>。
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">來源</th>
+<th class="tableblock halign-left valign-top">目的地</th>
+<th class="tableblock halign-left valign-top">連接埠</th>
+<th class="tableblock halign-left valign-top">傳輸協定</th>
+<th class="tableblock halign-left valign-top">目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用戶端PC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra控制中心</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UI / API存取：確保此連接埠在裝載Astra Control Center的叢集與每個受管理叢集之間都開啟</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">度量使用者</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Control Center工作節點</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9090</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">度量資料通訊：確保每個託管叢集都能存取裝載Astra Control Center的叢集上的此連接埠（需要雙向通訊）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra控制中心</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">託管Cloud Insights 版的服務 (<a href="https://cloudinsights.netapp.com)" class="bare">https://cloudinsights.netapp.com)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">通訊Cloud Insights</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra控制中心</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3儲存貯體供應商 (<a href="https://my-bucket.s3.us-west-2.amazonaws.com/)" class="bare">https://my-bucket.s3.us-west-2.amazonaws.com/)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3儲存通訊</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra控制中心</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp AutoSupport (<a href="https://support.netapp.com)" class="bare">https://support.netapp.com)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp AutoSupport 通訊</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="支援的網頁瀏覽器">支援的網頁瀏覽器</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Center支援最新版本的Firefox、Safari和Chrome、最低解析度為1280 x 720。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="下一步">下一步</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>檢視 <a href="quick-start.html">"快速入門"</a> 總覽：</p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">legal-terms</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">legal-privacy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">legal-cookies</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">cookie-settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">對我們的網站有任何意見或要求？</span>
+              <a target="_self" href="javascript:netapp_mailto()">請與我們聯絡</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/zh-tw/announcements/">公告</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/zh-tw/astra-control-center/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/zh-tw/astra-control-center/js/prism.js'></script>
+      <script type="text/javascript" src='/zh-tw/astra-control-center/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/zh-tw/astra-control-center/js/www-ntap.js'></script>
+    <script src='/zh-tw/astra-control-center/js/tabbed-blocks.js'></script>
+  </body></html>
