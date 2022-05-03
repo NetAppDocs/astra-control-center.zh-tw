@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: use/protection-overview.html 
+keywords: backup, back up, backup apps, back up apps, snapshots, snapshot an app, take a snapshot, take a backup, view backups, view snapshots, set policy, set schedule, schedule backups, schedule snapshots 
+summary: 瞭解Astra Control Center中可用的資料保護類型、以及如何以最佳方式使用這些類型來保護應用程式。 
+---
+= 保護總覽
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+您可以使用Astra Control Center為應用程式建立備份、複製、快照及保護原則。備份應用程式有助於您的服務和相關資料盡可能可用；在災難案例中、從備份還原可確保應用程式及其相關資料的完整還原、並將中斷時間降至最低。備份、複製和快照有助於防範勒索軟體、意外資料遺失和環境災難等常見威脅。 link:../concepts/data-protection.html["瞭解Astra Control Center中可用的資料保護類型、以及使用時間"]。
+
+
+
+== 應用程式保護工作流程
+
+您可以使用下列範例工作流程、開始保護應用程式。
+
+
+
+==== 備份所有應用程式
+
+[role="quick-margin-para"]
+為了確保應用程式立即受到保護、 link:protect-apps.html#create-a-backup["建立所有應用程式的手動備份"]。
+
+
+
+==== 為每個應用程式設定保護原則
+
+[role="quick-margin-para"]
+若要自動化未來的備份與快照、 link:protect-apps.html#configure-a-protection-policy["為每個應用程式設定保護原則"]。舉例來說、您可以從每週備份和每日快照開始著手、兩個快照均保留一個月。強烈建議使用保護原則來自動化備份與快照、而不要手動備份與快照。
+
+
+
+==== 選用：調整保護原則
+
+[role="quick-margin-para"]
+隨著應用程式及其使用模式的改變、請視需要調整保護原則、以提供最佳保護。
+
+
+
+==== 發生災難時、請還原您的應用程式
+
+[role="quick-margin-para"]
+如果發生資料遺失、您可以透過進行恢復 link:restore-apps.html["還原最新的備份"] 每個應用程式的第一名。然後您可以還原最新的快照（如果有）。

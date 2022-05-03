@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: get-started/faq.html 
+keywords: astra faq, astra frequently asked questions, what is astra, astra control, kubernetes, persistent volumes 
+summary: 如果您只是想要快速回答問題、這個常見問題集就能幫上忙。 
+---
+= Astra Control Center的常見問題集
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+如果您只是想要快速回答問題、這個常見問題集就能幫上忙。
+
+
+
+== 總覽
+
+以下各節提供使用Astra Control Center時可能會遇到的其他問題解答。如需進一步的說明、請聯絡astra.feedback@netapp.com
+
+
+
+== 存取Astra Control Center
+
+*什麼是Astra Control URL？*
+
+Astra Control Center使用本機驗證和每個環境的專屬URL。
+
+對於URL、請在瀏覽器中輸入您在安裝Astra Control Center時、於Astra_control_center_min.yaml自訂資源定義（CRD）檔案的SPEC.astraAddress欄位中所設定的完整網域名稱（FQDN）。電子郵件是您在Astra_control_center_min.yaml CRD的spec.email欄 位中設定的值。
+
+*我正在使用評估授權。如何變更為完整授權？*
+
+您可以取得NetApp授權檔案（NLF）、輕鬆變更為完整授權。
+
+*步驟*
+
+* 從左側導覽中、選取*帳戶*>*授權*。
+* 選擇*新增授權*。
+* 瀏覽至您下載的授權檔案、然後選取*「Add*（新增*）」。
+
+
+*我正在使用評估授權。我還能管理應用程式嗎？*
+
+是的、您可以使用評估授權測試管理應用程式功能。
+
+
+
+== 正在登錄Kubernetes叢集
+
+*新增Astra Control之後、我需要將工作節點新增至Kubernetes叢集。我該怎麼辦？*
+
+新的工作者節點可新增至現有的資源池。Astra Control會自動探索這些功能。如果在Astra Control中看不到新節點、請檢查新的工作節點是否執行支援的映像類型。您也可以使用「kubectl Get nodes」命令來驗證新工作節點的健全狀況。
+
+*如何正確地取消管理叢集？*
+
+. link:../use/unmanage.html["從Astra Control取消應用程式管理"]。
+. link:../use/unmanage.html#stop-managing-compute["從Astra Control取消管理叢集"]。
+
+
+*從Astra Control移除Kubernetes叢集之後、應用程式和資料會發生什麼變化？*
+
+從Astra Control移除叢集不會對叢集的組態（應用程式和持續儲存）進行任何變更。在該叢集上執行的任何Astra Control快照或應用程式備份都無法還原。由Astra Control所建立的持續儲存備份仍在Astra Control之內、但無法還原。
+
+
+WARNING: 透過任何其他方法刪除叢集之前、請務必先從Astra Control移除叢集。使用另一個工具刪除叢集時、如果叢集仍由Astra Control進行管理、可能會對Astra Control帳戶造成問題。
+
+*當我取消管理叢集時、NetApp Trident是否會自動從叢集解除安裝？*當您從Astra Control Center取消管理叢集時、Trident不會自動從叢集解除安裝。若要解除安裝Trident、您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["請遵循Trident文件中的下列步驟"^]。
+
+
+
+== 管理應用程式
+
+* Astra Control是否能部署應用程式？*
+
+Astra Control不會部署應用程式。應用程式必須部署在Astra Control之外。
+
+*停止從Astra Control管理應用程式之後、應用程式會發生什麼事？*
+
+將刪除任何現有的備份或快照。應用程式與資料仍可繼續使用。資料管理作業無法用於未受管理的應用程式、或屬於它的任何備份或快照。
+
+* Astra Control能否管理非NetApp儲存設備上的應用程式？*
+
+不可以雖然Astra Control可以探索使用非NetApp儲存設備的應用程式、但它無法管理使用非NetApp儲存設備的應用程式。
+
+*我應該自行管理Astra Control嗎？*不、您不應該自行管理Astra Control、因為它是「系統應用程式」。
+
+*不良的Pod是否會影響應用程式管理？*如果託管應用程式的Pod處於不良狀態、Astra Control將無法建立新的備份與複製。
+
+
+
+== 資料管理作業
+
+*我的帳戶中有我沒有建立的快照。他們來自何處？*
+
+在某些情況下、Astra Control會自動建立快照、做為備份、複製或還原程序的一部分。
+
+*我的應用程式使用數個PV。Astra Control是否會對所有這些PVCs執行快照和備份？*
+
+是的。Astra Control在應用程式上執行的快照作業包括繫結至應用程式PVCS的所有PV快照。
+
+*我可以直接透過不同的介面或物件儲存設備來管理Astra Control所拍攝的快照嗎？*
+
+不可以Astra Control所拍攝的快照與備份、只能透過Astra Control進行管理。

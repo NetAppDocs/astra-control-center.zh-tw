@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: use/restore-apps.html 
+keywords: restore app, restoring an app, restore an app, restore 
+summary: Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將能最快完成。 
+---
+= 還原應用程式
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Control可以從快照或備份還原應用程式。將應用程式還原至同一個叢集時、從現有的快照還原速度會更快。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 以還原應用程式。
+
+.關於這項工作
+* 強烈建議您在繼續還原之前、先快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。
+* 如果您使用Helm來部署應用程式、Astra Control Center需要Helm版本3。完全支援使用Helm 3部署的應用程式管理與複製（或從Helm 2升級至Helm 3）。不支援以Helm 2部署的應用程式。
+* 如果還原至不同的叢集、請確定叢集使用相同的持續磁碟區存取模式（例如ReadWriteMany）。如果目的地持續磁碟區存取模式不同、還原作業將會失敗。
+* 任何具有命名空間名稱/ ID或命名空間標籤限制的成員使用者、都可以將應用程式複製或還原到同一個叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者可以編輯成員使用者帳戶、並更新受影響使用者的角色限制、以便授予新命名空間的存取權。
+* 當您在OpenShift叢集上建立裝載應用程式的專案時、專案（或Kubernetes命名空間）會被指派安全性轉換唯一碼。若要啟用Astra Control Center來保護應用程式、並將應用程式移至OpenShift中的其他叢集或專案、您必須新增原則、讓應用程式以任何唯一識別碼的形式執行。例如、下列OpenShift CLI命令會將適當的原則授予WordPress應用程式。
++
+「occ new－project worm新聞」（occ new－project wormPress）「ocadm policy add－scc to－group anyuid system:serviceaccounts：wormPress」（ocadm policy add－scc對使用者權限-z預設值-n wormPress）
+
+
+
+.步驟
+. 選取*應用程式*、然後選取應用程式名稱。
+. 選擇*資料保護*。
+. 如果要從快照還原、請選取* Snapshot*圖示。否則、請選取*備份*圖示以從備份還原。
+. 從您要還原之快照或備份的「*動作*」欄中的「選項」功能表中、選取「*還原應用程式*」。
+. *還原詳細資料*：指定還原應用程式的詳細資料。預設會顯示目前的叢集和命名空間。保留這些值不變、即可將應用程式還原至舊版。如果您要還原至不同的叢集或命名空間、請變更這些值。
++
+** 輸入應用程式的名稱和命名空間。
+** 選擇應用程式的目的地叢集。
+** 選擇* Review *。
+
+
+
+
+. *還原摘要*：檢閱還原動作的詳細資料、輸入「還原」、然後選取*還原*。
+
+
+Astra Control Center會根據您提供的資訊來還原應用程式。如果您就地還原應用程式、則任何現有持續磁碟區的內容都會由還原應用程式的持續磁碟區內容取代。
+
+
+NOTE: 資料保護作業（複製、備份、還原）及後續持續調整磁碟區大小之後、UI中會顯示新的磁碟區大小、延遲最多20分鐘。資料保護作業只需幾分鐘就能成功完成、您可以使用儲存後端的管理軟體來確認磁碟區大小的變更。

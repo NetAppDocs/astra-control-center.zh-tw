@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: support/get-help.html 
+keywords: how to get help with astra control, how to get support with astra control, astra control knowledgebase, netapp technical support, slack, phone, web, ticket, contact support, support ticket, support bundle 
+summary: NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和Slack通路。您的Astra Control帳戶透過網路票證提供遠端技術支援。 
+---
+= 取得協助
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/support/
+
+
+NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和Slack通路。您的Astra Control帳戶透過網路票證提供遠端技術支援。
+
+
+IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得技術支援。不過、無法透過NetApp支援網站（NSS）建立案例。您可以透過意見反應選項與支援部門聯絡、或使用Slack通路進行自助服務。
+
+您必須優先 link:../get-started/setup_overview.html["啟動NetApp序號支援"] 以使用這些非自助服務支援選項。需要NetApp支援網站（NSS）SSO帳戶才能進行聊天和網路票證、以及案例管理。
+
+
+
+== 自我支援選項
+
+您可以從主功能表選取* Support*索引標籤、從Astra Control Center UI存取支援選項。
+
+這些選項全年無休免費提供：
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["*知識庫*（需要登入）"^]：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。
+* *文件中心*：這是您目前正在檢視的文件網站。
+* https://netapppub.slack.com/#astra["*透過Slack取得協助*"^]：前往Pub工作區中的Container通路、與同儕和專家交流。
+* *建立支援案例*：產生支援套裝組合、以提供給NetApp支援人員進行疑難排解。
+* *針對Astra Control提供意見回饋*：傳送電子郵件至astra.feedback@netapp.com、讓我們知道您的想法、想法或疑慮。
+
+
+
+
+== 啟用每日排程支援服務套件上傳至NetApp支援
+
+在Astra控制中心安裝期間、如果您在AutoSupport Astra控制中心自訂資源定義（CRD）檔案（「Astra _control_center_min.yaml」）中指定「註冊：true」作為「還原」、則會自動將每日支援服務組合上傳至 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
+
+
+
+== 產生支援套裝組合以提供給NetApp支援部門
+
+Astra Control Center可讓管理員使用者產生套裝組合、其中包含NetApp支援所需的資訊、包括Astra部署所有元件的記錄、事件、度量、以及有關所管理叢集和應用程式的拓撲資訊。如果您已連線至網際網路、可以直接從Astra Control Center UI將支援服務組合上傳至NetApp支援網站（NSS）。
+
+
+NOTE: Astra Control Center產生套裝組合所花費的時間、取決於您的Astra Control Center安裝規模、以及所要求支援套裝組合的參數。您在申請支援服務組合時所指定的時間長度、會決定產生服務組合所需的時間（例如、縮短時間會導致更快產生服務組合）。
+
+判斷是否需要代理連線才能將套件上傳至NSS。如果需要Proxy連線、請確認Astra Control Center已設定為使用Proxy伺服器。
+
+. 選擇*帳戶*>*連線*。
+. 檢查*連線設定*中的Proxy設定。
+
+
+.步驟
+. 使用Astra Control Center UI * Support*頁面上列出的授權序號、在NSS入口網站上建立案例。
+. 使用Astra Control Center UI來產生支援服務組合、請執行下列步驟：
++
+.. 在* Support*頁面的Support bunds（支援服務）方塊中、選取* Generat*（產生*）。
+.. 在*「產生支援產品組合*」視窗中、選取時間範圍。
++
+您可以選擇快速或自訂的時間範圍。
+
++
+
+NOTE: 您可以選擇自訂日期範圍、並在日期範圍內指定自訂時間範圍。
+
+.. 在您進行選擇之後、請選取*確認*。
+.. 選取*產生時將套件上傳至NetApp支援網站*核取方塊。
+.. 選擇*產生產品組合*。
++
+當支援服務組合準備就緒時、「警示」區域的「*帳戶*」>「*通知*」頁面、「*活動*」頁面、以及「通知」清單中都會顯示通知（可在UI右上角選取圖示來存取）。
+
++
+如果產生失敗、「產生產品組合」頁面上會出現圖示。選取圖示以查看訊息。
+
+
+
+
+
+
+TIP: UI右上角的通知圖示提供與支援服務組合相關的事件資訊、例如成功建立服務組合、建立服務組合失敗、無法上傳服務組合、無法下載服務組合等。
+
+
+
+=== 如果您安裝的是無線設備
+
+如果您安裝的是無線設備、請在產生「支援」套裝組合之後、執行下列步驟。當套裝組合可供下載時、「*支援*」頁面的「*支援套裝組合*」區段中、「下載」圖示會出現在「*產生*」旁邊。
+
+.步驟
+. 選取「下載」圖示、即可在本機下載套裝組合。
+. 手動將套件上傳至nss.
++
+您可以使用下列其中一種方法來執行此作業：
+
++
+** 使用 https://upload.netapp.com/sg["NetApp驗證檔案上傳（需要登入）"^]。
+** 將套裝組合直接附加至nss.
+** 使用NetApp Active IQ 解決方案。
+
+
+
+
+[discrete]
+== 如需詳細資訊、請參閱
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/How_to_upload_a_file_to_NetApp["如何將檔案上傳至NetApp（需要登入）"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_manually_upload_AutoSupport_messages_to_NetApp_in_ONTAP_9["如何手動上傳檔案至NetApp（需要登入）"^]
+

@@ -1,0 +1,260 @@
+---
+sidebar: sidebar 
+permalink: get-started/requirements.html 
+keywords: what are astra kubernetes requirements, astra control requirements, astra supported versions, apps, supported apps, mariadb, mysql, postgres, kubernetes version, ubuntu, image type, networking, environment, operational, operational environment, hosting, host, cluster, clusters, tanzu, tkg, tkgi, grid, kubernetes, k8s 
+summary: 驗證Kubernetes叢集、應用程式和網頁瀏覽器的支援、開始使用Astra Control Center。 
+---
+= Astra Control Center需求
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+開始驗證作業環境、應用程式叢集、應用程式、授權和網頁瀏覽器的整備度。
+
+
+
+== 營運環境需求
+
+Astra Control Center需要下列其中一種作業環境：
+
+* Kubernetes 1.20至1.23
+* Rancher 2.5.8、2.5.9或2.6（含RKE1）
+* Red Hat OpenShift Container Platform 4.6-8、4.7、4.8或4.9
+* VMware Tanzu Kubernetes Grid 1.4
+* VMware Tanzu Kubernetes Grid整合版1.12.2
+
+
+確保您選擇裝載Astra Control Center的作業環境符合環境正式文件中所述的基本資源需求。除了環境的資源需求之外、Astra Control Center還需要下列資源：
+
+|===
+| 元件 | 需求 
+
+
+| 可擴充的後端儲存容量ONTAP | 至少提供300 GB 
+
+
+| 工作節點 | 總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM 
+
+
+| FQDN位址 | Astra Control Center的FQDN位址 
+
+
+| Astra Trident  a| 
+* 已安裝並設定Astra Trident 21.004或更新版本
+* 如果Astra Data Store預覽將用作儲存後端、則已安裝並設定Astra Trident 210.1或更新版本
+
+
+|===
+
+NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應用程式。如果環境正在執行其他應用程式、請相應調整這些最低需求。
+
+* *映像登錄*：您必須擁有現有的私有Docker映像檔登錄、才能將Astra Control Center建置映像推入其中。您需要提供映像登錄的URL、以便上傳映像。
+* * Astra Trident / ONTAP S基 類組態*：Astra Control Center需要建立儲存類別、並將其設為預設儲存類別。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：
++
+** ONTAP-NAS
+** ONTAP-NAS-flexgroup
+** ONTAP-SAN
+** ONTAP-san經濟型
+
+
+
+
+[NOTE]
+====
+在OpenShift環境中進行應用程式複製時、Astra Control Center需要允許OpenShift掛載磁碟區並變更檔案的擁有權。因此、您必須設定ONTAP 一個不中斷的Volume匯出原則、才能執行這些作業。您可以使用下列命令來執行此作業：
+
+. 「匯出原則規則modify -vserver <儲存虛擬機器名稱>-policyname <原則名稱>-rueindex 1 -超級使用者sys」
+. 「匯出原則規則修改-vserver <儲存虛擬機器名稱>-policyname <原則名稱>-rueindex 1 -anon 65534」
+
+
+====
+
+NOTE: 如果您計畫將第二個OpenShift作業環境新增為受管理的運算資源、則必須確保啟用Astra Trident Volume Snapshot功能。若要使用Astra Trident啟用及測試Volume快照、 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["請參閱官方的Astra Trident說明"^]。
+
+
+
+=== VMware Tanzu Kubernetes Grid叢集需求
+
+在VMware Tanzu Kubernetes Grid（TKG）或Tanzu Kubernetes Grid整合版（TKGi）叢集上裝載Astra Control Center時、請謹記下列考量事項。
+
+* 停用要由Astra Control管理的任何應用程式叢集上的TKG或TKGi預設儲存類別強制。您可以編輯命名空間叢集上的「TanzuKubernetesCluster」資源來執行此作業。
+* 您必須建立安全原則、讓Astra Control Center能夠在叢集中建立Pod。您可以使用下列命令來執行此作業：
++
+[listing]
+----
+kubectl config use-context <context-of-workload-cluster>
+kubectl create clusterrolebinding default-tkg-admin-privileged-binding --clusterrole=psp:vmware-system-privileged --group=system:authenticated
+----
+* 在TKG或TKGi環境中部署Astra Control Center時、請注意Astra Trident的特定需求。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#other-known-configuration-options["Astra Trident文件"^]。
+
+
+
+NOTE: 預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過期。如果您使用Tanzu產品組合產品、則必須產生一個含有非過期權杖的Tanzu Kubernetes叢集組態檔、以避免Astra Control Center與託管應用程式叢集之間發生連線問題。如需相關指示、請造訪 https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.2/nsx-application-platform/GUID-52A52C0B-9575-43B6-ADE2-E8640E22C29F.html["VMware NSxT-T資料中心產品文件。"]
+
+
+
+== 支援的儲存後端
+
+Astra Control Center支援下列儲存後端。
+
+* Astra資料儲存區
+* NetApp ONTAP S9.5或更新AFF 版本的功能性和FAS 功能性系統
+* NetApp Cloud Volumes ONTAP
+
+
+
+
+== 應用程式叢集需求
+
+Astra Control Center對於您計畫從Astra Control Center管理的叢集有下列需求。如果您打算管理的叢集是裝載Astra Control Center的作業環境叢集、則也適用這些需求。
+
+* Kubernetes的最新版本 https://kubernetes-csi.github.io/docs/snapshot-controller.html["Snapshot控制器元件"^] 已安裝
+* 阿斯特拉部落 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["volumesnapshotClass物件"^] 已由系統管理員定義
+* 叢集上存在預設的Kubernetes儲存類別
+* 至少有一個儲存類別設定為使用Astra Trident
+
+
+
+NOTE: 您的應用程式叢集應該有一個「kubeconfig．yaml」檔案、只定義一個_context_元素。請參閱的Kubernetes文件 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["建立Kbeconfig檔案的相關資訊"^]。
+
+
+NOTE: 在Rancher環境中管理應用程式叢集時、請修改Rancher提供的「kubeconfig」檔案中應用程式叢集的預設內容、以使用控制面內容、而非Rancher API伺服器內容。如此可減少Rancher API伺服器的負載、並改善效能。
+
+
+
+== 應用程式管理需求
+
+Astra Control具備下列應用程式管理需求：
+
+* *授權*：若要使用Astra Control Center管理應用程式、您需要Astra Control Center授權。
+* *命名空間*：Astra Control要求應用程式不超過一個命名空間、但命名空間可以包含多個應用程式。
+* * StorageClass *：如果您安裝的應用程式已明確設定StorageClass、且需要複製應用程式、則複製作業的目標叢集必須具有原本指定的StorageClass。將具有明確設定StorageClass的應用程式複製到沒有相同StorageClass的叢集、將會失敗。
+* * Kubernetes資源*：使用未由Astra Control收集之Kubernetes資源的應用程式、可能沒有完整的應用程式資料管理功能。Astra Control會收集下列Kubernetes資源：
++
+[cols="1,1,1"]
+|===
+
+
+| 叢集角色 | ClusterRoleBinding | 組態對應 
+
+
+| CustomResourceDesDefinition | CustomResource | 可關係工作 
+
+
+| 示範 | HorizontalPodAutoscaler | 入侵 
+
+
+| 部署組態 | 互鎖Webhook | PeristentVolume Claim 
+
+
+| Pod | Podcast中斷預算 | Podcast範本 
+
+
+| 網路原則 | ReplicaSet | 角色 
+
+
+| 角色繫結 | 路由 | 秘密 
+
+
+| 服務 | 服務帳戶 | 狀態集 
+
+
+| 驗證Webhook |  |  
+|===
+
+
+
+
+=== 支援的應用程式安裝方法
+
+Astra Control支援下列應用程式安裝方法：
+
+* *資訊清單檔案*：Astra Control支援使用KUbectl從資訊清單檔案安裝的應用程式。例如：
++
+[listing]
+----
+kubectl apply -f myapp.yaml
+----
+* * Helm 3*：如果您使用Helm來安裝應用程式、Astra Control需要Helm版本3。完全支援使用Helm 3（或從Helm 2升級至Helm 3）來管理及複製安裝的應用程式。不支援管理以Helm 2安裝的應用程式。
+* *操作員部署的應用程式*：Astra Control支援以命名空間範圍運算子安裝的應用程式。以下是已針對此安裝模式驗證的一些應用程式：
++
+** https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
+** https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
+** https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB叢集"^]
+
+
+
+
+
+NOTE: 運算子及其安裝的應用程式必須使用相同的命名空間；您可能需要修改運算子的部署.yaml檔案、以確保情況如此。
+
+
+
+== 存取網際網路
+
+您應該判斷是否有外部網際網路存取權。如果您沒有、部分功能可能會受到限制、例如從NetApp Cloud Insights 接收監控和數據資料、或是將支援組合傳送至 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
+
+
+
+== 授權
+
+Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。若無授權、您將無法：
+
+* 定義自訂應用程式
+* 建立現有應用程式的快照或複本
+* 設定資料保護原則
+
+
+如果您想要試用Astra控制中心、您可以 link:setup_overview.html#add-a-full-or-evaluation-license["使用90天試用版授權"]。
+
+若要深入瞭解授權的運作方式、請參閱 link:../concepts/licensing.html["授權"]。
+
+
+
+== 內部部署Kubernetes叢集的入口
+
+您可以選擇網路入侵Astra控制中心的用途類型。依預設、Astra Control Center會將Astra Control Center閘道（服務/網路）部署為整個叢集的資源。Astra Control Center也支援使用服務負載平衡器（如果環境允許）。如果您想要使用服務負載平衡器、但尚未設定一個、則可以使用MetalLB負載平衡器自動將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。
+
+
+NOTE: 如果您要在Tanzu Kubernetes Grid叢集上裝載Astra Control Center、請使用「kubecl Get nslb監 控器-A」命令、查看您是否已設定服務監控器來接受入口流量。如果存在、則不應安裝MetalLB、因為現有的服務監視器將會覆寫任何新的負載平衡器組態。
+
+
+
+== 網路需求
+
+裝載Astra Control Center的作業環境會使用下列TCP連接埠進行通訊。您應確保這些連接埠可透過任何防火牆、並設定防火牆、以允許來自Astra網路的任何HTTPS輸出流量。有些連接埠需要在裝載Astra Control Center的環境與每個託管叢集之間進行連線（視情況而定）。
+
+
+NOTE: 您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra Control Center則可管理已設定為雙堆疊作業的應用程式和儲存後端。如需雙堆疊叢集需求的詳細資訊、請參閱 https://kubernetes.io/docs/concepts/services-networking/dual-stack/["Kubernetes文件"^]。
+
+|===
+| 來源 | 目的地 | 連接埠 | 傳輸協定 | 目的 
+
+
+| 用戶端PC | Astra控制中心 | 443.. | HTTPS | UI / API存取：確保此連接埠在裝載Astra Control Center的叢集與每個受管理叢集之間都開啟 
+
+
+| 度量使用者 | Astra Control Center工作節點 | 9090 | HTTPS | 度量資料通訊：確保每個託管叢集都能存取裝載Astra Control Center的叢集上的此連接埠（需要雙向通訊） 
+
+
+| Astra控制中心 | 託管Cloud Insights 版的服務 (https://cloudinsights.netapp.com)[] | 443.. | HTTPS | 通訊Cloud Insights 
+
+
+| Astra控制中心 | Amazon S3儲存貯體供應商 (https://my-bucket.s3.us-west-2.amazonaws.com/)[] | 443.. | HTTPS | Amazon S3儲存通訊 
+
+
+| Astra控制中心 | NetApp AutoSupport (https://support.netapp.com)[] | 443.. | HTTPS | NetApp AutoSupport 通訊 
+|===
+
+
+== 支援的網頁瀏覽器
+
+Astra Control Center支援最新版本的Firefox、Safari和Chrome、最低解析度為1280 x 720。
+
+
+
+== 下一步
+
+檢視 link:quick-start.html["快速入門"] 總覽：

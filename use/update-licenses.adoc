@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: use/update-licenses.html 
+keywords: manage, licenses, licensing, Astra Control Center, add license, update license 
+summary: 您可以將試用版授權轉換為完整授權、也可以使用新授權來更新現有的試用版或完整授權。 
+---
+= 更新現有授權
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+您可以將試用版授權轉換為完整授權、也可以使用新授權來更新現有的試用版或完整授權。如果您沒有完整授權、請與NetApp銷售聯絡人聯絡、以取得完整授權與序號。您可以使用Astra UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 以更新現有授權。
+
+.步驟
+. 登入 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
+. 存取Astra Control Center下載頁面、輸入序號、然後下載完整的NetApp授權檔案（NLF）。
+. 登入Astra Control Center UI。
+. 從左側導覽中、選取*帳戶*>*授權*。
+. 在「*帳戶*>*授權*」頁面中、選取現有授權的狀態下拉式功能表、然後選取「*取代*」。
+. 瀏覽至您下載的授權檔案。
+. 選取*「Add*」。
+
+
+「*帳戶*>*授權*」頁面會顯示授權資訊、到期日、授權序號、帳戶ID及使用的CPU單位。
+
+
+
+== 以取得更多資訊
+
+* link:../concepts/licensing.html["Astra Control Center授權"]
+

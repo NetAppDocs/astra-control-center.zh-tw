@@ -1,0 +1,165 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-custom-tls-certificate.html 
+keywords: login, Astra Control Center, web ui, tls, certificate 
+summary: 您可以上傳並驗證由協力廠商憑證授權單位（CA）簽署的TLS憑證、以取代自行簽署的Astra Control Center憑證。 
+---
+= 新增自訂TLS憑證
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+您可以移除現有的自我簽署TLS憑證、並以由憑證授權單位（CA）簽署的TLS憑證取代。
+
+.您需要的是 #8217 ；需要的是什麼
+* Kubernetes叢集已安裝Astra Control Center
+* 管理存取叢集上的命令Shell以執行「kubecll」命令
+* 來自CA的私密金鑰和憑證檔案
+
+
+
+
+== 移除自我簽署的憑證
+
+移除現有的自我簽署TLS憑證。
+
+. 使用SSH、以管理使用者身分登入裝載Astra Control Center的Kubernetes叢集。
+. 使用下列命令尋找與目前憑證相關的TLS密碼、並以Astra Control Center部署命名空間取代「<ACC-deployment-namespace>」：
++
+[listing]
+----
+kubectl get certificate -n <ACC-deployment-namespace>
+----
+. 使用下列命令刪除目前安裝的機密與憑證：
++
+[listing]
+----
+kubectl delete cert cert-manager-certificates -n <ACC-deployment-namespace>
+kubectl delete secret secure-testing-cert -n <ACC-deployment-namespace>
+----
+
+
+
+
+== 新增憑證
+
+新增由CA簽署的TLS憑證。
+
+. 使用下列命令以CA的私密金鑰和憑證檔案建立新的TLS秘密，並以適當的資訊取代括弧<>中的引數：
++
+[listing]
+----
+kubectl create secret tls <secret-name> --key <private-key-filename> --cert <certificate-filename> -n <ACC-deployment-namespace>
+----
+. 使用以下命令和範例編輯叢集自訂資源定義（CRD）檔案、並將「pec.selfSigned`」值變更為「spec.ca.secretName`」、以參照您先前建立的TLS密碼：
++
+[listing]
+----
+kubectl edit clusterissuers.cert-manager.io/cert-manager-certificates -n <ACC-deployment-namespace>
+....
+
+#spec:
+#  selfSigned: {}
+
+spec:
+  ca:
+    secretName: <secret-name>
+----
+. 使用下列命令和範例輸出來驗證變更是否正確、而且叢集已準備好驗證憑證、並以Astra Control Center部署命名空間取代「<ACC-deployment-namedes>」：
++
+[listing]
+----
+kubectl describe clusterissuers.cert-manager.io/cert-manager-certificates -n <ACC-deployment-namespace>
+....
+
+Status:
+  Conditions:
+    Last Transition Time:  2021-07-01T23:50:27Z
+    Message:               Signing CA verified
+    Reason:                KeyPairVerified
+    Status:                True
+    Type:                  Ready
+Events:                    <none>
+
+----
+. 使用下列範例建立「create.yaml」檔案、並以適當的資訊取代括弧<>中的預留位置值：
++
+[listing]
+----
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: <certificate-name>
+  namespace: <ACC-deployment-namespace>
+spec:
+  secretName: <certificate-secret-name>
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  dnsNames:
+  - <astra.dnsname.example.com> #Replace with the correct Astra Control Center DNS address
+  issuerRef:
+    kind: ClusterIssuer
+    name: cert-manager-certificates
+----
+. 使用下列命令建立憑證：
++
+[listing]
+----
+kubectl apply -f certificate.yaml
+----
+. 使用下列命令和範例輸出來驗證憑證是否已正確建立、以及是否已使用您在建立期間所指定的引數（例如名稱、持續時間、續約期限及DNS名稱）。
++
+[listing]
+----
+kubectl describe certificate -n <ACC-deployment-namespace>
+....
+
+Spec:
+  Dns Names:
+    astra.example.com
+  Duration:  125h0m0s
+  Issuer Ref:
+    Kind:        ClusterIssuer
+    Name:        cert-manager-certificates
+  Renew Before:  61h0m0s
+  Secret Name:   <certificate-secret-name>
+Status:
+  Conditions:
+    Last Transition Time:  2021-07-02T00:45:41Z
+    Message:               Certificate is up to date and has not expired
+    Reason:                Ready
+    Status:                True
+    Type:                  Ready
+  Not After:               2021-07-07T05:45:41Z
+  Not Before:              2021-07-02T00:45:41Z
+  Renewal Time:            2021-07-04T16:45:41Z
+  Revision:                1
+Events:                    <none>
+----
+. 編輯「入口CRD TLS」選項、使用下列命令和範例指向新的憑證密碼、並以適當的資訊取代方括弧<>中的預留位置值：
++
+[listing]
+----
+kubectl edit ingressroutes.traefik.containo.us -n <ACC-deployment-namespace>
+....
+
+# tls:
+#    options:
+#      name: default
+#    secretName: secure-testing-cert
+#    store:
+#      name: default
+
+ tls:
+    options:
+      name: default
+    secretName: <certificate-secret-name>
+    store:
+      name: default
+----
+. 使用網頁瀏覽器瀏覽至Astra Control Center的部署IP位址。
+. 確認憑證詳細資料與您安裝的憑證詳細資料相符。
+. 匯出憑證並將結果匯入網頁瀏覽器中的憑證管理程式。
+

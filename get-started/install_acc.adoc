@@ -1,0 +1,925 @@
+---
+sidebar: sidebar 
+permalink: get-started/install_acc.html 
+keywords: astra installation, install astra control center, how to install astra control, deploy, download from netapp support 
+summary: 若要在解決某些環境先決條件之後安裝Astra Control Center、您必須下載套裝軟組、並依照所述步驟安裝。 
+---
+= 使用標準程序安裝Astra Control Center
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+若要安裝Astra Control Center、請從NetApp支援網站下載安裝套件、並執行下列步驟、在您的環境中安裝Astra Control Center操作員和Astra Control Center。您可以使用此程序、在連線網際網路或無線環境中安裝Astra Control Center。
+
+對於Red Hat OpenShift環境、您也可以使用 link:../get-started/acc_operatorhub_install.html["替代程序"] 使用OpenShift作業系統集線器安裝Astra Control Center。
+
+.您需要的是 #8217 ；需要的是什麼
+* link:requirements.html["開始安裝之前、請先準備好環境以進行Astra Control Center部署"]。
+* 確保所有叢集操作員都處於健全狀態且可用。
++
+OpenShift範例：
+
++
+[listing]
+----
+oc get clusteroperators
+----
+* 確保所有API服務均處於健全狀態且可供使用：
++
+OpenShift範例：
+
++
+[listing]
+----
+oc get apiservices
+----
+* 您打算使用的Astra FQDN必須可路由傳送至此叢集。這表示您在內部DNS伺服器中有DNS項目、或是使用已註冊的核心URL路由。
+
+
+Astra Control Center安裝程序會執行下列作業：
+
+* 將Astra元件安裝到「NetApp-acc」（或自訂命名）命名空間。
+* 建立預設帳戶。
+* 為此Astra Control Center執行個體建立預設的管理使用者電子郵件地址和預設的一次性密碼「ACC-<UUUID__of_installation_>」。此使用者被指派系統中的擁有者角色、第一次登入UI時即需要此角色。
+* 協助您判斷所有Astra Control Center Pod都在執行中。
+* 安裝Astra UI。
+
+
+
+NOTE: 如果您使用的是Red Hat的Podman而非Docker Engine、則可以使用Podman命令來取代Docker命令。
+
+
+IMPORTANT: 請勿在整個安裝程序期間執行下列命令、以免刪除所有Astra Control Center Pod：「kubecl DELETE -f Astra _control_center_oper_deploy。yaml」
+
+若要安裝Astra Control Center、請執行下列步驟：
+
+* <<Download the Astra Control Center bundle>>
+* <<Unpack the bundle and change directory>>
+* <<Add the images to your local registry>>
+* <<Set up namespace and secret for registries with auth requirements>>
+* <<Install the Astra Control Center operator>>
+* <<Configure Astra Control Center>>
+* <<Complete Astra Control Center and operator installation>>
+* <<Verify system status>>
+* <<Set up ingress for load balancing>>
+* <<Log in to the Astra Control Center UI>>
+
+
+
+
+== 下載Astra Control Center套裝組合
+
+. 請從下載Astra Control Center套裝組合（「Astra控制中心-[版本].tar.gz」） https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]。
+. 從下載Astra Control Center認證與金鑰的壓縮檔 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]。
+. （可選）使用以下命令驗證套件的簽名：
++
+[listing]
+----
+openssl dgst -sha256 -verify astra-control-center[version].pub -signature <astra-control-center[version].sig astra-control-center[version].tar.gz
+----
+
+
+
+
+== 解壓縮套件並變更目錄
+
+. 擷取影像：
++
+[listing]
+----
+tar -vxzf astra-control-center-[version].tar.gz
+----
+. 變更至Astra目錄。
++
+[listing]
+----
+cd astra-control-center-[version]
+----
+
+
+
+
+== 將映像新增至本機登錄
+
+. 將Astra Control Center映像目錄中的檔案新增至本機登錄。
++
+
+NOTE: 請參閱以下自動載入影像的範例指令碼。
+
++
+.. 登入您的登錄：
++
+Docker：
+
++
+[listing]
+----
+docker login [your_registry_path]
+----
++
+Podcast：
+
++
+[listing]
+----
+podman login [your_registry_path]
+----
+.. 使用適當的指令碼來載入映像、標記映像、並[Subforte_image_local_register_pip]將映像推送到本機登錄：
++
+Docker：
+
++
+[listing]
+----
+export REGISTRY=[Docker_registry_path]
+for astraImageFile in $(ls images/*.tar) ; do
+  # Load to local cache. And store the name of the loaded image trimming the 'Loaded images: '
+  astraImage=$(docker load --input ${astraImageFile} | sed 's/Loaded image: //')
+  astraImage=$(echo ${astraImage} | sed 's!localhost/!!')
+  # Tag with local image repo.
+  docker tag ${astraImage} ${REGISTRY}/${astraImage}
+  # Push to the local repo.
+  docker push ${REGISTRY}/${astraImage}
+done
+----
++
+Podcast：
+
++
+[listing]
+----
+export REGISTRY=[Registry_path]
+for astraImageFile in $(ls images/*.tar) ; do
+  # Load to local cache. And store the name of the loaded image trimming the 'Loaded images: '
+  astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image(s): //')
+  astraImage=$(echo ${astraImage} | sed 's!localhost/!!')
+  # Tag with local image repo.
+  podman tag ${astraImage} ${REGISTRY}/${astraImage}
+  # Push to the local repo.
+  podman push ${REGISTRY}/${astraImage}
+done
+----
+
+
+
+
+
+
+== 設定具有驗證需求之登錄的命名空間和機密
+
+. 如果您使用需要驗證的登錄、則需要執行下列動作：
++
+.. 建立「NetApp-acc operator：
++
+[listing]
+----
+kubectl create ns netapp-acc-operator
+----
++
+回應：
+
++
+[listing]
+----
+namespace/netapp-acc-operator created
+----
+.. 建立「NetApp-acc operator」命名空間的秘密。新增Docker資訊並執行下列命令：
++
+[listing]
+----
+kubectl create secret docker-registry astra-registry-cred -n netapp-acc-operator --docker-server=[your_registry_path] --docker-username=[username] --docker-password=[token]
+----
++
+回應範例：
+
++
+[listing]
+----
+secret/astra-registry-cred created
+----
+.. 建立「NetApp-acc」（或自訂命名）命名空間。
++
+[listing]
+----
+kubectl create ns [netapp-acc or custom namespace]
+----
++
+回應範例：
+
++
+[listing]
+----
+namespace/netapp-acc created
+----
+.. 為「NetApp-acc」（或自訂命名）命名空間建立秘密。新增Docker資訊並執行下列命令：
++
+[listing]
+----
+kubectl create secret docker-registry astra-registry-cred -n [netapp-acc or custom namespace] --docker-server=[your_registry_path] --docker-username=[username] --docker-password=[token]
+----
++
+回應
+
++
+[listing]
+----
+secret/astra-registry-cred created
+----
+.. [Substete_kubeconfig _secret ]（選用）如果您希望叢集在安裝後由Astra Control Center自動管理、請確定您在Astra Control Center命名空間中提供了要使用此命令部署的kubeconfig作為機密：
++
+[listing]
+----
+kubectl create secret generic [acc-kubeconfig-cred or custom secret name] --from-file=<path-to-your-kubeconfig> -n [netapp-acc or custom namespace]
+----
+
+
+
+
+
+
+== 安裝Astra Control Center操作員
+
+. 編輯Astra Control Center營運者部署Yaml（「Astra _control_center_operer_deploy」、以參照您的本機登錄和機密。
++
+[listing]
+----
+vim astra_control_center_operator_deploy.yaml
+----
++
+.. 如果您使用需要驗證的登錄、請將預設行「imagePullSecrets：[]」改為：
++
+[listing]
+----
+imagePullSecrets:
+- name: <name_of_secret_with_creds_to_local_registry>
+----
+.. 將「kube-RBAC代理」映像的「[your _register_path]」變更為您將映像推入的登錄路徑 <<substep_image_local_registry_push,上一步>>。
+.. 將「acc oper-manager-manager」映像的「[your _register_path]」變更為您將映像推入的登錄路徑 <<substep_image_local_registry_push,上一步>>。
+.. （若為使用Astra Data Store預覽的安裝）請參閱此已知問題 link:../release-notes/known-issues-ads.html#astra-data-store-cannot-be-used-as-a-storage-class-for-astra-control-center-due-to-mongodb-pod-liveness-probe-failure["儲存類別資源配置工具、以及您需要對Y反 洗錢進行的其他變更"]。
++
+[listing, subs="+quotes"]
+----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    control-plane: controller-manager
+  name: acc-operator-controller-manager
+  namespace: netapp-acc-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      control-plane: controller-manager
+  template:
+    metadata:
+      labels:
+        control-plane: controller-manager
+    spec:
+      containers:
+      - args:
+        - --secure-listen-address=0.0.0.0:8443
+        - --upstream=http://127.0.0.1:8080/
+        - --logtostderr=true
+        - --v=10
+        *image: [your_registry_path]/kube-rbac-proxy:v4.8.0*
+        name: kube-rbac-proxy
+        ports:
+        - containerPort: 8443
+          name: https
+      - args:
+        - --health-probe-bind-address=:8081
+        - --metrics-bind-address=127.0.0.1:8080
+        - --leader-elect
+        command:
+        - /manager
+        env:
+        - name: ACCOP_LOG_LEVEL
+          value: "2"
+        *image: [your_registry_path]/acc-operator:[version x.y.z]*
+        imagePullPolicy: IfNotPresent
+      *imagePullSecrets: []*
+----
+
+
+. 安裝Astra Control Center操作員：
++
+[listing]
+----
+kubectl apply -f astra_control_center_operator_deploy.yaml
+----
++
+回應範例：
+
++
+[listing]
+----
+namespace/netapp-acc-operator created
+customresourcedefinition.apiextensions.k8s.io/astracontrolcenters.astra.netapp.io created
+role.rbac.authorization.k8s.io/acc-operator-leader-election-role created
+clusterrole.rbac.authorization.k8s.io/acc-operator-manager-role created
+clusterrole.rbac.authorization.k8s.io/acc-operator-metrics-reader created
+clusterrole.rbac.authorization.k8s.io/acc-operator-proxy-role created
+rolebinding.rbac.authorization.k8s.io/acc-operator-leader-election-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/acc-operator-manager-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/acc-operator-proxy-rolebinding created
+configmap/acc-operator-manager-config created
+service/acc-operator-controller-manager-metrics-service created
+deployment.apps/acc-operator-controller-manager created
+----
+
+
+
+
+== 設定Astra控制中心
+
+. 編輯Astra Control Center自訂資源（CR）檔案（「Astra_control_center_min.yaml」）、以建立帳戶、AutoSupport 供參考、登錄及其他必要的組態：
++
+
+NOTE: 如果您的環境需要額外的自訂功能、您可以使用「Astra_control_center.yaml」作為替代的CR。「Astra_control_center_min.yaml」是預設的CR、適用於大部分的安裝。
+
++
+[listing]
+----
+vim astra_control_center_min.yaml
+----
++
+
+NOTE: 在初始Astra Control Center部署之後、無法變更由CR設定的內容。
+
++
+
+IMPORTANT: 如果您使用不需要授權的登錄、則必須刪除「imageRegistry」中的「秘密」行、否則安裝將會失敗。
+
++
+.. 將「[your _register_path]（您的登錄路徑）」變更為您在上一個步驟中推送影像的登錄路徑。
+.. 將「帳戶名稱」字串變更為您要與帳戶建立關聯的名稱。
+.. 將「astraAddress」字串變更為您要在瀏覽器中用來存取Astra的FQDN。請勿在地址中使用「http：//」或「https：//」。複製此FQDN以供在中使用 <<Log in to the Astra Control Center UI,後續步驟>>。
+.. 將「電子郵件」字串變更為預設的初始系統管理員地址。複製此電子郵件地址以供在中使用 <<Log in to the Astra Control Center UI,後續步驟>>。
+.. 如果網站沒有網際網路連線、請將AutoSupport 「已註冊」改為「假」、否則連線網站則保留「真」。
+.. （選用）新增與帳戶相關之使用者的名字「firstName」和姓氏「lastName」。您可以在UI中立即或稍後執行此步驟。
+.. （可選）如果安裝需要、請將「儲存類別」值變更為其他Trident storageClass資源。
+.. （選用）如果您希望叢集在安裝後由Astra Control Center自動管理、而且您已經擁有 <<substep_kubeconfig_secret,已建立包含此叢集之Kbeconfig的秘密>>下、在這個名為「astraKubeConfigSecret："Acc－kubeconfig－cred or custom secret name"的Yaml檔案中新增欄位、以提供密碼名稱
+.. 請完成下列其中一個步驟：
++
+*** *其他入侵控制器（擷取類型：一般）*：這是Astra控制中心的預設動作。部署Astra Control Center之後、您需要設定入口控制器、以URL顯示Astra Control Center。
++
+預設的Astra Control Center安裝會將其閘道（「服務/網路」）設定為「ClusterIP」類型。此預設安裝需要您額外設定Kubernetes IngresController / Ingress、才能將流量路由傳送至該控制器。如果您想要使用入口、請參閱 link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["設定入口以進行負載平衡"]。
+
+*** *服務負載平衡器（擷取類型：AccTraefik）*：如果您不想安裝IngressController或建立Ingress資源、請將「ingressType」設為「AccTraefik」。
++
+這會將Astra Control Center「truefik」閘道部署為Kubernetes負載平衡器類型服務。
+
++
+Astra Control Center使用類型為「loadbalancer」（Astra Control Center命名空間中的「shvC/truefik」）的服務、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。
+
++
+
+NOTE: 如需有關「負載平衡器」和入口服務類型的詳細資訊、請參閱 link:../get-started/requirements.html["需求"]。
+
+
+
+.. （若為使用Astra Data Store預覽的安裝）請參閱此已知問題 link:../release-notes/known-issues-ads.html#astra-data-store-cannot-be-used-as-a-storage-class-for-astra-control-center-due-to-mongodb-pod-liveness-probe-failure["其他必要變更"] 至Yaml。
+
+
++
+[listing, subs="+quotes"]
+----
+apiVersion: astra.netapp.io/v1
+kind: AstraControlCenter
+metadata:
+  name: astra
+spec:
+  *accountName: "Example"*
+  astraVersion: "ASTRA_VERSION"
+  *astraAddress: "astra.example.com"*
+  *astraKubeConfigSecret: "acc-kubeconfig-cred or custom secret name"*
+  *ingressType: "Generic"*
+  autoSupport:
+    *enrolled: true*
+  *email: "[admin@example.com]"*
+  *firstName: "SRE"*
+  *lastName: "Admin"*
+  imageRegistry:
+    *name: "[your_registry_path]"*
+    *secret: "astra-registry-cred"*
+  *storageClass: "ontap-gold"*
+----
+
+
+
+
+== 完整的Astra控制中心和操作員安裝
+
+. 如果您尚未在上一步中執行此操作、請建立「NetApp-acc」（或自訂）命名空間：
++
+[listing]
+----
+kubectl create ns [netapp-acc or custom namespace]
+----
++
+回應範例：
+
++
+[listing]
+----
+namespace/netapp-acc created
+----
+. 在「NetApp-acc」（或您的自訂）命名空間中安裝Astra Control Center：
++
+[listing]
+----
+kubectl apply -f astra_control_center_min.yaml -n [netapp-acc or custom namespace]
+----
++
+回應範例：
+
++
+[listing]
+----
+astracontrolcenter.astra.netapp.io/astra created
+----
+
+
+
+
+== 驗證系統狀態
+
+
+NOTE: 如果您偏好使用OpenShift、您可以使用相似的相關命令來進行驗證步驟。
+
+. 驗證是否已成功安裝所有系統元件。
++
+[listing]
+----
+kubectl get pods -n [netapp-acc or custom namespace]
+----
++
+每個Pod的狀態應為「執行中」。部署系統Pod可能需要幾分鐘的時間。
+
++
+回應範例：
+
++
+[listing]
+----
+NAME                                       READY   STATUS    RESTARTS   AGE
+acc-helm-repo-5f75c5f564-bzqmt             1/1     Running   0          11m
+activity-6b8f7cccb9-mlrn4                  1/1     Running   0          9m2s
+api-token-authentication-6hznt             1/1     Running   0          8m50s
+api-token-authentication-qpfgb             1/1     Running   0          8m50s
+api-token-authentication-sqnb7             1/1     Running   0          8m50s
+asup-5578bbdd57-dxkbp                      1/1     Running   0          9m3s
+authentication-56bff4f95d-mspmq            1/1     Running   0          7m31s
+bucketservice-6f7968b95d-9rrrl             1/1     Running   0          8m36s
+cert-manager-5f6cf4bc4b-82khn              1/1     Running   0          6m19s
+cert-manager-cainjector-76cf976458-sdrbc   1/1     Running   0          6m19s
+cert-manager-webhook-5b7896bfd8-2n45j      1/1     Running   0          6m19s
+cloud-extension-749d9f684c-8bdhq           1/1     Running   0          9m6s
+cloud-insights-service-7d58687d9-h5tzw     1/1     Running   2          8m56s
+composite-compute-968c79cb5-nv7l4          1/1     Running   0          9m11s
+composite-volume-7687569985-jg9gg          1/1     Running   0          8m33s
+credentials-5c9b75f4d6-nx9cz               1/1     Running   0          8m42s
+entitlement-6c96fd8b78-zt7f8               1/1     Running   0          8m28s
+features-5f7bfc9f68-gsjnl                  1/1     Running   0          8m57s
+fluent-bit-ds-h88p7                        1/1     Running   0          7m22s
+fluent-bit-ds-krhnj                        1/1     Running   0          7m23s
+fluent-bit-ds-l5bjj                        1/1     Running   0          7m22s
+fluent-bit-ds-lrclb                        1/1     Running   0          7m23s
+fluent-bit-ds-s5t4n                        1/1     Running   0          7m23s
+fluent-bit-ds-zpr6v                        1/1     Running   0          7m22s
+graphql-server-5f5976f4bd-vbb4z            1/1     Running   0          7m13s
+identity-56f78b8f9f-8h9p9                  1/1     Running   0          8m29s
+influxdb2-0                                1/1     Running   0          11m
+krakend-6f8d995b4d-5khkl                   1/1     Running   0          7m7s
+license-5b5db87c97-jmxzc                   1/1     Running   0          9m
+login-ui-57b57c74b8-6xtv7                  1/1     Running   0          7m10s
+loki-0                                     1/1     Running   0          11m
+monitoring-operator-9dbc9c76d-8znck        2/2     Running   0          7m33s
+nats-0                                     1/1     Running   0          11m
+nats-1                                     1/1     Running   0          10m
+nats-2                                     1/1     Running   0          10m
+nautilus-6b9d88bc86-h8kfb                  1/1     Running   0          8m6s
+nautilus-6b9d88bc86-vn68r                  1/1     Running   0          8m35s
+openapi-b87d77dd8-5dz9h                    1/1     Running   0          9m7s
+polaris-consul-consul-5ljfb                1/1     Running   0          11m
+polaris-consul-consul-s5d5z                1/1     Running   0          11m
+polaris-consul-consul-server-0             1/1     Running   0          11m
+polaris-consul-consul-server-1             1/1     Running   0          11m
+polaris-consul-consul-server-2             1/1     Running   0          11m
+polaris-consul-consul-twmpq                1/1     Running   0          11m
+polaris-mongodb-0                          2/2     Running   0          11m
+polaris-mongodb-1                          2/2     Running   0          10m
+polaris-mongodb-2                          2/2     Running   0          10m
+polaris-ui-84dc87847f-zrg8w                1/1     Running   0          7m12s
+polaris-vault-0                            1/1     Running   0          11m
+polaris-vault-1                            1/1     Running   0          11m
+polaris-vault-2                            1/1     Running   0          11m
+public-metrics-657698b66f-67pgt            1/1     Running   0          8m47s
+storage-backend-metrics-6848b9fd87-w7x8r   1/1     Running   0          8m39s
+storage-provider-5ff5868cd5-r9hj7          1/1     Running   0          8m45s
+telegraf-ds-dw4hg                          1/1     Running   0          7m23s
+telegraf-ds-k92gn                          1/1     Running   0          7m23s
+telegraf-ds-mmxjl                          1/1     Running   0          7m23s
+telegraf-ds-nhs8s                          1/1     Running   0          7m23s
+telegraf-ds-rj7lw                          1/1     Running   0          7m23s
+telegraf-ds-tqrkb                          1/1     Running   0          7m23s
+telegraf-rs-9mwgj                          1/1     Running   0          7m23s
+telemetry-service-56c49d689b-ffrzx         1/1     Running   0          8m42s
+tenancy-767c77fb9d-g9ctv                   1/1     Running   0          8m52s
+traefik-5857d87f85-7pmx8                   1/1     Running   0          6m49s
+traefik-5857d87f85-cpxgv                   1/1     Running   0          5m34s
+traefik-5857d87f85-lvmlb                   1/1     Running   0          4m33s
+traefik-5857d87f85-t2xlk                   1/1     Running   0          4m33s
+traefik-5857d87f85-v9wpf                   1/1     Running   0          7m3s
+trident-svc-595f84dd78-zb8l6               1/1     Running   0          8m54s
+vault-controller-86c94fbf4f-krttq          1/1     Running   0          9m24s
+----
+. （選用）若要確保安裝完成、您可以使用下列命令來查看「acc operator」記錄。
++
+[listing]
+----
+kubectl logs deploy/acc-operator-controller-manager -n netapp-acc-operator -c manager -f
+----
++
+
+NOTE: 「accHost」叢集登錄是最後一項作業、如果失敗、就不會導致部署失敗。如果記錄中指出叢集登錄失敗、您可以透過新增叢集工作流程再次嘗試登錄 link:../get-started/setup_overview.html#add-cluster["在UI中"] 或API。
+
+. 當所有Pod都在執行時、請擷取由Astra Control Center營運者安裝的「適用鍵盤」執行個體、以驗證安裝是否成功。
++
+[listing]
+----
+kubectl get acc -o yaml -n [netapp-acc or custom namespace]
+----
+. 在Yaml中、勾選回應中的「tatus.deploymentState`」欄位、以取得「部署」值。如果部署失敗、則會改為顯示錯誤訊息。
+. 若要取得登入Astra Control Center時使用的一次性密碼、請複製「stats.uuid」值。密碼為「ACC-」、後面接著UUID值（「ACC-[UUUID]」、或是在本範例中為「ACC-9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f」）。
+
+
+.Y反 洗錢詳細資料範例
+====
+[listing, subs="+quotes"]
+----
+name: astra
+   namespace: netapp-acc
+   resourceVersion: "104424560"
+   selfLink: /apis/astra.netapp.io/v1/namespaces/netapp-acc/astracontrolcenters/astra
+   uid: 9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f
+ spec:
+   accountName: Example
+   astraAddress: astra.example.com
+   astraVersion: 21.12.60
+   autoSupport:
+     enrolled: true
+     url: https://support.netapp.com/asupprod/post/1.0/postAsup
+   crds: {}
+   email: admin@example.com
+   firstName: SRE
+   imageRegistry:
+     name: registry_name/astra
+     secret: astra-registry-cred
+   lastName: Admin
+ status:
+   accConditionHistory:
+     items:
+     - astraVersion: 21.12.60
+       condition:
+         lastTransitionTime: "2021-11-23T02:23:59Z"
+         message: Deploying is currently in progress.
+         reason: InProgress
+         status: "False"
+         type: Ready
+       generation: 2
+       observedSpec:
+         accountName: Example
+         astraAddress: astra.example.com
+         astraVersion: 21.12.60
+         autoSupport:
+           enrolled: true
+           url: https://support.netapp.com/asupprod/post/1.0/postAsup
+         crds: {}
+         email: admin@example.com
+         firstName: SRE
+         imageRegistry:
+           name: registry_name/astra
+           secret: astra-registry-cred
+         lastName: Admin
+       timestamp: "2021-11-23T02:23:59Z"
+     - astraVersion: 21.12.60
+       condition:
+         lastTransitionTime: "2021-11-23T02:23:59Z"
+         message: Deploying is currently in progress.
+         reason: InProgress
+         status: "True"
+         type: Deploying
+       generation: 2
+       observedSpec:
+         accountName: Example
+         astraAddress: astra.example.com
+         astraVersion: 21.12.60
+         autoSupport:
+           enrolled: true
+           url: https://support.netapp.com/asupprod/post/1.0/postAsup
+         crds: {}
+         email: admin@example.com
+         firstName: SRE
+         imageRegistry:
+           name: registry_name/astra
+           secret: astra-registry-cred
+         lastName: Admin
+       timestamp: "2021-11-23T02:23:59Z"
+     - astraVersion: 21.12.60
+       condition:
+         lastTransitionTime: "2021-11-23T02:29:41Z"
+         message: Post Install was successful
+         observedGeneration: 2
+         reason: Complete
+         status: "True"
+         type: PostInstallComplete
+       generation: 2
+       observedSpec:
+         accountName: Example
+         astraAddress: astra.example.com
+         astraVersion: 21.12.60
+         autoSupport:
+           enrolled: true
+           url: https://support.netapp.com/asupprod/post/1.0/postAsup
+         crds: {}
+         email: admin@example.com
+         firstName: SRE
+         imageRegistry:
+           name: registry_name/astra
+           secret: astra-registry-cred
+         lastName: Admin
+       timestamp: "2021-11-23T02:29:41Z"
+     - astraVersion: 21.12.60
+       condition:
+         lastTransitionTime: "2021-11-23T02:29:41Z"
+         message: Deploying succeeded.
+         reason: Complete
+         status: "False"
+         type: Deploying
+       generation: 2
+       observedGeneration: 2
+       observedSpec:
+         accountName: Example
+         astraAddress: astra.example.com
+         astraVersion: 21.12.60
+         autoSupport:
+           enrolled: true
+           url: https://support.netapp.com/asupprod/post/1.0/postAsup
+         crds: {}
+         email: admin@example.com
+         firstName: SRE
+         imageRegistry:
+           name: registry_name/astra
+           secret: astra-registry-cred
+         lastName: Admin
+       observedVersion: 21.12.60
+       timestamp: "2021-11-23T02:29:41Z"
+     - astraVersion: 21.12.60
+       condition:
+         lastTransitionTime: "2021-11-23T02:29:41Z"
+         message: Astra is deployed
+         reason: Complete
+         status: "True"
+         type: Deployed
+       generation: 2
+       observedGeneration: 2
+       observedSpec:
+         accountName: Example
+         astraAddress: astra.example.com
+         astraVersion: 21.12.60
+         autoSupport:
+           enrolled: true
+           url: https://support.netapp.com/asupprod/post/1.0/postAsup
+         crds: {}
+         email: admin@example.com
+         firstName: SRE
+         imageRegistry:
+           name: registry_name/astra
+           secret: astra-registry-cred
+         lastName: Admin
+       observedVersion: 21.12.60
+       timestamp: "2021-11-23T02:29:41Z"
+     - astraVersion: 21.12.60
+       condition:
+         lastTransitionTime: "2021-11-23T02:29:41Z"
+         message: Astra is deployed
+         reason: Complete
+         status: "True"
+         type: Ready
+       generation: 2
+       observedGeneration: 2
+       observedSpec:
+         accountName: Example
+         astraAddress: astra.example.com
+         astraVersion: 21.12.60
+         autoSupport:
+           enrolled: true
+           url: https://support.netapp.com/asupprod/post/1.0/postAsup
+         crds: {}
+         email: admin@example.com
+         firstName: SRE
+         imageRegistry:
+           name: registry_name/astra
+           secret: astra-registry-cred
+         lastName: Admin
+       observedVersion: 21.12.60
+       timestamp: "2021-11-23T02:29:41Z"
+   certManager: deploy
+   cluster:
+     type: OCP
+     vendorVersion: 4.7.5
+     version: v1.20.0+bafe72f
+   conditions:
+   - lastTransitionTime: "2021-12-08T16:19:55Z"
+     message: Astra is deployed
+     reason: Complete
+     status: "True"
+     type: Ready
+   - lastTransitionTime: "2021-12-08T16:19:55Z"
+     message: Deploying succeeded.
+     reason: Complete
+     status: "False"
+     type: Deploying
+   - lastTransitionTime: "2021-12-08T16:19:53Z"
+     message: Post Install was successful
+     observedGeneration: 2
+     reason: Complete
+     status: "True"
+     type: PostInstallComplete
+   *- lastTransitionTime: "2021-12-08T16:19:55Z"*
+     *message: Astra is deployed*
+     *reason: Complete*
+     *status: "True"*
+     *type: Deployed*
+   *deploymentState: Deployed*
+   observedGeneration: 2
+   observedSpec:
+     accountName: Example
+     astraAddress: astra.example.com
+     astraVersion: 21.12.60
+     autoSupport:
+       enrolled: true
+       url: https://support.netapp.com/asupprod/post/1.0/postAsup
+     crds: {}
+     email: admin@example.com
+     firstName: SRE
+     imageRegistry:
+       name: registry_name/astra
+       secret: astra-registry-cred
+     lastName: Admin
+   observedVersion: 21.12.60
+   postInstall: Complete
+   *uuid: 9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f*
+kind: List
+metadata:
+ resourceVersion: ""
+ selfLink: ""
+----
+====
+
+
+== 設定入口以進行負載平衡
+
+您可以設定Kubernetes入口控制器來管理外部服務存取、例如叢集中的負載平衡。
+
+本程序說明如何設定入口控制器（「擷取類型：一般」）。這是Astra Control Center的預設動作。部署Astra Control Center之後、您需要設定入口控制器、以URL顯示Astra Control Center。
+
+
+NOTE: 如果您不想設定入口控制器、可以設定「擷取類型：AccTraefik」。Astra Control Center使用類型為「loadbalancer」（Astra Control Center命名空間中的「shvC/truefik」）的服務、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。如需有關「負載平衡器」和入口服務類型的詳細資訊、請參閱 link:../get-started/requirements.html["需求"]。
+
+這些步驟會因您使用的入口控制器類型而有所不同：
+
+* Nginx入口控制器
+* OpenShift入口控制器
+
+
+.您需要的是 #8217 ；需要的是什麼
+* 必要的 https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/["入口控制器"] 應已部署。
+* 。 https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class["入口等級"] 應已建立對應於入口控制器的。
+* 您使用的Kubernetes版本介於v1.19和v1.22之間、甚至包括在內。
+
+
+.適用於Nginvin像 控制器的步驟
+. 建立類型的秘密 http://kubernetes.io/tls["「Kubernetes.IO/TLS」"] 如所述、在「NetApp-acc」（或自訂命名）命名空間中取得TLS私密金鑰和憑證 https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets["TLS機密"]。
+. 在「NetApp-acc」（或自訂命名）命名空間中部署入口資源、使用「vibeta1」（在Kubernetes版本低於或1.22的情況下已過時）或「v1」資源類型、以取代過時的資源或新的架構：
++
+.. 對於已過時的「v1Beta1」架構、請遵循以下範例：
++
+[listing]
+----
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-acc
+  namespace: [netapp-acc or custom namespace]
+  annotations:
+    kubernetes.io/ingress.class: [class name for nginx controller]
+spec:
+  tls:
+  - hosts:
+    - <ACC address>
+    secretName: [tls secret name]
+  rules:
+  - host: [ACC address]
+    http:
+      paths:
+      - backend:
+        serviceName: traefik
+        servicePort: 80
+        pathType: ImplementationSpecific
+----
+.. 如需「v1」新架構、請遵循以下範例：
++
+[listing]
+----
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: netapp-acc-ingress
+  namespace: [netapp-acc or custom namespace]
+spec:
+  ingressClassName: [class name for nginx controller]
+  tls:
+  - hosts:
+    - <ACC address>
+    secretName: [tls secret name]
+  rules:
+  - host: <ACC addess>
+    http:
+      paths:
+        - path:
+          backend:
+            service:
+              name: traefik
+              port:
+                number: 80
+          pathType: ImplementationSpecific
+----
+
+
+
+
+.OpenShift入口控制器的步驟
+. 取得您的憑證、取得可供OpenShift路由使用的金鑰、憑證和CA檔案。
+. 建立OpenShift路由：
++
+[listing]
+----
+oc create route edge --service=traefik
+--port=web -n [netapp-acc or custom namespace]
+--insecure-policy=Redirect --hostname=<ACC address>
+--cert=cert.pem --key=key.pem
+----
+
+
+
+
+== 登入Astra Control Center UI
+
+安裝Astra Control Center之後、您將變更預設管理員的密碼、並登入Astra Control Center UI儀表板。
+
+.步驟
+. 在瀏覽器中、輸入您在「Astra Address」（astrAddress）中使用的FQDN、位於「Astra控制中心_min.yaml」（當）字段中 <<Install Astra Control Center,您安裝了Astra Control Center>>。
+. 出現提示時、請接受自我簽署的憑證。
++
+
+NOTE: 您可以在登入後建立自訂憑證。
+
+. 在Astra Control Center登入頁面中、輸入您在「Astra Control Center_min.yaml」CR中使用的「電子郵件」值 <<Install Astra Control Center,您安裝了Astra Control Center>>，然後是一次性密碼（「ACC-[UUUID]」）。
++
+
+NOTE: 如果您輸入錯誤密碼三次、系統將鎖定管理員帳戶15分鐘。
+
+. 選擇*登入*。
+. 出現提示時變更密碼。
++
+
+NOTE: 如果這是您第一次登入、但您忘記密碼、而且尚未建立其他管理使用者帳戶、請聯絡NetApp支援部門以取得密碼恢復協助。
+
+. （選用）移除現有的自我簽署TLS憑證、並以取代 link:../get-started/add-custom-tls-certificate.html["由憑證授權單位（CA）簽署的自訂TLS憑證"]。
+
+
+
+
+== 疑難排解安裝
+
+如果有任何服務處於「錯誤」狀態、您可以檢查記錄。尋找400到500範圍內的API回應代碼。這些都表示發生故障的地點。
+
+.步驟
+. 若要檢查Astra控制中心的操作員記錄、請輸入下列內容：
++
+[listing]
+----
+kubectl logs --follow -n netapp-acc-operator $(kubectl get pods -n netapp-acc-operator -o name)  -c manager
+----
+
+
+
+
+== 下一步
+
+執行以完成部署 link:setup_overview.html["設定工作"]。

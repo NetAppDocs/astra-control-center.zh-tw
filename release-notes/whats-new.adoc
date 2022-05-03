@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new.html 
+keywords: 'what"s new, bugs, bug fixes, new features, enhancements' 
+summary: NetApp會定期更新Astra Control Center、為您提供新功能、增強功能及錯誤修復。 
+---
+= Astra Control Center版本的新功能
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+我們很高興在此發表最新版的Astra Control Center 22.04.0。
+
+
+
+== 2022年4月26日（22.04.0）
+
+.新功能與支援
+* link:../concepts/user-roles-namespaces.html["命名空間角色型存取控制（RBAC）"]
+* link:../get-started/install_acc-cvo.html["支援功能（CVO）Cloud Volumes ONTAP"]
+* link:../get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Astra Control Center的一般入侵能力"]
+* link:../use/manage-buckets.html#remove-a-bucket["從Astra Control移除鏟斗"]
+* link:../get-started/requirements.html#tanzu-kubernetes-grid-cluster-requirements["支援VMware Tanzu產品組合"]
+
+
+.已知問題與限制
+* link:../release-notes/known-issues.html["此版本的已知問題"]
+* link:../release-notes/known-issues-ads.html["Astra Data Store預覽與此Astra Control Center版本的已知問題"]
+* link:../release-notes/known-limitations.html["此版本的已知限制"]
+
+
+
+
+== 2021年12月14日（21.12）
+
+.新功能與支援
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/restore-apps.html["應用程式還原"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/execution-hooks.html["執行掛勾"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html#supported-app-installation-methods["支援以命名空間範圍運算子部署的應用程式"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html["支援上游Kubernetes和Rancher"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/setup_overview.html#add-a-storage-backend["Astra Data Store預覽後端管理與監控"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/upgrade-acc.html["Astra Control Center升級"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/acc_operatorhub_install.html["Red Hat作業系統集線器選項"^]
+
+
+.已解決的問題
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/resolved-issues.html["已解決此版本的問題"^]
+
+
+.已知問題與限制
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues.html["此版本的已知問題"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues-ads.html["Astra Data Store預覽與此Astra Control Center版本的已知問題"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-limitations.html["此版本的已知限制"^]
+
+
+
+
+== 2021年8月5日（21.08）
+
+Astra Control Center正式推出。
+
+* https://docs.netapp.com/us-en/astra-control-center-2108/concepts/intro.html["它是什麼"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/concepts/architecture.html["瞭解架構與元件"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/get-started/requirements.html["開始使用所需的一切"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/get-started/install_acc.html["安裝"^] 和 https://docs.netapp.com/us-en/astra-control-center-2108/get-started/setup_overview.html["設定"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-apps.html["管理"^] 和 https://docs.netapp.com/us-en/astra-control-center-2108/use/protect-apps.html["保護"^] 應用程式
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-buckets.html["管理儲存庫"^] 和 https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-backend.html["儲存後端"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-users.html["管理帳戶"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/rest-api/api-intro.html["利用API自動化"^]
+
+
+
+
+== 如需詳細資訊、請參閱
+
+* link:../release-notes/known-issues.html["此版本的已知問題"]
+* link:../release-notes/known-limitations.html["此版本的已知限制"]
+* https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store文件"]
+* link:../acc-earlier-versions.html["舊版Astra Control Center文件"]
+

@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: get-started/install_overview.html 
+keywords: astra installation, install astra control center, openshift, amazon web services, azure, how to install astra control, deploy, download from netapp support 
+summary: 您可以選擇Astra Control Center安裝。 
+---
+= 安裝總覽
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+選擇並完成下列其中一個Astra Control Center安裝程序：
+
+* link:../get-started/install_acc.html["使用標準程序安裝Astra Control Center"]
+* link:../get-started/acc_operatorhub_install.html["（如果您使用Red Hat OpenShift）使用OpenShift作業系統集線器安裝Astra Control Center"]
+* link:../get-started/install_acc-cvo.html["安裝Astra Control Center搭配Cloud Volumes ONTAP 一套功能性儲存後端"]
+

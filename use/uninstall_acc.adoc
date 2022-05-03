@@ -1,0 +1,205 @@
+---
+sidebar: sidebar 
+permalink: use/uninstall_acc.html 
+keywords: astra, astra control center, uninstall, remove 
+summary: 說明如何移除Astra控制中心和Astra控制中心操作員。 
+---
+= 解除安裝Astra Control Center
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+如果您要從試用版升級至完整版產品、可能需要移除Astra Control Center元件。若要移除Astra Control Center和Astra Control Center操作員、請依序執行本程序中所述的命令。
+
+如果您對解除安裝有任何問題、請參閱 <<Troubleshooting uninstall issues>>。
+
+.您需要的是 #8217 ；需要的是什麼
+* 使用Astra Control Center UI取消管理所有項目 link:../use/unmanage.html#stop-managing-compute["叢集"]。
+
+
+.步驟
+. 刪除Astra Control Center。下列範例命令是根據預設安裝而來。如果您進行自訂組態、請修改命令。
++
+[listing]
+----
+kubectl delete -f astra_control_center_min.yaml -n netapp-acc
+----
++
+結果：
+
++
+[listing]
+----
+astracontrolcenter.astra.netapp.io "astra" deleted
+----
+. 使用下列命令刪除「NetApp-acc」命名空間：
++
+[listing]
+----
+kubectl delete ns netapp-acc
+----
++
+結果：
+
++
+[listing]
+----
+namespace "netapp-acc" deleted
+----
+. 使用下列命令刪除Astra Control Center作業系統元件：
++
+[listing]
+----
+kubectl delete -f astra_control_center_operator_deploy.yaml
+----
++
+結果：
+
++
+[listing]
+----
+namespace "netapp-acc-operator" deleted
+customresourcedefinition.apiextensions.k8s.io "astracontrolcenters.astra.netapp.io" deleted
+role.rbac.authorization.k8s.io "acc-operator-leader-election-role" deleted
+clusterrole.rbac.authorization.k8s.io "acc-operator-manager-role" deleted
+clusterrole.rbac.authorization.k8s.io "acc-operator-metrics-reader" deleted
+clusterrole.rbac.authorization.k8s.io "acc-operator-proxy-role" deleted
+rolebinding.rbac.authorization.k8s.io "acc-operator-leader-election-rolebinding" deleted
+clusterrolebinding.rbac.authorization.k8s.io "acc-operator-manager-rolebinding" deleted
+clusterrolebinding.rbac.authorization.k8s.io "acc-operator-proxy-rolebinding" deleted
+configmap "acc-operator-manager-config" deleted
+service "acc-operator-controller-manager-metrics-service" deleted
+deployment.apps "acc-operator-controller-manager" deleted
+----
+
+
+
+
+== 疑難排解解除安裝問題
+
+請使用下列因應措施來解決您在解除安裝Astra Control Center時遇到的任何問題。
+
+
+
+=== 解除安裝Astra Control Center無法清除受管理叢集上的監控操作員Pod
+
+如果在卸載Astra Control Center之前未取消管理叢集、您可以使用下列命令手動刪除NetApp監控命名空間和命名空間中的Pod：
+
+.步驟
+. 刪除「acc監控」代理程式：
++
+[listing]
+----
+kubectl delete agents acc-monitoring -n netapp-monitoring
+----
++
+結果：
+
++
+[listing]
+----
+agent.monitoring.netapp.com "acc-monitoring" deleted
+----
+. 刪除命名空間：
++
+[listing]
+----
+kubectl delete ns netapp-monitoring
+----
++
+結果：
+
++
+[listing]
+----
+namespace "netapp-monitoring" deleted
+----
+. 確認移除的資源：
++
+[listing]
+----
+kubectl get pods -n netapp-monitoring
+----
++
+結果：
+
++
+[listing]
+----
+No resources found in netapp-monitoring namespace.
+----
+. 確認監控代理程式已移除：
++
+[listing]
+----
+kubectl get crd|grep agent
+----
++
+結果範例：
+
++
+[listing]
+----
+agents.monitoring.netapp.com                     2021-07-21T06:08:13Z
+----
+. 刪除自訂資源定義（CRD）資訊：
++
+[listing]
+----
+kubectl delete crds agents.monitoring.netapp.com
+----
++
+結果：
+
++
+[listing]
+----
+customresourcedefinition.apiextensions.k8s.io "agents.monitoring.netapp.com" deleted
+----
+
+
+
+
+=== 解除安裝Astra Control Center無法清除Traefik CRD
+
+您可以手動刪除Traefik客戶需求日。客戶需求日是全域資源、刪除這些資源可能會影響叢集上的其他應用程式。
+
+.步驟
+. 列出叢集上安裝的Traefik客戶需求日：
++
+[listing]
+----
+kubectl get crds |grep -E 'traefik'
+----
++
+回應
+
++
+[listing]
+----
+ingressroutes.traefik.containo.us             2021-06-23T23:29:11Z
+ingressroutetcps.traefik.containo.us          2021-06-23T23:29:11Z
+ingressrouteudps.traefik.containo.us          2021-06-23T23:29:12Z
+middlewares.traefik.containo.us               2021-06-23T23:29:12Z
+middlewaretcps.traefik.containo.us            2021-06-23T23:29:12Z
+serverstransports.traefik.containo.us         2021-06-23T23:29:13Z
+tlsoptions.traefik.containo.us                2021-06-23T23:29:13Z
+tlsstores.traefik.containo.us                 2021-06-23T23:29:14Z
+traefikservices.traefik.containo.us           2021-06-23T23:29:15Z
+----
+. 刪除客戶需求日：
++
+[listing]
+----
+kubectl delete crd ingressroutes.traefik.containo.us ingressroutetcps.traefik.containo.us ingressrouteudps.traefik.containo.us middlewares.traefik.containo.us serverstransports.traefik.containo.us tlsoptions.traefik.containo.us tlsstores.traefik.containo.us traefikservices.traefik.containo.us middlewaretcps.traefik.containo.us
+----
+
+
+
+
+== 如需詳細資訊、請參閱
+
+* link:../release-notes/known-issues.html["解除安裝的已知問題"]
+

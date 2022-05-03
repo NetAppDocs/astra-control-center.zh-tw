@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: get-started/quick-start.html 
+keywords: how to get started with astra, astra quick start, astra installation, how to install astra control, deploy, deployment, kubernetes 
+summary: 只要幾個步驟、就能開始使用Astra Control。 
+---
+= Astra Control Center快速入門
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+本頁提供Astra Control Center入門所需步驟的高階概觀。每個步驟中的連結都會帶您前往提供更多詳細資料的頁面。
+
+歡迎試用！如果您想要試用Astra Control Center、可以使用90天試用版授權。請參閱 link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["授權資訊"] 以取得詳細資料。
+
+.span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt="1"></span>檢閱Kubernetes叢集需求
+* Astra可搭配Kubernetes叢集、搭配Trident設定ONTAP 的功能、以提供後端的功能、或是Astra Data Store預覽儲存後端。
+* 叢集必須以健全狀態執行、且至少有三個線上工作者節點。
+* 叢集必須執行Kubernetes。
+
+
+[role="quick-margin-para"]
+link:../get-started/requirements.html["深入瞭解Astra Control Center需求"]。
+
+.span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] Alt="2"></span>下載並安裝Astra控制中心
+* 從下載Astra Control Center https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp支援網站Astra Control Center下載頁面"^]。
+* 在您的本機環境中安裝Astra Control Center。
++
+或者、使用Red Hat作業系統集線器安裝Astra Control Center。
+
+
+
+[role="quick-margin-para"]
+link:../get-started/install_overview.html["深入瞭解如何安裝Astra Control Center"]。
+
+.span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"[] alt="there"></span>完成一些初始設定工作
+* 新增授權。
+* 新增Kubernetes叢集、Astra Control Center會探索詳細資料。
+* 新增ONTAP 一個功能不一的 https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store預覽"] 儲存後端：
+* 或者、您也可以新增物件存放區、以儲存應用程式備份。
+
+
+[role="quick-margin-para"]
+link:../get-started/setup_overview.html["深入瞭解初始設定程序"]。
+
+[role="quick-margin-list"]
+完成Astra Control Center的設定之後、接下來您可以：
+
+* 管理應用程式。 link:../use/manage-apps.html["深入瞭解如何管理應用程式"]。
+* 您也可以選擇連線至NetApp Cloud Insights 解決方案、在Astra Control Center UI內顯示系統健全狀況、容量和處理量的指標。 link:../use/monitor-protect.html["深入瞭解連線Cloud Insights 到NetApp"]。
+
+
+[role="quick-margin-para"]
+link:../get-started/install_overview.html["安裝Astra Control Center"]。
+
+
+
+== 如需詳細資訊、請參閱
+
+* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+

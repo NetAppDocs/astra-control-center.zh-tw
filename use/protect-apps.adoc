@@ -1,0 +1,143 @@
+---
+sidebar: sidebar 
+permalink: use/protect-apps.html 
+keywords: backup, back up, backup apps, back up apps, snapshots, snapshot an app, take a snapshot, take a backup, view backups, view snapshots, set policy, set schedule, schedule backups, schedule snapshots 
+summary: 使用自動保護原則或臨機操作、拍攝快照和備份資料、保護您的應用程式。 
+---
+= 利用快照與備份來保護應用程式
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+使用自動保護原則或臨機操作、拍攝快照和備份資料、保護您的應用程式。您可以使用Astra UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 保護應用程式。
+
+
+NOTE: 如果您使用Helm來部署應用程式、Astra Control Center需要Helm版本3。完全支援使用Helm 3部署的應用程式管理與複製（或從Helm 2升級至Helm 3）。不支援以Helm 2部署的應用程式。
+
+[NOTE]
+====
+當您在OpenShift叢集上建立裝載應用程式的專案時、專案（或Kubernetes命名空間）會被指派安全性轉換唯一碼。若要啟用Astra Control Center來保護應用程式、並將應用程式移至OpenShift中的其他叢集或專案、您必須新增原則、讓應用程式以任何唯一識別碼的形式執行。例如、下列OpenShift CLI命令會將適當的原則授予WordPress應用程式。
+
+「occ new－project worm新聞」（occ new－project wormPress）「ocadm policy add－scc to－group anyuid system:serviceaccounts：wormPress」（ocadm policy add－scc對使用者權限-z預設值-n wormPress）
+
+====
+
+
+== 設定保護原則
+
+保護原則可在已定義的排程中建立快照、備份或兩者、以保護應用程式。您可以選擇每小時、每天、每週和每月建立快照和備份、也可以指定要保留的複本數量。例如、保護原則可能會建立每週備份和每日快照、並將備份和快照保留一個月。建立快照和備份的頻率、以及保留快照的時間長短、取決於組織的需求。
+
+.步驟
+. 選取*應用程式*、然後選取應用程式名稱。
+. 選擇*資料保護*。
+. 選取*設定保護原則*。
+. 選擇每小時、每天、每週和每月保留的快照和備份數量、以定義保護排程。
++
+您可以同時定義每小時、每日、每週及每月排程。在您設定保留層級之前、排程不會變成作用中。
+
++
+下列範例設定四種保護排程：每小時、每日、每週及每月提供快照與備份。
+
++
+image:screenshot-config-protection-policy.png["範例組態原則的螢幕擷取畫面、您可以選擇每小時、每天、每週或每月拍攝快照和備份。"]
+
+. 選擇* Review *。
+. 選取*設定保護原則。*
+
+
+Astra Control Center使用您定義的排程和保留原則、建立並保留快照和備份、以實作資料保護原則。
+
+
+
+== 建立快照
+
+您可以隨時建立隨需快照。
+
+.步驟
+. 選擇*應用程式*。
+. 在所需應用程式*「Actions」（動作）欄的「Options」（選項）功能表中、選取*「Snapshot」（快照）*。
+. 自訂快照名稱、然後選取* Review *。
+. 檢閱快照摘要、然後選取* Snapshot *。
+
+
+快照程序隨即開始。當「*資料保護*>*快照*」頁面*「動作*」欄中的狀態為*可用*時、快照就會成功。
+
+
+
+== 建立備份
+
+您也可以隨時備份應用程式。
+
+
+NOTE: Astra Control Center中的S3鏟斗未報告可用容量。在備份或複製由Astra Control Center管理的應用程式之前、請先查看ONTAP 資訊庫（英文）或StorageGRID 資訊庫（英文）管理系統中的庫位資訊。
+
+.步驟
+. 選擇*應用程式*。
+. 在所需應用程式*「Actions」（動作）欄的「Options」（選項）功能表中、選取「* Backup *」。
+. 自訂備份名稱。
+. 選擇是否要從現有的快照備份應用程式。如果選取此選項、您可以從現有快照清單中進行選擇。
+. 從儲存貯體區清單中選取、以選擇備份目的地。
+. 選擇* Review *。
+. 檢閱備份摘要、然後選取*備份*。
+
+
+Astra Control Center會建立應用程式的備份。
+
+
+NOTE: 如果您的網路中斷或異常緩慢、備份作業可能會逾時。這會導致備份失敗。
+
+
+NOTE: 無法停止執行中的備份。如果您需要刪除備份、請等到備份完成後再使用中的指示 <<Delete backups>>。若要刪除失敗的備份、 https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]。
+
+
+NOTE: 資料保護作業（複製、備份、還原）及後續持續調整磁碟區大小之後、UI中會顯示新的磁碟區大小、延遲最多20分鐘。資料保護作業只需幾分鐘就能成功完成、您可以使用儲存後端的管理軟體來確認磁碟區大小的變更。
+
+
+
+== 檢視快照與備份
+
+您可以從「資料保護」索引標籤檢視應用程式的快照與備份。
+
+.步驟
+. 選取*應用程式*、然後選取應用程式名稱。
+. 選擇*資料保護*。
++
+快照預設會顯示。
+
+. 選取*備份*以查看備份清單。
+
+
+
+
+== 刪除快照
+
+刪除不再需要的排程或隨需快照。
+
+.步驟
+. 選取*應用程式*、然後選取應用程式名稱。
+. 選擇*資料保護*。
+. 在所需快照*「Actions」（動作）欄的「Options」（選項）功能表中、選取*「Delete snapshot」（刪除快照）*。
+. 輸入「DELETE」一詞以確認刪除、然後選取*「Yes、Delete snapshot *（是、刪除快照*）」。
+
+
+Astra Control Center會刪除快照。
+
+
+
+== 刪除備份
+
+刪除不再需要的排程或隨需備份。
+
+
+NOTE: 無法停止執行中的備份。如果您需要刪除備份、請等到備份完成後再使用這些指示。若要刪除失敗的備份、 https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]。
+
+. 選取*應用程式*、然後選取應用程式名稱。
+. 選擇*資料保護*。
+. 選擇*備份*。
+. 在所需備份*「Actions」（動作）*欄的「Options」（選項）功能表中、選取*「Delete backup*」（刪除備份*）。
+. 輸入「DELETE」一詞以確認刪除、然後選取*「Yes、Delete backup*（是、刪除備份*）」。
+
+
+Astra Control Center會刪除備份。

@@ -1,0 +1,18 @@
+---
+section: concepts
+title: 概念
+entries:
+- title: Astra Control簡介
+  url: "/concepts/intro.html"
+- title: 架構與元件
+  url: "/concepts/architecture.html"
+- title: 資料保護
+  url: "/concepts/data-protection.html"
+- title: 授權
+  url: "/concepts/licensing.html"
+- title: 已驗證與標準應用程式的比較
+  url: "/concepts/validated-vs-standard.html"
+- title: 儲存類別和PV大小
+  url: "/concepts/choose-class-and-size.html"
+- title: 使用者角色和命名空間
+  url: "/concepts/user-roles-namespaces.html"

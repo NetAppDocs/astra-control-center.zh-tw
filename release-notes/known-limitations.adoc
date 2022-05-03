@@ -1,0 +1,172 @@
+---
+sidebar: sidebar 
+permalink: release-notes/known-limitations.html 
+keywords: astra, control center, limitations, known limitations, interoperability 
+summary: 已知限制指出本產品版本不支援的平台、裝置或功能、或是無法與產品正確互通的平台、裝置或功能。請仔細檢閱這些限制。 
+---
+= 已知限制
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+已知限制指出本產品版本不支援的平台、裝置或功能、或是無法與產品正確互通的平台、裝置或功能。請仔細檢閱這些限制。
+
+.叢集管理限制
+* <<The same cluster cannot be managed by two Astra Control Center instances>>
+* <<Astra Control Center cannot manage two identically named clusters>>
+
+
+.角色型存取控制（RBAC）限制
+* <<A user with namespace RBAC constraints can add and unmanage a cluster>>
+* <<A member with namespace constraints cannot access the cloned or restored apps until admin adds the namespace to the constraint>>
+
+
+.應用程式管理限制
+* <<App backups that are in progress cannot be stopped>>
+* <<Clones of apps installed using pass-by-reference operators can fail>>
+* <<In-place restore operations of apps that use a certificate manager are not supported>>
+* <<OLM-enabled and cluster-scoped operator deployed apps not supported>>
+* <<Apps deployed with Helm 2 are not supported>>
+
+
+.一般限制
+* <<S3 buckets in Astra Control Center do not report available capacity>>
+* <<Astra Control Center does not validate the details you enter for your proxy server>>
+* <<Existing connections to a Postgres pod causes failures>>
+* <<Backups and snapshots might not be retained during removal of an Astra Control Center instance>>
+
+
+
+
+== 同一個叢集無法由兩個Astra Control Center執行個體管理
+
+如果您想要管理另一個Astra Control Center執行個體上的叢集、您應該先進行 link:../use/unmanage.html#stop-managing-compute["取消管理叢集"] 在另一個執行個體上進行管理之前、請先從管理該執行個體的執行個體進行管理。從管理中移除叢集之後、請執行下列命令、確認叢集未受管理：
+
+[listing]
+----
+oc get pods n -netapp-monitoring
+----
+該命名空間中不應有執行的Pod、或命名空間不應存在。如果其中任一項為真、則叢集不受管理。
+
+
+
+== Astra Control Center無法管理兩個名稱相同的叢集
+
+如果您嘗試新增的叢集名稱與已存在的叢集名稱相同、則作業將會失敗。如果您尚未變更Kubernetes組態檔中的叢集名稱預設值、則此問題最常發生在標準Kubernetes環境中。
+
+因應措施如下：
+
+. 編輯您的Kubeadm-config組態地圖：
++
+[listing]
+----
+kubectl edit configmaps -n kube-system kubeadm-config
+----
+. 將「clustername」（叢集名稱）欄位值從「Kubernetes」（Kubernetes預設名稱）變更為獨特的自訂名稱。
+. 編輯Kbeconfig（`.kube/config'）。
+. 將叢集名稱從「Kubernetes」更新為唯一的自訂名稱（以下範例使用「xyz-cluster」）。如以下範例所示、在「叢集」和「內容」區段中進行更新：
++
+[listing, subs="+quotes"]
+----
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: ExAmPLERb2tCcjZ5K3E2Njk4eQotLExAMpLEORCBDRVJUSUZJQ0FURS0txxxxXX==
+    server: https://x.x.x.x:6443
+  *name: xyz-cluster*
+contexts:
+- context:
+    *cluster: xyz-cluster*
+    namespace: default
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
+----
+
+
+
+
+== 具有命名空間RBAC限制的使用者可以新增及取消管理叢集
+
+不應允許具有命名空間RBAC限制的使用者新增或取消管理叢集。由於目前的限制、Astra無法防止此類使用者取消管理叢集。
+
+
+
+== 具有命名空間限制的成員必須先將命名空間新增至限制、才能存取複製或還原的應用程式
+
+任何具有命名空間名稱/ ID或命名空間標籤之RBAC限制的「成員」使用者、都可以將應用程式複製或還原至同一叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者可以編輯「成員」使用者帳戶、並更新受影響使用者的角色限制、以授予新命名空間的存取權。
+
+
+
+== 無法停止進行中的應用程式備份
+
+無法停止執行中的備份。如果您需要刪除備份、請等到備份完成後再使用中的指示 link:../use/protect-apps.html#delete-backups["刪除備份"]。若要刪除失敗的備份、請使用 link:https:/docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^]。
+
+
+
+== 使用傳遞參考運算子安裝的應用程式複製可能會失敗
+
+Astra Control支援以命名空間範圍運算子安裝的應用程式。這些運算子通常採用「傳遞值」而非「傳遞參照」架構來設計。以下是一些遵循這些模式的營運者應用程式：
+
+* https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
++
+
+NOTE: 對於K8ssandra、支援就地還原作業。若要還原新命名空間或叢集的作業、必須先關閉應用程式的原始執行個體。這是為了確保傳遞的對等群組資訊不會導致跨執行個體通訊。不支援複製應用程式。
+
+* https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
+* https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB叢集"^]
+
+
+請注意、Astra Control可能無法複製以「傳遞參考」架構設計的操作員（例如、CockroachDB操作員）。在這些類型的複製作業中、複製的操作員會嘗試從來源操作員參考Kubernetes機密、儘管在複製程序中有自己的新秘密。由於Astra Control不知道來源營運者的Kubernetes機密資料、因此複製作業可能會失敗。
+
+
+
+== 不支援使用憑證管理程式之應用程式的就地還原作業
+
+本版Astra Control Center不支援與憑證管理員就地還原應用程式。支援將作業還原至不同的命名空間和複製作業。
+
+
+
+== 不支援啟用OLM且叢集範圍內的營運者部署應用程式
+
+Astra Control Center不支援使用叢集範圍的運算子進行應用程式管理活動。
+
+
+
+== 不支援以Helm 2部署的應用程式
+
+如果您使用Helm來部署應用程式、Astra Control Center需要Helm版本3。完全支援使用Helm 3部署的應用程式管理及複製（或從Helm 2升級至Helm 3）。如需詳細資訊、請參閱 link:../get-started/requirements.html["Astra Control Center需求"]。
+
+
+
+== Astra Control Center中的S3鏟斗未報告可用容量
+
+在備份或複製由Astra Control Center管理的應用程式之前、請先查看ONTAP 資訊庫（英文）或StorageGRID 資訊庫（英文）管理系統中的庫位資訊。
+
+
+
+== Astra Control Center不會驗證您為Proxy伺服器輸入的詳細資料
+
+請務必做到 link:../use/monitor-protect.html#add-a-proxy-server["輸入正確的值"] 建立連線時。
+
+
+
+== 現有連線至Postgres Pod會導致故障
+
+當您在Postgres Pod上執行作業時、不應直接在Pod內連線以使用psql命令。Astra Control需要psql存取來凍結及解出資料庫。如果有預先存在的連線、則快照、備份或複製都會失敗。
+
+
+
+== 在移除Astra Control Center執行個體期間、可能無法保留備份與快照
+
+如果您擁有評估授權、請務必儲存您的帳戶ID、以免在Astra Control Center故障時發生資料遺失（如果您未傳送ASUP）。
+
+
+
+== 如需詳細資訊、請參閱
+
+* link:../release-notes/known-issues.html["已知問題"]
+* link:../release-notes/known-issues-ads.html["Astra Data Store預覽與此Astra Control Center版本的已知問題"]
+

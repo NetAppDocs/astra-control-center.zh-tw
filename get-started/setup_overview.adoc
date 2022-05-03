@@ -1,0 +1,257 @@
+---
+sidebar: sidebar 
+permalink: get-started/setup_overview.html 
+keywords: set up astra control, setup astra control, setting up Astra Control Center, astra control license, add cluster, import storage, add bucket 
+summary: 安裝Astra Control Center、登入UI並變更密碼之後、您將需要設定授權、新增叢集、管理儲存設備及新增儲存區。 
+---
+= 設定Astra控制中心
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Astra Control Center支援ONTAP 並監控將支援及Astra Data Store做為儲存後端。安裝Astra Control Center、登入UI並變更密碼之後、您將需要設定授權、新增叢集、管理儲存設備及新增儲存區。
+
+.工作
+* <<Add a license for Astra Control Center>>
+* <<Add cluster>>
+* <<Add a storage backend>>
+* <<Add a bucket>>
+
+
+
+
+== 新增Astra Control Center授權
+
+您可以使用UI或新增授權 https://docs.netapp.com/us-en/astra-automation/index.html["API"^] 以獲得完整的Astra控制中心功能。若無授權、您使用Astra Control Center的使用僅限於管理使用者及新增叢集。
+
+如需如何計算授權的詳細資訊、請參閱 link:../concepts/licensing.html["授權"]。
+
+
+NOTE: 若要更新現有的評估或完整授權、請參閱 link:../use/update-licenses.html["更新現有授權"]。
+
+Astra Control Center授權會使用Kubernetes CPU單元來測量CPU資源。授權必須考量指派給所有受管理Kubernetes叢集之工作節點的CPU資源。新增授權之前、您必須先從取得授權檔案（NLF） link:https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]。
+
+您也可以試用Astra Control Center搭配評估授權、從下載授權之日起90天內使用Astra Control Center。您可以註冊以免費試用 link:https://cloud.netapp.com/astra-register["請按這裡"^]。
+
+
+NOTE: 如果您的安裝量成長到超過授權的CPU單元數量、Astra Control Center會防止您管理新的應用程式。超過容量時會顯示警示。
+
+當您從下載Astra Control Center時 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]下載NetApp授權檔案（NLF）。請確定您有權存取此授權檔案。
+
+.步驟
+. 登入Astra Control Center UI。
+. 選擇*帳戶*>*授權*。
+. 選擇*新增授權*。
+. 瀏覽至您下載的授權檔案（NLF）。
+. 選擇*新增授權*。
+
+
+「*帳戶*>*授權*」頁面會顯示授權資訊、到期日、授權序號、帳戶ID及使用的CPU單位。
+
+
+NOTE: 如果您擁有評估授權、請務必儲存您的帳戶ID、以免在Astra Control Center故障時發生資料遺失（如果您未傳送ASUP）。
+
+
+
+== 新增叢集
+
+若要開始管理應用程式、請新增Kubernetes叢集、並將其當作運算資源來管理。您必須為Astra Control Center新增叢集、才能探索Kubernetes應用程式。若要進行Astra Data Store預覽、您需要新增Kubernetes應用程式叢集、其中包含使用Astra Data Store預覽所配置之Volume的應用程式。
+
+
+TIP: 我們建議Astra Control Center先管理部署於上的叢集、再將其他叢集新增至Astra Control Center進行管理。需要管理初始叢集、才能傳送Kubmetrics資料和叢集相關資料、以供進行度量和疑難排解。您可以使用*新增叢集*功能、以Astra控制中心來管理叢集。
+
+[NOTE]
+====
+當Astra Control管理叢集時、它會追蹤叢集的預設StorageClass。如果您使用「kubecll」命令變更StorageClass、Astra Control會還原變更。若要變更由Astra Control管理之叢集中的預設StorageClass、請使用下列其中一種方法：
+
+* 使用Astra Control API「PUT /managedClusters'端點」、並使用「DefaultStorageClass」參數指派不同的預設StorageClass
+* 從Astra Control管理中移除叢集、並以選取的不同預設StorageClass重新新增叢集
+
+
+====
+.您需要的是 #8217 ；需要的是什麼
+
+IMPORTANT: 新增叢集之前、請先檢閱並執行必要的 link:add-cluster-reqs.html["必要工作"^]。
+
+.步驟
+. 在Astra Control Center UI的* Dashboard *中、選取「叢集」區段中的*「Add*」。
+. 在打開的* Add Cluster.yaml視窗中、上傳「kubeconfig．yaml」檔案、或貼上「kubeconfig．yaml」檔案的內容。
++
+
+NOTE: 「kubeconfig．yaml」檔案應包含*一個叢集*的叢集認證資料。
+
++
+image:cluster-creds.png["顯示要上傳叢集的kubeconfig。yaml的畫面。"]
+
++
+
+IMPORTANT: 如果您建立自己的「kubeconfig」檔案、您應該只定義其中*一個*內容元素。請參閱 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes文件"^] 以取得建立「Kbeconfig」檔案的相關資訊。
+
+. 提供認證名稱。根據預設、認證名稱會自動填入為叢集名稱。
+. 選擇*設定儲存設備*。
+. 選取要用於此Kubernetes叢集的儲存類別、然後選取* Review *。
++
+
+NOTE: 您應該選擇以ONTAP 不受資料儲存或Astra Data Store支援的Trident儲存類別。
+
++
+image:cluster-storage.png["顯示要用於叢集的儲存類別。"]
+
+. 檢閱資訊、如果一切正常、請選取*新增叢集*。
+
+
+叢集會進入*探索*狀態、然後變更為*執行中*。您已成功新增Kubernetes叢集、現在正在Astra Control Center中進行管理。
+
+
+IMPORTANT: 在Astra Control Center中新增要管理的叢集之後、可能需要幾分鐘的時間來部署監控操作員。在此之前、通知圖示會變成紅色、並記錄*監控代理程式狀態檢查失敗*事件。您可以忽略這一點、因為當Astra Control Center取得正確狀態時、問題就能解決。如果幾分鐘內仍無法解決問題、請前往叢集、然後執行「ocGet pod -n NetApp-監 控」作為起點。您需要查看監控操作員記錄、以偵錯問題。
+
+
+
+== 新增儲存後端
+
+您可以新增儲存後端、以便Astra Control管理其資源。將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。
+
+您可以從儀表板或後端功能表瀏覽提示、新增探索到的儲存後端。
+
+.您需要的是 #8217 ；需要的是什麼
+* 您有 link:../get-started/setup_overview.html#add-cluster["新增叢集"] 它由Astra Control管理。
++
+
+NOTE: 受管理叢集附加了受支援的後端、Astra Control可以探索該後端。
+
+* Astra Data Store預覽安裝：您已新增Kubernetes應用程式叢集。
++
+
+NOTE: 新增適用於Astra Data Store的Kubernetes應用程式叢集之後、叢集會在探索到的後端清單中顯示為「Unmanaged」。接下來、您必須新增包含Astra Data Store的運算叢集、並作為Kubernetes應用程式叢集的基礎。您可以從UI的*後端*執行此動作。選取叢集的「動作」功能表、選取「管理」、然後選取 link:../get-started/setup_overview.html#add-cluster["新增叢集"]。在「Unmanaged」叢集狀態變更為Kubernetes叢集名稱之後、您可以繼續新增後端。
+
+
+
+.步驟
+. 執行下列其中一項：
++
+** 從*儀表板*：
++
+... 從Storage backend（儲存後端）區段中、選取* Add*（新增*）。
+... 從「資源摘要」>「儲存後端」區段中、選取*「新增*」。
+
+
+** 從*後端*：
++
+... 在左側導覽區域中、選取*後端*。
+... 選取*「Add*」。
+
+
+
+
+. 視後端類型而定、執行下列其中一項：
++
+** * Astra資料儲存區*：
++
+... 選取*使用現有*索引標籤。
+... 選取* Astra Data Store*索引標籤。
+... 選取受管理的運算叢集、然後選取* Next*。
+... 確認後端詳細資料、然後選取*管理儲存後端*。
+
+
+** *《*》*：ONTAP
++
+... 選取*使用現有*索引標籤。
+... 輸入ONTAP 該系統的管理員認證資料、然後選取* Review *。
+... 確認後端詳細資料、然後選取*管理*。
+
+
+
+
++
+後端會以「可用」狀態顯示在清單中、並顯示摘要資訊。
+
+
+
+
+NOTE: 您可能需要重新整理頁面、以便顯示後端。
+
+
+
+== 新增儲存庫
+
+如果您想要備份應用程式和持續儲存設備、或是想要跨叢集複製應用程式、則必須新增物件存放區資源庫供應商。Astra Control會將這些備份或複製儲存在您定義的物件存放區中。
+
+當您新增貯體時、Astra Control會將一個貯體標示為預設的貯體指標。您建立的第一個儲存區會成為預設儲存區。
+
+如果您要將應用程式組態和持續儲存設備複製到同一個叢集、則不需要儲存庫。
+
+請使用下列任一種貯體類型：
+
+* NetApp ONTAP 產品S3
+* NetApp StorageGRID 產品S3
+* 一般S3
+
+
+
+NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商、但Astra Control Center可能不支援所有聲稱Amazon S3支援的物件儲存區廠商。
+
+如需如何使用Astra Control API新增儲存區的指示、請參閱 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation和API資訊"^]。
+
+.步驟
+. 在左側導覽區域中、選取*鏟斗*。
++
+.. 選取*「Add*」。
+.. 選取貯體類型。
++
+
+NOTE: 新增儲存庫時、請選擇正確的儲存庫供應商、並提供該供應商的適當認證資料。例如、UI接受NetApp ONTAP S3作為類型並接受StorageGRID 驗證、但這將導致所有未來使用此儲存庫的應用程式備份與還原失敗。
+
+.. 建立新的貯體名稱、或輸入現有的貯體名稱和選用說明。
++
+
+TIP: 庫位名稱和說明會顯示為備份位置、您可以在建立備份時稍後再選擇。此名稱也會在保護原則組態期間顯示。
+
+.. 輸入S3端點的名稱或IP位址。
+.. 如果您希望此儲存區成為所有備份的預設儲存區、請勾選「將此儲存區設為此私有雲端的預設儲存區」選項。
++
+
+NOTE: 此選項不會出現在您所建立的第一個儲存區。
+
+.. 請繼續新增 <<Add S3 access credentials,認證資訊>>。
+
+
+
+
+
+
+=== 新增S3存取認證
+
+隨時新增S3存取認證。
+
+.步驟
+. 從「庫位」對話方塊中、選取「*新增*」或「*使用現有*」索引標籤。
++
+.. 在Astra Control中輸入認證與其他認證不同的名稱。
+.. 從剪貼簿貼上內容、輸入存取ID和秘密金鑰。
+
+
+
+
+
+
+== 接下來呢？
+
+現在您已經登入Astra Control Center並新增叢集、就可以開始使用Astra Control Center的應用程式資料管理功能。
+
+* link:../use/manage-users.html["管理使用者"]
+* link:../use/manage-apps.html["開始管理應用程式"]
+* link:../use/protect-apps.html["保護應用程式"]
+* link:../use/clone-apps.html["複製應用程式"]
+* link:../use/manage-notifications.html["管理通知"]
+* link:../use/monitor-protect.html#connect-to-cloud-insights["連線Cloud Insights 至"]
+* link:../get-started/add-custom-tls-certificate.html["新增自訂TLS憑證"]
+
+
+[discrete]
+== 如需詳細資訊、請參閱
+
+* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+* link:../release-notes/known-issues.html["已知問題"]
+

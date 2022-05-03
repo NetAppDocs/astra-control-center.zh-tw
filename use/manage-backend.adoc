@@ -1,0 +1,188 @@
+---
+sidebar: sidebar 
+permalink: use/manage-backend.html 
+keywords: how to use astra control, what is astra storage, how to set up astra storage backend, ontap storage in astra, backend storage in astra 
+summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Control會探索並使用已部署的資源、包括Trident、ONTAP 支援、及相關的儲存類別。 
+---
+= 管理儲存後端
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。如果Astra Control Center連接Cloud Insights 到VMware、您可以監控儲存容量和健全狀況詳細資料、包括效能。
+
+如需如何使用Astra Control API管理儲存後端的指示、請參閱 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation和API資訊"^]。
+
+您可以完成下列與管理儲存後端相關的工作：
+
+* link:../get-started/setup_overview.html#add-a-storage-backend["新增儲存後端"]
+* <<View storage backend details>>
+* <<Unmanage a storage backend>>
+* <<Update a storage backend license>>
+* <<Add nodes to a storage backend cluster>>
+* <<Remove a storage backend>>
+
+
+
+
+== 檢視儲存後端詳細資料
+
+您可以從儀表板或後端選項檢視儲存後端資訊。
+
+
+
+=== 從儀表板檢視儲存後端詳細資料
+
+.步驟
+. 從左側導覽中選取*儀表板*。
+. 請檢閱顯示狀態的儲存後端區段：
++
+** *不健全*：儲存設備未處於最佳狀態。這可能是因為延遲問題、或是應用程式因為容器問題而降級。
+** *一切正常*：儲存設備已經過管理、並處於最佳狀態。
+** *探索*：儲存設備已被探索、但未由Astra Control管理。
+
+
+
+
+
+
+=== 從後端選項檢視儲存後端詳細資料
+
+檢視後端健全狀況、容量和效能（IOPS處理量和/或延遲）的相關資訊。
+
+透過Cloud Insights 連線至功能區、您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端上。
+
+.步驟
+. 在左側導覽區域中、選取*後端*。
+. 選取儲存後端。
++
+
+TIP: 如果您連線至NetApp Cloud Insights 解決方案、Cloud Insights 則會在「後端」頁面上顯示來自於《》的資料摘錄。
+
++
+image:../use/acc_backends_ci_connection2.png["後端頁面的快照"]
+
+. 若要直接移至Cloud Insights 「不顯示」、請選取Cloud Insights 「指標」影像旁的*「不顯示」圖示。
+
+
+
+
+== 取消管理儲存後端
+
+您可以取消管理後端。
+
+.步驟
+. 從左側導覽中選取*後端*。
+. 選取儲存後端。
+. 從「*動作*」欄的「選項」功能表中、選取「*取消管理*」。
+. 輸入「unManage（取消管理）」以確認此動作。
+. 選擇*是、取消管理儲存後端*。
+
+
+
+
+== 移除儲存後端
+
+您可以移除不再使用的儲存後端。您可能會想要這麼做、讓您的組態保持簡單且最新狀態。
+
+
+TIP: 如果您要移除Astra Data Store後端、則vCenter不得建立該後端。
+
+.您需要的是 #8217 ；需要的是什麼
+* 確保儲存後端未受管理。
+* 確保儲存後端沒有任何與Astra Data Store叢集相關的磁碟區。
+
+
+.步驟
+. 從左側導覽中選取*後端*。
+. 如果管理後端、請取消管理。
++
+.. 選擇*託管*。
+.. 選取儲存後端。
+.. 從*「Actions」（動作）*選項中、選取*「UnManage」（取消管理）*。
+.. 輸入「unManage（取消管理）」以確認此動作。
+.. 選擇*是、取消管理儲存後端*。
+
+
+. 選擇*已探索*。
++
+.. 選取儲存後端。
+.. 從* Actions *（操作*）選項中選擇*移除*。
+.. 輸入「移除」以確認動作。
+.. 選擇*是、移除儲存後端*。
+
+
+
+
+
+
+== 更新儲存後端授權
+
+您可以更新Astra Data Store儲存後端的授權、以支援更大的部署或增強功能。
+
+.您需要的是 #8217 ；需要的是什麼
+* 已部署並管理的Astra Data Store儲存後端
+* Astra Data Store授權檔案（請聯絡您的NetApp銷售代表以購買Astra Data Store授權）
+
+
+.步驟
+. 從左側導覽中選取*後端*。
+. 選取儲存後端的名稱。
+. 在*基本資訊*下、您可以看到安裝的授權類型（如果有）。
++
+如果您將游標暫留在授權資訊上、則會出現一個快顯視窗、內含更多資訊、例如過期和權利資訊。
+
+. 在「*授權*」下、選取授權名稱旁的編輯圖示。
+. 在*更新授權*頁面中、選取*新增授權*。
+. 選取您從NetApp取得的授權檔案。
+. 選取*「Add*」。
+. 選擇*更新*。
+
+
+
+
+== 將節點新增至儲存後端叢集
+
+您可以將節點新增至Astra Data Store叢集、最多可新增至Astra Data Store安裝的授權類型所支援的節點數。
+
+.您需要的是 #8217 ；需要的是什麼
+* 已部署且獲得授權的Astra Data Store儲存後端
+* 您已在Astra控制中心新增Astra Data Store軟體套件
+* 一或多個新節點、以新增至叢集
+
+
+.步驟
+. 從左側導覽中選取*後端*。
+. 選取儲存後端的名稱。
+. 在「基本資訊」下、您可以看到此儲存後端叢集中的節點數目。
+. 在*節點*下、選取節點數旁的編輯圖示。
+. 在「*新增節點*」頁面中、輸入新節點的相關資訊：
++
+.. 為每個節點指派節點標籤。
+.. 執行下列其中一項：
++
+*** 如果您想要Astra Data Store根據授權一律使用最大可用節點數、請啟用「*永遠使用最多允許的節點數*」核取方塊。
+*** 如果您不希望Astra Data Store永遠使用最大可用節點數、請選取所需使用的總節點數。
+
+
+.. 如果您部署Astra Data Store並啟用Protection Domain、請將新節點指派給Protection Domain。
+
+
+. 選擇*下一步*。
+. 輸入每個新節點的IP位址和網路資訊。為單一新節點輸入單一IP位址、或為多個新節點輸入IP位址集區。
++
+如果Astra Data Store可以使用部署期間所設定的IP位址、您就不需要輸入任何IP位址資訊。
+
+. 選擇*下一步*。
+. 檢閱新節點的組態。
+. 選取*新增節點*。
+
+
+
+
+== 如需詳細資訊、請參閱
+
+* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+

@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: use/manage-notifications.html 
+keywords: notifications, delete notifications, mark notifications as read 
+summary: Astra會在行動完成或失敗時通知您。例如、如果成功完成應用程式的備份、您會看到通知。 
+---
+= 檢視及管理通知
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra會在行動完成或失敗時通知您。例如、如果成功完成應用程式的備份、您會看到通知。
+
+您可以從介面右上角管理這些通知：
+
+image:screenshot-unread-notifications.png["顯示Astra介面的快照、可讓您檢視未讀取通知的數量。"]
+
+.步驟
+. 選取右上角的未讀取通知數。
+. 檢閱通知、然後選取*標示為已讀取*或*顯示所有通知*。
++
+如果您選取*顯示所有通知*、則會載入「通知」頁面。
+
+. 在*通知*頁面上、檢視通知、選取您要標示為已讀的通知、選取*行動*、然後選取*標示為已讀*。
+

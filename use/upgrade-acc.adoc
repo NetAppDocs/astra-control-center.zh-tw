@@ -1,0 +1,480 @@
+---
+sidebar: sidebar 
+permalink: use/upgrade-acc.html 
+keywords: astra upgrade, upgrade astra control center, how to upgrade astra control, update 
+summary: 若要升級Astra Control Center、您必須依照所述步驟下載套裝組合並升級。 
+---
+= 升級Astra Control Center
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+若要升級Astra Control Center、請從NetApp支援網站下載安裝套件、並完成以下指示、以升級您環境中的Astra Control Center元件。您可以使用此程序、在連線網際網路或無線環境中升級Astra Control Center。
+
+.您需要的是 #8217 ；需要的是什麼
+* link:../get-started/requirements.html["開始升級之前、請確保環境仍符合Astra Control Center部署的最低需求"]。
+* 確保所有叢集操作員都處於健全狀態且可用。
++
+OpenShift範例：
+
++
+[listing]
+----
+oc get clusteroperators
+----
+* 確保所有API服務都處於健全狀態且可用。
++
+OpenShift範例：
+
++
+[listing]
+----
+oc get apiservices
+----
+* 登出您的Astra Control Center。
+
+
+Astra Control Center升級程序會引導您完成下列高層級步驟：
+
+* <<Download the Astra Control Center bundle>>
+* <<Unpack the bundle and change directory>>
+* <<Add the images to your local registry>>
+* <<Install the updated Astra Control Center operator>>
+* <<Upgrade Astra Control Center>>
+* <<Upgrade third-party services (Optional)>>
+* <<Verify system status>>
+* <<Set up ingress for load balancing>>
+
+
+
+IMPORTANT: 請勿在整個升級過程中執行下列命令、以免刪除所有Astra Control Center Pod：「kubecl DELETE -f Astra _control_center_oper_deploy。yaml」
+
+
+TIP: 當排程、備份和快照未執行時、請在維護期間執行升級。
+
+
+NOTE: 如果您使用的是Red Hat的Podman、而非Docker Engine、則可使用Podman命令來取代Docker命令。
+
+
+
+== 下載Astra Control Center套裝組合
+
+. 請從下載Astra Control Center升級套裝組合（「Astra控制中心-[版本].tar.gz」） https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]。
+. （可選）使用以下命令驗證套件的簽名：
++
+[listing]
+----
+openssl dgst -sha256 -verify astra-control-center[version].pub -signature <astra-control-center[version].sig astra-control-center[version].tar.gz
+----
+
+
+
+
+== 解壓縮套件並變更目錄
+
+. 擷取影像：
++
+[listing]
+----
+tar -vxzf astra-control-center-[version].tar.gz
+----
+. 變更至Astra目錄。
++
+[listing]
+----
+cd astra-control-center-[version]
+----
+
+
+
+
+== 將映像新增至本機登錄
+
+. 將Astra Control Center映像目錄中的檔案新增至本機登錄。
++
+
+NOTE: 請參閱以下自動載入影像的範例指令碼。
+
++
+.. 登入Docker登錄：
++
+[listing]
+----
+docker login [your_registry_path]
+----
+.. 將影像載入Docker。
+.. 標記影像。
+.. [Subforte_image_local_register_push]將映像推送到本機登錄。
++
+[listing]
+----
+export REGISTRY=[your_registry_path]
+for astraImageFile in $(ls images/*.tar)
+  # Load to local cache. And store the name of the loaded image trimming the 'Loaded images: '
+  do astraImage=$(docker load --input ${astraImageFile} | sed 's/Loaded image: //')
+  astraImage=$(echo ${astraImage} | sed 's!localhost/!!')
+  # Tag with local image repo.
+  docker tag ${astraImage} ${REGISTRY}/${astraImage}
+  # Push to the local repo.
+  docker push ${REGISTRY}/${astraImage}
+done
+----
+
+
+
+
+
+
+== 安裝更新的Astra Control Center操作員
+
+. 編輯Astra Control Center營運者部署yaml（「Astra _control_center_operer_deploy」、以參照您的本機登錄和機密。
++
+[listing]
+----
+vim astra_control_center_operator_deploy.yaml
+----
++
+.. 如果您使用需要驗證的登錄、請將預設行「imagePullSecrets：[]」改為：
++
+[listing]
+----
+imagePullSecrets:
+- name: <name_of_secret_with_creds_to_local_registry>
+----
+.. 將「kube-RBAC代理」映像的「[your _register_path]」變更為您將映像推入的登錄路徑 <<substep_image_local_registry_push,上一步>>。
+.. 將「acc oper-manager-manager」映像的「[your _register_path]」變更為您將映像推入的登錄路徑 <<substep_image_local_registry_push,上一步>>。
+.. 將下列值新增至「env」區段：
++
+[listing]
+----
+- name: ACCOP_HELM_UPGRADETIMEOUT
+  value: 300m
+----
++
+[listing, subs="+quotes"]
+----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    control-plane: controller-manager
+  name: acc-operator-controller-manager
+  namespace: netapp-acc-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      control-plane: controller-manager
+  template:
+    metadata:
+      labels:
+        control-plane: controller-manager
+    spec:
+      containers:
+      - args:
+        - --secure-listen-address=0.0.0.0:8443
+        - --upstream=http://127.0.0.1:8080/
+        - --logtostderr=true
+        - --v=10
+        *image: [your_registry_path]/kube-rbac-proxy:v4.8.0*
+        name: kube-rbac-proxy
+        ports:
+        - containerPort: 8443
+          name: https
+      - args:
+        - --health-probe-bind-address=:8081
+        - --metrics-bind-address=127.0.0.1:8080
+        - --leader-elect
+        command:
+        - /manager
+        env:
+        - name: ACCOP_LOG_LEVEL
+          value: "2"
+        *- name: ACCOP_HELM_UPGRADETIMEOUT*
+          *value: 300m*
+        *image: [your_registry_path]/acc-operator:[version x.y.z]*
+        imagePullPolicy: IfNotPresent
+      *imagePullSecrets: []*
+----
+
+
+. 安裝更新的Astra Control Center操作員：
++
+[listing]
+----
+kubectl apply -f astra_control_center_operator_deploy.yaml
+----
++
+回應範例：
+
++
+[listing]
+----
+namespace/netapp-acc-operator unchanged
+customresourcedefinition.apiextensions.k8s.io/astracontrolcenters.astra.netapp.io configured
+role.rbac.authorization.k8s.io/acc-operator-leader-election-role unchanged
+clusterrole.rbac.authorization.k8s.io/acc-operator-manager-role configured
+clusterrole.rbac.authorization.k8s.io/acc-operator-metrics-reader unchanged
+clusterrole.rbac.authorization.k8s.io/acc-operator-proxy-role unchanged
+rolebinding.rbac.authorization.k8s.io/acc-operator-leader-election-rolebinding unchanged
+clusterrolebinding.rbac.authorization.k8s.io/acc-operator-manager-rolebinding configured
+clusterrolebinding.rbac.authorization.k8s.io/acc-operator-proxy-rolebinding unchanged
+configmap/acc-operator-manager-config unchanged
+service/acc-operator-controller-manager-metrics-service unchanged
+deployment.apps/acc-operator-controller-manager configured
+----
+
+
+
+
+== 升級Astra Control Center
+
+. 編輯Astra Control Center自訂資源（CR）（「Astra control_center_min.yaml」）、並將Astra版本（「'astraVersion」位於「Pec」內）編號變更為最新版本：
++
+[listing]
+----
+kubectl edit acc -n [netapp-acc or custom namespace]
+----
++
+
+NOTE: 您的登錄路徑必須符合您在中推送映像的登錄路徑 <<substep_image_local_registry_push,上一步>>。
+
+. 在Astra Control Center CR的「Pec」內的「additionalValues」中新增下列行：
++
+[listing]
+----
+additionalValues:
+    nautilus:
+      startupProbe:
+        periodSeconds: 30
+        failureThreshold: 600
+----
+. 執行下列其中一項：
++
+.. 如果您沒有自己的IngressController或Ingressal、而且一直使用Astra Control Center搭配Traefik閘道做為負載平衡器類型服務、而且想要繼續進行該設定、請指定另一個欄位「ingressType」（如果尚未出現）、並將其設為「AccTraefik」。
++
+[listing]
+----
+ingressType:AccTraefik
+----
+.. 如果您想要切換至預設Astra控制中心一般入侵部署、請提供您自己的入侵控制器/入侵設定（TLS終止等）、開啟通往Astra控制中心的路由、並將「擷取類型」設為「一般」。
++
+[listing]
+----
+ingressType:Generic
+----
++
+
+TIP: 如果您省略此欄位、程序就會變成一般部署。如果您不想要一般部署、請務必新增欄位。
+
+
+
+. （可選）驗證Pod是否終止並再次可用：
++
+[listing]
+----
+watch kubectl get po -n [netapp-acc or custom namespace]
+----
+. 等待Astra狀態條件指示升級已完成且準備就緒：
++
+[listing]
+----
+kubectl get -o yaml -n [netapp-acc or custom namespace] astracontrolcenters.astra.netapp.io astra
+----
++
+回應：
+
++
+[listing]
+----
+conditions:
+  - lastTransitionTime: "2021-10-25T18:49:26Z"
+    message: Astra is deployed
+    reason: Complete
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2021-10-25T18:49:26Z"
+    message: Upgrading succeeded.
+    reason: Complete
+    status: "False"
+    type: Upgrading
+----
+. 重新登入、確認所有託管叢集和應用程式仍存在且受到保護。
+. 如果營運者未更新Cert管理程式、請升級協力廠商服務、接著再升級。
+
+
+
+
+== 升級協力廠商服務（選用）
+
+在先前的升級步驟中、不會升級協力廠商服務Traefik和Cert Manager。您可以選擇使用本文所述的程序來升級、或是在系統需要時保留現有的服務版本。
+
+* * Traefik*：依預設、Astra Control Center會管理Traefik部署的生命週期。將「externalTraefik」設為「假」（預設）表示系統中不存在外部Traefik、而Traefik則由Astra Control Center安裝及管理。在這種情況下、「externalTraefik」設定為「假」。
++
+另一方面、如果您有自己的Traefik部署、請將「externalTraefik」設為「true」。在這種情況下、除非將「shouldUpgrade」設為「true」、否則您將維持部署、Astra Control Center將不會升級客戶需求日。
+
+* *認證管理程式*：依預設、Astra Control Center會安裝認證管理程式（和CRD）、除非您將「externalCertManager」設為「true」。將「shouldUpgrade」設為「true」、讓Astra Control Center升級CRD。
+
+
+如果符合下列任一條件、就會升級Traefik：
+
+* 外部Traefik：假或
+* externalTraefik：真實且應該升級：真。
+
+
+.步驟
+. 編輯「acc：
++
+[listing]
+----
+kubectl edit acc -n [netapp-acc or custom namespace]
+----
+. 視需要將「externalTraefik」欄位和「shouldUpgrade」欄位變更為「true」或「假」。
++
+[listing]
+----
+crds:
+    externalTraefik: false
+    externalCertManager: false
+    shouldUpgrade: false
+----
+
+
+
+
+== 驗證系統狀態
+
+. 登入Astra Control Center。
+. 確認您所有的託管叢集和應用程式仍存在且受到保護。
+
+
+
+
+== 設定入口以進行負載平衡
+
+您可以設定Kubernetes入口物件來管理外部服務存取、例如叢集中的負載平衡。
+
+* 預設升級使用一般入口部署。在此情況下、您也需要設定入口控制器或入口資源。
+* 如果您不想要入站控制器並想保留現有的內容、請將「擷取類型」設為「AccTraefik」。
+
+
+
+NOTE: 如需有關「負載平衡器」和入口服務類型的其他詳細資料、請參閱 link:../get-started/requirements.html["需求"]。
+
+這些步驟會因您使用的入口控制器類型而有所不同：
+
+* Nginx入口控制器
+* OpenShift入口控制器
+
+
+.您需要的是 #8217 ；需要的是什麼
+* 在CR規格中、
++
+** 如果出現「crd.externalTraefik」、則應設定為「假」或
+** 如果“crd.externalTraefik”是真的，那麼“crd.doedUpgrade（升級）”也應該是真的。
+
+
+* 必要的 https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/["入口控制器"] 應已部署。
+* 。 https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class["入口等級"] 應已建立對應於入口控制器的。
+* 您使用的Kubernetes版本介於v1.19和v1.21之間、甚至包括在內。
+
+
+.適用於Nginvin像 控制器的步驟
+. 使用現有的秘密「安全測試證書」、或建立類型的機密 http://kubernetes.io/tls["「Kubernetes.IO/TLS」"] 如所述、在「NetApp-acc」（或自訂命名）命名空間中取得TLS私密金鑰和憑證 https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets["TLS機密"]。
+. 在「NetApp-acc」（或自訂命名）命名空間中、針對已過時或新架構部署入口資源：
++
+.. 對於已過時的架構、請遵循以下範例：
++
+[listing]
+----
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-acc
+  namespace: [netapp-acc or custom namespace]
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+  - hosts:
+    - <ACC address>
+    secretName: [tls secret name]
+  rules:
+  - host: [ACC address]
+    http:
+      paths:
+      - backend:
+        serviceName: traefik
+        servicePort: 80
+        pathType: ImplementationSpecific
+----
+.. 如需新架構、請遵循下列範例：
+
+
++
+[listing]
+----
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: netapp-acc-ingress
+  namespace: [netapp-acc or custom namespace]
+spec:
+  ingressClassName: [class name for nginx controller]
+  tls:
+  - hosts:
+    - <ACC address>
+    secretName: [tls secret name]
+  rules:
+  - host: <ACC address>
+    http:
+      paths:
+        - path:
+          backend:
+            service:
+              name: traefik
+              port:
+                number: 80
+          pathType: ImplementationSpecific
+----
+
+
+.OpenShift入口控制器的步驟
+. 取得您的憑證、取得可供OpenShift路由使用的金鑰、憑證和CA檔案。
+. 建立OpenShift路由：
++
+[listing]
+----
+oc create route edge --service=traefik
+--port=web -n [netapp-acc or custom namespace]
+--insecure-policy=Redirect --hostname=<ACC address>
+--cert=cert.pem --key=key.pem
+----
+
+
+
+
+=== 驗證入口設定
+
+您可以在繼續之前驗證入口設定。
+
+. 確認Traefik已從負載平衡器變更為「clusterIP（叢集IP））：
++
+[listing]
+----
+kubectl get service traefik -n [netapp-acc or custom namespace]
+----
+. 驗證Traefik中的路由：
++
+[listing]
+----
+Kubectl get ingressroute ingressroutetls -n [netapp-acc or custom namespace]
+-o yaml | grep "Host("
+----
++
+
+NOTE: 結果應為空白。
+
+

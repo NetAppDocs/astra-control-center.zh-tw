@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: acc-earlier-versions.html 
+keywords: what is astra, what are earlier versions 
+summary: 如果您未執行最新版本、則可取得先前版本的文件。 
+---
+= 舊版Astra Control Center文件
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以取得先前版本的文件。
+
+* https://docs.netapp.com/us-en/astra-control-center-2112/index.html["Astra Control Center 21.12文件"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/index.html["Astra Control Center 21.08文件"^]
+
