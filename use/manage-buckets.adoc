@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/manage-buckets.html 
-keywords: how to set up object storage in astra, how to set up astra buckets, s3, astra, setting up astra control, how to set up astra control center, kubernetes 
+keywords: how to set up object storage in astra, how to set up astra buckets, s3, astra, setting up astra control, astra control center, kubernetes 
 summary: 如果您想要備份應用程式和持續儲存設備、或是想要跨叢集複製應用程式、則必須新增物件存放區資源庫供應商。 
 ---
 = 管理儲存庫
@@ -39,22 +39,12 @@ NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商�
 
 * link:../get-started/setup_overview.html#add-a-bucket["新增儲存庫"]
 * <<Edit a bucket>>
+* <<Rotate or remove bucket credentials>>
 * <<Remove a bucket>>
 
 
 
 NOTE: Astra Control Center中的S3鏟斗未報告可用容量。在備份或複製由Astra Control Center管理的應用程式之前、請先查看ONTAP 資訊庫（英文）或StorageGRID 資訊庫（英文）管理系統中的庫位資訊。
-
-
-
-== 移除認證資料
-
-使用Astra Control API、隨時從帳戶移除S3認證。
-
-如需詳細資訊、請參閱 https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]。
-
-
-TIP: 您新增至Astra Control的第一組認證資料一律使用中、因為Astra Control使用認證資料來驗證備份儲存區。最好不要移除這些認證資料。
 
 
 
@@ -66,7 +56,7 @@ TIP: 您新增至Astra Control的第一組認證資料一律使用中、因為As
 NOTE: 新增儲存庫時、請選擇正確的儲存庫供應商、並提供該供應商的適當認證資料。例如、UI接受NetApp ONTAP S3作為類型並接受StorageGRID 驗證、但這將導致所有未來使用此儲存庫的應用程式備份與還原失敗。請參閱 link:../release-notes/known-issues.html#selecting-a-bucket-provider-type-with-credentials-for-another-type-causes-data-protection-failures["版本資訊"]。
 
 .步驟
-. 從左側導覽中選取*鏟斗*。
+. 從左側導覽中、選取*鏟斗*。
 . 從「*動作*」欄的「選項」功能表中、選取「*編輯*」。
 . 變更儲存桶類型以外的任何資訊。
 +
@@ -75,6 +65,39 @@ TIP: 您無法修改貯體類型。
 
 . 選擇*更新*。
 
+
+
+
+== 旋轉或移除庫位認證資料
+
+Astra Control使用儲存區認證來取得S3儲存區的存取權、並提供密碼金鑰、以便Astra Control Center能夠與儲存區通訊。
+
+
+
+=== 旋轉儲存庫認證資料
+
+如果您旋轉認證資料、請在維護期間（排程或隨需）無備份進行時、於維護期間旋轉認證資料。
+
+.編輯及旋轉認證的步驟
+. 從左側導覽中、選取*鏟斗*。
+. 從「*動作*」欄的「選項」功能表中、選取「*編輯*」。
+. 建立新認證資料。
+. 選擇*更新*。
+
+
+
+
+=== 移除庫位認證資料
+
+只有在新認證已套用至庫位、或庫位已不再有效使用時、才應移除庫位認證。
+
+
+TIP: 您新增至Astra Control的第一組認證資料一律使用中、因為Astra Control使用認證資料來驗證備份儲存區。如果儲存區正在使用中、請勿移除這些認證資料、因為這會導致備份失敗和備份不可用。
+
+
+NOTE: 如果您確實移除作用中的儲存區認證、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Deleting_active_S3_bucket_credentials_leads_to_spurious_500_errors_reported_in_the_UI["移除庫位認證疑難排解"]。
+
+如需如何使用Astra Control API移除S3認證的指示、請參閱 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation和API資訊"^]。
 
 
 

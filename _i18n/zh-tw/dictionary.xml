@@ -511,9 +511,6 @@
   <block id="7c5cb0e87ebe5449ca36f64ae91fde0a" category="list-text"><block ref="9626f8adb1f38ad7cdef194df83d0efd" category="inline-xref-macro-rx"></block></block>
   <block id="7f6fe37c59807acc115a4d2c0d69077d" category="list-text"><block ref="887f1e66c72c284cbdccfcc9cb11eeeb" category="inline-xref-macro-rx"></block></block>
   <block id="25f033e226552b2f5ae002edb8e5fd2f" category="section-title">移除認證資料</block>
-  <block id="7fd958404cfe6c99754c9b6ad7e79388" category="paragraph">使用Astra Control API、隨時從帳戶移除S3認證。</block>
-  <block id="3cfc334c5742393528efbb5edb4bd342" category="paragraph">如需詳細資訊、請參閱<block ref="250d1ede6e0e1ee198c7b3999a8bf472" category="inline-link-rx"></block>。</block>
-  <block id="6840b2dcd5fa86614a2f630dbc882356" category="admonition">您新增至Astra Control的第一組認證資料一律使用中、因為Astra Control使用認證資料來驗證備份儲存區。最好不要移除這些認證資料。</block>
   <block id="00d6e8bbad1611d4dccac7fead48f1ec" category="section-title">編輯儲存庫</block>
   <block id="049863f89bf64849544e3290929262b3" category="paragraph">您可以變更儲存區的存取認證資訊、並變更所選儲存區是否為預設儲存區。</block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="inline-link-macro">版本資訊</block>
@@ -2124,4 +2121,18 @@
   <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">概念</block>
   <block id="8d85c59d57ad2cafad4f894413219af0" category="sidebar">儲存類別和PV大小</block>
   <block id="ae5601e1a5453d0b5924098584b9c3f2" category="sidebar">此Astra Control Center版本的新功能</block>
+  <block id="a7005fe73a9d0b102ef822a8c238ff3e" category="list-text"><block ref="ce6e8874f71f155db57217591704ee92" category="inline-xref-macro-rx"></block></block>
+  <block id="9c20c9fb8510a54316336dea236e5317" category="list-text">從左側導覽中、選取*鏟斗*。</block>
+  <block id="c490fcd935532957062b15de00f098d2" category="section-title">旋轉或移除庫位認證資料</block>
+  <block id="6fb37c38c3f8fd3e2b4871387533a1cb" category="paragraph">Astra Control使用儲存區認證來取得S3儲存區的存取權、並提供密碼金鑰、以便Astra Control Center能夠與儲存區通訊。</block>
+  <block id="9ce05956e996e07335bb13681ff7025b" category="section-title">旋轉儲存庫認證資料</block>
+  <block id="4eafaf881b3ab224c0b26282ac4f8514" category="paragraph">如果您旋轉認證資料、請在維護期間（排程或隨需）無備份進行時、於維護期間旋轉認證資料。</block>
+  <block id="02007100629a6c88678f302f0918ab86" category="list-title">編輯及旋轉認證的步驟</block>
+  <block id="08972981c30d730f81d00e7d6e7709cb" category="list-text">建立新認證資料。</block>
+  <block id="f8be12e25cfcab7e808ca98f80a56433" category="section-title">移除庫位認證資料</block>
+  <block id="47b2c3588cbae505ee9eeaf0ad395f38" category="paragraph">只有在新認證已套用至庫位、或庫位已不再有效使用時、才應移除庫位認證。</block>
+  <block id="a31d0ea55a51bfbd5a603a8f5fa7a37a" category="admonition">您新增至Astra Control的第一組認證資料一律使用中、因為Astra Control使用認證資料來驗證備份儲存區。如果儲存區正在使用中、請勿移除這些認證資料、因為這會導致備份失敗和備份不可用。</block>
+  <block id="b2b8741126a8674edc86e6286a85c804" category="inline-link">移除庫位認證疑難排解</block>
+  <block id="983be0b26fa308ee99003c55cac37fb5" category="admonition">如果您確實移除作用中的儲存區認證、請參閱<block ref="939cc867881057c221247142d6425e0a" category="inline-link-rx"></block>。</block>
+  <block id="576924ceb67cb5e87c15acdcb112c47d" category="paragraph">如需如何使用Astra Control API移除S3認證的指示、請參閱 <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>。</block>
 </blocks>
