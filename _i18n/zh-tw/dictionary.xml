@@ -1151,7 +1151,6 @@
   <block id="11531d35bffa3200921e5a8ee5950b84" category="list-text"><block ref="c4954d5a433a0b3badc3311583a31b34" category="inline-xref-macro-rx"></block>。</block>
   <block id="aa212b05ee6b0b78026790241fbde05d" category="list-text"><block ref="27fe6aaf425c0f95213ec6c507a97d2d" category="inline-xref-macro-rx"></block>。</block>
   <block id="e8e336c6539723454a54092c15b17831" category="section-title">確保您擁有足夠的IAM權限</block>
-  <block id="4cccd232c18c48f403e1b0ca88018111" category="paragraph">確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp Cloud Volumes ONTAP 的連接器。</block>
   <block id="9ef43b020d41cab5808d78fdf855c429" category="inline-link">初始 AWS 認證資料</block>
   <block id="8bf9b9f442874d498c38dc3f714a9739" category="paragraph">請參閱<block ref="1a5e66975901600375e1b84abc3d58bd" category="inline-link-rx"></block>。</block>
   <block id="ed759a399e3faa755d36418e610d10fb" category="section-title">在AWS上安裝RedHat OpenShift叢集</block>
@@ -1159,17 +1158,13 @@
   <block id="fe44234b66d63db4cd81036ae75cf378" category="inline-link">在OpenShift Container Platform的AWS上安裝叢集</block>
   <block id="09c5cce6c0b81c5a122141133cc096d8" category="paragraph">如需安裝指示、請參閱<block ref="02dece0ad7d56c8ca4c0002821b8ba8e" category="inline-link-rx"></block>。</block>
   <block id="431d662f081880135f580544e6ebca68" category="section-title">設定AWS</block>
-  <block id="cccaf966d7360e27e6fae03ddd583733" category="paragraph">接下來、設定AWS以建立虛擬私有雲端、設定EC2運算執行個體、建立AWS S3儲存區、建立彈性容器登錄（ECR）以裝載Astra Control Center映像、然後將映像推送至此登錄。</block>
   <block id="455960d50b151ff6ed28fa01f3d6356f" category="inline-link">AWS安裝文件</block>
   <block id="e874bd0f330d9513016dc844dfd62e6f" category="paragraph">請遵循AWS文件完成下列步驟。請參閱<block ref="b5a7979c22035fe192b9eb8d0cab1e4a" category="inline-link-rx"></block>。</block>
-  <block id="799fec05d94fec2c59fc527e8f91c4c6" category="list-text">建立AWS虛擬私有雲端。</block>
   <block id="92d9212a67ec9da982a091cf92cb4347" category="list-text">檢閱EC2運算執行個體。這可以是AWS中的裸機伺服器或VM。</block>
   <block id="b881f78be517f5315cfb2d556f3448f7" category="list-text">如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在AWS中變更執行個體類型以符合Astra需求。請參閱 <block ref="32be9c8362ea42075ea0b5d43bb3b5d0" category="inline-link-macro-rx"></block>。</block>
   <block id="b109e192f966bb3bb3e8cd30e1a59bfa" category="list-text">建立至少一個AWS S3儲存區來儲存備份。</block>
   <block id="e5c5351f3ea6206a7f110205b4155acc" category="list-text">建立AWS彈性Container登錄（ECR）、以裝載所有的主動定速控制系統映像。</block>
-  <block id="b6e02cb40f51ac7c03a21989247074b0" category="admonition">如果您未建立ECR、Astra Control Center將無法從包含CVO且具有AWS後端的叢集存取監控資料。此問題是因為您嘗試使用Astra Control Center探索及管理的叢集無法存取AWS ECR。</block>
   <block id="6da6782dc02c8e2ffb3f2eeb0c8f4f10" category="list-text">將Acc映像推送到您定義的登錄。</block>
-  <block id="0aa9d7a142af7c23c39b44a27f0dcc8f" category="admonition">AWS Elastic Container登錄（ECR）權杖會在12小時後過期、導致跨叢集複製作業失敗。此問題發生於從Cloud Volumes ONTAP 設定為AWS的功能的功能區（CVO）管理儲存後端時。若要修正此問題、請再次向ECR驗證、並產生新的秘密、讓複製作業順利恢復。</block>
   <block id="d0d3a0a6bbae566c1e61c2fc0d0377ad" category="paragraph">以下是AWS部署範例：</block>
   <block id="00e2fab6bb1c1ddf5a08853aa2b05595" category="inline-image-macro">Astra Control Center提供Cloud Volumes ONTAP 部署範例</block>
   <block id="a5f9219af3aa469c4909489aee2c2362" category="paragraph"><block ref="a5f9219af3aa469c4909489aee2c2362" category="inline-image-macro-rx" type="image"></block></block>
@@ -1191,7 +1186,6 @@
   <block id="e1001cf6163456f78888de73e0dd8241" category="list-text">請注意右上角的Trident版本。</block>
   <block id="879166e5d3ed3d9886dcb671dee52d57" category="list-text">請注意Cloud Volumes ONTAP 、顯示NetApp為資源配置程式的叢集儲存類別。</block>
   <block id="6f132ecc107812f9bd274ba758fce276" category="paragraph">這會匯入您的Red Hat OpenShift叢集、並將其指派為預設儲存類別。您可以選取儲存類別。Trident會在匯入和探索程序中自動安裝。</block>
-  <block id="3cc9e3bbc9dd541f4db8ebbb5b141c8c" category="list-text">請注意此CVO部署中的所有持續磁碟區和磁碟區。</block>
   <block id="022f3cb861d350bac16e19b15e4f1f9c" category="admonition">可作為單一節點或高可用度運作。Cloud Volumes ONTAP如果已啟用HA、請記下在AWS中執行的HA狀態和節點部署狀態。</block>
   <block id="d35cd0582def6a18a65ff02ce2d5ff77" category="inline-link-macro">Astra Control Center安裝說明</block>
   <block id="1cb58fa5a8f36029f128e85d88276810" category="paragraph">遵循標準 <block ref="ef8e47848fa28ef11d8d85ade3f221ee" category="inline-link-macro-rx"></block>。</block>
@@ -1229,13 +1223,10 @@
   <block id="1ab5193f89cf79df51fd4138318923ac" category="inline-link">Azure 認證與權限</block>
   <block id="ac5af645cec8d25669a5a9893f571bcc" category="paragraph">請參閱<block ref="47e48c38bbba09ad0234959e4f70e6b5" category="inline-link-rx"></block>。</block>
   <block id="ffe7dbf60b2fbe9ee35b02eca9bedb83" category="section-title">設定Azure</block>
-  <block id="def08885f6fc7373c0b5463ba8cfcf9b" category="paragraph">接下來、設定Azure以建立虛擬私有雲端、設定運算執行個體、建立Azure Blob S3儲存區、建立Azure Container Register（ACR）以裝載Astra Control Center映像、並將映像推送至此登錄。</block>
   <block id="310c2720a5523c6a1f55532ee951393c" category="paragraph">請依照Azure文件完成下列步驟。請參閱<block ref="604df1e02f9d2d76a67db6e61299339e" category="inline-link-rx"></block>。</block>
-  <block id="1f5c184a439ca64495bef0e301c34bb1" category="list-text">建立Azure虛擬私有雲。</block>
   <block id="d03589157dd63e1aaf5497955f5058f5" category="list-text">檢閱運算執行個體。這可以是Azure中的裸機伺服器或VM。</block>
   <block id="b82f3e0352c4295f8db3114c4d861a92" category="inline-link-macro">Astra Control Center需求</block>
   <block id="8a803e817d15e18f4c26de7531681f8c" category="list-text">如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請變更Azure中的執行個體類型以符合Astra要求。請參閱 <block ref="69ebc365ae107089b5acea91d6e6ce3d" category="inline-link-macro-rx"></block>。</block>
-  <block id="ece21a337138f7f8683bac6e6615e56e" category="list-text">建立至少一個Azure Blob S3儲存庫來儲存備份。</block>
   <block id="307374e80fc7db1b05d765029543d9c8" category="list-text">建立儲存帳戶。您需要儲存帳戶來建立容器、以便在Astra Control Center中作為儲存庫。</block>
   <block id="a9d92f56cc3dae134fc1ee53e8136378" category="list-text">建立儲存貯體存取所需的機密。</block>
   <block id="7d8431378165cbd970da3a000187a79e" category="list-text">建立Azure Container登錄（ACR）、以裝載所有Astra Control Center映像。</block>
@@ -1262,7 +1253,6 @@
   <block id="889cbe9961ca696a510e412a4b30232a" category="paragraph"><block ref="889cbe9961ca696a510e412a4b30232a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e94546b01b99a1eb48dc2aa847bd1bc9" category="inline-image-macro">已在Cloud Manager中匯入叢集</block>
   <block id="a340fe93d59bc226299f8720ea322256" category="paragraph"><block ref="a340fe93d59bc226299f8720ea322256" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d9ea115977abd9d7e16409cba9fd16f6" category="list-text">請注意CVO叢集儲存類別、其中顯示NetApp為資源配置程式。</block>
   <block id="5acebafc0c752497041f5a0d80fe30bb" category="paragraph">這會匯入您的Red Hat OpenShift叢集、並指派預設的儲存類別。您可以選取儲存類別。Trident會在匯入和探索程序中自動安裝。</block>
   <block id="a4f1bc6952ef35fa4b362d48d0bae5cf" category="list-text">可作為單一節點或高可用度運作。Cloud Volumes ONTAP如果已啟用HA、請記下Azure中執行的HA狀態和節點部署狀態。</block>
   <block id="ed5ef8c204e33b0e0f057dc70e0b4867" category="section-title">安裝及設定Astra Control Center</block>
@@ -1969,8 +1959,6 @@
   <block id="9ed67fb9a4ad2ebd97ca13fe2eb81541" category="list-title">新功能與支援</block>
   <block id="0097e428776046ceb8cd1fcde6d6fa2e" category="inline-link-macro">命名空間角色型存取控制（RBAC）</block>
   <block id="64bad51f74b4f1807a7d2af0cf87257c" category="list-text"><block ref="64bad51f74b4f1807a7d2af0cf87257c" category="inline-link-macro-rx"></block></block>
-  <block id="6d1f817d433aa2ed5357833d205f7ecc" category="inline-link-macro">支援功能（CVO）Cloud Volumes ONTAP</block>
-  <block id="a0d0deee3c5c466bfed70fd7382479c3" category="list-text"><block ref="a0d0deee3c5c466bfed70fd7382479c3" category="inline-link-macro-rx"></block></block>
   <block id="b2c30cdbb458ef4f85645f614f9a044c" category="inline-link-macro">Astra Control Center的一般入侵能力</block>
   <block id="7488f95bd73a954d45792854208eec9a" category="list-text"><block ref="7488f95bd73a954d45792854208eec9a" category="inline-link-macro-rx"></block></block>
   <block id="ec4f18f5d437fda081d810a9841b26d4" category="inline-link-macro">從Astra Control移除鏟斗</block>
@@ -2135,4 +2123,15 @@
   <block id="b2b8741126a8674edc86e6286a85c804" category="inline-link">移除庫位認證疑難排解</block>
   <block id="983be0b26fa308ee99003c55cac37fb5" category="admonition">如果您確實移除作用中的儲存區認證、請參閱<block ref="939cc867881057c221247142d6425e0a" category="inline-link-rx"></block>。</block>
   <block id="576924ceb67cb5e87c15acdcb112c47d" category="paragraph">如需如何使用Astra Control API移除S3認證的指示、請參閱 <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>。</block>
+  <block id="aa702244278ce9224bdf493dbd836fcf" category="inline-link-macro">支援Cloud Volumes ONTAP 功能</block>
+  <block id="4de20b7239bb26359da9a0232e6d739e" category="list-text"><block ref="4de20b7239bb26359da9a0232e6d739e" category="inline-link-macro-rx"></block></block>
+  <block id="eb835db53d5442a3408fb4a797dd33d9" category="paragraph">確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp Cloud Manager Connector。</block>
+  <block id="8752cd76f7db37e4826aaa5b11f2a007" category="paragraph">接下來、設定AWS以建立虛擬網路、設定EC2運算執行個體、建立AWS S3儲存區、建立彈性容器登錄（ECR）以裝載Astra Control Center映像、然後將映像推送至此登錄。</block>
+  <block id="9c7a256a23d947f541662b1e88bac33d" category="list-text">建立AWS虛擬網路。</block>
+  <block id="9d58e473a9f64a9efe76c63ca0a30602" category="admonition">如果您未建立ECR、Astra Control Center將無法從含有Cloud Volumes ONTAP AWS後端的支援的叢集存取監控資料。此問題是因為您嘗試使用Astra Control Center探索及管理的叢集無法存取AWS ECR。</block>
+  <block id="1768a4b0762c934953673bc18b18890a" category="admonition">AWS Elastic Container登錄（ECR）權杖會在12小時後過期、導致跨叢集複製作業失敗。從Cloud Volumes ONTAP 針對AWS設定的功能進行的功能區管理儲存後端時、就會發生此問題。若要修正此問題、請再次向ECR驗證、並產生新的秘密、讓複製作業順利恢復。</block>
+  <block id="b68aeba87c67e932282eec3bb99d6309" category="list-text">請注意此Cloud Volumes ONTAP 功能部署中的所有持續磁碟區和磁碟區。</block>
+  <block id="daee2a4caddb0f1fced149c9b185ab3e" category="paragraph">接下來、設定Azure以建立虛擬網路、設定運算執行個體、建立Azure Blob容器、建立Azure Container Register（ACR）來裝載Astra Control Center映像、然後將映像推送至此登錄。</block>
+  <block id="52393bb21023d79ef4e0fa374e54b83d" category="list-text">建立Azure虛擬網路。</block>
+  <block id="5df56ab7fcd23252a7ac4c7a21742e57" category="list-text">建立至少一個Azure Blob容器來儲存備份。</block>
 </blocks>

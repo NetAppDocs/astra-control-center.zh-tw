@@ -131,7 +131,7 @@ NOTE: AWS登錄權杖會在12小時內過期、之後您必須更新Docker映像
 
 === 確保您擁有足夠的IAM權限
 
-確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp Cloud Volumes ONTAP 的連接器。
+確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp Cloud Manager Connector。
 
 請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html#initial-aws-credentials["初始 AWS 認證資料"^]。
 
@@ -147,24 +147,24 @@ NOTE: AWS登錄權杖會在12小時內過期、之後您必須更新Docker映像
 
 === 設定AWS
 
-接下來、設定AWS以建立虛擬私有雲端、設定EC2運算執行個體、建立AWS S3儲存區、建立彈性容器登錄（ECR）以裝載Astra Control Center映像、然後將映像推送至此登錄。
+接下來、設定AWS以建立虛擬網路、設定EC2運算執行個體、建立AWS S3儲存區、建立彈性容器登錄（ECR）以裝載Astra Control Center映像、然後將映像推送至此登錄。
 
 請遵循AWS文件完成下列步驟。請參閱 https://docs.openshift.com/container-platform/4.8/installing/installing_aws/installing-aws-default.html["AWS安裝文件"^]。
 
-. 建立AWS虛擬私有雲端。
+. 建立AWS虛擬網路。
 . 檢閱EC2運算執行個體。這可以是AWS中的裸機伺服器或VM。
 . 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在AWS中變更執行個體類型以符合Astra需求。請參閱 link:../requirements.html["Astra Control Center需求"]。
 . 建立至少一個AWS S3儲存區來儲存備份。
 . 建立AWS彈性Container登錄（ECR）、以裝載所有的主動定速控制系統映像。
 +
 
-NOTE: 如果您未建立ECR、Astra Control Center將無法從包含CVO且具有AWS後端的叢集存取監控資料。此問題是因為您嘗試使用Astra Control Center探索及管理的叢集無法存取AWS ECR。
+NOTE: 如果您未建立ECR、Astra Control Center將無法從含有Cloud Volumes ONTAP AWS後端的支援的叢集存取監控資料。此問題是因為您嘗試使用Astra Control Center探索及管理的叢集無法存取AWS ECR。
 
 . 將Acc映像推送到您定義的登錄。
 
 
 
-NOTE: AWS Elastic Container登錄（ECR）權杖會在12小時後過期、導致跨叢集複製作業失敗。此問題發生於從Cloud Volumes ONTAP 設定為AWS的功能的功能區（CVO）管理儲存後端時。若要修正此問題、請再次向ECR驗證、並產生新的秘密、讓複製作業順利恢復。
+NOTE: AWS Elastic Container登錄（ECR）權杖會在12小時後過期、導致跨叢集複製作業失敗。從Cloud Volumes ONTAP 針對AWS設定的功能進行的功能區管理儲存後端時、就會發生此問題。若要修正此問題、請再次向ECR驗證、並產生新的秘密、讓複製作業順利恢復。
 
 以下是AWS部署範例：
 
@@ -202,7 +202,7 @@ image:acc-cvo-aws2.png["Astra Control Center提供Cloud Volumes ONTAP 部署範�
 
 
 
-. 請注意此CVO部署中的所有持續磁碟區和磁碟區。
+. 請注意此Cloud Volumes ONTAP 功能部署中的所有持續磁碟區和磁碟區。
 
 
 
@@ -338,7 +338,7 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 === 確保您擁有足夠的IAM權限
 
-確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp Cloud Volumes ONTAP 的連接器。
+確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp Cloud Manager Connector。
 
 請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure 認證與權限"^]。
 
@@ -346,14 +346,14 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 === 設定Azure
 
-接下來、設定Azure以建立虛擬私有雲端、設定運算執行個體、建立Azure Blob S3儲存區、建立Azure Container Register（ACR）以裝載Astra Control Center映像、並將映像推送至此登錄。
+接下來、設定Azure以建立虛擬網路、設定運算執行個體、建立Azure Blob容器、建立Azure Container Register（ACR）來裝載Astra Control Center映像、然後將映像推送至此登錄。
 
 請依照Azure文件完成下列步驟。請參閱 https://docs.openshift.com/container-platform/4.8/installing/installing_aws/installing-azure-default.html["在Azure上安裝OpenShift叢集"^]。
 
-. 建立Azure虛擬私有雲。
+. 建立Azure虛擬網路。
 . 檢閱運算執行個體。這可以是Azure中的裸機伺服器或VM。
 . 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請變更Azure中的執行個體類型以符合Astra要求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"]。
-. 建立至少一個Azure Blob S3儲存庫來儲存備份。
+. 建立至少一個Azure Blob容器來儲存備份。
 . 建立儲存帳戶。您需要儲存帳戶來建立容器、以便在Astra Control Center中作為儲存庫。
 . 建立儲存貯體存取所需的機密。
 . 建立Azure Container登錄（ACR）、以裝載所有Astra Control Center映像。
@@ -428,13 +428,13 @@ image:acc-cvo-azure-working-environment.png["在Cloud Manager中建立工作環�
 image:acc-cvo-azure-connected.png["已在Cloud Manager中匯入叢集"]
 
 .. 請注意右上角的Trident版本。
-.. 請注意CVO叢集儲存類別、其中顯示NetApp為資源配置程式。
+.. 請注意Cloud Volumes ONTAP 、顯示NetApp為資源配置程式的叢集儲存類別。
 
 
 +
 這會匯入您的Red Hat OpenShift叢集、並指派預設的儲存類別。您可以選取儲存類別。Trident會在匯入和探索程序中自動安裝。
 
-. 請注意此CVO部署中的所有持續磁碟區和磁碟區。
+. 請注意此Cloud Volumes ONTAP 功能部署中的所有持續磁碟區和磁碟區。
 . 可作為單一節點或高可用度運作。Cloud Volumes ONTAP如果已啟用HA、請記下Azure中執行的HA狀態和節點部署狀態。
 
 
