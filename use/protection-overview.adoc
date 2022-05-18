@@ -21,28 +21,28 @@ summary: 瞭解Astra Control Center中可用的資料保護類型、以及如何
 
 
 
-==== 備份所有應用程式
+=== 備份所有應用程式
 
 [role="quick-margin-para"]
 為了確保應用程式立即受到保護、 link:protect-apps.html#create-a-backup["建立所有應用程式的手動備份"]。
 
 
 
-==== 為每個應用程式設定保護原則
+=== 為每個應用程式設定保護原則
 
 [role="quick-margin-para"]
 若要自動化未來的備份與快照、 link:protect-apps.html#configure-a-protection-policy["為每個應用程式設定保護原則"]。舉例來說、您可以從每週備份和每日快照開始著手、兩個快照均保留一個月。強烈建議使用保護原則來自動化備份與快照、而不要手動備份與快照。
 
 
 
-==== 選用：調整保護原則
+=== 選用：調整保護原則
 
 [role="quick-margin-para"]
 隨著應用程式及其使用模式的改變、請視需要調整保護原則、以提供最佳保護。
 
 
 
-==== 發生災難時、請還原您的應用程式
+=== 發生災難時、請還原您的應用程式
 
 [role="quick-margin-para"]
 如果發生資料遺失、您可以透過進行恢復 link:restore-apps.html["還原最新的備份"] 每個應用程式的第一名。然後您可以還原最新的快照（如果有）。
