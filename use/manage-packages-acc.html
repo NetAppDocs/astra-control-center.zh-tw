@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
   <head class="at-element-marker">
-  <title>檢視應用程式的健全狀況和詳細資料</title>
+  <title>管理軟體套件</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="檢視應用程式的健全狀況和詳細資料" />
+  <meta property="og:title" content="管理軟體套件" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/zh-tw/astra-control-center/use/view-apps.html" />
-	<meta property="og:description" content="開始管理應用程式之後、Astra會提供應用程式的詳細資料、讓您識別應用程式的狀態、保護狀態、Pod、持續儲存設備等。" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-tw/astra-control-center/use/manage-packages-acc.html" />
+	<meta property="og:description" content="您可以上傳並安裝套件至Astra Control Center。" />
   <meta property="og:image" content="https://docs.netapp.com/zh-tw/astra-control-center/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="開始管理應用程式之後、Astra會提供應用程式的詳細資料、讓您識別應用程式的狀態、保護狀態、Pod、持續儲存設備等。">
-  <meta name="keywords" content=" view app, view app status, view app protection status, view app pods, view persistent storage"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="您可以上傳並安裝套件至Astra Control Center。">
+  <meta name="keywords" content=" manage package, packages, install"><!-- Icons -->
   <link rel="icon" href="/zh-tw/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[檢視應用程式的健全狀況和詳細資料](https://docs.netapp.com/zh-tw/astra-control-center/use/view-apps.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/astra-control-center/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/use/view-apps.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/astra-control-center/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/astra-control-center/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[管理軟體套件](https://docs.netapp.com/zh-tw/astra-control-center/use/manage-packages-acc.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/astra-control-center/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/use/manage-packages-acc.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/astra-control-center/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/astra-control-center/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此頁面上</div>
@@ -292,15 +292,15 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-control-center/use/view-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/astra-control-center/use/manage-packages-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/view-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/manage-packages-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/view-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/manage-packages-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/view-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/manage-packages-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/astra-control-center/use/view-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
+                  <a href="https://docs.netapp.com/zh-tw/astra-control-center/use/manage-packages-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -675,15 +675,6 @@
 
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/zh-tw/astra-control-center/pdfs/pages/use/view-apps.pdf" >
-    <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -725,6 +716,15 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/zh-tw/astra-control-center/pdfs/pages/use/manage-packages-acc.pdf" >
+    <img src="/zh-tw/astra-control-center/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -978,7 +978,7 @@
         儀表板摘要
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/view-clusters.html">
         叢集健全狀況與詳細資料
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/view-apps.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/view-apps.html">
         應用程式健全狀況與詳細資料
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 管理您的帳戶</div>
@@ -997,7 +997,7 @@
         更新現有授權
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-connections.html">
         管理儲存庫連線
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-packages-acc.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-packages-acc.html">
         管理軟體套件
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/use/manage-buckets.html">
         管理儲存庫
@@ -1096,85 +1096,128 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">檢視應用程式的健全狀況和詳細資料</h1>
+  <h1 class="n-doc__component-detail-heading">管理軟體套件</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:05:56 +0000">05/03/2022</time>
+    <time datetime="2022-06-01 01:07:01 +0000">06/01/2022</time>
     
   
 
 
 </p>
 
-<div class="paragraph lead">
-<p>在您開始管理應用程式之後、Astra會提供應用程式的詳細資料、讓您識別應用程式的狀態（是否健全）、保護狀態（是否在故障時受到完整保護）、Pod、持續儲存設備等。</p>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp為Astra Control Center提供額外功能、提供您可從NetApp支援網站下載的軟體套件。連接Docker和成品儲存庫之後、您可以上傳和匯入套件、將此功能新增至Astra Control Center。您可以使用CLI或Astra Control Center Web UI來管理軟體套件。</p>
 </div>
-<div class="olist arabic">
-<div class="title">步驟</div>
-<ol class="arabic">
-<li>
-<p>在Astra Control Center UI中、選取* Applications*、然後選取應用程式名稱。</p>
-</li>
-<li>
-<p>尋找您要尋找的資訊：</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">應用程式狀態</dt>
-<dd>
-<p>提供反映Kubernetes應用程式狀態的狀態。例如、Pod和持續磁碟區是否在線上？如果某個應用程式不健全、您必須查看Kubernetes記錄檔、在叢集上進行疑難排解。Astra並未提供資訊來協助您修正毀損的應用程式。</p>
-</dd>
-<dt class="hdlist1">應用程式保護狀態</dt>
-<dd>
-<p>提供應用程式受到保護的程度狀態：</p>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">您需要的是 #8217 ；需要的是什麼</div>
 <ul>
 <li>
-<p><strong>完全保護</strong>：應用程式有作用中的備份排程、而且備份成功的時間不到一週</p>
+<p>Kubernetes叢集已安裝Astra Control Center</p>
 </li>
 <li>
-<p><strong>部分保護</strong>：應用程式有作用中的備份排程、作用中的快照排程、或成功的備份或快照</p>
+<p>連線的Docker映像儲存庫、可容納軟體套件映像。如需詳細資訊、請參閱 <a href="manage-connections.html">"管理儲存庫連線"</a>。</p>
 </li>
 <li>
-<p><strong>未受保護</strong>：未受到完整保護或部分保護的應用程式。</p>
-<div class="paragraph">
-<p><em>您必須等到最近進行備份之後、才能獲得完整保護</em>。這很重要、因為備份儲存在遠離持續磁碟區的物件存放區中。如果故障或意外將叢集及其持續儲存設備擦除、則需要備份才能恢復。快照無法讓您恢復。</p>
-</div>
+<p>連線的成品儲存庫、用於儲存軟體套件二進位檔和成品。如需詳細資訊、請參閱 <a href="manage-connections.html">"管理儲存庫連線"</a>。</p>
+</li>
+<li>
+<p>NetApp支援網站提供的軟體套件</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</dd>
-<dt class="hdlist1">總覽</dt>
-<dd>
-<p>與應用程式相關聯的Pod狀態資訊。</p>
-</dd>
-<dt class="hdlist1">資料保護</dt>
-<dd>
-<p>可讓您設定資料保護原則、並檢視現有的快照與備份。</p>
-</dd>
-<dt class="hdlist1">儲存設備</dt>
-<dd>
-<p>顯示應用程式層級的持續磁碟區。持續磁碟區的狀態是從Kubernetes叢集的觀點來看。</p>
-</dd>
-<dt class="hdlist1">資源</dt>
-<dd>
-<p>可讓您驗證要備份和管理的資源。</p>
-</dd>
-<dt class="hdlist1">活動</dt>
-<dd>
-<p>顯示與應用程式相關的活動。</p>
-</dd>
-</dl>
+<div class="sect1">
+<h2 id="將軟體套件上傳至儲存庫">將軟體套件上傳至儲存庫</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Center會參考連線儲存庫中的套件映像和成品。您可以使用CLI將影像和成品上傳至儲存庫。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步驟</div>
+<ol class="arabic">
+<li>
+<p>請從NetApp支援網站下載軟體套件、並將其儲存在已安裝「kubecll」公用程式的機器上。</p>
+</li>
+<li>
+<p>擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.bunder.yaml」）。</p>
+</li>
+<li>
+<p>將套件映像推送到Docker儲存庫。進行下列替代：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>以Astra Control套裝組合檔案的名稱取代bunder_file。</p>
+</li>
+<li>
+<p>將my_registry取代為Docker儲存庫的URL。</p>
+</li>
+<li>
+<p>以儲存庫的認證資料取代my_register_user和my_register_password。</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_PASSWORD</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>將套件成品複製到成品儲存庫。以Astra Control套件檔案的名稱取代bunder_file、並以網路位置取代network_location、將成品檔案複製到：</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl astra packages copy-artifacts -m BUNDLE_FILE -n NETWORK_LOCATION</pre>
+</div>
 </div>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="新增軟體套件">新增軟體套件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以使用Astra Control Center套裝組合檔案匯入軟體套件。這樣做會安裝套件、讓Astra Control Center能夠使用該軟體。</p>
+</div>
+<div class="sect2">
+<h3 id="使用astra-control網路ui新增軟體套件">使用Astra Control網路UI新增軟體套件</h3>
+<div class="paragraph">
+<p>您可以使用Astra Control Center網路UI來新增已上傳至連線儲存庫的軟體套件。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步驟</div>
+<ol class="arabic">
+<li>
+<p>在*管理您的帳戶*導覽區域中、選取*帳戶*。</p>
+</li>
+<li>
+<p>選取*套件*索引標籤。</p>
+</li>
+<li>
+<p>選取*「Add*（新增*）」按鈕。</p>
+</li>
+<li>
+<p>在檔案選擇對話方塊中、選取上傳圖示。</p>
+</li>
+<li>
+<p>選擇要上傳的Astra Control套裝組合檔案、格式為「.yaml」。</p>
+</li>
+<li>
+<p>選取*「Add*」。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>如果套件檔案有效、且套件映像和成品位於連線的儲存庫中、則套件會新增至Astra Control Center。當「<strong>狀態</strong>」欄中的狀態變更為*可用*時、您可以使用套件。您可以將游標暫留在套件的狀態上、以取得更多資訊。</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1183,10 +1226,120 @@
 <img src="/us-en/astra-control-center/images/note.svg" alt="附註">
 </td>
 <td class="content">
-您也可以從Astra Control Center * Dashboard <strong>開始檢視應用程式資訊。在*應用程式*索引標籤的*資源摘要*下、您可以選取託管應用程式、以前往*應用程式*頁面。進入「*應用程式</strong>」頁面之後、請依照上述步驟操作。
+如果您的儲存庫中找不到套件的一或多個影像或成品、則會出現該套件的錯誤訊息。
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="使用cli新增軟體套件">使用CLI新增軟體套件</h3>
+<div class="paragraph">
+<p>您可以使用CLI匯入已上傳至連線儲存庫的軟體套件。為達成此目的、您必須先記錄Astra Control Center帳戶ID和API權杖。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步驟</div>
+<ol class="arabic">
+<li>
+<p>使用網頁瀏覽器登入Astra Control Center網頁UI。</p>
+</li>
+<li>
+<p>從儀表板中、選取右上角的使用者圖示。</p>
+</li>
+<li>
+<p>選擇* API存取*。</p>
+</li>
+<li>
+<p>請記下畫面頂端附近的帳戶ID。</p>
+</li>
+<li>
+<p>選取*產生API權杖*。</p>
+</li>
+<li>
+<p>在產生的對話方塊中、選取*產生API權杖*。</p>
+</li>
+<li>
+<p>記下產生的權杖、然後選取*關閉*。在CLI中、將目錄變更為擷取套件內容中的「.yaml」套件檔案位置。</p>
+</li>
+<li>
+<p>使用套件檔案匯入套件、並進行下列替代：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>以Astra Control套裝組合檔案的名稱取代bunder_file。</p>
+</li>
+<li>
+<p>以Astra Control執行個體的DNS名稱取代伺服器。</p>
+</li>
+<li>
+<p>使用您先前記錄的帳戶ID和API Token來取代帳戶ID和Token。</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl astra packages import -m BUNDLE_FILE -u SERVER -a ACCOUNT_ID -k TOKEN</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>如果套件檔案有效、且套件映像和成品位於連線的儲存庫中、則套件會新增至Astra Control Center。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+如果您的儲存庫中找不到套件的一或多個影像或成品、則會出現該套件的錯誤訊息。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="移除軟體套件">移除軟體套件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以使用Astra Control Center網路UI移除先前匯入Astra Control Center的軟體套件。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步驟</div>
+<ol class="arabic">
+<li>
+<p>在*管理您的帳戶*導覽區域中、選取*帳戶*。</p>
+</li>
+<li>
+<p>選取*套件*索引標籤。</p>
+<div class="paragraph">
+<p>您可以在此頁面上查看已安裝套件的清單及其狀態。</p>
+</div>
+</li>
+<li>
+<p>在套件的「<strong>動作</strong>」欄中、開啟「動作」功能表。</p>
+</li>
+<li>
+<p>選擇*刪除*。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>套件會從Astra Control Center刪除、但套件的映像和成品仍會保留在儲存庫中。</p>
+</div>
+<h2 id="如需詳細資訊請參閱" class="discrete">如需詳細資訊、請參閱</h2>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="manage-connections.html">"管理儲存庫連線"</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 
     </article>
