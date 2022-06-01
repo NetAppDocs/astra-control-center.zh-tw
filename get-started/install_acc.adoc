@@ -381,7 +381,6 @@ NOTE: 如需有關「負載平衡器」和入口服務類型的詳細資訊、�
 
 
 
-.. （若為使用Astra Data Store預覽的安裝）請參閱此已知問題 link:../release-notes/known-issues-ads.html#astra-data-store-cannot-be-used-as-a-storage-class-for-astra-control-center-due-to-mongodb-pod-liveness-probe-failure["其他必要變更"] 至Yaml。
 
 
 +

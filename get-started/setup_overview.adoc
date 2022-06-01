@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/setup_overview.html 
-keywords: set up astra control, setup astra control, setting up Astra Control Center, astra control license, add cluster, import storage, add bucket 
+keywords: set up astra control, astra control license, add cluster, add storage backend, import storage, add bucket 
 summary: 安裝Astra Control Center、登入UI並變更密碼之後、您將需要設定授權、新增叢集、管理儲存設備及新增儲存區。 
 ---
 = 設定Astra控制中心
@@ -57,7 +57,7 @@ NOTE: 如果您擁有評估授權、請務必儲存您的帳戶ID、以免在Ast
 
 == 新增叢集
 
-若要開始管理應用程式、請新增Kubernetes叢集、並將其當作運算資源來管理。您必須為Astra Control Center新增叢集、才能探索Kubernetes應用程式。若要進行Astra Data Store預覽、您需要新增Kubernetes應用程式叢集、其中包含使用Astra Data Store預覽所配置之Volume的應用程式。
+若要開始管理應用程式、請新增Kubernetes叢集、並將其當作運算資源來管理。您必須為Astra Control Center新增叢集、才能探索Kubernetes應用程式。對於Astra Data Store、您想要新增Kubernetes應用程式叢集、其中包含使用Astra Data Store所配置磁碟區的應用程式。
 
 
 TIP: 我們建議Astra Control Center先管理部署於上的叢集、再將其他叢集新增至Astra Control Center進行管理。需要管理初始叢集、才能傳送Kubmetrics資料和叢集相關資料、以供進行度量和疑難排解。您可以使用*新增叢集*功能、以Astra控制中心來管理叢集。
@@ -72,8 +72,8 @@ TIP: 我們建議Astra Control Center先管理部署於上的叢集、再將其�
 
 ====
 .您需要的是 #8217 ；需要的是什麼
+* 新增叢集之前、請先檢閱並執行必要的 link:add-cluster-reqs.html["必要工作"^]。
 
-IMPORTANT: 新增叢集之前、請先檢閱並執行必要的 link:add-cluster-reqs.html["必要工作"^]。
 
 .步驟
 . 在Astra Control Center UI的* Dashboard *中、選取「叢集」區段中的*「Add*」。
@@ -111,32 +111,39 @@ IMPORTANT: 在Astra Control Center中新增要管理的叢集之後、可能需�
 
 == 新增儲存後端
 
-您可以新增儲存後端、以便Astra Control管理其資源。將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。
+您可以新增儲存後端、以便Astra Control管理其資源。您可以在託管叢集上部署儲存後端、或使用現有的儲存後端。
 
-您可以從儀表板或後端功能表瀏覽提示、新增探索到的儲存後端。
+將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。
 
-.您需要的是 #8217 ；需要的是什麼
-* 您有 link:../get-started/setup_overview.html#add-cluster["新增叢集"] 它由Astra Control管理。
+.您的部署需求：#8217；現有Astra Data Store部署的需求
+* 您已新增Kubernetes應用程式叢集和基礎運算叢集。
 +
 
-NOTE: 受管理叢集附加了受支援的後端、Astra Control可以探索該後端。
-
-* Astra Data Store預覽安裝：您已新增Kubernetes應用程式叢集。
-+
-
-NOTE: 新增適用於Astra Data Store的Kubernetes應用程式叢集之後、叢集會在探索到的後端清單中顯示為「Unmanaged」。接下來、您必須新增包含Astra Data Store的運算叢集、並作為Kubernetes應用程式叢集的基礎。您可以從UI的*後端*執行此動作。選取叢集的「動作」功能表、選取「管理」、然後選取 link:../get-started/setup_overview.html#add-cluster["新增叢集"]。在「Unmanaged」叢集狀態變更為Kubernetes叢集名稱之後、您可以繼續新增後端。
+IMPORTANT: 在您新增適用於Astra Data Store的Kubernetes應用程式叢集、並由Astra Control管理之後、叢集會在探索到的後端清單中顯示為「Unmanaged」。接下來、您必須新增包含Astra Data Store的運算叢集、並作為Kubernetes應用程式叢集的基礎。您可以從UI的*後端*執行此動作。選取叢集的「動作」功能表、選取「管理」、然後選取 link:../get-started/setup_overview.html#add-cluster["新增叢集"]。在「Unmanaged」叢集狀態變更為Kubernetes叢集名稱之後、您可以繼續新增後端。
 
 
+
+.您的部署需求：#8217；需要新的Astra Data Store部署
+* 您有 link:../use/manage-packages-acc.html["已上傳您要部署的安裝套件版本"] 至Astra Control可存取的位置。
+* 您已新增要用於部署的Kubernetes叢集。
+* 您已上傳 <<Add a license for Astra Control Center,Astra Data Store授權>> 部署至Astra Control可存取的位置。
+
+
+.選項
+* <<Deploy storage resources>>
+* <<Use an existing storage backend>>
+
+
+
+
+=== 部署儲存資源
+
+您可以部署新的Astra Data Store、並管理相關的儲存後端。
 
 .步驟
-. 執行下列其中一項：
+. 從儀表板或後端功能表瀏覽：
 +
-** 從*儀表板*：
-+
-... 從Storage backend（儲存後端）區段中、選取* Add*（新增*）。
-... 從「資源摘要」>「儲存後端」區段中、選取*「新增*」。
-
-
+** 從*儀表板*：從「資源摘要」中、從「儲存後端」窗格中選取連結、然後從「後端」區段中選取「*新增*」。
 ** 從*後端*：
 +
 ... 在左側導覽區域中、選取*後端*。
@@ -145,29 +152,99 @@ NOTE: 新增適用於Astra Data Store的Kubernetes應用程式叢集之後、叢
 
 
 
+. 在「*部署*」索引標籤中選取「* Astra Data Store*部署」選項。
+. 選取要部署的Astra Data Store套件：
++
+.. 輸入Astra Data Store應用程式的名稱。
+.. 選擇您要部署的Astra Data Store版本。
++
+
+NOTE: 如果您尚未上傳想要部署的版本、可以使用*新增套件*選項、或結束精靈並使用 link:../use/manage-packages-acc.html["套件管理"] 上傳安裝套裝組合。
+
+
+
+. 選取您先前已上傳的Astra Data Store授權、或使用*新增授權*選項上傳授權以搭配應用程式使用。
++
+
+NOTE: 具有完整權限的Astra Data Store授權會與Kubernetes叢集相關聯、而且這些相關的叢集應該會自動顯示。如果沒有託管叢集、您可以選取*新增叢集*選項、將其中一個新增至Astra Control管理。對於Astra Data Store授權、如果授權與叢集之間沒有關聯、您可以在精靈的下一頁定義此關聯。
+
+. 如果您尚未將Kubernetes叢集新增至Astra Control管理、則必須從* Kubernetes叢集*頁面執行此動作。從清單中選取現有的叢集、或選取*新增基礎叢集*、將叢集新增至Astra Control管理。
+. 選取Kubernetes叢集的部署範本大小、以提供Astra Data Store的資源。
++
+
+TIP: 挑選範本時、請針對較大的工作負載選擇具有較多記憶體和核心的較大節點、或針對較小的工作負載選擇較多節點。您應該根據授權允許的內容來選取範本。每個範本選項都會針對每個節點的記憶體、核心和容量、建議符合範本模式的合格節點數量。
+
+. 設定節點：
++
+.. 新增節點標籤以識別支援此Astra Data Store叢集的工作節點集區。
++
+
+IMPORTANT: 在開始部署或部署之前、必須將標籤新增至叢集中用於Astra Data Store部署的各個節點。
+
+.. 手動設定每個節點的容量（GiB）、或選取允許的最大節點容量。
+.. 設定叢集中允許的節點數目上限、或允許叢集上的節點數目上限。
+
+
+. （僅限Astra Data Store完整授權）輸入您要用於Protection Domain的標籤金鑰。
++
+
+NOTE: 為每個節點的金鑰建立至少三個唯一的標籤。例如、如果您的金鑰是「astra.datastore.protection.domain`」、您可以建立下列標籤：「astra.datastore.protection.domain=domain1`,`astra.datastore.protection.domain=domain2`」和「astra.datastore.protection.domain=domain3`」。
+
+. 設定管理網路：
++
+.. 輸入Astra Data Store內部管理的管理IP位址、該位址與工作節點IP位址位於同一子網路。
+.. 選擇使用相同的NIC進行管理和資料網路、或分別設定。
+.. 輸入資料網路IP位址集區、子網路遮罩和閘道、以供儲存存取。
+
+
+. 檢查組態、然後選取*部署*開始安裝。
+
+
+成功安裝之後、後端會在後端清單中以「Available（可用）」狀態顯示、並顯示作用中的效能資訊。
+
+
+NOTE: 您可能需要重新整理頁面、以便顯示後端。
+
+
+
+=== 使用現有的儲存後端
+
+您可以將探索到ONTAP 的功能區或Astra Data Store儲存後端納入Astra Control Center管理。
+
+.步驟
+. 從儀表板或後端功能表瀏覽：
++
+** 從*儀表板*：從「資源摘要」中、從「儲存後端」窗格中選取連結、然後從「後端」區段中選取「*新增*」。
+** 從*後端*：
++
+... 在左側導覽區域中、選取*後端*。
+... 從託管叢集的探索後端選取*管理*、或選取*新增*來管理其他現有後端。
+
+
+
+
+. 選取*使用現有*索引標籤。
 . 視後端類型而定、執行下列其中一項：
 +
 ** * Astra資料儲存區*：
 +
-... 選取*使用現有*索引標籤。
-... 選取* Astra Data Store*索引標籤。
+... 選擇* Astra Data Store*。
 ... 選取受管理的運算叢集、然後選取* Next*。
-... 確認後端詳細資料、然後選取*管理儲存後端*。
+... 確認後端詳細資料、然後選取*「Add storage backend*（新增儲存後端*）」。
 
 
 ** *《*》*：ONTAP
 +
-... 選取*使用現有*索引標籤。
+... 選擇* ONTAP 《*》*《*》。
 ... 輸入ONTAP 該系統的管理員認證資料、然後選取* Review *。
-... 確認後端詳細資料、然後選取*管理*。
+... 確認後端詳細資料、然後選取*「Add storage backend*（新增儲存後端*）」。
 
 
 
 
-+
+
+
 後端會以「可用」狀態顯示在清單中、並顯示摘要資訊。
-
-
 
 
 NOTE: 您可能需要重新整理頁面、以便顯示後端。

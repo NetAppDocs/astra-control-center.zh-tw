@@ -45,6 +45,10 @@ entries:
     url: "/use/view-account-activity.html"
   - title: 更新現有授權
     url: "/use/update-licenses.html"
+  - title: 管理儲存庫連線
+    url: "/use/manage-connections.html"
+  - title: 管理軟體套件
+    url: "/use/manage-packages-acc.html"
 - title: 管理儲存庫
   url: "/use/manage-buckets.html"
 - title: 管理儲存後端

@@ -43,7 +43,7 @@ Astra Control Center需要下列其中一種作業環境：
 
 | Astra Trident  a| 
 * 已安裝並設定Astra Trident 21.004或更新版本
-* 如果Astra Data Store預覽將用作儲存後端、則已安裝並設定Astra Trident 210.1或更新版本
+* 如果Astra Data Store將用作儲存後端、則已安裝並設定Astra Trident 210.1或更新版本
 
 
 |===

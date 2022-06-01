@@ -4,7 +4,7 @@ permalink: release-notes/known-issues-ads.html
 keywords: astra, control center, ads, data store, bugs, known issues, problems 
 summary: 已知問題可識別可能導致您無法成功使用本產品版本的問題。 
 ---
-= Astra Data Store預覽與此Astra Control Center版本的已知問題
+= Astra Data Store和此Astra Control Center版本的已知問題
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -13,54 +13,7 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 已知問題可識別可能導致您無法成功使用本產品版本的問題。
 
-下列已知問題會影響Astra資料儲存區的管理、目前版本的Astra控制中心版本如下：
-
-
-
-== 由於MongoDB Pod活動探針故障、Astra Data Store預覽無法作為Astra Control Center的儲存類別使用
-
-在Astra Control Center部署期間、當您嘗試使用Astra Data Store預覽做為儲存類別資源配置程式時、MongoDB Pod活動探針會失敗、導致部署無法完成。
-
-若要修正此問題、請在完成時、除了標準的Y反 洗錢變更之外、進行下列變更 link:../get-started/install_acc.html#configure-astra-control-center["Astra Control Center安裝程序"]：
-
-. 編輯 link:../get-started/install_acc.html#configure-the-astra-control-center-operator["Astra Control Center營運者部署Yaml（Astra _control_center_oper_deploy、yaml）"] 若要變更Helm安裝逾時：
-+
-[listing]
-----
-- name: ACCOP_HELM_INSTALLTIMEOUT
-  value: 20m
-----
-. 編輯 link:../get-started/install_acc.html#configure-astra-control-center["Astra Control Center自訂資源（CR）檔案（Astra _control_center_min.yaml）"] 並在「最新資訊」下加入強調顯示的其他值：
-+
-[listing, subs="+quotes"]
-----
-apiVersion: astra.netapp.io/v1
-kind: AstraControlCenter
-metadata:
-  name: astra
-*spec:*
-  accountName: "Example"
-  astraVersion: "ASTRA_VERSION"
-  astraAddress: "astra.example.com"
-  autoSupport:
-    enrolled: true
-  email: "[admin@example.com]"
-  firstName: "SRE"
-  lastName: "Admin"
-  imageRegistry:
-    name: "[your_registry_path]"
-    secret: "astra-registry-cred"
-  storageClass: "ontap-gold"
-  *additionalValues:*
-    *polaris-mongodb:*
-      *mongodb:*
-        *livenessProbe:*
-          *initialDelaySeconds: 400*
-      *metrics:*
-        *livenessProbe:*
-          *initialDelaySeconds: 400*
-----
-
+https://docs.netapp.com/us-en/astra-data-store/release-notes/known-issues.html["請參閱這些已知問題"] 這可能會影響Astra資料儲存區的管理、因為Astra Control Center目前已推出。
 
 
 
@@ -68,5 +21,4 @@ metadata:
 
 * link:../release-notes/known-issues.html["已知問題"]
 * link:../release-notes/known-limitations.html["已知限制"]
-* https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store文件"]
 

@@ -168,5 +168,5 @@ Astra Control Center不支援使用叢集範圍的運算子進行應用程式管
 == 如需詳細資訊、請參閱
 
 * link:../release-notes/known-issues.html["已知問題"]
-* link:../release-notes/known-issues-ads.html["Astra Data Store預覽與此Astra Control Center版本的已知問題"]
+* link:../release-notes/known-issues-ads.html["Astra Data Store和此Astra Control Center版本的已知問題"]
 

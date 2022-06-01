@@ -2,7 +2,7 @@
 section: concepts
 title: 概念
 entries:
-- title: Astra Control簡介
+- title: 瞭解Astra Control
   url: "/concepts/intro.html"
 - title: 架構與元件
   url: "/concepts/architecture.html"

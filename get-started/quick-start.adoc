@@ -16,7 +16,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 歡迎試用！如果您想要試用Astra Control Center、可以使用90天試用版授權。請參閱 link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["授權資訊"] 以取得詳細資料。
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt="1"></span>檢閱Kubernetes叢集需求
-* Astra可搭配Kubernetes叢集、搭配Trident設定ONTAP 的功能、以提供後端的功能、或是Astra Data Store預覽儲存後端。
+* Astra可搭配Kubernetes叢集、搭配Trident設定ONTAP 的支援功能、包括後端的功能、或是Astra Data Store儲存後端。
 * 叢集必須以健全狀態執行、且至少有三個線上工作者節點。
 * 叢集必須執行Kubernetes。
 
@@ -38,7 +38,7 @@ link:../get-started/install_overview.html["深入瞭解如何安裝Astra Control
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"[] alt="there"></span>完成一些初始設定工作
 * 新增授權。
 * 新增Kubernetes叢集、Astra Control Center會探索詳細資料。
-* 新增ONTAP 一個功能不一的 https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store預覽"] 儲存後端：
+* 新增ONTAP 一個功能不一的 https://docs.netapp.com/us-en/astra-data-store/index.html["Astra資料儲存區"] 儲存後端：
 * 或者、您也可以新增物件存放區、以儲存應用程式備份。
 
 

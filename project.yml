@@ -62,13 +62,13 @@ homepage:
       url: https://docs.netapp.com/us-en/astra/release-notes/whats-new.html
     - title: Astra Control Service快速入門
       url: https://docs.netapp.com/us-en/astra/get-started/quick-start.html
-  - title: 使用Astra Data Store預覽
+  - title: 使用Astra資料儲存區
     links:
     - title: Astra Data Store簡介
       url: https://docs.netapp.com/us-en/astra-data-store/concepts/intro.html
     - title: 本版Astra Data Store內容
       url: https://docs.netapp.com/us-en/astra-data-store/release-notes/whats-new.html
-    - title: Astra Data Store預覽快速入門
+    - title: Astra Data Store快速入門
       url: https://docs.netapp.com/us-en/astra-data-store/get-started/quick-start.html
   - title: 解決方案簡介
     links:

@@ -605,11 +605,8 @@
   <block id="0d6a0b4ff88d33831cdf8302d6f4d636" category="list-text">已部署並管理的Astra Data Store儲存後端</block>
   <block id="8ff093262ab4588936566aa5eb25a42f" category="list-text">Astra Data Store授權檔案（請聯絡您的NetApp銷售代表以購買Astra Data Store授權）</block>
   <block id="fac828474586c4baa2e12ed37254e3bc" category="list-text">選取儲存後端的名稱。</block>
-  <block id="f94ec21b3c0c7b47ac39427793903380" category="list-text">在*基本資訊*下、您可以看到安裝的授權類型（如果有）。</block>
   <block id="06396cd50d61096b559e91288e0a0460" category="paragraph">如果您將游標暫留在授權資訊上、則會出現一個快顯視窗、內含更多資訊、例如過期和權利資訊。</block>
   <block id="862b26354fab838d0bc4c72a4d1e45c6" category="list-text">在「*授權*」下、選取授權名稱旁的編輯圖示。</block>
-  <block id="793c2102fbdb2f1f590ab9cd7867e98f" category="list-text">在*更新授權*頁面中、選取*新增授權*。</block>
-  <block id="5b4282392687039f164888af6aae32bd" category="list-text">選取您從NetApp取得的授權檔案。</block>
   <block id="fa12509cfb8e8ccded16e2a254e988c4" category="list-text">選取*「Add*」。</block>
   <block id="cca05d90c5263f2a5fa3bf4eb854fba0" category="section-title">將節點新增至儲存後端叢集</block>
   <block id="d114496fcc61250e5f3f6bc3c93263c9" category="paragraph">您可以將節點新增至Astra Data Store叢集、最多可新增至Astra Data Store安裝的授權類型所支援的節點數。</block>
@@ -962,7 +959,6 @@
   <block id="b777e6ba4555d404b00c2436d03ae649" category="inline-link-macro">授權資訊</block>
   <block id="dc9e569caa79effd430c7ea63ceff7be" category="paragraph">歡迎試用！如果您想要試用Astra Control Center、可以使用90天試用版授權。請參閱 <block ref="3d35b4f40b39e7d8200f90f9d624f8f4" category="inline-link-macro-rx"></block> 以取得詳細資料。</block>
   <block id="4854d4c0301c6f34c76f1cb78057e09e" category="list-title">span class="image"&gt;&lt;imgrc=<block ref="0c3becc25d95e48b9ca863002a042824" category="inline-link-rx"></block> alt="1"&gt;&lt;/span&gt;檢閱Kubernetes叢集需求</block>
-  <block id="c287552db25a1fab7b049bb27d492f51" category="list-text">Astra可搭配Kubernetes叢集、搭配Trident設定ONTAP 的功能、以提供後端的功能、或是Astra Data Store預覽儲存後端。</block>
   <block id="0deb5023224ed4d71135e9bae6dff9d4" category="list-text">叢集必須以健全狀態執行、且至少有三個線上工作者節點。</block>
   <block id="5f08198ddd920cae8e4af705793b2a56" category="list-text">叢集必須執行Kubernetes。</block>
   <block id="e34728b4f7a3f87b9d4e4bc0568096e1" category="inline-link-macro">深入瞭解Astra Control Center需求</block>
@@ -977,8 +973,6 @@
   <block id="80de081c75779cda8e2db1de0f292684" category="list-title">span class="image"&gt;&lt;imgrc=<block ref="ddd753dc2858fe3a5582f20b300a0541" category="inline-link-rx"></block> alt="there"&gt;&lt;/span&gt;完成一些初始設定工作</block>
   <block id="f13e95a655fb97423bd52082209d8781" category="list-text">新增授權。</block>
   <block id="89a40ca78d4ff20ec6d54ba006768895" category="list-text">新增Kubernetes叢集、Astra Control Center會探索詳細資料。</block>
-  <block id="15124155930d299e6f1779b4748a5e68" category="inline-link">Astra Data Store預覽</block>
-  <block id="6514f4d4ab7040c9d32ce9aea0fd62ad" category="list-text">新增ONTAP 一個功能不一的<block ref="e41935a824f782ed0b4e20297d584896" category="inline-link-rx"></block> 儲存後端：</block>
   <block id="aacfab881a9e939b2424f0e0b25eb558" category="list-text">或者、您也可以新增物件存放區、以儲存應用程式備份。</block>
   <block id="dd1777e71bd3db9cdf9848cb04565f48" category="inline-link-macro">深入瞭解初始設定程序</block>
   <block id="9ad40a01405c834a45bae664275527c1" category="paragraph"><block ref="8993acb8fe2145a6f530c4154ba1344b" category="inline-link-macro-rx"></block>。</block>
@@ -1010,7 +1004,6 @@
   <block id="b3071c30261a1e065c64f3de227b01ff" category="cell">Astra Control Center的FQDN位址</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="cell">Astra Trident</block>
   <block id="782ddd5eae9f93dbf990bc08c3f35c1a" category="list-text">已安裝並設定Astra Trident 21.004或更新版本</block>
-  <block id="a533261ecbd74405d561fc2ee31235f5" category="list-text">如果Astra Data Store預覽將用作儲存後端、則已安裝並設定Astra Trident 210.1或更新版本</block>
   <block id="865fcbd8a3a74376a7ff576d468c2697" category="admonition">這些需求假設Astra Control Center是營運環境中唯一執行的應用程式。如果環境正在執行其他應用程式、請相應調整這些最低需求。</block>
   <block id="4d40a8e178faea46fe31329801bc6573" category="list-text">*映像登錄*：您必須擁有現有的私有Docker映像檔登錄、才能將Astra Control Center建置映像推入其中。您需要提供映像登錄的URL、以便上傳映像。</block>
   <block id="df819717a2baf5b48925d2b4cdaf4745" category="list-text">* Astra Trident / ONTAP S基 類組態*：Astra Control Center需要建立儲存類別、並將其設為預設儲存類別。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：</block>
@@ -1375,7 +1368,6 @@
   <block id="3fbb83902c150a1377da8e8e2d911407" category="paragraph">「*帳戶*&gt;*授權*」頁面會顯示授權資訊、到期日、授權序號、帳戶ID及使用的CPU單位。</block>
   <block id="720b504e7f38616e8ca9f116d5879587" category="admonition">如果您擁有評估授權、請務必儲存您的帳戶ID、以免在Astra Control Center故障時發生資料遺失（如果您未傳送ASUP）。</block>
   <block id="f81a9c9a14318abe20f6169e8dff8100" category="section-title">新增叢集</block>
-  <block id="af529ec0ce8e62fc49e3f11779d0350c" category="paragraph">若要開始管理應用程式、請新增Kubernetes叢集、並將其當作運算資源來管理。您必須為Astra Control Center新增叢集、才能探索Kubernetes應用程式。若要進行Astra Data Store預覽、您需要新增Kubernetes應用程式叢集、其中包含使用Astra Data Store預覽所配置之Volume的應用程式。</block>
   <block id="3dff3c9eae1caa73c7e03a840b9006bc" category="admonition">我們建議Astra Control Center先管理部署於上的叢集、再將其他叢集新增至Astra Control Center進行管理。需要管理初始叢集、才能傳送Kubmetrics資料和叢集相關資料、以供進行度量和疑難排解。您可以使用*新增叢集*功能、以Astra控制中心來管理叢集。</block>
   <block id="f4105577bf107396cef41e7fc8b36c75" category="paragraph">當Astra Control管理叢集時、它會追蹤叢集的預設StorageClass。如果您使用「kubecll」命令變更StorageClass、Astra Control會還原變更。若要變更由Astra Control管理之叢集中的預設StorageClass、請使用下列其中一種方法：</block>
   <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">使用Astra Control API「PUT /managedClusters'端點」、並使用「DefaultStorageClass」參數指派不同的預設StorageClass</block>
@@ -1396,27 +1388,14 @@
   <block id="c34e73c1ab29825cfabdde95f496f768" category="list-text">檢閱資訊、如果一切正常、請選取*新增叢集*。</block>
   <block id="3b8e5272ef61221ea3c7e5d842687fae" category="paragraph">叢集會進入*探索*狀態、然後變更為*執行中*。您已成功新增Kubernetes叢集、現在正在Astra Control Center中進行管理。</block>
   <block id="30d1bfe2e9b6bfe1d2ea5dd7e0e26c80" category="admonition">在Astra Control Center中新增要管理的叢集之後、可能需要幾分鐘的時間來部署監控操作員。在此之前、通知圖示會變成紅色、並記錄*監控代理程式狀態檢查失敗*事件。您可以忽略這一點、因為當Astra Control Center取得正確狀態時、問題就能解決。如果幾分鐘內仍無法解決問題、請前往叢集、然後執行「ocGet pod -n NetApp-監 控」作為起點。您需要查看監控操作員記錄、以偵錯問題。</block>
-  <block id="00e06e3552b1b0b5e3883c5e00c80134" category="paragraph">您可以新增儲存後端、以便Astra Control管理其資源。將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。</block>
-  <block id="ee0ce8ad611b1fbf9c6721c60a0baf71" category="paragraph">您可以從儀表板或後端功能表瀏覽提示、新增探索到的儲存後端。</block>
-  <block id="2cc9296c494487aee08ead4a5418cb26" category="inline-link-macro">新增叢集</block>
-  <block id="f3a8b51739759c7aab725f0b7c0b6d05" category="list-text">您有 <block ref="490469b1058ddba4dd23d8bc5d4ce310" category="inline-link-macro-rx"></block> 它由Astra Control管理。</block>
-  <block id="8df2a009a22eec9cf4e582865db9e073" category="admonition">受管理叢集附加了受支援的後端、Astra Control可以探索該後端。</block>
-  <block id="3c8d59911b2ed233f35086eafb17748f" category="list-text">Astra Data Store預覽安裝：您已新增Kubernetes應用程式叢集。</block>
   <block id="129d92c88545c014f5981e4bedd69fd4" category="inline-link-macro">新增叢集</block>
-  <block id="d50382f4f1656b37fe3490e3ea650497" category="admonition">新增適用於Astra Data Store的Kubernetes應用程式叢集之後、叢集會在探索到的後端清單中顯示為「Unmanaged」。接下來、您必須新增包含Astra Data Store的運算叢集、並作為Kubernetes應用程式叢集的基礎。您可以從UI的*後端*執行此動作。選取叢集的「動作」功能表、選取「管理」、然後選取 <block ref="8c30ee7267ee6c93cf0c195b661c2cd2" category="inline-link-macro-rx"></block>。在「Unmanaged」叢集狀態變更為Kubernetes叢集名稱之後、您可以繼續新增後端。</block>
-  <block id="d8c9edabd6660da785c04c0b0f470ab7" category="list-text">從*儀表板*：</block>
-  <block id="4d9379be73ba55f4c1b079ee884897de" category="list-text">從Storage backend（儲存後端）區段中、選取* Add*（新增*）。</block>
-  <block id="a60d8d99de1db552bb0ff25496934484" category="list-text">從「資源摘要」&gt;「儲存後端」區段中、選取*「新增*」。</block>
   <block id="94fdb40b8f29075643feafb58a5c7715" category="list-text">從*後端*：</block>
   <block id="4b46912a4f3acad842c6ef52f8b990dc" category="list-text">視後端類型而定、執行下列其中一項：</block>
   <block id="527c8a8fccaa699a0c6292d5018c13a3" category="list-text">* Astra資料儲存區*：</block>
   <block id="4e5f7f6ac61851274c3d50decf63b5a2" category="list-text">選取*使用現有*索引標籤。</block>
-  <block id="99b183b5232e3f7f3fd7aa98ed075954" category="list-text">選取* Astra Data Store*索引標籤。</block>
   <block id="7fc51f41da7b2a2245c552ae08b9e61d" category="list-text">選取受管理的運算叢集、然後選取* Next*。</block>
-  <block id="8d152c6be3319e8a434f4a4eded5f1d7" category="list-text">確認後端詳細資料、然後選取*管理儲存後端*。</block>
   <block id="c77884d91114de0aa4b7d8b549b2113e" category="list-text">*《*》*：ONTAP</block>
   <block id="bf2393bb3f17f3d2b4ff6979c3c20036" category="list-text">輸入ONTAP 該系統的管理員認證資料、然後選取* Review *。</block>
-  <block id="094888b3c75d89979aa1e343a8e5c119" category="list-text">確認後端詳細資料、然後選取*管理*。</block>
   <block id="a8511fe304f9e2caa12c3c1c129e452a" category="paragraph">後端會以「可用」狀態顯示在清單中、並顯示摘要資訊。</block>
   <block id="d4608e29abe9d25f2211f4d29b0802fa" category="admonition">您可能需要重新整理頁面、以便顯示後端。</block>
   <block id="deea85f1feaf69ed17f9d01c95389da1" category="paragraph">如果您想要備份應用程式和持續儲存設備、或是想要跨叢集複製應用程式、則必須新增物件存放區資源庫供應商。Astra Control會將這些備份或複製儲存在您定義的物件存放區中。</block>
@@ -1506,8 +1485,6 @@
   <block id="ec81a04c20f0b656737e9b296cc5ce5a" category="paragraph">這會將Astra Control Center「truefik」閘道部署為Kubernetes負載平衡器類型服務。</block>
   <block id="f23f52f8ea19f7c2cd0f8e74d92eacff" category="paragraph">Astra Control Center使用類型為「loadbalancer」（Astra Control Center命名空間中的「shvC/truefik」）的服務、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。</block>
   <block id="77e0de8ecc5568c2d3a063c7dc7001ec" category="admonition">如需有關「負載平衡器」和入口服務類型的詳細資訊、請參閱 <block ref="ec43fa96d69fa714ee8406758839eaf7" category="inline-link-macro-rx"></block>。</block>
-  <block id="17eb8d332e75f64616b506be451b189f" category="inline-link-macro">其他必要變更</block>
-  <block id="19dfa68f9af3ebcd8abb0bcfff39c5fd" category="list-text">（若為使用Astra Data Store預覽的安裝）請參閱此已知問題 <block ref="6511a1f600064236c7dbbb54dd879ccf" category="inline-link-macro-rx"></block> 至Yaml。</block>
   <block id="a59774b3b337d42ea8340b94bf2d3f8e" category="section-title">完整的Astra控制中心和操作員安裝</block>
   <block id="c788fbef242d8cbeac1895b022577b56" category="list-text">如果您尚未在上一步中執行此操作、請建立「NetApp-acc」（或自訂）命名空間：</block>
   <block id="f940bc4260ea160f249996c1f8936f48" category="list-text">在「NetApp-acc」（或您的自訂）命名空間中安裝Astra Control Center：</block>
@@ -1670,8 +1647,6 @@
   <block id="c720f04897a24c86f93ce764015021d4" category="paragraph"><block ref="c720f04897a24c86f93ce764015021d4" category="inline-link-macro-rx"></block></block>
   <block id="cae4ab898e0de6e692eb3d10b6a95dbf" category="inline-link-macro">Astra Control Center注意事項</block>
   <block id="da5d4508481a86b7c3d0b834d23f4037" category="list-text"><block ref="da5d4508481a86b7c3d0b834d23f4037" category="inline-link-macro-rx"></block></block>
-  <block id="f885d736613811b426f3882868416c0c" category="inline-link-macro">Astra Data Store預覽注意事項</block>
-  <block id="866684ba00f3eaa7ffb3119bad439e6e" category="list-text"><block ref="866684ba00f3eaa7ffb3119bad439e6e" category="inline-link-macro-rx"></block></block>
   <block id="46e99d499ce6f7990ef9f220c50ce56d" category="summary">從Bitnami Helm圖表中瞭解如何部署MySQL。在Kubernetes叢集上部署MySQL之後、您可以使用Astra Control來管理應用程式。</block>
   <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">Bitnami Helm圖表</block>
   <block id="1b5fa0188e8ea3c73983cbacc6bad658" category="paragraph">瞭解如何從部署MySQL<block ref="89d30ca06936e36075136ad48e711aa1" category="inline-link-rx"></block>。在Kubernetes叢集上部署MySQL之後、您可以使用Astra Control來管理應用程式。</block>
@@ -1885,18 +1860,8 @@
   <block id="51df72d5934e1aa3f60d6cdb177b29a7" category="paragraph">當您開始管理叢集上的應用程式時、Astra Control Center授權使用量計算會包含叢集的CPU單元。</block>
   <block id="c985292efffba104a103f0714c4407ab" category="list-text"><block ref="c985292efffba104a103f0714c4407ab" category="inline-link-macro-rx"></block></block>
   <block id="42b90d40b51b0ccfc8a50cfa2f6c88bc" category="summary">Astra是Kubernetes應用程式資料生命週期管理服務、可簡化狀態應用程式的作業。輕鬆保護、備份及移轉Kubernetes工作負載、並立即建立可運作的應用程式複本。</block>
-  <block id="7e073986fe6af6ce1775bdfd558def36" category="doc">Astra Control簡介</block>
   <block id="34515f1d88b10d0db0a78eba6c533394" category="summary">已知問題可識別可能導致您無法成功使用本產品版本的問題。</block>
   <block id="88c91ef58cacca0ce7311796478d0cf3" category="doc">Astra Data Store預覽與此Astra Control Center版本的已知問題</block>
-  <block id="fdc2918b75d781bb6dd3c5b611748816" category="paragraph">下列已知問題會影響Astra資料儲存區的管理、目前版本的Astra控制中心版本如下：</block>
-  <block id="5132446b033e54d6debc0548b45d49ae" category="section-title">由於MongoDB Pod活動探針故障、Astra Data Store預覽無法作為Astra Control Center的儲存類別使用</block>
-  <block id="3c8fe1f135ab2ac9300f533669001f30" category="paragraph">在Astra Control Center部署期間、當您嘗試使用Astra Data Store預覽做為儲存類別資源配置程式時、MongoDB Pod活動探針會失敗、導致部署無法完成。</block>
-  <block id="e81390ac7a4e5ed54e210e59e5b5f694" category="inline-link-macro">Astra Control Center安裝程序</block>
-  <block id="6e8ac331af01cb23ac316dc2018c097d" category="paragraph">若要修正此問題、請在完成時、除了標準的Y反 洗錢變更之外、進行下列變更 <block ref="d14182609c4f3318aa56c7cc5e96252d" category="inline-link-macro-rx"></block>：</block>
-  <block id="8a13d448d34448db22a2b0a6dd1acefc" category="inline-link-macro">Astra Control Center營運者部署Yaml（Astra _control_center_oper_deploy、yaml）</block>
-  <block id="85d3f736ce18017c45e8a6ae4d1e8fe5" category="list-text">編輯 <block ref="aa49db316689710519b7c8def18b8801" category="inline-link-macro-rx"></block> 若要變更Helm安裝逾時：</block>
-  <block id="7a80cbdb518e1d355b96f0f85cfc440d" category="inline-link-macro">Astra Control Center自訂資源（CR）檔案（Astra _control_center_min.yaml）</block>
-  <block id="f0e4789c9bc3e68aa311924dc6728d18" category="list-text">編輯 <block ref="4c6c00b260f38942b09c4617203862e3" category="inline-link-macro-rx"></block> 並在「最新資訊」下加入強調顯示的其他值：</block>
   <block id="482723983a4f2af954e36ff41e567451" category="inline-link-macro">已知限制</block>
   <block id="58ddb149ad752e78b7ddd185699b6c95" category="list-text"><block ref="58ddb149ad752e78b7ddd185699b6c95" category="inline-link-macro-rx"></block></block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="summary">已知限制指出本產品版本不支援的平台、裝置或功能、或是無法與產品正確互通的平台、裝置或功能。請仔細檢閱這些限制。</block>
@@ -1951,7 +1916,6 @@
   <block id="52613a0e2a34040faff2fa3713d61414" category="section-title">現有連線至Postgres Pod會導致故障</block>
   <block id="a3e438b957ae4a8b4731d63d2e88365f" category="paragraph">當您在Postgres Pod上執行作業時、不應直接在Pod內連線以使用psql命令。Astra Control需要psql存取來凍結及解出資料庫。如果有預先存在的連線、則快照、備份或複製都會失敗。</block>
   <block id="c62766292d642e4d3c2f78cc22c7d571" category="section-title">在移除Astra Control Center執行個體期間、可能無法保留備份與快照</block>
-  <block id="fc8259e97b18a3baf3d9ca96fb8b483d" category="list-text"><block ref="fc8259e97b18a3baf3d9ca96fb8b483d" category="inline-link-macro-rx"></block></block>
   <block id="83d9b7618daad6df97a85360aa72e97b" category="summary">NetApp會定期更新Astra Control Center、為您提供新功能、增強功能及錯誤修復。</block>
   <block id="2d917589e4367d5e3e965e02872e555b" category="doc">Astra Control Center版本的新功能</block>
   <block id="9d007a46d69b936029562abdc3c56240" category="paragraph">我們很高興在此發表最新版的Astra Control Center 22.04.0。</block>
@@ -2072,10 +2036,8 @@
   <block id="b90cfe7eec2fd25d8051aa0d2904effd" category="sidebar">Astra Control Service簡介</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
   <block id="4b73996cc1da59c5ea313bcccd18304b" category="sidebar">Astra Control Service快速入門</block>
-  <block id="7ea0911f99c3d96666fd9f883b4db9ca" category="sidebar">使用Astra Data Store預覽</block>
   <block id="9f828d6c562cc0df256e51d5d235c7bb" category="sidebar">Astra Data Store簡介</block>
   <block id="9496fd053449dc632695aa62786ebaf1" category="sidebar">本版Astra Data Store內容</block>
-  <block id="3551ec406ac2e45ff0f50e87c946ab31" category="sidebar">Astra Data Store預覽快速入門</block>
   <block id="a862000507b324693be75565a4728c6e" category="sidebar">解決方案簡介</block>
   <block id="6c982e1027a895243c2e2e4e1675fa74" category="sidebar">具備Astra Control的PostgreSQL DBaaS</block>
   <block id="b1cb177a36a717434db632021b6d91bc" category="sidebar">MySQL DBaaas搭配Astra Control</block>
@@ -2118,7 +2080,6 @@
   <block id="02007100629a6c88678f302f0918ab86" category="list-title">編輯及旋轉認證的步驟</block>
   <block id="08972981c30d730f81d00e7d6e7709cb" category="list-text">建立新認證資料。</block>
   <block id="f8be12e25cfcab7e808ca98f80a56433" category="section-title">移除庫位認證資料</block>
-  <block id="47b2c3588cbae505ee9eeaf0ad395f38" category="paragraph">只有在新認證已套用至庫位、或庫位已不再有效使用時、才應移除庫位認證。</block>
   <block id="a31d0ea55a51bfbd5a603a8f5fa7a37a" category="admonition">您新增至Astra Control的第一組認證資料一律使用中、因為Astra Control使用認證資料來驗證備份儲存區。如果儲存區正在使用中、請勿移除這些認證資料、因為這會導致備份失敗和備份不可用。</block>
   <block id="b2b8741126a8674edc86e6286a85c804" category="inline-link">移除庫位認證疑難排解</block>
   <block id="983be0b26fa308ee99003c55cac37fb5" category="admonition">如果您確實移除作用中的儲存區認證、請參閱<block ref="939cc867881057c221247142d6425e0a" category="inline-link-rx"></block>。</block>
@@ -2134,4 +2095,146 @@
   <block id="daee2a4caddb0f1fced149c9b185ab3e" category="paragraph">接下來、設定Azure以建立虛擬網路、設定運算執行個體、建立Azure Blob容器、建立Azure Container Register（ACR）來裝載Astra Control Center映像、然後將映像推送至此登錄。</block>
   <block id="52393bb21023d79ef4e0fa374e54b83d" category="list-text">建立Azure虛擬網路。</block>
   <block id="5df56ab7fcd23252a7ac4c7a21742e57" category="list-text">建立至少一個Azure Blob容器來儲存備份。</block>
+  <block id="89110f39cddf501c149d691e3219c46f" category="list-text">Astra可搭配Kubernetes叢集、搭配Trident設定ONTAP 的支援功能、包括後端的功能、或是Astra Data Store儲存後端。</block>
+  <block id="97b4ab60412f0ac1b694143b04594cea" category="list-text">新增ONTAP 一個功能不一的<block ref="fc4f86eeee76cae2d1ef9200e442add9" category="inline-link-rx"></block> 儲存後端：</block>
+  <block id="fa137497aee412183c61f5b8fc5b4e06" category="list-text">如果Astra Data Store將用作儲存後端、則已安裝並設定Astra Trident 210.1或更新版本</block>
+  <block id="918bc432b267e0783b861303d55f277d" category="paragraph">若要開始管理應用程式、請新增Kubernetes叢集、並將其當作運算資源來管理。您必須為Astra Control Center新增叢集、才能探索Kubernetes應用程式。對於Astra Data Store、您想要新增Kubernetes應用程式叢集、其中包含使用Astra Data Store所配置磁碟區的應用程式。</block>
+  <block id="07bb61072986729e824079c9eb528582" category="paragraph">您可以新增儲存後端、以便Astra Control管理其資源。您可以在託管叢集上部署儲存後端、或使用現有的儲存後端。</block>
+  <block id="eb33ac2274505b5f55f336ecd9e9a2d2" category="paragraph">將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。</block>
+  <block id="f8f5539f53262607b5f2bff0f2048a87" category="list-title">您的部署需求：#8217；現有Astra Data Store部署的需求</block>
+  <block id="bbcdee2c81617430cf13df9d72e93bd4" category="list-text">您已新增Kubernetes應用程式叢集和基礎運算叢集。</block>
+  <block id="dc03b544598d0dfcfdee0b1fce2a4730" category="admonition">在您新增適用於Astra Data Store的Kubernetes應用程式叢集、並由Astra Control管理之後、叢集會在探索到的後端清單中顯示為「Unmanaged」。接下來、您必須新增包含Astra Data Store的運算叢集、並作為Kubernetes應用程式叢集的基礎。您可以從UI的*後端*執行此動作。選取叢集的「動作」功能表、選取「管理」、然後選取 <block ref="8c30ee7267ee6c93cf0c195b661c2cd2" category="inline-link-macro-rx"></block>。在「Unmanaged」叢集狀態變更為Kubernetes叢集名稱之後、您可以繼續新增後端。</block>
+  <block id="5f8f1c10343756cee5ac9c33e098132e" category="list-title">您的部署需求：#8217；需要新的Astra Data Store部署</block>
+  <block id="e149dd131ab58984f98a85e4acdc17f3" category="inline-link-macro">已上傳您要部署的安裝套件版本</block>
+  <block id="371c46463ca3b465cd0a0b198363c17f" category="list-text">您有 <block ref="ce9e25f6db2a9b698807ac8ac2ea2d16" category="inline-link-macro-rx"></block> 至Astra Control可存取的位置。</block>
+  <block id="562a8ee2a8f15700012f29228a3198c7" category="list-text">您已新增要用於部署的Kubernetes叢集。</block>
+  <block id="458428a2ebc28699f1238b3813b734ca" category="inline-xref">Astra Data Store授權</block>
+  <block id="6948cc91a6c54649d12ce002178db797" category="list-text">您已上傳 <block ref="ca242e38061772769065e88579b2054b" category="inline-xref-macro-rx"></block> 部署至Astra Control可存取的位置。</block>
+  <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="list-title">選項</block>
+  <block id="46b48276edd178cc02652b2502748e9b" category="list-text"><block ref="21c89fb696a98da415ef141d4426f5b4" category="inline-xref-macro-rx"></block></block>
+  <block id="eac5db2451716c6e754c5629b4aba911" category="list-text"><block ref="9112bb0ebca556cf8f0b58b937197e52" category="inline-xref-macro-rx"></block></block>
+  <block id="14eab9a2db4a5049557d0fd1dec518f6" category="section-title">部署儲存資源</block>
+  <block id="7ddc987aad918c3aa5c7681afd4f0ad1" category="paragraph">您可以部署新的Astra Data Store、並管理相關的儲存後端。</block>
+  <block id="08f444eb9d655ac72bff7a8c7a156be4" category="list-text">從儀表板或後端功能表瀏覽：</block>
+  <block id="dfb9c23bbc7c2e16774a33629fda3206" category="list-text">從*儀表板*：從「資源摘要」中、從「儲存後端」窗格中選取連結、然後從「後端」區段中選取「*新增*」。</block>
+  <block id="676bdf86441ac2653b79a3ebf49e8358" category="list-text">在「*部署*」索引標籤中選取「* Astra Data Store*部署」選項。</block>
+  <block id="597be48d7babaac4ca80e69876b30416" category="list-text">選取要部署的Astra Data Store套件：</block>
+  <block id="aec23c9187f09f1b6efccd1defa7e90a" category="list-text">輸入Astra Data Store應用程式的名稱。</block>
+  <block id="16d3b970beca75a7d4d9291bf7630d08" category="list-text">選擇您要部署的Astra Data Store版本。</block>
+  <block id="76df88555116f4997612dbb2de76c67f" category="inline-link-macro">套件管理</block>
+  <block id="c91338544c12c273ccf29dae0abc13f3" category="admonition">如果您尚未上傳想要部署的版本、可以使用*新增套件*選項、或結束精靈並使用 <block ref="e91d3a69532f4acdfd68c74249de52b4" category="inline-link-macro-rx"></block> 上傳安裝套裝組合。</block>
+  <block id="054467aebfccd30e1439657836085172" category="list-text">選取您先前已上傳的Astra Data Store授權、或使用*新增授權*選項上傳授權以搭配應用程式使用。</block>
+  <block id="9947bbb930c0833599055262eb533350" category="admonition">具有完整權限的Astra Data Store授權會與Kubernetes叢集相關聯、而且這些相關的叢集應該會自動顯示。如果沒有託管叢集、您可以選取*新增叢集*選項、將其中一個新增至Astra Control管理。對於Astra Data Store授權、如果授權與叢集之間沒有關聯、您可以在精靈的下一頁定義此關聯。</block>
+  <block id="b9ab366bc5de1ee421a3f42aebb6e744" category="list-text">如果您尚未將Kubernetes叢集新增至Astra Control管理、則必須從* Kubernetes叢集*頁面執行此動作。從清單中選取現有的叢集、或選取*新增基礎叢集*、將叢集新增至Astra Control管理。</block>
+  <block id="2c907290e05b9dae6669b08995fc334f" category="list-text">選取Kubernetes叢集的部署範本大小、以提供Astra Data Store的資源。</block>
+  <block id="cf0567ca20b66234ddc139b3ae9e9ee2" category="admonition">挑選範本時、請針對較大的工作負載選擇具有較多記憶體和核心的較大節點、或針對較小的工作負載選擇較多節點。您應該根據授權允許的內容來選取範本。每個範本選項都會針對每個節點的記憶體、核心和容量、建議符合範本模式的合格節點數量。</block>
+  <block id="c71bdd7933746d7b616e6590ce5bc1e6" category="list-text">設定節點：</block>
+  <block id="196e58f817fb76b922d42ae8cb507b84" category="list-text">新增節點標籤以識別支援此Astra Data Store叢集的工作節點集區。</block>
+  <block id="dbe2804e146eaed331f5634b7987d4b7" category="admonition">在開始部署或部署之前、必須將標籤新增至叢集中用於Astra Data Store部署的各個節點。</block>
+  <block id="597e664d9c313b97f534759016885f81" category="list-text">手動設定每個節點的容量（GiB）、或選取允許的最大節點容量。</block>
+  <block id="9714572d5c62ef898444053c725f14f4" category="list-text">設定叢集中允許的節點數目上限、或允許叢集上的節點數目上限。</block>
+  <block id="f4d94ebe0ea637c0b8c179c1988331f9" category="list-text">（僅限Astra Data Store完整授權）輸入您要用於Protection Domain的標籤金鑰。</block>
+  <block id="d034acb092111ab4de2380986529c1f1" category="admonition">為每個節點的金鑰建立至少三個唯一的標籤。例如、如果您的金鑰是「astra.datastore.protection.domain`」、您可以建立下列標籤：「astra.datastore.protection.domain=domain1`,`astra.datastore.protection.domain=domain2`」和「astra.datastore.protection.domain=domain3`」。</block>
+  <block id="fe243dd2cb4abaca6857f186347c3955" category="list-text">設定管理網路：</block>
+  <block id="c025a4dd2f98cc089b3e6d845d68c39f" category="list-text">輸入Astra Data Store內部管理的管理IP位址、該位址與工作節點IP位址位於同一子網路。</block>
+  <block id="d9336e58192e96a8929b9eaa33ab10c0" category="list-text">選擇使用相同的NIC進行管理和資料網路、或分別設定。</block>
+  <block id="ee35715999671aa777fffb12e79bc3fa" category="list-text">輸入資料網路IP位址集區、子網路遮罩和閘道、以供儲存存取。</block>
+  <block id="13907c40c50b60592dab5f935efefdfa" category="list-text">檢查組態、然後選取*部署*開始安裝。</block>
+  <block id="956419482d3a1dd60147a8112ee9d44a" category="paragraph">成功安裝之後、後端會在後端清單中以「Available（可用）」狀態顯示、並顯示作用中的效能資訊。</block>
+  <block id="1367edd6c20df9b4f12b0a42dda9848f" category="section-title">使用現有的儲存後端</block>
+  <block id="cc554fa05cd0e6f33901ad854991ed9b" category="paragraph">您可以將探索到ONTAP 的功能區或Astra Data Store儲存後端納入Astra Control Center管理。</block>
+  <block id="697006fa33c54f166cb7f597861b31be" category="list-text">從託管叢集的探索後端選取*管理*、或選取*新增*來管理其他現有後端。</block>
+  <block id="95bb1f6fc6c0566a462d54ff7d82a31b" category="list-text">選擇* Astra Data Store*。</block>
+  <block id="d3fff538538992ab275610d9ab9fc8fe" category="list-text">確認後端詳細資料、然後選取*「Add storage backend*（新增儲存後端*）」。</block>
+  <block id="3a8637e581240d33340d3e6f8927a52d" category="list-text">選擇* ONTAP 《*》*《*》。</block>
+  <block id="1acdd4dfb3c47f47b9b3897e8d3325f4" category="inline-link-macro">Astra Data Store注意事項</block>
+  <block id="fdb93feaa2c6123b98a32fa7804c91f8" category="list-text"><block ref="fdb93feaa2c6123b98a32fa7804c91f8" category="inline-link-macro-rx"></block></block>
+  <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">瞭解Astra Control</block>
+  <block id="a4680eb9fa1582cab96754589680065b" category="list-text">在*基本資訊*下、您可以看到安裝的授權類型。</block>
+  <block id="da41fa69f81a24e015fab366b0caf0cf" category="list-text">在「*更新授權*」頁面中、執行下列其中一項：</block>
+  <block id="5e33a12bc16d66724cc09b67c72dbf73" category="cell">授權狀態</block>
+  <block id="004bf6c9a40003140292e97330236c53" category="cell">行動</block>
+  <block id="0ebc865688ac84bd01bec7d7b4761f9a" category="cell">Astra Data Store至少新增一項授權。</block>
+  <block id="17ec870bf13b808b4960a96bb617abb9" category="paragraph">從清單中選取授權。</block>
+  <block id="25c87085115cd9f361d6c891eea68f96" category="cell">Astra Data Store未新增授權。</block>
+  <block id="da1e98dc49123864bfa24e00c323c4de" category="list-text">選取*「Add*（新增*）」按鈕。</block>
+  <block id="9ed83fc36c5339f8ef4956aebfa3e02e" category="list-text">選取要上傳的授權檔案。</block>
+  <block id="fb32cd0ea7e3744a722a981f0618c8a8" category="list-text">選擇*「Add*」（新增*）上傳授權檔案。</block>
+  <block id="41c6b2124485566dfdffb7497c5c575c" category="summary">您可以上傳並安裝套件至Astra Control Center。</block>
+  <block id="34995c0b7b3605616ca699a218578506" category="doc">管理儲存庫連線</block>
+  <block id="917d0bb268e2c38e9d5edc010a23df45" category="paragraph">您可以將儲存庫連線至Astra Control、作為軟體套件安裝映像和成品的參考。當您匯入軟體套件時、Astra Control會參考映像儲存庫中的安裝映像、二進位檔及成品儲存庫中的其他成品。</block>
+  <block id="6995185986444f5433b5959c9571c405" category="list-text">可存取的執行中Docker儲存庫</block>
+  <block id="44e4bcec2ed6d13ac6ad2a367f2db51c" category="list-text">可存取的執行中成品儲存庫（例如Artifactory）</block>
+  <block id="e7c0f6f6d040c5a03a881c2ca91f03f7" category="section-title">連接Docker映像儲存庫</block>
+  <block id="a1df89e0f4bd63fee4296afbb85b610d" category="paragraph">您可以連接Docker映像儲存庫來保存套件安裝映像、例如Astra Data Store的安裝映像。安裝套件時、Astra Control會從映像儲存庫匯入套件映像檔。</block>
+  <block id="947b6aeb064e43a1220d233b58bd6019" category="list-text">選取*連線*索引標籤。</block>
+  <block id="62f6dbc3561d757215911e5b66302815" category="list-text">在「* Docker Image Repository *」（* Docker影像儲存庫*）區段中、選取右上角的功能表。</block>
+  <block id="3eacc67b9e94130b9c939109be6a82d5" category="list-text">新增儲存庫的URL和連接埠。</block>
+  <block id="2c90eeb5d4b8aedff1dbe87bf0178bb8" category="list-text">如果需要驗證、請啟用「*使用驗證*」核取方塊、然後輸入儲存庫的認證資料。</block>
+  <block id="9fd3141d50ea9c4a63199f4a30de4ae4" category="paragraph">儲存庫已連線。在「* Docker Image Repository *」（* Docker映像儲存庫*）區段中、儲存庫應顯示連線狀態。</block>
+  <block id="46cded6b636ad30dd75c44dfd45f5cde" category="section-title">中斷Docker映像儲存庫的連線</block>
+  <block id="96261d42d312a0d903df883ab5869abb" category="paragraph">如果不再需要、您可以移除與Docker映像儲存庫的連線。</block>
+  <block id="4230b528c751be001043bf90304b82d6" category="list-text">選擇*中斷連線*。</block>
+  <block id="2d2d24a8953783d150de3da549808807" category="list-text">選取*是、中斷Docker映像儲存庫的連線*。</block>
+  <block id="a290478b8ef175d2a130f208f09d5000" category="paragraph">儲存庫已中斷連線。在「* Docker Image Repository *」（* Docker映像儲存庫*）區段中、儲存庫應顯示中斷連線狀態。</block>
+  <block id="d7351c5a932a1232bcdd2bbd88253bce" category="section-title">連接成品儲存庫</block>
+  <block id="d54de9ccfd0a2952012a22848e14b530" category="paragraph">您可以將成品儲存庫連線至主機成品、例如軟體套件二進位檔。安裝套件時、Astra Control會從映像儲存庫匯入軟體套件的成品。</block>
+  <block id="5c360025d1b6d66c4f618b5ba99defd7" category="list-text">在「*雜訊儲存庫*」區段中、選取右上角的功能表。</block>
+  <block id="1db2048bfc2d747d8bc6cf146db2bbbe" category="paragraph">儲存庫已連線。在「*雜訊儲存庫*」區段中、儲存庫應顯示連線狀態。</block>
+  <block id="0fed6f8450a54370757bce6f3d96128c" category="section-title">中斷成品儲存庫的連線</block>
+  <block id="d5eb1d7f67e82cda0cfde787bd2e3d6c" category="paragraph">如果不再需要、您可以移除與成品儲存庫的連線。</block>
+  <block id="9d10bea41ced64f74831039bb561dfc7" category="list-text">選取*是、中斷產出工件儲存庫的連線*。</block>
+  <block id="e654dafeadeb54ed6762c77fe01aafe9" category="paragraph">儲存庫已中斷連線。在「*雜訊儲存庫*」區段中、儲存庫應顯示連線狀態。</block>
+  <block id="0487f0495bc8eb403584fca5cb73b48a" category="inline-link-macro">管理軟體套件</block>
+  <block id="681458536636d04eeb1a702aa3539f21" category="list-text"><block ref="681458536636d04eeb1a702aa3539f21" category="inline-link-macro-rx"></block></block>
+  <block id="26dae90e3a5699447c13a6b61982b521" category="paragraph">NetApp為Astra Control Center提供額外功能、提供您可從NetApp支援網站下載的軟體套件。連接Docker和成品儲存庫之後、您可以上傳和匯入套件、將此功能新增至Astra Control Center。您可以使用CLI或Astra Control Center Web UI來管理軟體套件。</block>
+  <block id="c236eea9ef9081e645ecb4497a3c05ce" category="list-text">連線的Docker映像儲存庫、可容納軟體套件映像。如需詳細資訊、請參閱 <block ref="70e5c10b1699fd43bcc41dd27e493e57" category="inline-link-macro-rx"></block>。</block>
+  <block id="e403b6f2306f02333fd7ef7221f85040" category="list-text">連線的成品儲存庫、用於儲存軟體套件二進位檔和成品。如需詳細資訊、請參閱 <block ref="70e5c10b1699fd43bcc41dd27e493e57" category="inline-link-macro-rx"></block>。</block>
+  <block id="3aa4078371fb9b0c4a3e6c177942f01d" category="list-text">NetApp支援網站提供的軟體套件</block>
+  <block id="821446301df86887f14a587de1046311" category="section-title">將軟體套件上傳至儲存庫</block>
+  <block id="1861208871c49f3fafbdd2b1baedad6a" category="paragraph">Astra Control Center會參考連線儲存庫中的套件映像和成品。您可以使用CLI將影像和成品上傳至儲存庫。</block>
+  <block id="8a0c00d15eb4f3a9a8a6c659a1d7c576" category="list-text">請從NetApp支援網站下載軟體套件、並將其儲存在已安裝「kubecll」公用程式的機器上。</block>
+  <block id="a5d15ab770cd44d363e7f95fd16d0a4b" category="list-text">擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.bunder.yaml」）。</block>
+  <block id="af2248b7281e83a45508e2ec7c9356ea" category="list-text">將套件映像推送到Docker儲存庫。進行下列替代：</block>
+  <block id="109f9842fb9259a1de20c1577339c28c" category="list-text">以Astra Control套裝組合檔案的名稱取代bunder_file。</block>
+  <block id="48c5334862569a4217279192a534b20a" category="list-text">將my_registry取代為Docker儲存庫的URL。</block>
+  <block id="da5ff2a96a29f48c8c4ffcf756aada4e" category="list-text">以儲存庫的認證資料取代my_register_user和my_register_password。</block>
+  <block id="873e5b0189688b130064268c0c68de0b" category="list-text">將套件成品複製到成品儲存庫。以Astra Control套件檔案的名稱取代bunder_file、並以網路位置取代network_location、將成品檔案複製到：</block>
+  <block id="82a16926420b6ee2d26a80442a3db7ae" category="section-title">新增軟體套件</block>
+  <block id="5801238264a16600dd0ab813e21d2cd9" category="paragraph">您可以使用Astra Control Center套裝組合檔案匯入軟體套件。這樣做會安裝套件、讓Astra Control Center能夠使用該軟體。</block>
+  <block id="ab1a0888acffbae43d2539e8dbc89a9d" category="section-title">使用Astra Control網路UI新增軟體套件</block>
+  <block id="896776e8feb543ce7e9cbdcee7dd60a9" category="paragraph">您可以使用Astra Control Center網路UI來新增已上傳至連線儲存庫的軟體套件。</block>
+  <block id="f1be192bd49b3cbda9db469b861871fc" category="list-text">選取*套件*索引標籤。</block>
+  <block id="01dc3774aa73ad8d887097cb8219fd86" category="list-text">在檔案選擇對話方塊中、選取上傳圖示。</block>
+  <block id="e0abb0e6602d13f1d5dab2daf459ce78" category="list-text">選擇要上傳的Astra Control套裝組合檔案、格式為「.yaml」。</block>
+  <block id="30731fce07bd1fc48191b64d59deac14" category="paragraph">如果套件檔案有效、且套件映像和成品位於連線的儲存庫中、則套件會新增至Astra Control Center。當「*狀態*」欄中的狀態變更為*可用*時、您可以使用套件。您可以將游標暫留在套件的狀態上、以取得更多資訊。</block>
+  <block id="f9ba0eda4f991c722f987cf4ea3a812e" category="admonition">如果您的儲存庫中找不到套件的一或多個影像或成品、則會出現該套件的錯誤訊息。</block>
+  <block id="b4c542701e978aaad0f69de8fe42cb55" category="section-title">使用CLI新增軟體套件</block>
+  <block id="6e44d06482be8e79ed142e445a15d4e6" category="paragraph">您可以使用CLI匯入已上傳至連線儲存庫的軟體套件。為達成此目的、您必須先記錄Astra Control Center帳戶ID和API權杖。</block>
+  <block id="fa4b9acbac7c43e5402548abeb02f960" category="list-text">使用網頁瀏覽器登入Astra Control Center網頁UI。</block>
+  <block id="4b37e02dfa574bb3e9129e38b3850393" category="list-text">從儀表板中、選取右上角的使用者圖示。</block>
+  <block id="28478864077d4a55fa88e064f317cc13" category="list-text">選擇* API存取*。</block>
+  <block id="0ece686d675a0e57009c57a97688af8b" category="list-text">請記下畫面頂端附近的帳戶ID。</block>
+  <block id="a23600f50dab13161c6e99ea4d6488e7" category="list-text">選取*產生API權杖*。</block>
+  <block id="56a0897f95e899c3e49ee8e27649b365" category="list-text">在產生的對話方塊中、選取*產生API權杖*。</block>
+  <block id="f89f3e07532867b8676ace707d29c174" category="list-text">記下產生的權杖、然後選取*關閉*。在CLI中、將目錄變更為擷取套件內容中的「.yaml」套件檔案位置。</block>
+  <block id="8a4e92913adf07f40baa051841e42594" category="list-text">使用套件檔案匯入套件、並進行下列替代：</block>
+  <block id="13bdd52149987d6235f8110b85d10e90" category="list-text">以Astra Control執行個體的DNS名稱取代伺服器。</block>
+  <block id="55d3ede0ad36838477b18f3237142ff4" category="list-text">使用您先前記錄的帳戶ID和API Token來取代帳戶ID和Token。</block>
+  <block id="236c70eff76d85ba5d492b545a1f4a40" category="paragraph">如果套件檔案有效、且套件映像和成品位於連線的儲存庫中、則套件會新增至Astra Control Center。</block>
+  <block id="da0fadc656f4ccc74a03023158d6eed6" category="section-title">移除軟體套件</block>
+  <block id="6999d3f0aa7b059b10136d77fa64d5c9" category="paragraph">您可以使用Astra Control Center網路UI移除先前匯入Astra Control Center的軟體套件。</block>
+  <block id="4886c9d566b2f27922911fe0da4ffc73" category="paragraph">您可以在此頁面上查看已安裝套件的清單及其狀態。</block>
+  <block id="7d690a25043051913957548b66947103" category="list-text">在套件的「*動作*」欄中、開啟「動作」功能表。</block>
+  <block id="5c1a90f55380a450fff0fdefedbdecc0" category="paragraph">套件會從Astra Control Center刪除、但套件的映像和成品仍會保留在儲存庫中。</block>
+  <block id="70e5c10b1699fd43bcc41dd27e493e57" category="list-text"><block ref="70e5c10b1699fd43bcc41dd27e493e57" category="inline-link-macro-rx"></block></block>
+  <block id="cea7924acf8d3c8a75f4abdda00f5229" category="paragraph">只有在新認證已套用至庫位、或庫位已不再有效使用時、才應移除庫位認證。</block>
+  <block id="ddc02a40e74b8c01e69864a1bba6a3f7" category="inline-link-macro">Astra Data Store和此Astra Control Center版本的已知問題</block>
+  <block id="149f42af15b65ad0999339db3936d2df" category="list-text"><block ref="149f42af15b65ad0999339db3936d2df" category="inline-link-macro-rx"></block></block>
+  <block id="484d77b3bea70db59bbc245217b42578" category="inline-link-macro">Astra Control Center的Astra Store部署</block>
+  <block id="a62e8d130d7ff1f207f36203d80de75d" category="list-text"><block ref="a62e8d130d7ff1f207f36203d80de75d" category="inline-link-macro-rx"></block></block>
+  <block id="1394793485c038a7492d0d7a8dec3919" category="inline-link">請參閱這些已知問題</block>
+  <block id="c39c062b458656cdf3c9c374e86f4fdd" category="paragraph"><block ref="8073f6655f8c45390fcb4595835fbf06" category="inline-link-rx"></block> 這可能會影響Astra資料儲存區的管理、因為Astra Control Center目前已推出。</block>
+  <block id="042ad0dc0362e73320e5850115e17224" category="sidebar">使用Astra資料儲存區</block>
+  <block id="f0b65328b01ef9e6301a81ee7e9ed23f" category="sidebar">Astra Data Store快速入門</block>
 </blocks>
