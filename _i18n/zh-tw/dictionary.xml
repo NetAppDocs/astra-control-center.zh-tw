@@ -2231,10 +2231,10 @@
   <block id="cea7924acf8d3c8a75f4abdda00f5229" category="paragraph">只有在新認證已套用至庫位、或庫位已不再有效使用時、才應移除庫位認證。</block>
   <block id="ddc02a40e74b8c01e69864a1bba6a3f7" category="inline-link-macro">Astra Data Store和此Astra Control Center版本的已知問題</block>
   <block id="149f42af15b65ad0999339db3936d2df" category="list-text"><block ref="149f42af15b65ad0999339db3936d2df" category="inline-link-macro-rx"></block></block>
-  <block id="484d77b3bea70db59bbc245217b42578" category="inline-link-macro">Astra Control Center的Astra Store部署</block>
-  <block id="a62e8d130d7ff1f207f36203d80de75d" category="list-text"><block ref="a62e8d130d7ff1f207f36203d80de75d" category="inline-link-macro-rx"></block></block>
   <block id="1394793485c038a7492d0d7a8dec3919" category="inline-link">請參閱這些已知問題</block>
   <block id="c39c062b458656cdf3c9c374e86f4fdd" category="paragraph"><block ref="8073f6655f8c45390fcb4595835fbf06" category="inline-link-rx"></block> 這可能會影響Astra資料儲存區的管理、因為Astra Control Center目前已推出。</block>
   <block id="042ad0dc0362e73320e5850115e17224" category="sidebar">使用Astra資料儲存區</block>
   <block id="f0b65328b01ef9e6301a81ee7e9ed23f" category="sidebar">Astra Data Store快速入門</block>
+  <block id="d850b44f2f72f0feef1b9d467d2bbae5" category="inline-link-macro">Astra Control Center的Astra Data Store部署</block>
+  <block id="40de2a42deb6ff0c41ce913a29c4785a" category="list-text"><block ref="40de2a42deb6ff0c41ce913a29c4785a" category="inline-link-macro-rx"></block></block>
 </blocks>
