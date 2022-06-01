@@ -996,7 +996,6 @@
   <block id="540bf6f549a34a85e07e4a8510890f43" category="paragraph">確保您選擇裝載Astra Control Center的作業環境符合環境正式文件中所述的基本資源需求。除了環境的資源需求之外、Astra Control Center還需要下列資源：</block>
   <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">元件</block>
   <block id="9b97b7bd5e0a87be7bf218224ada83cf" category="cell">需求</block>
-  <block id="aea29060af1aacdb3f8aff291b534e55" category="cell">可擴充的後端儲存容量ONTAP</block>
   <block id="d790821fc08e7990a2ca5464b3010b41" category="cell">至少提供300 GB</block>
   <block id="fcb81a84511da525a1581c4ccc00d0fb" category="cell">工作節點</block>
   <block id="3dc2f4e20c545bc208864c2f1c9ce93c" category="cell">總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM</block>
@@ -2237,4 +2236,6 @@
   <block id="f0b65328b01ef9e6301a81ee7e9ed23f" category="sidebar">Astra Data Store快速入門</block>
   <block id="d850b44f2f72f0feef1b9d467d2bbae5" category="inline-link-macro">Astra Control Center的Astra Data Store部署</block>
   <block id="40de2a42deb6ff0c41ce913a29c4785a" category="list-text"><block ref="40de2a42deb6ff0c41ce913a29c4785a" category="inline-link-macro-rx"></block></block>
+  <block id="355508832b7eb5caa7423548e7222913" category="cell">儲存後端容量</block>
+  <block id="97eba840a0a254e76474a1a32d2f5634" category="cell">至少可提供500GB容量</block>
 </blocks>
