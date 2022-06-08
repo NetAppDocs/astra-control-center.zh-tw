@@ -257,13 +257,13 @@ additionalValues:
 +
 [listing]
 ----
-ingressType:AccTraefik
+ingressType: AccTraefik
 ----
 .. 如果您想要切換至預設Astra控制中心一般入侵部署、請提供您自己的入侵控制器/入侵設定（TLS終止等）、開啟通往Astra控制中心的路由、並將「擷取類型」設為「一般」。
 +
 [listing]
 ----
-ingressType:Generic
+ingressType: Generic
 ----
 +
 
