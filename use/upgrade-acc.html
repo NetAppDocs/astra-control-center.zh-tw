@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/astra-control-center/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -886,7 +878,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-control-center/index.html">
         Astra Control Center文件
       </a></li><li class="subfolders "><a href="/zh-tw/astra-control-center/release-notes/rn_overview.html">
@@ -1103,7 +1095,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:05:56 +0000">05/03/2022</time>
+    <time datetime="2022-06-08 20:52:07 +0000">06/08/2022</time>
     
   
 
@@ -1484,7 +1476,7 @@ deployment.apps/acc-operator-controller-manager configured</pre>
 <p>如果您沒有自己的IngressController或Ingressal、而且一直使用Astra Control Center搭配Traefik閘道做為負載平衡器類型服務、而且想要繼續進行該設定、請指定另一個欄位「ingressType」（如果尚未出現）、並將其設為「AccTraefik」。</p>
 <div class="listingblock">
 <div class="content">
-<pre>ingressType:AccTraefik</pre>
+<pre>ingressType: AccTraefik</pre>
 </div>
 </div>
 </li>
@@ -1492,7 +1484,7 @@ deployment.apps/acc-operator-controller-manager configured</pre>
 <p>如果您想要切換至預設Astra控制中心一般入侵部署、請提供您自己的入侵控制器/入侵設定（TLS終止等）、開啟通往Astra控制中心的路由、並將「擷取類型」設為「一般」。</p>
 <div class="listingblock">
 <div class="content">
-<pre>ingressType:Generic</pre>
+<pre>ingressType: Generic</pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1973,4 +1965,5 @@ spec:
     </script>
     <script src='/zh-tw/astra-control-center/js/www-ntap.js'></script>
     <script src='/zh-tw/astra-control-center/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/astra-control-center/js/sidebar.js'></script>
   </body></html>
