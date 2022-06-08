@@ -48,10 +48,13 @@ Astra Control Center安裝程序會執行下列作業：
 
 
 
-NOTE: 如果您使用的是Red Hat的Podman而非Docker Engine、則可以使用Podman命令來取代Docker命令。
+IMPORTANT: （僅適用於Astra Data Store Early Access Program（EAP）版本）如果您打算使用Astra Control Center管理Astra Data Store並啟用VMware工作流程、 只能在「pCloud」命名空間上部署Astra Control Center、而不能在本程序步驟所述的「NetApp-acc」命名空間或自訂命名空間上部署。
 
 
 IMPORTANT: 請勿在整個安裝程序期間執行下列命令、以免刪除所有Astra Control Center Pod：「kubecl DELETE -f Astra _control_center_oper_deploy。yaml」
+
+
+NOTE: 如果您使用的是Red Hat的Podman而非Docker Engine、則可以使用Podman命令來取代Docker命令。
 
 若要安裝Astra Control Center、請執行下列步驟：
 

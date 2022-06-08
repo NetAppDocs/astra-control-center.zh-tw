@@ -2238,4 +2238,5 @@
   <block id="40de2a42deb6ff0c41ce913a29c4785a" category="list-text"><block ref="40de2a42deb6ff0c41ce913a29c4785a" category="inline-link-macro-rx"></block></block>
   <block id="355508832b7eb5caa7423548e7222913" category="cell">儲存後端容量</block>
   <block id="97eba840a0a254e76474a1a32d2f5634" category="cell">至少可提供500GB容量</block>
+  <block id="4cddcfb73382bf1a40a42588eb7901a4" category="admonition">（僅適用於Astra Data Store Early Access Program（EAP）版本）如果您打算使用Astra Control Center管理Astra Data Store並啟用VMware工作流程、 只能在「pCloud」命名空間上部署Astra Control Center、而不能在本程序步驟所述的「NetApp-acc」命名空間或自訂命名空間上部署。</block>
 </blocks>
