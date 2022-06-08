@@ -1095,7 +1095,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 01:07:01 +0000">06/01/2022</time>
+    <time datetime="2022-06-08 21:19:56 +0000">06/08/2022</time>
     
   
 
@@ -1165,14 +1165,14 @@
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+<img src="/us-en/astra-control-center/images/important.svg" alt="重要">
 </td>
 <td class="content">
-如果您使用的是Red Hat的Podman而非Docker Engine、則可以使用Podman命令來取代Docker命令。
+（僅適用於Astra Data Store Early Access Program（EAP）版本）如果您打算使用Astra Control Center管理Astra Data Store並啟用VMware工作流程、 只能在「pCloud」命名空間上部署Astra Control Center、而不能在本程序步驟所述的「NetApp-acc」命名空間或自訂命名空間上部署。
 </td>
 </tr>
 </table>
@@ -1185,6 +1185,18 @@
 </td>
 <td class="content">
 請勿在整個安裝程序期間執行下列命令、以免刪除所有Astra Control Center Pod：「kubecl DELETE -f Astra _control_center_oper_deploy。yaml」
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="附註">
+</td>
+<td class="content">
+如果您使用的是Red Hat的Podman而非Docker Engine、則可以使用Podman命令來取代Docker命令。
 </td>
 </tr>
 </table>
