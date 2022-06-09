@@ -64,10 +64,10 @@ TIP: 我們建議Astra Control Center先管理部署於上的叢集、再將其�
 
 [NOTE]
 ====
-當Astra Control管理叢集時、它會追蹤叢集的預設StorageClass。如果您使用「kubecll」命令變更StorageClass、Astra Control會還原變更。若要變更由Astra Control管理之叢集中的預設StorageClass、請使用下列其中一種方法：
+當Astra Control管理叢集時、它會追蹤叢集的預設儲存類別。如果您使用「kubecll」命令變更儲存類別、Astra Control會還原變更。若要變更由Astra Control管理之叢集中的預設儲存類別、請使用下列其中一種方法：
 
-* 使用Astra Control API「PUT /managedClusters'端點」、並使用「DefaultStorageClass」參數指派不同的預設StorageClass
-* 從Astra Control管理中移除叢集、並以選取的不同預設StorageClass重新新增叢集
+* 使用Astra Control API「PUT /managedClusters'端點」、並使用「DefaultStorageClass」參數指派不同的預設儲存類別。
+* 使用Astra Control Web UI指派不同的預設儲存類別。請參閱 <<Change the default storage class>>。
 
 
 ====
@@ -309,6 +309,21 @@ NOTE: 此選項不會出現在您所建立的第一個儲存區。
 .. 從剪貼簿貼上內容、輸入存取ID和秘密金鑰。
 
 
+
+
+
+
+== 變更預設儲存類別
+
+您可以變更叢集的預設儲存類別。
+
+.步驟
+. 在Astra Control Center Web UI中、選取* Clusters*。
+. 在「*叢集*」頁面上、選取您要變更的叢集。
+. 選擇* Storage*（儲存設備）選項卡。
+. 選擇*儲存類別*類別。
+. 針對您要設為預設的儲存類別、選取「*動作*」功能表。
+. 選擇*設為預設*。
 
 
 

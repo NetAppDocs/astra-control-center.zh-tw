@@ -1368,9 +1368,6 @@
   <block id="720b504e7f38616e8ca9f116d5879587" category="admonition">如果您擁有評估授權、請務必儲存您的帳戶ID、以免在Astra Control Center故障時發生資料遺失（如果您未傳送ASUP）。</block>
   <block id="f81a9c9a14318abe20f6169e8dff8100" category="section-title">新增叢集</block>
   <block id="3dff3c9eae1caa73c7e03a840b9006bc" category="admonition">我們建議Astra Control Center先管理部署於上的叢集、再將其他叢集新增至Astra Control Center進行管理。需要管理初始叢集、才能傳送Kubmetrics資料和叢集相關資料、以供進行度量和疑難排解。您可以使用*新增叢集*功能、以Astra控制中心來管理叢集。</block>
-  <block id="f4105577bf107396cef41e7fc8b36c75" category="paragraph">當Astra Control管理叢集時、它會追蹤叢集的預設StorageClass。如果您使用「kubecll」命令變更StorageClass、Astra Control會還原變更。若要變更由Astra Control管理之叢集中的預設StorageClass、請使用下列其中一種方法：</block>
-  <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">使用Astra Control API「PUT /managedClusters'端點」、並使用「DefaultStorageClass」參數指派不同的預設StorageClass</block>
-  <block id="11937632e52ddd422c6068df5f4a8641" category="list-text">從Astra Control管理中移除叢集、並以選取的不同預設StorageClass重新新增叢集</block>
   <block id="e093c58278ab31ada17a121c56d90db1" category="inline-link-macro">必要工作</block>
   <block id="2da8d90a7d49193202102fa438d418a9" category="admonition">新增叢集之前、請先檢閱並執行必要的 <block ref="ebe3cd38b4e51bcacd56492771545a76" category="inline-link-macro-rx"></block>。</block>
   <block id="a9ca18308c038279724d9d7404de4166" category="list-text">在Astra Control Center UI的* Dashboard *中、選取「叢集」區段中的*「Add*」。</block>
@@ -2239,4 +2236,15 @@
   <block id="355508832b7eb5caa7423548e7222913" category="cell">儲存後端容量</block>
   <block id="97eba840a0a254e76474a1a32d2f5634" category="cell">至少可提供500GB容量</block>
   <block id="4cddcfb73382bf1a40a42588eb7901a4" category="admonition">（僅適用於Astra Data Store Early Access Program（EAP）版本）如果您打算使用Astra Control Center管理Astra Data Store並啟用VMware工作流程、 只能在「pCloud」命名空間上部署Astra Control Center、而不能在本程序步驟所述的「NetApp-acc」命名空間或自訂命名空間上部署。</block>
+  <block id="846cdda4ee8e60864d52aaeeb040485c" category="paragraph">當Astra Control管理叢集時、它會追蹤叢集的預設儲存類別。如果您使用「kubecll」命令變更儲存類別、Astra Control會還原變更。若要變更由Astra Control管理之叢集中的預設儲存類別、請使用下列其中一種方法：</block>
+  <block id="d284e4138e540279377b96192064bb64" category="list-text">使用Astra Control API「PUT /managedClusters'端點」、並使用「DefaultStorageClass」參數指派不同的預設儲存類別。</block>
+  <block id="4cb8b00c0937a1220b88468763322f15" category="list-text">使用Astra Control Web UI指派不同的預設儲存類別。請參閱 <block ref="5b6a21e2a1084a5e4b159e62f7829741" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3664703675e6ea0fab0e620eb7c74fb0" category="section-title">變更預設儲存類別</block>
+  <block id="38219c9a076c4f4be6883cf24fcb296d" category="paragraph">您可以變更叢集的預設儲存類別。</block>
+  <block id="fbd3006b6ebcc4274d70339f0589cdf4" category="list-text">在Astra Control Center Web UI中、選取* Clusters*。</block>
+  <block id="fe575e20478d6256f2449963730fd738" category="list-text">在「*叢集*」頁面上、選取您要變更的叢集。</block>
+  <block id="b84cf83ec24af3992507d72057b607f6" category="list-text">選擇* Storage*（儲存設備）選項卡。</block>
+  <block id="a57d95e33fbdffe3b4bd71d5b0be74cd" category="list-text">選擇*儲存類別*類別。</block>
+  <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">針對您要設為預設的儲存類別、選取「*動作*」功能表。</block>
+  <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">選擇*設為預設*。</block>
 </blocks>
