@@ -22,33 +22,51 @@ NetApp為Astra Control Center提供額外功能、提供您可從NetApp支援網
 
 
 
-== 將軟體套件上傳至儲存庫
+== 將軟體套件映像上傳至儲存庫
 
 Astra Control Center會參考連線儲存庫中的套件映像和成品。您可以使用CLI將影像和成品上傳至儲存庫。
 
 .步驟
 . 請從NetApp支援網站下載軟體套件、並將其儲存在已安裝「kubecll」公用程式的機器上。
 . 擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.bunder.yaml」）。
-. 將套件映像推送到Docker儲存庫。進行下列替代：
-+
-** 以Astra Control套裝組合檔案的名稱取代bunder_file。
-** 將my_registry取代為Docker儲存庫的URL。
-** 以儲存庫的認證資料取代my_register_user和my_register_password。
-+
+. 執行下列指令碼、將套件映像推送到Docker儲存庫。將"REGISTRY"變數的值取代為您自己登錄的URL：
+
+
 [listing]
 ----
-kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_PASSWORD
+# Replace the registry value:
+export REGISTRY=registry.url.com
+
+export PACKAGENAME=astrads
+export PACKAGEVERSION=22.5.0-6371157
+export DIRECTORYNAME=astrads
+
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+  # Load to local cache
+  astraImage=$(docker load --input ${astraImageFile} | sed 's/Loaded image: //')
+  # Remove path and keep imageName
+  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+  # Tag with local image repo.
+  docker tag ${astraImage} ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+  # Push to the local repo.
+  docker push ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done
+
+export PACKAGENAME=vasa-provider
+export PACKAGEVERSION=2022.5.0
+export DIRECTORYNAME=vasa
+
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+  # Load to local cache
+  astraImage=$(docker load --input ${astraImageFile} | sed 's/Loaded image: //')
+  # Remove path and keep imageName
+  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+  # Tag with local image repo.
+  docker tag ${astraImage} ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+  # Push to the local repo.
+  docker push ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done
 ----
-
-
-. 將套件成品複製到成品儲存庫。以Astra Control套件檔案的名稱取代bunder_file、並以網路位置取代network_location、將成品檔案複製到：
-+
-[listing]
-----
-kubectl astra packages copy-artifacts -m BUNDLE_FILE -n NETWORK_LOCATION
-----
-
-
 
 
 == 新增軟體套件

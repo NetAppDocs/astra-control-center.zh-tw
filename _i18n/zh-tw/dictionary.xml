@@ -2187,15 +2187,10 @@
   <block id="c236eea9ef9081e645ecb4497a3c05ce" category="list-text">連線的Docker映像儲存庫、可容納軟體套件映像。如需詳細資訊、請參閱 <block ref="70e5c10b1699fd43bcc41dd27e493e57" category="inline-link-macro-rx"></block>。</block>
   <block id="e403b6f2306f02333fd7ef7221f85040" category="list-text">連線的成品儲存庫、用於儲存軟體套件二進位檔和成品。如需詳細資訊、請參閱 <block ref="70e5c10b1699fd43bcc41dd27e493e57" category="inline-link-macro-rx"></block>。</block>
   <block id="3aa4078371fb9b0c4a3e6c177942f01d" category="list-text">NetApp支援網站提供的軟體套件</block>
-  <block id="821446301df86887f14a587de1046311" category="section-title">將軟體套件上傳至儲存庫</block>
   <block id="1861208871c49f3fafbdd2b1baedad6a" category="paragraph">Astra Control Center會參考連線儲存庫中的套件映像和成品。您可以使用CLI將影像和成品上傳至儲存庫。</block>
   <block id="8a0c00d15eb4f3a9a8a6c659a1d7c576" category="list-text">請從NetApp支援網站下載軟體套件、並將其儲存在已安裝「kubecll」公用程式的機器上。</block>
   <block id="a5d15ab770cd44d363e7f95fd16d0a4b" category="list-text">擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.bunder.yaml」）。</block>
-  <block id="af2248b7281e83a45508e2ec7c9356ea" category="list-text">將套件映像推送到Docker儲存庫。進行下列替代：</block>
   <block id="109f9842fb9259a1de20c1577339c28c" category="list-text">以Astra Control套裝組合檔案的名稱取代bunder_file。</block>
-  <block id="48c5334862569a4217279192a534b20a" category="list-text">將my_registry取代為Docker儲存庫的URL。</block>
-  <block id="da5ff2a96a29f48c8c4ffcf756aada4e" category="list-text">以儲存庫的認證資料取代my_register_user和my_register_password。</block>
-  <block id="873e5b0189688b130064268c0c68de0b" category="list-text">將套件成品複製到成品儲存庫。以Astra Control套件檔案的名稱取代bunder_file、並以網路位置取代network_location、將成品檔案複製到：</block>
   <block id="82a16926420b6ee2d26a80442a3db7ae" category="section-title">新增軟體套件</block>
   <block id="5801238264a16600dd0ab813e21d2cd9" category="paragraph">您可以使用Astra Control Center套裝組合檔案匯入軟體套件。這樣做會安裝套件、讓Astra Control Center能夠使用該軟體。</block>
   <block id="ab1a0888acffbae43d2539e8dbc89a9d" category="section-title">使用Astra Control網路UI新增軟體套件</block>
@@ -2247,4 +2242,6 @@
   <block id="a57d95e33fbdffe3b4bd71d5b0be74cd" category="list-text">選擇*儲存類別*類別。</block>
   <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">針對您要設為預設的儲存類別、選取「*動作*」功能表。</block>
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">選擇*設為預設*。</block>
+  <block id="6a76517aff3e7c512c0367b12342145c" category="section-title">將軟體套件映像上傳至儲存庫</block>
+  <block id="e098894ec3d131e5a95bb73b789f7ab5" category="list-text">執行下列指令碼、將套件映像推送到Docker儲存庫。將"REGISTRY"變數的值取代為您自己登錄的URL：</block>
 </blocks>
