@@ -1095,7 +1095,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 01:07:01 +0000">06/01/2022</time>
+    <time datetime="2022-06-15 16:40:48 +0000">06/15/2022</time>
     
   
 
@@ -1127,7 +1127,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="將軟體套件上傳至儲存庫">將軟體套件上傳至儲存庫</h2>
+<h2 id="將軟體套件映像上傳至儲存庫">將軟體套件映像上傳至儲存庫</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Astra Control Center會參考連線儲存庫中的套件映像和成品。您可以使用CLI將影像和成品上傳至儲存庫。</p>
@@ -1142,35 +1142,45 @@
 <p>擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.bunder.yaml」）。</p>
 </li>
 <li>
-<p>將套件映像推送到Docker儲存庫。進行下列替代：</p>
-<div class="ulist">
-<ul>
-<li>
-<p>以Astra Control套裝組合檔案的名稱取代bunder_file。</p>
-</li>
-<li>
-<p>將my_registry取代為Docker儲存庫的URL。</p>
-</li>
-<li>
-<p>以儲存庫的認證資料取代my_register_user和my_register_password。</p>
-<div class="listingblock">
-<div class="content">
-<pre>kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_PASSWORD</pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>將套件成品複製到成品儲存庫。以Astra Control套件檔案的名稱取代bunder_file、並以網路位置取代network_location、將成品檔案複製到：</p>
-<div class="listingblock">
-<div class="content">
-<pre>kubectl astra packages copy-artifacts -m BUNDLE_FILE -n NETWORK_LOCATION</pre>
-</div>
-</div>
+<p>執行下列指令碼、將套件映像推送到Docker儲存庫。將"REGISTRY"變數的值取代為您自己登錄的URL：</p>
 </li>
 </ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Replace the registry value:
+export REGISTRY=registry.url.com
+
+export PACKAGENAME=astrads
+export PACKAGEVERSION=22.5.0-6371157
+export DIRECTORYNAME=astrads
+
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+  # Load to local cache
+  astraImage=$(docker load --input ${astraImageFile} | sed 's/Loaded image: //')
+  # Remove path and keep imageName
+  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+  # Tag with local image repo.
+  docker tag ${astraImage} ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+  # Push to the local repo.
+  docker push ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done
+
+export PACKAGENAME=vasa-provider
+export PACKAGEVERSION=2022.5.0
+export DIRECTORYNAME=vasa
+
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+  # Load to local cache
+  astraImage=$(docker load --input ${astraImageFile} | sed 's/Loaded image: //')
+  # Remove path and keep imageName
+  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+  # Tag with local image repo.
+  docker tag ${astraImage} ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+  # Push to the local repo.
+  docker push ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done</pre>
+</div>
 </div>
 </div>
 </div>
