@@ -891,7 +891,6 @@
   <block id="02c8c5fbeebdf293d83e1ec96ea30aff" category="summary">Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將能最快完成。</block>
   <block id="e07596cf624c6e8c354d1188f9bdb6bb" category="doc">還原應用程式</block>
   <block id="bd48cb856a5ec10f9c3c2bf8d62fc86c" category="paragraph">Astra Control可以從快照或備份還原應用程式。將應用程式還原至同一個叢集時、從現有的快照還原速度會更快。您可以使用Astra Control UI或<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> 以還原應用程式。</block>
-  <block id="3fad3494aa5c58ccad4607e93c084418" category="list-text">強烈建議您在繼續還原之前、先快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。</block>
   <block id="aafffef647c1af195c5bf1decab81f7f" category="list-text">如果還原至不同的叢集、請確定叢集使用相同的持續磁碟區存取模式（例如ReadWriteMany）。如果目的地持續磁碟區存取模式不同、還原作業將會失敗。</block>
   <block id="26fef20c54adaf79090f5b60c1e34ec0" category="list-text">選擇*資料保護*。</block>
   <block id="2bdc031714474d030b133e53ce1788bd" category="list-text">如果要從快照還原、請選取* Snapshot*圖示。否則、請選取*備份*圖示以從備份還原。</block>
@@ -2244,4 +2243,7 @@
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">選擇*設為預設*。</block>
   <block id="6a76517aff3e7c512c0367b12342145c" category="section-title">將軟體套件映像上傳至儲存庫</block>
   <block id="e098894ec3d131e5a95bb73b789f7ab5" category="list-text">執行下列指令碼、將套件映像推送到Docker儲存庫。將"REGISTRY"變數的值取代為您自己登錄的URL：</block>
+  <block id="f667e2a184f6b549b4a1c647af94d494" category="list-text">強烈建議您在還原應用程式之前、先擷取應用程式的快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。</block>
+  <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">如果還原至先前刪除的命名空間、則會在還原程序中建立名稱相同的新命名空間。任何在先前刪除命名空間中擁有管理應用程式權限的使用者、都必須手動還原新重新建立命名空間的權限。</block>
+  <block id="cc35f1f52bd3c3e89d57573e14a02129" category="admonition">在執行資料保護作業（複製、備份、還原）及後續持續調整磁碟區大小之後、新的磁碟區大小會在網路UI中顯示、延遲最多20分鐘。資料保護作業只需幾分鐘就能成功完成、您可以使用儲存後端的管理軟體來確認磁碟區大小的變更。</block>
 </blocks>
