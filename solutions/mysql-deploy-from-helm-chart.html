@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="從Bitnami Helm圖表中瞭解如何部署MySQL。在Kubernetes叢集上部署MySQL之後、您可以使用Astra Control來管理應用程式。">
-  <meta name="keywords" content=" how to set up mysql, how to deploy mysql from helm chart, helm chart, deploy mysql, astra, astra control, kubernetes"><!-- Icons -->
+  <meta name="keywords" content=" how to set up mysql, how to deploy mysql from helm chart, helm chart, deploy mysql, astra control, kubernetes"><!-- Icons -->
   <link rel="icon" href="/zh-tw/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -1095,7 +1095,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:05:56 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 16:56:07 +0000">06/17/2022</time>
     
   
 
@@ -1195,7 +1195,8 @@
 <p>使用以下命令部署MySQL：</p>
 <div class="listingblock">
 <div class="content">
-<pre>Helm install &lt;name&gt; --namespace &lt;namespace&gt; --create-namespace -–set persistence.storageClass=&lt;storage_class&gt;</pre>
+<pre>helm install &lt;name&gt; bitnami/mysql –namespace &lt;namespace&gt;
+--create-namespace –set global.storageClass=&lt;storage_class_name&gt;</pre>
 </div>
 </div>
 <div class="admonitionblock note">

@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="從Bitnami Helm圖表瞭解如何部署Jenkins。在叢集上部署Jenkins之後、您可以向Astra Control註冊應用程式。">
-  <meta name="keywords" content=" helm charts in astra, deploy jenkins, how to deploy apps with astra, bitnami, helm chart, astra, astra control, kubernetes"><!-- Icons -->
+  <meta name="keywords" content=" helm charts in astra, deploy jenkins, how to deploy apps with astra, bitnami, helm chart, astra control, kubernetes"><!-- Icons -->
   <link rel="icon" href="/zh-tw/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -1095,7 +1095,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:05:56 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 16:56:07 +0000">06/17/2022</time>
     
   
 
@@ -1198,7 +1198,7 @@
 <p>建立「Jenkins’命名空間、然後使用以下命令將Jenkins部署到其中：</p>
 <div class="listingblock">
 <div class="content">
-<pre>Helm install &lt;name&gt; --namespace &lt;namespace&gt; --create-namespace -–set persistence.storageClass=&lt;storage_class&gt;</pre>
+<pre>helm install &lt;name&gt; bitnami/jenkins –namespace &lt;namespace&gt; --create-namespace –set global.storageClass=&lt;storage_class_name&gt;</pre>
 </div>
 </div>
 <div class="admonitionblock note">
