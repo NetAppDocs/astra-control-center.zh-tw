@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: solutions/mysql-deploy-from-helm-chart.html 
-keywords: how to set up mysql, how to deploy mysql from helm chart, helm chart, deploy mysql, astra, astra control, kubernetes 
+keywords: how to set up mysql, how to deploy mysql from helm chart, helm chart, deploy mysql, astra control, kubernetes 
 summary: 從Bitnami Helm圖表中瞭解如何部署MySQL。在Kubernetes叢集上部署MySQL之後、您可以使用Astra Control來管理應用程式。 
 ---
 = 從Helm圖表部署MySQL
@@ -57,7 +57,8 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 +
 [listing]
 ----
-Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+helm install <name> bitnami/mysql –namespace <namespace>
+--create-namespace –set global.storageClass=<storage_class_name>
 ----
 +
 

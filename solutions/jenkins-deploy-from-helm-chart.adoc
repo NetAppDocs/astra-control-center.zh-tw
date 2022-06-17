@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: solutions/jenkins-deploy-from-helm-chart.html 
-keywords: helm charts in astra, deploy jenkins, how to deploy apps with astra, bitnami, helm chart, astra, astra control, kubernetes 
+keywords: helm charts in astra, deploy jenkins, how to deploy apps with astra, bitnami, helm chart, astra control, kubernetes 
 summary: 從Bitnami Helm圖表瞭解如何部署Jenkins。在叢集上部署Jenkins之後、您可以向Astra Control註冊應用程式。 
 ---
 = 從Helm圖表部署Jenkins
@@ -59,7 +59,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 +
 [listing]
 ----
-Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+helm install <name> bitnami/jenkins –namespace <namespace> --create-namespace –set global.storageClass=<storage_class_name>
 ----
 +
 
