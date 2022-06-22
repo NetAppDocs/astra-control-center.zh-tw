@@ -48,7 +48,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 +
 [listing]
 ----
-helm install <name> bitnami/MariaDB –namespace <namespace> --create-namespace –set global.storageClass=<storage_class_name>
+helm install <name> bitnami/MariaDB -–namespace <namespace> --create-namespace -–set global.storageClass=<storage_class_name>
 ----
 +
 
