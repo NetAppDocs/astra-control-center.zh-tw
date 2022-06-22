@@ -31,6 +31,22 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 
 您可以從儀表板或後端選項檢視儲存後端資訊。
 
+在「儲存後端詳細資料」頁面的Astra Data Store中、您可以看到下列資訊：
+
+* Astra Data Store叢集
++
+** 處理量、IOPS及延遲
+** 已用容量與總容量比較
+
+
+* 針對每個Astra Data Store叢集Volume
++
+** 已用容量與總容量比較
+** 處理量
+
+
+
+
 
 
 === 從儀表板檢視儲存後端詳細資料

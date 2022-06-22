@@ -2246,4 +2246,10 @@
   <block id="f667e2a184f6b549b4a1c647af94d494" category="list-text">強烈建議您在還原應用程式之前、先擷取應用程式的快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。</block>
   <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">如果還原至先前刪除的命名空間、則會在還原程序中建立名稱相同的新命名空間。任何在先前刪除命名空間中擁有管理應用程式權限的使用者、都必須手動還原新重新建立命名空間的權限。</block>
   <block id="cc35f1f52bd3c3e89d57573e14a02129" category="admonition">在執行資料保護作業（複製、備份、還原）及後續持續調整磁碟區大小之後、新的磁碟區大小會在網路UI中顯示、延遲最多20分鐘。資料保護作業只需幾分鐘就能成功完成、您可以使用儲存後端的管理軟體來確認磁碟區大小的變更。</block>
+  <block id="c53f5db4c358cd8481d116f18162931a" category="paragraph">在「儲存後端詳細資料」頁面的Astra Data Store中、您可以看到下列資訊：</block>
+  <block id="8bcbf035dedc2c395aa3679825da39d0" category="list-text">Astra Data Store叢集</block>
+  <block id="880630fdcca12563111e094ba70933c0" category="list-text">處理量、IOPS及延遲</block>
+  <block id="ae274f1935af41c79ad83156bda69b1b" category="list-text">已用容量與總容量比較</block>
+  <block id="573d8b0d75f409856fcb9ceab6adfe45" category="list-text">針對每個Astra Data Store叢集Volume</block>
+  <block id="0b85467ebafa7ca3c47e82dc38184484" category="list-text">處理量</block>
 </blocks>
