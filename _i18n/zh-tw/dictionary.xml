@@ -2242,7 +2242,6 @@
   <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">針對您要設為預設的儲存類別、選取「*動作*」功能表。</block>
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">選擇*設為預設*。</block>
   <block id="6a76517aff3e7c512c0367b12342145c" category="section-title">將軟體套件映像上傳至儲存庫</block>
-  <block id="e098894ec3d131e5a95bb73b789f7ab5" category="list-text">執行下列指令碼、將套件映像推送到Docker儲存庫。將"REGISTRY"變數的值取代為您自己登錄的URL：</block>
   <block id="f667e2a184f6b549b4a1c647af94d494" category="list-text">強烈建議您在還原應用程式之前、先擷取應用程式的快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。</block>
   <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">如果還原至先前刪除的命名空間、則會在還原程序中建立名稱相同的新命名空間。任何在先前刪除命名空間中擁有管理應用程式權限的使用者、都必須手動還原新重新建立命名空間的權限。</block>
   <block id="cc35f1f52bd3c3e89d57573e14a02129" category="admonition">在執行資料保護作業（複製、備份、還原）及後續持續調整磁碟區大小之後、新的磁碟區大小會在網路UI中顯示、延遲最多20分鐘。資料保護作業只需幾分鐘就能成功完成、您可以使用儲存後端的管理軟體來確認磁碟區大小的變更。</block>
@@ -2252,4 +2251,8 @@
   <block id="ae274f1935af41c79ad83156bda69b1b" category="list-text">已用容量與總容量比較</block>
   <block id="573d8b0d75f409856fcb9ceab6adfe45" category="list-text">針對每個Astra Data Store叢集Volume</block>
   <block id="0b85467ebafa7ca3c47e82dc38184484" category="list-text">處理量</block>
+  <block id="af2248b7281e83a45508e2ec7c9356ea" category="list-text">將套件映像推送到Docker儲存庫。進行下列替代：</block>
+  <block id="48c5334862569a4217279192a534b20a" category="list-text">將my_registry取代為Docker儲存庫的URL。</block>
+  <block id="da5ff2a96a29f48c8c4ffcf756aada4e" category="list-text">以儲存庫的認證資料取代my_register_user和my_register_password。</block>
+  <block id="25d79c61a8c2cf8672fbd0f32f9bfc13" category="list-text">如果套件含有成品、請將成品複製到成品儲存庫。以Astra Control套件檔案的名稱取代bunder_file、並以網路位置取代network_location、將成品檔案複製到：</block>
 </blocks>
