@@ -1057,7 +1057,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:05:56 +0000">05/03/2022</time>
+    <time datetime="2022-06-29 17:10:27 +0000">06/29/2022</time>
     
   
 
@@ -1106,10 +1106,10 @@
 <div class="title">步驟</div>
 <ul>
 <li>
-<p><a href="#Download the Astra Control Center bundle">[Download the Astra Control Center bundle]</a></p>
+<p><a href="#Download and unpack the Astra Control Center bundle">[Download and unpack the Astra Control Center bundle]</a></p>
 </li>
 <li>
-<p><a href="#Unpack the bundle and change directory">[Unpack the bundle and change directory]</a></p>
+<p><a href="#Install the NetApp Astra kubectl plugin">[Install the NetApp Astra kubectl plugin]</a></p>
 </li>
 <li>
 <p><a href="#Add the images to your local registry">[Add the images to your local registry]</a></p>
@@ -1128,7 +1128,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="下載astra-control-center套裝組合">下載Astra Control Center套裝組合</h2>
+<h2 id="下載並解壓縮astra-control-center套裝組合">下載並解壓縮Astra Control Center套裝組合</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -1136,7 +1136,7 @@
 <p>請從下載Astra Control Center套裝組合（「Astra控制中心-[版本].tar.gz」） <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">"NetApp 支援網站"</a>。</p>
 </li>
 <li>
-<p>請從下載Astra Control Center認證與金鑰的壓縮檔 <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">"NetApp 支援網站"</a>。</p>
+<p>從下載Astra Control Center認證與金鑰的壓縮檔 <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">"NetApp 支援網站"</a>。</p>
 </li>
 <li>
 <p>（可選）使用以下命令驗證套件的簽名：</p>
@@ -1146,15 +1146,6 @@
 </div>
 </div>
 </li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="解壓縮套件並變更目錄">解壓縮套件並變更目錄</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>擷取影像：</p>
 <div class="listingblock">
@@ -1163,11 +1154,35 @@
 </div>
 </div>
 </li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="安裝netapp-astra-kubecl外掛程式">安裝NetApp Astra kubecl外掛程式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp Astra「kubecll」命令列外掛程式可在執行與部署及升級Astra Control Center相關的一般工作時節省時間。</p>
+</div>
+<div class="paragraph">
+<p>NetApp為不同的CPU架構和作業系統提供外掛程式的二進位檔。執行此工作之前、您必須先瞭解您的CPU和作業系統。在Linux和Mac作業系統上、您可以使用「uname -A」命令來收集此資訊。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步驟</div>
+<ol class="arabic">
 <li>
-<p>變更至Astra目錄。</p>
+<p>列出可用的NetApp Astra「kubecll」外掛程式二進位檔、並記下作業系統和CPU架構所需的檔案名稱：</p>
 <div class="listingblock">
 <div class="content">
-<pre>cd astra-control-center-[version]</pre>
+<pre>ls kubectl-astra/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>將檔案複製到與標準「kubecll」公用程式相同的位置。在此範例中、「kubecll」公用程式位於「usr/local/bin」目錄中。將「&lt;二進位名稱&gt;」取代為您所需的檔案名稱：</p>
+<div class="listingblock">
+<div class="content">
+<pre>cp kubectl-astra/&lt;binary-name&gt; /usr/local/bin/kubectl-astra</pre>
 </div>
 </div>
 </li>
@@ -1180,6 +1195,14 @@
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>變更至Astra目錄：</p>
+<div class="listingblock">
+<div class="content">
+<pre>cd acc</pre>
+</div>
+</div>
+</li>
 <li>
 <p>將Astra Control Center映像目錄中的檔案新增至本機登錄。</p>
 <div class="admonitionblock note">
