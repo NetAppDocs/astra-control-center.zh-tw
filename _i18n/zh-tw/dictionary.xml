@@ -2255,4 +2255,5 @@
   <block id="48c5334862569a4217279192a534b20a" category="list-text">將my_registry取代為Docker儲存庫的URL。</block>
   <block id="da5ff2a96a29f48c8c4ffcf756aada4e" category="list-text">以儲存庫的認證資料取代my_register_user和my_register_password。</block>
   <block id="25d79c61a8c2cf8672fbd0f32f9bfc13" category="list-text">如果套件含有成品、請將成品複製到成品儲存庫。以Astra Control套件檔案的名稱取代bunder_file、並以網路位置取代network_location、將成品檔案複製到：</block>
+  <block id="2707211a1bc867b58edced6b3def5b35" category="list-text">輸入儲存庫的認證資料。</block>
 </blocks>
