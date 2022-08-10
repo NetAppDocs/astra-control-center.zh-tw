@@ -24,7 +24,6 @@ summary: 已知限制指出本產品版本不支援的平台、裝置或功能�
 
 
 .應用程式管理限制
-* <<App backups that are in progress cannot be stopped>>
 * <<Clones of apps installed using pass-by-reference operators can fail>>
 * <<In-place restore operations of apps that use a certificate manager are not supported>>
 * <<OLM-enabled and cluster-scoped operator deployed apps not supported>>
@@ -96,13 +95,7 @@ current-context: kubernetes-admin@kubernetes
 
 == 具有命名空間限制的成員必須先將命名空間新增至限制、才能存取複製或還原的應用程式
 
-任何具有命名空間名稱/ ID或命名空間標籤之RBAC限制的「成員」使用者、都可以將應用程式複製或還原至同一叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者可以編輯「成員」使用者帳戶、並更新受影響使用者的角色限制、以授予新命名空間的存取權。
-
-
-
-== 無法停止進行中的應用程式備份
-
-無法停止執行中的備份。如果您需要刪除備份、請等到備份完成後再使用中的指示 link:../use/protect-apps.html#delete-backups["刪除備份"]。若要刪除失敗的備份、請使用 link:https:/docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^]。
+任何具有命名空間名稱/ID之RBAC限制的「成員」使用者、都可以將應用程式複製或還原到同一個叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者可以編輯「成員」使用者帳戶、並更新受影響使用者的角色限制、以授予新命名空間的存取權。
 
 
 
@@ -119,7 +112,7 @@ NOTE: 對於K8ssandra、支援就地還原作業。若要還原新命名空間�
 * https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB叢集"^]
 
 
-請注意、Astra Control可能無法複製以「傳遞參考」架構設計的操作員（例如、CockroachDB操作員）。在這些類型的複製作業中、複製的操作員會嘗試從來源操作員參考Kubernetes機密、儘管在複製程序中有自己的新秘密。由於Astra Control不知道來源營運者的Kubernetes機密資料、因此複製作業可能會失敗。
+Astra Control可能無法複製以「傳遞參考」架構設計的操作員（例如CockroachDB操作員）。在這些類型的複製作業中、複製的操作員會嘗試從來源操作員參考Kubernetes機密、儘管在複製程序中有自己的新秘密。由於Astra Control不知道來源營運者的Kubernetes機密資料、因此複製作業可能會失敗。
 
 
 

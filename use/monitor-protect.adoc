@@ -4,18 +4,22 @@ permalink: use/monitor-protect.html
 keywords: proxy, cloud insights, connections, fluent bit, accounts, protect, security 
 summary: 您可以設定多項選用設定、以增強Astra Control Center體驗。如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、請在Astra Control Center中設定該Proxy伺服器。您可以使用NetApp Cloud Insights 解決方案來監控及深入瞭解完整的基礎架構。您可以新增流暢的位元連線、從容器收集資料和記錄。 
 ---
-= 監控及保護基礎架構
+= 利用Cloud Insights 不中斷連線和變動連線來監控基礎架構
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 
 
-您可以設定多項選用設定、以增強Astra Control Center體驗。如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路（將支援套件上傳至NetApp支援網站或建立Cloud Insights 連線至鏈接）、您應該在Astra Control Center中設定Proxy伺服器。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連結。若要從Astra Control Center監控的系統收集Kubernetes事件、請新增Fludd連線。
+您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連結。若要從Astra Control Center監控的系統收集Kubernetes事件、請新增Fludd連線。
+
+如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路（將支援套件上傳至NetApp支援網站或建立Cloud Insights 連線至鏈接）、您應該在Astra Control Center中設定Proxy伺服器。
+
+您也可以從Astra Control Center Storage後端頁面監控Astra Data Store儲存後端處理量、IOPS和容量。請參閱 link:../use/manage-backend.html["管理儲存後端"]。
 
 
 
-== 新增Proxy伺服器
+== 新增Proxy伺服器以連線至Cloud Insight或NetApp支援網站
 
 如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路（將支援套件上傳至NetApp支援網站或建立Cloud Insights 連線至鏈接）、您應該在Astra Control Center中設定Proxy伺服器。
 
@@ -74,6 +78,8 @@ image:proxy-new.png["顯示已成功連線的Proxy伺服器。"]
 應可從Astra Control Center使用的網路存取、或透過Proxy伺服器間接存取。Cloud Insights
 
 當Astra Control Center連線Cloud Insights 至不實時、就會建立一個擷取單元Pod。此Pod可從Astra Control Center管理的儲存後端收集資料、並將資料推送到Cloud Insights此Pod需要8 GB RAM和2個CPU核心。
+
+此外、如果您在Astra Control上管理Astra Data Store叢集（連線Cloud Insights 至各處）、則會在Astra Data Store上為每個Astra Data Store叢集建立一個擷取單元Pod、並將指標從Astra Data Store傳送至配對Cloud Insights 的資料系統。每個Pod需要8 GB RAM和2個CPU核心。
 
 
 NOTE: 啟用Cloud Insights 完「支援不中斷連線」後、您可以在*後端*頁面上檢視處理量資訊、Cloud Insights 並在選取儲存後端後端後、從此處連線至「支援不中斷連線」。您也可以在「叢集」區段的*儀表板*上找到相關資訊、也可以從Cloud Insights 這裡連線至。

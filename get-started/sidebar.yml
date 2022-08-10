@@ -11,6 +11,13 @@ entries:
   entries:
   - title: 安裝Astra Control Center
     url: "/get-started/install_acc.html"
+    entries:
+    - title: 瞭解Astra Control Center叢集的CR選項
+      url: "/get-started/acc_cluster_cr_options.html"
+    - title: 瞭解Pod安全性原則限制
+      url: "/get-started/understand-psp-restrictions.html"
+    - title: 設定外部憑證管理程式
+      url: "/get-started/cert-manager-prereqs.html"
   - title: 使用OpenShift作業系統集線器安裝Astra Control Center
     url: "/get-started/acc_operatorhub_install.html"
   - title: 安裝Astra Control Center搭配Cloud Volumes ONTAP 一套功能性儲存後端

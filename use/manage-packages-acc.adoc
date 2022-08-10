@@ -31,7 +31,7 @@ Astra Control Center會參考連線儲存庫中的套件映像和成品。您可
 . 擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.bunder.yaml」）。
 . 將套件映像推送到Docker儲存庫。進行下列替代：
 +
-** 以Astra Control套裝組合檔案的名稱取代bunder_file。
+** 以Astra Control套件檔案名稱取代bunder_file（例如、「acs.manifest.bunder.yaml」）。
 ** 將my_registry取代為Docker儲存庫的URL。
 ** 以儲存庫的認證資料取代my_register_user和my_register_password。
 +

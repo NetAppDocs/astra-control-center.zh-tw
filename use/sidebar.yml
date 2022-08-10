@@ -2,12 +2,8 @@
 section: use
 title: 使用Astra
 entries:
-- title: 管理應用程式
-  entries:
-  - title: 開始管理應用程式
-    url: "/use/manage-apps.html"
-  - title: 定義自訂應用程式
-    url: "/use/define-custom-app.html"
+- title: 開始管理應用程式
+  url: "/use/manage-apps.html"
 - title: 保護應用程式
   entries:
   - title: 保護總覽
@@ -16,6 +12,8 @@ entries:
     url: "/use/protect-apps.html"
   - title: 還原應用程式
     url: "/use/restore-apps.html"
+  - title: 將應用程式複寫到遠端系統
+    url: "/use/replication.html"
   - title: 複製及移轉應用程式
     url: "/use/clone-apps.html"
   - title: 管理應用程式執行掛勾
@@ -23,7 +21,7 @@ entries:
     entries:
     - title: 執行攔截範例
       url: "/use/execution-hook-examples.html"
-- title: 檢視應用程式和叢集健全狀況
+- title: 監控應用程式和叢集健全狀況
   entries:
   - title: 儀表板摘要
     url: "/use/view-dashboard.html"
@@ -53,7 +51,7 @@ entries:
   url: "/use/manage-buckets.html"
 - title: 管理儲存後端
   url: "/use/manage-backend.html"
-- title: 監控及保護基礎架構
+- title: 利用Cloud Insights 功能性和變動監控基礎架構
   url: "/use/monitor-protect.html"
 - title: 取消管理應用程式和叢集
   url: "/use/unmanage.html"

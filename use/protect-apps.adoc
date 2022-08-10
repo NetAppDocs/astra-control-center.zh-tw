@@ -11,18 +11,25 @@ summary: 使用自動保護原則或臨機操作、拍攝快照和備份資料�
 :imagesdir: ../media/use/
 
 
-使用自動保護原則或臨機操作、拍攝快照和備份資料、保護您的應用程式。您可以使用Astra UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 保護應用程式。
+使用自動保護原則或以臨機操作的方式、擷取快照與備份資料、以保護所有應用程式。您可以使用Astra UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 保護應用程式。
 
+如果您使用Helm來部署應用程式、Astra Control Center需要Helm版本3。完全支援使用Helm 3部署的應用程式管理與複製（或從Helm 2升級至Helm 3）。不支援以Helm 2部署的應用程式。
 
-NOTE: 如果您使用Helm來部署應用程式、Astra Control Center需要Helm版本3。完全支援使用Helm 3部署的應用程式管理與複製（或從Helm 2升級至Helm 3）。不支援以Helm 2部署的應用程式。
-
-[NOTE]
-====
 當您在OpenShift叢集上建立裝載應用程式的專案時、專案（或Kubernetes命名空間）會被指派安全性轉換唯一碼。若要啟用Astra Control Center來保護應用程式、並將應用程式移至OpenShift中的其他叢集或專案、您必須新增原則、讓應用程式以任何唯一識別碼的形式執行。例如、下列OpenShift CLI命令會將適當的原則授予WordPress應用程式。
 
 「occ new－project worm新聞」（occ new－project wormPress）「ocadm policy add－scc to－group anyuid system:serviceaccounts：wormPress」（ocadm policy add－scc對使用者權限-z預設值-n wormPress）
 
-====
+您可以執行下列與保護應用程式資料相關的工作：
+
+* <<Configure a protection policy>>
+* <<Create a snapshot>>
+* <<Create a backup>>
+* <<View snapshots and backups>>
+* <<Delete snapshots>>
+* <<Cancel backups>>
+* <<Delete backups>>
+
+
 
 
 == 設定保護原則
@@ -115,6 +122,9 @@ NOTE: 資料保護作業（複製、備份、還原）及後續持續調整磁�
 
 刪除不再需要的排程或隨需快照。
 
+
+NOTE: 您無法刪除目前正在複寫的Snapshot複本。
+
 .步驟
 . 選取*應用程式*、然後選取應用程式名稱。
 . 選擇*資料保護*。
@@ -126,6 +136,23 @@ Astra Control Center會刪除快照。
 
 
 
+== 取消備份
+
+您可以取消進行中的備份。
+
+
+TIP: 若要取消備份、備份必須處於執行中狀態。您無法取消處於「擱置中」狀態的備份。
+
+.步驟
+. 選取*應用程式*、然後選取應用程式名稱。
+. 選擇*資料保護*。
+. 選擇*備份*。
+. 在所需備份*「Actions」（動作）*欄的「Options」（選項）功能表中、選取*「Cancel*」（取消*）。
+. 輸入「cancel」一詞以確認刪除、然後選擇「* Yes、cancel backup*（是、取消備份*）」。
+
+
+
+
 == 刪除備份
 
 刪除不再需要的排程或隨需備份。
@@ -133,6 +160,7 @@ Astra Control Center會刪除快照。
 
 NOTE: 無法停止執行中的備份。如果您需要刪除備份、請等到備份完成後再使用這些指示。若要刪除失敗的備份、 https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]。
 
+.步驟
 . 選取*應用程式*、然後選取應用程式名稱。
 . 選擇*資料保護*。
 . 選擇*備份*。

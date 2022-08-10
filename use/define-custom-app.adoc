@@ -1,61 +1,8 @@
 ---
-sidebar: sidebar 
 permalink: use/define-custom-app.html 
-keywords: manage app, custom app, kubernetes, astra control, astra 
-summary: 建立自訂應用程式可讓您將Kubernetes叢集的元素群組成單一應用程式。 
+redirect: use/manage-apps.html 
 ---
-= 定義自訂應用程式範例
-:hardbreaks:
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/use/
 
 
-[role="lead"]
-建立自訂應用程式可讓您將Kubernetes叢集的元素群組成單一應用程式。這組Kubernetes資源是以命名空間和標籤為基礎。
-
-自訂應用程式可讓您更精細地控制要納入Astra Control作業的內容、包括：
-
-* 複製
-* Snapshot
-* 備份
-* 保護原則
-
-
-在大多數情況下、您會想要在整個應用程式上使用Astra Control的功能。不過、您也可以建立自訂應用程式、透過指派給命名空間中Kubernetes物件的標籤來使用這些功能。
-
-
-NOTE: 自訂應用程式只能在單一叢集的指定命名空間內建立。Astra Control不支援自訂應用程式跨越多個命名空間或叢集的功能。
-
-標籤是可指派給Kubernetes物件以供識別的金鑰/值配對。標籤可讓您更輕鬆地排序、組織及尋找Kubernetes物件。若要深入瞭解Kubernetes標籤、 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["請參閱Kubernetes官方文件"^]。
-
-
-WARNING: 相同資源的原則重疊、名稱不同、可能會造成資料衝突。如果您為資源建立自訂應用程式、請確定該應用程式並未複製或備份到任何其他原則之下。
-
-.您需要的是 #8217 ；需要的是什麼
-* 新增至Astra Control的叢集
-
-
-.步驟
-. 從「應用程式」頁面、選取「**+定義」。
-+
-「自訂應用程式」視窗會顯示哪些資源將納入或排除在自訂應用程式之外。這有助於確保您選擇正確的條件來定義自訂應用程式。
-
-. 在快顯視窗中、輸入應用程式名稱、在「**叢集*」下拉式清單中選擇叢集、然後從「**命名空間*」下拉式清單中選擇應用程式的命名空間。
-. 從下拉式* Label *清單中、選取應用程式和命名空間的標籤。
-. 在定義一個部署的自訂應用程式之後、視需要重複其他部署的程序。
-
-
-當您完成建立這兩個自訂應用程式時、您可以將這些資源視為任何其他Astra Control應用程式。他們可以複製這些資源、建立備份與快照、並根據Kubernetes標籤為每個資源群組建立自訂保護原則。
-
-
-
-== 範例：不同版本的個別保護原則
-
-在此範例中、DevOps團隊正在管理一次一次性發行部署。他們的叢集有三個執行Ngin像 的Pod。其中兩個Pod專用於穩定版本。第三個pod是用於金箱版本。
-
-DevOps團隊的Kubernetes管理員將標籤「部署=穩定」新增至穩定的發行Pod。該團隊將標籤「Deployment = Canary」新增至金級發行Pod。
-
-該團隊的穩定版本包括每小時快照和每日備份的需求。這種精簡版更為短暫、因此他們想要針對任何標示為「部署=資料」的項目、建立更具競爭力的短期保護政策。
-
-為了避免可能的資料衝突、管理員將建立兩個自訂應用程式：一個用於「資料」版本、另一個用於「穩定」版本。如此可將兩個Kubernetes物件群組的備份、快照和複製作業分開進行。

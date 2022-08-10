@@ -14,6 +14,9 @@ summary: 您可以檢視Astra Control帳戶中活動的詳細資料。例如、�
 [role="lead"]
 您可以檢視Astra Control帳戶中活動的詳細資料。例如、當邀請新使用者、新增叢集或擷取快照時。您也可以將帳戶活動匯出至CSV檔案。
 
+
+TIP: 如果您從Astra Control管理Kubernetes叢集、且Astra Control已連線Cloud Insights 至原地、Astra Control會將事件記錄傳送至Cloud Insights 原地。日誌資訊（包括Pod部署和PVc附件的相關資訊）會顯示在Astra Control活動記錄中。使用此資訊來識別您所管理的Kubernetes叢集上的任何問題。
+
 .檢視Astra Control中的所有帳戶活動
 . 選擇*活動*。
 . 使用篩選器縮小活動清單範圍、或使用搜尋方塊找到您想要的確切內容。

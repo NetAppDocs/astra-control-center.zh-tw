@@ -13,6 +13,14 @@ summary: 將使用者新增至您的Astra Control Center系統、並移除不應
 
 您可以使用Astra Control UI來邀請、新增、移除及編輯Astra Control Center安裝的使用者。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 管理使用者：
 
+您也可以使用LDAP為選取的使用者執行驗證。
+
+
+
+== 使用LDAP
+
+LDAP是存取分散式目錄資訊的業界標準傳輸協定、也是企業驗證的熱門選擇。您可以將Astra Control Center連線至LDAP伺服器、為選取的Astra使用者執行驗證。在高層級上、組態包括將Astra與LDAP整合、以及定義與LDAP定義對應的Astra使用者和群組。請參閱 https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["LDAP驗證"^] 以取得更多資訊。
+
 
 
 == 邀請使用者

@@ -13,8 +13,76 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 已知問題可識別可能導致您無法成功使用本產品版本的問題。
 
-https://docs.netapp.com/us-en/astra-data-store/release-notes/known-issues.html["請參閱這些已知問題"] 這可能會影響Astra資料儲存區的管理、因為Astra Control Center目前已推出。
+https://docs.netapp.com/us-en/astra-data-store/release-notes/known-issues.html["請參閱這些額外的Astra Data Store已知問題"^] 這可能會影響Astra資料儲存區的管理、因為Astra Control Center目前已推出。
 
+
+
+== Astra資料儲存區磁碟區詳細資料不會出現在Astra控制中心UI的「儲存後端」頁面
+
+UI中不會顯示容量和處理量等詳細資料。發生此問題時、請取消管理儲存後端、然後重新新增。
+
+
+
+== 若要使用Astra Data Store取消叢集管理、必須先移除Managed System應用程式
+
+如果您將含有Astra Data Store的叢集新增至Astra Control Center叢集、則根據預設、會將astrads系統應用程式管理為隱藏應用程式。若要取消管理叢集、您必須先取消管理astrads系統應用程式。您無法使用Astra Control Center UI取消管理此類應用程式。改用Astra Control API要求手動移除應用程式：
+
+.詳細資料
+====
+.步驟
+. 使用此API取得受管理叢集的ID：
++
+[listing]
+----
+/accounts/{account_id}/topology/v1/managedClusters
+----
++
+回應：
+
++
+[listing, subs="+quotes"]
+----
+{
+"items": [
+{
+"type": "application/astra-managedCluster",
+"version": "1.1",
+*"id": "123ab987-0bc0-00d0-a00a-1234567abd8d",*
+"name": "astrads-cluster-1234567",
+...
+----
+. 取得受管理的astrads系統應用程式ID：
++
+[listing]
+----
+/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps
+----
++
+回應：
+
++
+[listing, subs="+quotes"]
+----
+{
+  "items": [
+    [
+      *"1b011d11-bb88-40c7-a1a1-ab1234c123d3",*
+      "astrads-system",
+      "ready"
+    ]
+  ],
+  "metadata": {}
+}
+----
+. 請使用您在上一步中取得的應用程式ID（「1b011d11-bb88-40c7-a1a1-ab1234c123d3」）刪除astrads系統應用程式。
++
+[listing]
+----
+/accounts/{account_id}/k8s/v2/apps/{astrads-system_app_id}
+----
+
+
+====
 
 
 == 如需詳細資訊、請參閱

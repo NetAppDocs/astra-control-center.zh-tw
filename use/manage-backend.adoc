@@ -20,9 +20,11 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 * link:../get-started/setup_overview.html#add-a-storage-backend["新增儲存後端"]
 * <<View storage backend details>>
 * <<Unmanage a storage backend>>
-* <<Update a storage backend license>>
-* <<Add nodes to a storage backend cluster>>
+* <<Update an Astra Data Store storage backend license>>
+* <<Upgrade an Astra Data Store storage backend>>
 * <<Remove a storage backend>>
+* <<Add nodes to a storage backend cluster>>
+* <<Remove nodes from a storage backend cluster>>
 
 
 
@@ -68,7 +70,7 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 
 檢視後端健全狀況、容量和效能（IOPS處理量和/或延遲）的相關資訊。
 
-透過Cloud Insights 連線至功能區、您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端上。
+您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端。有了此功能、您可以查看更多資訊。Cloud Insights請參閱 https://docs.netapp.com/us-en/cloudinsights/["本文檔 Cloud Insights"]。
 
 .步驟
 . 在左側導覽區域中、選取*後端*。
@@ -134,7 +136,7 @@ TIP: 如果您要移除Astra Data Store後端、則vCenter不得建立該後端�
 
 
 
-== 更新儲存後端授權
+== 更新Astra Data Store儲存後端授權
 
 您可以更新Astra Data Store儲存後端的授權、以支援更大的部署或增強功能。
 
@@ -174,6 +176,31 @@ TIP: 如果您要移除Astra Data Store後端、則vCenter不得建立該後端�
 
 
 
+== 升級Astra Data Store儲存後端
+
+您可以從Astra Control Center升級Astra Data Store後端。若要這麼做、您必須先上傳升級套件；Astra Control Center將使用此升級套件來升級Astra Data Store。
+
+.您需要的是 #8217 ；需要的是什麼
+* 受管理的Astra Data Store儲存後端
+* 上傳的Astra Data Store升級套件（請參閱 link:manage-packages-acc.html["管理軟體套件"]）
+
+
+.步驟
+. 選擇*後端*。
+. 從清單中選擇Astra Data Store儲存後端、然後在「* Actions *」（*動作*）欄中選取對應的功能表。
+. 選擇*升級*。
+. 從清單中選取升級版本。
++
+如果儲存庫中有多個不同版本的升級套件、您可以開啟下拉式清單來選取所需的版本。
+
+. 選擇*下一步*。
+. 選擇*開始升級*。
+
+
+「*後端*」頁面會在「*狀態*」欄中顯示「*升級*」狀態、直到升級完成為止。
+
+
+
 == 將節點新增至儲存後端叢集
 
 您可以將節點新增至Astra Data Store叢集、最多可新增至Astra Data Store安裝的授權類型所支援的節點數。
@@ -209,6 +236,29 @@ TIP: 如果您要移除Astra Data Store後端、則vCenter不得建立該後端�
 . 選擇*下一步*。
 . 檢閱新節點的組態。
 . 選取*新增節點*。
+
+
+
+
+== 從儲存後端叢集移除節點
+
+您可以從Astra Data Store叢集移除節點。這些節點可以是健全或故障的節點。
+
+從Astra Data Store叢集移除節點、可將其資料移至叢集中的其他節點、並從Astra Data Store移除節點。
+
+此程序需要下列條件：
+
+* 其他節點必須有足夠的可用空間才能接收資料。
+* 叢集中必須有4個以上的節點。
+
+
+.步驟
+. 從左側導覽中選取*後端*。
+. 選取儲存後端的名稱。
+. 選取*節點*索引標籤。
+. 從「動作」功能表中選取*「移除」*。
+. 輸入「移除」以確認刪除。
+. 選擇*是、移除節點*。
 
 
 

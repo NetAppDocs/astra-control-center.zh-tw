@@ -21,6 +21,7 @@ Astra Control Center需要安裝授權、才能啟用完整的應用程式資料
 * 設定保護原則以排程快照或備份
 * 從快照或備份還原
 * 從快照或目前狀態複製
+* 將應用程式複寫到遠端系統
 
 
 
@@ -32,7 +33,10 @@ NOTE: 您可以新增叢集、新增資源庫、以及管理Astra Data Store儲�
 
 當您將新叢集新增至Astra Control Center時、除非至少有一個執行於叢集上的應用程式由Astra Control Center管理、否則它不會將使用的授權列入計算。您也可以將Astra Data Store儲存後端新增至Astra Control Center、而不會影響授權使用量。這可讓您從未獲授權的Astra Control Center系統管理Astra Data Store後端。
 
-當您開始管理叢集上的應用程式時、Astra Control Center授權使用量計算會包含叢集的CPU單元。
+當您開始管理叢集上的應用程式時、該叢集的所有CPU單元都會包含在Astra Control Center授權使用量中。如果叢集已獲授權部署Astra Data Store、則Astra Control Center授權使用量計算將排除這些CPU單元。
+
+
+NOTE: Astra資料儲存區評估部署中的CPU單元、不會排除在Astra控制中心授權使用量之外。
 
 
 

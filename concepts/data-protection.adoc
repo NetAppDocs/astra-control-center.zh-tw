@@ -31,3 +31,29 @@ CAUTION: _您必須等到最近進行備份之後、才能獲得完整保護_。
 == 複製
 
 _clon__是應用程式、其組態及其持續儲存設備的確切複本。您可以在相同的Kubernetes叢集或其他叢集上手動建立複本。如果您需要將應用程式和儲存設備從一個Kubernetes叢集移至另一個叢集、複製應用程式就很有用。
+
+
+
+== 複寫到遠端叢集
+
+使用Astra Control、您可以利用NetApp SnapMirror技術的非同步複寫功能、利用低RPO（恢復點目標）和低RTO（恢復時間目標）、為應用程式建立營運不中斷。設定完成後、您的應用程式就能將資料和應用程式變更從一個叢集複寫到另一個叢集。
+
+Astra Control會以非同步方式將應用程式Snapshot複本複本複寫到遠端叢集。複寫程序包括SnapMirror複寫之持續磁碟區中的資料、以及由Astra Control保護的應用程式中繼資料。
+
+應用程式複寫不同於應用程式備份與還原、方法如下：
+
+* *應用程式複寫*：Astra Control要求來源和目的地Kubernetes叢集必須可用、並以ONTAP 其各自設定的支援NetApp SnapMirror的支援功能來管理。Astra Control會取得原則導向的應用程式Snapshot、並將其複寫到遠端叢集。NetApp SnapMirror技術用於複寫持續的Volume資料。若要容錯移轉、Astra Control可以在目的地Kubernetes叢集上重新建立應用程式物件、並在目的地ONTAP 叢集上重新建立複寫的磁碟區、使複寫的應用程式上線。由於持續的Volume資料已存在於目的地ONTAP 的穩定叢集上、Astra Control可提供快速的容錯移轉恢復時間。
+* *應用程式備份與還原*：當備份應用程式時、Astra Control會建立應用程式資料的Snapshot、並將其儲存在物件儲存庫中。需要還原時、必須將儲存庫中的資料複製到ONTAP 位在該叢集上的持續磁碟區。備份/還原作業不需要次要Kubernetes/ONTAP叢集可供使用和管理、但額外的資料複本可能會導致較長的還原時間。
+
+
+若要瞭解如何複寫應用程式、請參閱 link:../use/replication.html["使用SnapMirror技術將應用程式複寫到遠端系統"]。
+
+下列影像顯示排程的備份與還原程序、與複寫程序比較。
+
+備份程序會將資料複製到S3儲存區、並從S3儲存區還原：
+
+image:acc-backup_5.5in.png["排程的備份與還原映像"]
+
+另一方面、複寫作業則是透過複寫至ONTAP esq/然後進行容錯移轉來建立Kubernetes資源：
+
+image:acc-replication_5.5in.png["複寫與容錯移轉映像"]

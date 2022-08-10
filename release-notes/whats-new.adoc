@@ -11,19 +11,23 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 :imagesdir: ../media/release-notes/
 
 
-我們很高興在此發表最新版的Astra Control Center 22.04.0。
+我們很高興在此發表最新版的Astra Control Center。
 
 
 
-== 2022年4月26日（22.04.0）
+== 2022年8月10日（22.08.0）
 
 .新功能與支援
-* link:../get-started/setup_overview.html#add-a-storage-backend["Astra Control Center的Astra Data Store部署"]
-* link:../concepts/user-roles-namespaces.html["命名空間角色型存取控制（RBAC）"]
-* link:../get-started/install_acc-cvo.html["支援Cloud Volumes ONTAP 功能"]
-* link:../get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Astra Control Center的一般入侵能力"]
-* link:../use/manage-buckets.html#remove-a-bucket["從Astra Control移除鏟斗"]
-* link:../get-started/requirements.html#tanzu-kubernetes-grid-cluster-requirements["支援VMware Tanzu產品組合"]
+* link:../use/replication.html["使用NetApp SnapMirror技術進行應用程式複寫"]
+* link:../use/manage-apps.html#manage-apps["改善應用程式管理工作流程"]
+* link:../use/execution-hooks.html["增強的執行掛勾功能、讓您自行執行"]
++
+
+NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾已在此版本中移除。如果您升級至此版本、但未提供您專屬的快照執行掛勾、Astra Control將僅擷取損毀一致的快照。請造訪 https://github.com/NetApp/Verda["NetApp Verda"] GitHub儲存庫提供範例執行攔截指令碼、您可以根據環境進行修改。
+
+* link:../get-started/requirements.html["支援VMware Tanzu Kubernetes Grid整合版（TKGI）"]
+* link:../get-started/requirements.html#operational-environment-requirements["支援Google Anthos"]
+* https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["LDAP組態（透過Astra Control API）"^]
 
 
 .已知問題與限制
@@ -34,8 +38,32 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
+== 2022年4月26日（22.04.0）
+
+.詳細資料
+====
+.新功能與支援
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/setup_overview.html#add-a-storage-backend["Astra Control Center的Astra Data Store部署"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["命名空間角色型存取控制（RBAC）"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["支援Cloud Volumes ONTAP 功能"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Astra Control Center的一般入侵能力"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/use/manage-buckets.html#remove-a-bucket["從Astra Control移除鏟斗"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#tanzu-kubernetes-grid-cluster-requirements["支援VMware Tanzu產品組合"]
+
+
+.已知問題與限制
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues.html["此版本的已知問題"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues-ads.html["Astra Data Store和此Astra Control Center版本的已知問題"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["此版本的已知限制"]
+
+
+====
+
+
 == 2021年12月14日（21.12）
 
+.詳細資料
+====
 .新功能與支援
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/restore-apps.html["應用程式還原"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/execution-hooks.html["執行掛勾"^]
@@ -56,10 +84,13 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 * https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
+====
 
 
 == 2021年8月5日（21.08）
 
+.詳細資料
+====
 Astra Control Center正式推出。
 
 * https://docs.netapp.com/us-en/astra-control-center-2108/concepts/intro.html["它是什麼"^]
@@ -72,6 +103,7 @@ Astra Control Center正式推出。
 * https://docs.netapp.com/us-en/astra-control-center-2108/rest-api/api-intro.html["利用API自動化"^]
 
 
+====
 
 
 == 如需詳細資訊、請參閱

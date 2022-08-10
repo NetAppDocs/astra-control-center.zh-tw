@@ -16,7 +16,6 @@ sidebar:
   - section: get-started
   - section: use
   - section: rest-api
-  - section: solutions
   - section: support
   - title: 舊版
     url: "/acc-earlier-versions.html"
@@ -46,6 +45,8 @@ homepage:
       url: "/use/protect-apps.html"
     - title: 複製及移轉應用程式
       url: "/use/clone-apps.html"
+    - title: 將應用程式複寫到遠端系統
+      url: "/use/replication.html"
   - title: 使用Astra Control API
     links:
     - title: 開始使用Astra Control API
@@ -56,17 +57,17 @@ homepage:
       url: https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html
   - title: 使用Astra Control Service
     links:
-    - title: Astra Control Service簡介
+    - title: 瞭解Astra Control Service
       url: https://docs.netapp.com/us-en/astra/get-started/intro.html
-    - title: 新增功能
+    - title: Astra Control Service的新功能
       url: https://docs.netapp.com/us-en/astra/release-notes/whats-new.html
     - title: Astra Control Service快速入門
       url: https://docs.netapp.com/us-en/astra/get-started/quick-start.html
   - title: 使用Astra資料儲存區
     links:
-    - title: Astra Data Store簡介
+    - title: 深入瞭解Astra Data Store
       url: https://docs.netapp.com/us-en/astra-data-store/concepts/intro.html
-    - title: 本版Astra Data Store內容
+    - title: Astra Data Store的新功能
       url: https://docs.netapp.com/us-en/astra-data-store/release-notes/whats-new.html
     - title: Astra Data Store快速入門
       url: https://docs.netapp.com/us-en/astra-data-store/get-started/quick-start.html
@@ -78,16 +79,6 @@ homepage:
       url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
     - title: 簡化Jenkins生命週期管理
       url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
-  - title: 示範教學課程
-    links:
-    - title: 部署Jenkins
-      url: "/solutions/jenkins-deploy-from-helm-chart.html"
-    - title: 部署MariaDB
-      url: "/solutions/mariadb-deploy-from-helm-chart.html"
-    - title: 部署MySQL
-      url: "/solutions/mysql-deploy-from-helm-chart.html"
-    - title: 部署Postgres
-      url: "/solutions/postgres-deploy-from-helm-chart.html"
   - title: 部落格社群
     links:
     - title: 可寬延通道

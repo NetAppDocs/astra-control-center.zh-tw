@@ -17,21 +17,10 @@ summary: 您應該執行易用性檢查、以確保叢集已準備好新增至As
 
 == 新增叢集之前所需的資源
 
-* 下列叢集類型之一：
-+
-** 執行OpenShift 4.6-8、4.7、4.8或4.9的叢集
-** 使用RKE1執行Rancher 2.5.x、2.5.x或2.6的叢集
-** 執行Kubernetes 1.20至1.23的叢集
-** 執行VMware Tanzu Kubernetes Grid 1.4的叢集
-** 執行VMware Tanzu Kubernetes Grid整合版1.12.2的叢集
-+
-請確定您的叢集有一個或多個工作節點、且至少有1GB RAM可供執行遙測服務。
+確保您的叢集符合中所述的要求 link:requirements.html#application-cluster-requirements["應用程式叢集需求"]。
 
-+
 
 NOTE: 如果您計畫將第二個OpenShift 4.6、4.7或4.8叢集新增為受管理的運算資源、則應確保已啟用Astra Trident Volume Snapshot功能。請參閱官方的Astra Trident https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["說明"^] 使用Astra Trident啟用及測試Volume Snapshot。
-
-
 
 * Astra Trident儲存類設定為 link:requirements.html#supported-storage-backends["支援的儲存後端"] （任何類型的叢集都需要）
 * 支援ONTAP 的支援功能不只是超級使用者和使用者ID、更能使用Astra Control Center來備份和還原應用程式。在支援指令行中執行下列命令ONTAP ：「匯出原則規則modify -vserver <儲存虛擬機器名稱>-policyname <原則名稱>-rueindex 1 -sm超級 使用者sym --anon 65534」

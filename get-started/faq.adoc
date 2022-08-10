@@ -29,6 +29,10 @@ Astra Control Center使用本機驗證和每個環境的專屬URL。
 
 對於URL、請在瀏覽器中輸入您在安裝Astra Control Center時、於Astra_control_center_min.yaml自訂資源定義（CRD）檔案的SPEC.astraAddress欄位中所設定的完整網域名稱（FQDN）。電子郵件是您在Astra_control_center_min.yaml CRD的spec.email欄 位中設定的值。
 
+
+
+== 授權
+
 *我正在使用評估授權。如何變更為完整授權？*
 
 您可以取得NetApp授權檔案（NLF）、輕鬆變更為完整授權。

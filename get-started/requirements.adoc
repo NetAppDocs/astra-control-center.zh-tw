@@ -13,17 +13,35 @@ summary: 驗證Kubernetes叢集、應用程式和網頁瀏覽器的支援、開�
 
 開始驗證作業環境、應用程式叢集、應用程式、授權和網頁瀏覽器的整備度。
 
+* <<Operational environment requirements>>
+* <<Supported storage backends>>
+* <<Application cluster requirements>>
+* <<Application management requirements>>
+* <<Replication prerequisites>>
+* <<Access to the internet>>
+* <<License>>
+* <<Ingress for on-premises Kubernetes clusters>>
+* <<Networking requirements>>
+* <<Supported web browsers>>
+
+
 
 
 == 營運環境需求
 
-Astra Control Center需要下列其中一種作業環境：
+Astra Control Center已在下列類型的作業環境中通過驗證：
 
-* Kubernetes 1.20至1.23
-* Rancher 2.5.8、2.5.9或2.6（含RKE1）
-* Red Hat OpenShift Container Platform 4.6-8、4.7、4.8或4.9
-* VMware Tanzu Kubernetes Grid 1.4
-* VMware Tanzu Kubernetes Grid整合版1.12.2
+* Google Anthos 1.10或1.11
+* Kubernetes 1.22至1.24
+* Rancher Kubernetes Engine（RKE）：
++
+** RKE 1.2.16、含Rancher 2.5.12和RKE 1.3.3、含2.6.3
+** RKE 2（v1.23.6+rke2r2）、含Rancher 2.6.3
+
+
+* Red Hat OpenShift Container Platform 4.8、4.9或4.10.
+* VMware Tanzu Kubernetes Grid 1.4或1.5
+* VMware Tanzu Kubernetes Grid整合版1.12.2或1.13
 
 
 確保您選擇裝載Astra Control Center的作業環境符合環境正式文件中所述的基本資源需求。除了環境的資源需求之外、Astra Control Center還需要下列資源：
@@ -35,16 +53,14 @@ Astra Control Center需要下列其中一種作業環境：
 | 儲存後端容量 | 至少可提供500GB容量 
 
 
-| 工作節點 | 總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM 
+| 工作節點 | 至少3個工作節點、各有12個CPU核心和16GB RAM 
 
 
 | FQDN位址 | Astra Control Center的FQDN位址 
 
 
 | Astra Trident  a| 
-* 已安裝並設定Astra Trident 21.004或更新版本
-* 如果Astra Data Store將用作儲存後端、則已安裝並設定Astra Trident 210.1或更新版本
-
+Astra Trident 210.1或更新版本已安裝並設定Astra Trident 22.04或更新版本、以進行SnapMirror型應用程式複寫
 
 |===
 
@@ -80,18 +96,26 @@ NOTE: 如果您計畫將第二個OpenShift作業環境新增為受管理的運�
 在VMware Tanzu Kubernetes Grid（TKG）或Tanzu Kubernetes Grid整合版（TKGi）叢集上裝載Astra Control Center時、請謹記下列考量事項。
 
 * 停用要由Astra Control管理的任何應用程式叢集上的TKG或TKGi預設儲存類別強制。您可以編輯命名空間叢集上的「TanzuKubernetesCluster」資源來執行此作業。
-* 您必須建立安全原則、讓Astra Control Center能夠在叢集中建立Pod。您可以使用下列命令來執行此作業：
+* 在Astra Control Center安裝過程中、下列資源會建立在Pod安全原則（PSP）受限環境中：
 +
-[listing]
-----
-kubectl config use-context <context-of-workload-cluster>
-kubectl create clusterrolebinding default-tkg-admin-privileged-binding --clusterrole=psp:vmware-system-privileged --group=system:authenticated
-----
+** Pod安全性原則
+** RBAC角色
+** RBAC角色綁定RBAC角色和角色綁定資源是在「NetApp-acc」命名空間中建立的。
+
+
+
+
 * 在TKG或TKGi環境中部署Astra Control Center時、請注意Astra Trident的特定需求。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#other-known-configuration-options["Astra Trident文件"^]。
 
 
 
 NOTE: 預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過期。如果您使用Tanzu產品組合產品、則必須產生一個含有非過期權杖的Tanzu Kubernetes叢集組態檔、以避免Astra Control Center與託管應用程式叢集之間發生連線問題。如需相關指示、請造訪 https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.2/nsx-application-platform/GUID-52A52C0B-9575-43B6-ADE2-E8640E22C29F.html["VMware NSxT-T資料中心產品文件。"]
+
+
+
+=== Google Anthos叢集需求
+
+在Google Anthos叢集上裝載Astra Control Center時、請注意、Google Anthos預設包含MetalLB負載平衡器和Istio入口閘道服務、讓您在安裝期間只需使用Astra Control Center的一般入口功能即可。請參閱 link:install_acc.html#configure-astra-control-center["設定Astra控制中心"] 以取得詳細資料。
 
 
 
@@ -167,7 +191,28 @@ Astra Control具備下列應用程式管理需求：
 
 
 
-=== 支援的應用程式安裝方法
+== 複寫先決條件
+
+Astra Control應用程式複寫要求您在開始之前必須符合下列先決條件：
+
+* Astra Control Center必須部署在第三個故障網域或次要站台、才能實現無縫的災難恢復。
+* 應用程式的主機Kubernetes叢集和目的地Kubernetes叢集必須可供使用、並連線至兩ONTAP 個非功能叢集、理想情況是位於不同的故障網域或站台。
+* 必須配對叢集和主機SVM。ONTAP請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["叢集與SVM對等概觀"^]。
+* 配對的遠端SVM必須可供目的地叢集上的Trident使用。
+* 來源ONTAP 叢集和目的地叢集上必須同時存在Trident版本22.04或更新版本。
+* 使用資料保護套裝組合的SnapMirror非同步授權必須同時在來源和目的地的叢集上啟用。ONTAP ONTAP請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^]。
+* 來源和目的地Kubernetes叢集和ONTAP 非功能性叢集都必須由Astra Control管理。
++
+
+NOTE: 您可以同時以相反方向複寫不同的應用程式（在其他叢集或站台上執行）。例如、應用程式A、B、C可以從資料中心1複寫到資料中心2、而應用程式X、Y、Z可以從資料中心2複寫到資料中心1。
+
+
+
+瞭解操作方法 link:../use/replication.html["使用SnapMirror技術將應用程式複寫到遠端系統"]。
+
+
+
+== 支援的應用程式安裝方法
 
 Astra Control支援下列應用程式安裝方法：
 
@@ -200,9 +245,9 @@ NOTE: 運算子及其安裝的應用程式必須使用相同的命名空間；�
 
 == 授權
 
-Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。若無授權、您將無法：
+Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。如果沒有授權、您就無法執行下列任何一項：
 
-* 定義自訂應用程式
+* 定義應用程式
 * 建立現有應用程式的快照或複本
 * 設定資料保護原則
 

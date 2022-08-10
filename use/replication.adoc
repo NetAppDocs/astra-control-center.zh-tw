@@ -1,0 +1,271 @@
+---
+sidebar: sidebar 
+permalink: use/replication.html 
+keywords: replicate, replication, disaster, recovery 
+summary: Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將能最快完成。 
+---
+= 使用SnapMirror技術將應用程式複寫到遠端系統
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+使用Astra Control、您可以利用NetApp SnapMirror技術的非同步複寫功能、利用低RPO（恢復點目標）和低RTO（恢復時間目標）、為應用程式建立營運不中斷。設定完成後、您的應用程式就能將資料和應用程式變更從一個叢集複寫到另一個叢集。
+
+如需備份/還原與複寫之間的比較、請參閱 link:../concepts/data-protection.html["資料保護概念"]。
+
+您可以在不同的案例中複寫應用程式、例如下列僅限內部部署、混合式和多雲端的案例：
+
+* 內部部署站台A到內部部署站台B
+* 內部部署至雲端、Cloud Volumes ONTAP 使用不整合技術
+* 將Cloud Volumes ONTAP 雲端技術整合至內部部署
+* 雲端搭配從功能到雲端（在同一個雲端供應商的不同地區或不同的雲端供應商之間）Cloud Volumes ONTAP
+
+
+Astra Control可在內部部署叢集、內部部署到雲端（使用Cloud Volumes ONTAP 原地功能）或在雲端之間（Cloud Volumes ONTAP 從地到Cloud Volumes ONTAP 地）複寫應用程式。
+
+
+NOTE: 您可以同時以相反方向複寫不同的應用程式（在其他叢集或站台上執行）。例如、應用程式A、B、C可以從資料中心1複寫到資料中心2、而應用程式X、Y、Z可以從資料中心2複寫到資料中心1。
+
+使用Astra Control、您可以執行下列與複寫應用程式相關的工作：
+
+* <<Set up a replication relationship>>
+* <<Bring a replicated app online on the destination cluster (fail over)>>
+* <<Resync a failed over replication>>
+* <<Reverse application replication>>
+* <<Fail back applications to the original source cluster>>
+* <<Delete an application replication relationship>>
+
+
+
+
+== 複寫先決條件
+
+請參閱 link:../get-started/requirements.html#replication-prerequisites["複寫先決條件"] 開始之前。
+
+
+
+== 設定複寫關係
+
+設定複寫關係時、會涉及複寫原則的下列項目；
+
+* 選擇您希望Astra Control執行應用程式Snapshot的頻率（包括應用程式的Kubernetes資源、以及每個應用程式磁碟區的Volume Snapshot）
+* 選擇複寫排程（包括Kubernetes資源及持續磁碟區資料）
+* 設定拍攝Snapshot的時間
+
+
+.步驟
+. 從Astra Control左側導覽中、選取* Applications*。
+. 在「應用程式」頁面中、選取「*資料保護*>*複寫*」索引標籤。
+. 在「Data Protection（資料保護）」>「Replication（複寫）」索引標籤中、選取「* Configure replReplication polici*或者、從「應用程式保護」方塊中選取「動作」選項、然後選取「設定複寫原則*」。
+. 輸入或選取下列資訊：
++
+** 目的地叢集
+** *目的地儲存類別*：選取或輸入使用目的地ONTAP 叢集上配對SVM的儲存類別。
+** *複寫類型*：「非同步」目前是唯一可用的複寫類型。 
+** *目的地命名空間*：為目的地叢集輸入新的或現有的目的地命名空間。
++
+
+NOTE: 所選命名空間中的任何衝突資源都會被覆寫。 
+
+** *複寫頻率*：設定您希望Astra Control多久拍攝一次Snapshot並將其複寫到目的地。
+** *偏移*：設定您想要Astra Control拍攝Snapshot的小時數（分鐘）。您可能想要使用偏移、使其不與其他排程作業一致。例如、如果您想要從10：02開始每5分鐘拍攝一次Snapshot、請輸入「02」作為偏移分鐘數。結果為10：02、10：07、10：12等
+
+
+. 選取*下一步*、檢閱摘要、然後選取*儲存*。
++
+
+NOTE: 一開始、狀態會在第一個排程發生之前顯示「app-mirror」（應用程式鏡射）。
+
++
+Astra Control會建立用於複寫的應用程式Snapshot。
+
+. 若要查看應用程式Snapshot狀態、請選取* Applications*>* Snapshot*索引標籤。
++
+Snapshot名稱使用「repl複 寫排程-」格式。Astra Control保留上次用於複寫的Snapshot。複寫成功完成後、會刪除任何舊版複寫Snapshot。
+
+
+
+這會建立複寫關係。
+
+Astra Control在建立關係後完成下列行動：
+
+* 在目的地上建立命名空間（如果不存在）
+* 在目的地命名空間上建立一個與來源應用程式PVCS對應的PVc。
+* 取得應用程式一致的初始Snapshot。
+* 使用初始Snapshot建立持續磁碟區的SnapMirror關係。
+
+
+「Data Protection（資料保護）」頁面會顯示複寫關係狀態和狀態：<健全狀況狀態>|<關係生命週期狀態>
+
+例如：正常|已建立
+
+深入瞭解複寫狀態和狀態、如下所示。
+
+
+
+== 在目的地叢集上使複寫的應用程式上線（容錯移轉）
+
+使用Astra Control、您可以將複寫的應用程式「容錯移轉」到目的地叢集。此程序會停止複寫關係、並在目的地叢集上使應用程式上線。此程序不會停止來源叢集上的應用程式（如果運作正常）。
+
+.步驟
+. 從Astra Control左側導覽中、選取* Applications*。
+. 在「應用程式」頁面中、選取「*資料保護*>*複寫*」索引標籤。
+. 在Data Protection（資料保護）> Replication（複寫）索引標籤的Actions（動作）功能表中、選取* Fail over（容錯移轉）*。
+. 在「容錯移轉」頁面中、檢閱資訊並選取*容錯移轉*。
+
+
+容錯移轉程序會導致下列動作：
+
+* 在目的地叢集上、應用程式是根據最新複寫的Snapshot來啟動。
+* 來源叢集和應用程式（如果運作正常）不會停止、將會繼續執行。
+* 複寫狀態會變更為「容錯移轉」、並在完成後變更為「容錯移轉」。
+* 來源應用程式的保護原則會根據容錯移轉時來源應用程式上的排程、複製到目的地應用程式。
+* Astra Control會在來源叢集和目的地叢集上顯示應用程式及其各自的健全狀況。
+
+
+
+
+== 重新同步複寫失敗的情況
+
+重新同步作業會重新建立複寫關係。您可以選擇關聯的來源、以保留來源或目的地叢集上的資料。此作業會重新建立SnapMirror關係、以便在選擇的方向開始磁碟區複寫。
+
+此程序會在重新建立複寫之前、停止新目的地叢集上的應用程式。
+
+
+NOTE: 在重新同步程序期間、生命週期狀態會顯示為「Establishing」。
+
+.步驟
+. 從Astra Control左側導覽中、選取* Applications*。
+. 在「應用程式」頁面中、選取「*資料保護*>*複寫*」索引標籤。
+. 在「Data Protection（資料保護）」>「Replication（複寫）」索引標籤中、從「Actions（動作）」功能表中選取* Resyn美食*。
+. 在「ResSync（重新同步）」頁面中、選取包含您要保留之資料的來源或目的地應用程式執行個體。
++
+
+CAUTION: 請謹慎選擇重新同步來源、因為目的地上的資料將被覆寫。
+
+. 選擇*重新同步*以繼續。
+. 輸入「resSync」以確認。
+. 選取*是、重新同步*以完成。
+
+
+.結果
+* 「複寫」頁面會顯示「建立」作為複寫狀態。
+* Astra Control會在新的目的地叢集上停止應用程式。
+* Astra Control會使用SnapMirror重新同步、在所選方向重新建立持續Volume複寫。
+* 「複寫」頁面會顯示更新的關係。
+
+
+
+
+== 反轉應用程式複寫
+
+這是將應用程式移至目的地叢集、同時繼續複寫回原始來源叢集的計畫性作業。Astra Control會停止來源叢集上的應用程式、並將資料複寫到目的地、然後再將應用程式容錯移轉到目的地叢集。
+
+在這種情況下、您要交換來源和目的地。原始來源叢集會成為新的目的地叢集、而原始目的地叢集會成為新的來源叢集。
+
+.步驟
+. 從Astra Control左側導覽中、選取* Applications*。
+. 在「應用程式」頁面中、選取「*資料保護*>*複寫*」索引標籤。
+. 在「Data Protection（資料保護）」>「Replication（複寫）」索引標籤中、從「Actions（動作）」功能表中、選取「* Reverse Replic
+. 在「Reverse Replication」（反轉複寫）頁面中、檢閱資訊、然後選取* Reverse Replication*繼續。
+
+
+下列動作是因為反轉複寫而發生：
+
+* 快照是從原始來源應用程式的Kubernetes資源中取得。
+* 刪除應用程式的Kubernetes資源（保留PVCS和PVs）、即可順利停止原始來源應用程式的Pod。
+* 在Pod關機之後、便會取得並複寫應用程式磁碟區的Snapshot快照。
+* SnapMirror關係中斷、使目的地磁碟區準備好進行讀寫。
+* 應用程式的Kubernetes資源會使用在原始來源應用程式關閉後複寫的Volume資料、從關機前的Snapshot還原。
+* 複寫會以相反方向重新建立。
+
+
+
+
+== 將應用程式容錯移轉至原始來源叢集
+
+使用Astra Control、您可以使用下列作業順序、在「容錯移轉」作業之後達到「容錯移轉」。在此工作流程中、為了還原原始複寫方向、Astra Control會在反轉複寫方向之前、將任何應用程式變更複寫回原始來源叢集。
+
+此程序從已完成容錯移轉至目的地的關係開始、並涉及下列步驟：
+
+* 從容錯移轉狀態開始。
+* 重新同步關係。
+* 反轉複寫。
+
+
+.步驟
+. 從Astra Control左側導覽中、選取* Applications*。
+. 在「應用程式」頁面中、選取「*資料保護*>*複寫*」索引標籤。
+. 在「Data Protection（資料保護）」>「Replication（複寫）」索引標籤中、從「Actions（動作）」功能表中選取* Resyn美食*。
+. 若要執行故障恢復作業、請選擇容錯移轉應用程式作為重新同步作業的來源（保留任何在容錯移轉後寫入的資料）。
+. 輸入「resSync」以確認。
+. 選取*是、重新同步*以完成。
+. 重新同步完成後、請在「Data Protection（資料保護）」>「Replication（複寫）」索引標籤的「Actions（動作）」功能表中、選取* Reverse replection*（反轉複寫）。
+. 在「Reverse Replication」（反轉複寫）頁面中、檢閱資訊並選取* Reverse Replication*。
+
+
+這將「重新同步」和「反轉關係」作業的結果結合在一起、以便在原始來源叢集上使應用程式上線、並將複寫恢復至原始目的地叢集。
+
+
+
+== 刪除應用程式複寫關係
+
+刪除關係會產生兩個獨立的應用程式、兩者之間沒有任何關係。
+
+.步驟
+. 從Astra Control左側導覽中、選取* Applications*。
+. 在「應用程式」頁面中、選取「*資料保護*>*複寫*」索引標籤。
+. 在Data Protection（資料保護）> Replication（複寫）索引標籤中、從Application Protection（應用程式保護）方塊或關係圖中、選取* Delete Replication election*（刪除複寫關係*）。
+
+
+刪除複寫關係之後會發生下列動作：
+
+* 如果建立關係、但應用程式尚未在目的地叢集上上線（容錯移轉）、Astra Control會保留初始化期間建立的PVCS、並在目的地叢集上留下「空白」的託管應用程式、並保留目的地應用程式、以保留可能建立的任何備份。
+* 如果應用程式已在目的地叢集上線（容錯移轉）、Astra Control會保留PVCS和目的地應用程式。來源和目的地應用程式現在被視為獨立的應用程式。備份排程會保留在兩個應用程式上、但不會彼此關聯。 
+
+
+
+
+== 複寫關係健全狀況狀態和關係生命週期狀態
+
+Astra Control會顯示複寫關係的關係健全狀況、以及複寫關係的生命週期狀態。
+
+
+
+=== 複寫關係健全狀況狀態
+
+下列狀態表示複寫關係的健全狀況：
+
+* *正常*：這種關係正在建立或已經建立、而且最近的Snapshot已成功傳輸。
+* *警告*：關係可能是容錯移轉或容錯移轉（因此不再保護來源應用程式）。
+* *重大*
++
+** 關係正在建立或容錯移轉、最後一次的協調嘗試失敗。
+** 建立關係、最後一次嘗試協調新增的永久虛擬基礎虛擬基礎虛擬基礎虛擬基礎虛擬基礎虛擬基礎層面時、就會失敗。
+** 建立關係（因此已複寫成功的Snapshot、並可進行容錯移轉）、但最近的Snapshot失敗或無法複寫。
+
+
+
+
+
+
+=== 複寫生命週期狀態
+
+下列狀態反映複寫生命週期的不同階段：
+
+* *正在建立*：正在建立新的複寫關係。Astra Control會視需要建立命名空間、在目的地叢集的新磁碟區上建立持續磁碟區宣告（PVCS）、並建立SnapMirror關係。此狀態也表示複寫正在重新同步或反轉複寫。
+* *已建立*：存在複寫關係。Astra Control會定期檢查PVCS是否可用、檢查複寫關係、定期建立應用程式的Snapshot快照、並識別應用程式中的任何新來源PVCS。如果是、Astra Control會建立資源以將其納入複寫中。
+* *容錯移轉*：Astra Control會中斷SnapMirror關係、並從上次成功複寫的應用程式Snapshot中還原應用程式的Kubernetes資源。
+* *故障移轉*：Astra Control會停止從來源叢集複寫、在目的地使用最新（成功）的複寫應用程式Snapshot、並還原Kubernetes資源。
+* *重新同步*：Astra Control使用SnapMirror重新同步、將重新同步來源上的新資料重新同步至重新同步目的地。此作業可能會根據同步方向覆寫目的地上的部分資料。Astra Control會停止在目的地命名空間上執行的應用程式、並移除Kubernetes應用程式。在重新同步程序期間、狀態會顯示為「Establing（正在建立）」。
+* *反轉*：是將應用程式移至目的地叢集、同時繼續複寫回原始來源叢集的計畫性作業。Astra Control會停止來源叢集上的應用程式、將資料複寫到目的地、然後再將應用程式容錯移轉到目的地叢集。在反向複寫期間、狀態會顯示為「Establing（正在建立）」。
+* *刪除*：
++
+** 如果複寫關係已建立但尚未容錯移轉、Astra Control會移除複寫期間建立的PVCS、並刪除目的地託管應用程式。
+** 如果複寫已失敗、Astra Control會保留PVCS和目的地應用程式。
+
+
+

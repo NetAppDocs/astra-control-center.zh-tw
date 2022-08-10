@@ -14,6 +14,7 @@ summary: 如果您未執行最新版本、則可取得先前版本的文件。
 [role="lead"]
 您可以取得先前版本的文件。
 
+* https://docs.netapp.com/us-en/astra-control-center-2204/index.html["Astra Control Center 22.04文件"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/index.html["Astra Control Center 21.12文件"^]
 * https://docs.netapp.com/us-en/astra-control-center-2108/index.html["Astra Control Center 21.08文件"^]
 
