@@ -271,11 +271,7 @@
   <block id="32139554c6b5c9a48dcfdd0ff983a9eb" category="doc">開始管理應用程式</block>
   <block id="1cf97dd1e6f6c8888d8fa6dcede7fac9" category="inline-link-macro">將叢集新增至Astra Control管理</block>
   <block id="7b7f260c982647b3aee51c681be792ef" category="section-title">應用程式管理需求</block>
-  <block id="07eb1eefb9996b52d1fdfe23101a2b03" category="paragraph">Astra Control具備下列應用程式管理需求：</block>
-  <block id="040814594415b3be75eca728578ba39d" category="list-text">*授權*：若要使用Astra Control Center管理應用程式、您需要Astra Control Center授權。</block>
   <block id="9ddfdbe42c83c42ff3e215c90be2d274" category="list-text">*命名空間*：Astra Control要求應用程式不超過一個命名空間、但命名空間可以包含多個應用程式。</block>
-  <block id="a23e8e619b2ffd1ec1e37fd1f16eee74" category="list-text">* StorageClass *：如果您安裝的應用程式已明確設定StorageClass、且需要複製應用程式、則複製作業的目標叢集必須具有原本指定的StorageClass。將具有明確設定StorageClass的應用程式複製到沒有相同StorageClass的叢集、將會失敗。</block>
-  <block id="7a9f49c6cd6dca3bc35b755523c76570" category="list-text">* Kubernetes資源*：使用未由Astra Control收集的Kubernetes資源的應用程式、可能沒有完整的應用程式資料管理功能。Astra Control會收集下列Kubernetes資源：</block>
   <block id="d7d354d0f9d0780e168c895c92a32c24" category="cell">叢集角色</block>
   <block id="e866afd8290d5c73cda6260e04e6eef0" category="cell">ClusterRoleBinding</block>
   <block id="a941f8adb5ae079ebc739cb59407fd30" category="cell">組態對應</block>
@@ -2635,4 +2631,5 @@
   <block id="f37ba65ac5d8b8df530d2009f9539d5d" category="sidebar">Astra Data Store的新功能</block>
   <block id="9c55cf3bb8c415c1b4cf797d9fae1d67" category="sidebar">監控應用程式和叢集健全狀況</block>
   <block id="0adc618a9ad28f57db9328d47cf45165" category="sidebar">利用Cloud Insights 功能性和變動監控基礎架構</block>
+  <block id="d1736d27c7efe09a7fdb5f5e3b18e8dc" category="paragraph">如需詳細資訊、請參閱 <block ref="f6d2e41142da7ccda158b71b34630966" category="inline-link-macro-rx"></block>。</block>
 </blocks>

@@ -13,48 +13,7 @@ summary: 將Kubernetes叢集新增至Astra Control之後、即可在該叢集（
 
 您先請 link:../get-started/setup_overview.html#add-cluster["將叢集新增至Astra Control管理"]、您可以在叢集上安裝應用程式（Astra Control之外）、然後前往Astra Control的「應用程式」頁面、開始管理應用程式及其資源。
 
-
-
-== 應用程式管理需求
-
-Astra Control具備下列應用程式管理需求：
-
-* *授權*：若要使用Astra Control Center管理應用程式、您需要Astra Control Center授權。
-* *命名空間*：Astra Control要求應用程式不超過一個命名空間、但命名空間可以包含多個應用程式。
-* * StorageClass *：如果您安裝的應用程式已明確設定StorageClass、且需要複製應用程式、則複製作業的目標叢集必須具有原本指定的StorageClass。將具有明確設定StorageClass的應用程式複製到沒有相同StorageClass的叢集、將會失敗。
-* * Kubernetes資源*：使用未由Astra Control收集的Kubernetes資源的應用程式、可能沒有完整的應用程式資料管理功能。Astra Control會收集下列Kubernetes資源：
-+
-[cols="1,1,1"]
-|===
-
-
-| 叢集角色 | ClusterRoleBinding | 組態對應 
-
-
-| CustomResourceDesDefinition | CustomResource | 可關係工作 
-
-
-| 示範 | HorizontalPodAutoscaler | 入侵 
-
-
-| 部署組態 | 互鎖Webhook | PeristentVolume Claim 
-
-
-| Pod | Podcast中斷預算 | Podcast範本 
-
-
-| 網路原則 | ReplicaSet | 角色 
-
-
-| 角色繫結 | 路由 | 秘密 
-
-
-| 服務 | 服務帳戶 | 狀態集 
-
-
-| 驗證Webhook |  |  
-|===
-
+如需詳細資訊、請參閱 link:../get-started/requirements.html#application-management-requirements["應用程式管理需求"]。
 
 
 
