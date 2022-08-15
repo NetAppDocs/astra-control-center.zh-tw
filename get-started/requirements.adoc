@@ -164,19 +164,19 @@ Astra Control具備下列應用程式管理需求：
 | 叢集角色 | ClusterRoleBinding | 組態對應 
 
 
-| CustomResourceDesDefinition | CustomResource | 可關係工作 
+| 可關係工作 | CustomResourceDesDefinition | CustomResource 
 
 
-| 示範 | HorizontalPodAutoscaler | 入侵 
+| 示範 | 部署組態 | HorizontalPodAutoscaler 
 
 
-| 部署組態 | 互鎖Webhook | PeristentVolume Claim 
+| 入侵 | 互鎖Webhook | 網路原則 
 
 
-| Pod | Podcast中斷預算 | Podcast範本 
+| PeristentVolume Claim | Pod | Podcast中斷預算 
 
 
-| 網路原則 | ReplicaSet | 角色 
+| Podcast範本 | ReplicaSet | 角色 
 
 
 | 角色繫結 | 路由 | 秘密 
