@@ -240,13 +240,8 @@ NOTE: 您可能需要重新整理頁面、以便顯示後端。
 
 ** *《*》*：ONTAP
 +
-... 選取* ONTAP 《*》*《*下一步*》。
-... 輸入ONTAP 「叢集管理IP位址」和「管理認證」。
-+
-
-NOTE: 您在此處輸入認證的使用者、必須在ONTAP 該叢集的「系統管理程式」中啟用「ontapi」使用者登入存取方法ONTAP 。如果您打算使用SnapMirror複寫、請在ONTAP 兩個支援叢集上為使用者啟用「ontapi」和「http」存取方法。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理使用者帳戶"^] 以取得更多資訊。
-
-... 選擇* Review *。
+... 選擇* ONTAP 《*》*《*》。
+... 輸入ONTAP 該系統的管理員認證資料、然後選取* Review *。
 ... 確認後端詳細資料、然後選取*「Add storage backend*（新增儲存後端*）」。
 
 
