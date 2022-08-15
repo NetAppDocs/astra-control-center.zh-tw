@@ -2235,7 +2235,6 @@
   <block id="37accdd90658899d1dec0f0f1a91d1fe" category="list-text">Red Hat OpenShift Container Platform 4.8、4.9或4.10.</block>
   <block id="8c19cded473a1f250d655fce0b3d1417" category="list-text">VMware Tanzu Kubernetes Grid 1.4或1.5</block>
   <block id="392295e1bbc9dd503d6376cf6e270a01" category="list-text">VMware Tanzu Kubernetes Grid整合版1.12.2或1.13</block>
-  <block id="2571f75e7d242243ae1f0f65ed7f6278" category="cell">至少3個工作節點、各有12個CPU核心和16GB RAM</block>
   <block id="022edc3637cfb3843cebdfdd464d0b9d" category="paragraph">Astra Trident 210.1或更新版本已安裝並設定Astra Trident 22.04或更新版本、以進行SnapMirror型應用程式複寫</block>
   <block id="3e3162b6d17401fa39d86c5e6f2f8052" category="list-text">在Astra Control Center安裝過程中、下列資源會建立在Pod安全原則（PSP）受限環境中：</block>
   <block id="2eec382fbdd640ff6611d08393c4826a" category="list-text">Pod安全性原則</block>
@@ -2632,4 +2631,5 @@
   <block id="9c55cf3bb8c415c1b4cf797d9fae1d67" category="sidebar">監控應用程式和叢集健全狀況</block>
   <block id="0adc618a9ad28f57db9328d47cf45165" category="sidebar">利用Cloud Insights 功能性和變動監控基礎架構</block>
   <block id="d1736d27c7efe09a7fdb5f5e3b18e8dc" category="paragraph">如需詳細資訊、請參閱 <block ref="f6d2e41142da7ccda158b71b34630966" category="inline-link-macro-rx"></block>。</block>
+  <block id="3dc2f4e20c545bc208864c2f1c9ce93c" category="cell">總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM</block>
 </blocks>

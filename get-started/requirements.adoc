@@ -53,7 +53,7 @@ Astra Control Center已在下列類型的作業環境中通過驗證：
 | 儲存後端容量 | 至少可提供500GB容量 
 
 
-| 工作節點 | 至少3個工作節點、各有12個CPU核心和16GB RAM 
+| 工作節點 | 總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM 
 
 
 | FQDN位址 | Astra Control Center的FQDN位址 
