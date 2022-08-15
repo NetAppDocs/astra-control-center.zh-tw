@@ -1233,7 +1233,6 @@
   <block id="4e5f7f6ac61851274c3d50decf63b5a2" category="list-text">選取*使用現有*索引標籤。</block>
   <block id="7fc51f41da7b2a2245c552ae08b9e61d" category="list-text">選取受管理的運算叢集、然後選取* Next*。</block>
   <block id="c77884d91114de0aa4b7d8b549b2113e" category="list-text">*《*》*：ONTAP</block>
-  <block id="bf2393bb3f17f3d2b4ff6979c3c20036" category="list-text">輸入ONTAP 該系統的管理員認證資料、然後選取* Review *。</block>
   <block id="a8511fe304f9e2caa12c3c1c129e452a" category="paragraph">後端會以「可用」狀態顯示在清單中、並顯示摘要資訊。</block>
   <block id="d4608e29abe9d25f2211f4d29b0802fa" category="admonition">您可能需要重新整理頁面、以便顯示後端。</block>
   <block id="deea85f1feaf69ed17f9d01c95389da1" category="paragraph">如果您想要備份應用程式和持續儲存設備、或是想要跨叢集複製應用程式、則必須新增物件存放區資源庫供應商。Astra Control會將這些備份或複製儲存在您定義的物件存放區中。</block>
@@ -1588,7 +1587,6 @@
   <block id="8af92bb4a82e9330d36767a461117b77" category="inline-link">Astra Data Store入門</block>
   <block id="010fe8b2dcf8f2144d52f7fa09b19be3" category="paragraph">當您使用Astra Control Center與Astra Data Store儲存後端整合時、在安裝之後、不會定義任何儲存類別。您需要建立Trident預設儲存類別、並將其套用至儲存後端。請參閱<block ref="31e869d7ae2f401f4a85bdc155c56e86" category="inline-link-rx"></block> 建立預設的Astra Data Store儲存類別。</block>
   <block id="0ec24420f91223b35f271fb4a5f65f2f" category="summary">瞭解Astra Control Center可執行的行動、會因授權狀態而異、以及Astra Control Center的使用如何影響授權使用量。</block>
-  <block id="61ac76bdcf47d387dfb9efb8d39ce1d9" category="paragraph">Astra Control Center需要安裝授權、才能啟用完整的應用程式資料管理功能。當您部署Astra Control Center時、若無授權、Web UI會顯示橫幅、警告系統功能有限。</block>
   <block id="23c455802681d71fa7b93cceb849af79" category="paragraph">下列作業需要有效的授權：</block>
   <block id="866b10bb84f65c6e8641ad5e4d19560e" category="list-text">管理新應用程式</block>
   <block id="aba42bf1b2c7c8728d1d2b28ff0070bd" category="list-text">建立快照或備份</block>
@@ -1856,7 +1854,6 @@
   <block id="697006fa33c54f166cb7f597861b31be" category="list-text">從託管叢集的探索後端選取*管理*、或選取*新增*來管理其他現有後端。</block>
   <block id="95bb1f6fc6c0566a462d54ff7d82a31b" category="list-text">選擇* Astra Data Store*。</block>
   <block id="d3fff538538992ab275610d9ab9fc8fe" category="list-text">確認後端詳細資料、然後選取*「Add storage backend*（新增儲存後端*）」。</block>
-  <block id="3a8637e581240d33340d3e6f8927a52d" category="list-text">選擇* ONTAP 《*》*《*》。</block>
   <block id="1acdd4dfb3c47f47b9b3897e8d3325f4" category="inline-link-macro">Astra Data Store注意事項</block>
   <block id="fdb93feaa2c6123b98a32fa7804c91f8" category="list-text"><block ref="fdb93feaa2c6123b98a32fa7804c91f8" category="inline-link-macro-rx"></block></block>
   <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">瞭解Astra Control</block>
@@ -2632,4 +2629,13 @@
   <block id="0adc618a9ad28f57db9328d47cf45165" category="sidebar">利用Cloud Insights 功能性和變動監控基礎架構</block>
   <block id="d1736d27c7efe09a7fdb5f5e3b18e8dc" category="paragraph">如需詳細資訊、請參閱 <block ref="f6d2e41142da7ccda158b71b34630966" category="inline-link-macro-rx"></block>。</block>
   <block id="3dc2f4e20c545bc208864c2f1c9ce93c" category="cell">總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM</block>
+  <block id="7710790456945bed9a23fff9f934b8fd" category="paragraph">Astra Control Center需要安裝授權、才能啟用完整的應用程式資料管理功能。當您部署Astra Control Center時、若無授權、Web UI會顯示橫幅、警告系統功能有限。</block>
+  <block id="eee7185d57747c6b57ad38a0e1864f92" category="list-text">選取* ONTAP 《*》*《*下一步*》。</block>
+  <block id="27fa550ebd74698993e3dcb9ba7e2945" category="list-text">輸入ONTAP 「叢集管理IP位址」和「管理認證」。</block>
+  <block id="8e9fceaaf84bd1591dc11726965a5b35" category="inline-link">管理使用者帳戶</block>
+  <block id="b6b734f5600f81536bcbb3b4bbdc32bc" category="admonition">您在此處輸入認證的使用者、必須在ONTAP 該叢集的「系統管理程式」中啟用「ontapi」使用者登入存取方法ONTAP 。如果您打算使用SnapMirror複寫、請在ONTAP 兩個支援叢集上為使用者啟用「ontapi」和「http」存取方法。請參閱<block ref="f6ed2b7e6315ca84a258679db888068b" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="a698e4170358adf4ae12dde1db5e4df4" category="list-text">Astra Trident後端組態檔必須包含下列行：</block>
+  <block id="87dc0337d3ded2211d9b01c32e22d90d" category="inline-link">設定後端</block>
+  <block id="10455fcfd55eff76710d4945e30e3c6f" category="paragraph">請參閱<block ref="f296f2024998b4c76709035f49bba3d4" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="57e07386eb22ab2bcc329ab181a33fdf" category="list-text">當您在ONTAP Astra Control Center中新增一個功能不全的儲存後端時、您用來在Astra Control Center和儲存後端之間進行通訊的使用者、必須在ONTAP 兩個叢集上的「http」和「ontapi」內啟用使用者登入存取方法ONTAP 。請參閱<block ref="f6ed2b7e6315ca84a258679db888068b" category="inline-link-rx"></block> 以取得更多資訊。</block>
 </blocks>
