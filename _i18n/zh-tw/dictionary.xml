@@ -2630,6 +2630,13 @@
   <block id="d1736d27c7efe09a7fdb5f5e3b18e8dc" category="paragraph">如需詳細資訊、請參閱 <block ref="f6d2e41142da7ccda158b71b34630966" category="inline-link-macro-rx"></block>。</block>
   <block id="3dc2f4e20c545bc208864c2f1c9ce93c" category="cell">總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM</block>
   <block id="7710790456945bed9a23fff9f934b8fd" category="paragraph">Astra Control Center需要安裝授權、才能啟用完整的應用程式資料管理功能。當您部署Astra Control Center時、若無授權、Web UI會顯示橫幅、警告系統功能有限。</block>
-  <block id="3a8637e581240d33340d3e6f8927a52d" category="list-text">選擇* ONTAP 《*》*《*》。</block>
-  <block id="bf2393bb3f17f3d2b4ff6979c3c20036" category="list-text">輸入ONTAP 該系統的管理員認證資料、然後選取* Review *。</block>
+  <block id="a698e4170358adf4ae12dde1db5e4df4" category="list-text">Astra Trident後端組態檔必須包含下列行：</block>
+  <block id="87dc0337d3ded2211d9b01c32e22d90d" category="inline-link">設定後端</block>
+  <block id="10455fcfd55eff76710d4945e30e3c6f" category="paragraph">請參閱<block ref="f296f2024998b4c76709035f49bba3d4" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="8e9fceaaf84bd1591dc11726965a5b35" category="inline-link">管理使用者帳戶</block>
+  <block id="57e07386eb22ab2bcc329ab181a33fdf" category="list-text">當您在ONTAP Astra Control Center中新增一個功能不全的儲存後端時、您用來在Astra Control Center和儲存後端之間進行通訊的使用者、必須在ONTAP 兩個叢集上的「http」和「ontapi」內啟用使用者登入存取方法ONTAP 。請參閱<block ref="f6ed2b7e6315ca84a258679db888068b" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="558e41f71155360e3f8ee151e27ea06f" category="paragraph">如需詳細資訊、請參閱 <block ref="ad125f0a3036e9b5f57b3a7077f489d9" category="inline-link-macro-rx"></block>。</block>
+  <block id="eee7185d57747c6b57ad38a0e1864f92" category="list-text">選取* ONTAP 《*》*《*下一步*》。</block>
+  <block id="27fa550ebd74698993e3dcb9ba7e2945" category="list-text">輸入ONTAP 「叢集管理IP位址」和「管理認證」。</block>
+  <block id="b6b734f5600f81536bcbb3b4bbdc32bc" category="admonition">您在此處輸入認證的使用者、必須在ONTAP 該叢集的「系統管理程式」中啟用「ontapi」使用者登入存取方法ONTAP 。如果您打算使用SnapMirror複寫、請在ONTAP 兩個支援叢集上為使用者啟用「ontapi」和「http」存取方法。請參閱<block ref="f6ed2b7e6315ca84a258679db888068b" category="inline-link-rx"></block> 以取得更多資訊。</block>
 </blocks>

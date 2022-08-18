@@ -201,6 +201,16 @@ Astra Control應用程式複寫要求您在開始之前必須符合下列先決�
 * 配對的遠端SVM必須可供目的地叢集上的Trident使用。
 * 來源ONTAP 叢集和目的地叢集上必須同時存在Trident版本22.04或更新版本。
 * 使用資料保護套裝組合的SnapMirror非同步授權必須同時在來源和目的地的叢集上啟用。ONTAP ONTAP請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^]。
+* Astra Trident後端組態檔必須包含下列行：
++
+[listing]
+----
+"replicationPolicy": "MirrorAllSnapshots"
+----
++
+請參閱 https://docs.netapp.com/us-en/trident/trident-use/backends.html["設定後端"^] 以取得更多資訊。
+
+* 當您在ONTAP Astra Control Center中新增一個功能不全的儲存後端時、您用來在Astra Control Center和儲存後端之間進行通訊的使用者、必須在ONTAP 兩個叢集上的「http」和「ontapi」內啟用使用者登入存取方法ONTAP 。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理使用者帳戶"^] 以取得更多資訊。
 * 來源和目的地Kubernetes叢集和ONTAP 非功能性叢集都必須由Astra Control管理。
 +
 
@@ -264,6 +274,8 @@ Astra Control Center需要Astra Control Center授權才能提供完整功能。�
 
 
 NOTE: 如果您要在Tanzu Kubernetes Grid叢集上裝載Astra Control Center、請使用「kubecl Get nslb監 控器-A」命令、查看您是否已設定服務監控器來接受入口流量。如果存在、則不應安裝MetalLB、因為現有的服務監視器將會覆寫任何新的負載平衡器組態。
+
+如需詳細資訊、請參閱 link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["設定入口以進行負載平衡"]。
 
 
 
