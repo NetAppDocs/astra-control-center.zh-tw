@@ -2639,4 +2639,10 @@
   <block id="eee7185d57747c6b57ad38a0e1864f92" category="list-text">選取* ONTAP 《*》*《*下一步*》。</block>
   <block id="27fa550ebd74698993e3dcb9ba7e2945" category="list-text">輸入ONTAP 「叢集管理IP位址」和「管理認證」。</block>
   <block id="b6b734f5600f81536bcbb3b4bbdc32bc" category="admonition">您在此處輸入認證的使用者、必須在ONTAP 該叢集的「系統管理程式」中啟用「ontapi」使用者登入存取方法ONTAP 。如果您打算使用SnapMirror複寫、請在ONTAP 兩個支援叢集上為使用者啟用「ontapi」和「http」存取方法。請參閱<block ref="f6ed2b7e6315ca84a258679db888068b" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="64f97564a976931750ce87e0cc98894a" category="list-text">為您的Container引擎完成適當的步驟順序：</block>
+  <block id="c5fd214cdd0d2b3b4272e73b022ba5c2" category="open-title">Docker</block>
+  <block id="455cbd59356abfa16dcf7666d4ae6c2b" category="open-title">Podman</block>
+  <block id="e8c44728c041065d90e7029dec2e142c" category="list-text">登入您的登錄：</block>
+  <block id="c330f6e98afeb2bb5f8da986c24088ee" category="list-text">執行下列指令碼、依照註解中的說明進行&lt;your _inforation&gt;替換：</block>
+  <block id="b5a8988ef4b9c7e25ec15b79d93a02d4" category="admonition">預留位置「yer_register_path」應與您先前上傳的影像位置相符（例如：「[Registry_url]/NetApp/Astra /astracacs/22.08.0-20」）。</block>
 </blocks>
