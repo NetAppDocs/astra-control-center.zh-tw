@@ -10,7 +10,6 @@
   <block id="a921a3947d243a28982ffc8a6f357d21" category="inline-link">如何手動上傳檔案至NetApp（需要登入）</block>
   <block id="60140add252b42e4bed5d843fd57fe49" category="list-text"><block ref="60140add252b42e4bed5d843fd57fe49" category="inline-link-rx"></block></block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">取得協助</block>
-  <block id="a6e1f493785653671f0660b3a3ccc2e2" category="admonition">如果您擁有Astra Control Center的評估授權、您可以取得技術支援。不過、無法透過NetApp支援網站（NSS）建立案例。您可以透過意見反應選項與支援部門聯絡、或使用Slack通路進行自助服務。</block>
   <block id="9f1a9252fa8e7cccfce329f81193d946" category="inline-link-macro">啟動NetApp序號支援</block>
   <block id="9580bedb9d61fe3a06c2c0a84428340b" category="paragraph">您必須優先 <block ref="0da2bd51927b2e0d6e9f34a462b8052f" category="inline-link-macro-rx"></block> 以使用這些非自助服務支援選項。需要NetApp支援網站（NSS）SSO帳戶才能進行聊天和網路票證、以及案例管理。</block>
   <block id="9a9999d7ae6f03b28df44f9616e27367" category="section-title">自我支援選項</block>
@@ -19,8 +18,6 @@
   <block id="68f269105158a82f8e06dd324631610e" category="inline-link">*知識庫*（需要登入）</block>
   <block id="3ce7820e1a8dcaf1b20e89638e9eb65c" category="list-text"><block ref="c21c91b055ef6d38b9e7473e1602e44f" category="inline-link-rx"></block>：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。</block>
   <block id="54fb836d65dfa963fa159aa13bf9fe60" category="list-text">*文件中心*：這是您目前正在檢視的文件網站。</block>
-  <block id="8fcc40b57fd2544f263ddca555e1a42f" category="inline-link">*透過Slack取得協助*</block>
-  <block id="f3bd3849c5621364cd7faf04bda271ca" category="list-text"><block ref="f235ba35538949dfe124c04907cdfa51" category="inline-link-rx"></block>：前往Pub工作區中的Container通路、與同儕和專家交流。</block>
   <block id="2d1cdbb35250ece1f1e88fdafee9d683" category="list-text">*建立支援案例*：產生支援套裝組合、以提供給NetApp支援人員進行疑難排解。</block>
   <block id="5a7e155bd663e7d6145fbd05e0908d7e" category="list-text">*針對Astra Control提供意見回饋*：傳送電子郵件至astra.feedback@netapp.com、讓我們知道您的想法、想法或疑慮。</block>
   <block id="6b929e182262c063677431ec9399ea67" category="section-title">啟用每日排程支援服務套件上傳至NetApp支援</block>
@@ -1763,7 +1760,6 @@
   <block id="b1cb177a36a717434db632021b6d91bc" category="sidebar">MySQL DBaaas搭配Astra Control</block>
   <block id="332153f6f1b31602ac3418cdf4d18170" category="sidebar">簡化Jenkins生命週期管理</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">部落格社群</block>
-  <block id="0c2a2a6a4c35696b309713d6db0f8404" category="sidebar">可寬延通道</block>
   <block id="36910a95584c53fdc9ed97782ef3965c" category="sidebar">Astra Control部落格</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp社群</block>
   <block id="874d8a5301794a9ca2aba132ac2460f3" category="sidebar">Kubernetes Hub</block>
@@ -2645,4 +2641,9 @@
   <block id="e8c44728c041065d90e7029dec2e142c" category="list-text">登入您的登錄：</block>
   <block id="c330f6e98afeb2bb5f8da986c24088ee" category="list-text">執行下列指令碼、依照註解中的說明進行&lt;your _inforation&gt;替換：</block>
   <block id="b5a8988ef4b9c7e25ec15b79d93a02d4" category="admonition">預留位置「yer_register_path」應與您先前上傳的影像位置相符（例如：「[Registry_url]/NetApp/Astra /astracacs/22.08.0-20」）。</block>
+  <block id="1c90591655cdfe7d885b02ed72ae2509" category="summary">NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和不和管道。您的Astra Control帳戶透過網路票證提供遠端技術支援。</block>
+  <block id="e63bdfa6fe9dccaf39b5d028f12a4a15" category="admonition">如果您擁有Astra Control Center的評估授權、您可以取得技術支援。不過、無法透過NetApp支援網站（NSS）建立案例。您可以透過意見回饋選項與Support聯絡、或使用不和管道進行自助服務。</block>
+  <block id="35cdc0acd4828a4d409d79a5f18ee353" category="inline-link">*透過不和*取得協助</block>
+  <block id="5782a764d5148bc0a62fa0db213a073b" category="list-text"><block ref="f560054dea7b7d17ab98f97d9a55b6ac" category="inline-link-rx"></block>：前往酒吧類別的Astra、與同儕和專家交流。</block>
+  <block id="a7cfd917113a9ee9c1e789887d1d809f" category="sidebar">不和通路</block>
 </blocks>

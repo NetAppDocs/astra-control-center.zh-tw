@@ -95,8 +95,8 @@ homepage:
       url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
   - title: 部落格社群
     links:
-    - title: 可寬延通道
-      url: https://netapppub.slack.com/#astra
+    - title: 不和通路
+      url: https://discord.gg/NetApp
     - title: Astra Control部落格
       url: https://cloud.netapp.com/blog/topic/astra
     - title: NetApp社群

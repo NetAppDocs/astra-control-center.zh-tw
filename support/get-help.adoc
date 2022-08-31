@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: support/get-help.html 
-keywords: how to get help with astra control, how to get support with astra control, astra control knowledgebase, netapp technical support, slack, phone, web, ticket, contact support, support ticket, support bundle 
-summary: NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和Slack通路。您的Astra Control帳戶透過網路票證提供遠端技術支援。 
+keywords: how to get help with astra control, how to get support with astra control, astra control knowledgebase, netapp technical support, discord, phone, web, ticket, contact support, support ticket, support bundle 
+summary: NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和不和管道。您的Astra Control帳戶透過網路票證提供遠端技術支援。 
 ---
 = 取得協助
 :hardbreaks:
@@ -11,10 +11,10 @@ summary: NetApp以多種方式支援Astra Control。我們全年無休提供豐�
 :imagesdir: ../media/support/
 
 
-NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和Slack通路。您的Astra Control帳戶透過網路票證提供遠端技術支援。
+NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和不和管道。您的Astra Control帳戶透過網路票證提供遠端技術支援。
 
 
-IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得技術支援。不過、無法透過NetApp支援網站（NSS）建立案例。您可以透過意見反應選項與支援部門聯絡、或使用Slack通路進行自助服務。
+IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得技術支援。不過、無法透過NetApp支援網站（NSS）建立案例。您可以透過意見回饋選項與Support聯絡、或使用不和管道進行自助服務。
 
 您必須優先 link:../get-started/setup_overview.html["啟動NetApp序號支援"] 以使用這些非自助服務支援選項。需要NetApp支援網站（NSS）SSO帳戶才能進行聊天和網路票證、以及案例管理。
 
@@ -28,7 +28,7 @@ IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得�
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["*知識庫*（需要登入）"^]：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。
 * *文件中心*：這是您目前正在檢視的文件網站。
-* https://netapppub.slack.com/#astra["*透過Slack取得協助*"^]：前往Pub工作區中的Container通路、與同儕和專家交流。
+* https://discord.gg/NetApp["*透過不和*取得協助"^]：前往酒吧類別的Astra、與同儕和專家交流。
 * *建立支援案例*：產生支援套裝組合、以提供給NetApp支援人員進行疑難排解。
 * *針對Astra Control提供意見回饋*：傳送電子郵件至astra.feedback@netapp.com、讓我們知道您的想法、想法或疑慮。
 
