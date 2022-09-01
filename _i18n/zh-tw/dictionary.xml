@@ -189,7 +189,6 @@
   <block id="7ccab09493cf97c9665c6c2126741ee5" category="list-text">（可選）使用以下命令驗證套件的簽名：</block>
   <block id="55dd7c8d274890e1cb45bb29840ae107" category="section-title">解壓縮套件並變更目錄</block>
   <block id="ae32a002cf3df8354380980ceb442a90" category="list-text">擷取影像：</block>
-  <block id="f649b0ca3deae5a7d2e60dabf74a0ab4" category="list-text">變更至Astra目錄。</block>
   <block id="22a59db7b4ba20ac09e829d51d726828" category="section-title">將映像新增至本機登錄</block>
   <block id="9d37e8b16bca7866e9db4f98f5080a5a" category="section-title">安裝更新的Astra Control Center操作員</block>
   <block id="4dfe1039695653a07d27cb2151fbe633" category="list-text">編輯Astra Control Center營運者部署yaml（「Astra _control_center_operer_deploy」、以參照您的本機登錄和機密。</block>
@@ -1322,10 +1321,6 @@
   <block id="13cfc7621dad08a2783d2e6063e03159" category="list-text">（選用）若要確保安裝完成、您可以使用下列命令來查看「acc operator」記錄。</block>
   <block id="ee0526590c13af447ef6f7015055f42a" category="inline-link-macro">在UI中</block>
   <block id="7273584d0fdded6be7a9a6e1cc3f03b4" category="admonition">「accHost」叢集登錄是最後一項作業、如果失敗、就不會導致部署失敗。如果記錄中指出叢集登錄失敗、您可以透過新增叢集工作流程再次嘗試登錄 <block ref="b470e1e769f57d21f243dd7007dff492" category="inline-link-macro-rx"></block> 或API。</block>
-  <block id="2a0a2b464d2715b6fb4ea6d68ae8f9c4" category="list-text">當所有Pod都在執行時、請擷取由Astra Control Center營運者安裝的「適用鍵盤」執行個體、以驗證安裝是否成功。</block>
-  <block id="ac7bb8980fbb62357b278b4b6c7c9338" category="list-text">在Yaml中、勾選回應中的「tatus.deploymentState`」欄位、以取得「部署」值。如果部署失敗、則會改為顯示錯誤訊息。</block>
-  <block id="28bbf0acdd3b39e5c8c561287bc93cb0" category="list-text">若要取得登入Astra Control Center時使用的一次性密碼、請複製「stats.uuid」值。密碼為「ACC-」、後面接著UUID值（「ACC-[UUUID]」、或是在本範例中為「ACC-9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f」）。</block>
-  <block id="9b1d9a579e35c7ae0c56196f2ec084e1" category="example-title">Y反 洗錢詳細資料範例</block>
   <block id="d6cdb892fe9623e9782bae6db8d7dcd7" category="paragraph">您可以設定Kubernetes入口控制器來管理外部服務存取、例如叢集中的負載平衡。</block>
   <block id="0d1c106f5017462d9de6e4f8a82e074c" category="paragraph">本程序說明如何設定入口控制器（「擷取類型：一般」）。這是Astra Control Center的預設動作。部署Astra Control Center之後、您需要設定入口控制器、以URL顯示Astra Control Center。</block>
   <block id="4bed96e1b3536d83eb37a83daf2c99fe" category="admonition">如果您不想設定入口控制器、可以設定「擷取類型：AccTraefik」。Astra Control Center使用類型為「loadbalancer」（Astra Control Center命名空間中的「shvC/truefik」）的服務、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。如需有關「負載平衡器」和入口服務類型的詳細資訊、請參閱 <block ref="ec43fa96d69fa714ee8406758839eaf7" category="inline-link-macro-rx"></block>。</block>
@@ -1896,7 +1891,6 @@
   <block id="3aa4078371fb9b0c4a3e6c177942f01d" category="list-text">NetApp支援網站提供的軟體套件</block>
   <block id="1861208871c49f3fafbdd2b1baedad6a" category="paragraph">Astra Control Center會參考連線儲存庫中的套件映像和成品。您可以使用CLI將影像和成品上傳至儲存庫。</block>
   <block id="8a0c00d15eb4f3a9a8a6c659a1d7c576" category="list-text">請從NetApp支援網站下載軟體套件、並將其儲存在已安裝「kubecll」公用程式的機器上。</block>
-  <block id="a5d15ab770cd44d363e7f95fd16d0a4b" category="list-text">擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.bunder.yaml」）。</block>
   <block id="109f9842fb9259a1de20c1577339c28c" category="list-text">以Astra Control套裝組合檔案的名稱取代bunder_file。</block>
   <block id="82a16926420b6ee2d26a80442a3db7ae" category="section-title">新增軟體套件</block>
   <block id="5801238264a16600dd0ab813e21d2cd9" category="paragraph">您可以使用Astra Control Center套裝組合檔案匯入軟體套件。這樣做會安裝套件、讓Astra Control Center能夠使用該軟體。</block>
@@ -1958,7 +1952,6 @@
   <block id="0b85467ebafa7ca3c47e82dc38184484" category="list-text">處理量</block>
   <block id="af2248b7281e83a45508e2ec7c9356ea" category="list-text">將套件映像推送到Docker儲存庫。進行下列替代：</block>
   <block id="48c5334862569a4217279192a534b20a" category="list-text">將my_registry取代為Docker儲存庫的URL。</block>
-  <block id="da5ff2a96a29f48c8c4ffcf756aada4e" category="list-text">以儲存庫的認證資料取代my_register_user和my_register_password。</block>
   <block id="25d79c61a8c2cf8672fbd0f32f9bfc13" category="list-text">如果套件含有成品、請將成品複製到成品儲存庫。以Astra Control套件檔案的名稱取代bunder_file、並以網路位置取代network_location、將成品檔案複製到：</block>
   <block id="2707211a1bc867b58edced6b3def5b35" category="list-text">輸入儲存庫的認證資料。</block>
   <block id="4e7bc0f2f576e3a2e7b9bd624d2da7d3" category="list-text"><block ref="f9a9477fa54fe91dbfcc4b4adc8c5a84" category="inline-xref-macro-rx"></block></block>
@@ -2064,8 +2057,6 @@
   <block id="817ff31e06696b2ddfbd20628237efec" category="list-text">取得必要的權限並存取Red Hat OpenShift Container Platform、以執行所述的安裝步驟。</block>
   <block id="6b711ca63f3156860c2b2918a106b882" category="inline-link-macro">必要步驟</block>
   <block id="6f3f4e3c6db4311eee9b8e4f3d7cf320" category="list-text">如果叢集中已存在認證管理程式、您需要執行某些作業 <block ref="1787bdbf8a8938a728c4bed68c77105f" category="inline-link-macro-rx"></block> 因此Astra Control Center不會安裝自己的認證管理程式。</block>
-  <block id="c7556264a1988a2b92f66e12713a407c" category="list-text">將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行命令之前、請先進行下列替代：</block>
-  <block id="b3b0a5bd71a112bf9bb26c32b1d97c02" category="list-text">以Astra Control套件檔案名稱取代bunder_file（例如、「acs.manifest.bunder.yaml」）。</block>
   <block id="ab25aff32a32d9ce9e224b3e4c8d5eaa" category="paragraph">對於Red Hat OpenShift環境、您可以使用 <block ref="3070b96c53dc6268c37367db253e962f" category="inline-link-macro-rx"></block> 使用OpenShift作業系統集線器安裝Astra Control Center。</block>
   <block id="e13d4a668fc56237f39878bf668e8d7b" category="inline-link-macro">瞭解Pod安全性原則限制</block>
   <block id="edc827c257229b5297b0a885b6edd0a4" category="list-text">如果您已設定或想要在環境中設定Pod安全性原則、請熟悉Pod安全性原則、以及這些原則如何影響Astra Control Center安裝。請參閱 <block ref="90eb15ded1d67bf22279d5e261d434f2" category="inline-link-macro-rx"></block>。</block>
@@ -2646,4 +2637,14 @@
   <block id="35cdc0acd4828a4d409d79a5f18ee353" category="inline-link">*透過不和*取得協助</block>
   <block id="5782a764d5148bc0a62fa0db213a073b" category="list-text"><block ref="f560054dea7b7d17ab98f97d9a55b6ac" category="inline-link-rx"></block>：前往酒吧類別的Astra、與同儕和專家交流。</block>
   <block id="a7cfd917113a9ee9c1e789887d1d809f" category="sidebar">不和通路</block>
+  <block id="90062dfdb5439267ea2ea3670efc5200" category="list-text">擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.yaml」）。</block>
+  <block id="81730a436a6662ae645289e52e592f39" category="list-text">以Astra Control套件檔案名稱取代bunder_file（例如、「acc．manifest.yaml」）。</block>
+  <block id="f7fd97c3e77b1bf62b2ea426c794d07a" category="list-text">以使用者名稱取代my_register_user。</block>
+  <block id="cfb00d559ebab724c9dc29059831ddb8" category="list-text">以登錄的授權權杖取代my_register_token。</block>
+  <block id="bb6d95ff16fd3c7abf9daa650b5357c5" category="list-text">變更目錄：</block>
+  <block id="3287973c50b09462bde24fe82b06c59b" category="list-text">確認Pod正在執行：</block>
+  <block id="4350127c708b74b4f04ca10d2c10b10d" category="list-text">匯出Astra Control Center主機叢集的KUBECCONFIG：</block>
+  <block id="ee757186f5199677f301e66433ce62a8" category="admonition">如果您在產生機密之後刪除命名空間、則需要在重新建立命名空間之後重新產生命名空間的機密。</block>
+  <block id="706e80be7b24b81c7ab49d441d7d88f8" category="list-text">當所有Pod都在執行時、請確認安裝成功（「READY」為「True」）、並取得登入Astra Control Center時所使用的一次性密碼：</block>
+  <block id="85573d5352311b01ff7319a4b0e9bf34" category="admonition">複製UUID值。密碼為「ACC-」、後面接著UUID值（「ACC-[UUUID]」、或是在本範例中為「ACC-9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f」）。</block>
 </blocks>

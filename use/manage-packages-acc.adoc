@@ -28,16 +28,17 @@ Astra Control Center會參考連線儲存庫中的套件映像和成品。您可
 
 .步驟
 . 請從NetApp支援網站下載軟體套件、並將其儲存在已安裝「kubecll」公用程式的機器上。
-. 擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.bunder.yaml」）。
+. 擷取壓縮的套件檔案、並將目錄變更為Astra Control套裝組合檔案的位置（例如、「acs.manifest.yaml」）。
 . 將套件映像推送到Docker儲存庫。進行下列替代：
 +
-** 以Astra Control套件檔案名稱取代bunder_file（例如、「acs.manifest.bunder.yaml」）。
+** 以Astra Control套件檔案名稱取代bunder_file（例如、「acc．manifest.yaml」）。
 ** 將my_registry取代為Docker儲存庫的URL。
-** 以儲存庫的認證資料取代my_register_user和my_register_password。
+** 以使用者名稱取代my_register_user。
+** 以登錄的授權權杖取代my_register_token。
 +
 [listing]
 ----
-kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_PASSWORD
+kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_TOKEN
 ----
 
 

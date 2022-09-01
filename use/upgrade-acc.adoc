@@ -74,36 +74,91 @@ openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-cont
 ----
 tar -vxzf astra-control-center-[version].tar.gz
 ----
-. 變更至Astra目錄。
-+
-[listing]
-----
-cd acc
-----
 
 
 
 
 == 將映像新增至本機登錄
 
-. 將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行命令之前、請先進行下列替代：
+. 為您的Container引擎完成適當的步驟順序：
+
+
+[role="tabbed-block"]
+====
+.Docker
+--
+. 變更至Astra目錄：
 +
-** 以Astra Control套件檔案名稱取代bunder_file（例如、「acs.manifest.bunder.yaml」）。
+[source, sh]
+----
+cd acc
+----
+. [Subforte_image_local_register_push]將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行命令之前、請先進行下列替代：
++
+** 以Astra Control套件檔案名稱取代bunder_file（例如、「acc．manifest.yaml」）。
 ** 將my_registry取代為Docker儲存庫的URL。
-** 以儲存庫的認證資料取代my_register_user和my_register_password。
+** 以使用者名稱取代my_register_user。
+** 以登錄的授權權杖取代my_register_token。
 +
-[listing]
+[source, sh]
 ----
-kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_PASSWORD
+kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_TOKEN
 ----
 
 
 
 
+--
+.Podman
+--
+. 登入您的登錄：
++
+[source, sh]
+----
+podman login [your_registry_path]
+----
+. 執行下列指令碼、依照註解中的說明進行<your _inforation>替換：
++
+[source, sh]
+----
+# You need to be at the root of the tarball.
+# You should see these files to confirm correct location:
+#   acc.manifest.yaml
+#   acc/
+
+# Replace <YOUR_REGISTRY> with your own registry (e.g registry.customer.com or registry.customer.com/testing, etc..)
+export REGISTRY=<YOUR_REGISTRY>
+export PACKAGENAME=acc
+export PACKAGEVERSION=22.08.0-20
+export DIRECTORYNAME=acc
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+  # Load to local cache
+  astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
+
+  # Remove path and keep imageName.
+  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+
+  # Tag with local image repo.
+  podman tag ${astraImage} ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+
+  # Push to the local repo.
+  podman push ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done
+----
+
+
+--
+====
 
 
 == 安裝更新的Astra Control Center操作員
 
+. 變更目錄：
++
+[listing]
+----
+cd manifests
+----
 . 編輯Astra Control Center營運者部署yaml（「Astra _control_center_operer_deploy」、以參照您的本機登錄和機密。
 +
 [listing]
@@ -199,6 +254,12 @@ clusterrolebinding.rbac.authorization.k8s.io/acc-operator-proxy-rolebinding unch
 configmap/acc-operator-manager-config unchanged
 service/acc-operator-controller-manager-metrics-service unchanged
 deployment.apps/acc-operator-controller-manager configured
+----
+. 確認Pod正在執行：
++
+[listing]
+----
+kubectl get pods -n netapp-acc-operator
 ----
 
 
@@ -365,7 +426,7 @@ NOTE: 如需有關「負載平衡器」和入口服務類型的其他詳細資�
 [listing]
 ----
 apiVersion: extensions/v1beta1
-kind: Ingress
+kind: IngressClass
 metadata:
   name: ingress-acc
   namespace: [netapp-acc or custom namespace]
