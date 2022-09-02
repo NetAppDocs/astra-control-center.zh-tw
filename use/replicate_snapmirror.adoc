@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: use/replication.html 
+permalink: use/replicate_snapmirror.html 
 keywords: replicate, replication, disaster, recovery 
 summary: Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將能最快完成。 
 ---

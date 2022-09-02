@@ -18,7 +18,7 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 == 2022年8月10日（22.08.0）
 
 .新功能與支援
-* link:../use/replication.html["使用NetApp SnapMirror技術進行應用程式複寫"]
+* link:../use/replicate_snapmirror.html["使用NetApp SnapMirror技術進行應用程式複寫"]
 * link:../use/manage-apps.html#manage-apps["改善應用程式管理工作流程"]
 * link:../use/execution-hooks.html["增強的執行掛勾功能、讓您自行執行"]
 +

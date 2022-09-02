@@ -2000,7 +2000,6 @@
   <block id="d822994c8eeb864206aa022481872893" category="list-text">*應用程式複寫*：Astra Control要求來源和目的地Kubernetes叢集必須可用、並以ONTAP 其各自設定的支援NetApp SnapMirror的支援功能來管理。Astra Control會取得原則導向的應用程式Snapshot、並將其複寫到遠端叢集。NetApp SnapMirror技術用於複寫持續的Volume資料。若要容錯移轉、Astra Control可以在目的地Kubernetes叢集上重新建立應用程式物件、並在目的地ONTAP 叢集上重新建立複寫的磁碟區、使複寫的應用程式上線。由於持續的Volume資料已存在於目的地ONTAP 的穩定叢集上、Astra Control可提供快速的容錯移轉恢復時間。</block>
   <block id="46f7c1ba8a4fd8b1f55723b061d38c1d" category="list-text">*應用程式備份與還原*：當備份應用程式時、Astra Control會建立應用程式資料的Snapshot、並將其儲存在物件儲存庫中。需要還原時、必須將儲存庫中的資料複製到ONTAP 位在該叢集上的持續磁碟區。備份/還原作業不需要次要Kubernetes/ONTAP叢集可供使用和管理、但額外的資料複本可能會導致較長的還原時間。</block>
   <block id="229c7c759f13c80c6aa16940d599fb67" category="inline-link-macro">使用SnapMirror技術將應用程式複寫到遠端系統</block>
-  <block id="317260303a03ec46fcba8a310dc6a463" category="paragraph">若要瞭解如何複寫應用程式、請參閱 <block ref="5b509d981d6206aae3d3ed45ff0fd262" category="inline-link-macro-rx"></block>。</block>
   <block id="2e67b4ffa9856ed714ace3c83ce69b11" category="paragraph">下列影像顯示排程的備份與還原程序、與複寫程序比較。</block>
   <block id="0684163543dd8c63ba059f860287849a" category="paragraph">備份程序會將資料複製到S3儲存區、並從S3儲存區還原：</block>
   <block id="81cddeedfe823c0b5ecc3077e6dafc47" category="inline-image-macro">排程的備份與還原映像</block>
@@ -2031,7 +2030,6 @@
   <block id="d5aedbc082e54ed66f533aea75c374f6" category="paragraph">Astra Control可能無法複製以「傳遞參考」架構設計的操作員（例如CockroachDB操作員）。在這些類型的複製作業中、複製的操作員會嘗試從來源操作員參考Kubernetes機密、儘管在複製程序中有自己的新秘密。由於Astra Control不知道來源營運者的Kubernetes機密資料、因此複製作業可能會失敗。</block>
   <block id="8903edbd1d0463471f5590d10a85b600" category="section-title">2022年8月10日（22.08.0）</block>
   <block id="cf730d1df7f3b98c75cd949f7b3155ec" category="inline-link-macro">使用NetApp SnapMirror技術進行應用程式複寫</block>
-  <block id="72c6d36c2615563abe62774a0cc12db3" category="list-text"><block ref="72c6d36c2615563abe62774a0cc12db3" category="inline-link-macro-rx"></block></block>
   <block id="43a321aa397f8593d184ea33759d7e38" category="inline-link-macro">改善應用程式管理工作流程</block>
   <block id="698d9d3cfbd3ea1d9902191a82b88d3e" category="list-text"><block ref="698d9d3cfbd3ea1d9902191a82b88d3e" category="inline-link-macro-rx"></block></block>
   <block id="ced3580ec3e1b083304a574bccfdc820" category="inline-link-macro">增強的執行掛勾功能、讓您自行執行</block>
@@ -2239,7 +2237,6 @@
   <block id="665cb0fd449119a5f020701a7e4d37aa" category="list-text">來源和目的地Kubernetes叢集和ONTAP 非功能性叢集都必須由Astra Control管理。</block>
   <block id="12656d1c4d74b517feee96e4c4eda095" category="admonition">您可以同時以相反方向複寫不同的應用程式（在其他叢集或站台上執行）。例如、應用程式A、B、C可以從資料中心1複寫到資料中心2、而應用程式X、Y、Z可以從資料中心2複寫到資料中心1。</block>
   <block id="b74602b149e39af1209754432fd537e3" category="inline-link-macro">使用SnapMirror技術將應用程式複寫到遠端系統</block>
-  <block id="66c524f14574de53906b92bf06297447" category="paragraph">瞭解操作方法 <block ref="4661ce5eb4f3d4f6821de12edff361d7" category="inline-link-macro-rx"></block>。</block>
   <block id="dd065d032958db1fedcce03e51dcef9e" category="paragraph">Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。如果沒有授權、您就無法執行下列任何一項：</block>
   <block id="4eba5ba43cc624385f276658a22c51a8" category="list-text">定義應用程式</block>
   <block id="ce54d221292e1505e5b1a6ed4c74dac7" category="summary">安裝Astra Control Center之前、您必須先瞭解Pod安全性原則的運作方式。</block>
@@ -2361,7 +2358,6 @@
   <block id="44c76d6a0a4f1bde94eb2cd76b8d4eae" category="section-title">調整保護原則</block>
   <block id="e0a9a1ca749b026f1191e8980cfd9475" category="section-title">將應用程式複寫到遠端叢集</block>
   <block id="87c77d08f8cc9ba015bc277bf63171ec" category="inline-link-macro">複寫應用程式</block>
-  <block id="02210d3f5ab3b22ced0c30fadc0b6c36" category="paragraph"><block ref="dc8666aecf0cf92219eb818c68a8e765" category="inline-link-macro-rx"></block> 使用NetApp SnapMirror技術將其移至遠端叢集。Astra Control會將Snapshot複寫到遠端叢集、提供非同步的災難恢復功能。</block>
   <block id="c4491e86699f3e74488527dd9f36c879" category="section-title">發生災難時、請使用最新的備份或複寫功能、將應用程式還原至遠端系統</block>
   <block id="e11f531afbfddcb2e626779912560475" category="paragraph">如果發生資料遺失、您可以透過進行恢復 <block ref="550aec8aa1d184571b143fbb368e4c54" category="inline-link-macro-rx"></block> 每個應用程式的第一名。然後您可以還原最新的快照（如果有）。或者、您也可以使用複寫功能來複寫到遠端系統。</block>
   <block id="d77a72056cdc02124a845066bec0d946" category="paragraph">執行攔截是一種自訂動作、可設定搭配託管應用程式的資料保護作業一起執行。例如、如果您有資料庫應用程式、您可以使用執行掛勾來暫停快照之前的所有資料庫交易、並在快照完成後繼續交易。如此可確保應用程式一致的快照。</block>
@@ -2647,4 +2643,8 @@
   <block id="ee757186f5199677f301e66433ce62a8" category="admonition">如果您在產生機密之後刪除命名空間、則需要在重新建立命名空間之後重新產生命名空間的機密。</block>
   <block id="706e80be7b24b81c7ab49d441d7d88f8" category="list-text">當所有Pod都在執行時、請確認安裝成功（「READY」為「True」）、並取得登入Astra Control Center時所使用的一次性密碼：</block>
   <block id="85573d5352311b01ff7319a4b0e9bf34" category="admonition">複製UUID值。密碼為「ACC-」、後面接著UUID值（「ACC-[UUUID]」、或是在本範例中為「ACC-9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f」）。</block>
+  <block id="d212abf709fef8fefcdce84a69830236" category="paragraph">若要瞭解如何複寫應用程式、請參閱 <block ref="f775ff169c13e4056fe6b95c5da23416" category="inline-link-macro-rx"></block>。</block>
+  <block id="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="list-text"><block ref="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="inline-link-macro-rx"></block></block>
+  <block id="ed78458df917d6da9f19cca23d8468cd" category="paragraph"><block ref="c229e392652cddf73148e5c65f706c6d" category="inline-link-macro-rx"></block> 使用NetApp SnapMirror技術將其移至遠端叢集。Astra Control會將Snapshot複寫到遠端叢集、提供非同步的災難恢復功能。</block>
+  <block id="6ec03beb7c5c0fd46afad879591343a9" category="paragraph">瞭解操作方法 <block ref="6f4a779492bc5e3eca7c765cfa3ccb84" category="inline-link-macro-rx"></block>。</block>
 </blocks>

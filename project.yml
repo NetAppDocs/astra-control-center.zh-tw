@@ -60,7 +60,7 @@ homepage:
     - title: 複製及移轉應用程式
       url: "/use/clone-apps.html"
     - title: 將應用程式複寫到遠端系統
-      url: "/use/replication.html"
+      url: "/use/replicate_snapmirror.html"
   - title: 使用Astra Control API
     links:
     - title: 開始使用Astra Control API

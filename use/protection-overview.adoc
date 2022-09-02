@@ -47,7 +47,7 @@ summary: 瞭解Astra Control Center中可用的資料保護類型、以及如何
 === 將應用程式複寫到遠端叢集
 
 [role="quick-margin-para"]
-link:replication.html["複寫應用程式"] 使用NetApp SnapMirror技術將其移至遠端叢集。Astra Control會將Snapshot複寫到遠端叢集、提供非同步的災難恢復功能。
+link:replicate_snapmirror.html["複寫應用程式"] 使用NetApp SnapMirror技術將其移至遠端叢集。Astra Control會將Snapshot複寫到遠端叢集、提供非同步的災難恢復功能。
 
 
 

@@ -46,7 +46,7 @@ Astra Control會以非同步方式將應用程式Snapshot複本複本複寫到�
 * *應用程式備份與還原*：當備份應用程式時、Astra Control會建立應用程式資料的Snapshot、並將其儲存在物件儲存庫中。需要還原時、必須將儲存庫中的資料複製到ONTAP 位在該叢集上的持續磁碟區。備份/還原作業不需要次要Kubernetes/ONTAP叢集可供使用和管理、但額外的資料複本可能會導致較長的還原時間。
 
 
-若要瞭解如何複寫應用程式、請參閱 link:../use/replication.html["使用SnapMirror技術將應用程式複寫到遠端系統"]。
+若要瞭解如何複寫應用程式、請參閱 link:../use/replicate_snapmirror.html["使用SnapMirror技術將應用程式複寫到遠端系統"]。
 
 下列影像顯示排程的備份與還原程序、與複寫程序比較。
 
