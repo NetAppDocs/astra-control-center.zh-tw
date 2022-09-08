@@ -1462,7 +1462,6 @@
   <block id="51d249216b03414f10b242b851af7951" category="doc">Astra控制元件</block>
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">以下概述Astra Control環境的各個元件。</block>
   <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control架構圖與元件</block>
-  <block id="28f3b0cd697bf5f33c7eab89e20baff4" category="paragraph"><block ref="28f3b0cd697bf5f33c7eab89e20baff4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes叢集*：Kubernetes是可攜式、可擴充的開放原始碼平台、可用於管理容器化工作負載與服務、同時促進宣告式組態與自動化。Astra為Kubernetes叢集中託管的應用程式提供管理服務。</block>
   <block id="b11f09eb1179914138fa8f5a15ba016a" category="list-text">* Astra Trident *：Trident是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。當您部署Astra Control Center時、Trident包含已設定ONTAP 的整套儲存後端、也支援Astra Data Store做為儲存後端。</block>
   <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">*儲存後端*：</block>
@@ -2602,7 +2601,6 @@
   <block id="6b01e4d97036360d209f5a9bacf98f31" category="admonition">若要取消備份、備份必須處於執行中狀態。您無法取消處於「擱置中」狀態的備份。</block>
   <block id="5a74785c1f7b64991b4e6c1995f2e049" category="list-text">在所需備份*「Actions」（動作）*欄的「Options」（選項）功能表中、選取*「Cancel*」（取消*）。</block>
   <block id="b9f936afd1e658e03141a156ac26af63" category="list-text">輸入「cancel」一詞以確認刪除、然後選擇「* Yes、cancel backup*（是、取消備份*）」。</block>
-  <block id="30d8cb6f04725be5c7ac4990581efaa9" category="list-text"><block ref="30d8cb6f04725be5c7ac4990581efaa9" category="inline-link-macro-rx"></block></block>
   <block id="cf449e1563eca443c9bf5d00151887e8" category="sidebar">將應用程式複寫到遠端系統</block>
   <block id="13c01a54604c3f7049eaa9f3390e1622" category="sidebar">瞭解Astra Control Service</block>
   <block id="3df43a986689c71190e7e91a132b254a" category="sidebar">Astra Control Service的新功能</block>
@@ -2627,7 +2625,6 @@
   <block id="455cbd59356abfa16dcf7666d4ae6c2b" category="open-title">Podman</block>
   <block id="e8c44728c041065d90e7029dec2e142c" category="list-text">登入您的登錄：</block>
   <block id="c330f6e98afeb2bb5f8da986c24088ee" category="list-text">執行下列指令碼、依照註解中的說明進行&lt;your _inforation&gt;替換：</block>
-  <block id="b5a8988ef4b9c7e25ec15b79d93a02d4" category="admonition">預留位置「yer_register_path」應與您先前上傳的影像位置相符（例如：「[Registry_url]/NetApp/Astra /astracacs/22.08.0-20」）。</block>
   <block id="1c90591655cdfe7d885b02ed72ae2509" category="summary">NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和不和管道。您的Astra Control帳戶透過網路票證提供遠端技術支援。</block>
   <block id="e63bdfa6fe9dccaf39b5d028f12a4a15" category="admonition">如果您擁有Astra Control Center的評估授權、您可以取得技術支援。不過、無法透過NetApp支援網站（NSS）建立案例。您可以透過意見回饋選項與Support聯絡、或使用不和管道進行自助服務。</block>
   <block id="35cdc0acd4828a4d409d79a5f18ee353" category="inline-link">*透過不和*取得協助</block>
@@ -2647,4 +2644,9 @@
   <block id="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="list-text"><block ref="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="inline-link-macro-rx"></block></block>
   <block id="ed78458df917d6da9f19cca23d8468cd" category="paragraph"><block ref="c229e392652cddf73148e5c65f706c6d" category="inline-link-macro-rx"></block> 使用NetApp SnapMirror技術將其移至遠端叢集。Astra Control會將Snapshot複寫到遠端叢集、提供非同步的災難恢復功能。</block>
   <block id="6ec03beb7c5c0fd46afad879591343a9" category="paragraph">瞭解操作方法 <block ref="6f4a779492bc5e3eca7c765cfa3ccb84" category="inline-link-macro-rx"></block>。</block>
+  <block id="98918f261da964e04189c67d73791199" category="paragraph"><block ref="98918f261da964e04189c67d73791199" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca5eff8f4c2396bf09558b428d91e9f3" category="section-title">2022年9月8日（22.08.1）</block>
+  <block id="322f8233054cca6c9d6204f1aa1d1f7f" category="paragraph">此適用於Astra Control Center（22.08.0）的修補程式版本（22.08.1）可利用NetApp SnapMirror修正應用程式複寫中的小錯誤。</block>
+  <block id="a2fe57b8184603cedfc5695bc5afd246" category="list-text"><block ref="a2fe57b8184603cedfc5695bc5afd246" category="inline-link-macro-rx"></block></block>
+  <block id="29e1fc80b410102b7ef8f1c2808ca7c5" category="admonition">預留位置「yer_register_path」應與您先前上傳的影像位置相符（例如：「[Registry_url]/NetApp/Astra /astracacs/22.08.1-26'）。</block>
 </blocks>

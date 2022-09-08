@@ -4,7 +4,7 @@
 
 以下概述Astra Control環境的各個元件。
 
-image:astra-ads-architecture-diagram-v3.png["Astra Control架構圖與元件"]
+image:astra-ads-architecture-diagram-v4.png["Astra Control架構圖與元件"]
 
 
 

@@ -15,6 +15,12 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
+== 2022年9月8日（22.08.1）
+
+此適用於Astra Control Center（22.08.0）的修補程式版本（22.08.1）可利用NetApp SnapMirror修正應用程式複寫中的小錯誤。
+
+
+
 == 2022年8月10日（22.08.0）
 
 .新功能與支援

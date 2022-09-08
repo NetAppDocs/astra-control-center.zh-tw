@@ -162,7 +162,7 @@ podman login [your_registry_path]
 # Replace <YOUR_REGISTRY> with your own registry (e.g registry.customer.com or registry.customer.com/testing, etc..)
 export REGISTRY=<YOUR_REGISTRY>
 export PACKAGENAME=acc
-export PACKAGEVERSION=22.08.0-20
+export PACKAGEVERSION=22.08.1-26
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
   # Load to local cache
@@ -211,7 +211,7 @@ namespace/netapp-acc-operator created
 .. 建立「NetApp-acc operator」命名空間的秘密。新增Docker資訊並執行下列命令：
 +
 
-NOTE: 預留位置「yer_register_path」應與您先前上傳的影像位置相符（例如：「[Registry_url]/NetApp/Astra /astracacs/22.08.0-20」）。
+NOTE: 預留位置「yer_register_path」應與您先前上傳的影像位置相符（例如：「[Registry_url]/NetApp/Astra /astracacs/22.08.1-26'）。
 
 +
 [listing]
@@ -606,7 +606,7 @@ kubectl get AstraControlCenter -n netapp-acc
 [listing]
 ----
 NAME    UUID                                      VERSION     ADDRESS         READY
-astra   ACC-9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f  22.08.0-20  10.111.111.111  True
+astra   ACC-9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f  22.08.1-26  10.111.111.111  True
 ----
 +
 
