@@ -31,12 +31,12 @@ NOTE: 您可以同時以相反方向複寫不同的應用程式（在其他叢�
 
 使用Astra Control、您可以執行下列與複寫應用程式相關的工作：
 
-* <<Set up a replication relationship>>
-* <<Bring a replicated app online on the destination cluster (fail over)>>
-* <<Resync a failed over replication>>
-* <<Reverse application replication>>
-* <<Fail back applications to the original source cluster>>
-* <<Delete an application replication relationship>>
+*  up a replication relationship
+*  a replicated app online on the destination cluster (fail over)
+*  a failed over replication
+*  application replication
+*  back applications to the original source cluster
+*  an application replication relationship
 
 
 

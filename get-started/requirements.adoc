@@ -13,16 +13,16 @@ summary: 驗證Kubernetes叢集、應用程式和網頁瀏覽器的支援、開�
 
 開始驗證作業環境、應用程式叢集、應用程式、授權和網頁瀏覽器的整備度。
 
-* <<Operational environment requirements>>
-* <<Supported storage backends>>
-* <<Application cluster requirements>>
-* <<Application management requirements>>
-* <<Replication prerequisites>>
-* <<Access to the internet>>
-* <<License>>
-* <<Ingress for on-premises Kubernetes clusters>>
-* <<Networking requirements>>
-* <<Supported web browsers>>
+*  environment requirements
+*  storage backends
+*  cluster requirements
+*  management requirements
+*  prerequisites
+*  to the internet
+* 
+*  for on-premises Kubernetes clusters
+*  requirements
+*  web browsers
 
 
 
@@ -60,7 +60,7 @@ Astra Control Center已在下列類型的作業環境中通過驗證：
 
 
 | Astra Trident  a| 
-Astra Trident 210.1或更新版本已安裝並設定Astra Trident 22.04或更新版本、以進行SnapMirror型應用程式複寫
+Astra Trident 21.10.1或更新版本已安裝並設定Astra Trident 22.07或更新版本、以進行SnapMirror型應用程式複寫
 
 |===
 
@@ -123,8 +123,8 @@ NOTE: 預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過�
 
 Astra Control Center支援下列儲存後端。
 
-* Astra資料儲存區
 * NetApp ONTAP S9.5或更新AFF 版本的功能性和FAS 功能性系統
+* 適用於ONTAP SnapMirror應用程式複寫的NetApp SnapMirror 9.8或更新AFF 版本的功能性和FAS 功能性系統
 * NetApp Cloud Volumes ONTAP
 
 
@@ -195,22 +195,13 @@ Astra Control具備下列應用程式管理需求：
 
 Astra Control應用程式複寫要求您在開始之前必須符合下列先決條件：
 
-* Astra Control Center必須部署在第三個故障網域或次要站台、才能實現無縫的災難恢復。
+* 為了實現無縫的災難恢復、建議您在第三個故障網域或次要站台部署Astra Control Center。
 * 應用程式的主機Kubernetes叢集和目的地Kubernetes叢集必須可供使用、並連線至兩ONTAP 個非功能叢集、理想情況是位於不同的故障網域或站台。
 * 必須配對叢集和主機SVM。ONTAP請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["叢集與SVM對等概觀"^]。
 * 配對的遠端SVM必須可供目的地叢集上的Trident使用。
-* 來源ONTAP 叢集和目的地叢集上必須同時存在Trident版本22.04或更新版本。
+* 來源ONTAP 叢集和目的地叢集上都必須有Trident版本22.07或更新版本。
 * 使用資料保護套裝組合的SnapMirror非同步授權必須同時在來源和目的地的叢集上啟用。ONTAP ONTAP請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^]。
-* Astra Trident後端組態檔必須包含下列行：
-+
-[listing]
-----
-"replicationPolicy": "MirrorAllSnapshots"
-----
-+
-請參閱 https://docs.netapp.com/us-en/trident/trident-use/backends.html["設定後端"^] 以取得更多資訊。
-
-* 當您在ONTAP Astra Control Center中新增一個功能不全的儲存後端時、您用來在Astra Control Center和儲存後端之間進行通訊的使用者、必須在ONTAP 兩個叢集上的「http」和「ontapi」內啟用使用者登入存取方法ONTAP 。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理使用者帳戶"^] 以取得更多資訊。
+* 當您在ONTAP Astra Control Center中新增一個功能不全的儲存後端時、請套用具有「admin」角色的使用者認證、這兩ONTAP 個功能都在兩個叢集上啟用了存取方法「http」和「ontapi」。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理使用者帳戶"^] 以取得更多資訊。
 * 來源和目的地Kubernetes叢集和ONTAP 非功能性叢集都必須由Astra Control管理。
 +
 

@@ -18,13 +18,13 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 您可以完成下列與管理儲存後端相關的工作：
 
 * link:../get-started/setup_overview.html#add-a-storage-backend["新增儲存後端"]
-* <<View storage backend details>>
-* <<Unmanage a storage backend>>
-* <<Update an Astra Data Store storage backend license>>
-* <<Upgrade an Astra Data Store storage backend>>
-* <<Remove a storage backend>>
-* <<Add nodes to a storage backend cluster>>
-* <<Remove nodes from a storage backend cluster>>
+*  storage backend details
+*  a storage backend
+*  an Astra Data Store storage backend license
+*  an Astra Data Store storage backend
+*  a storage backend
+*  nodes to a storage backend cluster
+*  nodes from a storage backend cluster
 
 
 

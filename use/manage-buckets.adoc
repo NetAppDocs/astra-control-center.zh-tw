@@ -38,9 +38,9 @@ NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商�
 您可以執行與管理儲存庫相關的工作：
 
 * link:../get-started/setup_overview.html#add-a-bucket["新增儲存庫"]
-* <<Edit a bucket>>
-* <<Rotate or remove bucket credentials>>
-* <<Remove a bucket>>
+*  a bucket
+*  or remove bucket credentials
+*  a bucket
 
 
 

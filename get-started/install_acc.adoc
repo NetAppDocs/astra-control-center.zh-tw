@@ -54,16 +54,16 @@ NOTE: 如果您使用的是Red Hat的Podman而非Docker Engine、則可以使用
 
 若要安裝Astra Control Center、請執行下列步驟：
 
-* <<Download and unpack the Astra Control Center bundle>>
-* <<Install the NetApp Astra kubectl plugin>>
-* <<Add the images to your local registry>>
-* <<Set up namespace and secret for registries with auth requirements>>
-* <<Install the Astra Control Center operator>>
-* <<Configure Astra Control Center>>
-* <<Complete Astra Control Center and operator installation>>
-* <<Verify system status>>
-* <<Set up ingress for load balancing>>
-* <<Log in to the Astra Control Center UI>>
+*  and unpack the Astra Control Center bundle
+*  the NetApp Astra kubectl plugin
+*  the images to your local registry
+*  up namespace and secret for registries with auth requirements
+*  the Astra Control Center operator
+*  Astra Control Center
+*  Astra Control Center and operator installation
+*  system status
+*  up ingress for load balancing
+*  in to the Astra Control Center UI
 
 
 
@@ -296,8 +296,8 @@ NOTE: 附註的Y反 洗錢範例遵循下列步驟。
 imagePullSecrets:
 - name: <astra-registry-cred>
 ----
-.. 將「kube-RBAC代理」映像的「[your _register_path]」變更為您將映像推入的登錄路徑 <<substep_image_local_registry_push,上一步>>。
-.. 將「acc oper-manager-manager」映像的「[your _register_path]」變更為您將映像推入的登錄路徑 <<substep_image_local_registry_push,上一步>>。
+.. 將「kube-RBAC代理」映像的「[your _register_path]」變更為您將映像推入的登錄路徑 ,上一步。
+.. 將「acc oper-manager-manager」映像的「[your _register_path]」變更為您將映像推入的登錄路徑 ,上一步。
 .. （若為使用Astra Data Store預覽的安裝）請參閱此已知問題 https://docs.netapp.com/us-en/astra-data-store-2112/release-notes/known-issues.html#mongodb-deployment-with-default-liveness-probe-value-fails-with-pods-in-crash-loop["儲存類別資源配置工具、以及您需要對Y反 洗錢進行的其他變更"^]。
 +
 [listing, subs="+quotes"]
@@ -399,8 +399,8 @@ IMPORTANT: 如果您使用不需要授權的登錄、則必須刪除「imageRegi
 +
 .. 將「[your _register_path]（您的登錄路徑）」變更為您在上一個步驟中推送影像的登錄路徑。
 .. 將「帳戶名稱」字串變更為您要與帳戶建立關聯的名稱。
-.. 將「astraAddress」字串變更為您要在瀏覽器中用來存取Astra的FQDN。請勿在地址中使用「http：//」或「https：//」。複製此FQDN以供在中使用 <<Log in to the Astra Control Center UI,後續步驟>>。
-.. 將「電子郵件」字串變更為預設的初始系統管理員地址。複製此電子郵件地址以供在中使用 <<Log in to the Astra Control Center UI,後續步驟>>。
+.. 將「astraAddress」字串變更為您要在瀏覽器中用來存取Astra的FQDN。請勿在地址中使用「http：//」或「https：//」。複製此FQDN以供在中使用  in to the Astra Control Center UI,後續步驟。
+.. 將「電子郵件」字串變更為預設的初始系統管理員地址。複製此電子郵件地址以供在中使用  in to the Astra Control Center UI,後續步驟。
 .. 如果網站沒有網際網路連線、請將AutoSupport 「已註冊」改為「假」、否則連線網站則保留「真」。
 .. 如果您使用外部的cert管理程式、請將下列行新增至「scpec」：
 +
@@ -412,7 +412,7 @@ spec:
 ----
 .. （選用）新增與帳戶相關之使用者的名字「firstName」和姓氏「lastName」。您可以在UI中立即或稍後執行此步驟。
 .. （可選）如果安裝需要、請將「儲存類別」值變更為其他Trident storageClass資源。
-.. （選用）如果您希望叢集在安裝後由Astra Control Center自動管理、而且您已經擁有 <<substep_kubeconfig_secret,已建立包含此叢集之Kbeconfig的秘密>>下、在這個名為「astraKubeConfigSecret："Acc－kubeconfig－cred or custom secret name"的Yaml檔案中新增欄位、以提供密碼名稱
+.. （選用）如果您希望叢集在安裝後由Astra Control Center自動管理、而且您已經擁有 ,已建立包含此叢集之Kbeconfig的秘密下、在這個名為「astraKubeConfigSecret："Acc－kubeconfig－cred or custom secret name"的Yaml檔案中新增欄位、以提供密碼名稱
 .. 請完成下列其中一個步驟：
 +
 *** *其他入侵控制器（擷取類型：一般）*：這是Astra控制中心的預設動作。部署Astra Control Center之後、您需要設定入口控制器、以URL顯示Astra Control Center。
@@ -842,13 +842,13 @@ oc create route edge --service=traefik
 安裝Astra Control Center之後、您將變更預設管理員的密碼、並登入Astra Control Center UI儀表板。
 
 .步驟
-. 在瀏覽器中、輸入您在「Astra Address」（astrAddress）中使用的FQDN、位於「Astra控制中心_min.yaml」（當）字段中 <<Install Astra Control Center,您安裝了Astra Control Center>>。
+. 在瀏覽器中、輸入您在「Astra Address」（astrAddress）中使用的FQDN、位於「Astra控制中心_min.yaml」（當）字段中  Astra Control Center,您安裝了Astra Control Center。
 . 出現提示時、請接受自我簽署的憑證。
 +
 
 NOTE: 您可以在登入後建立自訂憑證。
 
-. 在Astra Control Center登入頁面中、輸入您在「Astra Control Center_min.yaml」CR中使用的「電子郵件」值 <<Install Astra Control Center,您安裝了Astra Control Center>>，然後是一次性密碼（「ACC-[UUUID]」）。
+. 在Astra Control Center登入頁面中、輸入您在「Astra Control Center_min.yaml」CR中使用的「電子郵件」值  Astra Control Center,您安裝了Astra Control Center，然後是一次性密碼（「ACC-[UUUID]」）。
 +
 
 NOTE: 如果您輸入錯誤密碼三次、系統將鎖定管理員帳戶15分鐘。

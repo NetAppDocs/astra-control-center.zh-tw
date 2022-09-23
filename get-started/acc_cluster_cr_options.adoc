@@ -41,13 +41,13 @@ summary: 瞭解Astra Control Center叢集的CR選項、以在部署期間進行�
 | Volume ReclaimPolicy | 未定義 | 選用 | 保留 | 回收要為持續磁碟區設定的原則。 
 
 
-| astraResources2200 | 字串 | 必要 | 預設 | 適用的擴充選項適用於適用的適用範圍。請參閱 <<Configuration combinations and incompatibilities,設定複雜度>> 以瞭解此設定如何影響其他設定。 
+| astraResources2200 | 字串 | 必要 | 預設 | 適用的擴充選項適用於適用的適用範圍。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定。 
 
 
 | astraKubeConfigSecret | 字串 | 必要 | ACC-KECBEConnfig - cred | 如果存在此值且存在機密、則操作員將嘗試新增KubeConfig、以成為第一個受管理的叢集。 
 
 
-| 擷取類型 | 字串 | 選用 | 一般（這是預設值） | 應設定入侵Astra控制中心的類型。有效值為「一般」和「AccTraefik」。請參閱 <<Configuration combinations and incompatibilities,設定複雜度>> 以瞭解此設定如何影響其他設定。 
+| 擷取類型 | 字串 | 選用 | 一般（這是預設值） | 應設定入侵Astra控制中心的類型。有效值為「一般」和「AccTraefik」。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定。 
 
 
 | 部署 | 布林值 | 選用 | 是（這是預設值） | 此選項可讓使用者停用VMware vSphere營運者的Astra外掛程式部署。 
@@ -83,7 +83,7 @@ summary: 瞭解Astra Control Center叢集的CR選項、以在部署期間進行�
 | 客戶需求日：升級 | 布林值 | 選用 | 未定義 | 決定在Astra控制中心升級時、是否應升級CRD。 
 
 
-| MTLS |  |  |  | Astra Control Center如何實作服務以服務叢集中的MTLS的選項。請參閱 <<Configuration combinations and incompatibilities,設定複雜度>> 以瞭解此設定如何影響其他設定 
+| MTLS |  |  |  | Astra Control Center如何實作服務以服務叢集中的MTLS的選項。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定 
 
 
 | MTLS.enabled | 布林值 | 選用 | true（此值為預設值） | 依預設、Astra Control Center會使用MTLS進行服務對服務通訊。改用服務網格來加密服務對服務通訊時、應停用此選項。 

@@ -65,7 +65,7 @@ TIP: 舉例來說、您可能想要為每週有節奏的「Maria」設定備份�
 
 .您需要的是 #8217 ；需要的是什麼
 * 將Kubernetes叢集新增至Astra Control。
-* 叢集上已安裝一或多個應用程式。 <<Supported app installation methods,深入瞭解支援的應用程式安裝方法>>。
+* 叢集上已安裝一或多個應用程式。  app installation methods,深入瞭解支援的應用程式安裝方法。
 * 一個或多個作用中的Pod。
 * 在您新增至Astra Control的Kubernetes叢集上指定的命名空間。
 * （選用）Kubernetes標籤 link:../use/manage-apps.html#app-management-requirements["支援的Kubernetes資源"]。
@@ -80,12 +80,12 @@ TIP: 標籤是可指派給Kubernetes物件以供識別的金鑰/值配對。標�
 如需如何使用Astra Control API管理應用程式的指示、請參閱 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation和API資訊"^]。
 
 .應用程式管理選項
-* <<Define resources to manage as an app>>
-* <<Define a namespace to manage as an app>>
+*  resources to manage as an app
+*  a namespace to manage as an app
 
 
 .其他應用程式管理選項
-* <<Unmanage apps>>
+*  apps
 
 
 
@@ -97,7 +97,7 @@ TIP: 標籤是可指派給Kubernetes物件以供識別的金鑰/值配對。標�
 定義應用程式可讓您更精細地控制要納入Astra Control作業的內容、包括複製、快照和備份。
 
 
-WARNING: 在定義應用程式時、請確保不將Kubernetes資源納入具有保護原則的多個應用程式中。Kubernetes資源上的保護原則重疊、可能會造成資料衝突。 <<Example: Separate Protection Policy for different releases,深入瞭解最佳實務做法。>>
+WARNING: 在定義應用程式時、請確保不將Kubernetes資源納入具有保護原則的多個應用程式中。Kubernetes資源上的保護原則重疊、可能會造成資料衝突。  Separate Protection Policy for different releases,深入瞭解最佳實務做法。
 
 .步驟
 . 從「應用程式」頁面選取*定義*。

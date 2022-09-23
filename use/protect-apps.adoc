@@ -21,13 +21,13 @@ summary: 使用自動保護原則或臨機操作、拍攝快照和備份資料�
 
 您可以執行下列與保護應用程式資料相關的工作：
 
-* <<Configure a protection policy>>
-* <<Create a snapshot>>
-* <<Create a backup>>
-* <<View snapshots and backups>>
-* <<Delete snapshots>>
-* <<Cancel backups>>
-* <<Delete backups>>
+*  a protection policy
+*  a snapshot
+*  a backup
+*  snapshots and backups
+*  snapshots
+*  backups
+*  backups
 
 
 
@@ -96,7 +96,7 @@ Astra Control Center會建立應用程式的備份。
 NOTE: 如果您的網路中斷或異常緩慢、備份作業可能會逾時。這會導致備份失敗。
 
 
-NOTE: 無法停止執行中的備份。如果您需要刪除備份、請等到備份完成後再使用中的指示 <<Delete backups>>。若要刪除失敗的備份、 https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]。
+NOTE: 無法停止執行中的備份。如果您需要刪除備份、請等到備份完成後再使用中的指示  backups。若要刪除失敗的備份、 https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]。
 
 
 NOTE: 資料保護作業（複製、備份、還原）及後續持續調整磁碟區大小之後、UI中會顯示新的磁碟區大小、延遲最多20分鐘。資料保護作業只需幾分鐘就能成功完成、您可以使用儲存後端的管理軟體來確認磁碟區大小的變更。

@@ -14,27 +14,27 @@ summary: 已知限制指出本產品版本不支援的平台、裝置或功能�
 已知限制指出本產品版本不支援的平台、裝置或功能、或是無法與產品正確互通的平台、裝置或功能。請仔細檢閱這些限制。
 
 .叢集管理限制
-* <<The same cluster cannot be managed by two Astra Control Center instances>>
-* <<Astra Control Center cannot manage two identically named clusters>>
+*  same cluster cannot be managed by two Astra Control Center instances
+*  Control Center cannot manage two identically named clusters
 
 
 .角色型存取控制（RBAC）限制
-* <<A user with namespace RBAC constraints can add and unmanage a cluster>>
-* <<A member with namespace constraints cannot access the cloned or restored apps until admin adds the namespace to the constraint>>
+*  user with namespace RBAC constraints can add and unmanage a cluster
+*  member with namespace constraints cannot access the cloned or restored apps until admin adds the namespace to the constraint
 
 
 .應用程式管理限制
-* <<Clones of apps installed using pass-by-reference operators can fail>>
-* <<In-place restore operations of apps that use a certificate manager are not supported>>
-* <<OLM-enabled and cluster-scoped operator deployed apps not supported>>
-* <<Apps deployed with Helm 2 are not supported>>
+*  of apps installed using pass-by-reference operators can fail
+*  restore operations of apps that use a certificate manager are not supported
+*  and cluster-scoped operator deployed apps not supported
+*  deployed with Helm 2 are not supported
 
 
 .一般限制
-* <<S3 buckets in Astra Control Center do not report available capacity>>
-* <<Astra Control Center does not validate the details you enter for your proxy server>>
-* <<Existing connections to a Postgres pod causes failures>>
-* <<Backups and snapshots might not be retained during removal of an Astra Control Center instance>>
+*  buckets in Astra Control Center do not report available capacity
+*  Control Center does not validate the details you enter for your proxy server
+*  connections to a Postgres pod causes failures
+*  and snapshots might not be retained during removal of an Astra Control Center instance
 
 
 

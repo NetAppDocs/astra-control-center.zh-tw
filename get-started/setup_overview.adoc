@@ -14,10 +14,10 @@ summary: 安裝Astra Control Center、登入UI並變更密碼之後、您將需�
 Astra Control Center支援ONTAP 並監控將支援及Astra Data Store做為儲存後端。安裝Astra Control Center、登入UI並變更密碼之後、您將需要設定授權、新增叢集、管理儲存設備及新增儲存區。
 
 .工作
-* <<Add a license for Astra Control Center>>
-* <<Add cluster>>
-* <<Add a storage backend>>
-* <<Add a bucket>>
+*  a license for Astra Control Center
+*  cluster
+*  a storage backend
+*  a bucket
 
 
 
@@ -67,7 +67,7 @@ TIP: 我們建議Astra Control Center先管理部署於上的叢集、再將其�
 當Astra Control管理叢集時、它會追蹤叢集的預設儲存類別。如果您使用「kubecll」命令變更儲存類別、Astra Control會還原變更。若要變更由Astra Control管理之叢集中的預設儲存類別、請使用下列其中一種方法：
 
 * 使用Astra Control API「PUT /managedClusters'端點」、並使用「DefaultStorageClass」參數指派不同的預設儲存類別。
-* 使用Astra Control Web UI指派不同的預設儲存類別。請參閱 <<Change the default storage class>>。
+* 使用Astra Control Web UI指派不同的預設儲存類別。請參閱  the default storage class。
 
 
 ====
@@ -126,12 +126,12 @@ IMPORTANT: 在您新增適用於Astra Data Store的Kubernetes應用程式叢集�
 .您的部署需求：#8217；需要新的Astra Data Store部署
 * 您有 link:../use/manage-packages-acc.html["已上傳您要部署的安裝套件版本"] 至Astra Control可存取的位置。
 * 您已新增要用於部署的Kubernetes叢集。
-* 您已上傳 <<Add a license for Astra Control Center,Astra Data Store授權>> 部署至Astra Control可存取的位置。
+* 您已上傳  a license for Astra Control Center,Astra Data Store授權 部署至Astra Control可存取的位置。
 
 
 .選項
-* <<Deploy storage resources>>
-* <<Use an existing storage backend>>
+*  storage resources
+*  an existing storage backend
 
 
 
@@ -302,7 +302,7 @@ TIP: 庫位名稱和說明會顯示為備份位置、您可以在建立備份時
 
 NOTE: 此選項不會出現在您所建立的第一個儲存區。
 
-.. 請繼續新增 <<Add S3 access credentials,認證資訊>>。
+.. 請繼續新增  S3 access credentials,認證資訊。
 
 
 
