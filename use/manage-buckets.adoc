@@ -19,12 +19,17 @@ summary: 如果您想要備份應用程式和持續儲存設備、或是想要�
 
 * NetApp ONTAP 產品S3
 * NetApp StorageGRID 產品S3
-* 一般S3
 * Microsoft Azure
+* 一般S3
++
 
+NOTE: Amazon Web Services（AWS）和Google Cloud Platform（GCP）使用通用S3儲存區類型。
 
++
 
 NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商、但Astra Control Center可能不支援所有聲稱Amazon S3支援的物件儲存區廠商。
+
+
 
 儲存庫可以位於下列其中一種狀態：
 
