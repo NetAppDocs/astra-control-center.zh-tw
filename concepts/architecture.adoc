@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concepts/architecture.html 
-keywords: what is astra, astra control, astra control architecture, astra control center, kubernetes, netapp, clusters, trident 
+keywords: what is astra, astra control, astra control architecture, astra control center, astra control service, kubernetes, netapp, clusters, trident 
 summary: 以下概述Astra Control環境的各個元件。 
 ---
 = 架構與元件
@@ -13,14 +13,14 @@ summary: 以下概述Astra Control環境的各個元件。
 
 以下概述Astra Control環境的各個元件。
 
-image:astra-ads-architecture-diagram-v4.png["Astra Control架構圖與元件"]
+image:astra-architecture-diagram-v4.png["Astra Control架構圖與元件"]
 
 
 
 == Astra控制元件
 
 * * Kubernetes叢集*：Kubernetes是可攜式、可擴充的開放原始碼平台、可用於管理容器化工作負載與服務、同時促進宣告式組態與自動化。Astra為Kubernetes叢集中託管的應用程式提供管理服務。
-* * Astra Trident *：Trident是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。當您部署Astra Control Center時、Trident包含已設定ONTAP 的整套儲存後端、也支援Astra Data Store做為儲存後端。
+* * Astra Trident *：Trident是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。使用Astra Control Center進行部署時、Trident包含已設定ONTAP 的整套儲存後端。
 * *儲存後端*：
 +
 ** Astra Control Service使用下列儲存後端：
@@ -32,7 +32,6 @@ image:astra-ads-architecture-diagram-v4.png["Astra Control架構圖與元件"]
 
 ** Astra Control Center使用下列儲存後端：
 +
-*** Astra資料儲存區
 *** 不再是不一樣的。ONTAP AFF FAS作為儲存軟體與硬體平台ONTAP 、支援核心儲存服務、支援多種儲存存取傳輸協定、以及快照與鏡射等儲存管理功能。
 *** Cloud Volumes ONTAP
 

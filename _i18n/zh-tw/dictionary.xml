@@ -1459,7 +1459,6 @@
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">以下概述Astra Control環境的各個元件。</block>
   <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control架構圖與元件</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes叢集*：Kubernetes是可攜式、可擴充的開放原始碼平台、可用於管理容器化工作負載與服務、同時促進宣告式組態與自動化。Astra為Kubernetes叢集中託管的應用程式提供管理服務。</block>
-  <block id="b11f09eb1179914138fa8f5a15ba016a" category="list-text">* Astra Trident *：Trident是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。當您部署Astra Control Center時、Trident包含已設定ONTAP 的整套儲存後端、也支援Astra Data Store做為儲存後端。</block>
   <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">*儲存後端*：</block>
   <block id="a3b5183ae6f5c3f1d6644448f795b5cb" category="inline-link">適用於Cloud Volumes Service Google Cloud的NetApp解決方案</block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link">Azure NetApp Files</block>
@@ -2633,7 +2632,6 @@
   <block id="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="list-text"><block ref="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="inline-link-macro-rx"></block></block>
   <block id="ed78458df917d6da9f19cca23d8468cd" category="paragraph"><block ref="c229e392652cddf73148e5c65f706c6d" category="inline-link-macro-rx"></block> 使用NetApp SnapMirror技術將其移至遠端叢集。Astra Control會將Snapshot複寫到遠端叢集、提供非同步的災難恢復功能。</block>
   <block id="6ec03beb7c5c0fd46afad879591343a9" category="paragraph">瞭解操作方法 <block ref="6f4a779492bc5e3eca7c765cfa3ccb84" category="inline-link-macro-rx"></block>。</block>
-  <block id="98918f261da964e04189c67d73791199" category="paragraph"><block ref="98918f261da964e04189c67d73791199" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ca5eff8f4c2396bf09558b428d91e9f3" category="section-title">2022年9月8日（22.08.1）</block>
   <block id="322f8233054cca6c9d6204f1aa1d1f7f" category="paragraph">此適用於Astra Control Center（22.08.0）的修補程式版本（22.08.1）可利用NetApp SnapMirror修正應用程式複寫中的小錯誤。</block>
   <block id="a2fe57b8184603cedfc5695bc5afd246" category="list-text"><block ref="a2fe57b8184603cedfc5695bc5afd246" category="inline-link-macro-rx"></block></block>
@@ -2704,4 +2702,6 @@
   <block id="425fd91b4451257e5079173762463def" category="admonition">GCP使用通用S3儲存區類型。</block>
   <block id="9e7e41f010f82585ef3b0ebd3f1de902" category="list-text">產生Docker祕密以擷取Astra Control Center安裝的映像：</block>
   <block id="06e1b0116459bf681b32b65360e38671" category="list-text">如果使用OCP、Red Hat OpenShift Container Platform（OCP）4.8</block>
+  <block id="3b21110a90480d802de559fc751fede8" category="paragraph"><block ref="3b21110a90480d802de559fc751fede8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c2c28b59e21cbd4b3d6c78dbdf1db70f" category="list-text">* Astra Trident *：Trident是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。使用Astra Control Center進行部署時、Trident包含已設定ONTAP 的整套儲存後端。</block>
 </blocks>
