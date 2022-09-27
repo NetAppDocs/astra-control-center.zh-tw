@@ -20,13 +20,13 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 * 如果您已設定或想要在環境中設定Pod安全性原則、請熟悉Pod安全性原則、以及這些原則如何影響Astra Control Center安裝。請參閱 link:understand-psp-restrictions.html["瞭解Pod安全性原則限制"]。
 * 確保所有叢集操作員都處於健全狀態且可用。
 +
-[listing]
+[source, sh]
 ----
 kubectl get clusteroperators
 ----
 * 確保所有API服務均處於健全狀態且可供使用：
 +
-[listing]
+[source, sh]
 ----
 kubectl get apiservices
 ----
@@ -74,13 +74,13 @@ NOTE: 如果您使用的是Red Hat的Podman而非Docker Engine、則可以使用
 . 從下載Astra Control Center認證與金鑰的壓縮檔 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]。
 . （可選）使用以下命令驗證套件的簽名：
 +
-[listing]
+[source, sh]
 ----
 openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
 . 擷取影像：
 +
-[listing]
+[source, sh]
 ----
 tar -vxzf astra-control-center-[version].tar.gz
 ----
@@ -97,13 +97,13 @@ NetApp為不同的CPU架構和作業系統提供外掛程式的二進位檔。�
 .步驟
 . 列出可用的NetApp Astra「kubecll」外掛程式二進位檔、並記下作業系統和CPU架構所需的檔案名稱：
 +
-[listing]
+[source, sh]
 ----
 ls kubectl-astra/
 ----
 . 將檔案複製到與標準「kubecll」公用程式相同的位置。在此範例中、「kubecll」公用程式位於「usr/local/bin」目錄中。將「<二進位名稱>」取代為您所需的檔案名稱：
 +
-[listing]
+[source, sh]
 ----
 cp kubectl-astra/<binary-name> /usr/local/bin/kubectl-astra
 ----
@@ -188,7 +188,7 @@ done
 
 . 匯出Astra Control Center主機叢集的KUBECCONFIG：
 +
-[listing]
+[source, sh]
 ----
 export KUBECONFIG=[file path]
 ----
@@ -196,7 +196,7 @@ export KUBECONFIG=[file path]
 +
 .. 建立「NetApp-acc operator：
 +
-[listing]
+[source, sh]
 ----
 kubectl create ns netapp-acc-operator
 ----
@@ -214,7 +214,7 @@ namespace/netapp-acc-operator created
 NOTE: 預留位置「yer_register_path」應與您先前上傳的影像位置相符（例如：「[Registry_url]/NetApp/Astra /astracacs/22.08.1-26'）。
 
 +
-[listing]
+[source, sh]
 ----
 kubectl create secret docker-registry astra-registry-cred -n netapp-acc-operator --docker-server=[your_registry_path] --docker-username=[username] --docker-password=[token]
 ----
@@ -232,7 +232,7 @@ NOTE: 如果您在產生機密之後刪除命名空間、則需要在重新建�
 
 .. 建立「NetApp-acc」（或自訂命名）命名空間。
 +
-[listing]
+[source, sh]
 ----
 kubectl create ns [netapp-acc or custom namespace]
 ----
@@ -246,7 +246,7 @@ namespace/netapp-acc created
 ----
 .. 為「NetApp-acc」（或自訂命名）命名空間建立秘密。新增Docker資訊並執行下列命令：
 +
-[listing]
+[source, sh]
 ----
 kubectl create secret docker-registry astra-registry-cred -n [netapp-acc or custom namespace] --docker-server=[your_registry_path] --docker-username=[username] --docker-password=[token]
 ----
@@ -260,7 +260,7 @@ secret/astra-registry-cred created
 ----
 .. [Substete_kubeconfig _secret ]（選用）如果您希望叢集在安裝後由Astra Control Center自動管理、請確定您在Astra Control Center命名空間中提供了要使用此命令部署的kubeconfig作為機密：
 +
-[listing]
+[source, sh]
 ----
 kubectl create secret generic [acc-kubeconfig-cred or custom secret name] --from-file=<path-to-your-kubeconfig> -n [netapp-acc or custom namespace]
 ----
@@ -274,13 +274,13 @@ kubectl create secret generic [acc-kubeconfig-cred or custom secret name] --from
 
 . 變更目錄：
 +
-[listing]
+[source, sh]
 ----
 cd manifests
 ----
 . 編輯Astra Control Center營運者部署Yaml（「Astra _control_center_operer_deploy」、以參照您的本機登錄和機密。
 +
-[listing]
+[source, sh]
 ----
 vim astra_control_center_operator_deploy.yaml
 ----
@@ -291,7 +291,7 @@ NOTE: 附註的Y反 洗錢範例遵循下列步驟。
 +
 .. 如果您使用需要驗證的登錄、請將預設行「imagePullSecrets：[]」改為：
 +
-[listing]
+[source, sh]
 ----
 imagePullSecrets:
 - name: <astra-registry-cred>
@@ -347,7 +347,7 @@ spec:
 
 . 安裝Astra Control Center操作員：
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f astra_control_center_operator_deploy.yaml
 ----
@@ -372,7 +372,7 @@ deployment.apps/acc-operator-controller-manager created
 ----
 . 確認Pod正在執行：
 +
-[listing]
+[source, sh]
 ----
 kubectl get pods -n netapp-acc-operator
 ----
@@ -388,7 +388,7 @@ kubectl get pods -n netapp-acc-operator
 NOTE: 「Astra_control_center_min.yaml」是預設的CR、適用於大部分的安裝。請熟悉所有資訊 link:../get-started/acc_cluster_cr_options.html["CR選項及其潛在價值"] 確保您的環境正確部署Astra Control Center。如果您的環境需要額外的自訂功能、您可以使用「Astra_control_center.yaml」作為替代的CR。
 
 +
-[listing]
+[source, sh]
 ----
 vim astra_control_center_min.yaml
 ----
@@ -404,7 +404,7 @@ IMPORTANT: 如果您使用不需要授權的登錄、則必須刪除「imageRegi
 .. 如果網站沒有網際網路連線、請將AutoSupport 「已註冊」改為「假」、否則連線網站則保留「真」。
 .. 如果您使用外部的cert管理程式、請將下列行新增至「scpec」：
 +
-[listing]
+[source, sh]
 ----
 spec:
   crds:
@@ -465,7 +465,7 @@ spec:
 
 . 如果您尚未在上一步中執行此操作、請建立「NetApp-acc」（或自訂）命名空間：
 +
-[listing]
+[source, sh]
 ----
 kubectl create ns [netapp-acc or custom namespace]
 ----
@@ -479,7 +479,7 @@ namespace/netapp-acc created
 ----
 . 在「NetApp-acc」（或您的自訂）命名空間中安裝Astra Control Center：
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f astra_control_center_min.yaml -n [netapp-acc or custom namespace]
 ----
@@ -502,7 +502,7 @@ NOTE: 如果您偏好使用OpenShift、您可以使用相似的相關命令來�
 
 . 驗證是否已成功安裝所有系統元件。
 +
-[listing]
+[source, sh]
 ----
 kubectl get pods -n [netapp-acc or custom namespace]
 ----
@@ -585,7 +585,7 @@ vault-controller-6b954f9b76-gz9nm        1/1    Running  0        11m
 ====
 . （選用）若要確保安裝完成、您可以使用下列命令來查看「acc operator」記錄。
 +
-[listing]
+[source, sh]
 ----
 kubectl logs deploy/acc-operator-controller-manager -n netapp-acc-operator -c manager -f
 ----
@@ -595,7 +595,7 @@ NOTE: 「accHost」叢集登錄是最後一項作業、如果失敗、就不會�
 
 . 當所有Pod都在執行時、請確認安裝成功（「READY」為「True」）、並取得登入Astra Control Center時所使用的一次性密碼：
 +
-[listing]
+[source, sh]
 ----
 kubectl get AstraControlCenter -n netapp-acc
 ----
@@ -652,7 +652,7 @@ NOTE: 此程序假設使用「預設」組態設定檔來部署Istio。 
 命令範例： 
 
 +
-[listing]
+[source, sh]
 ----
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 
 -keyout tls.key -out tls.crt
@@ -662,7 +662,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 
 命令範例： 
 
 +
-[listing]
+[source, sh]
 ----
 kubectl create secret tls [tls secret name] 
 --key="tls.key"
@@ -711,7 +711,7 @@ spec:
 如需v1新架構、請遵循下列範例：
 
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f istio-Ingress.yaml
 ----
@@ -754,9 +754,16 @@ spec:
 . 如常部署Astra Control Center。
 . 檢查入侵狀態：
 +
+[source, sh]
+----
+kubectl get ingress -n netapp-acc
+----
++
+回應：
+
++
 [listing]
 ----
-kubectl get ingress -n netapp-acc 
 NAME    CLASS HOSTS             ADDRESS         PORTS   AGE 
 ingress istio astra.example.com 172.16.103.248  80, 443 1h 
 ----
@@ -826,7 +833,7 @@ spec:
 . 取得您的憑證、取得可供OpenShift路由使用的金鑰、憑證和CA檔案。
 . 建立OpenShift路由：
 +
-[listing]
+[source, sh]
 ----
 oc create route edge --service=traefik
 --port=web -n [netapp-acc or custom namespace]
@@ -871,9 +878,9 @@ NOTE: 如果這是您第一次登入、但您忘記密碼、而且尚未建立�
 .步驟
 . 若要檢查Astra控制中心的操作員記錄、請輸入下列內容：
 +
-[listing]
+[source, sh]
 ----
-kubectl logs --follow -n netapp-acc-operator $(kubectl get pods -n netapp-acc-operator -o name)  -c manager
+kubectl logs --follow -n netapp-acc-operator $(kubectl get pods -n netapp-acc-operator -o name) -c manager
 ----
 
 
