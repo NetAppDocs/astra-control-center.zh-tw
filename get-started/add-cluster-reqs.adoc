@@ -37,7 +37,7 @@ NOTE: 如果您計畫將第二個OpenShift 4.6、4.7或4.8叢集新增為受管�
 .步驟
 . 檢查Trident版本。
 +
-[listing]
+[source, sh]
 ----
 kubectl get tridentversions -n trident
 ----
@@ -86,7 +86,7 @@ thin                   kubernetes.io/vsphere-volume   Delete          Immediate 
 .步驟
 . 建立服務帳戶、如下所示：
 +
-.. 建立名為「astracontinal-service-account.yaml」的服務帳戶檔案。
+.. 建立名為「astracontilt-service-account.yaml」的服務帳戶檔案。
 +
 視需要調整名稱和命名空間。如果在此處進行變更、您應該在下列步驟中套用相同的變更。
 
@@ -106,7 +106,7 @@ metadata:
 ----
 .. 套用服務帳戶：
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f astracontrol-service-account.yaml
 ----
@@ -142,7 +142,7 @@ subjects:
 ----
 .. 套用叢集角色繫結：
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f astracontrol-clusterrolebinding.yaml
 ----
@@ -150,7 +150,7 @@ kubectl apply -f astracontrol-clusterrolebinding.yaml
 
 . 列出服務帳戶機密、將「<內容>」取代為正確的安裝內容：
 +
-[listing]
+[source, sh]
 ----
 kubectl get serviceaccount astracontrol-service-account --context <context> --namespace default -o json
 ----
@@ -241,7 +241,7 @@ rm ${KUBECONFIG_FILE}.tmp
 ----
 .. 請輸入命令以將其套用至Kubernetes叢集。
 +
-[listing]
+[source, sh]
 ----
 source create-kubeconfig.sh
 ----
@@ -249,7 +249,7 @@ source create-kubeconfig.sh
 
 . （*選用*）將KUbeconfig重新命名為有意義的叢集名稱。保護您的叢集認證資料。
 +
-[listing]
+[source, sh]
 ----
 chmod 700 create-kubeconfig.sh
 mv kubeconfig-sa.txt YOUR_CLUSTER_NAME_kubeconfig

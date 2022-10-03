@@ -28,13 +28,13 @@ summary: 您可以上傳並驗證由協力廠商憑證授權單位（CA）簽署
 . 使用SSH、以管理使用者身分登入裝載Astra Control Center的Kubernetes叢集。
 . 使用下列命令尋找與目前憑證相關的TLS密碼、並以Astra Control Center部署命名空間取代「<ACC-deployment-namespace>」：
 +
-[listing]
+[source, sh]
 ----
 kubectl get certificate -n <ACC-deployment-namespace>
 ----
 . 使用下列命令刪除目前安裝的機密與憑證：
 +
-[listing]
+[source, sh]
 ----
 kubectl delete cert cert-manager-certificates -n <ACC-deployment-namespace>
 kubectl delete secret secure-testing-cert -n <ACC-deployment-namespace>
@@ -49,7 +49,7 @@ kubectl delete secret secure-testing-cert -n <ACC-deployment-namespace>
 
 . 使用下列命令以CA的私密金鑰和憑證檔案建立新的TLS秘密，並以適當的資訊取代括弧<>中的引數：
 +
-[listing]
+[source, sh]
 ----
 kubectl create secret tls <secret-name> --key <private-key-filename> --cert <certificate-filename> -n <ACC-deployment-namespace>
 ----
@@ -86,7 +86,7 @@ Events:                    <none>
 ----
 . 使用下列範例建立「create.yaml」檔案、並以適當的資訊取代括弧<>中的預留位置值：
 +
-[listing]
+[source, yaml]
 ----
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -105,7 +105,7 @@ spec:
 ----
 . 使用下列命令建立憑證：
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f certificate.yaml
 ----

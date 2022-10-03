@@ -764,8 +764,8 @@ kubectl get ingress -n netapp-acc
 +
 [listing]
 ----
-NAME    CLASS HOSTS             ADDRESS         PORTS   AGE 
-ingress istio astra.example.com 172.16.103.248  80, 443 1h 
+NAME    CLASS HOSTS             ADDRESS         PORTS   AGE
+ingress istio astra.example.com 172.16.103.248  80, 443 1h
 ----
 
 
@@ -775,7 +775,7 @@ ingress istio astra.example.com 172.16.103.248  80, 443 1h 
 +
 .. 對於已過時的「v1Beta1」架構、請遵循以下範例：
 +
-[listing]
+[source, yaml]
 ----
 apiVersion: extensions/v1beta1
 Kind: IngressClass
@@ -800,7 +800,7 @@ spec:
 ----
 .. 如需「v1」新架構、請遵循以下範例：
 +
-[listing]
+[source, yaml]
 ----
 apiVersion: networking.k8s.io/v1
 kind: Ingress

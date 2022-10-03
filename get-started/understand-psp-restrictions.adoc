@@ -186,19 +186,19 @@ pods-medium   16s   requests.cpu: 0/10, requests.memory: 0/20Gi    limits.cpu: 0
 ----
 . 依名稱刪除所有資源配額：
 +
-[listing]
+[source, sh]
 ----
 kubectl delete resourcequota  pods-high -n netapp-acc
-
-resourcequota "pods-high" deleted
-
+----
++
+[source, sh]
+----
 kubectl delete resourcequota  pods-low -n netapp-acc
-
-resourcequota "pods-low" deleted
-
+----
++
+[source, sh]
+----
 kubectl delete resourcequota  pods-medium -n netapp-acc
-
-resourcequota "pods-medium" deleted
 ----
 . 取得NetApp-acc命名空間中的限制範圍：
 +

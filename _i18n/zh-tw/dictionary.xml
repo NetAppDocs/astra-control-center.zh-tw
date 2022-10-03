@@ -1414,7 +1414,6 @@
   <block id="7b30cce2a5969e8fadcb1e4aa9106224" category="list-text">安裝了「kubecll」v1.19或更新版本</block>
   <block id="ee6257954c2f973cd54453583dc792ca" category="list-text">具有作用中內容叢集管理權限的作用中Kbeconfig</block>
   <block id="5f85438ae0f2c9122a5cf54e8e098c98" category="list-text">建立服務帳戶、如下所示：</block>
-  <block id="3dddc4b1e9542d891ece7f0755904e26" category="list-text">建立名為「astracontinal-service-account.yaml」的服務帳戶檔案。</block>
   <block id="210c5331ab46caa141e6ac9d5aeb1bee" category="paragraph">視需要調整名稱和命名空間。如果在此處進行變更、您應該在下列步驟中套用相同的變更。</block>
   <block id="605443509a67749999ab3b0d3ba43e8b" category="list-text">套用服務帳戶：</block>
   <block id="938b18df1cf4fc30adffffdbd05580fb" category="list-text">（選用）如果叢集使用限制的Pod安全性原則、而該原則不允許建立具有權限的Pod、或允許Pod容器內的處理程序以root使用者身分執行、請為叢集建立自訂的Pod安全性原則、讓Astra Control能夠建立及管理Pod。如需相關指示、請參閱 <block ref="a0c087a50043435816db1a08670aaa8c" category="inline-link-macro-rx"></block>。</block>
@@ -2704,4 +2703,5 @@
   <block id="06e1b0116459bf681b32b65360e38671" category="list-text">如果使用OCP、Red Hat OpenShift Container Platform（OCP）4.8</block>
   <block id="3b21110a90480d802de559fc751fede8" category="paragraph"><block ref="3b21110a90480d802de559fc751fede8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c2c28b59e21cbd4b3d6c78dbdf1db70f" category="list-text">* Astra Trident *：Trident是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。使用Astra Control Center進行部署時、Trident包含已設定ONTAP 的整套儲存後端。</block>
+  <block id="4ab759267d2877902a521921e10f5f5b" category="list-text">建立名為「astracontilt-service-account.yaml」的服務帳戶檔案。</block>
 </blocks>
