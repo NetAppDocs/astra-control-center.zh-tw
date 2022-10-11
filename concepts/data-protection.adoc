@@ -52,8 +52,8 @@ Astra Control會以非同步方式將應用程式Snapshot複本複本複寫到�
 
 備份程序會將資料複製到S3儲存區、並從S3儲存區還原：
 
-image:acc-backup_5.5in.png["排程的備份與還原映像"]
+image:acc-backup_4in.png["排程的備份與還原映像"]
 
 另一方面、複寫作業則是透過複寫至ONTAP esq/然後進行容錯移轉來建立Kubernetes資源：
 
-image:acc-replication_5.5in.png["複寫與容錯移轉映像"]
+image:acc-replication_4in.png["複寫與容錯移轉映像"]

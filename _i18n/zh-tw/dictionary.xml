@@ -1996,10 +1996,8 @@
   <block id="2e67b4ffa9856ed714ace3c83ce69b11" category="paragraph">下列影像顯示排程的備份與還原程序、與複寫程序比較。</block>
   <block id="0684163543dd8c63ba059f860287849a" category="paragraph">備份程序會將資料複製到S3儲存區、並從S3儲存區還原：</block>
   <block id="81cddeedfe823c0b5ecc3077e6dafc47" category="inline-image-macro">排程的備份與還原映像</block>
-  <block id="a51afd505b35be60ffcb038c02aa8b40" category="paragraph"><block ref="a51afd505b35be60ffcb038c02aa8b40" category="inline-image-macro-rx" type="image"></block></block>
   <block id="af71b68b2a3d17f7141855dcd02a56ca" category="paragraph">另一方面、複寫作業則是透過複寫至ONTAP esq/然後進行容錯移轉來建立Kubernetes資源：</block>
   <block id="a5f8603aae16ddbbbcfc6f63de01008d" category="inline-image-macro">複寫與容錯移轉映像</block>
-  <block id="1c8a227232844301e08547c77bb3901d" category="paragraph"><block ref="1c8a227232844301e08547c77bb3901d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="74456513b7ca75af96c4b1316688791f" category="inline-link">Astra Control Center 22.04文件</block>
   <block id="d67f74fb6e72ced888adb1c93e92fead" category="list-text"><block ref="d67f74fb6e72ced888adb1c93e92fead" category="inline-link-rx"></block></block>
   <block id="69aadb837d20f17231803d0c850b4c61" category="inline-link">請參閱這些額外的Astra Data Store已知問題</block>
@@ -2704,4 +2702,6 @@
   <block id="3b21110a90480d802de559fc751fede8" category="paragraph"><block ref="3b21110a90480d802de559fc751fede8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c2c28b59e21cbd4b3d6c78dbdf1db70f" category="list-text">* Astra Trident *：Trident是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。使用Astra Control Center進行部署時、Trident包含已設定ONTAP 的整套儲存後端。</block>
   <block id="4ab759267d2877902a521921e10f5f5b" category="list-text">建立名為「astracontilt-service-account.yaml」的服務帳戶檔案。</block>
+  <block id="85d4813220dc61b1558025981ecb0a0c" category="paragraph"><block ref="85d4813220dc61b1558025981ecb0a0c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="de57d5c9dad5ff2e5621f7541a798fe9" category="paragraph"><block ref="de57d5c9dad5ff2e5621f7541a798fe9" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
