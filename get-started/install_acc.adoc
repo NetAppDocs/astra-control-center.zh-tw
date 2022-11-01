@@ -770,7 +770,7 @@ ingress istio astra.example.com 172.16.103.248  80, 443 1h
 
 
 .適用於Nginvin像 控制器的步驟
-. 建立類型的秘密 http://kubernetes.io/tls["「Kubernetes.IO/TLS」"] 如所述、在「NetApp-acc」（或自訂命名）命名空間中取得TLS私密金鑰和憑證 https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets["TLS機密"]。
+. 建立類型的秘密 http://kubernetes.io/tls["8a637503539b25b68130b6e8003579d9"] 如所述、在「NetApp-acc」（或自訂命名）命名空間中取得TLS私密金鑰和憑證 https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets["TLS機密"]。
 . 使用「v1beta1」（Kubernetes版本低於或1.22）或「v1」資源類型、部署「NetApp-acc」（或自訂命名）命名空間中的入口資源、以取代已過時或新架構：
 +
 .. 對於已過時的「v1Beta1」架構、請遵循以下範例：

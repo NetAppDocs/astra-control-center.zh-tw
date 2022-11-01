@@ -22,7 +22,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 
 [role="quick-margin-para"]
-link:../get-started/requirements.html["深入瞭解Astra Control Center需求"]。
+深入瞭解 link:../get-started/requirements.html["Astra Control Center需求"]。
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] Alt="2"></span>下載並安裝Astra控制中心
 * 從下載Astra Control Center https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp支援網站Astra Control Center下載頁面"^]。
@@ -30,26 +30,31 @@ link:../get-started/requirements.html["深入瞭解Astra Control Center需求"]�
 +
 或者、使用Red Hat作業系統集線器安裝Astra Control Center。
 
++
+您也可以選擇安裝Astra Control Center搭配Cloud Volumes ONTAP 使用不只是儲存後端的功能。
+
 
 
 [role="quick-margin-para"]
-link:../get-started/install_overview.html["深入瞭解如何安裝Astra Control Center"]。
+深入瞭解 link:../get-started/install_overview.html["安裝Astra Control Center"]。
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"[] alt="there"></span>完成一些初始設定工作
-* 新增授權。
+* 新增Astra Control授權及任何支援ONTAP 的不支援功能。
 * 新增Kubernetes叢集、Astra Control Center會探索詳細資料。
-* 新增ONTAP 一個功能不一的 https://docs.netapp.com/us-en/astra-data-store/index.html["Astra資料儲存區"] 儲存後端：
+* 新增ONTAP 功能：
 * 或者、您也可以新增物件存放區、以儲存應用程式備份。
 
 
 [role="quick-margin-para"]
-link:../get-started/setup_overview.html["深入瞭解初始設定程序"]。
+深入瞭解 link:../get-started/setup_overview.html["初始設定程序"]。
 
 [role="quick-margin-list"]
 完成Astra Control Center的設定之後、接下來您可以：
 
-* 管理應用程式。 link:../use/manage-apps.html["深入瞭解如何管理應用程式"]。
-* 您也可以選擇連線至NetApp Cloud Insights 解決方案、在Astra Control Center UI內顯示系統健全狀況、容量和處理量的指標。 link:../use/monitor-protect.html["深入瞭解連線Cloud Insights 到NetApp"]。
+* 管理應用程式。深入瞭解如何操作 link:../use/manage-apps.html["管理應用程式"]。
+* 設定應用程式的保護原則、將應用程式複寫到遠端系統、以及複製和移轉應用程式、藉此保護應用程式。深入瞭解如何操作 link:../use/protection-overview.html["保護應用程式"]。
+* 管理帳戶（包括使用者、角色、使用者驗證的LDAP、認證、儲存庫連線等）。深入瞭解如何操作 link:../use/manage-users.html["管理使用者"]。
+* 您也可以選擇連線至NetApp Cloud Insights 解決方案、在Astra Control Center UI內顯示系統健全狀況、容量和處理量的指標。深入瞭解 link:../use/monitor-protect.html["連線Cloud Insights 至"]。
 
 
 [role="quick-margin-para"]

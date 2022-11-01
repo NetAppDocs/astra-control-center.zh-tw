@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concepts/intro.html 
-keywords: how astra control works, what is astra, kubernetes cluster, cloud volumes ontap, what is astra control service, what is astra control center 
+keywords: how astra control works, what is astra, kubernetes cluster, cloud volumes ontap, what is astra control 
 summary: Astra是Kubernetes應用程式資料生命週期管理服務、可簡化狀態應用程式的作業。輕鬆保護、備份及移轉Kubernetes工作負載、並立即建立可運作的應用程式複本。 
 ---
 = 瞭解Astra Control
@@ -28,8 +28,6 @@ Astra Control為Kubernetes應用程式資料生命週期管理提供關鍵功能
 * 視覺化應用程式健全狀況與保護狀態
 * 使用使用者介面或API來實作備份與移轉工作流程
 
-
-Astra Control會持續監控您的運算狀態變更、因此您可以隨時掌握新增的應用程式。
 
 
 

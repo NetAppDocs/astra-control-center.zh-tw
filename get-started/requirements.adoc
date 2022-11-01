@@ -128,6 +128,15 @@ Astra Control Center支援下列儲存後端。
 * NetApp Cloud Volumes ONTAP
 
 
+若要使用Astra Control Center、請視ONTAP 您需要完成的工作而定、確認您擁有下列各項的版次授權：
+
+* FlexClone
+* SnapMirror：選用。僅使用SnapMirror技術複寫至遠端系統時才需要。請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權資訊"^]。
+* S3授權：選用。僅適用於SS3鏟斗ONTAP
+
+
+您可能想要檢查ONTAP 您的系統是否擁有必要的授權。請參閱 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理ONTAP 不需購買的授權"^]。
+
 
 
 == 應用程式叢集需求
@@ -246,16 +255,13 @@ NOTE: 運算子及其安裝的應用程式必須使用相同的命名空間；�
 
 == 授權
 
-Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。如果沒有授權、您就無法執行下列任何一項：
+Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。您需要授權來保護應用程式和資料。請參閱 link:../concepts/intro.html["Astra Control Center功能"] 以取得詳細資料。
 
-* 定義應用程式
-* 建立現有應用程式的快照或複本
-* 設定資料保護原則
+您也可以試用Astra Control Center搭配評估授權、從下載授權之日起90天內使用Astra Control Center。您可以註冊以免費試用 link:https://cloud.netapp.com/astra-register["請按這裡"^]。
 
+如需ONTAP 有關支援不支援的詳細資訊、請參閱 link:../get-started/requirements.html["支援的儲存後端"]。
 
-如果您想要試用Astra控制中心、您可以 link:setup_overview.html#add-a-full-or-evaluation-license["使用90天試用版授權"]。
-
-若要深入瞭解授權的運作方式、請參閱 link:../concepts/licensing.html["授權"]。
+如需授權運作方式的詳細資訊、請參閱 link:../concepts/licensing.html["授權"]。
 
 
 
