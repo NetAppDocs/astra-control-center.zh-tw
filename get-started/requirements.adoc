@@ -257,7 +257,7 @@ NOTE: 運算子及其安裝的應用程式必須使用相同的命名空間；�
 
 Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。您需要授權來保護應用程式和資料。請參閱 link:../concepts/intro.html["Astra Control Center功能"] 以取得詳細資料。
 
-您也可以試用Astra Control Center搭配評估授權、從下載授權之日起90天內使用Astra Control Center。您可以註冊以免費試用 link:https://cloud.netapp.com/astra-register["請按這裡"^]。
+您可以使用Astra Control Center試用試用試用版授權、從下載授權之日起90天內即可使用Astra Control Center。您可以註冊以免費試用 link:https://cloud.netapp.com/astra-register["請按這裡"^]。
 
 如需ONTAP 有關支援不支援的詳細資訊、請參閱 link:../get-started/requirements.html["支援的儲存後端"]。
 

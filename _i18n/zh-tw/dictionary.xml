@@ -2706,4 +2706,6 @@
   <block id="766c3edeaca88ba89208ae8b5e83479e" category="list-text">管理帳戶（包括使用者、角色、使用者驗證的LDAP、認證、儲存庫連線等）。深入瞭解如何操作 <block ref="b1dea768305cd8aacf8d500d63953651" category="inline-link-macro-rx"></block>。</block>
   <block id="84d5805c780bde43dccfe3666e3283da" category="inline-link-macro">連線Cloud Insights 至</block>
   <block id="cfbe784ada75bca24be2b83ad0a64339" category="list-text">您也可以選擇連線至NetApp Cloud Insights 解決方案、在Astra Control Center UI內顯示系統健全狀況、容量和處理量的指標。深入瞭解 <block ref="76c9595f49defd96fd8c9e749ca851ae" category="inline-link-macro-rx"></block>。</block>
+  <block id="f06853bf12dc9a7737fb9921535d6e83" category="paragraph">購買產品後、您會收到序號和授權。您可以從產生NetApp授權檔案（NLF）<block ref="fcc52edac3ce57829c48ee35d97a295d" category="inline-link-rx"></block>。</block>
+  <block id="34c08446234edc37b22fa4ed2230f6fe" category="paragraph">您可以使用Astra Control Center試用試用試用版授權、從下載授權之日起90天內即可使用Astra Control Center。您可以註冊以免費試用 <block ref="94c4952ff767dc7f2318bf778dfb79d4" category="inline-link-macro-rx"></block>。</block>
 </blocks>
