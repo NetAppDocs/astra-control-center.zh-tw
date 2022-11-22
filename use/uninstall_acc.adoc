@@ -11,6 +11,7 @@ summary: 說明如何移除Astra控制中心和Astra控制中心操作員。
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 如果您要從試用版升級至完整版產品、可能需要移除Astra Control Center元件。若要移除Astra Control Center和Astra Control Center操作員、請依序執行本程序中所述的命令。
 
 如果您對解除安裝有任何問題、請參閱  uninstall issues。
@@ -24,7 +25,7 @@ summary: 說明如何移除Astra控制中心和Astra控制中心操作員。
 +
 [listing]
 ----
-kubectl delete -f astra_control_center_min.yaml -n netapp-acc
+kubectl delete -f astra_control_center.yaml -n netapp-acc
 ----
 +
 結果：

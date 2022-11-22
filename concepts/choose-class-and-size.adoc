@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concepts/choose-class-and-size.html 
 keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance, persistent, volume, kubernetes, containers 
-summary: Astra Control Center支援Trident儲存課程、以ONTAP 支援由不支援的儲存功能或Astra Data Store儲存課程為後盾。您應該瞭解儲存類別和持續Volume大小如何協助您達成效能目標。 
+summary: Astra Control Center支援Trident儲存課程、以ONTAP 支援由支援的功能為後盾。您應該瞭解儲存類別和持續Volume大小如何協助您達成效能目標。 
 ---
 = 儲存類別和持續Volume大小
 :hardbreaks:
@@ -12,17 +12,13 @@ summary: Astra Control Center支援Trident儲存課程、以ONTAP 支援由不�
 
 
 [role="lead"]
-Astra Control Center支援ONTAP 以支援作為儲存後端的不支援功能或Astra Data Store。
+Astra Control Center支援ONTAP 以支援作為儲存後端的功能。
 
 
 
 == 總覽
 
 Astra Control Center支援下列項目：
-
-* *由Astra Data Store儲存設備支援的Trident儲存類別*：如果您手動安裝一或多個Astra Data Store叢集、Astra Control Center就能匯入這些叢集並擷取其拓撲（節點、磁碟）及各種狀態。
-+
-Astra Control Center會從Astra Data Store組態顯示基礎Kubernetes叢集、Kubernetes叢集所屬的雲端、Astra Data Store提供的任何持續磁碟區、對應內部Volume的名稱、使用持續磁碟區的應用程式、以及包含應用程式的叢集。
 
 * * ONTAP 以支援的Trident儲存類*：如果您使用ONTAP 的是支援支援支援功能的支援功能、Astra Control Center可匯入ONTAP 該功能的支援功能、以報告各種監控資訊。
 
@@ -35,8 +31,6 @@ NOTE: Trident儲存類別應預先設定在Astra Control Center之外。
 == 儲存類別
 
 當您將叢集新增至Astra Control Center時、系統會提示您在該叢集上選取先前設定的儲存類別作為預設儲存類別。當持續磁碟區宣告（PVc）中未指定任何儲存類別時、就會使用此儲存類別。預設儲存類別可隨時在Astra Control Center內變更、而任何儲存類別都可隨時在PVc或Helm圖表中指定儲存類別名稱、以供使用。請確定您只為Kubernetes叢集定義單一預設儲存類別。
-
-當您使用Astra Control Center與Astra Data Store儲存後端整合時、在安裝之後、不會定義任何儲存類別。您需要建立Trident預設儲存類別、並將其套用至儲存後端。請參閱 https://docs.netapp.com/us-en/astra-data-store/get-started/setup-ads.html#set-up-astra-data-store-as-storage-backend["Astra Data Store入門"] 建立預設的Astra Data Store儲存類別。
 
 
 

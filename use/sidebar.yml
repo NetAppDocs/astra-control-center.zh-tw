@@ -1,6 +1,6 @@
 ---
 section: use
-title: 使用Astra
+title: 使用Astra控制中心
 entries:
 - title: 開始管理應用程式
   url: "/use/manage-apps.html"
@@ -31,10 +31,12 @@ entries:
     url: "/use/view-apps.html"
 - title: 管理您的帳戶
   entries:
-  - title: 管理使用者
-    url: "/use/manage-users.html"
-  - title: 管理角色
-    url: "/use/manage-roles.html"
+  - title: 管理本機使用者和角色
+    url: "/use/manage-local-users-and-roles.html"
+  - title: 管理遠端驗證
+    url: "/use/manage-remote-authentication.html"
+  - title: 管理遠端使用者和群組
+    url: "/use/manage-remote-users-groups.html"
   - title: 管理通知
     url: "/use/manage-notifications.html"
   - title: 管理認證資料
@@ -43,14 +45,12 @@ entries:
     url: "/use/view-account-activity.html"
   - title: 更新現有授權
     url: "/use/update-licenses.html"
-  - title: 管理儲存庫連線
-    url: "/use/manage-connections.html"
-  - title: 管理軟體套件
-    url: "/use/manage-packages-acc.html"
 - title: 管理儲存庫
   url: "/use/manage-buckets.html"
 - title: 管理儲存後端
   url: "/use/manage-backend.html"
+- title: 監控執行中的工作
+  url: "/use/monitor-running-tasks.html"
 - title: 利用Cloud Insights 功能性和變動監控基礎架構
   url: "/use/monitor-protect.html"
 - title: 取消管理應用程式和叢集

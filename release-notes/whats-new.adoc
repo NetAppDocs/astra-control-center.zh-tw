@@ -11,7 +11,25 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 :imagesdir: ../media/release-notes/
 
 
+[role="lead"]
 我們很高興在此發表最新版的Astra Control Center。
+
+
+
+== 2022年11月22日（22.11.0）
+
+.新功能與支援
+* link:../use/manage-apps.html#define-apps["支援橫跨多個命名空間的應用程式"]
+* link:../use/manage-apps.html#define-apps["支援將叢集資源納入應用程式定義"]
+* link:../use/manage-remote-authentication.html["透過角色型存取控制（RBAC）整合、強化LDAP驗證"]
+* link:../get-started/requirements.html["新增對Kubernetes 1.25和Pod安全許可（PSA）的支援"]
+* link:../use/monitor-running-tasks.html["增強備份、還原及複製作業的進度報告功能"]
+
+
+.已知問題與限制
+* link:../release-notes/known-issues.html["此版本的已知問題"]
+* link:../release-notes/known-limitations.html["此版本的已知限制"]
+
 
 
 
@@ -23,9 +41,11 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 == 2022年8月10日（22.08.0）
 
+.詳細資料
+====
 .新功能與支援
 * link:../use/replicate_snapmirror.html["使用NetApp SnapMirror技術進行應用程式複寫"]
-* link:../use/manage-apps.html#manage-apps["改善應用程式管理工作流程"]
+* link:../use/manage-apps.html#define-apps["改善應用程式管理工作流程"]
 * link:../use/execution-hooks.html["增強的執行掛勾功能、讓您自行執行"]
 +
 
@@ -38,10 +58,10 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 
 .已知問題與限制
 * link:../release-notes/known-issues.html["此版本的已知問題"]
-* link:../release-notes/known-issues-ads.html["Astra Data Store和此Astra Control Center版本的已知問題"]
 * link:../release-notes/known-limitations.html["此版本的已知限制"]
 
 
+====
 
 
 == 2022年4月26日（22.04.0）
@@ -49,7 +69,6 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 .詳細資料
 ====
 .新功能與支援
-* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/setup_overview.html#add-a-storage-backend["Astra Control Center的Astra Data Store部署"]
 * https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["命名空間角色型存取控制（RBAC）"]
 * https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["支援Cloud Volumes ONTAP 功能"]
 * https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Astra Control Center的一般入侵能力"]
@@ -59,7 +78,6 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 
 .已知問題與限制
 * https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues.html["此版本的已知問題"]
-* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues-ads.html["Astra Data Store和此Astra Control Center版本的已知問題"]
 * https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["此版本的已知限制"]
 
 
@@ -75,7 +93,6 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/execution-hooks.html["執行掛勾"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html#supported-app-installation-methods["支援以命名空間範圍運算子部署的應用程式"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html["支援上游Kubernetes和Rancher"^]
-* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/setup_overview.html#add-a-storage-backend["Astra Data Store預覽後端管理與監控"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/upgrade-acc.html["Astra Control Center升級"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/get-started/acc_operatorhub_install.html["Red Hat作業系統集線器選項"^]
 
@@ -86,7 +103,6 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 
 .已知問題與限制
 * https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues.html["此版本的已知問題"^]
-* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues-ads.html["Astra Data Store預覽與此Astra Control Center版本的已知問題"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
@@ -116,6 +132,5 @@ Astra Control Center正式推出。
 
 * link:../release-notes/known-issues.html["此版本的已知問題"]
 * link:../release-notes/known-limitations.html["此版本的已知限制"]
-* https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store文件"]
 * link:../acc-earlier-versions.html["舊版Astra Control Center文件"]
 

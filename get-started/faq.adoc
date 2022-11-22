@@ -11,6 +11,7 @@ summary: 如果您只是想要快速回答問題、這個常見問題集就能�
 :imagesdir: ../media/
 
 
+[role="lead"]
 如果您只是想要快速回答問題、這個常見問題集就能幫上忙。
 
 
@@ -27,7 +28,7 @@ summary: 如果您只是想要快速回答問題、這個常見問題集就能�
 
 Astra Control Center使用本機驗證和每個環境的專屬URL。
 
-對於URL、請在瀏覽器中輸入您在安裝Astra Control Center時、於Astra_control_center_min.yaml自訂資源定義（CRD）檔案的SPEC.astraAddress欄位中所設定的完整網域名稱（FQDN）。電子郵件是您在Astra_control_center_min.yaml CRD的spec.email欄 位中設定的值。
+對於URL、請在瀏覽器中輸入您在安裝Astra Control Center時、於Astra_control_center.yaml自訂資源（CR）檔案的SPEC.astraAddress欄位中所設定的完整網域名稱（FQDN）。電子郵件是您在Astra_control_center.yaml CR的spec.email*欄位中設定的值。
 
 
 
@@ -39,9 +40,9 @@ Astra Control Center使用本機驗證和每個環境的專屬URL。
 
 *步驟*
 
-* 從左側導覽中、選取*帳戶*>*授權*。
-* 選擇*新增授權*。
-* 瀏覽至您下載的授權檔案、然後選取*「Add*（新增*）」。
+. 從左側導覽中、選取*帳戶*>*授權*。
+. 選擇*新增授權*。
+. 瀏覽至您下載的授權檔案、然後選取*「Add*（新增*）」。
 
 
 *我正在使用評估授權。我還能管理應用程式嗎？*
@@ -95,11 +96,7 @@ Astra Control不會部署應用程式。應用程式必須部署在Astra Control
 
 == 資料管理作業
 
-*我的帳戶中有我沒有建立的快照。他們來自何處？*
-
-在某些情況下、Astra Control會自動建立快照、做為備份、複製或還原程序的一部分。
-
-*我的應用程式使用數個PV。Astra Control是否會對所有這些PVCs執行快照和備份？*
+*我的應用程式使用數個PV。Astra Control是否會擷取這些PV的快照與備份？*
 
 是的。Astra Control在應用程式上執行的快照作業包括繫結至應用程式PVCS的所有PV快照。
 

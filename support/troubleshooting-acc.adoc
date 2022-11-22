@@ -11,6 +11,7 @@ summary: NetApp以多種方式支援Astra Control。我們全年無休提供豐�
 :imagesdir: ../media/support/
 
 
+[role="lead"]
 瞭解如何解決您可能遇到的一些常見問題。
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["NetApp Astra知識庫"^]

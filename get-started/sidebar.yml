@@ -2,6 +2,8 @@
 section: get-started
 title: 開始使用
 entries:
+- title: 深入瞭解Astra Control Center
+  url: "/get-started/intro.html"
 - title: Astra Control Center需求
   url: "/get-started/requirements.html"
 - title: Astra Control Center快速入門
@@ -12,24 +14,17 @@ entries:
   - title: 安裝Astra Control Center
     url: "/get-started/install_acc.html"
     entries:
-    - title: 瞭解Astra Control Center叢集的CR選項
+    - title: Astra Control Center叢集自訂資源選項
       url: "/get-started/acc_cluster_cr_options.html"
-    - title: 瞭解Pod安全性原則限制
-      url: "/get-started/understand-psp-restrictions.html"
     - title: 設定外部憑證管理程式
       url: "/get-started/cert-manager-prereqs.html"
   - title: 使用OpenShift作業系統集線器安裝Astra Control Center
     url: "/get-started/acc_operatorhub_install.html"
   - title: 安裝Astra Control Center搭配Cloud Volumes ONTAP 一套功能性儲存後端
     url: "/get-started/install_acc-cvo.html"
+  - title: 安裝後設定Astra Control Center
+    url: "/get-started/configure-after-install.html"
 - title: 設定Astra控制中心
   url: "/get-started/setup_overview.html"
-  entries:
-  - title: 新增叢集的必要條件
-    url: "/get-started/add-cluster-reqs.html"
-  - title: 新增自訂TLS憑證
-    url: "/get-started/add-custom-tls-certificate.html"
-  - title: 建立自訂Pod安全性原則
-    url: "/get-started/acc-create-podsecuritypolicy.html"
 - title: 常見問題集
   url: "/get-started/faq.html"

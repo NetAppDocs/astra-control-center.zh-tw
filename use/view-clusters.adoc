@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/view-clusters.html 
-keywords: view cluster, cluster storage, cluster overview 
-summary: 將叢集新增至Astra Control Center之後、即可檢視叢集的詳細資料、例如其位置、工作節點、持續磁碟區和儲存類別。 
+keywords: view cluster, edit storage class, storage class, cluster storage, cluster overview 
+summary: 將叢集新增至Astra Control Center之後、即可檢視叢集的詳細資料、例如其位置、工作節點、持續磁碟區和儲存類別。您也可以變更預設的儲存類別。 
 ---
-= 檢視叢集的健全狀況和詳細資料
+= 檢視叢集健全狀況並管理儲存類別
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,13 @@ summary: 將叢集新增至Astra Control Center之後、即可檢視叢集的詳
 
 
 [role="lead"]
-新增要由Astra Control Center管理的叢集之後、您可以檢視叢集的詳細資料、例如其位置、工作節點、持續磁碟區和儲存類別。
+新增要由Astra Control Center管理的叢集之後、您可以檢視叢集的詳細資料、例如其位置、工作節點、持續磁碟區和儲存類別。您也可以變更受管理叢集的預設儲存類別。
+
+
+
+== 檢視叢集健全狀況和詳細資料
+
+您可以檢視叢集的詳細資料、例如其位置、工作節點、持續磁碟區和儲存類別。
 
 .步驟
 . 在Astra Control Center UI中、選取* Clusters*。
@@ -32,3 +38,21 @@ NOTE: 如果叢集處於「移除」狀態、但叢集和網路連線狀況良�
 
 
 NOTE: 您也可以從Astra控制中心*儀表板*開始檢視叢集資訊。在*叢集*索引標籤的*資源摘要*下、您可以選取受管理的叢集、然後前往*叢集*頁面。進入「*叢集*」頁面之後、請依照上述步驟操作。
+
+
+
+== 變更預設儲存類別
+
+您可以變更叢集的預設儲存類別。當Astra Control管理叢集時、它會追蹤叢集的預設儲存類別。
+
+
+NOTE: 請勿使用kubectl命令變更儲存類別。請改用此程序。若使用KECBECVL、Astra Control將會回復變更。
+
+.步驟
+. 在Astra Control Center Web UI中、選取* Clusters*。
+. 在「*叢集*」頁面上、選取您要變更的叢集。
+. 選擇* Storage*（儲存設備）選項卡。
+. 選擇*儲存類別*類別。
+. 針對您要設為預設的儲存類別、選取「*動作*」功能表。
+. 選擇*設為預設*。
+

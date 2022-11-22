@@ -2,8 +2,6 @@
 section: concepts
 title: 概念
 entries:
-- title: 瞭解Astra Control
-  url: "/concepts/intro.html"
 - title: 架構與元件
   url: "/concepts/architecture.html"
 - title: 資料保護
@@ -16,3 +14,5 @@ entries:
   url: "/concepts/choose-class-and-size.html"
 - title: 使用者角色和命名空間
   url: "/concepts/user-roles-namespaces.html"
+- title: Pod安全性
+  url: "/concepts/understand-pod-security.html"

@@ -11,6 +11,7 @@ summary: 如果您不再需要Astra帳戶、您可以隨時關閉帳戶。
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 如果您不再需要Astra帳戶、您可以隨時關閉帳戶。
 
 .步驟

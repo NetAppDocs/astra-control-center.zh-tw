@@ -11,6 +11,7 @@ summary: 瞭解Astra Control Center中可用的資料保護類型、以及如何
 :imagesdir: ../media/concepts/
 
 
+[role="lead"]
 瞭解Astra Control Center中可用的資料保護類型、以及如何以最佳方式使用這些類型來保護應用程式。
 
 

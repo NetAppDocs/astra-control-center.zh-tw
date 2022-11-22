@@ -12,6 +12,7 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 :imagesdir: ../media/release-notes/
 
 
+[role="lead"]
 已知問題可識別可能導致您無法成功使用本產品版本的問題。
 
 下列已知問題會影響目前的版本：
@@ -29,8 +30,8 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 
 .其他問題
+*  clusters do not appear in NetApp Cloud Insights when connecting through a proxy
 *  data management operations fail with Internal Service Error (500) when Astra Trident is offline
-*  might fail with snapshot controller version 4.2.0
 
 
 
@@ -71,26 +72,31 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 
 
+== 透過Cloud Insights Proxy連線時、託管叢集不會出現在NetApp的整個過程中
+
+當Astra Control Center Cloud Insights 透過Proxy連線至NetApp功能時、受管理的叢集可能不會出現在Cloud Insights 畫面上。因應措施是在每個託管叢集上執行下列命令：
+
+[source, console]
+----
+kubectl get cm telegraf-conf -o yaml -n netapp-monitoring | sed '/\[\[outputs.http\]\]/c\    [[outputs.http]]\n    use_system_proxy = true' | kubectl replace -f -
+----
+[source, console]
+----
+kubectl get cm telegraf-conf-rs -o yaml -n netapp-monitoring | sed '/\[\[outputs.http\]\]/c\    [[outputs.http]]\n    use_system_proxy = true' | kubectl replace -f -
+----
+[source, console]
+----
+kubectl get pods -n netapp-monitoring --no-headers=true | grep 'telegraf-ds\|telegraf-rs' | awk '{print $1}' | xargs kubectl delete -n netapp-monitoring pod
+----
+
+
 == 當Astra Trident離線時、應用程式資料管理作業會因內部服務錯誤（500）而失敗
 
 如果應用程式叢集上的Astra Trident離線（並重新連線）、而且在嘗試應用程式資料管理時遇到500個內部服務錯誤、請重新啟動應用程式叢集中的所有Kubernetes節點、以還原功能。
 
 
 
-== Snapshot控制器4.2.0版的快照可能會失敗
-
-使用Kubernetes Snapshot-Controller（也稱為exter-snapshotter）4.2.0版搭配Kubernetes 1.20或1.21時、快照最終可能會開始失敗。若要避免這種情況發生、請使用不同的 https://kubernetes-csi.github.io/docs/snapshot-controller.html["支援的版本"^] Kubernetes版本1.20或1.21的外部快照功能（例如4.2.1版）。
-
-. 執行POST呼叫、將更新的Kbeconfig檔案新增至「/assignon」端點、並從回應本文擷取指派的「id」。
-. 使用適當的叢集ID從「/叢集」端點執行「PUT」呼叫、並將「credentialId」設定為上一步的「id」值。
-
-
-完成這些步驟後、與叢集相關的認證資料會更新、叢集應重新連線並將其狀態更新為「可用」。
-
-
-
 == 如需詳細資訊、請參閱
 
-* link:../release-notes/known-issues-ads.html["Astra Data Store預覽與此Astra Control Center版本的已知問題"]
 * link:../release-notes/known-limitations.html["已知限制"]
 

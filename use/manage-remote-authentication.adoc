@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: use/manage-remote-authentication.html 
+keywords: enable ldap authentication, disable, ldap, authentication, configure, manage 
+summary: 在Astra Control系統上管理LDAP驗證。 
+---
+= 管理遠端驗證
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+LDAP是存取分散式目錄資訊的業界標準傳輸協定、也是企業驗證的熱門選擇。您可以將Astra Control Center連線至LDAP伺服器、為選取的Astra Control使用者執行驗證。
+
+在高層級上、組態包括將Astra與LDAP整合、以及定義與LDAP定義對應的Astra Control使用者和群組。您可以使用Astra Control API或Web UI來設定LDAP驗證、以及LDAP使用者和群組。
+
+
+
+== 新增LDAPS驗證的憑證
+
+新增LDAP伺服器的私有TLS憑證、以便Astra Control Center在您使用LDAPS連線時、能夠與LDAP伺服器進行驗證。您只需要執行一次、或是安裝的憑證過期時。
+
+.步驟
+. 前往*帳戶*。
+. 選取*憑證*索引標籤。
+. 選取*「Add*」。
+. 上傳 `.pem` 將檔案內容從剪貼簿中歸檔或貼上。
+. 選取「*信任*」核取方塊。
+. 選取*新增憑證*。
+
+
+
+
+== 啟用遠端驗證
+
+您可以啟用LDAP驗證、並設定Astra Control與遠端LDAP伺服器之間的連線。
+
+如果您打算使用LDAPS、請確定LDAP伺服器的私有TLS憑證已安裝在Astra控制中心、以便Astra控制中心能夠與LDAP伺服器進行驗證。請參閱  a certificate for LDAPS authentication 以取得相關指示。
+
+.步驟
+. 前往*帳戶>連線*。
+. 在*遠端驗證*窗格中、選取組態功能表。
+. 選擇*連接*。
+. 輸入伺服器IP位址、連接埠及偏好的連線傳輸協定（LDAP或LDAPS）。
++
+
+NOTE: 最佳實務做法是在連接LDAP伺服器時使用LDAPS。您必須先在Astra Control Center中安裝LDAP伺服器的私有TLS憑證、才能連線至LDAPS。
+
+. 以電子郵件格式輸入服務帳戶認證（administrator@example.com）。Astra Control會在連線至LDAP伺服器時使用這些認證資料。
+. 在「*使用者相符*」區段中、輸入從LDAP伺服器擷取使用者資訊時要使用的基礎DN和適當的使用者搜尋篩選器。
+. 在「*群組比對*」區段中、輸入群組搜尋基礎DN和適當的自訂群組搜尋篩選器。
++
+
+NOTE: 請務必使用正確的基礎辨別名稱（DN）和適當的搜尋篩選器來搜尋*使用者比對*和*群組比對*。基礎DN會告知Astra Control在目錄樹狀結構的哪個層級開始搜尋、而搜尋篩選器則會限制Astra Control從目錄樹狀結構中搜尋的部分。
+
+. 選擇*提交*。
+
+
+「*遠端驗證*」窗格狀態會移至*「擱置中」*、並在建立與LDAP伺服器的連線時移至*「已連線」*。
+
+
+
+== 停用遠端驗證
+
+您可以暫時停用與LDAP伺服器的作用中連線。
+
+
+NOTE: 停用LDAP伺服器連線時、會儲存所有設定、並保留從該LDAP伺服器新增至Astra Control的所有遠端使用者和群組。您可以隨時重新連線至此LDAP伺服器。
+
+.步驟
+. 前往*帳戶>連線*。
+. 在*遠端驗證*窗格中、選取組態功能表。
+. 選擇*停用*。
+
+
+「*遠端驗證*」窗格狀態會移至「*停用*」。所有遠端驗證設定、遠端使用者和遠端群組都會保留下來、您可以隨時重新啟用連線。
+
+
+
+== 編輯遠端驗證設定
+
+如果您已停用LDAP伺服器的連線、或*遠端驗證*窗格處於「連線錯誤」狀態、您可以編輯組態設定。
+
+
+NOTE: 當「*遠端驗證*」窗格處於「已停用」狀態時、您無法編輯LDAP伺服器URL或IP位址。您需要  remote authentication 第一。
+
+.步驟
+. 前往*帳戶>連線*。
+. 在*遠端驗證*窗格中、選取組態功能表。
+. 選擇*編輯*。
+. 進行必要的變更、然後選取*編輯*。
+
+
+
+
+== 中斷遠端驗證
+
+您可以中斷與LDAP伺服器的連線、並從Astra Control移除組態設定。
+
+
+CAUTION: 當您中斷與LDAP伺服器的連線時、該LDAP伺服器的所有組態設定都會從Astra Control中移除、以及從該LDAP伺服器新增的任何遠端使用者和群組。
+
+.步驟
+. 前往*帳戶>連線*。
+. 在*遠端驗證*窗格中、選取組態功能表。
+. 選擇*中斷連線*。
+
+
+「*遠端驗證*」窗格狀態會移至「*中斷連線*」。遠端驗證設定、遠端使用者和遠端群組都會從Astra Control中移除。

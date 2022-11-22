@@ -11,12 +11,13 @@ summary: 如果叢集中已存在認證管理程式、您需要執行一些必�
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 如果Kubernetes叢集中已存在認證管理程式、您需要執行一些必要步驟、使Astra Control Center不會安裝自己的認證管理程式。
 
 .步驟
 . 確認您已安裝認證管理程式：
 +
-[source, sh]
+[source, console]
 ----
 kubectl get pods -A | grep 'cert-manager'
 ----
@@ -32,7 +33,7 @@ cert-manager   essential-cert-manager-webhook-56b76db9cc-fjqrq      1/1     Runn
 ----
 . 為astraAddress FQDN建立憑證/金鑰配對：
 +
-[source, sh]
+[source, console]
 ----
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt
 ----
@@ -49,7 +50,7 @@ writing new private key to 'tls.key'
 ----
 . 使用先前產生的檔案建立秘密：
 +
-[source, sh]
+[source, console]
 ----
 kubectl create secret tls selfsigned-tls --key tls.key --cert tls.crt -n <cert-manager-namespace>
 ----
@@ -75,7 +76,7 @@ spec:
     secretName: selfsigned-tls
 ----
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f ClusterIssuer.yaml
 ----
@@ -89,7 +90,7 @@ clusterissuer.cert-manager.io/astra-ca-clusterissuer created
 ----
 . 驗證ClusterIssuer是否已正確啟動。「準備就緒」必須為「真」、才能繼續進行：
 +
-[source, sh]
+[source, console]
 ----
 kubectl get ClusterIssuer
 ----

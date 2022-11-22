@@ -7,8 +7,5 @@ entries:
   url: "/release-notes/whats-new.html"
 - title: 已知問題
   url: "/release-notes/known-issues.html"
-  entries:
-  - title: Astra Data Store和此Astra Control Center版本的已知問題
-    url: "/release-notes/known-issues-ads.html"
 - title: 已知限制
   url: "/release-notes/known-limitations.html"

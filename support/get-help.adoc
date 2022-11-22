@@ -11,6 +11,7 @@ summary: NetApp以多種方式支援Astra Control。我們全年無休提供豐�
 :imagesdir: ../media/support/
 
 
+[role="lead"]
 NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和不和管道。您的Astra Control帳戶透過網路票證提供遠端技術支援。
 
 
@@ -37,7 +38,7 @@ IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得�
 
 == 啟用每日排程支援服務套件上傳至NetApp支援
 
-在Astra控制中心安裝期間、如果您在AutoSupport Astra控制中心自訂資源定義（CRD）檔案（「Astra _control_center_min.yaml」）中指定「註冊：true」作為「還原」、則會自動將每日支援服務組合上傳至 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
+在Astra Control Center安裝期間（如果您指定） `enrolled: true` 適用於 `autoSupport` 在Astra Control Center自訂資源（CR）檔案中 (`astra_control_center.yaml`）、每日支援服務組合會自動上傳至 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
 
 
 

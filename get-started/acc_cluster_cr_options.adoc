@@ -2,64 +2,35 @@
 sidebar: sidebar 
 permalink: get-started/acc_cluster_cr_options.html 
 keywords: astra cr, cluster cr, astra control center, how to configure, deploy 
-summary: 瞭解Astra Control Center叢集的CR選項、以在部署期間進行自訂組態。 
+summary: 如需部署期間的自訂組態、請參閱Astra Control Center叢集CR選項。 
 ---
-= 瞭解Astra Control Center叢集的CR選項
+= Astra Control Center叢集自訂資源選項
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 
 
-您可以使用下列Astra Control Center叢集CR選項、在部署期間建立自訂組態。
+[role="lead"]
+您可以使用下列Astra Control Center叢集自訂資源（CR）選項、在部署期間建立自訂組態。
 
 |===
 | 設定 | 類型 | 使用 | 價值範例 | 說明 
 
 
-| astraVersion | 字串 | 必要 | 1.5.2. | 要部署的適用版本。您將獲得一個具有對應版本的Helm儲存庫。 
+| 帳戶名稱 | 字串 | 必要 | 範例 | Astra Control Center帳戶名稱。只能有一個。 
 
 
 | astraAddress | 字串 | 必要 | astra.example.com | 定義如何在資料中心找到Astra。此IP位址和/或DNS A記錄必須在配置Astra Control Center之前建立。 
 
 
-| 帳戶名稱 | 字串 | 必要 | 範例 | Astra Control Center帳戶名稱。只能有一個。 
-
-
-| 電子郵件 | 字串 | 必要 | admin@example.com | 要新增為Astra第一位使用者的系統管理員使用者名稱。此電子郵件地址將由Astra Control根據事件保證通知。 
-
-
-| 名字 | 字串 | 必要 | SRE | 支援Astra的系統管理員名字。 
-
-
-| 姓氏 | 字串 | 必要 | 管理 | 支援Astra的系統管理員姓氏。 
-
-
-| storageClass | 字串 | 選用（這是預設值） | ONTAP金級 | 要用於PVCS的儲存類別。如果未設定、則會使用預設的儲存類別。 
-
-
-| Volume ReclaimPolicy | 未定義 | 選用 | 保留 | 回收要為持續磁碟區設定的原則。 
+| astraKubeConfigSecret | 字串 | 必要 | ACC-KECBEConnfig - cred | 如果存在此值且存在機密、則操作員將嘗試新增KubeConfig、以成為第一個受管理的叢集。 
 
 
 | astraResources2200 | 字串 | 必要 | 預設 | 適用的擴充選項適用於適用的適用範圍。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定。 
 
 
-| astraKubeConfigSecret | 字串 | 必要 | ACC-KECBEConnfig - cred | 如果存在此值且存在機密、則操作員將嘗試新增KubeConfig、以成為第一個受管理的叢集。 
-
-
-| 擷取類型 | 字串 | 選用 | 一般（這是預設值） | 應設定入侵Astra控制中心的類型。有效值為「一般」和「AccTraefik」。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定。 
-
-
-| 部署 | 布林值 | 選用 | 是（這是預設值） | 此選項可讓使用者停用VMware vSphere營運者的Astra外掛程式部署。 
-
-
-| 影像登錄 | 未定義 | 選用 |  | 裝載Astra應用程式映像、Astra Control Center運算子和Astra Control Center Helm儲存庫的容器映像登錄。 
-
-
-| imageRegistry.name | 字串 | 如果您使用image登 錄、則為必要項目 | example.registry.com/astra | 映像登錄的名稱。請勿以傳輸協定為前置詞。 
-
-
-| imageRegistry.secret | 字串 | 如果您使用image登 錄、則為必要項目 | Astra登錄建立 | 用來驗證映像登錄的Kubernetes機密名稱。 
+| astraVersion | 字串 | 必要 | 1.5.2. | 要部署的適用版本。您將獲得一個具有對應版本的Helm儲存庫。 
 
 
 | AutoSupport | 未定義 | 必要 |  | 表示NetApp主動式支援應用程式NetApp Active IQ 的參與狀態。需要網際網路連線（連接埠4442）、所有支援資料都會匿名。 
@@ -71,25 +42,46 @@ summary: 瞭解Astra Control Center叢集的CR選項、以在部署期間進行�
 | AutoSupport URL | 字串 | 可選、但必須選擇「已註冊」或「URL」欄位 | https://support.netapp.com/asupprod/post/1.0/postAsup[] | URL決定匿名資料的傳送位置。 
 
 
+| 部署 | 布林值 | 選用 | 是（這是預設值） | 可讓使用者停用外掛程式操作員部署的選項。 
+
+
 | 客戶需求日 | 未定義 | 未定義 |  | Astra Control Center應如何處理客戶需求日的選項。 
-
-
-| CRDs.externalTraefik | 布林值 | 選用 | true（此值為預設值） | 依預設、Astra Control Center會安裝所需的Traefik客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。 
 
 
 | CRDs.externalCertManager | 布林值 | 選用 | true（此值為預設值） | 依預設、Astra Control Center會安裝必要的認證管理程式客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。 
 
 
+| CRDs.externalTraefik | 布林值 | 選用 | true（此值為預設值） | 依預設、Astra Control Center會安裝所需的Traefik客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。 
+
+
 | 客戶需求日：升級 | 布林值 | 選用 | 未定義 | 決定在Astra控制中心升級時、是否應升級CRD。 
 
 
-| MTLS |  |  |  | Astra Control Center如何實作服務以服務叢集中的MTLS的選項。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定 
+| 電子郵件 | 字串 | 必要 | admin@example.com | 要新增為Astra第一位使用者的系統管理員使用者名稱。此電子郵件地址將由Astra Control根據事件保證通知。 
 
 
-| MTLS.enabled | 布林值 | 選用 | true（此值為預設值） | 依預設、Astra Control Center會使用MTLS進行服務對服務通訊。改用服務網格來加密服務對服務通訊時、應停用此選項。 
+| 名字 | 字串 | 必要 | SRE | 支援Astra的系統管理員名字。 
 
 
-| MTLS.CertDuration | 字串 | 選用 | 2140h（此值為預設持續時間） | 發行服務TLS憑證時、作為憑證生命週期的持續時間（以小時為單位）。此設定僅在「mTLS啟用」設定為「true」時才有效。 
+| 影像登錄 | 未定義 | 選用 |  | 裝載Astra應用程式映像、Astra Control Center運算子和Astra Control Center Helm儲存庫的容器映像登錄。 
+
+
+| imageRegistry.name | 字串 | 如果您使用image登 錄、則為必要項目 | example.registry.com/astra | 映像登錄的名稱。請勿以傳輸協定為前置詞。 
+
+
+| imageRegistry.secret | 字串 | 如果您使用需要機密的image登 錄、則為必要項目 | Astra登錄建立 | 用來驗證映像登錄的Kubernetes機密名稱。 
+
+
+| 擷取類型 | 字串 | 選用 | 一般（這是預設值） | 應設定入侵Astra控制中心的類型。有效值為「一般」和「AccTraefik」。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定。 
+
+
+| 姓氏 | 字串 | 必要 | 管理 | 支援Astra的系統管理員姓氏。 
+
+
+| storageClass | 字串 | 選用（這是預設值） | ONTAP金級 | 要用於PVCS的儲存類別。如果未設定、則會使用預設的儲存類別。 
+
+
+| Volume ReclaimPolicy | 未定義 | 選用 | 保留 | 回收要為持續磁碟區設定的原則。 
 |===
 
 
@@ -103,7 +95,7 @@ summary: 瞭解Astra Control Center叢集的CR選項、以在部署期間進行�
 
 依預設、Astra Control Center會針對Astra內的大部分元件設定資源要求來進行部署。此組態可讓Astra Control Center軟體堆疊在應用程式負載和擴充性增加的環境中、發揮更佳效能。
 
-不過、在使用較小開發或測試叢集的情況下、可能會將「」字段「」字段「」設為「關」。這會停用資源要求、並允許在較小的叢集上部署。
+不過、在使用較小開發或測試叢集的案例中、則是使用「CR」欄位 `AstraResourcesScalar` 可能設為 `Off`。這會停用資源要求、並允許在較小的叢集上部署。
 
 
 
@@ -142,28 +134,4 @@ spec:
                 number: 80
           pathType: ImplementationSpecific
 ----
-
-WARNING: 使用CR中的MTLS.enableding設定停用MTLS時、您必須使用「擷取類型：一般」。
-
 當「擷取類型」設定為「AccTraefik」時、Astra Control Center會將其Traefik閘道部署為Kubernetes負載平衡器類型服務。使用者需要為Astra Control Center提供外部負載平衡器（例如MetalLB）、才能取得外部IP。
-
-
-
-=== MTLS
-
-在CR中使用的設定可決定應用程式內部通訊的安全性。使用者必須事先知道他們是否會使用服務網格、這點非常重要。
-
-* 「enabled=true」：啟用此設定時、Astra會部署內部服務對服務通訊網路、以保護應用程式內的所有流量。
-
-
-
-WARNING: 請勿在服務網格中涵蓋Astra Control Center、但此設定為「真」。
-
-* 「enabled=假」：停用此設定時、Astra Control Center將無法保護內部流量、您必須使用服務網格來獨立保護Astra命名空間。
-
-
-
-WARNING: 使用CR中的MTLS.enableding設定停用MTLS時、您必須使用「擷取類型：一般」。
-
-
-WARNING: 如果未使用服務網格、且此設定已停用、則內部通訊將不安全。

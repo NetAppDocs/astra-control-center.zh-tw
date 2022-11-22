@@ -11,6 +11,7 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。如果Astra Control Center連接Cloud Insights 到VMware、您可以監控儲存容量和健全狀況詳細資料、包括效能。
 
 如需如何使用Astra Control API管理儲存後端的指示、請參閱 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation和API資訊"^]。
@@ -20,11 +21,7 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 * link:../get-started/setup_overview.html#add-a-storage-backend["新增儲存後端"]
 *  storage backend details
 *  a storage backend
-*  an Astra Data Store storage backend license
-*  an Astra Data Store storage backend
 *  a storage backend
-*  nodes to a storage backend cluster
-*  nodes from a storage backend cluster
 
 
 
@@ -33,29 +30,13 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 
 您可以從儀表板或後端選項檢視儲存後端資訊。
 
-在「儲存後端詳細資料」頁面的Astra Data Store中、您可以看到下列資訊：
-
-* Astra Data Store叢集
-+
-** 處理量、IOPS及延遲
-** 已用容量與總容量比較
-
-
-* 針對每個Astra Data Store叢集Volume
-+
-** 已用容量與總容量比較
-** 處理量
-
-
-
-
 
 
 === 從儀表板檢視儲存後端詳細資料
 
 .步驟
 . 從左側導覽中選取*儀表板*。
-. 請檢閱顯示狀態的儲存後端區段：
+. 檢閱儀表板的儲存後端面板、其中會顯示狀態：
 +
 ** *不健全*：儲存設備未處於最佳狀態。這可能是因為延遲問題、或是應用程式因為容器問題而降級。
 ** *一切正常*：儲存設備已經過管理、並處於最佳狀態。
@@ -105,12 +86,9 @@ image:../use/acc_backends_ci_connection2.png["後端頁面的快照"]
 
 您可以移除不再使用的儲存後端。您可能會想要這麼做、讓您的組態保持簡單且最新狀態。
 
-
-TIP: 如果您要移除Astra Data Store後端、則vCenter不得建立該後端。
-
 .您需要的是 #8217 ；需要的是什麼
 * 確保儲存後端未受管理。
-* 確保儲存後端沒有任何與Astra Data Store叢集相關的磁碟區。
+* 確保儲存後端沒有任何與叢集相關的磁碟區。
 
 
 .步驟
@@ -132,133 +110,6 @@ TIP: 如果您要移除Astra Data Store後端、則vCenter不得建立該後端�
 .. 選擇*是、移除儲存後端*。
 
 
-
-
-
-
-== 更新Astra Data Store儲存後端授權
-
-您可以更新Astra Data Store儲存後端的授權、以支援更大的部署或增強功能。
-
-.您需要的是 #8217 ；需要的是什麼
-* 已部署並管理的Astra Data Store儲存後端
-* Astra Data Store授權檔案（請聯絡您的NetApp銷售代表以購買Astra Data Store授權）
-
-
-.步驟
-. 從左側導覽中選取*後端*。
-. 選取儲存後端的名稱。
-. 在*基本資訊*下、您可以看到安裝的授權類型。
-+
-如果您將游標暫留在授權資訊上、則會出現一個快顯視窗、內含更多資訊、例如過期和權利資訊。
-
-. 在「*授權*」下、選取授權名稱旁的編輯圖示。
-. 在「*更新授權*」頁面中、執行下列其中一項：
-+
-|===
-| 授權狀態 | 行動 
-
-
-| Astra Data Store至少新增一項授權。  a| 
-從清單中選取授權。
-
-
-
-| Astra Data Store未新增授權。  a| 
-.. 選取*「Add*（新增*）」按鈕。
-.. 選取要上傳的授權檔案。
-.. 選擇*「Add*」（新增*）上傳授權檔案。
-
-
-|===
-. 選擇*更新*。
-
-
-
-
-== 升級Astra Data Store儲存後端
-
-您可以從Astra Control Center升級Astra Data Store後端。若要這麼做、您必須先上傳升級套件；Astra Control Center將使用此升級套件來升級Astra Data Store。
-
-.您需要的是 #8217 ；需要的是什麼
-* 受管理的Astra Data Store儲存後端
-* 上傳的Astra Data Store升級套件（請參閱 link:manage-packages-acc.html["管理軟體套件"]）
-
-
-.步驟
-. 選擇*後端*。
-. 從清單中選擇Astra Data Store儲存後端、然後在「* Actions *」（*動作*）欄中選取對應的功能表。
-. 選擇*升級*。
-. 從清單中選取升級版本。
-+
-如果儲存庫中有多個不同版本的升級套件、您可以開啟下拉式清單來選取所需的版本。
-
-. 選擇*下一步*。
-. 選擇*開始升級*。
-
-
-「*後端*」頁面會在「*狀態*」欄中顯示「*升級*」狀態、直到升級完成為止。
-
-
-
-== 將節點新增至儲存後端叢集
-
-您可以將節點新增至Astra Data Store叢集、最多可新增至Astra Data Store安裝的授權類型所支援的節點數。
-
-.您需要的是 #8217 ；需要的是什麼
-* 已部署且獲得授權的Astra Data Store儲存後端
-* 您已在Astra控制中心新增Astra Data Store軟體套件
-* 一或多個新節點、以新增至叢集
-
-
-.步驟
-. 從左側導覽中選取*後端*。
-. 選取儲存後端的名稱。
-. 在「基本資訊」下、您可以看到此儲存後端叢集中的節點數目。
-. 在*節點*下、選取節點數旁的編輯圖示。
-. 在「*新增節點*」頁面中、輸入新節點的相關資訊：
-+
-.. 為每個節點指派節點標籤。
-.. 執行下列其中一項：
-+
-*** 如果您想要Astra Data Store根據授權一律使用最大可用節點數、請啟用「*永遠使用最多允許的節點數*」核取方塊。
-*** 如果您不希望Astra Data Store永遠使用最大可用節點數、請選取所需使用的總節點數。
-
-
-.. 如果您部署Astra Data Store並啟用Protection Domain、請將新節點指派給Protection Domain。
-
-
-. 選擇*下一步*。
-. 輸入每個新節點的IP位址和網路資訊。為單一新節點輸入單一IP位址、或為多個新節點輸入IP位址集區。
-+
-如果Astra Data Store可以使用部署期間所設定的IP位址、您就不需要輸入任何IP位址資訊。
-
-. 選擇*下一步*。
-. 檢閱新節點的組態。
-. 選取*新增節點*。
-
-
-
-
-== 從儲存後端叢集移除節點
-
-您可以從Astra Data Store叢集移除節點。這些節點可以是健全或故障的節點。
-
-從Astra Data Store叢集移除節點、可將其資料移至叢集中的其他節點、並從Astra Data Store移除節點。
-
-此程序需要下列條件：
-
-* 其他節點必須有足夠的可用空間才能接收資料。
-* 叢集中必須有4個以上的節點。
-
-
-.步驟
-. 從左側導覽中選取*後端*。
-. 選取儲存後端的名稱。
-. 選取*節點*索引標籤。
-. 從「動作」功能表中選取*「移除」*。
-. 輸入「移除」以確認刪除。
-. 選擇*是、移除節點*。
 
 
 

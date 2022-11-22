@@ -11,6 +11,7 @@ summary: 瞭解Astra Control Center中可用的資料保護類型、以及如何
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 您可以使用Astra Control Center為應用程式建立備份、複製、快照及保護原則。備份應用程式有助於您的服務和相關資料盡可能可用；在災難案例中、從備份還原可確保應用程式及其相關資料的完整還原、並將中斷時間降至最低。備份、複製和快照有助於防範勒索軟體、意外資料遺失和環境災難等常見威脅。 link:../concepts/data-protection.html["瞭解Astra Control Center中可用的資料保護類型、以及使用時間"]。
 
 此外、您也可以將應用程式複寫到遠端叢集、以便做好災難恢復的準備。
