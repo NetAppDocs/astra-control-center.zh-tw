@@ -21,7 +21,7 @@ summary: 若要升級Astra Control Center、您必須依照所述步驟下載套
 +
 [listing]
 ----
-../../trident-installer/tridentctl -n trident version
+kubectl get tridentversion -n trident
 ----
 +
 請參閱 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html#determine-the-version-to-upgrade-to["Astra Trident文件"] 升級舊版。
