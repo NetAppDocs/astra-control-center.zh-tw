@@ -8,8 +8,8 @@ entries:
   url: "/concepts/data-protection.html"
 - title: 授權
   url: "/concepts/licensing.html"
-- title: 瞭解應用程式管理
-  url: "/learn/app-management.html"
+- title: 應用程式管理
+  url: "/concepts/app-management.html"
 - title: 儲存類別和PV大小
   url: "/concepts/choose-class-and-size.html"
 - title: 使用者角色和命名空間

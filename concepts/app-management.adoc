@@ -4,7 +4,7 @@ permalink: concepts/app-management.html
 keywords: app, labels, kubernetes labels, kubernetes resources, pods, define app 
 summary: 說明Astra Control中的託管應用程式類型。 
 ---
-= 瞭解應用程式管理
+= 應用程式管理
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

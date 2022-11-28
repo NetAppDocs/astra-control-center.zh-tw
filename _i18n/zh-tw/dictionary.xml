@@ -1414,7 +1414,6 @@
   <block id="878d04283184abd2b8ea5f813a053078" category="list-text">不再是不一樣的。ONTAP AFF FAS作為儲存軟體與硬體平台ONTAP 、支援核心儲存服務、支援多種儲存存取傳輸協定、以及快照與鏡射等儲存管理功能。</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">說明Astra Control中的託管應用程式類型。</block>
-  <block id="0aec310f3808bce2063a2292e6052cf8" category="doc">瞭解應用程式管理</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">當Astra Control探索叢集時、這些叢集上的應用程式將無法管理、直到您選擇要管理的方式為止。Astra Control中的託管應用程式可以是下列任一項：</block>
   <block id="3757d3597962f660c54cb3f9ed5ba251" category="list-text">命名空間、包括該命名空間中的所有資源</block>
   <block id="99185f9c0e1b271b9c7c1684898a4b91" category="inline-image-macro">顯示Astra管理命名空間中所有資源的概念性映像。</block>
@@ -2598,4 +2597,5 @@
   <block id="fcd1b815fb4ca6cac38239194b4c8a5f" category="admonition">請勿使用kubectl命令變更儲存類別。請改用此程序。若使用KECBECVL、Astra Control將會回復變更。</block>
   <block id="b42200f7280deb01c16bf89a68f5395d" category="sidebar">使用Astra Control REST API</block>
   <block id="f789b438cbc1e82cd52918fc029eeb85" category="sidebar">利用Astra Control REST API實現自動化</block>
+  <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">應用程式管理</block>
 </blocks>
