@@ -18,12 +18,12 @@ summary: 視您的環境而定、安裝Astra Control Center之後可能需要額
 
 == 移除資源限制
 
-某些環境使用資源配額和限制範圍物件、以防止命名空間中的資源消耗叢集上的所有可用CPU和記憶體。Astra Control Center並未設定上限、因此不符合這些資源。您需要將它們從您計畫安裝Astra Control Center的命名空間中移除。
+某些環境使用資源配額和限制範圍物件、以防止命名空間中的資源消耗叢集上的所有可用CPU和記憶體。Astra Control Center並未設定上限、因此不符合這些資源。如果您的環境是以這種方式設定、則需要從您打算安裝Astra Control Center的命名空間中移除這些資源。
 
 您可以使用下列步驟擷取及移除這些配額和限制。在這些範例中、命令輸出會在命令之後立即顯示。
 
 .步驟
-. 在NetApp-acc命名空間中取得資源配額：
+. 取得中的資源配額 `netapp-acc` 命名空間：
 +
 [source, console]
 ----
@@ -98,7 +98,7 @@ kubectl get networkpolicy -n netapp-acc
 ----
 kubectl delete networkpolicy <OBJECT_NAME> -n netapp-acc
 ----
-. 套用下列資源檔案、以設定acc型VP-network-policy物件、讓Astra外掛程式服務能夠向Astra Control Center服務提出要求。將方括弧<>中的資訊取代為您環境中的資訊：
+. 套用下列資源檔案來設定 `acc-avp-network-policy` 允許Astra外掛程式服務向Astra Control Center服務提出要求的物件。將方括弧<>中的資訊取代為您環境中的資訊：
 +
 [source, yaml]
 ----
@@ -117,7 +117,7 @@ spec:
             matchLabels:
               kubernetes.io/metadata.name: <PLUGIN_NAMESPACE_NAME> # REPLACE THIS WITH THE ASTRA PLUGIN NAMESPACE NAME
 ----
-. 套用下列資源檔案、以設定acc操作者網路原則物件、讓Astra Control Center操作者能夠與Astra Control Center服務通訊。將方括弧<>中的資訊取代為您環境中的資訊：
+. 套用下列資源檔案來設定 `acc-operator-network-policy` 此物件可讓Astra Control Center營運者與Astra Control Center服務進行通訊。將方括弧<>中的資訊取代為您環境中的資訊：
 +
 [source, yaml]
 ----

@@ -163,6 +163,7 @@ NOTE: 在此程序中、您不需要透過KECBECVL存取執行Astra Control Cent
 
 
 .步驟
+[%collapsible]
 ====
 . 建立服務帳戶：
 +

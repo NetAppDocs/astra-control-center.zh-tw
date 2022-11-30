@@ -1594,20 +1594,14 @@
   <block id="b74602b149e39af1209754432fd537e3" category="inline-link-macro">使用SnapMirror技術將應用程式複寫到遠端系統</block>
   <block id="52913e7a98da14ff1b85bfe6ade5baae" category="section-title">由Astra Control Center安裝的PSPS</block>
   <block id="441bc72de0516ac10b182a0da6d92ddc" category="section-title">在安裝期間建立PSPS</block>
-  <block id="6ac86492817221afc942611e2f6c8abf" category="paragraph">在Astra Control Center安裝期間、Astra Control Center操作員會安裝自訂的Pod安全性原則、角色物件和角色繫結物件、以支援Astra Control Center命名空間中的Astra Control Center服務部署。</block>
   <block id="fa8501fe06bb26b6d228be2795ca7ab7" category="paragraph">新原則和物件具有下列屬性：</block>
   <block id="f489543943b835018355a7f98551ed7e" category="section-title">在備份作業期間建立PSPS</block>
-  <block id="a7dfa85c57b2c6c0c2e52580bd02d6ec" category="paragraph">在備份作業期間、Astra Control Center會建立動態pod安全性原則、ClusterRole物件和角色繫結物件。這些支援在個別命名空間中執行的備份程序。</block>
   <block id="0606641f2b729119d7709942743b8888" category="section-title">叢集管理期間建立的PSPS</block>
-  <block id="f9166e5417ebbd99ca4b2c5edf0fb6db" category="paragraph">當您管理叢集時、Astra Control Center會在託管叢集中安裝NetApp監控操作員。此運算子會建立一個Pod安全性原則、叢集角色物件和角色繫結物件、以便在Astra Control Center命名空間中部署遙測服務。</block>
   <block id="49df4bd07f95849b3ea34b77bd1bba1b" category="section-title">啟用命名空間之間的網路通訊</block>
   <block id="a67a954c56c3691d13b3a4dece634155" category="list-text">刪除Astra Control Center命名空間中的任何網路原則資源：</block>
   <block id="dd7e0c99bff2ac5fe93a18d86bfab80d" category="list-text">對於上述命令傳回的每個網路原則物件、請使用下列命令加以刪除。以傳回物件的名稱取代&lt;object_name&gt;：</block>
-  <block id="16fbef2d47b7b92802ad4a169843456c" category="list-text">套用下列資源檔案、以設定acc操作者網路原則物件、讓Astra Control Center操作者能夠與Astra Control Center服務通訊。將方括弧&lt;&gt;中的資訊取代為您環境中的資訊：</block>
   <block id="e562349c27811f1520b3c670e513cda3" category="section-title">移除資源限制</block>
-  <block id="3da9e55347d543fd8eb6580f19aa2ecc" category="paragraph">某些環境使用資源配額和限制範圍物件、以防止命名空間中的資源消耗叢集上的所有可用CPU和記憶體。Astra Control Center並未設定上限、因此不符合這些資源。您需要將它們從您計畫安裝Astra Control Center的命名空間中移除。</block>
   <block id="66abbc76b1b539a19eab77ac5f290859" category="paragraph">您可以使用下列步驟擷取及移除這些配額和限制。在這些範例中、命令輸出會在命令之後立即顯示。</block>
-  <block id="fc51a67477fe6b0fafade7d186207e70" category="list-text">在NetApp-acc命名空間中取得資源配額：</block>
   <block id="6c999f1f4bd422b4305a76a527b7e862" category="list-text">依名稱刪除所有資源配額：</block>
   <block id="e67c35f02c9b82908b17e97b897aefe7" category="list-text">取得NetApp-acc命名空間中的限制範圍：</block>
   <block id="091880150353e9b5462ebfe9e5007deb" category="list-text">依名稱刪除限制範圍：</block>
@@ -2118,7 +2112,6 @@
   <block id="c9f3abefb4636a9fe741f546da8ebc6a" category="summary">視您的環境而定、安裝Astra Control Center之後可能需要額外的組態。</block>
   <block id="36ba1b7ac69684383073b716c78b3168" category="doc">安裝後設定Astra Control Center</block>
   <block id="adef327cbb3a8e19d7fe6ce3a8f078b6" category="paragraph">有些環境使用網路原則架構來限制命名空間之間的流量。Astra Control Center運算子和Astra Control Center位於不同的命名空間中。這些不同命名空間中的服務必須能夠彼此通訊。若要啟用此通訊、請遵循下列步驟。</block>
-  <block id="ede8487245cf1dada039c1f046b17734" category="list-text">套用下列資源檔案、以設定acc型VP-network-policy物件、讓Astra外掛程式服務能夠向Astra Control Center服務提出要求。將方括弧&lt;&gt;中的資訊取代為您環境中的資訊：</block>
   <block id="4fced57ef685fd313b21b67b6ecc577d" category="paragraph">Astra Control Center預設使用自我簽署的TLS憑證來處理入站控制器流量（僅適用於特定組態）、以及使用網頁瀏覽器進行Web UI驗證。您可以移除現有的自我簽署TLS憑證、並以由憑證授權單位（CA）簽署的TLS憑證取代。</block>
   <block id="0925ccf0721e0dd8122d0ab7633e6caf" category="paragraph">預設的自我簽署憑證可用於兩種類型的連線：</block>
   <block id="de5aaae7c07c37e434bd1136307a8d14" category="list-text">HTTPS連線至Astra Control Center網路UI</block>
@@ -2598,4 +2591,11 @@
   <block id="b42200f7280deb01c16bf89a68f5395d" category="sidebar">使用Astra Control REST API</block>
   <block id="f789b438cbc1e82cd52918fc029eeb85" category="sidebar">利用Astra Control REST API實現自動化</block>
   <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">應用程式管理</block>
+  <block id="27042a183bb69f835a160266dc686d7e" category="paragraph">某些環境使用資源配額和限制範圍物件、以防止命名空間中的資源消耗叢集上的所有可用CPU和記憶體。Astra Control Center並未設定上限、因此不符合這些資源。如果您的環境是以這種方式設定、則需要從您打算安裝Astra Control Center的命名空間中移除這些資源。</block>
+  <block id="3f62933ae548cb8f2c99d3836384cf69" category="list-text">取得中的資源配額<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> 命名空間：</block>
+  <block id="75737555f299b5cf07ceed034f1ff8b6" category="list-text">套用下列資源檔案來設定<block ref="5cb8f4cd498c1f67715d95747bfe9d39" prefix=" " category="inline-code"></block> 允許Astra外掛程式服務向Astra Control Center服務提出要求的物件。將方括弧&lt;&gt;中的資訊取代為您環境中的資訊：</block>
+  <block id="faaefdbaf8391a432c7a74564eda522f" category="list-text">套用下列資源檔案來設定<block ref="e2fb7408f897e481d4b7e94f3840f27c" prefix=" " category="inline-code"></block> 此物件可讓Astra Control Center營運者與Astra Control Center服務進行通訊。將方括弧&lt;&gt;中的資訊取代為您環境中的資訊：</block>
+  <block id="b8d4d634b190031290c70773522846be" category="paragraph">在Astra Control Center安裝期間、Astra Control Center營運者會安裝自訂的Pod安全性原則A<block ref="bbbabdbe1b262f75d99d62880b953be1" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 用於支援Astra Control Center命名空間中Astra Control Center服務部署的物件。</block>
+  <block id="8513cb080cab78ccf96de84f5f78e0bb" category="paragraph">在備份作業期間、Astra Control Center會建立動態Pod安全性原則<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 物件：這些支援在個別命名空間中執行的備份程序。</block>
+  <block id="be8388c8f6217d1c42721f925d1fd7a9" category="paragraph">當您管理叢集時、Astra Control Center會在託管叢集中安裝NetApp監控操作員。這位營運者會建立一個Pod安全性原則、a<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 在Astra Control Center命名空間中部署遙測服務的物件。</block>
 </blocks>

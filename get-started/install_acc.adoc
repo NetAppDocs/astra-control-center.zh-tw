@@ -15,6 +15,7 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 若要安裝Astra Control Center、請從NetApp 支援網站 下列網址下載安裝套件、並執行下列步驟。您可以使用此程序、在連線網際網路或無線環境中安裝Astra Control Center。
 
 .其他安裝程序
+[%collapsible]
 ====
 * *使用RedHat OpenShift操作員中樞*安裝：請使用此功能 link:../get-started/acc_operatorhub_install.html["替代程序"] 使用作業系統集線器在OpenShift上安裝Astra Control Center。
 * *以Cloud Volumes ONTAP 支援功能的方式在公有雲上安裝*：使用 link:../get-started/install_acc-cvo.html["這些程序"] 若要在Amazon Web Services（AWS）、Google Cloud Platform（GCP）或Microsoft Azure中安裝Astra Control Center、並提供Cloud Volumes ONTAP 一套支援整合式儲存後端的功能。
@@ -550,6 +551,7 @@ kubectl get pods -n [netapp-acc or custom namespace]
 
 +
 .回應範例
+[%collapsible]
 ====
 [listing, subs="+quotes"]
 ----

@@ -38,7 +38,7 @@ pod-security.kubernetes.io/enforce: privileged
 
 === 在安裝期間建立PSPS
 
-在Astra Control Center安裝期間、Astra Control Center操作員會安裝自訂的Pod安全性原則、角色物件和角色繫結物件、以支援Astra Control Center命名空間中的Astra Control Center服務部署。
+在Astra Control Center安裝期間、Astra Control Center營運者會安裝自訂的Pod安全性原則A `Role` 物件和 `RoleBinding` 用於支援Astra Control Center命名空間中Astra Control Center服務部署的物件。
 
 新原則和物件具有下列屬性：
 
@@ -63,7 +63,7 @@ netapp-astra-deployment-rb               Role/netapp-astra-deployment-role      
 
 === 在備份作業期間建立PSPS
 
-在備份作業期間、Astra Control Center會建立動態pod安全性原則、ClusterRole物件和角色繫結物件。這些支援在個別命名空間中執行的備份程序。
+在備份作業期間、Astra Control Center會建立動態Pod安全性原則 `ClusterRole` 物件和 `RoleBinding` 物件：這些支援在個別命名空間中執行的備份程序。
 
 新原則和物件具有下列屬性：
 
@@ -88,7 +88,7 @@ netapp-astra-backup   Role/netapp-astra-backup   62s
 
 === 叢集管理期間建立的PSPS
 
-當您管理叢集時、Astra Control Center會在託管叢集中安裝NetApp監控操作員。此運算子會建立一個Pod安全性原則、叢集角色物件和角色繫結物件、以便在Astra Control Center命名空間中部署遙測服務。
+當您管理叢集時、Astra Control Center會在託管叢集中安裝NetApp監控操作員。這位營運者會建立一個Pod安全性原則、a `ClusterRole` 物件和 `RoleBinding` 在Astra Control Center命名空間中部署遙測服務的物件。
 
 新原則和物件具有下列屬性：
 
