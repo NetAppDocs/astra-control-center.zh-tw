@@ -19,9 +19,9 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 您可以完成下列與管理儲存後端相關的工作：
 
 * link:../get-started/setup_overview.html#add-a-storage-backend["新增儲存後端"]
-*  storage backend details
-*  a storage backend
-*  a storage backend
+* <<檢視儲存後端詳細資料>>
+* <<取消管理儲存後端>>
+* <<移除儲存後端>>
 
 
 
@@ -86,7 +86,7 @@ image:../use/acc_backends_ci_connection2.png["後端頁面的快照"]
 
 您可以移除不再使用的儲存後端。您可能會想要這麼做、讓您的組態保持簡單且最新狀態。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 確保儲存後端未受管理。
 * 確保儲存後端沒有任何與叢集相關的磁碟區。
 

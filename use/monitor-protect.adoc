@@ -37,6 +37,7 @@ image:proxy-connect.png["顯示「Connect（連線）」選項以啟用Proxy連�
 . 選擇*連接*。
 
 
+.結果
 如果您輸入的代理資訊已儲存、則「*帳戶*>*連線*」頁面的「* HTTP Proxy*」區段會指出其已連線、並顯示伺服器名稱。
 
 image:proxy-new.png["顯示已成功連線的Proxy伺服器。"]
@@ -81,7 +82,7 @@ image:proxy-new.png["顯示已成功連線的Proxy伺服器。"]
 
 NOTE: 啟用Cloud Insights 完「支援不中斷連線」後、您可以在*後端*頁面上檢視處理量資訊、Cloud Insights 並在選取儲存後端後端後、從此處連線至「支援不中斷連線」。您也可以在「叢集」區段的*儀表板*上找到相關資訊、也可以從Cloud Insights 這裡連線至。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 具有*管理*/*擁有者*權限的Astra Control Center帳戶。
 * 有效的Astra Control Center授權。
 * 如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、則為Proxy伺服器。
@@ -196,7 +197,7 @@ image:fluentbit.png["顯示從Astra到Fluentd的事件記錄概念圖。"]
 
 NOTE: 只有來自託管叢集的事件記錄會轉送至Fluentd。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 具有*管理*/*擁有者*權限的Astra Control Center帳戶。
 * Astra Control Center安裝並在Kubernetes叢集上執行。
 
@@ -215,6 +216,7 @@ image:connect-fluentd.png["顯示使用者介面畫面、以啟用與Fluentd的�
 . 選擇*連接*。
 
 
+.結果
 如果您為Fluentd伺服器輸入的詳細資料已儲存、則「*帳戶*>*連線*」頁面的「*變動*」區段會指出該資料已連線。現在您可以造訪您所連線的Fluentd伺服器、並檢視事件記錄。
 
 如果連線因為某種原因而失敗、狀態會顯示*失敗*。您可以在UI右上角的*通知*下找到失敗的原因。

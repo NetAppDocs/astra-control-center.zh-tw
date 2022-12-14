@@ -44,10 +44,10 @@ NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商�
 您可以執行與管理儲存庫相關的工作：
 
 * link:../get-started/setup_overview.html#add-a-bucket["新增儲存庫"]
-*  a bucket
-*  the default bucket
-*  or remove bucket credentials
-*  a bucket
+* <<編輯儲存庫>>
+* <<設定預設儲存區>>
+* <<旋轉或移除庫位認證資料>>
+* <<移除貯體>>
 
 
 
@@ -129,7 +129,7 @@ NOTE: 如果您確實移除作用中的儲存區認證、請參閱 https://kb.ne
 
 NOTE: 您無法移除預設的儲存區。如果您要移除該儲存區、請先選取另一個儲存區做為預設值。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 開始之前、您應檢查以確保此儲存區沒有執行中或已完成的備份。
 * 您應檢查以確保儲存庫未用於任何作用中的保護原則。
 

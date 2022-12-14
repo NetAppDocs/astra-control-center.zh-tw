@@ -18,9 +18,9 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 
 若要在Amazon Web Services（AWS）、Google Cloud Platform（GCP）和Microsoft Azure中安裝Astra Control Center、並搭配Cloud Volumes ONTAP 使用整套儲存後端、請視您的雲端環境而定、執行下列步驟。
 
-*  Astra Control Center in Amazon Web Services
-*  Astra Control Center in Google Cloud Platform
-*  Astra Control Center in Microsoft Azure
+* <<在Amazon Web Services中部署Astra Control Center>>
+* <<在Google Cloud Platform中部署Astra Control Center>>
+* <<在Microsoft Azure中部署Astra Control Center>>
 
 
 您可以使用自我管理的Kubernetes叢集、例如OpenShift Container Platform（OCP）、在發佈版本中管理應用程式。只有自我管理的OCP叢集已通過驗證、可用於部署Astra Control Center。
@@ -122,11 +122,11 @@ NOTE: AWS登錄權杖會在12小時內過期、之後您必須更新Docker映像
 
 以下將詳細說明每個步驟。
 
-.  that you have sufficient IAM permissions。
-.  a RedHat OpenShift cluster on AWS。
-.  AWS。
-.  NetApp BlueXP for AWS。
-.  Astra Control Center for AWS。
+. <<確保您擁有足夠的IAM權限>>。
+. <<在AWS上安裝RedHat OpenShift叢集>>。
+. <<設定AWS>>。
+. <<設定適用於AWS的NetApp BlueXP>>。
+. <<安裝AWS的Astra Control Center>>。
 
 
 
@@ -227,7 +227,7 @@ NOTE: AWS使用一般S3儲存區類型。
 
 
 
-=== GCP的需求
+=== GCP的必備功能
 
 在GCP中部署Astra Control Center之前、您需要下列項目：
 
@@ -307,12 +307,12 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 以下將詳細說明每個步驟。
 
-.  a RedHat OpenShift cluster on GCP。
-.  a GCP Project and Virtual Private Cloud。
-.  that you have sufficient IAM permissions。
-.  GCP。
-.  NetApp BlueXP for GCP。
-.  Astra Control Center for GCP。
+. <<在GCP上安裝RedHat OpenShift叢集>>。
+. <<建立GCP專案和虛擬私有雲端>>。
+. <<確保您擁有足夠的IAM權限>>。
+. <<設定GCP>>。
+. <<設定適用於GCP的NetApp BlueXP>>。
+. <<安裝Astra Control Center for GCP>>。
 
 
 
@@ -403,7 +403,7 @@ done < astra-control-center-22.04.41.manifest
 
 請遵循BlueXP文件完成下列步驟。請參閱 https://docs.netapp.com/us-en/occm/task_getting_started_gcp.html["從GCP開始使用Cloud Volumes ONTAP"^]。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 以所需的IAM權限和角色存取GCP服務帳戶
 
 
@@ -463,7 +463,7 @@ kubectl create secret docker-registry <secret name> --docker-server=<Registry lo
 
 
 
-=== Azure的需求
+=== Azure的必備功能
 
 在Azure中部署Astra Control Center之前、您需要下列項目：
 
@@ -544,12 +544,12 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 以下將詳細說明每個步驟。
 
-.  a RedHat OpenShift cluster on Azure。
-.  Azure resource groups。
-.  that you have sufficient IAM permissions。
-.  Azure。
-.  NetApp BlueXP (formerly Cloud Manager) for Azure。
-.  and configure Astra Control Center for Azure。
+. <<在Azure上安裝RedHat OpenShift叢集>>。
+. <<建立Azure資源群組>>。
+. <<確保您擁有足夠的IAM權限>>。
+. <<設定Azure>>。
+. <<設定適用於Azure的NetApp BlueXP（前身為Cloud Manager）>>。
+. <<安裝及設定Azure的Astra Control Center>>。
 
 
 
@@ -636,6 +636,7 @@ done < astra-control-center-22.04.41.manifest
 
 請遵循BlueXP文件完成下列步驟。請參閱 https://docs.netapp.com/us-en/occm/task_getting_started_azure.html["Azure中的BlueXP入門指南"^]。
 
+.您需要的產品
 以所需的IAM權限和角色存取Azure帳戶
 
 .步驟

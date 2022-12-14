@@ -49,6 +49,7 @@ Astra Control Center可讓管理員使用者產生套裝組合、其中包含Net
 
 NOTE: Astra Control Center產生套裝組合所花費的時間、取決於您的Astra Control Center安裝規模、以及所要求支援套裝組合的參數。您在申請支援服務組合時所指定的時間長度、會決定產生服務組合所需的時間（例如、縮短時間會導致更快產生服務組合）。
 
+.開始之前
 判斷是否需要代理連線才能將套件上傳至NSS。如果需要Proxy連線、請確認Astra Control Center已設定為使用Proxy伺服器。
 
 . 選擇*帳戶*>*連線*。

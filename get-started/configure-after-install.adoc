@@ -155,7 +155,7 @@ Astra Control Center預設使用自我簽署的TLS憑證來處理入站控制器
 取代預設TLS憑證會取代用於驗證這些連線的憑證。
 
 ====
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * Kubernetes叢集已安裝Astra Control Center
 * 管理存取叢集上的命令Shell以執行「kubecll」命令
 * 來自CA的私密金鑰和憑證檔案

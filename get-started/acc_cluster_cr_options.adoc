@@ -27,7 +27,7 @@ summary: 如需部署期間的自訂組態、請參閱Astra Control Center叢集
 | astraKubeConfigSecret | 字串 | 必要 | ACC-KECBEConnfig - cred | 如果存在此值且存在機密、則操作員將嘗試新增KubeConfig、以成為第一個受管理的叢集。 
 
 
-| astraResources2200 | 字串 | 必要 | 預設 | 適用的擴充選項適用於適用的適用範圍。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定。 
+| astraResources2200 | 字串 | 必要 | 預設 | 適用的擴充選項適用於適用的適用範圍。請參閱 <<組態組合與不相容,設定複雜度>> 以瞭解此設定如何影響其他設定。 
 
 
 | astraVersion | 字串 | 必要 | 1.5.2. | 要部署的適用版本。您將獲得一個具有對應版本的Helm儲存庫。 
@@ -72,7 +72,7 @@ summary: 如需部署期間的自訂組態、請參閱Astra Control Center叢集
 | imageRegistry.secret | 字串 | 如果您使用需要機密的image登 錄、則為必要項目 | Astra登錄建立 | 用來驗證映像登錄的Kubernetes機密名稱。 
 
 
-| 擷取類型 | 字串 | 選用 | 一般（這是預設值） | 應設定入侵Astra控制中心的類型。有效值為「一般」和「AccTraefik」。請參閱  combinations and incompatibilities,設定複雜度 以瞭解此設定如何影響其他設定。 
+| 擷取類型 | 字串 | 選用 | 一般（這是預設值） | 應設定入侵Astra控制中心的類型。有效值為「一般」和「AccTraefik」。請參閱 <<組態組合與不相容,設定複雜度>> 以瞭解此設定如何影響其他設定。 
 
 
 | 姓氏 | 字串 | 必要 | 管理 | 支援Astra的系統管理員姓氏。 
@@ -107,6 +107,7 @@ summary: 如需部署期間的自訂組態、請參閱Astra Control Center叢集
 * AccTraefik
 
 
+.一般（預設）
 當「擷取類型」設定為「一般」時、Astra Control不會安裝任何入口資源。假設使用者有一種通用的方法、可以透過網路保護流量、並將流量路由傳送到Kubernetes叢集上執行的應用程式、而且他們想要在此使用相同的機制。當使用者建立入口以將流量路由至Astra Control時、入口必須指向連接埠80上的內部交會服務。以下範例為使用「一般擷取類型」設定的一種Nginx入口資源。
 
 [listing]
@@ -134,4 +135,5 @@ spec:
                 number: 80
           pathType: ImplementationSpecific
 ----
+.AccTraefik
 當「擷取類型」設定為「AccTraefik」時、Astra Control Center會將其Traefik閘道部署為Kubernetes負載平衡器類型服務。使用者需要為Astra Control Center提供外部負載平衡器（例如MetalLB）、才能取得外部IP。

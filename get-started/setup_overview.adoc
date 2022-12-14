@@ -15,11 +15,11 @@ summary: 安裝Astra Control Center、登入UI並變更密碼之後、您將需�
 安裝Astra Control Center、登入UI並變更密碼之後、您將需要設定授權、新增叢集、管理儲存設備及新增儲存區。
 
 .工作
-*  a license for Astra Control Center
-*  your environment for cluster management using Astra Control
-*  cluster
-*  a storage backend
-*  a bucket
+* <<新增Astra Control Center授權>>
+* <<使用Astra Control為環境做好叢集管理準備>>
+* <<新增叢集>>
+* <<新增儲存後端>>
+* <<新增儲存庫>>
 
 
 
@@ -36,7 +36,7 @@ NOTE: 如果您的安裝量成長到超過授權的CPU單元數量、Astra Contr
 
 NOTE: 若要更新現有的評估或完整授權、請參閱 link:../use/update-licenses.html["更新現有授權"^]。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 存取新安裝的Astra Control Center執行個體。
 * 系統管理員角色權限。
 * 答 link:../concepts/licensing.html["NetApp授權檔案"^] （lf）。
@@ -61,7 +61,7 @@ NOTE: 如果您擁有評估授權、但並未將資料傳送AutoSupport 至效�
 
 在新增叢集之前、您應確保符合下列先決條件。您也應該執行資格檢查、以確保叢集已準備好新增至Astra Control Center、並建立叢集管理的角色。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 您的環境符合 link:../get-started/requirements.html#operational-environment-requirements["營運環境需求"^] 適用於Astra Trident與Astra Control Center。
 * 這是Astra Trident的版本 link:../get-started/requirements.html#operational-environment-requirements["由Astra Control Center支援"^] 已安裝：
 +
@@ -151,6 +151,7 @@ ontap-gold (default)  csi.trident.netapp.io  Delete         Immediate          t
 
 您可以選擇性地為Astra Control Center建立有限的系統管理員角色。這不是Astra Control Center設定所需的程序。此程序有助於建立獨立的Kbeconfig、以限制Astra Control在其管理的叢集上的權限。
 
+.您需要的產品
 在完成程序步驟之前、請確定您要管理的叢集具備下列項目：
 
 * 已安裝KECV1.23或更新版本
@@ -460,7 +461,7 @@ mv kubeconfig-sa YOUR_CLUSTER_NAME_kubeconfig
 
 === 接下來呢？
 
-現在您已確認已符合先決條件、您已經準備好了  cluster,新增叢集。
+現在您已確認已符合先決條件、您已經準備好了 <<新增叢集,新增叢集>>。
 
 
 
@@ -471,8 +472,8 @@ mv kubeconfig-sa YOUR_CLUSTER_NAME_kubeconfig
 
 TIP: 我們建議Astra Control Center先管理部署於上的叢集、再將其他叢集新增至Astra Control Center進行管理。需要管理初始叢集、才能傳送Kubmetrics資料和叢集相關資料、以供進行度量和疑難排解。
 
-.您需要的是 #8217 ；需要的是什麼
-* 新增叢集之前、請先檢閱並執行必要的  your environment for cluster management using Astra Control,必要工作。
+.您需要的產品
+* 新增叢集之前、請先檢閱並執行必要的 <<使用Astra Control為環境做好叢集管理準備,必要工作>>。
 
 
 .步驟
@@ -489,7 +490,7 @@ NOTE: 「kubeconfig．yaml」檔案應包含*一個叢集*的叢集認證資料�
 
 +
 
-IMPORTANT: 如果您自行建立 `kubeconfig` 檔案中、您應該只定義*一個*內容元素。請參閱 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes文件"^] 以取得有關建立的資訊 `kubeconfig` 檔案：如果您使用為有限的叢集角色建立了Kbeconfig  a limited cluster role kubeconfig,上述程序請務必在本步驟中上傳或貼上該KECBEConnfig。
+IMPORTANT: 如果您自行建立 `kubeconfig` 檔案中、您應該只定義*一個*內容元素。請參閱 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes文件"^] 以取得有關建立的資訊 `kubeconfig` 檔案：如果您使用為有限的叢集角色建立了Kbeconfig <<建立有限的叢集角色KECBEConfig,上述程序>>請務必在本步驟中上傳或貼上該KECBEConnfig。
 
 . 提供認證名稱。根據預設、認證名稱會自動填入為叢集名稱。
 . 選擇*下一步*。
@@ -501,6 +502,7 @@ NOTE: 您應該選擇以ONTAP 不受資料儲存設備支援的Trident儲存類�
 . 檢閱資訊、如果一切看起來都很好、請選取*新增*。
 
 
+.結果
 叢集進入*探索*狀態、然後變更為*健全*。您現在正使用Astra Control Center來管理叢集。
 
 
@@ -531,6 +533,7 @@ NOTE: 您在此處輸入認證的使用者必須擁有 `ontapi` 使用者登入�
 . 確認後端詳細資料、然後選取*管理*。
 
 
+.結果
 後端隨即出現在中 `Healthy` 列出摘要資訊。
 
 
@@ -544,7 +547,7 @@ NOTE: 您可能需要重新整理頁面、以便顯示後端。
 
 如果您要將應用程式組態和持續儲存設備複製到同一個叢集、則無需使用Astra Control中的儲存庫。應用程式快照功能不需要儲存庫。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 可從由Astra Control Center管理的叢集存取的儲存庫。
 * 庫位認證資料。
 * 下列類型的儲存桶：

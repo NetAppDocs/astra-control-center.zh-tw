@@ -14,7 +14,7 @@ summary: 若要升級Astra Control Center、您必須依照所述步驟下載套
 [role="lead"]
 若要升級Astra Control Center、請從NetApp 支援網站 下列網址下載安裝套裝軟體、並完成這些指示。您可以使用此程序、在連線網際網路或無線環境中升級Astra Control Center。
 
-.您需要的是 #8217 ；需要的是什麼
+.您需要的產品
 * 升級前、請參閱 link:../get-started/requirements.html#operational-environment-requirements["營運環境需求"^] 確保您的環境仍符合Astra Control Center部署的最低需求。您的環境應具備下列條件：
 +
 ** 支援的Astra Trident版本若要判斷您正在執行的版本、請針對現有的Astra Control Center執行下列命令：
@@ -51,14 +51,15 @@ kubectl get apiservices
 * 在開始升級之前、請先登出Astra Control Center UI。
 
 
+.關於這項工作
 Astra Control Center升級程序會引導您完成下列高層級步驟：
 
-*  the Astra Control Center bundle
-*  the bundle
-*  the images to your local registry
-*  the updated Astra Control Center operator
-*  Astra Control Center
-*  system status
+* <<下載Astra Control Center套裝組合>>
+* <<打開產品組合的包裝>>
+* <<將映像新增至本機登錄>>
+* <<安裝更新的Astra Control Center操作員>>
+* <<升級Astra Control Center>>
+* <<驗證系統狀態>>
 
 
 
@@ -106,7 +107,7 @@ kubectl astra
 ----
 
 
-此命令應提供kubecll外掛說明。如果命令傳回錯誤、請使用這些命令來安裝外掛程式 link:../get-started/install_acc.html#install-the-netapp-astra-kubectl-plugin["說明"]。
+此命令應提供kubecll外掛說明。如果命令傳回錯誤、請使用這些命令來安裝外掛程式 link:../get-started/install_acc.html#install-the-netapp-astra-kubectl-plugin["說明"^]。
 
 
 
@@ -119,19 +120,14 @@ kubectl astra
 ====
 .Docker
 --
-. 變更為 `acc` 從tar套件中抽取的目錄：
+. 切換到tar檔案的根目錄。您應該會看到這個檔案和目錄：
 +
-範例：
+`acc.manifest.bundle.yaml`
+`acc/`
 
-
-
-[listing]
-----
-cd ../acc
-----
-. 將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行命令之前、請先進行下列替代：
+. 將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行之前、請先進行下列替換 `push-images` 命令：
 +
-** 以<BUNDLE_FILE> Astra Control套裝組合檔案的名稱取代 (`acc.manifest.yaml`）。
+** 以<BUNDLE_FILE> Astra Control套裝組合檔案的名稱取代 (`acc.manifest.bundle.yaml`）。
 ** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 https://exampledownloads.jfrog.io/docker-astra-control/v1/[]。
 ** 以<MY_REGISTRY_USER> 使用者名稱取代。
 ** 以<MY_REGISTRY_TOKEN> 登錄的授權權杖取代。
@@ -147,6 +143,11 @@ kubectl astra packages push-images -m <BUNDLE_FILE> -r <MY_FULL_REGISTRY_PATH> -
 --
 .Podman
 --
+. 切換到tar檔案的根目錄。您應該會看到這個檔案和目錄：
++
+`acc.manifest.bundle.yaml`
+`acc/`
+
 . 登入您的登錄：
 +
 [source, console]
@@ -157,12 +158,6 @@ podman login <MY_FULL_REGISTRY_PATH>
 +
 [source, console]
 ----
-# You need to be at the root of the tarball.
-# You should see these files to confirm correct location:
-#   acc.manifest.yaml
-#   acc/
-
-# Replace <YOUR_REGISTRY> with your own registry (e.g registry.customer.com or registry.customer.com/testing, etc..)
 export REGISTRY=<YOUR_REGISTRY>
 export PACKAGENAME=acc
 export PACKAGEVERSION=22.11.0-82
@@ -209,8 +204,8 @@ vim astra_control_center_operator_deploy.yaml
 imagePullSecrets:
 - name: <astra-registry-cred_or_custom_name_of_secret>
 ----
-.. 變更 `[your_registry_path]` 適用於 `kube-rbac-proxy` 映像到您在中推入映像的登錄路徑  the images to your local registry,上一步。
-.. 變更 `[your_registry_path]` 適用於 `acc-operator` 映像到您在中推入映像的登錄路徑  the images to your local registry,上一步。
+.. 變更 `[your_registry_path]` 適用於 `kube-rbac-proxy` 映像到您在中推入映像的登錄路徑 <<將映像新增至本機登錄,上一步>>。
+.. 變更 `[your_registry_path]` 適用於 `acc-operator` 映像到您在中推入映像的登錄路徑 <<將映像新增至本機登錄,上一步>>。
 .. 將下列值新增至「env」區段：
 +
 [listing]
@@ -342,7 +337,7 @@ spec:
   accountName: "Example"
   *astraVersion: "[Version number]"*
 ----
-. 確認您的映像登錄路徑符合您在中推送映像的登錄路徑  the images to your local registry,上一步。更新 `imageRegistry` 內部 `Spec` 如果登錄自上次安裝後有所變更。
+. 確認您的映像登錄路徑符合您在中推送映像的登錄路徑 <<將映像新增至本機登錄,上一步>>。更新 `imageRegistry` 內部 `Spec` 如果登錄自上次安裝後有所變更。
 +
 [listing]
 ----
