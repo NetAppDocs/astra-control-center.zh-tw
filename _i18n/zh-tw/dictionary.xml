@@ -1617,7 +1617,6 @@
   <block id="7fdb6925e171ac617262d69ebf119664" category="list-text">Astra Control使用執行掛勾設定及任何符合條件、來判斷哪些掛勾適用於快照、備份或還原作業。</block>
   <block id="71bd0199539278d83c2eb3eaf817b710" category="list-text">所有執行掛機故障都是軟性故障、即使掛機故障、仍會嘗試其他掛機和資料保護作業。但是、當掛機失敗時、會在*活動*頁面事件記錄中記錄警告事件。</block>
   <block id="7b1a9d930edd4676e6aca05c81245d86" category="list-text">對於Adhoc*資料保護作業、所有Hook事件都會產生並儲存在*活動*頁面事件記錄中。不過、對於排程的資料保護作業、事件記錄中只會記錄攔截故障事件（排程資料保護作業本身所產生的事件仍會記錄下來）。</block>
-  <block id="e44e874b44364a30ee06654e352ede59" category="paragraph">由於執行掛勾通常會減少或完全停用執行中應用程式的功能、因此您應該一律盡量縮短自訂執行掛勾執行所需的時間。如果您以相關的執行掛勾開始備份或快照作業、但隨後取消它、則如果備份或快照作業已經開始、仍允許掛勾執行。這表示備份後執行掛勾無法假設備份已完成。</block>
   <block id="a9f57378169166a88acf61a71442e5fb" category="section-title">執行順序</block>
   <block id="e8132483e0cae3565c87c193b3fd8f57" category="paragraph">執行資料保護作業時、執行掛機事件會依照下列順序發生：</block>
   <block id="4a6ccf1757fd10978b3fb28d81187dcc" category="list-text">任何適用的自訂操作前執行掛勾都會在適當的容器上執行。您可以視需要建立及執行任意數量的自訂操作前掛勾、但在作業之前執行這些掛勾的順序既不保證也無法設定。</block>
@@ -2617,4 +2616,7 @@
   <block id="1e24416e12dc76c10b1a5d91e4001b23" category="paragraph">您可以為應用程式建立自訂執行掛勾。請參閱 <block ref="17e166b6ef6242446312ff693caa559b" category="inline-xref-macro-rx"></block> 如需攔截範例、您需要擁有擁有擁有者、管理員或成員權限、才能建立執行掛勾。</block>
   <block id="9ad3989601b59e755170866a5329554c" category="list-text"><block ref="9ad3989601b59e755170866a5329554c" category="inline-link-rx"></block></block>
   <block id="53c5fac0ba78b08ca3f0a270b746c5d2" category="section-title">重設其他使用者的密碼</block>
+  <block id="d1141e4fbef627d770ba551621d0f9ba" category="list-text">如果您為參與Istio服務網格的應用程式建立執行掛勾、請確定掛勾是針對原始應用程式容器而非服務網格容器執行。您可以將篩選器regex套用至使用Istio服務網格的應用程式執行的每個執行掛勾、以排除Istio服務網格容器。</block>
+  <block id="6f0d5941d5a6edfad3a1597fae5c8340" category="list-text">由於執行掛勾通常會減少或完全停用執行中應用程式的功能、因此您應該一律盡量縮短自訂執行掛勾執行所需的時間。</block>
+  <block id="678c0d401fe58fc5c33f7d717ff8c970" category="list-text">如果您以相關的執行掛勾開始備份或快照作業、但隨後取消它、則如果備份或快照作業已經開始、仍允許掛勾執行。這表示備份後執行掛勾無法假設備份已完成。</block>
 </blocks>
