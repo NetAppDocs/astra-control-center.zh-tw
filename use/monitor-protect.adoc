@@ -114,7 +114,7 @@ https://<environment-name>.c01.cloudinsights.netapp.com/
 image:cloud-insights-api.png["顯示Cloud Insights 「循環API權杖產生」頁面。"]
 
 .. 複製*唯讀*金鑰。您必須將其貼到Astra Control Center視窗中、才能啟用Cloud Insights 此功能的鏈路。如需讀取API存取權杖金鑰權限、請選取：資產、警示、擷取單位和資料收集。
-.. 複製*讀取/寫入*金鑰。您需要將其貼到Astra Control Center * Connect Cloud Insights S還原*視窗中。如需讀取/寫入API存取權杖金鑰權限、請選取：資產、資料擷取、記錄擷取、擷取單位、 和資料收集：
+.. 複製*讀取/寫入*金鑰。您需要將其貼到Astra Control Center * Connect Cloud Insights S還原*視窗中。如需讀取/寫入API存取權杖金鑰權限、請選取：資料擷取、記錄擷取、擷取設備和資料收集。
 +
 
 NOTE: 我們建議您產生*唯讀*金鑰和*讀取/寫入*金鑰、而不要將相同的金鑰用於這兩種用途。根據預設、權杖過期期間設為一年。我們建議您保留預設選項、以便在權杖過期之前提供最長持續時間。如果您的權杖過期、遙測就會停止。

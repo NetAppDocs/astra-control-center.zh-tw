@@ -508,7 +508,6 @@
   <block id="1510025929fc977562c0c445934e3ab5" category="inline-image-macro">顯示Cloud Insights 「循環API權杖產生」頁面。</block>
   <block id="0297da739425ffb4582516e5cde91975" category="paragraph"><block ref="0297da739425ffb4582516e5cde91975" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7a3ef7b3d20368f22318e140ed0c8bf5" category="list-text">複製*唯讀*金鑰。您必須將其貼到Astra Control Center視窗中、才能啟用Cloud Insights 此功能的鏈路。如需讀取API存取權杖金鑰權限、請選取：資產、警示、擷取單位和資料收集。</block>
-  <block id="3471dafa540ad99cab68490eddb48830" category="list-text">複製*讀取/寫入*金鑰。您需要將其貼到Astra Control Center * Connect Cloud Insights S還原*視窗中。如需讀取/寫入API存取權杖金鑰權限、請選取：資產、資料擷取、記錄擷取、擷取單位、 和資料收集：</block>
   <block id="5d81b6bdee197be668fe2348e55a8d14" category="admonition">我們建議您產生*唯讀*金鑰和*讀取/寫入*金鑰、而不要將相同的金鑰用於這兩種用途。根據預設、權杖過期期間設為一年。我們建議您保留預設選項、以便在權杖過期之前提供最長持續時間。如果您的權杖過期、遙測就會停止。</block>
   <block id="a086aaec8aa524f4ce0a74b48df64bcd" category="list-text">將您從Cloud Insights 整個過程中複製的金鑰貼到Astra Control Center。</block>
   <block id="eaae7a4b072e6c1469d18740d72675ab" category="admonition">在您選取*連線之後、* Cloud Insights 帳戶*&gt;*連線*頁面的*更新*區段中、連線狀態會變更為*擱置*。啟用連線並將狀態變更為「*已連線*」可能需要幾分鐘的時間。</block>
@@ -2619,4 +2618,5 @@
   <block id="d1141e4fbef627d770ba551621d0f9ba" category="list-text">如果您為參與Istio服務網格的應用程式建立執行掛勾、請確定掛勾是針對原始應用程式容器而非服務網格容器執行。您可以將篩選器regex套用至使用Istio服務網格的應用程式執行的每個執行掛勾、以排除Istio服務網格容器。</block>
   <block id="6f0d5941d5a6edfad3a1597fae5c8340" category="list-text">由於執行掛勾通常會減少或完全停用執行中應用程式的功能、因此您應該一律盡量縮短自訂執行掛勾執行所需的時間。</block>
   <block id="678c0d401fe58fc5c33f7d717ff8c970" category="list-text">如果您以相關的執行掛勾開始備份或快照作業、但隨後取消它、則如果備份或快照作業已經開始、仍允許掛勾執行。這表示備份後執行掛勾無法假設備份已完成。</block>
+  <block id="f83cc958d14f90620b7ffdf9923fe440" category="list-text">複製*讀取/寫入*金鑰。您需要將其貼到Astra Control Center * Connect Cloud Insights S還原*視窗中。如需讀取/寫入API存取權杖金鑰權限、請選取：資料擷取、記錄擷取、擷取設備和資料收集。</block>
 </blocks>
