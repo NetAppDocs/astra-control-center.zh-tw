@@ -2283,7 +2283,6 @@
   <block id="f1cf4d02378fa61bb8bd57679ffc6235" category="list-text">* Helm已部署應用程式*：完全支援使用Helm 3部署的複製應用程式（或從Helm 2升級至Helm 3）。不支援以Helm 2部署的應用程式。</block>
   <block id="8d7c216bc17d281838efafaa3704677b" category="list-text">選擇還原類型：</block>
   <block id="90d21d98503ddae05ddf0a1a34b7d790" category="list-text">*還原至原始命名空間*：使用此程序可將應用程式就地還原至原始叢集。</block>
-  <block id="d6163245aff1d495d4414480b1d33f38" category="admonition">在與其他應用程式共用資源的應用程式上執行就地還原作業、可能會產生非預期的結果。</block>
   <block id="eb543a53c7bc9830323c1e31b5a68dc4" category="list-text">選取要用來就地還原應用程式的快照、此快照會將應用程式還原為舊版本身。</block>
   <block id="3b015c7e8b671c5a6b88a902ad59e853" category="list-text">檢閱還原動作的詳細資料、輸入「還原」、然後選取*還原*。</block>
   <block id="440c25a54f1d6be365d93551da3bc3f9" category="list-text">*還原至新命名空間*：使用此程序可將應用程式還原至其他叢集、或從來源還原具有不同命名空間的叢集。</block>
@@ -2642,4 +2641,10 @@
   <block id="d562c4dd354cbcb5a399ecd947d57a28" category="list-text"><block ref="d562c4dd354cbcb5a399ecd947d57a28" category="inline-link-macro-rx"></block></block>
   <block id="749c18da581d94e0dd92db056f0ede8d" category="inline-link-macro">取得Astra Control的協助</block>
   <block id="8a06e7781d9c301da6075deb2bbbe145" category="list-text"><block ref="8a06e7781d9c301da6075deb2bbbe145" category="inline-link-macro-rx"></block></block>
+  <block id="4ca05a6d3d72f01a88f8a67a5c8cfac4" category="paragraph">在與其他應用程式共用資源的應用程式上執行就地還原作業、可能會產生非預期的結果。在其中一個應用程式上執行就地還原時、應用程式之間共享的任何資源都會被取代。例如、下列案例會在使用NetApp SnapMirror複寫時造成不理想的情況：</block>
+  <block id="4b93bc85a66000cfca0c6e537323e417" category="list-text">您可以定義應用程式<block ref="f92ea1839dc16d7396db358365da7066" prefix=" " category="inline-code"></block> 使用命名空間<block ref="bfed25f845e5220adacaaf3b86228910" prefix=" " category="inline-code"></block>。</block>
+  <block id="86b8799dbebc7080c1d4f349601f66d1" category="list-text">您可以設定的複寫關係<block ref="f92ea1839dc16d7396db358365da7066" prefix=" " category="inline-code"></block>。</block>
+  <block id="2aabf9d19e05830c03047e81303050b7" category="list-text">您可以定義應用程式<block ref="ec8d838607528268a4e435628ea9f709" prefix=" " category="inline-code"></block> （在同一個叢集上）使用命名空間<block ref="bfed25f845e5220adacaaf3b86228910" prefix=" " category="inline-code"></block> 和<block ref="7b3f4e5e8a4b234605eb5c242254ab09" prefix=" " category="inline-code"></block>。</block>
+  <block id="baf10238a72efe4a1aab077cb3c4d82e" category="list-text">您可以設定的複寫關係<block ref="ec8d838607528268a4e435628ea9f709" prefix=" " category="inline-code"></block>。</block>
+  <block id="34a13245622ec7d6c1a19ea86462ba96" category="list-text">您可以針對進行反轉複寫<block ref="ec8d838607528268a4e435628ea9f709" prefix=" " category="inline-code"></block>。這會導致<block ref="f92ea1839dc16d7396db358365da7066" prefix=" " category="inline-code"></block> 要停用的來源叢集上的應用程式。</block>
 </blocks>
