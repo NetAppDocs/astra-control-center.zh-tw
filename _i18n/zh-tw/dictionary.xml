@@ -2639,5 +2639,7 @@
   <block id="d9379e355ade43c04f76c0b075ef6732" category="inline-link-macro">也可以連接Cloud Insights 到</block>
   <block id="cd0049b5789664729fdfe7d5fc0b4f40" category="list-text"><block ref="bf4c77b3020a0bd5cc9fb63a5d3fb351" category="inline-link-macro-rx"></block>：查看系統健全狀況的指標。</block>
   <block id="e84bb7e947a5b25481546110f575734a" category="list-text"><block ref="e84bb7e947a5b25481546110f575734a" category="inline-link-rx"></block></block>
-  <block id="5cfc5eef68c2a0f98ee2f703248801de" category="list-text"><block ref="5cfc5eef68c2a0f98ee2f703248801de" category="inline-link-rx"></block></block>
+  <block id="d562c4dd354cbcb5a399ecd947d57a28" category="list-text"><block ref="d562c4dd354cbcb5a399ecd947d57a28" category="inline-link-macro-rx"></block></block>
+  <block id="749c18da581d94e0dd92db056f0ede8d" category="inline-link-macro">取得Astra Control的協助</block>
+  <block id="8a06e7781d9c301da6075deb2bbbe145" category="list-text"><block ref="8a06e7781d9c301da6075deb2bbbe145" category="inline-link-macro-rx"></block></block>
 </blocks>
