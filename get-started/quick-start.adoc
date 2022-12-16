@@ -14,56 +14,64 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 [role="lead"]
 本頁提供Astra Control Center入門所需步驟的高階概觀。每個步驟中的連結都會帶您前往提供更多詳細資料的頁面。
 
-歡迎試用！如果您想要試用Astra Control Center、可以使用90天試用版授權。請參閱 link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["授權資訊"] 以取得詳細資料。
+歡迎試用！如果您想要試用Astra Control Center、可以使用90天試用版授權。請參閱 link:../concepts/licensing.html["授權資訊"^] 以取得詳細資料。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 檢閱Kubernetes叢集需求
-[role="quick-margin-list"]
-* Astra搭配Kubernetes叢集使用Trident型儲存類別、搭配ONTAP 支援整合式儲存後端的功能。
-* 叢集必須以健全狀態執行、且至少有三個線上工作者節點。
+確保您的環境符合這些要求。
+
+* Kubernetes叢集*
+
+* link:../get-started/requirements.html#operational-environment-requirements["確保您的環境符合作業環境需求"^]
+* link:../get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["設定內部部署Kubernetes叢集的負載平衡入口"^]
 
 
-[role="quick-margin-para"]
-深入瞭解 link:../get-started/requirements.html["Astra Control Center需求"]。
+*儲存整合*
+
+* link:../get-started/requirements.html#operational-environment-requirements["確保您的環境包含Astra Trident支援的版本"^]
+* https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["設定Astra Trident儲存後端"^]
+* https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["設定Astra Trident儲存類別"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安裝Astra Trident Volume Snapshot控制器和Snapshot類別"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["設定Astra Trident儲存Volume快照控制器和Snapshot類別"^]
+
+
+*不包含認證資料* ONTAP
+
+* link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["設定ONTAP 驗證資料"^]
+
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 下載並安裝Astra Control Center
-[role="quick-margin-list"]
-* 從下載Astra Control Center https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp支援網站Astra Control Center下載頁面"^]。
-* 在您的本機環境中安裝Astra Control Center。
-+
-或者、使用Red Hat作業系統集線器安裝Astra Control Center。您也可以選擇在支援的公有雲平台上安裝Astra Control Center、例如搭配Cloud Volumes ONTAP 使用支援的NetApp儲存後端。
+完成這些安裝工作。
 
-* 或者、視您的環境而定、請填寫其他項目 link:configure-after-install.html["組態步驟"]。深入瞭解 link:../get-started/install_overview.html["安裝Astra Control Center"]。
+* https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["從NetApp 支援網站 「更新下載」頁面下載Astra Control Center"^]
+* link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["如果您正在評估Astra Control Center、請下載試用版授權檔案"^]
+* link:../concepts/licensing.html["如果您已購買Astra Control Center、請產生授權檔案"^]
+* link:../get-started/install_overview.html["安裝Astra Control Center"^]
+* link:../get-started/configure-after-install.html["執行其他選用的組態步驟"^]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 完成一些初始設定工作
-[role="quick-margin-list"]
-* 新增Astra Control授權及任何支援ONTAP 的不支援功能。
-* 新增Kubernetes叢集。
-* 新增ONTAP 功能：
-* 或者、您也可以新增物件存放區、以儲存應用程式備份。
+完成一些基本工作以開始使用。
 
+* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["新增授權"^]
+* link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["為叢集管理做好準備"^]
+* link:../get-started/setup_overview.html#add-cluster["新增叢集"^]
+* link:../get-started/setup_overview.html#add-a-storage-backend["新增儲存後端"^]
+* link:../get-started/setup_overview.html#add-a-bucket["新增儲存庫"^]
 
-[role="quick-margin-para"]
-深入瞭解 link:../get-started/setup_overview.html["初始設定程序"]。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 使用Astra控制中心
-[role="quick-margin-list"]
-完成Astra Control Center的設定之後、接下來您可以：
+完成Astra Control Center的設定之後、接下來您可以做什麼。您可以使用Astra Control使用者介面（UI）或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^]。
 
-[role="quick-margin-list"]
-* 管理應用程式。深入瞭解 link:../use/manage-apps.html["如何管理應用程式"]。
-* 設定應用程式的保護原則、將應用程式複寫到遠端系統、複製應用程式、以及移轉應用程式、藉此保護應用程式。深入瞭解 link:../use/protection-overview.html["如何保護應用程式"]。
-* 管理帳戶（包括使用者、角色、使用者驗證的LDAP、認證等）。深入瞭解 link:../use/manage-local-users-and-roles.html["如何管理本機使用者、角色及LDAP"]。
-* 您也可以選擇連線至NetApp Cloud Insights 解決方案、在Astra Control Center UI內顯示系統健全狀況、容量和處理量的指標。深入瞭解 link:../use/monitor-protect.html["如何連線Cloud Insights 到解決之路"]。
-
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 請從本快速入門繼續
-[role="quick-margin-para"]
-link:../get-started/install_overview.html["安裝Astra Control Center"]。
+* link:../use/manage-apps.html["管理應用程式"^]
+* link:../use/protection-overview.html["保護應用程式"^]：設定保護原則、並複寫、複製及移轉應用程式。
+* link:../use/manage-local-users-and-roles.html["管理帳戶"^]：使用者、角色、LDAP、認證等
+* link:../use/monitor-protect.html#connect-to-cloud-insights["也可以連接Cloud Insights 到"^]：查看系統健全狀況的指標。
 
 
 
-== 如需詳細資訊、請參閱
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+== 以取得更多資訊
+
+* https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^]
+* https://review.docs.netapp.com/us-en/astra-control-center_acc-pi7-review/use/upgrade-acc.html["升級Astra Control Center"^]
 
