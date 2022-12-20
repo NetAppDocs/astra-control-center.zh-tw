@@ -14,11 +14,11 @@ summary: 瞭解Astra Control Center可執行的行動、會因授權狀態而異
 [role="lead"]
 Astra Control Center需要安裝授權、才能啟用完整的應用程式資料管理功能。當您部署Astra Control Center時、若無授權、Web UI會顯示橫幅、警告系統功能有限。
 
-您需要授權來保護應用程式和資料。請參閱Astra控制中心 link:../concepts/intro.html["功能"] 以取得詳細資料。
+您可以使用下列其中一種方式取得授權：
 
-購買產品後、您會收到序號和授權。您可以從產生NetApp授權檔案（NLF） https://mysupport.netapp.com["NetApp 支援網站"^]。
+* link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["如果您正在評估Astra Control Center、請下載試用版授權檔案"^]。評估授權可讓您從下載授權之日起90天內使用Astra Control Center。
+* link:../concepts/licensing.html["如果您已購買Astra Control Center、請產生您的NetApp授權檔案（NLF）"^] 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。
 
-您也可以試用Astra Control Center搭配評估授權、從下載授權之日起90天內使用Astra Control Center。如需詳細資訊、請參閱 link:../get-started/requirements.html["需求"]。
 
 如需ONTAP 有關支援不支援的詳細資訊、請參閱 link:../get-started/requirements.html["支援的儲存後端"]。
 
@@ -37,5 +37,6 @@ NOTE: 您可以新增叢集、新增儲存庫、以及管理儲存後端、而�
 
 == 如需詳細資訊、請參閱
 
+* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["第一次設定Astra Control Center時、請新增授權"]
 * link:../use/update-licenses.html["更新現有授權"]
 

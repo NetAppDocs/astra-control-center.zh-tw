@@ -12,9 +12,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 
 [role="lead"]
-本頁提供Astra Control Center入門所需步驟的高階概觀。每個步驟中的連結都會帶您前往提供更多詳細資料的頁面。
-
-歡迎試用！如果您想要試用Astra Control Center、可以使用90天試用版授權。請參閱 link:../concepts/licensing.html["授權資訊"^] 以取得詳細資料。
+以下是使用Astra Control Center所需的步驟總覽。每個步驟中的連結都會帶您前往提供更多詳細資料的頁面。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 檢閱Kubernetes叢集需求
 確保您的環境符合這些要求。
@@ -31,7 +29,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 * https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["設定Astra Trident儲存後端"^]
 * https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["設定Astra Trident儲存類別"^]
 * https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安裝Astra Trident Volume Snapshot控制器和Snapshot類別"^]
-* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["設定Astra Trident儲存Volume快照控制器和Snapshot類別"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["建立Volume Snapshot類別"^]
 
 
 *不包含認證資料* ONTAP
@@ -43,8 +41,12 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 完成這些安裝工作。
 
 * https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["從NetApp 支援網站 「更新下載」頁面下載Astra Control Center"^]
-* link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["如果您正在評估Astra Control Center、請下載試用版授權檔案"^]
-* link:../concepts/licensing.html["如果您已購買Astra Control Center、請產生授權檔案"^]
+* 取得NetApp授權檔案：
++
+** link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["如果您正在評估Astra Control Center、請下載試用版授權檔案"^]
+** link:../concepts/licensing.html["如果您已購買Astra Control Center、請產生授權檔案"^]
+
+
 * link:../get-started/install_overview.html["安裝Astra Control Center"^]
 * link:../get-started/configure-after-install.html["執行其他選用的組態步驟"^]
 

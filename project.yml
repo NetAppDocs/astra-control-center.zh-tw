@@ -46,7 +46,7 @@ homepage:
     - title: 版本資訊
       url: "/release-notes/rn_overview.html"
     - title: 歡迎試用
-      url: "/get-started/setup_overview.html#add-a-license-for-astra-control-center"
+      url: "/get-started/quick-start.html"
     - title: 安裝Astra Control Center
       url: "/get-started/install_acc.html"
   - title: 使用Astra控制中心
