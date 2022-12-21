@@ -1,0 +1,27 @@
+= 下載並擷取Astra Control Center
+:allow-uri-read: 
+
+
+
+
+== 下載並擷取Astra Control Center
+
+. 前往 https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Astra Control Center評估下載頁面"^] 於 NetApp 支援網站。
+. 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
+. （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
++
+[source, console]
+----
+tar -vxzf astra-control-center-certs-[version].tar.gz
+openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
+----
++
+隨即顯示輸出 `Verified OK` 驗證成功之後。
+
+. 從Astra Control Center套裝組合擷取映像：
++
+[source, console]
+----
+tar -vxzf astra-control-center-[version].tar.gz
+----
+

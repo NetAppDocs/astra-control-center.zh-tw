@@ -54,8 +54,7 @@ kubectl get apiservices
 .關於這項工作
 Astra Control Center升級程序會引導您完成下列高層級步驟：
 
-* <<下載Astra Control Center套裝組合>>
-* <<打開產品組合的包裝>>
+* <<下載並擷取Astra Control Center>>
 * <<將映像新增至本機登錄>>
 * <<安裝更新的Astra Control Center操作員>>
 * <<升級Astra Control Center>>
@@ -70,24 +69,23 @@ TIP: 當排程、備份和快照未執行時、請在維護期間執行升級。
 
 
 
-== 下載Astra Control Center套裝組合
+== 下載並擷取Astra Control Center
 
-. 請從下載Astra Control Center套裝組合 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]。檔案名稱類似於下列項目： `astra-control-center-[version].tar.gz`。
-. （選用）驗證套裝組合的簽名：
+. 前往 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center產品下載頁面"^] 於 NetApp 支援網站。您可以從下拉式功能表中選取所需的最新版本或其他版本。
+. 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
+. （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
 +
-[listing]
+[source, console]
 ----
-openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
+tar -vxzf astra-control-center-certs-[version].tar.gz
+openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
-
-
-
-
-== 打開產品組合的包裝
-
-. 擷取影像：
 +
-[listing]
+隨即顯示輸出 `Verified OK` 驗證成功之後。
+
+. 從Astra Control Center套裝組合擷取映像：
++
+[source, console]
 ----
 tar -vxzf astra-control-center-[version].tar.gz
 ----

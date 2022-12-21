@@ -51,7 +51,7 @@ IMPORTANT: 請勿刪除Astra Control Center運算子（例如、 `kubectl delete
 .步驟
 若要安裝Astra Control Center、請執行下列步驟：
 
-* <<下載並解壓縮Astra Control Center套裝組合>>
+* <<下載並擷取Astra Control Center>>
 * <<安裝NetApp Astra kubecl外掛程式>>
 * <<將映像新增至本機登錄>>
 * <<設定具有驗證需求之登錄的命名空間和機密>>
@@ -65,17 +65,21 @@ IMPORTANT: 請勿刪除Astra Control Center運算子（例如、 `kubectl delete
 
 
 
-== 下載並解壓縮Astra Control Center套裝組合
+== 下載並擷取Astra Control Center
 
-. 請從下載Astra Control Center套裝組合（「Astra控制中心-[版本].tar.gz」） https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]。
-. 從下載Astra Control Center認證與金鑰的壓縮檔 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["NetApp 支援網站"^]。
-. （選用）驗證套裝組合的簽名：
+. 前往 https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Astra Control Center評估下載頁面"^] 於 NetApp 支援網站。
+. 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
+. （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
 +
 [source, console]
 ----
-openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
+tar -vxzf astra-control-center-certs-[version].tar.gz
+openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
-. 擷取影像：
++
+隨即顯示輸出 `Verified OK` 驗證成功之後。
+
+. 從Astra Control Center套裝組合擷取映像：
 +
 [source, console]
 ----

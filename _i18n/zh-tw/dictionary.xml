@@ -158,15 +158,12 @@
   <block id="e3ebf55f76dc38e964104d304e65e99f" category="doc">升級Astra Control Center</block>
   <block id="9cc7b6d57e2a51242322baa80ba76e7d" category="list-text">確保所有API服務都處於健全狀態且可用。</block>
   <block id="acd4353523a542de5b311529e048a8e8" category="paragraph">Astra Control Center升級程序會引導您完成下列高層級步驟：</block>
-  <block id="545c199a2f9ae71f3bff75a2efc1785a" category="list-text"><block ref="8f1bc9f78e55e970421f771e463483a1" category="inline-xref-macro-rx"></block></block>
   <block id="14905c130cb21eb99b32fda77b5847e3" category="list-text"><block ref="8f05616ca07e5e0f0a406924d57cac8c" category="inline-xref-macro-rx"></block></block>
   <block id="279afcccd954d47b442a29a6bd38e688" category="list-text"><block ref="75ed4647183314a63168429062f35c29" category="inline-xref-macro-rx"></block></block>
   <block id="41df3de87c6ea858ea2bb342ad613900" category="list-text"><block ref="4185a8362c964abfe734b0dc16083199" category="inline-xref-macro-rx"></block></block>
   <block id="df0df2649277c823afc938e5fde361c3" category="list-text"><block ref="501c3f749f8486b64153aadd98c7492d" category="inline-xref-macro-rx"></block></block>
   <block id="c98858042b23de9ff257dc0b2d9450c1" category="list-text"><block ref="13ece5cc8cd69742b645dc62f96cc63d" category="inline-xref-macro-rx"></block></block>
   <block id="64ab6dee28636075579961e17cb0df5f" category="admonition">當排程、備份和快照未執行時、請在維護期間執行升級。</block>
-  <block id="bf6391de5876b6e51397f39ae8289eec" category="section-title">下載Astra Control Center套裝組合</block>
-  <block id="ae32a002cf3df8354380980ceb442a90" category="list-text">擷取影像：</block>
   <block id="22a59db7b4ba20ac09e829d51d726828" category="section-title">將映像新增至本機登錄</block>
   <block id="9d37e8b16bca7866e9db4f98f5080a5a" category="section-title">安裝更新的Astra Control Center操作員</block>
   <block id="4dfe1039695653a07d27cb2151fbe633" category="list-text">編輯Astra Control Center營運者部署yaml（「Astra _control_center_operer_deploy」、以參照您的本機登錄和機密。</block>
@@ -828,7 +825,6 @@
   <block id="9b7b5553b7f9a88388ff63538315f288" category="list-text"><block ref="d671e7cdeaa98f3485173f8d5a620d81" category="inline-xref-macro-rx"></block></block>
   <block id="bcd2064257ec8fce1f11d1eab34e50a1" category="list-text"><block ref="d1f909bce77ae129ee64cf4c211e47c3" category="inline-xref-macro-rx"></block></block>
   <block id="3cc546d35377f25093968cba1e8c0fc6" category="list-text"><block ref="27fe6aaf425c0f95213ec6c507a97d2d" category="inline-xref-macro-rx"></block></block>
-  <block id="37b9c0fe975f84a28c93ed400bbf96df" category="list-text">請從下載Astra Control Center套裝組合（「Astra控制中心-[版本].tar.gz」）<block ref="4e4882d47509d388d52971aaee9abe33" category="inline-link-rx"></block>。</block>
   <block id="55c6b9fd6efcd18e0f53c34459084a3f" category="section-title">尋找操作員安裝頁面</block>
   <block id="396cd1df886b31da3577b40fa6f7cf0f" category="list-text">請完成下列其中一個程序、以存取操作員安裝頁面：</block>
   <block id="fd8cbefedde3fbeeb2817b2484ff0e38" category="inline-image-macro">Astra Control Center安裝頁面</block>
@@ -927,7 +923,6 @@
   <block id="0da0893fd4172b066fbee6e30d6e2ba8" category="list-text"><block ref="ebe8cfbc6650e599857a4d3918ff7b39" category="inline-xref-macro-rx"></block></block>
   <block id="38cccefe46476a7d1004d44a110ca140" category="list-text"><block ref="016bc1543542fafb09ef2c6eee94e211" category="inline-xref-macro-rx"></block></block>
   <block id="0d3c2b3775953963477be58a687ef396" category="list-text"><block ref="7f5260aec8ab352f0317ebd62c8ed1fa" category="inline-xref-macro-rx"></block></block>
-  <block id="38073e52be4dfccbbd24b3272a244562" category="list-text">從下載Astra Control Center認證與金鑰的壓縮檔<block ref="4e4882d47509d388d52971aaee9abe33" category="inline-link-rx"></block>。</block>
   <block id="f748f65c20601bd5ff808f54e4a932d1" category="section-title">設定具有驗證需求之登錄的命名空間和機密</block>
   <block id="863333fc6964aae7ff1cd85ff324bdad" category="list-text">如果您使用需要驗證的登錄、則需要執行下列動作：</block>
   <block id="4f1676fe8dda03f26994cd830c2d09a1" category="list-text">建立「NetApp-acc operator：</block>
@@ -1341,9 +1336,7 @@
   <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">針對您要設為預設的儲存類別、選取「*動作*」功能表。</block>
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">選擇*設為預設*。</block>
   <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">如果還原至先前刪除的命名空間、則會在還原程序中建立名稱相同的新命名空間。任何在先前刪除命名空間中擁有管理應用程式權限的使用者、都必須手動還原新重新建立命名空間的權限。</block>
-  <block id="4e7bc0f2f576e3a2e7b9bd624d2da7d3" category="list-text"><block ref="f9a9477fa54fe91dbfcc4b4adc8c5a84" category="inline-xref-macro-rx"></block></block>
   <block id="f27876af7f41dd88d732712643f9e8ab" category="list-text"><block ref="edd1a66c7657e8422b18455f2fcc01fd" category="inline-xref-macro-rx"></block></block>
-  <block id="bb550e726ecd8419a94f47dd80d637fc" category="section-title">下載並解壓縮Astra Control Center套裝組合</block>
   <block id="72b3b17d23e094f72641c4ffa8928d85" category="section-title">安裝NetApp Astra kubecl外掛程式</block>
   <block id="ade277501852b5468b0c3b865cb7e40f" category="paragraph">Astra Control是Kubernetes應用程式資料生命週期管理解決方案、可簡化狀態應用程式的作業。輕鬆保護、備份、複寫及移轉Kubernetes工作負載、並即時建立運作中的應用程式複本。</block>
   <block id="50f9f66165bfd78e72eb71c73f5252c0" category="list-text">使用NetApp SnapMirror技術將應用程式複寫到遠端系統</block>
@@ -1974,7 +1967,6 @@
   <block id="0a95083609256f37336e12a9bcf2e463" category="list-text">確定所有Astra Control Center Pod都在執行中。</block>
   <block id="b9c8db9ede8046f6b37500c8dbd6bff3" category="list-text">安裝Astra Control Center UI。</block>
   <block id="d73f4cd3ed09d80212f766964fd60d2b" category="admonition">請勿刪除Astra Control Center運算子（例如、<block ref="dfe54be7b1dbab0ff279802517dca055" prefix=" " category="inline-code"></block>）在Astra Control Center安裝或操作期間、隨時避免刪除Pod。</block>
-  <block id="17ed07ff15b5d43d3eca288ae4a093bd" category="list-text">（選用）驗證套裝組合的簽名：</block>
   <block id="1bde686a3d07054e85d48421d9a23fe0" category="paragraph">NetApp Astra kubectl命令列外掛程式可在執行與部署及升級Astra Control Center相關的一般工作時節省時間。</block>
   <block id="23a38036ff7df90ffe338fd68ee89bb1" category="paragraph">NetApp為不同的CPU架構和作業系統提供外掛程式二進位檔。執行此工作之前、您必須先瞭解您的CPU和作業系統。</block>
   <block id="18f40e403e21c47db1d640c681eb60c1" category="list-text">列出可用的NetApp Astra kubectl外掛程式二進位檔、並記下作業系統和CPU架構所需的檔案名稱：</block>
@@ -2245,10 +2237,7 @@
   <block id="fc6ccc2ccd83dc8264cd34d7b982f76c" category="list-text">預設儲存類別若要判斷您的預設儲存類別、請針對現有的Astra Control Center執行下列命令：<block ref="6c8dbf2986e91118b19341b89fa1a31d" prefix=" " category="inline-code"></block></block>
   <block id="f84aae8dfc7421a333e4e7e836c130c7" category="list-text">（僅限OpenShift）確保所有叢集操作員都處於健全狀態且可用。</block>
   <block id="825d372ea32aac53c3ee57e9a6a5bbc6" category="list-text">在開始升級之前、請先登出Astra Control Center UI。</block>
-  <block id="2706061cc7b67d10cbb2fd9207c73066" category="list-text"><block ref="c923275db650d69735b78d7ae2ff9702" category="inline-xref-macro-rx"></block></block>
   <block id="a7cd7e89d9e646b3bc6c32ee6ac752b0" category="admonition">請勿刪除Astra Control Center運算子（例如、<block ref="dfe54be7b1dbab0ff279802517dca055" prefix=" " category="inline-code"></block>）在Astra Control Center升級或操作期間、隨時避免刪除Pod。</block>
-  <block id="74653d2b98b664476dac80c4d327b6fd" category="list-text">請從下載Astra Control Center套裝組合<block ref="4e4882d47509d388d52971aaee9abe33" category="inline-link-rx"></block>。檔案名稱類似於下列項目：<block ref="f38ca01b4c2fe15aa06076beb2ee98ff" prefix=" " category="inline-code"></block>。</block>
-  <block id="bc73322c3d32428ecdf621fe0171026e" category="section-title">打開產品組合的包裝</block>
   <block id="4fa6fdd44c10c16a714b8f15d294dafa" category="section-title">請確認您已安裝NetApp Astra kubectl外掛程式</block>
   <block id="22752d0c5fc41c072184ec1bf10292a7" category="list-text">使用下列命令來判斷是否已安裝外掛程式：</block>
   <block id="9cdaf3a6ae59eb2faabcb002cfc1bd4b" category="list-text">如果您使用需要驗證的登錄、請取代或編輯的預設行<block ref="e90e0b4a41dde5f038023d33ee45ad34" prefix=" " category="inline-code"></block> 提供下列功能：</block>
@@ -2604,8 +2593,6 @@
   <block id="cff9e873ecc35abb358c9f43ad1d3dcf" category="inline-link-macro">設定ONTAP 驗證資料</block>
   <block id="27912e4366edb4ee86aa373395b590f5" category="list-text"><block ref="27912e4366edb4ee86aa373395b590f5" category="inline-link-macro-rx"></block></block>
   <block id="7ae94f3e29fb1789e466d68ff3b7719d" category="paragraph">完成這些安裝工作。</block>
-  <block id="be63ab5309fd82ceb3e549496baad39a" category="inline-link">從NetApp 支援網站 「更新下載」頁面下載Astra Control Center</block>
-  <block id="5aa98cd838ea9dade91877a36ab694a8" category="list-text"><block ref="5aa98cd838ea9dade91877a36ab694a8" category="inline-link-rx"></block></block>
   <block id="81d47d4dec7b1222070eae27bb4310ee" category="inline-link-macro">如果您正在評估Astra Control Center、請下載試用版授權檔案</block>
   <block id="1ac362ab549aa84c347d7d5271314ad6" category="list-text"><block ref="1ac362ab549aa84c347d7d5271314ad6" category="inline-link-macro-rx"></block></block>
   <block id="fbc059a4c4dca73352b8c2d2b522c031" category="inline-link-macro">如果您已購買Astra Control Center、請產生授權檔案</block>
@@ -2648,4 +2635,16 @@
   <block id="5e83d0e22710b5fb10a24a55f0464eab" category="list-text"><block ref="be01b2f45d5e5a31b2acb026a0c1fc3d" category="inline-link-macro-rx"></block> 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。</block>
   <block id="89eae3d9e27253b30e1b76d62008b32d" category="inline-link-macro">第一次設定Astra Control Center時、請新增授權</block>
   <block id="117e62f8841c871dc009220d6b7e5401" category="list-text"><block ref="117e62f8841c871dc009220d6b7e5401" category="inline-link-macro-rx"></block></block>
+  <block id="2f8cadf95c6d0e5ffc19921fb6fd5cca" category="doc">下載並擷取Astra Control Center</block>
+  <block id="a63179888ca7fc528404e8b4f6bab69a" category="inline-link">Astra Control Center評估下載頁面</block>
+  <block id="e7ba0480f7b95b8e2dba97abcd8511d1" category="list-text">前往<block ref="7d0bcaecb4c3439d264a801b59ac8770" category="inline-link-rx"></block> 於 NetApp 支援網站。</block>
+  <block id="7bf65886a6daf176486ecc32f5736b33" category="list-text">下載包含Astra Control Center的套裝組合 <block ref="f38ca01b4c2fe15aa06076beb2ee98ff" prefix="(" category="inline-code"></block>）。</block>
+  <block id="a5633748c6774da7b883a9fcf799a73e" category="list-text">（建議但可選）下載Astra Control Center的憑證與簽名套件 <block ref="7a63467f08b4d3ec454a0b66e2353d54" prefix="(" category="inline-code"></block>）若要驗證套件的簽名：</block>
+  <block id="79204d6da69fa9c1924fe4edc28bd8c4" category="paragraph">隨即顯示輸出<block ref="33a9cc0739a5a17f65e28cf0b260007f" prefix=" " category="inline-code"></block> 驗證成功之後。</block>
+  <block id="e05ea496750d85fb7d63c1d2952dc33e" category="list-text">從Astra Control Center套裝組合擷取映像：</block>
+  <block id="78fef5e4370c46736bde008c50f1c5ce" category="inline-link">請從NetApp 支援網站 《The》《The》《The》《The》《The》《The》《The》《The</block>
+  <block id="781315777416a8ea4df0544c1a15fab7" category="list-text"><block ref="781315777416a8ea4df0544c1a15fab7" category="inline-link-rx"></block></block>
+  <block id="47fc3325fabe9d0cade728b90fbe622a" category="list-text"><block ref="182b6f14d78206b412277e5e36bb924f" category="inline-xref-macro-rx"></block></block>
+  <block id="a73afd2c31b746ac34e3fec7590e3cfa" category="inline-link">Astra Control Center產品下載頁面</block>
+  <block id="779308b02cace7345409bae24871be63" category="list-text">前往<block ref="463a64da5039ffbaa330e14a245ba287" category="inline-link-rx"></block> 於 NetApp 支援網站。您可以從下拉式功能表中選取所需的最新版本或其他版本。</block>
 </blocks>
