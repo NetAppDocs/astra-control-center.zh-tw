@@ -2587,8 +2587,6 @@
   <block id="6b836f0beaae8e5e5b3ee7da02492481" category="list-text"><block ref="6b836f0beaae8e5e5b3ee7da02492481" category="inline-link-rx"></block></block>
   <block id="8fa7c146eed93f49403e27757627c1de" category="inline-link">設定Astra Trident儲存類別</block>
   <block id="8f233a56a0bbc57a073461b666b439e1" category="list-text"><block ref="8f233a56a0bbc57a073461b666b439e1" category="inline-link-rx"></block></block>
-  <block id="2d2c9a29bb271a0bf15559829b91147a" category="inline-link">安裝Astra Trident Volume Snapshot控制器和Snapshot類別</block>
-  <block id="6c4528e739169720eefd2bff769e1da1" category="list-text"><block ref="6c4528e739169720eefd2bff769e1da1" category="inline-link-rx"></block></block>
   <block id="ae0a6f81e3ab19bb5bb4cc16ba804b6d" category="paragraph">*不包含認證資料* ONTAP</block>
   <block id="cff9e873ecc35abb358c9f43ad1d3dcf" category="inline-link-macro">設定ONTAP 驗證資料</block>
   <block id="27912e4366edb4ee86aa373395b590f5" category="list-text"><block ref="27912e4366edb4ee86aa373395b590f5" category="inline-link-macro-rx"></block></block>
@@ -2647,4 +2645,6 @@
   <block id="47fc3325fabe9d0cade728b90fbe622a" category="list-text"><block ref="182b6f14d78206b412277e5e36bb924f" category="inline-xref-macro-rx"></block></block>
   <block id="a73afd2c31b746ac34e3fec7590e3cfa" category="inline-link">Astra Control Center產品下載頁面</block>
   <block id="779308b02cace7345409bae24871be63" category="list-text">前往<block ref="463a64da5039ffbaa330e14a245ba287" category="inline-link-rx"></block> 於 NetApp 支援網站。您可以從下拉式功能表中選取所需的最新版本或其他版本。</block>
+  <block id="e4a1005c9b913ef4e65af805a3797f79" category="inline-link">安裝Astra Trident Volume Snapshot控制器</block>
+  <block id="93dcbf6be32efef5eec53e28c4ff8075" category="list-text"><block ref="93dcbf6be32efef5eec53e28c4ff8075" category="inline-link-rx"></block></block>
 </blocks>
