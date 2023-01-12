@@ -17,6 +17,9 @@ LDAP是存取分散式目錄資訊的業界標準傳輸協定、也是企業驗�
 在高層級上、組態包括將Astra與LDAP整合、以及定義與LDAP定義對應的Astra Control使用者和群組。您可以使用Astra Control API或Web UI來設定LDAP驗證、以及LDAP使用者和群組。
 
 
+IMPORTANT: Astra Control Center使用LDAP「郵件」屬性中的電子郵件地址來搜尋及追蹤遠端使用者。此屬性可能是目錄中的選用欄位或空白欄位。您想要顯示在Astra Control Center中的任何遠端使用者、此欄位中都必須有電子郵件地址。此電子郵件地址是Astra Control Center中用於驗證的使用者名稱。
+
+
 
 == 新增LDAPS驗證的憑證
 

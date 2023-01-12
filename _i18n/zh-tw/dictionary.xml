@@ -2421,7 +2421,6 @@
   <block id="1160ee39f7820d7d2e76804af2039930" category="paragraph">如果您已在Astra Control系統上啟用LDAP驗證、您可以搜尋LDAP使用者和群組、並將其納入系統的核准使用者中。</block>
   <block id="37bf4a5ff56340f15000d94c368e718e" category="section-title">新增遠端使用者</block>
   <block id="2a1541ed344df5fc941cbeff73413063" category="paragraph">帳戶擁有者和管理員可以將遠端使用者新增至Astra Control。</block>
-  <block id="d5431c01df37552ba02ffed565c10c15" category="admonition">如果系統上已存在具有相同電子郵件地址的本機使用者、則無法新增遠端使用者。若要將使用者新增為遠端使用者、請先從系統中刪除本機使用者。</block>
   <block id="0458c4dea7d5155829cbeb52eb203f5c" category="list-text">前往*帳戶*區域。</block>
   <block id="e61c9783dfaef20ae4845e278eb547a0" category="list-text">選取*使用者與群組*索引標籤。</block>
   <block id="de1aef9870a455f409b14e0fb5c27639" category="list-text">在頁面最右側、選取*遠端使用者*。</block>
@@ -2650,4 +2649,6 @@
   <block id="d0ff3cbf62dac1b7f8447b852cfe9c4c" category="list-text">如果已安裝外掛程式、則命令應傳回KECBECtl外掛程式說明。若要移除現有版本的kubecl-Astra、請執行下列命令：<block ref="53504093e13f5f1ec1d1d91d3e1dd05b" prefix=" " category="inline-code"></block>。</block>
   <block id="1b6605c6bf28deef0dc2970f3179c395" category="list-text">如果命令傳回錯誤、表示外掛程式尚未安裝、您可以繼續下一步進行安裝。</block>
   <block id="dab1a9c7ecb95d287fc412736d955975" category="list-text">安裝外掛程式：</block>
+  <block id="51867b2a71ff7c3e5393cf8bb442defc" category="admonition">如果系統上已存在具有相同電子郵件地址的本機使用者、則無法新增遠端使用者。若要將使用者新增為遠端使用者、請先從系統中刪除本機使用者。</block>
+  <block id="e6bc00cd8c52affb4292616facc440da" category="admonition">Astra Control Center使用LDAP「郵件」屬性中的電子郵件地址來搜尋及追蹤遠端使用者。此屬性可能是目錄中的選用欄位或空白欄位。您想要顯示在Astra Control Center中的任何遠端使用者、此欄位中都必須有電子郵件地址。此電子郵件地址是Astra Control Center中用於驗證的使用者名稱。</block>
 </blocks>
