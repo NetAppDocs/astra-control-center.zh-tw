@@ -14,7 +14,7 @@ summary: 以下概述Astra Control環境的各個元件。
 [role="lead"]
 以下概述Astra Control環境的各個元件。
 
-image:astra-architecture-diagram-v5.png["Astra Control架構圖與元件"]
+image:astra-architecture-diagram-v5.png["說明Astra Control架構及其元件的概念性映像"]
 
 
 

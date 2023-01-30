@@ -170,7 +170,7 @@ NOTE: AWS Elastic Container登錄（ECR）權杖會在12小時後過期、導致
 
 以下是AWS部署範例：
 
-image:acc-cvo-aws2.png["Astra Control Center提供Cloud Volumes ONTAP 部署範例"]
+image:acc-cvo-aws2.png["此影像顯示Astra Control Center的範例Cloud Volumes ONTAP 、其中包含功能不實的部署"]
 
 
 
@@ -652,7 +652,7 @@ done < astra-control-center-22.04.41.manifest
 
 . 確認連接器正在執行、並切換至該連接器。
 +
-image:acc-cvo-azure-connectors.png["在BlueXP中切換連接器"]
+image:acc-cvo-azure-connectors.png["此圖顯示了BlueXP中的連接器"]
 
 . 為您的雲端環境建立工作環境。
 +
@@ -661,13 +661,13 @@ image:acc-cvo-azure-connectors.png["在BlueXP中切換連接器"]
 
 
 +
-image:acc-cvo-azure-working-environment.png["在BlueXP中建立工作環境"]
+image:acc-cvo-azure-working-environment.png["此圖顯示了BlueXP中的工作環境位置"]
 
 . 匯入OpenShift叢集。叢集將連線至您剛建立的工作環境。
 +
 .. 選擇* K8s*>*叢集清單*>*叢集詳細資料*、即可檢視NetApp叢集詳細資料。
 +
-image:acc-cvo-azure-connected.png["已在BlueXP中匯入叢集"]
+image:acc-cvo-azure-connected.png["此影像顯示在BlueXP中匯入的叢集"]
 
 .. 請注意右上角的Trident版本。
 .. 請注意Cloud Volumes ONTAP 、顯示NetApp為資源配置程式的叢集儲存類別。

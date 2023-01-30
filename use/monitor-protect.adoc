@@ -30,7 +30,7 @@ IMPORTANT: Astra Control Center不會驗證您為Proxy伺服器輸入的詳細�
 . 選擇*帳戶*>*連線*。
 . 從下拉式清單中選取*「Connect*」以新增Proxy伺服器。
 +
-image:proxy-connect.png["顯示「Connect（連線）」選項以啟用Proxy連線。"]
+image:proxy-connect.png["此影像顯示「連線」選項以啟用Proxy連線。"]
 
 . 輸入Proxy伺服器名稱或IP位址及Proxy連接埠號碼。
 . 如果您的Proxy伺服器需要驗證、請選取核取方塊、然後輸入使用者名稱和密碼。
@@ -40,7 +40,7 @@ image:proxy-connect.png["顯示「Connect（連線）」選項以啟用Proxy連�
 .結果
 如果您輸入的代理資訊已儲存、則「*帳戶*>*連線*」頁面的「* HTTP Proxy*」區段會指出其已連線、並顯示伺服器名稱。
 
-image:proxy-new.png["顯示已成功連線的Proxy伺服器。"]
+image:proxy-new.png["此影像顯示Proxy伺服器已成功連線。"]
 
 
 
@@ -96,7 +96,7 @@ TIP: 如果您是Cloud Insights 不熟悉的人、請熟悉這些功能。請參
 . 選擇*帳戶*>*連線*。
 . 在下拉式清單中選擇*「Connect*（連線*）」顯示*「Disconnected（中斷連線）」的位置、以新增連線。
 +
-image:ci-connect.png["顯示下拉式清單中的「Connect（連線）」選項、以啟用Cloud Insights 「列舉」連線。"]
+image:ci-connect.png["此影像顯示下拉式清單中的「Connect（連線）」選項、以啟用Cloud Insights 「列舉」連線。"]
 
 . 輸入Cloud Insights 「不再使用API」權杖和租戶URL。租戶URL的格式如下：
 +
@@ -111,7 +111,7 @@ https://<environment-name>.c01.cloudinsights.netapp.com/
 .. 以取得 link:https://docs.netapp.com/us-en/cloudinsights/API_Overview.html#api-access-tokens["API權杖"^]、登入Cloud Insights 您的URL。
 .. 在支援區中、按一下「*管理*」>「* API存取*」、即可產生*讀取/寫入*和*唯讀* API存取權杖。Cloud Insights
 +
-image:cloud-insights-api.png["顯示Cloud Insights 「循環API權杖產生」頁面。"]
+image:cloud-insights-api.png["此影像顯示Cloud Insights 「循環API權杖產生」頁面。"]
 
 .. 複製*唯讀*金鑰。您必須將其貼到Astra Control Center視窗中、才能啟用Cloud Insights 此功能的鏈路。如需讀取API存取權杖金鑰權限、請選取：資產、警示、擷取單位和資料收集。
 .. 複製*讀取/寫入*金鑰。您需要將其貼到Astra Control Center * Connect Cloud Insights S還原*視窗中。如需讀取/寫入API存取權杖金鑰權限、請選取：資料擷取、記錄擷取、擷取設備和資料收集。
@@ -137,21 +137,21 @@ NOTE: 若要在Astra Control Center和Cloud Insights UI之間輕鬆來回、請�
 
 如果連線成功、Cloud Insights 「*帳戶*>*連線*」頁面的* SURS*區段會指出連線狀態、並顯示租戶URL。您可以造訪Cloud Insights 景點、查看成功接收及顯示的資料。
 
-image:cloud-insights.png["顯示Cloud Insights Astra Control Center UI中啟用的支援的支援鏈路。"]
+image:cloud-insights.png["此影像顯示Cloud Insights Astra Control Center UI中啟用的支援的支援功能。"]
 
 如果連線因為某種原因而失敗、狀態會顯示*失敗*。您可以在UI右上角的*通知*下找到失敗的原因。
 
-image:cloud-insights-notifications.png["顯示無法連線的錯誤訊息Cloud Insights 。"]
+image:cloud-insights-notifications.png["此影像顯示Cloud Insights 當無法連線時的錯誤訊息。"]
 
 您也可以在*帳戶*>*通知*下找到相同的資訊。
 
-從Astra Control Center、您可以在*後端*頁面上檢視處理量資訊、Cloud Insights 並在選擇儲存後端後端後、從此處連線至image:throughput.png["顯示Astra Control Center的後端頁面上的處理量資訊。"]
+從Astra Control Center、您可以在*後端*頁面上檢視處理量資訊、Cloud Insights 並在選擇儲存後端後端後、從此處連線至image:throughput.png["此影像顯示Astra Control Center後端頁面的處理量資訊。"]
 
 若要直接移至Cloud Insights 「不顯示」、請選取Cloud Insights 「指標」影像旁的*「不顯示」圖示。
 
 您也可以在*儀表板*上找到相關資訊。
 
-image:dashboard-ci.png["顯示Cloud Insights 儀表板上的「功能表」圖示。"]
+image:dashboard-ci.png["此影像顯示Cloud Insights 儀表板上的「圖片」圖示。"]
 
 
 IMPORTANT: 啟用Cloud Insights 完「支援不支援」連線後、如果您移除Astra Control Center中新增的後端、後端會停止向Cloud Insights 「支援不支援」回報。
@@ -192,7 +192,7 @@ NOTE: 您只能編輯API金鑰。若要變更Cloud Insights 此URL、我們建�
 
 您可以將記錄（Kubernetes事件）從Astra Control Center傳送至您的Fluentd端點。Fluentd連線預設為停用。
 
-image:fluentbit.png["顯示從Astra到Fluentd的事件記錄概念圖。"]
+image:fluentbit.png["這是從Astra到Fluentd的事件記錄概念圖。"]
 
 
 NOTE: 只有來自託管叢集的事件記錄會轉送至Fluentd。
@@ -210,7 +210,7 @@ IMPORTANT: Astra Control Center不會驗證您為Fluentd伺服器輸入的詳細
 . 選擇*帳戶*>*連線*。
 . 從顯示*中斷連線*的下拉式清單中選取*「Connect*（連線*）」以新增連線。
 +
-image:connect-fluentd.png["顯示使用者介面畫面、以啟用與Fluentd的連線。"]
+image:connect-fluentd.png["此影像顯示使用者介面畫面、用於啟用與Fluentd的連線。"]
 
 . 輸入您的Fluentd伺服器的主機IP位址、連接埠號碼和共用金鑰。
 . 選擇*連接*。

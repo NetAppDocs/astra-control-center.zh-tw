@@ -221,7 +221,7 @@ NOTE: 指令碼所建立的映像路徑應如下所示、視登錄組態而定�
 
 
 +
-image:openshift_operatorhub.png["Astra Control Center安裝頁面"]
+image:openshift_operatorhub.png["此影像顯示OpenShift Container Platform UI的Astra Control Center安裝頁面"]
 
 ** 從Red Hat生態系統目錄：
 +
@@ -232,7 +232,7 @@ image:openshift_operatorhub.png["Astra Control Center安裝頁面"]
 
 
 +
-image:red_hat_catalog.png["Astra Control Center總覽頁面"]
+image:red_hat_catalog.png["此影像顯示可從RedHat生態系統目錄取得的Astra Control Center總覽頁面"]
 
 
 
@@ -266,7 +266,7 @@ NOTE: 如果您選擇手動核准策略、系統會提示您核准此操作員�
 
 == 安裝Astra Control Center
 
-. 從Astra控制中心操作員* Astra控制中心*索引標籤內的主控台、選取*建立適用的*。image:openshift_acc-operator_details.png["Astra Control Center操作員頁面"]
+. 從Astra控制中心操作員* Astra控制中心*索引標籤內的主控台、選取*建立適用的*。image:openshift_acc-operator_details.png["此影像顯示Astra Control Center操作員頁面、其中已選取Astra Control Center索引標籤"]
 . 填寫「Create適用的」表單欄位：
 +
 .. 保留或調整Astra Control Center名稱。
