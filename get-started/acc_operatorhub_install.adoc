@@ -309,10 +309,6 @@ NOTE: 如果您使用需要驗證的登錄、 <<建立登錄機密,在叢集上�
 NOTE: 如果已設定預設儲存類別、請確定它是唯一具有預設註釋的儲存類別。
 
 .. 定義客戶需求日處理偏好設定。
-+
-
-NOTE: 如需CRD選項的詳細資訊、請參閱 https://docs.netapp.com/us-en/astra-control-center/get-started/acc_cluster_cr_options.html["本節"^]。
-
 
 
 . 選取「Yaml」檢視以檢閱您所選的設定。

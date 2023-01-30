@@ -907,7 +907,6 @@
   <block id="dfa816f2277b6d07821b3fb152d086c3" category="list-text">安裝Astra Control Center操作員：</block>
   <block id="8763b5c0837ac6cf7ff31e202742432c" category="section-title">設定Astra控制中心</block>
   <block id="b74df8ed66dab15b4d425c5788286114" category="inline-xref">後續步驟</block>
-  <block id="77e0de8ecc5568c2d3a063c7dc7001ec" category="admonition">如需有關「負載平衡器」和入口服務類型的詳細資訊、請參閱 <block ref="ec43fa96d69fa714ee8406758839eaf7" category="inline-link-macro-rx"></block>。</block>
   <block id="a59774b3b337d42ea8340b94bf2d3f8e" category="section-title">完整的Astra控制中心和操作員安裝</block>
   <block id="c788fbef242d8cbeac1895b022577b56" category="list-text">如果您尚未在上一步中執行此操作、請建立「NetApp-acc」（或自訂）命名空間：</block>
   <block id="f940bc4260ea160f249996c1f8936f48" category="list-text">在「NetApp-acc」（或您的自訂）命名空間中安裝Astra Control Center：</block>
@@ -1372,7 +1371,6 @@
   <block id="e13d4a668fc56237f39878bf668e8d7b" category="inline-link-macro">瞭解Pod安全性原則限制</block>
   <block id="008c400b59b77d7bf927c2a682a431e6" category="list-text">確保您打算使用的Astra FQDN可路由傳送至此叢集。這表示您在內部DNS伺服器中有DNS項目、或是使用已註冊的核心URL路由。</block>
   <block id="33af5b5ab1531482f9e1f1b5a5685f71" category="admonition">附註的Y反 洗錢範例遵循下列步驟。</block>
-  <block id="a8038a5cd908114c889c5235c5c0c805" category="inline-link-macro">CR選項及其潛在價值</block>
   <block id="12f475c06a815cdd9492e49594e2118b" category="example-title">回應範例</block>
   <block id="a7302f73f009315fcf704584d75d2bcb" category="list-text">Istio入口</block>
   <block id="e0dc391851e56c00a5adaa4c79f40d66" category="list-title">Istio入侵步驟</block>
@@ -1394,85 +1392,41 @@
   <block id="51ac4bf63a0c6a9cefa7ba69b4154ef1" category="cell">設定</block>
   <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">類型</block>
   <block id="ad8783089f828b927473fb61d51940ec" category="cell">使用</block>
-  <block id="50b53443b2cab2362a72a4e4f743a9d5" category="cell">價值範例</block>
-  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">說明</block>
   <block id="bbdbf70444e48a34a4a7e7d708d85eec" category="cell">astraVersion</block>
   <block id="b45cffe084dd3d20d928bee85e7b0f21" category="cell">字串</block>
   <block id="b651efdb98a5d6bd2b3935d0c3f4a5e2" category="cell">必要</block>
-  <block id="0cea24ae3b134c67dff89b49c55ea750" category="cell">1.5.2.</block>
-  <block id="f593b7f32cbb8ccf8741f1048bae6f0c" category="cell">要部署的適用版本。您將獲得一個具有對應版本的Helm儲存庫。</block>
   <block id="d27903c79b643b2f565c31e894abb568" category="cell">astraAddress</block>
   <block id="51c3153f8b9ad8f3a27b28d6c8f95aab" category="cell">astra.example.com</block>
-  <block id="0867c12db542ef9d451afde3285809cd" category="cell">定義如何在資料中心找到Astra。此IP位址和/或DNS A記錄必須在配置Astra Control Center之前建立。</block>
   <block id="cd7a180ee2029176203abb971a5e5ed9" category="cell">帳戶名稱</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="cell">範例</block>
-  <block id="e9d8daccc1f84738412e79a8fd1a461b" category="cell">Astra Control Center帳戶名稱。只能有一個。</block>
   <block id="0c83f57c786a0b4a39efab23731c7ebc" category="cell">電子郵件</block>
   <block id="e64c7d89f26bd1972efa854d13d7dd61" category="cell">admin@example.com</block>
-  <block id="b602076a76418e47312311025c10d288" category="cell">要新增為Astra第一位使用者的系統管理員使用者名稱。此電子郵件地址將由Astra Control根據事件保證通知。</block>
   <block id="ed89387bcd11937a7a92a99a2cbfb5d7" category="cell">名字</block>
   <block id="b972b330bcbcd220003258f963c87063" category="cell">SRE</block>
-  <block id="f393575fa37f3e35093fc0b0cb4a9aa9" category="cell">支援Astra的系統管理員名字。</block>
   <block id="ef21925fada6dfb684b5d8ec72114bb1" category="cell">姓氏</block>
   <block id="e3afed0047b08059d0fada10f400c1e5" category="cell">管理</block>
-  <block id="93a72fc5236af18f351be00b687e486e" category="cell">支援Astra的系統管理員姓氏。</block>
   <block id="78ec9b60245b46a4f05158076962ace9" category="cell">storageClass</block>
-  <block id="769fc85668e3591c0dc0ec013b9af26a" category="cell">選用（這是預設值）</block>
   <block id="e3bccceaf53ea80a4685ac9b974016f3" category="cell">ONTAP金級</block>
-  <block id="6f73cf029b5d1daa197cd030b6b3760f" category="cell">要用於PVCS的儲存類別。如果未設定、則會使用預設的儲存類別。</block>
   <block id="c3c263fe360a73d45c030a672e1ad0c4" category="cell">Volume ReclaimPolicy</block>
-  <block id="ec0fc0100c4fc1ce4eea230c3dc10360" category="cell">未定義</block>
-  <block id="ebb061953c0454b2c8ee7b0ac615ebcd" category="cell">選用</block>
-  <block id="afece4245269582cb2f1009d4fb52047" category="cell">保留</block>
-  <block id="61ec02aa70fd86de3f25be42de6676d0" category="cell">回收要為持續磁碟區設定的原則。</block>
   <block id="7ebc1f67b2eb5a818a1c50174696304a" category="cell">astraResources2200</block>
-  <block id="7a1920d61156abc05a60135aefe8bc67" category="cell">預設</block>
-  <block id="9aa59dd328dceeae7b9329c30375e0f7" category="inline-xref">設定複雜度</block>
-  <block id="0ab3e98ec11595dab9a4160c3c1c7b14" category="cell">適用的擴充選項適用於適用的適用範圍。請參閱 <block ref="9e75cebeb1907d98fb5ad5d8b1802581" category="inline-xref-macro-rx"></block> 以瞭解此設定如何影響其他設定。</block>
-  <block id="c397b521fb64270cc7c57601436443f9" category="cell">astraKubeConfigSecret</block>
-  <block id="ae09fdc391a1645e0e36afb80c11406e" category="cell">ACC-KECBEConnfig - cred</block>
-  <block id="33c2ac1e8e901765bab998088c5e90cf" category="cell">如果存在此值且存在機密、則操作員將嘗試新增KubeConfig、以成為第一個受管理的叢集。</block>
   <block id="64c885ad8d34e07c7de4b0ba1410c410" category="cell">擷取類型</block>
   <block id="753832af32ffcc2d2e18e7628774d7cf" category="cell">一般（這是預設值）</block>
-  <block id="e93ec5df2410dbf49d6a14b82ac08891" category="cell">應設定入侵Astra控制中心的類型。有效值為「一般」和「AccTraefik」。請參閱 <block ref="9e75cebeb1907d98fb5ad5d8b1802581" category="inline-xref-macro-rx"></block> 以瞭解此設定如何影響其他設定。</block>
-  <block id="f60611a9540a2a10dfb04bbd1ce9de4a" category="cell">部署</block>
   <block id="27226c864bac7454a8504f8edb15d95b" category="cell">布林值</block>
-  <block id="a735223087c6718f94cbbb9b1c06bcce" category="cell">是（這是預設值）</block>
   <block id="990dc1a09e10c7b5378e6bc8a1956cb8" category="cell">影像登錄</block>
-  <block id="f9f97eace352dc43a42af242ec82517b" category="cell">裝載Astra應用程式映像、Astra Control Center運算子和Astra Control Center Helm儲存庫的容器映像登錄。</block>
   <block id="f141c732c6aae0fddd2afdfac3f75f3f" category="cell">imageRegistry.name</block>
-  <block id="54db38379588b032f2795048b8ba5db2" category="cell">如果您使用image登 錄、則為必要項目</block>
   <block id="e77678b9947da8914bb67ef57aa6bb3d" category="cell">example.registry.com/astra</block>
-  <block id="c12f122c0e0cd85aca5578fea25ffc9d" category="cell">映像登錄的名稱。請勿以傳輸協定為前置詞。</block>
   <block id="c6fe3b36a104e3ea913f9a6b82389050" category="cell">imageRegistry.secret</block>
   <block id="d2522c50d2a3c9af9481f3e38f4f0822" category="cell">Astra登錄建立</block>
   <block id="a4eae2eb04aaa73a5aa84743236715c2" category="cell">用來驗證映像登錄的Kubernetes機密名稱。</block>
   <block id="5398d7dab242bfea13c044912cacfd10" category="cell">AutoSupport</block>
-  <block id="753a36f3151b6e139874237695540464" category="cell">表示NetApp主動式支援應用程式NetApp Active IQ 的參與狀態。需要網際網路連線（連接埠4442）、所有支援資料都會匿名。</block>
   <block id="774a4ec4adf9dd65264c77b3b87833b7" category="cell">AutoSupport。已註冊</block>
-  <block id="187e63a519857aa330134cf7e1b12d49" category="cell">可選、但必須選擇「已註冊」或「URL」欄位</block>
   <block id="e6e84f5b60d543e4f60284bb0d8839ec" category="cell">假（此值為預設值）</block>
-  <block id="79a2a5a332b744f38d2eef0e9dfbfb27" category="cell">「已註冊」決定您是否要將匿名資料傳送給NetApp以供支援之用。預設選項為「假」、表示不會傳送任何支援資料給NetApp。</block>
   <block id="ca77df23f9eeb9f068b3474e5065bc35" category="cell">AutoSupport URL</block>
   <block id="89f1dc01ab80754de6eb13d2752e24d4" category="cell"><block ref="89f1dc01ab80754de6eb13d2752e24d4" category="inline-link-rx"></block></block>
-  <block id="da4b2568a770a13dc6163146ec2b9bda" category="cell">URL決定匿名資料的傳送位置。</block>
   <block id="c16ae51f09d668b952e5ab23072ad64e" category="cell">客戶需求日</block>
-  <block id="f5e9afcbb54aad676cfb583e7d16d25e" category="cell">Astra Control Center應如何處理客戶需求日的選項。</block>
   <block id="665b3f371a91222c9cb860633e329f92" category="cell">CRDs.externalTraefik</block>
-  <block id="a514cb29184af33e5cbb1a5eb784f247" category="cell">true（此值為預設值）</block>
-  <block id="dc7512db31b9d81f4538099f6f8be19c" category="cell">依預設、Astra Control Center會安裝所需的Traefik客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。</block>
   <block id="15c17271ca03b109604346103f40edce" category="cell">CRDs.externalCertManager</block>
-  <block id="afe7f9433308e7559082cc7921b069ca" category="cell">依預設、Astra Control Center會安裝必要的認證管理程式客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。</block>
-  <block id="05cc3cdd12b5479d257c8ce1c6ee1616" category="cell">客戶需求日：升級</block>
-  <block id="a34c0d2c45d3df73fb5c5afc41f3cf35" category="cell">決定在Astra控制中心升級時、是否應升級CRD。</block>
-  <block id="483207f066cfac7643d04c8e963f8a9f" category="section-title">組態組合與不相容</block>
-  <block id="eb01df64e1823451b3a8bafdc0ac46a8" category="paragraph">部分Astra Control Center叢集的CR組態設定會大幅影響Astra Control Center的安裝方式、並可能與其他設定衝突。以下內容說明重要的組態設定、以及如何避免不相容的組合。</block>
-  <block id="f75509a94f53f836175a794fd6c18b68" category="paragraph">依預設、Astra Control Center會針對Astra內的大部分元件設定資源要求來進行部署。此組態可讓Astra Control Center軟體堆疊在應用程式負載和擴充性增加的環境中、發揮更佳效能。</block>
-  <block id="56091c5689d9f7f838e90dc8808f28f9" category="paragraph">擷取類型有兩個有效值：</block>
-  <block id="8045a0a6c688b0635e3caccc408a1446" category="list-text">一般</block>
   <block id="0a3e1793e4eaf6bd67bdf43d1bca1c74" category="list-text">AccTraefik</block>
-  <block id="720c65aac1376cecaa733ad320a3a574" category="paragraph">當「擷取類型」設定為「一般」時、Astra Control不會安裝任何入口資源。假設使用者有一種通用的方法、可以透過網路保護流量、並將流量路由傳送到Kubernetes叢集上執行的應用程式、而且他們想要在此使用相同的機制。當使用者建立入口以將流量路由至Astra Control時、入口必須指向連接埠80上的內部交會服務。以下範例為使用「一般擷取類型」設定的一種Nginx入口資源。</block>
-  <block id="e7164cd067e695c80426d33c6ab3f970" category="paragraph">當「擷取類型」設定為「AccTraefik」時、Astra Control Center會將其Traefik閘道部署為Kubernetes負載平衡器類型服務。使用者需要為Astra Control Center提供外部負載平衡器（例如MetalLB）、才能取得外部IP。</block>
   <block id="b8b135c22936352c3cfdc9f8e3fd023b" category="list-text"><block ref="fb50e5d2336668b8d0662f52bcf85cbd" category="inline-xref-macro-rx"></block></block>
   <block id="ba2f1a8ca4d338f475c569aac706f70d" category="list-text"><block ref="1e68754240d611736f4d693962b83649" category="inline-xref-macro-rx"></block></block>
   <block id="fccc6a2f80c99556fc0a67d0bb45eed2" category="list-text"><block ref="4c1da4dfad9caa1797b7b20ff62bf3da" category="inline-xref-macro-rx"></block></block>
@@ -1944,23 +1898,10 @@
   <block id="3d59a0091a9b90694e09ed10fd28e891" category="list-text">變更<block ref="a3d1b23e7abf0f3b3ca5fcf7e61860cd" prefix=" " category="inline-code"></block> 適用於<block ref="4a3ecd51c30dc55cebd7ed9babbb7931" prefix=" " category="inline-code"></block> 映像到您在中推入映像的登錄路徑 <block ref="7fe0e1ddcc2917e6a216033278119235" category="inline-xref-macro-rx"></block>。</block>
   <block id="26fcd88032025b1fd17ddffb0ce0a06a" category="list-text">變更<block ref="a3d1b23e7abf0f3b3ca5fcf7e61860cd" prefix=" " category="inline-code"></block> 適用於<block ref="83f93b05da174976bd534cc67ad9f7b4" prefix=" " category="inline-code"></block> 映像到您在中推入映像的登錄路徑 <block ref="7fe0e1ddcc2917e6a216033278119235" category="inline-xref-macro-rx"></block>。</block>
   <block id="f82d1fb90ccb7f8e12e9df6b41fdd685" category="list-text">編輯Astra Control Center自訂資源（CR）檔案 <block ref="70b058e54d2bda749060070a7f9c4e5c" prefix="(" category="inline-code"></block>）進行帳戶、AutoSupport 功能、登錄及其他必要的設定：</block>
-  <block id="fb6d5c9eed25e9f2fd8ac9c23fecb720" category="admonition">如需其他自訂項目、請熟悉所有項目 <block ref="76933893942aa9bf6e77f64e6560687f" category="inline-link-macro-rx"></block> 確保您的環境正確部署Astra Control Center。</block>
-  <block id="5088e31fc83abafa62c4705e0e09ad68" category="list-text">*帳戶名稱*：變更<block ref="cd7a180ee2029176203abb971a5e5ed9" prefix=" " category="inline-code"></block> 字串至您要與帳戶建立關聯的名稱。</block>
-  <block id="76e6ad188110c233744e2ec52c7959a2" category="list-text">* astraAddress*：變更<block ref="d27903c79b643b2f565c31e894abb568" prefix=" " category="inline-code"></block> 字串至您要在瀏覽器中使用的FQDN（建議）或IP位址、以存取Astra Control Center。這是您在完成時從負載平衡器配置的相同FQDN或IP位址 <block ref="474766b82367a3ec4c760e75a04081da" category="inline-link-macro-rx"></block>。</block>
-  <block id="77a0567f754ed52d5162371d1984bc14" category="admonition">請勿使用<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> 或<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> 地址中。複製此FQDN以供在中使用 <block ref="39c8566ec35b62823c898c5e38a4b78c" category="inline-xref-macro-rx"></block>。</block>
-  <block id="69909963500cac78161d77bc63538954" category="list-text">*《*》*《變更》AutoSupport<block ref="ff7af27948b380bff5d583359796d3c8" prefix=" " category="inline-code"></block> for解決方案AutoSupport<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> 適用於沒有網際網路連線或無法保留的網站<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 適用於連線站台。</block>
-  <block id="28625cf355403476770c32f0e1eeec4f" category="list-text">*電子郵件*：變更<block ref="0c83f57c786a0b4a39efab23731c7ebc" prefix=" " category="inline-code"></block> 字串至預設的初始系統管理員位址。複製此電子郵件地址以供在中使用 <block ref="39c8566ec35b62823c898c5e38a4b78c" category="inline-xref-macro-rx"></block>。</block>
-  <block id="0b18702dba24702b939fabb0fa1199a8" category="list-text">*（選用）名字和姓氏*：新增名字<block ref="ed89387bcd11937a7a92a99a2cbfb5d7" prefix=" " category="inline-code"></block> 和姓氏<block ref="ef21925fada6dfb684b5d8ec72114bb1" prefix=" " category="inline-code"></block> 與帳戶相關聯的使用者。您可以在UI中立即或稍後執行此步驟。</block>
-  <block id="9f2f7f44b6fa1cb2b2eca10e14018040" category="list-text">*影像登錄*：變更<block ref="a3d1b23e7abf0f3b3ca5fcf7e61860cd" prefix=" " category="inline-code"></block> 移至您在中推送映像的登錄路徑 <block ref="305dd956c1213ef7c4d1a1587874974e" category="inline-xref-macro-rx"></block>。</block>
-  <block id="5a441de86ffcb5b424d74ffdf2435428" category="admonition">如果您使用的登錄不需要授權、則必須刪除<block ref="5ebe2294ecd0e0f08eab7690d2a6ee69" prefix=" " category="inline-code"></block> 行內<block ref="990dc1a09e10c7b5378e6bc8a1956cb8" prefix=" " category="inline-code"></block> 否則安裝將會失敗。</block>
-  <block id="131ef75e631c99e753f91d78298657c3" category="list-text">*（選用）storageClass *：變更<block ref="78ec9b60245b46a4f05158076962ace9" prefix=" " category="inline-code"></block> 從「ONTAP-gold」到另一個Trident storageClass資源的價值（視安裝需求而定）。執行命令<block ref="f7a6266d561ed7e94ff1f45bb43a2f5d" prefix=" " category="inline-code"></block> 以判斷您現有的已設定儲存類別。</block>
-  <block id="f78102e7777dd27d429cdaed3f2648c1" category="list-text">*擷取類型*：使用下列其中一種入口類型：</block>
   <block id="a56226948269f21e33c8cedc94f81f6e" category="list-text">*通用* <block ref="70110d526a7afb77cc9b5240e79845c0" prefix="(" category="inline-code"></block>）（預設）</block>
-  <block id="c61db47c7136932bae4271934a5587a5" category="paragraph">如果您使用另一個入口控制器、或偏好使用自己的入口控制器、請使用此選項。部署Astra Control Center之後、您需要設定 <block ref="d5e402858a9f759437c0ead0501ac799" category="inline-link-macro-rx"></block> 使用URL公開Astra Control Center。</block>
   <block id="ad8b71ed326ec5e4a369cd1389b21bfd" category="list-text">* AccTraefik* <block ref="4388d54e87947748fc2ff08932daa51e" prefix="(" category="inline-code"></block>）</block>
   <block id="083c57a62ef114dab22127329138d5f4" category="paragraph">如果您不想設定入口控制器、請使用此選項。這會部署Astra控制中心<block ref="3f624a80eb2012ebf5d970cedbdce2bc" prefix=" " category="inline-code"></block> 作為Kubernetes負載平衡器類型服務的閘道。</block>
   <block id="b50b94a0232dbff69a41914d331d9609" category="paragraph">Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace688122fb01922cde69e1e3df1d5" prefix="(" category="inline-code"></block> （在Astra Control Center命名空間中）、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。</block>
-  <block id="59b0d1c7d000d5db7608c1a0dd772798" category="list-text">* crds-*：如果使用外部認證管理程式、請變更<block ref="277c0561d457e7aad53dcd2e4ba8051d" prefix=" " category="inline-code"></block> 至<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。預設值<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> 讓Astra Control Center在安裝期間安裝自己的認證管理程式。</block>
   <block id="24f8b619456c925b397f91e62d1630d3" category="paragraph">您可以使用kubectl命令來驗證系統狀態。如果您偏好使用OpenShift、您可以使用相似的相關命令來進行驗證步驟。</block>
   <block id="3228f21b07b2db77590b591150d404ae" category="inline-link-macro">在UI中新增叢集工作流程</block>
   <block id="6bbfbaa82b9dc91033432e75f9e3c5db" category="admonition"><block ref="37f618faae7496528f2773837de1ccd9" prefix="" category="inline-code"></block> 叢集登錄是最後一項作業、如果失敗、也不會導致部署失敗。如果記錄中指出叢集登錄失敗、您可以透過再次嘗試登錄 <block ref="744a0ed51f366cced75ae1916f045434" category="inline-link-macro-rx"></block> 或API。</block>
@@ -2125,12 +2066,6 @@
   <block id="845e2368c3a6b9728a9fa15096c62bd0" category="list-text">從OpenShift叢集、確保所有API服務都處於健全狀態：</block>
   <block id="36c884b69a5d1e5a404eca027f6ca471" category="paragraph">視您的環境而定、安裝Astra Control Center之後可能需要額外的組態：</block>
   <block id="747bf8100668838f9a411ea795df98d2" category="list-text"><block ref="747bf8100668838f9a411ea795df98d2" category="inline-link-macro-rx"></block></block>
-  <block id="d0eb4126e7ac0ad8eceb118a01c4eb97" category="summary">如需部署期間的自訂組態、請參閱Astra Control Center叢集CR選項。</block>
-  <block id="7249197b39365da34c898263ea6415d6" category="doc">Astra Control Center叢集自訂資源選項</block>
-  <block id="a59e7ee7ab806396812c4d2d31b62aa0" category="paragraph">您可以使用下列Astra Control Center叢集自訂資源（CR）選項、在部署期間建立自訂組態。</block>
-  <block id="56acba1e60633851238ababa6bac1c07" category="cell">可讓使用者停用外掛程式操作員部署的選項。</block>
-  <block id="f6f2fe7bcebf0b637fc666f1c76ebddd" category="cell">如果您使用需要機密的image登 錄、則為必要項目</block>
-  <block id="d1cfbb30c05dc6c7453cd72fba517e21" category="paragraph">不過、在使用較小開發或測試叢集的案例中、則是使用「CR」欄位<block ref="04720dca94c3a59fb9ccbd0cba45d20f" prefix=" " category="inline-code"></block> 可能設為<block ref="d15305d7a4e34e02489c74a5ef542f36" prefix=" " category="inline-code"></block>。這會停用資源要求、並允許在較小的叢集上部署。</block>
   <block id="c4d3bd82a4066f0e523ba618e438bc51" category="summary">Astra Control是Kubernetes應用程式資料生命週期管理服務、可簡化狀態應用程式的作業。輕鬆保護、備份及移轉Kubernetes工作負載、並立即建立可運作的應用程式複本。</block>
   <block id="26816f4f023579253517240a64829a70" category="list-text">* Astra Control Service*：NetApp託管服務、可在多個雲端供應商環境中、為Kubernetes叢集提供應用程式感知資料管理功能。</block>
   <block id="450dcc356e2c75be5bfea7bc913558bb" category="list-text">對於高峰叢集、Astra Control Service使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 或Azure託管磁碟做為持續磁碟區的儲存後端。</block>
@@ -2492,8 +2427,6 @@
   <block id="24ac124fff17ff1632cecc7d31aacda4" category="admonition">如果您使用需要驗證的登錄、 <block ref="fe63e1bce5791215a30c45526a4b8597" category="inline-xref-macro-rx"></block>。</block>
   <block id="8d8abe07e5ed4b0dca006fa753e019b1" category="list-text">提供預設的儲存類別。</block>
   <block id="11325c490cd13a98d700159b54be4801" category="admonition">如果已設定預設儲存類別、請確定它是唯一具有預設註釋的儲存類別。</block>
-  <block id="dc06cbbd59f888e4642096721734051c" category="inline-link">本節</block>
-  <block id="a3b6ac753c3ae677811e6300b886ca8a" category="admonition">如需CRD選項的詳細資訊、請參閱<block ref="16b9f9e9fbef5f13b27c8fa04d072d4c" category="inline-link-rx"></block>。</block>
   <block id="c655ba9297ca1a15861d81d9de3419a2" category="list-text">選取「Yaml」檢視以檢閱您所選的設定。</block>
   <block id="4377bff523574a6a6552343a5585386b" category="section-title">建立登錄機密</block>
   <block id="d963245b5fa2d61154278c1b2b8686a8" category="paragraph">如果您使用需要驗證的登錄、請在Openshift叢集上建立密碼、然後在中輸入密碼名稱<block ref="9eca463036a902158489237df8eb93bf" prefix=" " category="inline-code"></block> 表單欄位。</block>
@@ -2503,7 +2436,6 @@
   <block id="99453eb5ea67532cb71dffba08d350b6" category="inline-xref">「Create」（建立）「吧！Control Center」表單欄位</block>
   <block id="afb684d3bd4af4da101b5e78eb0b47c6" category="list-text">填寫中的其餘欄位 <block ref="243363764a8adb65b934b31027e60498" category="inline-xref-macro-rx"></block>。</block>
   <block id="e20f9875b736f5d534a7c14be355eb06" category="paragraph">完成 <block ref="9908a5e65371462fab8de29e0e8be055" category="inline-link-macro-rx"></block> 若要驗證Astra Control Center是否安裝成功、請設定入口控制器（選用）、然後登入UI。此外、您還需要執行 <block ref="76156c33c6c1487a578aad8446a04b02" category="inline-link-macro-rx"></block> 安裝完成後。</block>
-  <block id="cfe9e43a4e29105f9f24bd0ed639721b" category="paragraph-title">一般（預設）</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始之前</block>
   <block id="d94e29dda4626ec2be6ac4f06224f6cf" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 保護所有應用程式</block>
   <block id="596a8ca466f62d03c2dfc376a65cac71" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 為每個應用程式設定保護原則</block>
@@ -2655,4 +2587,34 @@
   <block id="6b5e0e55ce84f7fa138aa402d59fb2ad" category="paragraph"><block ref="6b5e0e55ce84f7fa138aa402d59fb2ad" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4501b2d5d28c830c20c2907834215405" category="inline-image-macro">此影像顯示兩個Kubernetes叢集與兩ONTAP 個支援叢集之間的複寫和容錯移轉</block>
   <block id="620eb6fdfd4e651d0246b5b8f2fb119e" category="paragraph"><block ref="620eb6fdfd4e651d0246b5b8f2fb119e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c1134ef9dcb0882f916dbef40c96d78b" category="list-text">修改或確認下列設定：</block>
+  <block id="746b231b966af15f3cff713ca45075eb" category="cell">指導</block>
+  <block id="d1d1376da08ba5481c947bc402f43936" category="cell">變更<block ref="cd7a180ee2029176203abb971a5e5ed9" prefix=" " category="inline-code"></block> 字串至您要與Astra Control Center帳戶建立關聯的名稱。只能有一個帳戶名稱。</block>
+  <block id="5699a5d0302dbbb9ebafb81191b2cf4e" category="cell">要部署的Astra Control Center版本。此設定不需要任何動作、因為此值將預先填入。</block>
+  <block id="3208af68c7dea8493fa4cee605a96daf" category="cell">22.11.0-82</block>
+  <block id="785f296ad865d8dc71d68583795bf3f6" category="cell">變更<block ref="d27903c79b643b2f565c31e894abb568" prefix=" " category="inline-code"></block> 字串至您要在瀏覽器中使用的FQDN（建議）或IP位址、以存取Astra Control Center。此位址定義Astra Control Center在資料中心的找到方式、以及當您完成配置時、從負載平衡器配置的相同FQDN或IP位址 <block ref="bdee52dd8f294f9d4eddadcb8b16676c" category="inline-link-macro-rx"></block>。附註：請勿使用<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> 或<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> 地址中。複製此FQDN以供在中使用 <block ref="39c8566ec35b62823c898c5e38a4b78c" category="inline-xref-macro-rx"></block>。</block>
+  <block id="7548d8cfdbba865da930704f30a7542f" category="paragraph">您在本節中的選擇決定您是否會參與NetApp主動式支援應用程式NetApp Active IQ 功能、以及資料的傳送位置。需要網際網路連線（連接埠4442）、所有支援資料都會匿名。</block>
+  <block id="24b6133a8f6f0866838539b9ca41cfa7" category="cell">也可以<block ref="ff7af27948b380bff5d583359796d3c8" prefix=" " category="inline-code"></block> 或<block ref="572d4e421e5e6b9bc11d815e8a027112" prefix=" " category="inline-code"></block> 必須選取欄位</block>
+  <block id="032fdfe4dd533e2a1da94f746be2861f" category="cell">變更<block ref="ff7af27948b380bff5d583359796d3c8" prefix=" " category="inline-code"></block> for解決方案AutoSupport<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> 適用於沒有網際網路連線或無法保留的網站<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 適用於連線站台。的設定<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 可將匿名資料傳送至NetApp以供支援之用。預設選項為<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> 並表示不會將任何支援資料傳送給NetApp。</block>
+  <block id="dabad3695b4ab8ff22572403a96c3ee7" category="cell">此URL決定匿名資料的傳送位置。</block>
+  <block id="2567e3deee28c432016a674291f588ad" category="cell">變更<block ref="0c83f57c786a0b4a39efab23731c7ebc" prefix=" " category="inline-code"></block> 字串至預設的初始系統管理員位址。複製此電子郵件地址以供在中使用 <block ref="39c8566ec35b62823c898c5e38a4b78c" category="inline-xref-macro-rx"></block>。此電子郵件地址將作為初始帳戶登入UI的使用者名稱、並會收到Astra Control中事件的通知。</block>
+  <block id="138936eb3d75a3b6dbc65ae59d3c4ac0" category="example-title">名字和姓氏</block>
+  <block id="9172a6784d35efa48d62caa85fe965f6" category="cell">與Astra帳戶相關聯的預設初始系統管理員的名字。第一次登入後、此處使用的名稱會顯示在UI的標題中。</block>
+  <block id="8208a49adafaea9376c9f0c952b3ca91" category="cell">與Astra帳戶相關聯的預設初始管理員姓氏。第一次登入後、此處使用的名稱會顯示在UI的標題中。</block>
+  <block id="52b0f21cd86a6767c9ecef91bdbc1464" category="paragraph">您在本節中的選擇定義了裝載Astra應用程式映像、Astra Control Center運算子和Astra Control Center Helm儲存庫的容器映像登錄。</block>
+  <block id="df9d5b947e23d15efab408cf1c25c756" category="cell">您在中推入映像的映像登錄名稱 <block ref="305dd956c1213ef7c4d1a1587874974e" category="inline-xref-macro-rx"></block>。請勿使用<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> 或<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> 在登錄名稱中。</block>
+  <block id="c0d136fdeb6a7cc5b96028c4f77ad160" category="cell">如果您使用需要機密的image登 錄、則為必要項目。重要事項：如果您使用的登錄不需要授權、則必須刪除此項目<block ref="5ebe2294ecd0e0f08eab7690d2a6ee69" prefix=" " category="inline-code"></block> 行內<block ref="990dc1a09e10c7b5378e6bc8a1956cb8" prefix=" " category="inline-code"></block> 否則安裝將會失敗。</block>
+  <block id="f50614b0fb6512ea307cfd956d0f1578" category="cell">變更<block ref="78ec9b60245b46a4f05158076962ace9" prefix=" " category="inline-code"></block> 價值來源<block ref="e3bccceaf53ea80a4685ac9b974016f3" prefix=" " category="inline-code"></block> 安裝所需的另一個Trident storageClass資源。執行命令<block ref="f7a6266d561ed7e94ff1f45bb43a2f5d" prefix=" " category="inline-code"></block> 以判斷您現有的已設定儲存類別。其中一個Trident型儲存類別必須輸入資訊清單檔案（Astra control-center-se.manifest &lt;version&gt; ）、並用於Astra PV。如果未設定、則會使用預設的儲存類別。附註：如果已設定預設儲存類別、請確定它是唯一具有預設附註的儲存類別。</block>
+  <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="cell">選項</block>
+  <block id="44b62ef68933aca85562e3bdab109c11" category="cell">這為Astra的PV設定回收原則。將此原則設定為<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block> 刪除Astra後保留持續磁碟區。將此原則設定為<block ref="f2a6c498fb90ee345d997f888fce3b18" prefix=" " category="inline-code"></block> 刪除Astra後刪除持續磁碟區。如果未設定此值、則會保留PV。</block>
+  <block id="b573e661240a59fb2f0b6d4d1e09f0d9" category="list-text">保留（這是預設值）</block>
+  <block id="f2a6c498fb90ee345d997f888fce3b18" category="list-text">刪除</block>
+  <block id="3cb9755788612780ac6974af675b8875" category="cell">使用下列其中一種入口類型：*通用* <block ref="70110d526a7afb77cc9b5240e79845c0" prefix="(" category="inline-code"></block>）（預設）當您使用另一個入口控制器、或偏好使用自己的入口控制器時、請使用此選項。部署Astra Control Center之後、您需要設定 <block ref="7d074c32e6c49929382498ad8c5637bd" category="inline-link-macro-rx"></block> 使用URL公開Astra Control Center。* AccTraefik* <block ref="4388d54e87947748fc2ff08932daa51e" prefix="(" category="inline-code"></block>）如果您不想設定入口控制器、請使用此選項。這會部署Astra控制中心<block ref="3f624a80eb2012ebf5d970cedbdce2bc" prefix=" " category="inline-code"></block> 作為Kubernetes負載平衡器類型服務的閘道。Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace688122fb01922cde69e1e3df1d5" prefix="(" category="inline-code"></block> （在Astra Control Center命名空間中）、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。附註：如需有關「負載平衡器」和入口的服務類型詳細資訊、請參閱 <block ref="f326683052260ae8ea69adae62a4336c" category="inline-link-macro-rx"></block>。</block>
+  <block id="734224e6b4ec285b77e7b79b03d94b02" category="cell">適用的擴充選項適用於適用的適用範圍。依預設、Astra Control Center會針對Astra內的大部分元件設定資源要求來進行部署。此組態可讓Astra Control Center軟體堆疊在應用程式負載和擴充性增加的環境中、發揮更佳效能。不過、在使用較小開發或測試叢集的案例中、則是使用「CR」欄位<block ref="58109f8b5a58dff610844c779b6c42ad" prefix=" " category="inline-code"></block> 可能設為<block ref="d15305d7a4e34e02489c74a5ef542f36" prefix=" " category="inline-code"></block>。這會停用資源要求、並允許在較小的叢集上部署。</block>
+  <block id="877188653340f757943c83f0bc15f1be" category="list-text">預設（這是預設值）</block>
+  <block id="d15305d7a4e34e02489c74a5ef542f36" category="list-text">關</block>
+  <block id="a5a239f5a107b63b3aa6d192c95bb6d1" category="paragraph">您在本節中的選擇決定Astra Control Center應如何處理客戶需求日。</block>
+  <block id="15158f2541ef87a6d0bffe5a0141e4ca" category="cell">如果您使用外部憑證管理程式、請變更<block ref="277c0561d457e7aad53dcd2e4ba8051d" prefix=" " category="inline-code"></block> 至<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。預設值<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> 讓Astra Control Center在安裝期間安裝自己的認證管理程式客戶檔案。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。</block>
+  <block id="241f958366d57581f03932e9f7c77a76" category="cell">假（此值為預設值）</block>
+  <block id="c227fa0621e3f1f87571da78dd03ca6f" category="cell">依預設、Astra Control Center會安裝必要的Traefik客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。</block>
 </blocks>

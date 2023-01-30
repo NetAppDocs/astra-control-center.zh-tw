@@ -14,8 +14,6 @@ entries:
   - title: 安裝Astra Control Center
     url: "/get-started/install_acc.html"
     entries:
-    - title: Astra Control Center叢集自訂資源選項
-      url: "/get-started/acc_cluster_cr_options.html"
     - title: 設定外部憑證管理程式
       url: "/get-started/cert-manager-prereqs.html"
   - title: 使用OpenShift作業系統集線器安裝Astra Control Center

@@ -1,6 +1,6 @@
 ---
 permalink: use/define-custom-app.html 
-redirect: use/manage-apps.html 
+redirect: astra-control-center/use/manage-apps.html 
 ---
 = 
 :allow-uri-read: 
