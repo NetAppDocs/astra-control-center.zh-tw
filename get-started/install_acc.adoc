@@ -639,7 +639,7 @@ spec:
     secret: "astra-registry-cred"
   storageClass: "ontap-gold"
   volumeReclaimPolicy: "Retain"
-  ingressType: "Generic"*
+  ingressType: "Generic"
   astraResourcesScaler: "Default"
   additionalValues: {}
   crds:
