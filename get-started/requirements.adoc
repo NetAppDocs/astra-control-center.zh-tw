@@ -86,7 +86,6 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 ** 確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：
 +
 *** ONTAP-NAS
-*** ONTAP-NAS-flexgroup
 *** ONTAP-SAN
 *** ONTAP-san經濟型（不支援應用程式複寫）
 
