@@ -61,7 +61,7 @@ oc get pods n -netapp-monitoring
 
 因應措施如下：
 
-. 編輯您的Kubeadm-config組態地圖：
+. 編輯您的 `kubeadm-config` 組態對應：
 +
 [listing]
 ----

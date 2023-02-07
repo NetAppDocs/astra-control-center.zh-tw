@@ -56,7 +56,7 @@ kubectl delete resourcequota  pods-low -n netapp-acc
 ----
 kubectl delete resourcequota  pods-medium -n netapp-acc
 ----
-. 取得NetApp-acc命名空間中的限制範圍：
+. 取得中的限制範圍 `netapp-acc` 命名空間：
 +
 [source, console]
 ----

@@ -32,7 +32,7 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 kubectl get apiservices
 ----
 * 確保您打算使用的Astra FQDN可路由傳送至此叢集。這表示您在內部DNS伺服器中有DNS項目、或是使用已註冊的核心URL路由。
-* 如果叢集中已存在認證管理程式、您需要執行某些作業 link:../get-started/cert-manager-prereqs.html["必要步驟"] 因此Astra Control Center不會嘗試安裝自己的認證管理程式。依預設、Astra Control Center會在安裝期間安裝自己的認證管理程式。
+* 如果叢集中已存在憑證管理程式、您需要執行某些作業 link:../get-started/cert-manager-prereqs.html["必要步驟"] 因此Astra Control Center不會嘗試安裝自己的憑證管理程式。依預設、Astra Control Center會在安裝期間安裝自己的憑證管理程式。
 
 
 .關於這項工作
@@ -440,7 +440,7 @@ kubectl get pods -n netapp-acc-operator
 
 == 設定Astra控制中心
 
-. 編輯Astra Control Center自訂資源（CR）檔案 (`astra_control_center.yaml`）進行帳戶、AutoSupport 功能、登錄及其他必要的設定：
+. 編輯Astra Control Center自訂資源（CR）檔案 (`astra_control_center.yaml`）進行帳戶、支援、登錄及其他必要設定：
 +
 [source, console]
 ----
@@ -452,40 +452,40 @@ NOTE: 附註的Y反 洗錢範例遵循下列步驟。
 
 . 修改或確認下列設定：
 +
-.帳戶名稱
+.產品資訊</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 範例 
 
 
-| 帳戶名稱 | 變更 `accountName` 字串至您要與Astra Control Center帳戶建立關聯的名稱。只能有一個帳戶名稱。 | 字串 | 範例 
+| `accountName` | 變更 `accountName` 字串至您要與Astra Control Center帳戶建立關聯的名稱。只能有一個帳戶名稱。 | 字串 | `Example` 
 |===
 ====
 +
-.astraVersion
+.《》</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 範例 
 
 
-| astraVersion | 要部署的Astra Control Center版本。此設定不需要任何動作、因為此值將預先填入。 | 字串 | 22.11.0-82 
+| `astraVersion` | 要部署的Astra Control Center版本。此設定不需要任何動作、因為此值將預先填入。 | 字串 | `22.11.0-82` 
 |===
 ====
 +
-.astraAddress
+.餐廳</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 範例 
 
 
-| astraAddress | 變更 `astraAddress` 字串至您要在瀏覽器中使用的FQDN（建議）或IP位址、以存取Astra Control Center。此位址定義Astra Control Center在資料中心的找到方式、以及當您完成配置時、從負載平衡器配置的相同FQDN或IP位址 link:requirements.html["Astra Control Center需求"^]。附註：請勿使用 `http://` 或 `https://` 地址中。複製此FQDN以供在中使用 <<登入Astra Control Center UI,後續步驟>>。 | 字串 | astra.example.com 
+| `astraAddress` | 變更 `astraAddress` 字串至您要在瀏覽器中使用的FQDN（建議）或IP位址、以存取Astra Control Center。此位址定義Astra Control Center在資料中心的找到方式、以及當您完成配置時、從負載平衡器配置的相同FQDN或IP位址 link:requirements.html["Astra Control Center需求"^]。附註：請勿使用 `http://` 或 `https://` 地址中。複製此FQDN以供在中使用 <<登入Astra Control Center UI,後續步驟>>。 | 字串 | `astra.example.com` 
 |===
 ====
 +
-.AutoSupport
+.產品資訊</code> <code>
 [%collapsible]
 ====
 您在本節中的選擇決定您是否會參與NetApp主動式支援應用程式NetApp Active IQ 功能、以及資料的傳送位置。需要網際網路連線（連接埠4442）、所有支援資料都會匿名。
@@ -494,39 +494,47 @@ NOTE: 附註的Y反 洗錢範例遵循下列步驟。
 | 設定 | 使用 | 指導 | 類型 | 範例 
 
 
-| AutoSupport。已註冊 | 也可以 `enrolled` 或 `url` 必須選取欄位 | 變更 `enrolled` for解決方案AutoSupport `false` 適用於沒有網際網路連線或無法保留的網站 `true` 適用於連線站台。的設定 `true` 可將匿名資料傳送至NetApp以供支援之用。預設選項為 `false` 並表示不會將任何支援資料傳送給NetApp。 | 布林值 | 假（此值為預設值） 
+| `autoSupport.enrolled` | 也可以 `enrolled` 或 `url` 必須選取欄位 | 變更 `enrolled` for解決方案AutoSupport `false` 適用於沒有網際網路連線或無法保留的網站 `true` 適用於連線站台。的設定 `true` 可將匿名資料傳送至NetApp以供支援之用。預設選項為 `false` 並表示不會將任何支援資料傳送給NetApp。 | 布林值 | `false` （此值為預設值） 
 
 
-| AutoSupport URL | 也可以 `enrolled` 或 `url` 必須選取欄位 | 此URL決定匿名資料的傳送位置。 | 字串 | https://support.netapp.com/asupprod/post/1.0/postAsup[] 
+| `autoSupport.url` | 也可以 `enrolled` 或 `url` 必須選取欄位 | 此URL決定匿名資料的傳送位置。 | 字串 | `https://support.netapp.com/asupprod/post/1.0/postAsup` 
 |===
 ====
 +
-.電子郵件
+.產品資訊</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 範例 
 
 
-| 電子郵件 | 變更 `email` 字串至預設的初始系統管理員位址。複製此電子郵件地址以供在中使用 <<登入Astra Control Center UI,後續步驟>>。此電子郵件地址將作為初始帳戶登入UI的使用者名稱、並會收到Astra Control中事件的通知。 | 字串 | admin@example.com 
+| `email` | 變更 `email` 字串至預設的初始系統管理員位址。複製此電子郵件地址以供在中使用 <<登入Astra Control Center UI,後續步驟>>。此電子郵件地址將作為初始帳戶登入UI的使用者名稱、並會收到Astra Control中事件的通知。 | 字串 | `admin@example.com` 
 |===
 ====
 +
-.名字和姓氏
+.產品資訊</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 範例 
 
 
-| 名字 | 與Astra帳戶相關聯的預設初始系統管理員的名字。第一次登入後、此處使用的名稱會顯示在UI的標題中。 | 字串 | SRE 
-
-
-| 姓氏 | 與Astra帳戶相關聯的預設初始管理員姓氏。第一次登入後、此處使用的名稱會顯示在UI的標題中。 | 字串 | 管理 
+| `firstName` | 與Astra帳戶相關聯的預設初始系統管理員的名字。第一次登入後、此處使用的名稱會顯示在UI的標題中。 | 字串 | `SRE` 
 |===
 ====
 +
-.影像登錄
+.產品資訊</code> <code>
+[%collapsible]
+====
+|===
+| 設定 | 指導 | 類型 | 範例 
+
+
+| `lastName` | 與Astra帳戶相關聯的預設初始管理員姓氏。第一次登入後、此處使用的名稱會顯示在UI的標題中。 | 字串 | `Admin` 
+|===
+====
++
+.《不再是我們的產品、更是我們的產品</code> <code>
 [%collapsible]
 ====
 您在本節中的選擇定義了裝載Astra應用程式映像、Astra Control Center運算子和Astra Control Center Helm儲存庫的容器映像登錄。
@@ -535,70 +543,72 @@ NOTE: 附註的Y反 洗錢範例遵循下列步驟。
 | 設定 | 使用 | 指導 | 類型 | 範例 
 
 
-| imageRegistry.name | 必要 | 您在中推入映像的映像登錄名稱 <<安裝Astra Control Center操作員,上一步>>。請勿使用 `http://` 或 `https://` 在登錄名稱中。 | 字串 | example.registry.com/astra 
+| `imageRegistry.name` | 必要 | 您在中推入映像的映像登錄名稱 <<安裝Astra Control Center操作員,上一步>>。請勿使用 `http://` 或 `https://` 在登錄名稱中。 | 字串 | `example.registry.com/astra` 
 
 
-| imageRegistry.secret | 如果您使用需要機密的image登 錄、則為必要項目。重要事項：如果您使用的登錄不需要授權、則必須刪除此項目 `secret` 行內 `imageRegistry` 否則安裝將會失敗。 | 用來驗證映像登錄的Kubernetes機密名稱。 | 字串 | Astra登錄建立 
+| `imageRegistry.secret` | 如果您輸入的字串則為必要 `imageRegistry.name' requires a secret.
+
+IMPORTANT: If you are using a registry that does not require authorization, you must delete this `secret` 行內 `imageRegistry` 否則安裝將會失敗。 | 用來驗證映像登錄的Kubernetes機密名稱。 | 字串 | `astra-registry-cred` 
 |===
 ====
 +
-.storageClass
+.產品資訊</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 範例 
 
 
-| storageClass | 變更 `storageClass` 價值來源 `ontap-gold` 安裝所需的另一個Trident storageClass資源。執行命令 `kubectl get sc` 以判斷您現有的已設定儲存類別。其中一個Trident型儲存類別必須輸入資訊清單檔案（Astra control-center-se.manifest <version> ）、並用於Astra PV。如果未設定、則會使用預設的儲存類別。附註：如果已設定預設儲存類別、請確定它是唯一具有預設附註的儲存類別。 | 字串 | ONTAP金級 
+| `storageClass` | 變更 `storageClass` 價值來源 `ontap-gold` 安裝所需的另一個Trident storageClass資源。執行命令 `kubectl get sc` 以判斷您現有的已設定儲存類別。必須在資訊清單檔案中輸入其中一個Trident型儲存類別 (`astra-control-center-<version>.manifest`）、並將用於Astra PV。如果未設定、則會使用預設的儲存類別。附註：如果已設定預設儲存類別、請確定它是唯一具有預設附註的儲存類別。 | 字串 | `ontap-gold` 
 |===
 ====
 +
-.Volume ReclaimPolicy
+.支援不整合的功能</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 選項 
 
 
-| Volume ReclaimPolicy | 這為Astra的PV設定回收原則。將此原則設定為 `Retain` 刪除Astra後保留持續磁碟區。將此原則設定為 `Delete` 刪除Astra後刪除持續磁碟區。如果未設定此值、則會保留PV。 | 字串  a| 
-** 保留（這是預設值）
-** 刪除
+| `volumeReclaimPolicy` | 這為Astra的PV設定回收原則。將此原則設定為 `Retain` 刪除Astra後保留持續磁碟區。將此原則設定為 `Delete` 刪除Astra後刪除持續磁碟區。如果未設定此值、則會保留PV。 | 字串  a| 
+** `Retain` （這是預設值）
+** `Delete`
 
 
 |===
 ====
 +
-.擷取類型
+.部分</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 選項 
 
 
-| 擷取類型 | 使用下列其中一種入口類型：*通用* (`ingressType: "Generic"`）（預設）當您使用另一個入口控制器、或偏好使用自己的入口控制器時、請使用此選項。部署Astra Control Center之後、您需要設定 link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["入口控制器"^] 使用URL公開Astra Control Center。* AccTraefik* (`ingressType: "AccTraefik"`）如果您不想設定入口控制器、請使用此選項。這會部署Astra控制中心 `traefik` 作為Kubernetes負載平衡器類型服務的閘道。Astra Control Center使用「負載平衡器」類型的服務 (`svc/traefik` （在Astra Control Center命名空間中）、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。附註：如需有關「負載平衡器」和入口的服務類型詳細資訊、請參閱 link:../get-started/requirements.html["需求"^]。 | 字串  a| 
-** 一般（這是預設值）
-** AccTraefik
+| `ingressType` | 使用下列其中一種入口類型：*`Generic`* (`ingressType: "Generic"`）（預設）當您使用另一個入口控制器、或偏好使用自己的入口控制器時、請使用此選項。部署Astra Control Center之後、您需要設定 link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["入口控制器"^] 使用URL公開Astra Control Center。*`AccTraefik`* (`ingressType: "AccTraefik"`）如果您不想設定入口控制器、請使用此選項。這會部署Astra控制中心 `traefik` 作為Kubernetes負載平衡器類型服務的閘道。Astra Control Center使用「負載平衡器」類型的服務 (`svc/traefik` （在Astra Control Center命名空間中）、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。附註：如需有關「負載平衡器」和入口的服務類型詳細資訊、請參閱 link:../get-started/requirements.html["需求"^]。 | 字串  a| 
+** `Generic` （這是預設值）
+** `AccTraefik`
 
 
 |===
 ====
 +
-.astraResources2200
+.《餐廳資源ScScales5.</code> <code>
 [%collapsible]
 ====
 |===
 | 設定 | 指導 | 類型 | 選項 
 
 
-| astraResources2200 | 適用的擴充選項適用於適用的適用範圍。依預設、Astra Control Center會針對Astra內的大部分元件設定資源要求來進行部署。此組態可讓Astra Control Center軟體堆疊在應用程式負載和擴充性增加的環境中、發揮更佳效能。不過、在使用較小開發或測試叢集的案例中、則是使用「CR」欄位 `astraResourcesScalar` 可能設為 `Off`。這會停用資源要求、並允許在較小的叢集上部署。 | 字串  a| 
-** 預設（這是預設值）
-** 關
+| `astraResourcesScaler` | 適用的擴充選項適用於適用的適用範圍。依預設、Astra Control Center會針對Astra內的大部分元件設定資源要求來進行部署。此組態可讓Astra Control Center軟體堆疊在應用程式負載和擴充性增加的環境中、發揮更佳效能。不過、在使用較小開發或測試叢集的案例中、則是使用「CR」欄位 `astraResourcesScalar` 可能設為 `Off`。這會停用資源要求、並允許在較小的叢集上部署。 | 字串  a| 
+** `Default` （這是預設值）
+** `Off`
 
 
 |===
 ====
 +
-.客戶需求日
+.產品名</code> <code>
 [%collapsible]
 ====
 您在本節中的選擇決定Astra Control Center應如何處理客戶需求日。
@@ -607,10 +617,10 @@ NOTE: 附註的Y反 洗錢範例遵循下列步驟。
 | 設定 | 指導 | 類型 | 範例 
 
 
-| CRDs.externalCertManager | 如果您使用外部憑證管理程式、請變更 `externalCertManager` 至 `true`。預設值 `false` 讓Astra Control Center在安裝期間安裝自己的認證管理程式客戶檔案。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。 | 布林值 | 假（此值為預設值） 
+| `crds.externalCertManager` | 如果您使用外部憑證管理程式、請變更 `externalCertManager` 至 `true`。預設值 `false` 讓Astra Control Center在安裝期間安裝自己的憑證管理程式客戶檔案。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。 | 布林值 | `False` （此值為預設值） 
 
 
-| CRDs.externalTraefik | 依預設、Astra Control Center會安裝必要的Traefik客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。 | 布林值 | 假（此值為預設值） 
+| `crds.externalTraefik` | 依預設、Astra Control Center會安裝必要的Traefik客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。 | 布林值 | `False` （此值為預設值） 
 |===
 ====
 
@@ -956,7 +966,7 @@ kubectl apply -f nginx-Ingress.yaml
 
 
 
-WARNING: NetApp建議將Ngin像 控制器安裝為部署、而非取消安裝。
+WARNING: NetApp建議將Ngin像 控制器安裝為部署、而非 `daemonSet`。
 
 .OpenShift入口控制器的步驟
 . 取得您的憑證、取得可供OpenShift路由使用的金鑰、憑證和CA檔案。
