@@ -82,7 +82,7 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 * *映像登錄*：您必須擁有現有的私有Docker映像檔登錄、才能將Astra Control Center建置映像推入其中。您需要提供映像登錄的URL、以便上傳映像。
 * * Astra Trident / ONTAP S161*：
 +
-** Astra Control Center需要建立儲存類別、並將其設為預設儲存類別。
+** 您需要在叢集上設定至少一個Astra Trident儲存類別。如果已設定預設儲存類別、請確定它是唯一具有預設指定的儲存類別。
 ** 確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：
 +
 *** ONTAP-NAS

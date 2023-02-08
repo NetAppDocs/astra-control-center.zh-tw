@@ -2478,7 +2478,6 @@
   <block id="51867b2a71ff7c3e5393cf8bb442defc" category="admonition">如果系統上已存在具有相同電子郵件地址的本機使用者、則無法新增遠端使用者。若要將使用者新增為遠端使用者、請先從系統中刪除本機使用者。</block>
   <block id="e6bc00cd8c52affb4292616facc440da" category="admonition">Astra Control Center使用LDAP「郵件」屬性中的電子郵件地址來搜尋及追蹤遠端使用者。此屬性可能是目錄中的選用欄位或空白欄位。您想要顯示在Astra Control Center中的任何遠端使用者、此欄位中都必須有電子郵件地址。此電子郵件地址是Astra Control Center中用於驗證的使用者名稱。</block>
   <block id="a2c7a68a6d213a38c0c96fe34df9fe2e" category="list-text">* Astra Trident / ONTAP S161*：</block>
-  <block id="abcbb80528af555f9a3f5981771386f8" category="list-text">Astra Control Center需要建立儲存類別、並將其設為預設儲存類別。</block>
   <block id="2a09fd1da71158929da8e53a8b3b41b7" category="list-text">確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：</block>
   <block id="d7dde07915bbe8056e6854c2b5e50480" category="inline-link">準備工作節點</block>
   <block id="2facff43cb177de168322dab6df7d48c" category="list-text"><block ref="2facff43cb177de168322dab6df7d48c" category="inline-link-rx"></block></block>
@@ -2637,4 +2636,6 @@
   <block id="09930d02b4263b689db66fae209a4662" category="list-text">確認<block ref="9811be5c3399611059862e90521bc73f" prefix=" " category="inline-code"></block> 已正確啟動。<block ref="e7d31fc0602fb2ede144d18cdffd816b" prefix=" " category="inline-code"></block> 必須是<block ref="f827cf462f62848df37c5e1e94a4da74" prefix=" " category="inline-code"></block> 在繼續之前：</block>
   <block id="7c6e61d3114053fdcbb584a6afb80f0b" category="list-text">完成 <block ref="4f6226316b347cad073b05d4198e6b67" category="inline-link-macro-rx"></block>。有 <block ref="b10b5b361802ada39ab534d37e156fb1" category="inline-link-macro-rx"></block> 您可在其中變更CRD值、以表示外部安裝了憑證管理程式。您必須在安裝期間完成此步驟、Astra Control Center才能辨識外部憑證管理程式。</block>
   <block id="9b180301de1547cfb79fd365792a5407" category="list-text">編輯您的<block ref="b9d73b065c599559f2852e4f2e265934" prefix=" " category="inline-code"></block> 組態對應：</block>
+  <block id="192a0e17e823e018d9d9b67cd6dbde3a" category="list-text">您需要在叢集上設定至少一個Astra Trident儲存類別。如果已設定預設儲存類別、請確定它是唯一具有預設指定的儲存類別。</block>
+  <block id="f7dff2bfbfe240ed80ab3ffd13689474" category="list-text">確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。</block>
 </blocks>

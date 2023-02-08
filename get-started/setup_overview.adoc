@@ -62,6 +62,7 @@ NOTE: 如果您擁有評估授權、但並未將資料傳送AutoSupport 至效�
 在新增叢集之前、您應確保符合下列先決條件。您也應該執行資格檢查、以確保叢集已準備好新增至Astra Control Center、並建立叢集管理的角色。
 
 .您需要的產品
+* 確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。
 * 您的環境符合 link:../get-started/requirements.html#operational-environment-requirements["營運環境需求"^] 適用於Astra Trident與Astra Control Center。
 * 這是Astra Trident的版本 link:../get-started/requirements.html#operational-environment-requirements["由Astra Control Center支援"^] 已安裝：
 +
