@@ -203,31 +203,6 @@
   <block id="c594b5d99787cf6db60669d38e1c7b60" category="list-text">在*通知*頁面上、檢視通知、選取您要標示為已讀的通知、選取*行動*、然後選取*標示為已讀*。</block>
   <block id="32139554c6b5c9a48dcfdd0ff983a9eb" category="doc">開始管理應用程式</block>
   <block id="1cf97dd1e6f6c8888d8fa6dcede7fac9" category="inline-link-macro">將叢集新增至Astra Control管理</block>
-  <block id="d7d354d0f9d0780e168c895c92a32c24" category="cell">叢集角色</block>
-  <block id="e866afd8290d5c73cda6260e04e6eef0" category="cell">ClusterRoleBinding</block>
-  <block id="a941f8adb5ae079ebc739cb59407fd30" category="cell">組態對應</block>
-  <block id="99bc4b850e05bafd67cf5f5f49344c1e" category="cell">CustomResourceDesDefinition</block>
-  <block id="2597d86efa761b80f198c7208e859dd7" category="cell">CustomResource</block>
-  <block id="639125955d3128c08b048bc254433dbf" category="cell">可關係工作</block>
-  <block id="0d4eb61dc57afc7f3f8d51439c96eedd" category="cell">示範</block>
-  <block id="f82570cd8dd080fcb0fe525f9b081bdb" category="cell">HorizontalPodAutoscaler</block>
-  <block id="7d05c708b92b4809bfe9bf66edf8f765" category="cell">入侵</block>
-  <block id="788c34b60baf42eb1cac433ba1f0b64a" category="cell">部署組態</block>
-  <block id="1fcd027e4be180b1536eba3afa93e6be" category="cell">互鎖Webhook</block>
-  <block id="2b3f8e4d49589c4452db0a07d619d824" category="cell">PeristentVolume Claim</block>
-  <block id="8a0813c70cf4bf1529f25c411a039130" category="cell">Pod</block>
-  <block id="d8babd242bd93046572e7f50a3fbb394" category="cell">Podcast中斷預算</block>
-  <block id="3f4dbf8b7a689375f651090e7a111098" category="cell">Podcast範本</block>
-  <block id="c794a682153b998c6dca3efddf650512" category="cell">網路原則</block>
-  <block id="3f402161942e4154684cf3f56c76cead" category="cell">ReplicaSet</block>
-  <block id="bbbabdbe1b262f75d99d62880b953be1" category="cell">角色</block>
-  <block id="ec7eab019566cfca91934ab1e0073511" category="cell">角色繫結</block>
-  <block id="9405c3aff9112c3c60d03b94792877dc" category="cell">路由</block>
-  <block id="1e6947ac7fb3a9529a9726eb692c8cc5" category="cell">秘密</block>
-  <block id="c2ba7e785c49050f48da9aacc45c2b85" category="cell">服務</block>
-  <block id="5c24ffd6438853b537bd99b3fccd3340" category="cell">服務帳戶</block>
-  <block id="f202d1133673fa6cfe280880cbc3ee66" category="cell">狀態集</block>
-  <block id="91e292ade0a336af19f1ac0977215b91" category="cell">驗證Webhook</block>
   <block id="b8f3bc1c4097cf013ff9bb82ec30af2e" category="section-title">支援的應用程式安裝方法</block>
   <block id="a90a8c7f23b615986d59344298e29223" category="paragraph">Astra Control支援下列應用程式安裝方法：</block>
   <block id="1633320139361ee32414ab0910725238" category="list-text">*資訊清單檔案*：Astra Control支援使用KUbectl從資訊清單檔案安裝的應用程式。例如：</block>
@@ -634,7 +609,6 @@
   <block id="ca6f33719464e2320b44f90d6ae70eb7" category="section-title">應用程式管理需求</block>
   <block id="304f557d4b7e64bda6836386e7c79fc6" category="paragraph">Astra Control具備下列應用程式管理需求：</block>
   <block id="279aeb8fefc116ce50f1bb81d8dc343c" category="list-text">*授權*：若要使用Astra Control Center管理應用程式、您需要Astra Control Center授權。</block>
-  <block id="5d9c523a0997c65517bdf38e2f85aecd" category="list-text">* StorageClass *：如果您安裝的應用程式已明確設定StorageClass、且需要複製應用程式、則複製作業的目標叢集必須具有原本指定的StorageClass。將具有明確設定StorageClass的應用程式複製到沒有相同StorageClass的叢集、將會失敗。</block>
   <block id="508704b5a40f45083050ce024bcadbd2" category="list-text">* Kubernetes資源*：使用未由Astra Control收集之Kubernetes資源的應用程式、可能沒有完整的應用程式資料管理功能。Astra Control會收集下列Kubernetes資源：</block>
   <block id="c62e13b3973df086f7d17eeaf006b535" category="section-title">存取網際網路</block>
   <block id="46cce64fca5b60351328e94ed2b72255" category="paragraph">您應該判斷是否有外部網際網路存取權。如果您沒有、部分功能可能會受到限制、例如從NetApp Cloud Insights 接收監控和數據資料、或是將支援組合傳送至<block ref="3725c06f412bedb14ffd610de312875d" category="inline-link-rx"></block>。</block>
@@ -2218,7 +2192,6 @@
   <block id="c4cb46a2957e787f5e4e5299782270f6" category="inline-xref">請參閱範例以瞭解更多資訊。</block>
   <block id="e5d509b8ad96124cb3a6b0df8e2a6299" category="admonition">在定義應用程式時、請確保不將Kubernetes資源納入具有保護原則的多個應用程式中。Kubernetes資源上的保護原則重疊、可能會造成資料衝突。 <block ref="e641e59a56328c9fa4038a349ab4087c" category="inline-xref-macro-rx"></block></block>
   <block id="23933fe5cfee8cef6dcf2e9c76674773" category="example-title">關於將叢集範圍的資源新增至應用程式命名空間的功能介紹&lt;/strong&gt; &lt;strong&gt; 。</block>
-  <block id="42eb29ab06c150f146256489fbb31f3d" category="paragraph">除了自動包含的Astra Control之外、您也可以匯入與命名資源相關聯的叢集資源。您可以新增規則、其中包含特定群組的資源、種類、版本及選擇性的標籤。如果Astra Control沒有自動包含資源、您可能會想要這麼做。</block>
   <block id="86584cfcf6ac47eda80aaeeb3808d02b" category="paragraph">您無法排除由Astra Control自動包含的任何叢集範圍資源。</block>
   <block id="8b3aa3648af6fe384bf33e5384fcc7b4" category="paragraph">您可以新增下列項目<block ref="aec49c7ac598bde0d65853ea9807c58f" prefix=" " category="inline-code"></block> （與API版本結合的群組）：</block>
   <block id="3ba5d3eff61255f7c7727fb4ed8cdbc6" category="cell">資源種類</block>
@@ -2279,7 +2252,6 @@
   <block id="aeeeb524e689e79bcd894e5b1dde520a" category="paragraph">如果您需要將應用程式和儲存設備從一個Kubernetes叢集移至另一個叢集、複製作業將有助於您。例如、您可能想要透過CI/CD傳輸途徑和Kubernetes命名空間來移動工作負載。您可以使用Astra Control Center UI或<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> 複製及移轉應用程式。</block>
   <block id="7d754e7d4f4a324710302cf0fc4d80c2" category="list-text">若要將應用程式複製到不同的叢集、您必須確保包含來源和目的地叢集（如果它們不同）的雲端執行個體具有預設的儲存區。您必須為每個雲端執行個體指派預設儲存區。</block>
   <block id="81eb21a03d5ee9fbe847337ca76b57dc" category="list-title">複製限制</block>
-  <block id="676ff7d1c1d92284765be9dd54f79974" category="list-text">*明確的儲存類別*：如果您部署的應用程式已明確設定StorageClass、且需要複製應用程式、則目標叢集必須具有原本指定的StorageClass。將具有明確設定StorageClass的應用程式複製到沒有相同StorageClass的叢集、將會失敗。</block>
   <block id="d32d7bd30d168502b9d4ee99b9925378" category="list-text">* Clone與使用者限制*：任何具有命名空間名稱/ ID或命名空間標籤限制的成員使用者、都可以將應用程式複製或還原至同一叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者可以編輯成員使用者帳戶、並更新受影響使用者的角色限制、以便授予新命名空間的存取權。</block>
   <block id="e56febe8b6051774e32db86d1098b029" category="list-text">* Clones使用預設值區段*：在應用程式備份或應用程式還原期間、您可以選擇性地指定區段ID。不過、應用程式複製作業一律會使用已定義的預設儲存區。沒有選項可變更實體複本的儲存區。如果您想要控制所使用的儲存桶、您也可以選擇 <block ref="aefe6ea1b0b92dd65028296dfe305ad3" category="inline-link-macro-rx"></block> 或執行 <block ref="5a0ced1a5e4eaf523ec6c8f1e4de7f81" category="inline-link-macro-rx"></block> 接著是A <block ref="ade375e828882781f654729e54a482ee" category="inline-link-macro-rx"></block> 獨立提供。</block>
   <block id="48c7e4419181f50e8f2789d798916836" category="list-text">*使用Jenkins CI*：如果您複製由操作人員部署的Jenkins CI執行個體、則必須手動還原持續性資料。這是應用程式部署模式的限制。</block>
@@ -2638,4 +2610,28 @@
   <block id="9b180301de1547cfb79fd365792a5407" category="list-text">編輯您的<block ref="b9d73b065c599559f2852e4f2e265934" prefix=" " category="inline-code"></block> 組態對應：</block>
   <block id="192a0e17e823e018d9d9b67cd6dbde3a" category="list-text">您需要在叢集上設定至少一個Astra Trident儲存類別。如果已設定預設儲存類別、請確定它是唯一具有預設指定的儲存類別。</block>
   <block id="f7dff2bfbfe240ed80ab3ffd13689474" category="list-text">確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。</block>
+  <block id="3bc727baad8c93a8a96ecbe4208925cf" category="list-text">*儲存類別*：如果您安裝的應用程式已明確設定儲存類別、而且需要複製應用程式、則複製作業的目標叢集必須具有原本指定的儲存類別。將具有明確設定儲存類別的應用程式複製到沒有相同儲存類別的叢集、將會失敗。</block>
+  <block id="e5de374e1d369bfc7e8ec51b5b744933" category="cell"><block ref="a941f8adb5ae079ebc739cb59407fd30" prefix="" category="inline-code"></block></block>
+  <block id="be5e0e20ce0e311437852c90af7c8276" category="cell"><block ref="639125955d3128c08b048bc254433dbf" prefix="" category="inline-code"></block></block>
+  <block id="0302c657e0585c41f2f6278beec1daa8" category="cell"><block ref="0d4eb61dc57afc7f3f8d51439c96eedd" prefix="" category="inline-code"></block></block>
+  <block id="3ef1c1f8bb4a9f17e4c3be129db67366" category="cell"><block ref="788c34b60baf42eb1cac433ba1f0b64a" prefix="" category="inline-code"></block></block>
+  <block id="fd8848399c1c55827bc0b79969e1e4a0" category="cell"><block ref="f82570cd8dd080fcb0fe525f9b081bdb" prefix="" category="inline-code"></block></block>
+  <block id="965155af507b897bd6e77dffd6aa0722" category="cell"><block ref="7d05c708b92b4809bfe9bf66edf8f765" prefix="" category="inline-code"></block></block>
+  <block id="77a106c2fd00e72732b9ca603f027479" category="cell"><block ref="1fcd027e4be180b1536eba3afa93e6be" prefix="" category="inline-code"></block></block>
+  <block id="e4fee35090e28014a028d2aacbc2dfd5" category="cell"><block ref="c794a682153b998c6dca3efddf650512" prefix="" category="inline-code"></block></block>
+  <block id="663d2d3603ff41da6cc6ee0a9ff5b975" category="cell"><block ref="2b3f8e4d49589c4452db0a07d619d824" prefix="" category="inline-code"></block></block>
+  <block id="82873de0f5b2ce17a8ae3c45fcdec32d" category="cell"><block ref="8a0813c70cf4bf1529f25c411a039130" prefix="" category="inline-code"></block></block>
+  <block id="11a7948f05eed04b034eed441c4f1d17" category="cell"><block ref="d8babd242bd93046572e7f50a3fbb394" prefix="" category="inline-code"></block></block>
+  <block id="93bca2ba13d4fcb7387baa5778fc009d" category="cell"><block ref="3f4dbf8b7a689375f651090e7a111098" prefix="" category="inline-code"></block></block>
+  <block id="2670a6aa236e5c7b5bd441bb5649af10" category="cell"><block ref="3f402161942e4154684cf3f56c76cead" prefix="" category="inline-code"></block></block>
+  <block id="b4686556afaf1bba0c5270574ca15c54" category="cell"><block ref="bbbabdbe1b262f75d99d62880b953be1" prefix="" category="inline-code"></block></block>
+  <block id="048d158959fcf004be385e1567033fe6" category="cell"><block ref="ec7eab019566cfca91934ab1e0073511" prefix="" category="inline-code"></block></block>
+  <block id="256f986a2a64bf0d93697e4176b13a4a" category="cell"><block ref="9405c3aff9112c3c60d03b94792877dc" prefix="" category="inline-code"></block></block>
+  <block id="793e5af2d1d35f01083c2714054795ba" category="cell"><block ref="1e6947ac7fb3a9529a9726eb692c8cc5" prefix="" category="inline-code"></block></block>
+  <block id="4074550b4bbee6a4267a989b94eb3c28" category="cell"><block ref="c2ba7e785c49050f48da9aacc45c2b85" prefix="" category="inline-code"></block></block>
+  <block id="650c66e0a27f30ae0cf2d7b83b772b35" category="cell"><block ref="5c24ffd6438853b537bd99b3fccd3340" prefix="" category="inline-code"></block></block>
+  <block id="9c396e0c60d319972f63a0023186f42a" category="cell"><block ref="f202d1133673fa6cfe280880cbc3ee66" prefix="" category="inline-code"></block></block>
+  <block id="e69175cacbe45336f1df22a8b3b32254" category="cell"><block ref="91e292ade0a336af19f1ac0977215b91" prefix="" category="inline-code"></block></block>
+  <block id="9497a649f72a465537e088cd33f63b26" category="paragraph">除了自動包含的Astra Control之外、您也可以匯入與命名空間資源相關聯的叢集資源。您可以新增規則、其中包含特定群組的資源、種類、版本及選擇性的標籤。如果Astra Control沒有自動包含資源、您可能會想要這麼做。</block>
+  <block id="0da4d61a77014ac62ef250a406e5dbce" category="list-text">*明確的儲存類別*：如果您部署的應用程式已明確設定儲存類別、而且需要複製應用程式、則目標叢集必須具有原本指定的儲存類別。將具有明確設定儲存類別的應用程式複製到沒有相同儲存類別的叢集、將會失敗。</block>
 </blocks>
