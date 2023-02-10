@@ -437,8 +437,6 @@
   <block id="439bbc2e67801e938f10dc62cc0fa47a" category="list-text">從「*動作*」欄的「選項」功能表中、選取「*移除使用者*」。</block>
   <block id="4d56d66fc4ff5cbbc8603df737848e93" category="list-text">出現提示時、請輸入「移除」一詞、然後選取「是、移除使用者*」、確認刪除。</block>
   <block id="201d245e3b93a26007d42f5f603f6230" category="paragraph">Astra Control Center會將使用者從帳戶中移除。</block>
-  <block id="d3780315ac76826db7abed6c6e026316" category="summary">您可以設定多項選用設定、以增強Astra Control Center體驗。如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、請在Astra Control Center中設定該Proxy伺服器。您可以使用NetApp Cloud Insights 解決方案來監控及深入瞭解完整的基礎架構。您可以新增流暢的位元連線、從容器收集資料和記錄。</block>
-  <block id="83f8bdf396bfe8f43a87afcaeaf47a89" category="admonition">Astra Control Center不會驗證您為Proxy伺服器輸入的詳細資料。請確認輸入正確的值。</block>
   <block id="33e25013c351d84e30f58671009577d3" category="list-text">使用具有*管理*/*擁有者*權限的帳戶登入Astra Control Center。</block>
   <block id="bc19da5189cc32f27d8b9761272305cd" category="list-text">選擇*帳戶*&gt;*連線*。</block>
   <block id="61ba00adf80e33f4a06350b8ca656cc4" category="list-text">從下拉式清單中選取*「Connect*」以新增Proxy伺服器。</block>
@@ -490,7 +488,6 @@
   <block id="6ae19832a4f5fa2ceafdf59e7566f008" category="paragraph">您可以停用Cloud Insights 由Astra Control Center管理的Kubernetes叢集的支援功能。停用Cloud Insights 此功能不會刪除已上傳至Cloud Insights 更新的遙測資料。</block>
   <block id="7b47e5cca580c15b73298814e6dc3043" category="list-text">在開啟的對話方塊中、確認作業。在您確認操作之後、Cloud Insights 在*帳戶*&gt;*連線*頁面上、顯示的「畫面」狀態會變更為*「待處理」*。狀態變更為*中斷連線*需要幾分鐘的時間。</block>
   <block id="e3ef410032c04be22479d1f57535cd7c" category="section-title">連接至Flud</block>
-  <block id="53aa734867da8d80d801799743769150" category="paragraph">您可以將記錄（Kubernetes事件）從Astra Control Center傳送至您的Fluentd端點。Fluentd連線預設為停用。</block>
   <block id="78f449881ce819a79127ab380ec8f5f0" category="admonition">只有來自託管叢集的事件記錄會轉送至Fluentd。</block>
   <block id="f49f4c26cb983eb5089296d1c29bd573" category="list-text">Astra Control Center安裝並在Kubernetes叢集上執行。</block>
   <block id="d3ebfa34d5e7c2c879271b1ab8424d9e" category="admonition">Astra Control Center不會驗證您為Fluentd伺服器輸入的詳細資料。請確認輸入正確的值。</block>
@@ -1639,8 +1636,6 @@
   <block id="366c043ac239af39c01a69c524d5c4d8" category="list-text">*刪除*：</block>
   <block id="4877dec902ca3a40e2a3f5deb4d738cb" category="list-text">如果複寫關係已建立但尚未容錯移轉、Astra Control會移除複寫期間建立的PVCS、並刪除目的地託管應用程式。</block>
   <block id="3a6ead109505f7ea2878ab424cbe2da1" category="list-text">如果複寫已失敗、Astra Control會保留PVCS和目的地應用程式。</block>
-  <block id="c41ee5732016154bb6c4940488b2e433" category="doc">利用Cloud Insights 不中斷連線和變動連線來監控基礎架構</block>
-  <block id="17751e1c130aa7f1a02d1ece443950ff" category="paragraph">您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連結。若要從Astra Control Center監控的系統收集Kubernetes事件、請新增Fludd連線。</block>
   <block id="671cce49cb9437c45402bf5665738f0e" category="paragraph">您也可以使用LDAP為選取的使用者執行驗證。</block>
   <block id="b56135ea0b546a1652b8e3d7c5b18c4c" category="section-title">使用LDAP</block>
   <block id="4ce624958058f79de8c325a46a6e3efd" category="paragraph">您可以執行下列與保護應用程式資料相關的工作：</block>
@@ -2634,4 +2629,39 @@
   <block id="e69175cacbe45336f1df22a8b3b32254" category="cell"><block ref="91e292ade0a336af19f1ac0977215b91" prefix="" category="inline-code"></block></block>
   <block id="9497a649f72a465537e088cd33f63b26" category="paragraph">除了自動包含的Astra Control之外、您也可以匯入與命名空間資源相關聯的叢集資源。您可以新增規則、其中包含特定群組的資源、種類、版本及選擇性的標籤。如果Astra Control沒有自動包含資源、您可能會想要這麼做。</block>
   <block id="0da4d61a77014ac62ef250a406e5dbce" category="list-text">*明確的儲存類別*：如果您部署的應用程式已明確設定儲存類別、而且需要複製應用程式、則目標叢集必須具有原本指定的儲存類別。將具有明確設定儲存類別的應用程式複製到沒有相同儲存類別的叢集、將會失敗。</block>
+  <block id="b6da6003a2f52469c14c0c6729f67039" category="summary">您可以設定多項選用設定、以增強Astra Control Center體驗。如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、請在Astra Control Center中設定該Proxy伺服器。您可以使用NetApp Cloud Insights 解決方案來監控及深入瞭解完整的基礎架構。您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連線、設定Prometheus、或新增Fluentd連線。</block>
+  <block id="91ff640cb1ad20709065c64e736f5d0b" category="doc">利用Cloud Insights 支援的鏈接功能來監控基礎架構</block>
+  <block id="545e4a96701514d3d62f7ae1778a7858" category="paragraph">您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連線、設定Prometheus、或新增Fluentd連線。</block>
+  <block id="45e983a2837dea8ff67d8523d723f5d7" category="list-text"><block ref="6c8f350d87572b93a1638cc8c8c03f45" category="inline-xref-macro-rx"></block></block>
+  <block id="2040e11ba656a4dcf1b54098e187f0c6" category="list-text"><block ref="d116edfca4274564eb0914ae2c5f865a" category="inline-xref-macro-rx"></block></block>
+  <block id="72a11e0ef9a893dc22f4644541c45e5f" category="list-text"><block ref="c015896365f2d64fe1c60d6363c5dd6f" category="inline-xref-macro-rx"></block></block>
+  <block id="a4b6c4ceaf7f07f688975add1e51d3bb" category="admonition">Astra Control Center不會驗證您為Proxy伺服器輸入的詳細資料。請確認輸入正確的值。</block>
+  <block id="5ab6ff9afa33fb591b346058c1dc1f6a" category="section-title">連線至Prometheus</block>
+  <block id="2ae88408008bbb2152e31e0d54fb16f7" category="paragraph">您可以使用Prometheus監控Astra Control Center資料。您可以設定Prometheus從Kubernetes叢集度量端點收集度量、也可以使用Prometheus將度量資料視覺化。</block>
+  <block id="ab3cc7884a2a586e737ccb176552b3b5" category="inline-link">Prometheus入門</block>
+  <block id="7ae1262308bfda5eda5f20a58c209052" category="paragraph">如需使用Prometheus的詳細資訊、請參閱其文件、網址為<block ref="6ad3149d8ef2efb7cc0b4f11257b9f54" category="inline-link-rx"></block>。</block>
+  <block id="eed5ddc8f738970611f01ee16f2a17e5" category="paragraph-title">您的需求</block>
+  <block id="411ee6dde1e5ad68cfbff923bf03b28c" category="paragraph">請確定您已在Astra Control Center叢集或其他可與Astra Control Center叢集通訊的叢集上下載並安裝Prometheus套件。</block>
+  <block id="88b8613d339947a37e41b1f514dcc42c" category="inline-link">安裝Prometheus</block>
+  <block id="e4c7f77e7b92bcbfbb43c2080cfe6f9f" category="paragraph">請依照正式文件中的指示進行<block ref="dd427b070bec20dc10247d034a173c9b" category="inline-link-rx"></block>。</block>
+  <block id="e6b1b32c0689034c5d0a1f7b37c4ba63" category="paragraph">Prometheus需要能夠與Astra Control Center Kubernetes叢集通訊。如果未在Astra Control Center叢集上安裝Prometheus、您必須確保它們能與Astra Control Center叢集上執行的度量服務通訊。</block>
+  <block id="7119175e2ec3286002664b430cbc1c19" category="section-title">設定Prometheus</block>
+  <block id="77c978de1adca49564de70adfdc7e3d6" category="paragraph">Astra Control Center會在Kubernetes叢集中的TCP連接埠9090上公開度量服務。您必須設定Prometheus、才能從此服務收集指標。</block>
+  <block id="092b3cbe70aca2ba293640b66a219310" category="list-text">登入Prometheus伺服器。</block>
+  <block id="2bb8bbb2cbbc15facee963ead9e8869c" category="list-text">將叢集項目新增至<block ref="c3d29ac8b40407b824f83a7f7db6e6bb" prefix=" " category="inline-code"></block> 檔案：在中<block ref="176a3b23c5e392bb5c047d481938bd7b" prefix=" " category="inline-code"></block> 檔案中、針對中的叢集新增類似下列的項目<block ref="da024a87d68fe879a5e8dc9164e2062a" prefix=" " category="inline-code"></block>：</block>
+  <block id="7f50ef17b5ea722d72b7bc10c790fc2a" category="admonition">如果您設定<block ref="20a9b86c9419c9e9adee226db98768f3" prefix=" " category="inline-code"></block> 至<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>、不需要TLS加密傳輸協定。</block>
+  <block id="35ca8de5ad09d8f379dc9403dc3c2c96" category="list-text">重新啟動Prometheus服務：</block>
+  <block id="77810c2dad8e6b7da8d8ace54e386d72" category="section-title">存取Prometheus</block>
+  <block id="84176d4e9721735f127e8995de1208a0" category="paragraph">存取Prometheus URL。</block>
+  <block id="7bfee81d0d958666514f0f51e8b93133" category="list-text">在瀏覽器中、輸入連接埠9090的Prometheus URL。</block>
+  <block id="c4dc7227e2d90e92b53dc61bd8875717" category="list-text">選取*狀態*&gt;*目標*來驗證您的連線。</block>
+  <block id="8a06a9070abbb95f9a44a7aa40f3fff9" category="section-title">檢視Prometheus中的資料</block>
+  <block id="e0f1970f397ef82d992fd6ecec86ab09" category="paragraph">您可以使用Prometheus來檢視Astra Control Center資料。</block>
+  <block id="ab2e086f7848d83e402e340872aa7859" category="list-text">在瀏覽器中、輸入Prometheus URL。</block>
+  <block id="b0e1e6b4923d3123191b308adffda5a8" category="list-text">在Prometheus功能表中、選取* Graph*。</block>
+  <block id="92c6bfdd233a450efe090dfd2aeb1857" category="list-text">若要使用度量資源管理器、請選取「*執行*」旁的圖示。</block>
+  <block id="6682f04aa7c63c9ce70d8bee0705612d" category="list-text">選取<block ref="13584fd5e974d4024107644d67fe0a1f" prefix=" " category="inline-code"></block> 並選擇*執行*。</block>
+  <block id="4409c1c59948e2b1fc006b492343b77d" category="list-text">若要查看隨時間推移的擷取範例、請選取* Graph*。</block>
+  <block id="4e86b3f4151280eb07fe543c3b9974f2" category="admonition">如果收集多個叢集資料、每個叢集的度量會以不同的色彩顯示。</block>
+  <block id="039788d35f35e7e6b801a37b1b602f56" category="paragraph">您可以將記錄（Kubernetes事件）從Astra Control Center所監控的系統傳送至您的Fluentd端點。Fluentd連線預設為停用。</block>
 </blocks>

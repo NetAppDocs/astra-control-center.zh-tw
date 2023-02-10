@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/monitor-protect.html 
 keywords: proxy, cloud insights, connections, fluent bit, accounts, protect, security 
-summary: 您可以設定多項選用設定、以增強Astra Control Center體驗。如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、請在Astra Control Center中設定該Proxy伺服器。您可以使用NetApp Cloud Insights 解決方案來監控及深入瞭解完整的基礎架構。您可以新增流暢的位元連線、從容器收集資料和記錄。 
+summary: 您可以設定多項選用設定、以增強Astra Control Center體驗。如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、請在Astra Control Center中設定該Proxy伺服器。您可以使用NetApp Cloud Insights 解決方案來監控及深入瞭解完整的基礎架構。您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連線、設定Prometheus、或新增Fluentd連線。 
 ---
-= 利用Cloud Insights 不中斷連線和變動連線來監控基礎架構
+= 利用Cloud Insights 支援的鏈接功能來監控基礎架構
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,9 +12,14 @@ summary: 您可以設定多項選用設定、以增強Astra Control Center體驗
 
 
 [role="lead"]
-您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連結。若要從Astra Control Center監控的系統收集Kubernetes事件、請新增Fludd連線。
+您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連線、設定Prometheus、或新增Fluentd連線。
 
 如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路（將支援套件上傳NetApp 支援網站 至靜態或建立Cloud Insights 連線至靜態）、您應該在Astra Control Center中設定Proxy伺服器。
+
+* <<連線Cloud Insights 至>>
+* <<連線至Prometheus>>
+* <<連接至Flud>>
+
 
 
 
@@ -188,9 +193,86 @@ NOTE: 您只能編輯API金鑰。若要變更Cloud Insights 此URL、我們建�
 
 
 
+== 連線至Prometheus
+
+您可以使用Prometheus監控Astra Control Center資料。您可以設定Prometheus從Kubernetes叢集度量端點收集度量、也可以使用Prometheus將度量資料視覺化。
+
+如需使用Prometheus的詳細資訊、請參閱其文件、網址為 https://prometheus.io/docs/prometheus/latest/getting_started/["Prometheus入門"]。
+
+.您的需求
+請確定您已在Astra Control Center叢集或其他可與Astra Control Center叢集通訊的叢集上下載並安裝Prometheus套件。
+
+請依照正式文件中的指示進行 https://prometheus.io/docs/prometheus/latest/installation/["安裝Prometheus"]。
+
+Prometheus需要能夠與Astra Control Center Kubernetes叢集通訊。如果未在Astra Control Center叢集上安裝Prometheus、您必須確保它們能與Astra Control Center叢集上執行的度量服務通訊。
+
+
+
+=== 設定Prometheus
+
+Astra Control Center會在Kubernetes叢集中的TCP連接埠9090上公開度量服務。您必須設定Prometheus、才能從此服務收集指標。
+
+.步驟
+. 登入Prometheus伺服器。
+. 將叢集項目新增至 `prometheus.yml` 檔案：在中 `yml` 檔案中、針對中的叢集新增類似下列的項目 `scrape_configs section`：
++
+[listing]
+----
+job_name: '<Add your cluster name here. You can abbreviate. It just needs to be a unique name>'
+  metrics_path: /accounts/<replace with your account ID>/metrics
+  authorization:
+     credentials: <replace with your API token>
+  tls_config:
+     insecure_skip_verify: true
+  static_configs:
+    - targets: ['<replace with your astraAddress. If using FQDN, the prometheus server has to be able to resolve it>']
+----
++
+
+NOTE: 如果您設定 `tls_config insecure_skip_verify` 至 `true`、不需要TLS加密傳輸協定。
+
+. 重新啟動Prometheus服務：
++
+[listing]
+----
+sudo systemctl restart prometheus
+----
+
+
+
+
+=== 存取Prometheus
+
+存取Prometheus URL。
+
+.步驟
+. 在瀏覽器中、輸入連接埠9090的Prometheus URL。
+. 選取*狀態*>*目標*來驗證您的連線。
+
+
+
+
+=== 檢視Prometheus中的資料
+
+您可以使用Prometheus來檢視Astra Control Center資料。
+
+.步驟
+. 在瀏覽器中、輸入Prometheus URL。
+. 在Prometheus功能表中、選取* Graph*。
+. 若要使用度量資源管理器、請選取「*執行*」旁的圖示。
+. 選取 `scrape_samples_scraped` 並選擇*執行*。
+. 若要查看隨時間推移的擷取範例、請選取* Graph*。
++
+
+NOTE: 如果收集多個叢集資料、每個叢集的度量會以不同的色彩顯示。
+
+
+
+
+
 == 連接至Flud
 
-您可以將記錄（Kubernetes事件）從Astra Control Center傳送至您的Fluentd端點。Fluentd連線預設為停用。
+您可以將記錄（Kubernetes事件）從Astra Control Center所監控的系統傳送至您的Fluentd端點。Fluentd連線預設為停用。
 
 image:fluentbit.png["這是從Astra到Fluentd的事件記錄概念圖。"]
 
