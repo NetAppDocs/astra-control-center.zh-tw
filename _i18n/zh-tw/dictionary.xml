@@ -2664,4 +2664,5 @@
   <block id="4409c1c59948e2b1fc006b492343b77d" category="list-text">若要查看隨時間推移的擷取範例、請選取* Graph*。</block>
   <block id="4e86b3f4151280eb07fe543c3b9974f2" category="admonition">如果收集多個叢集資料、每個叢集的度量會以不同的色彩顯示。</block>
   <block id="039788d35f35e7e6b801a37b1b602f56" category="paragraph">您可以將記錄（Kubernetes事件）從Astra Control Center所監控的系統傳送至您的Fluentd端點。Fluentd連線預設為停用。</block>
+  <block id="2fae9bf7af2c006788415b299aad1207" category="admonition">當您對使用NetApp ONTAP 還原的應用程式執行就地還原時、還原的應用程式所使用的空間可能會加倍。執行就地還原之後、請從還原的應用程式中移除任何不想要的快照、以釋放儲存空間。</block>
 </blocks>
