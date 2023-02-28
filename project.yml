@@ -66,7 +66,7 @@ homepage:
     - title: 開始使用Astra Control API
       url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
     - title: API 參考
-      url: https://docs.netapp.com/us-en/astra-automation/reference/api_reference.html
+      url: https://docs.netapp.com/us-en/astra-automation/reference/overview.html
     - title: API工作流程
       url: https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html
   - title: 使用Astra Control Service
