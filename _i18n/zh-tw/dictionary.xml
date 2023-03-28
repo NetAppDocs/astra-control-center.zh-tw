@@ -1049,12 +1049,8 @@
   <block id="13d28e8dfc702e3456e0767dff9a128a" category="section-title">命名空間</block>
   <block id="d9cc676cc9f27a51d1e6de8201649cfb" category="paragraph">命名空間是可指派給由Astra Control管理之叢集內特定資源的範圍。當您將叢集新增至Astra Control時、Astra Control會探索叢集的命名空間。一旦發現命名空間、就能將其指派為限制給使用者。只有具有該命名空間存取權的成員才能使用該資源。您可以使用命名空間來控制對資源的存取、這種模式對您的組織而言很合理、例如依實體區域或公司內部的部門而定。當您新增限制給使用者時、可以將該使用者設定為只能存取所有命名空間或特定的命名空間集合。您也可以使用命名空間標籤指派命名空間限制。</block>
   <block id="646e605e86066bd9485e0c23704757f2" category="section-title">快照、備份及保護原則</block>
-  <block id="0ff3a63f501bdc56779548c1895a7830" category="paragraph">_snapshot是應用程式的時間點複本、儲存在與應用程式相同的已配置磁碟區上。通常速度很快。您可以使用本機快照、將應用程式還原至較早的時間點。快照對快速複製非常實用；快照包括應用程式的所有Kubernetes物件、包括組態檔案。</block>
-  <block id="8088bcbdd6f32dd97af613eaa18dbfc9" category="paragraph">備份_儲存在外部物件存放區中、相較於本機快照、執行速度可能較慢。您可以將應用程式備份還原至同一個叢集、也可以將應用程式備份還原至不同的叢集、藉此移轉應用程式。您也可以選擇較長的備份保留期間。由於備份儲存在外部物件存放區中、因此在伺服器故障或資料遺失的情況下、備份通常比快照提供更好的保護。</block>
-  <block id="1cf677982e8ac99f55d7314cb3a51d20" category="paragraph">_protection policy_is是一種保護應用程式的方法、可根據您為該應用程式定義的排程、自動建立快照、備份或兩者。保護原則也可讓您選擇要在排程中保留多少個快照和備份。使用保護原則將備份與快照自動化、是確保每個應用程式都能根據組織需求受到保護的最佳方法。</block>
   <block id="33bb9df0e608c1dab17890f54a41a8db" category="admonition">_您必須等到最近進行備份之後、才能獲得完整保護_。這很重要、因為備份儲存在遠離持續磁碟區的物件存放區中。如果發生故障或意外、會清除叢集及其相關的持續儲存設備、則需要備份才能恢復。快照無法讓您恢復。</block>
   <block id="999cc42b236c7aee1157ff02d6f1bcd5" category="section-title">複製</block>
-  <block id="3e92f2df0bda8968dc6665778c2f9b99" category="paragraph">_clon__是應用程式、其組態及其持續儲存設備的確切複本。您可以在相同的Kubernetes叢集或其他叢集上手動建立複本。如果您需要將應用程式和儲存設備從一個Kubernetes叢集移至另一個叢集、複製應用程式就很有用。</block>
   <block id="1266a5a3fd194fe421f8d3d701b44de7" category="doc">儲存類別和持續Volume大小</block>
   <block id="2a48cd265597705926220f5e81d03941" category="paragraph">Astra Control Center支援下列項目：</block>
   <block id="56a2a4029e73c469c307bf583648cd20" category="list-text">* ONTAP 以支援的Trident儲存類*：如果您使用ONTAP 的是支援支援支援功能的支援功能、Astra Control Center可匯入ONTAP 該功能的支援功能、以報告各種監控資訊。</block>
@@ -2665,4 +2661,12 @@
   <block id="4e86b3f4151280eb07fe543c3b9974f2" category="admonition">如果收集多個叢集資料、每個叢集的度量會以不同的色彩顯示。</block>
   <block id="039788d35f35e7e6b801a37b1b602f56" category="paragraph">您可以將記錄（Kubernetes事件）從Astra Control Center所監控的系統傳送至您的Fluentd端點。Fluentd連線預設為停用。</block>
   <block id="2fae9bf7af2c006788415b299aad1207" category="admonition">當您對使用NetApp ONTAP 還原的應用程式執行就地還原時、還原的應用程式所使用的空間可能會加倍。執行就地還原之後、請從還原的應用程式中移除任何不想要的快照、以釋放儲存空間。</block>
+  <block id="cca8aaa6dccaa81bdbc26387b1f1bc63" category="paragraph">快照和備份都能保護下列類型的資料：</block>
+  <block id="adac08ac006f9d65c559347c106461c7" category="list-text">應用程式本身</block>
+  <block id="6c94a6e4d564092b6e6d44dbc8e77b07" category="list-text">與應用程式相關的任何持續資料磁碟區</block>
+  <block id="7dfd52c396a70e3d3406a3363ed74be4" category="list-text">屬於應用程式的任何資源成品</block>
+  <block id="8d2f06a986c63f2706decd28b4e24967" category="paragraph">_snapshot是應用程式的時間點複本、儲存在與應用程式相同的已配置磁碟區上。通常速度很快。您可以使用本機快照、將應用程式還原至較早的時間點。快照對快速複製非常實用；快照包括應用程式的所有Kubernetes物件、包括組態檔案。快照可用於複製或還原同一個叢集內的應用程式。</block>
+  <block id="d3472e0a53fc9484c0dd7ec15e76da1d" category="paragraph">備份_是以快照為基礎。它儲存在外部物件存放區中、因此相較於本機快照、拍攝速度可能較慢。您可以將應用程式備份還原至同一個叢集、也可以將應用程式備份還原至不同的叢集、藉此移轉應用程式。您也可以選擇較長的備份保留期間。由於備份儲存在外部物件存放區中、因此在伺服器故障或資料遺失的情況下、備份通常比快照提供更好的保護。</block>
+  <block id="5becefddd70e438fb63cc4c816b5f6cc" category="paragraph">_protection policy_is是一種保護應用程式的方法、可根據您為該應用程式定義的排程、自動建立快照、備份或兩者。保護原則也可讓您選擇要在排程中保留多少個快照和備份、並設定不同的排程精細度層級。使用保護原則將備份與快照自動化、是確保每個應用程式都能根據組織和服務層級協議（SLA）需求來保護的最佳方式。</block>
+  <block id="5d18a3d426ac931bca06d705d79d80cf" category="paragraph">_clon__是應用程式、其組態及其持續資料磁碟區的完全複製。您可以在相同的Kubernetes叢集或其他叢集上手動建立複本。如果您需要將應用程式和儲存設備從一個Kubernetes叢集移至另一個叢集、複製應用程式就很有用。</block>
 </blocks>
