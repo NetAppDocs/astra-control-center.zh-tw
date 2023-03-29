@@ -100,9 +100,11 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 Astra Control Center支援下列儲存後端。
 
-* NetApp ONTAP S9.5或更新AFF 版本的功能性和FAS 功能性系統
-* 適用於ONTAP SnapMirror應用程式複寫的NetApp SnapMirror 9.8或更新AFF 版本的功能性和FAS 功能性系統
-* NetApp Cloud Volumes ONTAP
+* NetApp ONTAP S9.5或更新AFF 版本的功能、包括ASA FAS
+* 適用於ONTAP SnapMirror應用程式複寫的NetApp支援9.8或更新AFF 版本的功能、FAS 功能、功能及ASA 功能
+* NetApp ONTAP Select S9.5或更新版本
+* 適用於ONTAP Select SnapMirror型應用程式複寫的NetApp更新版本9.8
+* NetApp Cloud Volumes ONTAP S9.5或更新版本
 
 
 若要使用Astra Control Center、請視ONTAP 您需要完成的工作而定、確認您擁有下列各項的版次授權：

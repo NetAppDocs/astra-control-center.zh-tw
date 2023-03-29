@@ -601,8 +601,6 @@
   <block id="1c48088dc1732bdac3e27be1a94c191a" category="inline-link">VMware NSxT-T資料中心產品文件。</block>
   <block id="783d1a3e740eff9085416ec3f709793f" category="section-title">支援的儲存後端</block>
   <block id="160a276b6627d6a6aa9859d6c2835948" category="paragraph">Astra Control Center支援下列儲存後端。</block>
-  <block id="dfac4790f1edf6101275f3ef6bff1bf3" category="list-text">NetApp ONTAP S9.5或更新AFF 版本的功能性和FAS 功能性系統</block>
-  <block id="0f0b99ea2f70cd363c2c6a279f74e760" category="list-text">NetApp Cloud Volumes ONTAP</block>
   <block id="ca6f33719464e2320b44f90d6ae70eb7" category="section-title">應用程式管理需求</block>
   <block id="304f557d4b7e64bda6836386e7c79fc6" category="paragraph">Astra Control具備下列應用程式管理需求：</block>
   <block id="279aeb8fefc116ce50f1bb81d8dc343c" category="list-text">*授權*：若要使用Astra Control Center管理應用程式、您需要Astra Control Center授權。</block>
@@ -1670,7 +1668,6 @@
   <block id="ed78458df917d6da9f19cca23d8468cd" category="paragraph"><block ref="c229e392652cddf73148e5c65f706c6d" category="inline-link-macro-rx"></block> 使用NetApp SnapMirror技術將其移至遠端叢集。Astra Control會將Snapshot複寫到遠端叢集、提供非同步的災難恢復功能。</block>
   <block id="ca5eff8f4c2396bf09558b428d91e9f3" category="section-title">2022年9月8日（22.08.1）</block>
   <block id="322f8233054cca6c9d6204f1aa1d1f7f" category="paragraph">此適用於Astra Control Center（22.08.0）的修補程式版本（22.08.1）可利用NetApp SnapMirror修正應用程式複寫中的小錯誤。</block>
-  <block id="419590ef59b29bd36215f285b4098a7c" category="list-text">適用於ONTAP SnapMirror應用程式複寫的NetApp SnapMirror 9.8或更新AFF 版本的功能性和FAS 功能性系統</block>
   <block id="eb507cd0bc5d12259c54a50f248a2049" category="list-text">為了實現無縫的災難恢復、建議您在第三個故障網域或次要站台部署Astra Control Center。</block>
   <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">所有Astra文件</block>
   <block id="cc76a05fe8cbb45b45b1139e841822bd" category="admonition">Amazon Web Services（AWS）和Google Cloud Platform（GCP）使用通用S3儲存區類型。</block>
@@ -2669,4 +2666,9 @@
   <block id="d3472e0a53fc9484c0dd7ec15e76da1d" category="paragraph">備份_是以快照為基礎。它儲存在外部物件存放區中、因此相較於本機快照、拍攝速度可能較慢。您可以將應用程式備份還原至同一個叢集、也可以將應用程式備份還原至不同的叢集、藉此移轉應用程式。您也可以選擇較長的備份保留期間。由於備份儲存在外部物件存放區中、因此在伺服器故障或資料遺失的情況下、備份通常比快照提供更好的保護。</block>
   <block id="5becefddd70e438fb63cc4c816b5f6cc" category="paragraph">_protection policy_is是一種保護應用程式的方法、可根據您為該應用程式定義的排程、自動建立快照、備份或兩者。保護原則也可讓您選擇要在排程中保留多少個快照和備份、並設定不同的排程精細度層級。使用保護原則將備份與快照自動化、是確保每個應用程式都能根據組織和服務層級協議（SLA）需求來保護的最佳方式。</block>
   <block id="5d18a3d426ac931bca06d705d79d80cf" category="paragraph">_clon__是應用程式、其組態及其持續資料磁碟區的完全複製。您可以在相同的Kubernetes叢集或其他叢集上手動建立複本。如果您需要將應用程式和儲存設備從一個Kubernetes叢集移至另一個叢集、複製應用程式就很有用。</block>
+  <block id="f4830a7c07883165a7a5c8d341286873" category="list-text">NetApp ONTAP S9.5或更新AFF 版本的功能、包括ASA FAS</block>
+  <block id="a6c8aa58cced8f18c41300f47bec2c86" category="list-text">適用於ONTAP SnapMirror應用程式複寫的NetApp支援9.8或更新AFF 版本的功能、FAS 功能、功能及ASA 功能</block>
+  <block id="2f69a705b60cbc3d6bba3c41c6be8810" category="list-text">NetApp ONTAP Select S9.5或更新版本</block>
+  <block id="8ccf427f70709789c9c7a4f0ffd8f8cc" category="list-text">適用於ONTAP Select SnapMirror型應用程式複寫的NetApp更新版本9.8</block>
+  <block id="bfd904fc0dcf06a45fdb48323bd3a82d" category="list-text">NetApp Cloud Volumes ONTAP S9.5或更新版本</block>
 </blocks>
