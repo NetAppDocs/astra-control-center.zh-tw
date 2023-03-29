@@ -33,7 +33,7 @@ image:astra-architecture-diagram-v5.png["說明Astra Control架構及其元件�
 
 ** Astra Control Center使用下列儲存後端：
 +
-*** 不再是不一樣的。ONTAP AFF FAS作為儲存軟體與硬體平台ONTAP 、支援核心儲存服務、支援多種儲存存取傳輸協定、以及快照與鏡射等儲存管理功能。
+*** 不只是部分、不只是部分、更是部分ASA FAS ONTAP AFF 。作為儲存軟體與硬體平台ONTAP 、支援核心儲存服務、支援多種儲存存取傳輸協定、以及快照與鏡射等儲存管理功能。
 *** Cloud Volumes ONTAP
 
 

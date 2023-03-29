@@ -22,6 +22,8 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 
 
 ====
+如需Astra Control Center安裝程序的示範、請參閱 https://www.youtube.com/watch?v=eurMV80b0Ks&list=PLdXI3bZJEw7mJz13z7YdiGCS6gNQgV_aN&index=5["這段影片"^]。
+
 .您需要的產品
 * link:requirements.html["開始安裝之前、請先準備好環境以進行Astra Control Center部署"]。
 * 如果您已設定或想要在環境中設定Pod安全性原則、請熟悉Pod安全性原則、以及這些原則如何影響Astra Control Center安裝。請參閱 link:../concepts/understand-pod-security.html["瞭解Pod安全性原則限制"]。

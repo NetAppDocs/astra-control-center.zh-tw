@@ -1274,7 +1274,6 @@
   <block id="a3a73c70d17ec0200754923f727706c0" category="list-text"><block ref="2a2294479c4f08f2d84e7ee9334a5e29" category="inline-link-rx"></block> 或Azure託管磁碟做為高效能叢集的儲存後端。</block>
   <block id="8e276a5c4eecb9cd5c1fbb0729744eb5" category="inline-link">Amazon彈性區塊儲存區（EBS）</block>
   <block id="312f73bc02090ee1ad14be45b359dbe8" category="list-text"><block ref="f04576f201786fec5ebc1080637d02a1" category="inline-link-rx"></block> 或<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> 作為EKS叢集的後端儲存選項。</block>
-  <block id="878d04283184abd2b8ea5f813a053078" category="list-text">不再是不一樣的。ONTAP AFF FAS作為儲存軟體與硬體平台ONTAP 、支援核心儲存服務、支援多種儲存存取傳輸協定、以及快照與鏡射等儲存管理功能。</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">說明Astra Control中的託管應用程式類型。</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">當Astra Control探索叢集時、這些叢集上的應用程式將無法管理、直到您選擇要管理的方式為止。Astra Control中的託管應用程式可以是下列任一項：</block>
@@ -1304,22 +1303,11 @@
   <block id="cf730d1df7f3b98c75cd949f7b3155ec" category="inline-link-macro">使用NetApp SnapMirror技術進行應用程式複寫</block>
   <block id="43a321aa397f8593d184ea33759d7e38" category="inline-link-macro">改善應用程式管理工作流程</block>
   <block id="ced3580ec3e1b083304a574bccfdc820" category="inline-link-macro">增強的執行掛勾功能、讓您自行執行</block>
-  <block id="147023a1f5114242635e425ab71c8c27" category="list-text"><block ref="147023a1f5114242635e425ab71c8c27" category="inline-link-macro-rx"></block></block>
   <block id="8c9552895e8b32d168c001c8cb0d41ac" category="inline-link">NetApp Verda</block>
-  <block id="24268535081e43369412e14e6ec8399c" category="admonition">NetApp針對特定應用程式提供的預設快照前及後執行掛勾已在此版本中移除。如果您升級至此版本、但未提供您專屬的快照執行掛勾、Astra Control將僅擷取損毀一致的快照。請造訪<block ref="f2171388afccc712489c737f550e71ed" category="inline-link-rx"></block> GitHub儲存庫提供範例執行攔截指令碼、您可以根據環境進行修改。</block>
   <block id="05d2305253892d509045e8f0c3497ace" category="inline-link-macro">支援VMware Tanzu Kubernetes Grid整合版（TKGI）</block>
-  <block id="15acda84b4bee1d540fb5708e347db8d" category="list-text"><block ref="15acda84b4bee1d540fb5708e347db8d" category="inline-link-macro-rx"></block></block>
   <block id="c0a85ce872a49b700d02bd247127ab1e" category="inline-link-macro">支援Google Anthos</block>
-  <block id="915a3cee1a776b1f598c3e3deb4e5a9e" category="list-text"><block ref="915a3cee1a776b1f598c3e3deb4e5a9e" category="inline-link-macro-rx"></block></block>
   <block id="8614e6ee0f1155b4b418f8b634802110" category="inline-link">LDAP組態（透過Astra Control API）</block>
   <block id="8fcf9eb4bfc0af14b202df6665aa55f3" category="list-text"><block ref="8fcf9eb4bfc0af14b202df6665aa55f3" category="inline-link-rx"></block></block>
-  <block id="37fd1e0ddfd52219734f429098e6ebf0" category="list-text"><block ref="37fd1e0ddfd52219734f429098e6ebf0" category="inline-link-rx"></block></block>
-  <block id="9ce9ce90dfce9d2f5bb0df40eb94349d" category="list-text"><block ref="9ce9ce90dfce9d2f5bb0df40eb94349d" category="inline-link-rx"></block></block>
-  <block id="2c8fbe80bc16c006c85fad43beee1612" category="list-text"><block ref="2c8fbe80bc16c006c85fad43beee1612" category="inline-link-rx"></block></block>
-  <block id="6b746d42ae4e596d00b9ff0fd6017cd8" category="list-text"><block ref="6b746d42ae4e596d00b9ff0fd6017cd8" category="inline-link-rx"></block></block>
-  <block id="208a8fcce82374d11a0e33365f59b4db" category="list-text"><block ref="208a8fcce82374d11a0e33365f59b4db" category="inline-link-rx"></block></block>
-  <block id="9f5cf907f6695509d2835e8159f5934f" category="list-text"><block ref="9f5cf907f6695509d2835e8159f5934f" category="inline-link-rx"></block></block>
-  <block id="fadd2411de2f2a9467c52f3c55c606d9" category="list-text"><block ref="fadd2411de2f2a9467c52f3c55c606d9" category="inline-link-rx"></block></block>
   <block id="6b711ca63f3156860c2b2918a106b882" category="inline-link-macro">必要步驟</block>
   <block id="e13d4a668fc56237f39878bf668e8d7b" category="inline-link-macro">瞭解Pod安全性原則限制</block>
   <block id="008c400b59b77d7bf927c2a682a431e6" category="list-text">確保您打算使用的Astra FQDN可路由傳送至此叢集。這表示您在內部DNS伺服器中有DNS項目、或是使用已註冊的核心URL路由。</block>
@@ -1664,7 +1652,6 @@
   <block id="4350127c708b74b4f04ca10d2c10b10d" category="list-text">匯出Astra Control Center主機叢集的KUBECCONFIG：</block>
   <block id="85573d5352311b01ff7319a4b0e9bf34" category="admonition">複製UUID值。密碼為「ACC-」、後面接著UUID值（「ACC-[UUUID]」、或是在本範例中為「ACC-9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f」）。</block>
   <block id="d212abf709fef8fefcdce84a69830236" category="paragraph">若要瞭解如何複寫應用程式、請參閱 <block ref="f775ff169c13e4056fe6b95c5da23416" category="inline-link-macro-rx"></block>。</block>
-  <block id="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="list-text"><block ref="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="inline-link-macro-rx"></block></block>
   <block id="ed78458df917d6da9f19cca23d8468cd" category="paragraph"><block ref="c229e392652cddf73148e5c65f706c6d" category="inline-link-macro-rx"></block> 使用NetApp SnapMirror技術將其移至遠端叢集。Astra Control會將Snapshot複寫到遠端叢集、提供非同步的災難恢復功能。</block>
   <block id="ca5eff8f4c2396bf09558b428d91e9f3" category="section-title">2022年9月8日（22.08.1）</block>
   <block id="322f8233054cca6c9d6204f1aa1d1f7f" category="paragraph">此適用於Astra Control Center（22.08.0）的修補程式版本（22.08.1）可利用NetApp SnapMirror修正應用程式複寫中的小錯誤。</block>
@@ -2007,16 +1994,10 @@
   <block id="b7f9d2818b6dfb010868c5dbbf7b1c0d" category="paragraph">Astra Control Center支援最多5、000個遠端群組和10、000個遠端使用者。</block>
   <block id="9516594dccbff8a60d49471210c9daaa" category="section-title">2022年11月22日（22.11.0）</block>
   <block id="3aed836d77f6857f6adf310ab3a489e9" category="inline-link-macro">支援橫跨多個命名空間的應用程式</block>
-  <block id="beafdd3c8105c04043a7b1306a771ea3" category="list-text"><block ref="beafdd3c8105c04043a7b1306a771ea3" category="inline-link-macro-rx"></block></block>
   <block id="71e6b5ca832527695b724cd4030ff69f" category="inline-link-macro">支援將叢集資源納入應用程式定義</block>
-  <block id="2ea8f512c3c8b62991f5d816247c86ce" category="list-text"><block ref="2ea8f512c3c8b62991f5d816247c86ce" category="inline-link-macro-rx"></block></block>
   <block id="47071b09885a13dddec33f0d1b894a62" category="inline-link-macro">透過角色型存取控制（RBAC）整合、強化LDAP驗證</block>
-  <block id="f8f0393aba20ac7d5affe6b59abd1e34" category="list-text"><block ref="f8f0393aba20ac7d5affe6b59abd1e34" category="inline-link-macro-rx"></block></block>
   <block id="644efc13d18e1e4fa53fb47ae71333e5" category="inline-link-macro">新增對Kubernetes 1.25和Pod安全許可（PSA）的支援</block>
-  <block id="eb44d5bb2b49d4a8ee781f99712c5dc3" category="list-text"><block ref="eb44d5bb2b49d4a8ee781f99712c5dc3" category="inline-link-macro-rx"></block></block>
   <block id="d57729d6a002792bd1640f00b3c60a6d" category="inline-link-macro">增強備份、還原及複製作業的進度報告功能</block>
-  <block id="4214a078883641f7a5f95c671404abe5" category="list-text"><block ref="4214a078883641f7a5f95c671404abe5" category="inline-link-macro-rx"></block></block>
-  <block id="af4b12c6eb6eab66b2727ed6796ce594" category="list-text"><block ref="af4b12c6eb6eab66b2727ed6796ce594" category="inline-link-macro-rx"></block></block>
   <block id="3b500d768644a147d8129c7528d9a59a" category="summary">如果您未執行最新版本、則可取得先前版本的文件。</block>
   <block id="432b09f47d1f21c47c9c27c092f6475a" category="inline-link">Astra Control Center 22.08文件</block>
   <block id="ab9b97a549065c3593d2144edfd022af" category="list-text"><block ref="ab9b97a549065c3593d2144edfd022af" category="inline-link-rx"></block></block>
@@ -2671,4 +2652,29 @@
   <block id="2f69a705b60cbc3d6bba3c41c6be8810" category="list-text">NetApp ONTAP Select S9.5或更新版本</block>
   <block id="8ccf427f70709789c9c7a4f0ffd8f8cc" category="list-text">適用於ONTAP Select SnapMirror型應用程式複寫的NetApp更新版本9.8</block>
   <block id="bfd904fc0dcf06a45fdb48323bd3a82d" category="list-text">NetApp Cloud Volumes ONTAP S9.5或更新版本</block>
+  <block id="4fc529ce4bbbe2ecf321eba6f7365f40" category="list-text">不只是部分、不只是部分、更是部分ASA FAS ONTAP AFF 。作為儲存軟體與硬體平台ONTAP 、支援核心儲存服務、支援多種儲存存取傳輸協定、以及快照與鏡射等儲存管理功能。</block>
+  <block id="d632cd8f340d92fcafd80c6b61a50542" category="list-text"><block ref="d632cd8f340d92fcafd80c6b61a50542" category="inline-link-macro-rx"></block></block>
+  <block id="1ebc31fa7a8849742c47d0f9d885dc8e" category="list-text"><block ref="1ebc31fa7a8849742c47d0f9d885dc8e" category="inline-link-macro-rx"></block></block>
+  <block id="e665a2fb412abd2f1f21a5df837bd65c" category="list-text"><block ref="e665a2fb412abd2f1f21a5df837bd65c" category="inline-link-macro-rx"></block></block>
+  <block id="237b00b48ad0974d50020591d64ae968" category="list-text"><block ref="237b00b48ad0974d50020591d64ae968" category="inline-link-macro-rx"></block></block>
+  <block id="ee1bdf417dbf36493e18d2d62c34fa8d" category="list-text"><block ref="ee1bdf417dbf36493e18d2d62c34fa8d" category="inline-link-macro-rx"></block></block>
+  <block id="d42b75fe19dabf326e6063949f271820" category="list-text"><block ref="d42b75fe19dabf326e6063949f271820" category="inline-link-macro-rx"></block></block>
+  <block id="15f99de9fca4a87464f86c86d87cfca2" category="list-text"><block ref="15f99de9fca4a87464f86c86d87cfca2" category="inline-link-macro-rx"></block></block>
+  <block id="d11334a18414233f19b9828396fe629d" category="list-text"><block ref="d11334a18414233f19b9828396fe629d" category="inline-link-rx"></block></block>
+  <block id="65a61677f210f52793f3f0963b9747d8" category="list-text"><block ref="65a61677f210f52793f3f0963b9747d8" category="inline-link-rx"></block></block>
+  <block id="c7156c6c9f73c50ec5b9713b2c7755d2" category="list-text"><block ref="c7156c6c9f73c50ec5b9713b2c7755d2" category="inline-link-rx"></block></block>
+  <block id="c750edddde6d0843677e2964582afbde" category="admonition">NetApp針對特定應用程式提供的預設快照前及後執行掛勾已在此版本中移除。如果您升級至此版本、但未提供您專屬的快照執行掛勾、Astra Control將僅擷取損毀一致的快照。請造訪<block ref="8d8f78ce9267b0ea41ce2ae52c54a67d" category="inline-link-rx"></block> GitHub儲存庫提供範例執行攔截指令碼、您可以根據環境進行修改。</block>
+  <block id="807be0fcf177a2c3e73a7d2c04672374" category="list-text"><block ref="807be0fcf177a2c3e73a7d2c04672374" category="inline-link-rx"></block></block>
+  <block id="cf97baf0641b20808954c522eedddfc2" category="list-text"><block ref="cf97baf0641b20808954c522eedddfc2" category="inline-link-rx"></block></block>
+  <block id="1503c30e5cb974dac709e8d577ec5add" category="list-text"><block ref="1503c30e5cb974dac709e8d577ec5add" category="inline-link-rx"></block></block>
+  <block id="4384002b5199e74a5945eb936e639afd" category="list-text"><block ref="4384002b5199e74a5945eb936e639afd" category="inline-link-rx"></block></block>
+  <block id="27d950eea30eca24600cfd1bcb2833e2" category="list-text"><block ref="27d950eea30eca24600cfd1bcb2833e2" category="inline-link-rx"></block></block>
+  <block id="4c1ce6a0645b410762f06ecd0390e1f6" category="list-text"><block ref="4c1ce6a0645b410762f06ecd0390e1f6" category="inline-link-rx"></block></block>
+  <block id="4a34cff2a4b0923d912f0a28c54890b3" category="list-text"><block ref="4a34cff2a4b0923d912f0a28c54890b3" category="inline-link-rx"></block></block>
+  <block id="1aef7ddff9a41af8aebbe7bcb3a2eec5" category="list-text"><block ref="1aef7ddff9a41af8aebbe7bcb3a2eec5" category="inline-link-rx"></block></block>
+  <block id="68f519fc10ea6e456988e2524d156d1a" category="list-text"><block ref="68f519fc10ea6e456988e2524d156d1a" category="inline-link-rx"></block></block>
+  <block id="494f00c4b150eebe7f9548365d575840" category="list-text"><block ref="494f00c4b150eebe7f9548365d575840" category="inline-link-rx"></block></block>
+  <block id="11c38116a632436215a6716507c1a287" category="list-text"><block ref="11c38116a632436215a6716507c1a287" category="inline-link-rx"></block></block>
+  <block id="201e09e85ad81db8a19ef9f20c05d1a5" category="inline-link">這段影片</block>
+  <block id="259f3be9b6c8eefb44e844c2b70333dc" category="paragraph">如需Astra Control Center安裝程序的示範、請參閱<block ref="cbbdec23221803dc148346abe5a297c0" category="inline-link-rx"></block>。</block>
 </blocks>

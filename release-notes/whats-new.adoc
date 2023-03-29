@@ -19,16 +19,16 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 == 2022年11月22日（22.11.0）
 
 .新功能與支援
-* link:../use/manage-apps.html#define-apps["支援橫跨多個命名空間的應用程式"]
-* link:../use/manage-apps.html#define-apps["支援將叢集資源納入應用程式定義"]
-* link:../use/manage-remote-authentication.html["透過角色型存取控制（RBAC）整合、強化LDAP驗證"]
-* link:../get-started/requirements.html["新增對Kubernetes 1.25和Pod安全許可（PSA）的支援"]
-* link:../use/monitor-running-tasks.html["增強備份、還原及複製作業的進度報告功能"]
+* link:../use/manage-apps.html#define-apps["支援橫跨多個命名空間的應用程式"^]
+* link:../use/manage-apps.html#define-apps["支援將叢集資源納入應用程式定義"^]
+* link:../use/manage-remote-authentication.html["透過角色型存取控制（RBAC）整合、強化LDAP驗證"^]
+* link:../get-started/requirements.html["新增對Kubernetes 1.25和Pod安全許可（PSA）的支援"^]
+* link:../use/monitor-running-tasks.html["增強備份、還原及複製作業的進度報告功能"^]
 
 
 .已知問題與限制
-* link:../release-notes/known-issues.html["此版本的已知問題"]
-* link:../release-notes/known-limitations.html["此版本的已知限制"]
+* link:../release-notes/known-issues.html["此版本的已知問題"^]
+* link:../release-notes/known-limitations.html["此版本的已知限制"^]
 
 
 
@@ -45,21 +45,21 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 [%collapsible]
 ====
 .新功能與支援
-* link:../use/replicate_snapmirror.html["使用NetApp SnapMirror技術進行應用程式複寫"]
-* link:../use/manage-apps.html#define-apps["改善應用程式管理工作流程"]
-* link:../use/execution-hooks.html["增強的執行掛勾功能、讓您自行執行"]
+* https://docs.netapp.com/us-en/astra-control-center-2208/use/replicate_snapmirror.html["使用NetApp SnapMirror技術進行應用程式複寫"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/use/manage-apps.html#define-apps["改善應用程式管理工作流程"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/use/execution-hooks.html["增強的執行掛勾功能、讓您自行執行"^]
 +
 
-NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾已在此版本中移除。如果您升級至此版本、但未提供您專屬的快照執行掛勾、Astra Control將僅擷取損毀一致的快照。請造訪 https://github.com/NetApp/Verda["NetApp Verda"] GitHub儲存庫提供範例執行攔截指令碼、您可以根據環境進行修改。
+NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾已在此版本中移除。如果您升級至此版本、但未提供您專屬的快照執行掛勾、Astra Control將僅擷取損毀一致的快照。請造訪 https://github.com/NetApp/Verda["NetApp Verda"^] GitHub儲存庫提供範例執行攔截指令碼、您可以根據環境進行修改。
 
-* link:../get-started/requirements.html["支援VMware Tanzu Kubernetes Grid整合版（TKGI）"]
-* link:../get-started/requirements.html#operational-environment-requirements["支援Google Anthos"]
+* https://docs.netapp.com/us-en/astra-control-center-2208/get-started/requirements.html["支援VMware Tanzu Kubernetes Grid整合版（TKGI）"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/get-started/requirements.html#operational-environment-requirements["支援Google Anthos"^]
 * https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["LDAP組態（透過Astra Control API）"^]
 
 
 .已知問題與限制
-* link:../release-notes/known-issues.html["此版本的已知問題"]
-* link:../release-notes/known-limitations.html["此版本的已知限制"]
+* https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/known-issues.html["此版本的已知問題"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
 ====
@@ -71,16 +71,16 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 [%collapsible]
 ====
 .新功能與支援
-* https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["命名空間角色型存取控制（RBAC）"]
-* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["支援Cloud Volumes ONTAP 功能"]
-* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Astra Control Center的一般入侵能力"]
-* https://docs.netapp.com/us-en/astra-control-center-2204/use/manage-buckets.html#remove-a-bucket["從Astra Control移除鏟斗"]
-* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#tanzu-kubernetes-grid-cluster-requirements["支援VMware Tanzu產品組合"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["命名空間角色型存取控制（RBAC）"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["支援Cloud Volumes ONTAP 功能"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Astra Control Center的一般入侵能力"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/use/manage-buckets.html#remove-a-bucket["從Astra Control移除鏟斗"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#tanzu-kubernetes-grid-cluster-requirements["支援VMware Tanzu產品組合"^]
 
 
 .已知問題與限制
-* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues.html["此版本的已知問題"]
-* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["此版本的已知限制"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues.html["此版本的已知問題"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
 ====
