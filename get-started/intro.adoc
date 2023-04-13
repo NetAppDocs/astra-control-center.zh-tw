@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/intro.html 
-keywords: how astra control works, what is astra, kubernetes cluster, what is astra control center 
+keywords: how astra control works, what is astra, kubernetes cluster, what is astra control center, astra control service 
 summary: Astra Control是Kubernetes應用程式資料生命週期管理服務、可簡化狀態應用程式的作業。輕鬆保護、備份及移轉Kubernetes工作負載、並立即建立可運作的應用程式複本。 
 ---
 = 瞭解Astra Control
@@ -23,9 +23,9 @@ Astra Control為Kubernetes應用程式資料生命週期管理提供關鍵功能
 * 自動管理持續儲存
 * 建立應用程式感知的隨需快照與備份
 * 自動化原則導向的快照與備份作業
-* 使用NetApp SnapMirror技術將應用程式複寫到遠端系統
 * 將應用程式和資料從一個Kubernetes叢集移轉到另一個叢集
-* 從接移到正式作業、輕鬆複製應用程式
+* 使用 NetApp SnapMirror 技術（ Astra Control Center ）將應用程式複寫到遠端系統
+* 將應用程式從接移複製到正式作業
 * 視覺化應用程式健全狀況與保護狀態
 * 使用Web UI或API來實作備份與移轉工作流程
 
@@ -65,6 +65,7 @@ Astra Control提供兩種部署模式：
 +
 ** Amazon EBS
 ** Amazon FSX for NetApp ONTAP 產品
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP"^]
 
 
 * Google Cloud：
@@ -83,7 +84,9 @@ Astra Control提供兩種部署模式：
 
 * 自我管理叢集：
 +
-** NetApp ONTAP AFF 的功能與FAS 功能
+** Amazon EBS
+** Google持續磁碟
+** Azure託管磁碟
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
@@ -132,7 +135,7 @@ Astra Control的免費方案可讓您管理帳戶中最多10個命名空間。�
 
 Astra Control Center可在您自己的私有雲端本機執行。
 
-Astra Control Center支援Kubernetes叢集、採用Trident型儲存類別、ONTAP 並具備一套更新版本的更新版儲存後端。
+Astra Control Center 支援 Kubernetes 叢集、其具備 Trident 型儲存類別、以及 ONTAP 9.5 及更新版本的儲存後端。
 
 在雲端連線的環境中、Astra Control Center使用Cloud Insights 「資訊中心」來提供進階的監控和遙測功能。若缺乏Cloud Insights 支援鏈接、Astra Control Center可提供有限（7天數據）的監控與遙測功能、並透過開放式指標端點匯出至Kubernetes原生監控工具（例如Prometheus和Grafana）。
 

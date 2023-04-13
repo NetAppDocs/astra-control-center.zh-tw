@@ -1264,7 +1264,6 @@
   <block id="f27876af7f41dd88d732712643f9e8ab" category="list-text"><block ref="edd1a66c7657e8422b18455f2fcc01fd" category="inline-xref-macro-rx"></block></block>
   <block id="72b3b17d23e094f72641c4ffa8928d85" category="section-title">安裝NetApp Astra kubecl外掛程式</block>
   <block id="ade277501852b5468b0c3b865cb7e40f" category="paragraph">Astra Control是Kubernetes應用程式資料生命週期管理解決方案、可簡化狀態應用程式的作業。輕鬆保護、備份、複寫及移轉Kubernetes工作負載、並即時建立運作中的應用程式複本。</block>
-  <block id="50f9f66165bfd78e72eb71c73f5252c0" category="list-text">使用NetApp SnapMirror技術將應用程式複寫到遠端系統</block>
   <block id="4b6ccd94421822eaaf7bd027992018af" category="inline-link">Amazon彈性區塊存放區</block>
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link">Amazon FSX for NetApp ONTAP 產品</block>
   <block id="7a3f533a65a34319a327318673651449" category="list-text">對於Amazon EKS叢集、Astra Control Service使用<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 或<block ref="554e81ff0c0b44a91e38efe479d6c57c" category="inline-link-rx"></block> 作為持續磁碟區的儲存後端。</block>
@@ -1962,7 +1961,6 @@
   <block id="c4d3bd82a4066f0e523ba618e438bc51" category="summary">Astra Control是Kubernetes應用程式資料生命週期管理服務、可簡化狀態應用程式的作業。輕鬆保護、備份及移轉Kubernetes工作負載、並立即建立可運作的應用程式複本。</block>
   <block id="450dcc356e2c75be5bfea7bc913558bb" category="list-text">對於高峰叢集、Astra Control Service使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 或Azure託管磁碟做為持續磁碟區的儲存後端。</block>
   <block id="181e1260b62d0667dd25d8e26eba83f5" category="paragraph">Astra Control的免費方案可讓您管理帳戶中最多10個命名空間。如果您想要管理10多個項目、則必須將「免費方案」升級為「優質方案」、以設定帳單。</block>
-  <block id="9fec972e16132554b3f6d7a367b20c12" category="paragraph">Astra Control Center支援Kubernetes叢集、採用Trident型儲存類別、ONTAP 並具備一套更新版本的更新版儲存後端。</block>
   <block id="46d0a394f0b8bd48b4ad9f07551cc671" category="paragraph">您可以使用90天試用版授權試用Astra Control Center。評估版本可透過電子郵件和社群選項來支援。此外、您也可以從產品內的支援儀表板存取知識庫文章和文件。</block>
   <block id="624cfce99f1f72da4d8c5d67b46d357b" category="paragraph">在Astra Control Center安裝期間（如果您指定）<block ref="5ef3c13da1e4fcb9a76fc8f568eee144" prefix=" " category="inline-code"></block> 適用於<block ref="5398d7dab242bfea13c044912cacfd10" prefix=" " category="inline-code"></block> 在Astra Control Center自訂資源（CR）檔案中 <block ref="70b058e54d2bda749060070a7f9c4e5c" prefix="(" category="inline-code"></block>）、每日支援服務組合會自動上傳至<block ref="3725c06f412bedb14ffd610de312875d" category="inline-link-rx"></block>。</block>
   <block id="a62af64f81e65194efb6011308308c81" category="list-text">部署在一個或多個命名空間內的個別應用程式（本範例使用helm3）</block>
@@ -2486,7 +2484,6 @@
   <block id="734224e6b4ec285b77e7b79b03d94b02" category="cell">適用的擴充選項適用於適用的適用範圍。依預設、Astra Control Center會針對Astra內的大部分元件設定資源要求來進行部署。此組態可讓Astra Control Center軟體堆疊在應用程式負載和擴充性增加的環境中、發揮更佳效能。不過、在使用較小開發或測試叢集的案例中、則是使用「CR」欄位<block ref="58109f8b5a58dff610844c779b6c42ad" prefix=" " category="inline-code"></block> 可能設為<block ref="d15305d7a4e34e02489c74a5ef542f36" prefix=" " category="inline-code"></block>。這會停用資源要求、並允許在較小的叢集上部署。</block>
   <block id="a5a239f5a107b63b3aa6d192c95bb6d1" category="paragraph">您在本節中的選擇決定Astra Control Center應如何處理客戶需求日。</block>
   <block id="c227fa0621e3f1f87571da78dd03ca6f" category="cell">依預設、Astra Control Center會安裝必要的Traefik客戶需求日。CRD是整個叢集的物件、安裝這些物件可能會影響叢集的其他部分。您可以使用此旗標向Astra控制中心發出訊號、表示這些客戶需求日將由Astra控制中心外部的叢集管理員安裝及管理。</block>
-  <block id="4f508b1a632fa280de99843b2fe48176" category="list-text">從接移到正式作業、輕鬆複製應用程式</block>
   <block id="6c4ff7542dcef16bc12bbbab0c160e9a" category="list-text">使用Web UI或API來實作備份與移轉工作流程</block>
   <block id="662f909cd182f2c19a1b5da86174d75f" category="list-text">* Astra Control Service*：NetApp管理的服務、可在多個雲端供應商環境中、以及自行管理的Kubernetes叢集、提供Kubernetes叢集的應用程式感知資料管理功能。</block>
   <block id="a301d7b978ad27dd47b48aac714d81ef" category="list-text">* Astra Control Center*：自我管理的軟體、可針對在內部部署環境中執行的Kubernetes叢集、提供應用程式感知資料管理功能。Astra Control Center也可安裝在多個雲端供應商環境中、採用NetApp Cloud Volumes ONTAP 的解決方案儲存後端。</block>
@@ -2677,4 +2674,7 @@
   <block id="11c38116a632436215a6716507c1a287" category="list-text"><block ref="11c38116a632436215a6716507c1a287" category="inline-link-rx"></block></block>
   <block id="201e09e85ad81db8a19ef9f20c05d1a5" category="inline-link">這段影片</block>
   <block id="259f3be9b6c8eefb44e844c2b70333dc" category="paragraph">如需Astra Control Center安裝程序的示範、請參閱<block ref="cbbdec23221803dc148346abe5a297c0" category="inline-link-rx"></block>。</block>
+  <block id="f7173fff9a92f2bab2648f86282ab07c" category="list-text">使用 NetApp SnapMirror 技術（ Astra Control Center ）將應用程式複寫到遠端系統</block>
+  <block id="631928ccc601c8e49976a8d73af28304" category="list-text">將應用程式從接移複製到正式作業</block>
+  <block id="469a0111714c5c9a6b3b013ec5fb5b82" category="paragraph">Astra Control Center 支援 Kubernetes 叢集、其具備 Trident 型儲存類別、以及 ONTAP 9.5 及更新版本的儲存後端。</block>
 </blocks>
