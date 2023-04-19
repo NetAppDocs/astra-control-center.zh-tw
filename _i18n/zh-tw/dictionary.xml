@@ -2386,7 +2386,6 @@
   <block id="e1d57bb99f6ac53ae4d1e4ead1d86a3c" category="paragraph">您可以使用下列其中一種方式取得授權：</block>
   <block id="6004daa4ba0df7760d75bccaccd9cdeb" category="list-text"><block ref="1ac362ab549aa84c347d7d5271314ad6" category="inline-link-macro-rx"></block>。評估授權可讓您從下載授權之日起90天內使用Astra Control Center。</block>
   <block id="b5172acff46c1ccd4ef355f7c403ba48" category="inline-link-macro">如果您已購買Astra Control Center、請產生您的NetApp授權檔案（NLF）</block>
-  <block id="5e83d0e22710b5fb10a24a55f0464eab" category="list-text"><block ref="be01b2f45d5e5a31b2acb026a0c1fc3d" category="inline-link-macro-rx"></block> 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。</block>
   <block id="89eae3d9e27253b30e1b76d62008b32d" category="inline-link-macro">第一次設定Astra Control Center時、請新增授權</block>
   <block id="117e62f8841c871dc009220d6b7e5401" category="list-text"><block ref="117e62f8841c871dc009220d6b7e5401" category="inline-link-macro-rx"></block></block>
   <block id="2f8cadf95c6d0e5ffc19921fb6fd5cca" category="doc">下載並擷取Astra Control Center</block>
@@ -2677,4 +2676,5 @@
   <block id="631928ccc601c8e49976a8d73af28304" category="list-text">將應用程式從接移複製到正式作業</block>
   <block id="469a0111714c5c9a6b3b013ec5fb5b82" category="paragraph">Astra Control Center 支援 Kubernetes 叢集、其具備 Trident 型儲存類別、以及 ONTAP 9.5 及更新版本的儲存後端。</block>
   <block id="55315f5951ded0d790960290885139fe" category="list-text">在瀏覽器中輸入FQDN <block ref="dc9578bcbcc5cd41a7cdbcff047d86d3" prefix="(" category="inline-code"></block>）您在中使用的<block ref="d27903c79b643b2f565c31e894abb568" prefix=" " category="inline-code"></block> 在中<block ref="70b058e54d2bda749060070a7f9c4e5c" prefix=" " category="inline-code"></block> 請於何時進行 <block ref="356be5820e2645bace29d82a8018f43d" category="inline-xref-macro-rx"></block>。</block>
+  <block id="71bf3827c9b969b454eaf3d5987aad95" category="list-text"><block ref="097c36d7e339c9c56e3325b9bd9b1890" category="inline-link-macro-rx"></block> 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。</block>
 </blocks>

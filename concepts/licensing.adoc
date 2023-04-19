@@ -17,7 +17,7 @@ Astra Control Center需要安裝授權、才能啟用完整的應用程式資料
 您可以使用下列其中一種方式取得授權：
 
 * link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["如果您正在評估Astra Control Center、請下載試用版授權檔案"^]。評估授權可讓您從下載授權之日起90天內使用Astra Control Center。
-* link:../concepts/licensing.html["如果您已購買Astra Control Center、請產生您的NetApp授權檔案（NLF）"^] 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。
+* link:https://mysupport.netapp.com/site/["如果您已購買Astra Control Center、請產生您的NetApp授權檔案（NLF）"^] 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。
 
 
 如需ONTAP 有關支援不支援的詳細資訊、請參閱 link:../get-started/requirements.html["支援的儲存後端"]。
