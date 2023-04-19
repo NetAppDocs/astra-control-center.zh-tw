@@ -2675,6 +2675,6 @@
   <block id="f7173fff9a92f2bab2648f86282ab07c" category="list-text">使用 NetApp SnapMirror 技術（ Astra Control Center ）將應用程式複寫到遠端系統</block>
   <block id="631928ccc601c8e49976a8d73af28304" category="list-text">將應用程式從接移複製到正式作業</block>
   <block id="469a0111714c5c9a6b3b013ec5fb5b82" category="paragraph">Astra Control Center 支援 Kubernetes 叢集、其具備 Trident 型儲存類別、以及 ONTAP 9.5 及更新版本的儲存後端。</block>
-  <block id="55315f5951ded0d790960290885139fe" category="list-text">在瀏覽器中輸入FQDN <block ref="dc9578bcbcc5cd41a7cdbcff047d86d3" prefix="(" category="inline-code"></block>）您在中使用的<block ref="d27903c79b643b2f565c31e894abb568" prefix=" " category="inline-code"></block> 在中<block ref="70b058e54d2bda749060070a7f9c4e5c" prefix=" " category="inline-code"></block> 請於何時進行 <block ref="356be5820e2645bace29d82a8018f43d" category="inline-xref-macro-rx"></block>。</block>
   <block id="71bf3827c9b969b454eaf3d5987aad95" category="list-text"><block ref="097c36d7e339c9c56e3325b9bd9b1890" category="inline-link-macro-rx"></block> 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。</block>
+  <block id="6ae1ccb3dd6df141f3444a3da56ae986" category="list-text">在瀏覽器中、輸入 FQDN （包括<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> 字首）<block ref="d27903c79b643b2f565c31e894abb568" prefix=" " category="inline-code"></block> 在中<block ref="70b058e54d2bda749060070a7f9c4e5c" prefix=" " category="inline-code"></block> 請於何時進行 <block ref="356be5820e2645bace29d82a8018f43d" category="inline-xref-macro-rx"></block>。</block>
 </blocks>

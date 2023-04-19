@@ -987,7 +987,7 @@ oc create route edge --service=traefik --port=web -n [netapp-acc or custom names
 安裝Astra Control Center之後、您將變更預設管理員的密碼、並登入Astra Control Center UI儀表板。
 
 .步驟
-. 在瀏覽器中輸入FQDN (`https://[FQDN]`）您在中使用的 `astraAddress` 在中 `astra_control_center.yaml` 請於何時進行 <<設定Astra控制中心,您安裝了Astra Control Center>>。
+. 在瀏覽器中、輸入 FQDN （包括 `https://` 字首） `astraAddress` 在中 `astra_control_center.yaml` 請於何時進行 <<設定Astra控制中心,您安裝了Astra Control Center>>。
 . 收到提示時、請接受自我簽署的憑證。
 +
 
