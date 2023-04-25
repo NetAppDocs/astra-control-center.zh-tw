@@ -1644,7 +1644,6 @@
   <block id="af0e614701190854322a2cbf66479b6f" category="inline-link">管理ONTAP 不需購買的授權</block>
   <block id="f79830bec9b778f1cf3c950471bafb95" category="inline-link-macro">Astra Control Center功能</block>
   <block id="6db4db93a9c2608b2abfc46bb675e283" category="paragraph">若要設定及管理Kubernetes應用程式、您可以使用Astra Control Center UI或Astra Control API。</block>
-  <block id="c39526014b70f5854cf3c59ceb0b89d3" category="list-text"><block ref="c39526014b70f5854cf3c59ceb0b89d3" category="inline-link-macro-rx"></block></block>
   <block id="996ae349b503c8bd355d8986597a6d49" category="paragraph">對於URL、請在瀏覽器中輸入您在安裝Astra Control Center時、於Astra_control_center.yaml自訂資源（CR）檔案的SPEC.astraAddress欄位中所設定的完整網域名稱（FQDN）。電子郵件是您在Astra_control_center.yaml CR的spec.email*欄位中設定的值。</block>
   <block id="bda0a7ba5f9ad395d8fbd5eadadb95db" category="paragraph">*我的應用程式使用數個PV。Astra Control是否會擷取這些PV的快照與備份？*</block>
   <block id="f8f1ef03f08e7d1c3e62dd87dde91f57" category="paragraph">是的。Astra Control在應用程式上執行的快照作業包括繫結至應用程式PVCS的所有PV快照。</block>
@@ -2870,4 +2869,7 @@
   <block id="4b81f371a950b4164e976fd95ff29363" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、無法使用保護原則。如果您想要保護原則、請使用替代的儲存類別。</block>
   <block id="c1a51552670bd89a555dfc498d58f040" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、無法使用快照。使用替代的儲存類別來執行快照。</block>
   <block id="d340b669a21181fdcdf79c308ba61ea9" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 在備份作業完成之前、驅動程式、備份會中斷運作、應用程式將無法使用。</block>
+  <block id="070b3d3a153094a5ee57ed5e75530780" category="inline-link">Astra Control Center 22.11文件</block>
+  <block id="58f23be5f86622d0993f8478be889f05" category="list-text"><block ref="58f23be5f86622d0993f8478be889f05" category="inline-link-rx"></block></block>
+  <block id="f4431fb507c16341e3a99f8f031779bc" category="list-text"><block ref="f4431fb507c16341e3a99f8f031779bc" category="inline-link-macro-rx"></block></block>
 </blocks>
