@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/manage-backend.html 
 keywords: how to use astra control, what is astra storage, how to set up astra storage backend, ontap storage in astra, backend storage in astra 
-summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Control會探索並使用已部署的資源、包括Trident、ONTAP 支援、及相關的儲存類別。 
+summary: 將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。如果Astra Control Center連接Cloud Insights 到VMware、您可以監控儲存容量和健全狀況詳細資料、包括效能。 
 ---
 = 管理儲存後端
 :hardbreaks:
@@ -20,6 +20,8 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 
 * link:../get-started/setup_overview.html#add-a-storage-backend["新增儲存後端"]
 * <<檢視儲存後端詳細資料>>
+* <<編輯儲存後端驗證詳細資料>>
+* <<管理探索到的儲存後端>>
 * <<取消管理儲存後端>>
 * <<移除儲存後端>>
 
@@ -51,7 +53,7 @@ summary: 為內部部署的Kubernetes應用程式新增儲存設備。Astra Cont
 
 檢視後端健全狀況、容量和效能（IOPS處理量和/或延遲）的相關資訊。
 
-您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端。有了此功能、您可以查看更多資訊。Cloud Insights請參閱 https://docs.netapp.com/us-en/cloudinsights/["本文檔 Cloud Insights"]。
+您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端。有了此功能、您可以查看更多資訊。Cloud Insights請參閱 https://docs.netapp.com/us-en/cloudinsights/["本文檔 Cloud Insights"^]。
 
 .步驟
 . 在左側導覽區域中、選取*後端*。
@@ -64,6 +66,52 @@ TIP: 如果您連線至NetApp Cloud Insights 解決方案、Cloud Insights 則�
 image:../use/acc_backends_ci_connection2.png["後端頁面的快照"]
 
 . 若要直接移至Cloud Insights 「不顯示」、請選取Cloud Insights 「指標」影像旁的*「不顯示」圖示。
+
+
+
+
+== 編輯儲存後端驗證詳細資料
+
+Astra Control Center 提供兩種驗證 ONTAP 後端的模式。
+
+* * 認證型驗證 * ：具有必要權限的 ONTAP 使用者的使用者名稱和密碼。您應該使用預先定義的安全登入角色、例如 admin 、以確保與 ONTAP 版本的最大相容性。
+* * 憑證型驗證 * ： Astra 控制中心也可以使用安裝在後端的憑證與 ONTAP 叢集通訊。您應該使用用戶端憑證、金鑰和信任的 CA 憑證（如果使用）（建議使用）。
+
+
+您可以更新現有的後端、以從一種驗證類型移至另一種方法。一次只支援一種驗證方法。
+
+如需啟用憑證型驗證的詳細資訊、請參閱 link:../get-started/setup_overview.html#enable-authentication-on-the-ontap-storage-backend["在 ONTAP 儲存後端啟用驗證"]。
+
+.步驟
+. 從左側導覽中選取*後端*。
+. 選取儲存後端。
+. 在「認證」欄位中、選取 * 編輯 * 圖示。
+. 在「編輯」頁面中、選取下列其中一項。
++
+** * 使用管理員認證 * ：輸入 ONTAP 叢集管理 IP 位址和管理認證。認證資料必須是整個叢集的認證資料。
++
+
+NOTE: 您在此處輸入認證的使用者必須擁有 `ontapi` 使用者登入存取方法已在ONTAP 支援的叢集上的「支援系統管理程式」中啟用ONTAP 。如果您打算使用SnapMirror複寫、請套用具有「admin」角色的使用者認證、該角色具有存取方法 `ontapi` 和 `http`、在來源ONTAP 和目的地等叢集上。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
+
+** * 使用憑證 * ：上傳憑證 `.pem` 檔案、憑證金鑰 `.key` 檔案、以及選擇性的憑證授權單位檔案。
+
+
+. 選擇*保存*。
+
+
+
+
+== 管理探索到的儲存後端
+
+您可以選擇管理未受管理但已探索到的儲存後端。當您管理儲存後端時、 Astra Control 會指出驗證憑證是否已過期。
+
+.步驟
+. 從左側導覽中選取*後端*。
+. 選取 * 探索 * 選項。
+. 選取儲存後端。
+. 從 * 動作 * 欄的選項功能表中、選取 * 管理 * 。
+. 進行變更。
+. 選擇*保存*。
 
 
 
@@ -86,7 +134,7 @@ image:../use/acc_backends_ci_connection2.png["後端頁面的快照"]
 
 您可以移除不再使用的儲存後端。您可能會想要這麼做、讓您的組態保持簡單且最新狀態。
 
-.您需要的產品
+.開始之前
 * 確保儲存後端未受管理。
 * 確保儲存後端沒有任何與叢集相關的磁碟區。
 

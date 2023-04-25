@@ -23,11 +23,11 @@ summary: 視您的環境而定、安裝Astra Control Center之後可能需要額
 您可以使用下列步驟擷取及移除這些配額和限制。在這些範例中、命令輸出會在命令之後立即顯示。
 
 .步驟
-. 取得中的資源配額 `netapp-acc` 命名空間：
+. 取得中的資源配額 `netapp-acc` （或自訂命名）命名空間：
 +
 [source, console]
 ----
-kubectl get quota -n netapp-acc
+kubectl get quota -n [netapp-acc or custom namespace]
 ----
 +
 回應：
@@ -44,23 +44,23 @@ pods-medium   16s   requests.cpu: 0/10, requests.memory: 0/20Gi    limits.cpu: 0
 +
 [source, console]
 ----
-kubectl delete resourcequota  pods-high -n netapp-acc
+kubectl delete resourcequota pods-high -n [netapp-acc or custom namespace]
 ----
 +
 [source, console]
 ----
-kubectl delete resourcequota  pods-low -n netapp-acc
+kubectl delete resourcequota pods-low -n [netapp-acc or custom namespace]
 ----
 +
 [source, console]
 ----
-kubectl delete resourcequota  pods-medium -n netapp-acc
+kubectl delete resourcequota pods-medium -n [netapp-acc or custom namespace]
 ----
-. 取得中的限制範圍 `netapp-acc` 命名空間：
+. 取得中的限制範圍 `netapp-acc` （或自訂命名）命名空間：
 +
 [source, console]
 ----
-kubectl get limits -n netapp-acc
+kubectl get limits -n [netapp-acc or custom namespace]
 ----
 +
 回應：
@@ -75,7 +75,7 @@ cpu-limit-range   2022-06-27T19:01:23Z
 +
 [source, console]
 ----
-kubectl delete limitrange cpu-limit-range -n netapp-acc
+kubectl delete limitrange cpu-limit-range -n [netapp-acc or custom namespace]
 ----
 
 
@@ -90,13 +90,13 @@ kubectl delete limitrange cpu-limit-range -n netapp-acc
 +
 [source, console]
 ----
-kubectl get networkpolicy -n netapp-acc
+kubectl get networkpolicy -n [netapp-acc or custom namespace]
 ----
-. 對於上述命令傳回的每個網路原則物件、請使用下列命令加以刪除。以傳回物件的名稱取代<object_name>：
+. 對於上述命令傳回的每個網路原則物件、請使用下列命令加以刪除。以傳回物件的名稱取代 [object_name ：
 +
 [source, console]
 ----
-kubectl delete networkpolicy <OBJECT_NAME> -n netapp-acc
+kubectl delete networkpolicy [OBJECT_NAME] -n [netapp-acc or custom namespace]
 ----
 . 套用下列資源檔案來設定 `acc-avp-network-policy` 允許Astra外掛程式服務向Astra Control Center服務提出要求的物件。將方括弧<>中的資訊取代為您環境中的資訊：
 +
@@ -155,7 +155,7 @@ Astra Control Center預設使用自我簽署的TLS憑證來處理入站控制器
 取代預設TLS憑證會取代用於驗證這些連線的憑證。
 
 ====
-.您需要的產品
+.開始之前
 * Kubernetes叢集已安裝Astra Control Center
 * 管理存取叢集上的命令Shell以執行「kubecll」命令
 * 來自CA的私密金鑰和憑證檔案

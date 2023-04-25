@@ -64,7 +64,6 @@
   <block id="8418a36d2778041af8e3f737ec1644a7" category="list-text">選取*應用程式*、然後選取託管應用程式的名稱。</block>
   <block id="4069b8bd7c11bc17efc85c9bb6d794c1" category="list-text">輸入掛機的唯一名稱。</block>
   <block id="cc56ac336e2ae46c348055eabdb31910" category="list-text">（選用）輸入執行期間要傳遞至掛機的任何引數、並在您輸入的每個引數之後按Enter鍵以記錄每個引數。</block>
-  <block id="bdc506e89ee9aec709d8e40132db20f3" category="list-text">在「* Container images"（* Container映像*）區域中、如果掛勾應針對應用程式中包含的所有容器映像執行、請啟用「* Apply to all Container images"（*套用至所有容器映像*）核取方塊。如果掛機只能對一個或多個指定的容器映像起作用、請在「*要比對的容器映像名稱*」欄位中輸入容器映像名稱。</block>
   <block id="1144b2f2ea8eccb66bf20cdea686b3d2" category="list-text">在*指令碼*區域中、執行下列其中一項：</block>
   <block id="489a27c3b545dfadcd33d3ce67932718" category="list-text">上傳自訂指令碼。</block>
   <block id="e3f243bc33219b29c2a12b59c90be96c" category="list-text">選取*上傳檔案*選項。</block>
@@ -73,7 +72,6 @@
   <block id="7ecdb873e1239bfeaf5c617b779dd434" category="list-text">（選用）輸入其他系統管理員應該知道的任何指令碼附註。</block>
   <block id="c1b97a456b241d38af9df8418fe93955" category="list-text">從剪貼簿貼入自訂指令碼。</block>
   <block id="1a71cd2313095cebe3a5bf76adff4cae" category="list-text">選取文字欄位、然後將指令碼文字貼到欄位中。</block>
-  <block id="6d4a5ef582e95d5022946acc47ce0f2e" category="list-text">選取*新增攔截*。</block>
   <block id="12bf76ea0a88e9814b22daef0831337b" category="section-title">停用執行掛勾</block>
   <block id="df61c20b7e6ebb23392c4395835c3e51" category="paragraph">如果您想要暫時避免在應用程式快照之前或之後執行、可以停用執行掛勾。您需要擁有擁有擁有者、管理員或成員權限、才能停用執行掛勾。</block>
   <block id="8f6edaa349d35c7c626f3add19e2eefd" category="list-text">在「*動作*」欄中選取「選項」功能表、以顯示您要停用的掛勾。</block>
@@ -86,11 +84,8 @@
   <block id="ebe0ba702e4e1d80c5fe66a0f884378b" category="doc">解除安裝Astra Control Center</block>
   <block id="620e1d314cce8232ca69f3a879ecac63" category="paragraph">如果您要從試用版升級至完整版產品、可能需要移除Astra Control Center元件。若要移除Astra Control Center和Astra Control Center操作員、請依序執行本程序中所述的命令。</block>
   <block id="64cb0260e671ae8ed51e6002d5f536ea" category="paragraph">如果您對解除安裝有任何問題、請參閱 <block ref="9f638abea52fde943dd3b533bf503de0" category="inline-xref-macro-rx"></block>。</block>
-  <block id="831b3f7dcdf3f61e8b31bb7bfa7d6696" category="inline-link-macro">叢集</block>
-  <block id="1f74e1ffff509fbc0b43f1c4ac7bda1b" category="list-text">使用Astra Control Center UI取消管理所有項目 <block ref="92b68d318ec45e8ec68586e5edff201f" category="inline-link-macro-rx"></block>。</block>
   <block id="d006301915e167420133648d73a63025" category="list-text">刪除Astra Control Center。下列範例命令是根據預設安裝而來。如果您進行自訂組態、請修改命令。</block>
   <block id="5aac38deec604d81565722cc5a2a6be1" category="paragraph">結果：</block>
-  <block id="32946eff30ecd8489cd56b9f793d1aa2" category="list-text">使用下列命令刪除「NetApp-acc」命名空間：</block>
   <block id="b75ca60736c6893f52a9d2f551270a1a" category="list-text">使用下列命令刪除Astra Control Center作業系統元件：</block>
   <block id="24b2dd561e8c1a78806d971ae48c2d3d" category="section-title">疑難排解解除安裝問題</block>
   <block id="ed0619bd2334d416b3942020e0ba89b0" category="paragraph">請使用下列因應措施來解決您在解除安裝Astra Control Center時遇到的任何問題。</block>
@@ -121,8 +116,6 @@
   <block id="61fae074a7d34d5f116e2dbfccd6ef7a" category="paragraph">Astra Control Center停止管理應用程式。</block>
   <block id="7f2455305dbd8502aba3dfda52ac0ac1" category="section-title">取消管理叢集</block>
   <block id="2dfe66bf24e67b3fc8e55bdacbeb094a" category="list-text">此動作可防止您的叢集受到Astra Control Center的管理。它不會對叢集的組態進行任何變更、也不會刪除叢集。</block>
-  <block id="72bb03d0510a78e3bf1ee3da5212cf27" category="inline-link">瞭解如何解除安裝Trident</block>
-  <block id="aa8fdd954e441012c7fa4f75cf0a1e47" category="list-text">Trident不會從叢集解除安裝。<block ref="2b9355ae4f550df74c6ddd50ecfe387a" category="inline-link-rx"></block>。</block>
   <block id="9c95c3fc0f233a0913a6e1f0cff2dcd3" category="admonition">在取消管理叢集之前、您應該取消管理與叢集相關的應用程式。</block>
   <block id="c2008a53ff6f4dd3bd34d87edf129616" category="list-text">從左側導覽列選取*叢集*。</block>
   <block id="76261f172114b33975a8f2d79841ce74" category="list-text">從「*動作*」欄的「選項」功能表中、選取「*取消管理*」。</block>
@@ -172,7 +165,6 @@
   <block id="b693c64ae6465cc37d63bb7e1a3bc84e" category="list-text">將下列值新增至「env」區段：</block>
   <block id="4e937138a61e6f89a5d6c6d812c62fd8" category="list-text">安裝更新的Astra Control Center操作員：</block>
   <block id="6d55356ca8cb9b27cfa6e2bb46ebb089" category="paragraph">回應範例：</block>
-  <block id="fb1351c2d3cb4b91d5fd90311145afd1" category="list-text">在Astra Control Center CR的「Pec」內的「additionalValues」中新增下列行：</block>
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">執行下列其中一項：</block>
   <block id="abbdf883cc067b91d7f07fa1caa34803" category="list-text">（可選）驗證Pod是否終止並再次可用：</block>
   <block id="54472d1da4b0c6eadf8684e846b25dcc" category="paragraph">回應：</block>
@@ -313,7 +305,6 @@
   <block id="697939ddfd81addf109205a77b1bddc2" category="list-text">選擇*帳戶&gt;帳單&gt;付款方式*。</block>
   <block id="3d54d6e461f70e81b32546067d159bfd" category="list-text">選擇*關閉帳戶*。</block>
   <block id="5149827aee9a1b3679a5a603cac08040" category="list-text">輸入您的帳戶名稱、然後確認關閉帳戶。</block>
-  <block id="e47de778abddd04a721cb643c8cd8b29" category="summary">為內部部署的Kubernetes應用程式新增儲存設備。Astra Control會探索並使用已部署的資源、包括Trident、ONTAP 支援、及相關的儲存類別。</block>
   <block id="7caee76c2dc8935a37de1c05171523df" category="doc">管理儲存後端</block>
   <block id="bd71880512c6a2e27f18b857de29c734" category="paragraph">將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。如果Astra Control Center連接Cloud Insights 到VMware、您可以監控儲存容量和健全狀況詳細資料、包括效能。</block>
   <block id="ac31b73c6d74a2d6181d75600f0582dd" category="paragraph">如需如何使用Astra Control API管理儲存後端的指示、請參閱 <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>。</block>
@@ -457,7 +448,6 @@
   <block id="4fcadb7486e94ea263fbd41f7e86efa9" category="paragraph">若要監控並深入瞭解完整的基礎架構、請將NetApp Cloud Insights 知識與Astra Control Center執行個體連結起來。包含在您的Astra Control Center授權中。Cloud Insights</block>
   <block id="13942213628d31e7e797ba5c8a75f709" category="paragraph">應可從Astra Control Center使用的網路存取、或透過Proxy伺服器間接存取。Cloud Insights</block>
   <block id="0fc8c757a5249e23e83500c6fad518c4" category="paragraph">當Astra Control Center連線Cloud Insights 至不實時、就會建立一個擷取單元Pod。此Pod可從Astra Control Center管理的儲存後端收集資料、並將資料推送到Cloud Insights此Pod需要8 GB RAM和2個CPU核心。</block>
-  <block id="e52cc9ca02a7bc549eb6dba47cd2ee25" category="admonition">啟用Cloud Insights 完「支援不中斷連線」後、您可以在*後端*頁面上檢視處理量資訊、Cloud Insights 並在選取儲存後端後端後、從此處連線至「支援不中斷連線」。您也可以在「叢集」區段的*儀表板*上找到相關資訊、也可以從Cloud Insights 這裡連線至。</block>
   <block id="7688359a08db3c6dee99e77dacd333c0" category="list-text">具有*管理*/*擁有者*權限的Astra Control Center帳戶。</block>
   <block id="4d2b5cb03567061103a730b4f25b2c61" category="list-text">有效的Astra Control Center授權。</block>
   <block id="1bdb819abf27f345e251d7d74bd13432" category="list-text">如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、則為Proxy伺服器。</block>
@@ -536,9 +526,6 @@
   <block id="02c8c5fbeebdf293d83e1ec96ea30aff" category="summary">Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將能最快完成。</block>
   <block id="e07596cf624c6e8c354d1188f9bdb6bb" category="doc">還原應用程式</block>
   <block id="bd48cb856a5ec10f9c3c2bf8d62fc86c" category="paragraph">Astra Control可以從快照或備份還原應用程式。將應用程式還原至同一個叢集時、從現有的快照還原速度會更快。您可以使用Astra Control UI或<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> 以還原應用程式。</block>
-  <block id="26fef20c54adaf79090f5b60c1e34ec0" category="list-text">選擇*資料保護*。</block>
-  <block id="2bdc031714474d030b133e53ce1788bd" category="list-text">如果要從快照還原、請選取* Snapshot*圖示。否則、請選取*備份*圖示以從備份還原。</block>
-  <block id="e1392cd5a84b9e2661cec2830d5c10bf" category="list-text">從您要還原之快照或備份的「*動作*」欄中的「選項」功能表中、選取「*還原應用程式*」。</block>
   <block id="71bbec1f93d6a09922beb159603ed75d" category="summary">您可以將試用版授權轉換為完整授權、也可以使用新授權來更新現有的試用版或完整授權。</block>
   <block id="6d30de72a007f5f83168c2d18390d2a8" category="doc">更新現有授權</block>
   <block id="54cfed46a9cc878d0635a8e52178247e" category="list-text">登入<block ref="3725c06f412bedb14ffd610de312875d" category="inline-link-rx"></block>。</block>
@@ -575,44 +562,26 @@
   <block id="8c7c70cb991e0295e289054b79308c5d" category="inline-link-macro">安裝Astra Control Center</block>
   <block id="994e9e207b5ca34793cc2495e51460bc" category="summary">驗證Kubernetes叢集、應用程式和網頁瀏覽器的支援、開始使用Astra Control Center。</block>
   <block id="b1c0f5fea43226e1ffa246ed1546e33b" category="doc">Astra Control Center需求</block>
-  <block id="7267bf4022ef959138b9f6b053eb4b37" category="paragraph">開始驗證作業環境、應用程式叢集、應用程式、授權和網頁瀏覽器的整備度。</block>
-  <block id="14c3520c1ca6993e39c544e92a538f0b" category="section-title">營運環境需求</block>
-  <block id="540bf6f549a34a85e07e4a8510890f43" category="paragraph">確保您選擇裝載Astra Control Center的作業環境符合環境正式文件中所述的基本資源需求。除了環境的資源需求之外、Astra Control Center還需要下列資源：</block>
   <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">元件</block>
   <block id="9b97b7bd5e0a87be7bf218224ada83cf" category="cell">需求</block>
   <block id="d790821fc08e7990a2ca5464b3010b41" category="cell">至少提供300 GB</block>
-  <block id="fcb81a84511da525a1581c4ccc00d0fb" category="cell">工作節點</block>
-  <block id="1db3861c7c604e022707e65328ef7cc2" category="cell">FQDN位址</block>
-  <block id="b3071c30261a1e065c64f3de227b01ff" category="cell">Astra Control Center的FQDN位址</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="cell">Astra Trident</block>
   <block id="865fcbd8a3a74376a7ff576d468c2697" category="admonition">這些需求假設Astra Control Center是營運環境中唯一執行的應用程式。如果環境正在執行其他應用程式、請相應調整這些最低需求。</block>
-  <block id="4d40a8e178faea46fe31329801bc6573" category="list-text">*映像登錄*：您必須擁有現有的私有Docker映像檔登錄、才能將Astra Control Center建置映像推入其中。您需要提供映像登錄的URL、以便上傳映像。</block>
   <block id="8321592ce24c8a122ecf26a63cfca407" category="list-text">ONTAP-NAS</block>
-  <block id="844e84da8e822b4a33c4d8188da97937" category="list-text">ONTAP-NAS-flexgroup</block>
   <block id="73a3350a1b91aeb6e2836fdf5975672c" category="list-text">ONTAP-SAN</block>
   <block id="a194c96c412e6851d927b9d0e77bba07" category="paragraph">在OpenShift環境中進行應用程式複製時、Astra Control Center需要允許OpenShift掛載磁碟區並變更檔案的擁有權。因此、您必須設定ONTAP 一個不中斷的Volume匯出原則、才能執行這些作業。您可以使用下列命令來執行此作業：</block>
   <block id="6a100a7ad7e7c18962424f35ca8111fe" category="list-text">「匯出原則規則modify -vserver &lt;儲存虛擬機器名稱&gt;-policyname &lt;原則名稱&gt;-rueindex 1 -超級使用者sys」</block>
   <block id="fc2f1854d37f5b2e29ee40dea0f6d097" category="list-text">「匯出原則規則修改-vserver &lt;儲存虛擬機器名稱&gt;-policyname &lt;原則名稱&gt;-rueindex 1 -anon 65534」</block>
-  <block id="6e8275b6ade503dd8103605c96de24f1" category="section-title">VMware Tanzu Kubernetes Grid叢集需求</block>
-  <block id="0cad90723506c3c9f67cd3783aeae219" category="paragraph">在VMware Tanzu Kubernetes Grid（TKG）或Tanzu Kubernetes Grid整合版（TKGi）叢集上裝載Astra Control Center時、請謹記下列考量事項。</block>
   <block id="883a74644c0071959dda599b0318b7ca" category="list-text">停用要由Astra Control管理的任何應用程式叢集上的TKG或TKGi預設儲存類別強制。您可以編輯命名空間叢集上的「TanzuKubernetesCluster」資源來執行此作業。</block>
   <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Astra Trident文件</block>
   <block id="9677a883a700a1804af4204a39942a01" category="list-text">在TKG或TKGi環境中部署Astra Control Center時、請注意Astra Trident的特定需求。如需詳細資訊、請參閱<block ref="7262878c61e63204c825af54299b7a49" category="inline-link-rx"></block>。</block>
   <block id="1c48088dc1732bdac3e27be1a94c191a" category="inline-link">VMware NSxT-T資料中心產品文件。</block>
-  <block id="783d1a3e740eff9085416ec3f709793f" category="section-title">支援的儲存後端</block>
-  <block id="160a276b6627d6a6aa9859d6c2835948" category="paragraph">Astra Control Center支援下列儲存後端。</block>
   <block id="ca6f33719464e2320b44f90d6ae70eb7" category="section-title">應用程式管理需求</block>
   <block id="304f557d4b7e64bda6836386e7c79fc6" category="paragraph">Astra Control具備下列應用程式管理需求：</block>
-  <block id="279aeb8fefc116ce50f1bb81d8dc343c" category="list-text">*授權*：若要使用Astra Control Center管理應用程式、您需要Astra Control Center授權。</block>
   <block id="508704b5a40f45083050ce024bcadbd2" category="list-text">* Kubernetes資源*：使用未由Astra Control收集之Kubernetes資源的應用程式、可能沒有完整的應用程式資料管理功能。Astra Control會收集下列Kubernetes資源：</block>
-  <block id="c62e13b3973df086f7d17eeaf006b535" category="section-title">存取網際網路</block>
-  <block id="46cce64fca5b60351328e94ed2b72255" category="paragraph">您應該判斷是否有外部網際網路存取權。如果您沒有、部分功能可能會受到限制、例如從NetApp Cloud Insights 接收監控和數據資料、或是將支援組合傳送至<block ref="3725c06f412bedb14ffd610de312875d" category="inline-link-rx"></block>。</block>
-  <block id="794df3791a8c800841516007427a2aa3" category="section-title">授權</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-link-macro">授權</block>
   <block id="a935ac1929664c98f15473ff54019d68" category="section-title">內部部署Kubernetes叢集的入口</block>
-  <block id="3535d3befb15db2a6b9a1413eed8204e" category="admonition">如果您要在Tanzu Kubernetes Grid叢集上裝載Astra Control Center、請使用「kubecl Get nslb監 控器-A」命令、查看您是否已設定服務監控器來接受入口流量。如果存在、則不應安裝MetalLB、因為現有的服務監視器將會覆寫任何新的負載平衡器組態。</block>
   <block id="9251700e586dc1a410f2e755a8643751" category="section-title">網路需求</block>
-  <block id="8385440fe17d036a98c18fc4c23e2a74" category="paragraph">裝載Astra Control Center的作業環境會使用下列TCP連接埠進行通訊。您應確保這些連接埠可透過任何防火牆、並設定防火牆、以允許來自Astra網路的任何HTTPS輸出流量。有些連接埠需要在裝載Astra Control Center的環境與每個託管叢集之間進行連線（視情況而定）。</block>
   <block id="9094bc8efffaaa3a7bff5aba20de1ca7" category="admonition">您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra Control Center則可管理已設定為雙堆疊作業的應用程式和儲存後端。如需雙堆疊叢集需求的詳細資訊、請參閱<block ref="4e26c1cd22436fb9612733bcd727160e" category="inline-link-rx"></block>。</block>
   <block id="f31bbdd1b3e85bccd652680e16935819" category="cell">來源</block>
   <block id="12007e1d59f4d09c87dbe2c438256244" category="cell">目的地</block>
@@ -705,7 +674,6 @@
   <block id="93b153667aff38c7d5e80224ff7a62dc" category="list-text">選擇* K8s*&gt;*叢集清單*&gt;*叢集詳細資料*、即可檢視NetApp叢集詳細資料。</block>
   <block id="e1001cf6163456f78888de73e0dd8241" category="list-text">請注意右上角的Trident版本。</block>
   <block id="879166e5d3ed3d9886dcb671dee52d57" category="list-text">請注意Cloud Volumes ONTAP 、顯示NetApp為資源配置程式的叢集儲存類別。</block>
-  <block id="6f132ecc107812f9bd274ba758fce276" category="paragraph">這會匯入您的Red Hat OpenShift叢集、並將其指派為預設儲存類別。您可以選取儲存類別。Trident會在匯入和探索程序中自動安裝。</block>
   <block id="022f3cb861d350bac16e19b15e4f1f9c" category="admonition">可作為單一節點或高可用度運作。Cloud Volumes ONTAP如果已啟用HA、請記下在AWS中執行的HA狀態和節點部署狀態。</block>
   <block id="d35cd0582def6a18a65ff02ce2d5ff77" category="inline-link-macro">Astra Control Center安裝說明</block>
   <block id="1cb58fa5a8f36029f128e85d88276810" category="paragraph">遵循標準 <block ref="ef8e47848fa28ef11d8d85ade3f221ee" category="inline-link-macro-rx"></block>。</block>
@@ -715,7 +683,6 @@
   <block id="067c001dbf7480cc26099ff0edfb8bda" category="list-text">Azure認證、具備可讓您建立儲存區和連接器的權限</block>
   <block id="a7ab880bb218b2e0b517005f90e662c8" category="section-title">Azure的營運環境需求</block>
   <block id="ac388b858e49b0566fa15ba968147e01" category="inline-link-macro">Astra Control Center營運環境需求</block>
-  <block id="397e11d0b195dcd1681e8fd5e3045455" category="paragraph">請參閱 <block ref="7041daff547ca52b88252dab80375556" category="inline-link-macro-rx"></block>。</block>
   <block id="98c6bc51841c094bfa7f813391562f38" category="cell">工作者節點（Azure運算需求）</block>
   <block id="e047c10f2ecd816933f9e5d910ba88e5" category="cell">FQDN（Azure DNS區域）</block>
   <block id="55aed975133aa6d461724ac8194fcfde" category="paragraph">Astra Trident 21.004或更新版本已安裝並設定、NetApp ONTAP 版本9.5或更新版本將作為儲存後端使用</block>
@@ -755,7 +722,6 @@
   <block id="87c7357de6ea0227d87f925e90e15e08" category="list-text">確認連接器正在執行、並切換至該連接器。</block>
   <block id="44930626eab5155e142a48063b020936" category="list-text">位置：「Microsoft Azure」。</block>
   <block id="882ed833487b96a9be53006e9ad9ffa5" category="list-text">輸入：Cloud Volumes ONTAP 「EHA」。</block>
-  <block id="5acebafc0c752497041f5a0d80fe30bb" category="paragraph">這會匯入您的Red Hat OpenShift叢集、並指派預設的儲存類別。您可以選取儲存類別。Trident會在匯入和探索程序中自動安裝。</block>
   <block id="a4f1bc6952ef35fa4b362d48d0bae5cf" category="list-text">可作為單一節點或高可用度運作。Cloud Volumes ONTAP如果已啟用HA、請記下Azure中執行的HA狀態和節點部署狀態。</block>
   <block id="7586dbf5f3ac1a66383f6c201a17a341" category="inline-link-macro">安裝說明</block>
   <block id="5381969706e609f872c366c6e1a670a3" category="paragraph">使用標準安裝Astra Control Center <block ref="3dc99e8ac5a903068ed044215599aeeb" category="inline-link-macro-rx"></block>。</block>
@@ -822,7 +788,6 @@
   <block id="3366964e7a216dba2d0ba31b76ba649c" category="inline-link-macro">（如果您使用Red Hat OpenShift）使用OpenShift作業系統集線器安裝Astra Control Center</block>
   <block id="dbcbff2a607cc46b36bf41219a49e1a4" category="list-text"><block ref="dbcbff2a607cc46b36bf41219a49e1a4" category="inline-link-macro-rx"></block></block>
   <block id="29a22a050bd07366c87409e65a0fd0cd" category="list-text"><block ref="29a22a050bd07366c87409e65a0fd0cd" category="inline-link-macro-rx"></block></block>
-  <block id="efb8331a92b47dc173e5cbcd8ae1a87b" category="summary">安裝Astra Control Center、登入UI並變更密碼之後、您將需要設定授權、新增叢集、管理儲存設備及新增儲存區。</block>
   <block id="d507eb4e66b24d44edccbe2de081c8ee" category="doc">設定Astra控制中心</block>
   <block id="ef615563c8e8ea902c7fcac3cd2c4246" category="list-title">工作</block>
   <block id="36b04ba2baeae9c2b2c117fe0fcacd6e" category="list-text"><block ref="8f0c94a5689852a988023d9eacea25d5" category="inline-xref-macro-rx"></block></block>
@@ -856,7 +821,6 @@
   <block id="1b799238211a6924f3bc70f0d21bb243" category="inline-link-macro">管理通知</block>
   <block id="dd8cd9eba2ecc51750e65a67f022145a" category="list-text"><block ref="dd8cd9eba2ecc51750e65a67f022145a" category="inline-link-macro-rx"></block></block>
   <block id="6c441b45a7d425cac321cacfe6655137" category="list-text"><block ref="6c441b45a7d425cac321cacfe6655137" category="inline-link-macro-rx"></block></block>
-  <block id="2d5a3414c9ee7c6504db17eb956f1e80" category="list-text"><block ref="2d5a3414c9ee7c6504db17eb956f1e80" category="inline-link-macro-rx"></block></block>
   <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="inline-link-macro">已知問題</block>
   <block id="0956972ccb3f1ffed4c31a057c597e7d" category="list-text"><block ref="0956972ccb3f1ffed4c31a057c597e7d" category="inline-link-macro-rx"></block></block>
   <block id="851d9a49d7101a2aa57ff83ec3919ddf" category="inline-link-macro">替代程序</block>
@@ -890,7 +854,6 @@
   <block id="c73579d39b5f5df8c4a2d6a8604926e6" category="list-text">選擇*登入*。</block>
   <block id="614e70912405319846a7819749c26273" category="list-text">出現提示時變更密碼。</block>
   <block id="9beaff92ec90f0dc1bed7c4d71f01b37" category="inline-link-macro">由憑證授權單位（CA）簽署的自訂TLS憑證</block>
-  <block id="7624f5e1399c449e4b4ec7db7cc534c0" category="list-text">（選用）移除現有的自我簽署TLS憑證、並以取代 <block ref="73ee2b836bf770fc435551db12e88ed2" category="inline-link-macro-rx"></block>。</block>
   <block id="58d2ebc95650d2209a0b0a4373ebde4e" category="section-title">疑難排解安裝</block>
   <block id="a8681bd45866e0c10a164ee51191002e" category="paragraph">如果有任何服務處於「錯誤」狀態、您可以檢查記錄。尋找400到500範圍內的API回應代碼。這些都表示發生故障的地點。</block>
   <block id="dd8d7d6254d36a3ee23cd2f2b306ba57" category="list-text">若要檢查Astra控制中心的操作員記錄、請輸入下列內容：</block>
@@ -901,13 +864,8 @@
   <block id="beead3f133c7957f259792b82df7e44c" category="section-title">存取Astra Control Center</block>
   <block id="d3999564a67aafe8d2dd2b3396394bf8" category="paragraph">*什麼是Astra Control URL？*</block>
   <block id="c7ce6cb4e4cd6690abeecb2f6c288964" category="paragraph">Astra Control Center使用本機驗證和每個環境的專屬URL。</block>
-  <block id="dfda66b2e78ea21dd8b03bbe2f09084e" category="paragraph">*我正在使用評估授權。如何變更為完整授權？*</block>
-  <block id="0ad3cbb1e27dda88ac19688c5aedf475" category="paragraph">您可以取得NetApp授權檔案（NLF）、輕鬆變更為完整授權。</block>
   <block id="4839d2f25cc35b249d5db15efa1afd75" category="paragraph">*步驟*</block>
-  <block id="37fcb8e7d30cc5903f7318cd979d8ae4" category="list-text">選擇*新增授權*。</block>
   <block id="d113457c08b54c3464e7b9c49945bebd" category="list-text">瀏覽至您下載的授權檔案、然後選取*「Add*（新增*）」。</block>
-  <block id="04c4a9f90cb8a9503dc404b0096d9daf" category="paragraph">*我正在使用評估授權。我還能管理應用程式嗎？*</block>
-  <block id="f9e4fd9ce791f6dd18bf914fa1d22ea7" category="paragraph">是的、您可以使用評估授權測試管理應用程式功能。</block>
   <block id="b892fe302a6a7df4519761ccd72b7c2f" category="section-title">正在登錄Kubernetes叢集</block>
   <block id="92c3c3332b432034927e22150f418205" category="paragraph">*新增Astra Control之後、我需要將工作節點新增至Kubernetes叢集。我該怎麼辦？*</block>
   <block id="03ec374fbd6989f16559d4f96d74547e" category="paragraph">新的工作者節點可新增至現有的資源池。Astra Control會自動探索這些功能。如果在Astra Control中看不到新節點、請檢查新的工作節點是否執行支援的映像類型。您也可以使用「kubectl Get nodes」命令來驗證新工作節點的健全狀況。</block>
@@ -919,8 +877,6 @@
   <block id="bd9e39df2a4783068ac79eb1cbc3602b" category="paragraph">*從Astra Control移除Kubernetes叢集之後、應用程式和資料會發生什麼變化？*</block>
   <block id="8ce424856922443bb79c34a944daacaf" category="paragraph">從Astra Control移除叢集不會對叢集的組態（應用程式和持續儲存）進行任何變更。在該叢集上執行的任何Astra Control快照或應用程式備份都無法還原。由Astra Control所建立的持續儲存備份仍在Astra Control之內、但無法還原。</block>
   <block id="03d32d7daecae8d532e26e0c040b4ff0" category="admonition">透過任何其他方法刪除叢集之前、請務必先從Astra Control移除叢集。使用另一個工具刪除叢集時、如果叢集仍由Astra Control進行管理、可能會對Astra Control帳戶造成問題。</block>
-  <block id="185d9e7bb43f5673a0095e89e4b5cfc9" category="inline-link">請遵循Trident文件中的下列步驟</block>
-  <block id="09deba2ad910e084c6f3145f1aa3d1ea" category="paragraph">*當我取消管理叢集時、NetApp Trident是否會自動從叢集解除安裝？*當您從Astra Control Center取消管理叢集時、Trident不會自動從叢集解除安裝。若要解除安裝Trident、您需要<block ref="11951e75a5c670d49400c1d12d4333d6" category="inline-link-rx"></block>。</block>
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">管理應用程式</block>
   <block id="eaeb56aabe324b7270ae7355bb58edcb" category="paragraph">* Astra Control是否能部署應用程式？*</block>
   <block id="48df7f09a242df239385ebae869133b8" category="paragraph">Astra Control不會部署應用程式。應用程式必須部署在Astra Control之外。</block>
@@ -928,17 +884,11 @@
   <block id="61cd231bb056b77c37c6a7acab17451a" category="paragraph">將刪除任何現有的備份或快照。應用程式與資料仍可繼續使用。資料管理作業無法用於未受管理的應用程式、或屬於它的任何備份或快照。</block>
   <block id="b3d3212b84b66c52decacb83fca1191d" category="paragraph">* Astra Control能否管理非NetApp儲存設備上的應用程式？*</block>
   <block id="43c9583c5f06b5003113b84316a2a65c" category="paragraph">不可以雖然Astra Control可以探索使用非NetApp儲存設備的應用程式、但它無法管理使用非NetApp儲存設備的應用程式。</block>
-  <block id="9d31ac7a4dec83b4db6ed247b4709550" category="paragraph">*我應該自行管理Astra Control嗎？*不、您不應該自行管理Astra Control、因為它是「系統應用程式」。</block>
-  <block id="521b3bfc75046a33a8363d3be24cc4a8" category="paragraph">*不良的Pod是否會影響應用程式管理？*如果託管應用程式的Pod處於不良狀態、Astra Control將無法建立新的備份與複製。</block>
   <block id="6b1a3a19f3f025ff9c844910c80c100e" category="section-title">資料管理作業</block>
   <block id="58042c65f3c67283f15325ab2febd22a" category="paragraph">*我可以直接透過不同的介面或物件儲存設備來管理Astra Control所拍攝的快照嗎？*</block>
   <block id="70e9aa86ac0b41ade7ad4fce41b6d744" category="paragraph">不可以Astra Control所拍攝的快照與備份、只能透過Astra Control進行管理。</block>
   <block id="df17fddf226fe3399a8cb420856f3565" category="section-title">執行資格檢查</block>
   <block id="40152bf47b47316f99abeacf61572ddd" category="paragraph">執行下列資格檢查、確保您的叢集已準備好新增至Astra控制中心。</block>
-  <block id="e4eb377a2e7862d376898d450a2e5bc4" category="list-text">檢查Trident版本。</block>
-  <block id="4f9d8928f37fde6dbf4df978a359458a" category="paragraph">如果存在Trident、您會看到類似下列的輸出：</block>
-  <block id="cb62c77e2c1b4e19ec5f61069eda6562" category="paragraph">如果Trident不存在、您會看到類似下列的輸出：</block>
-  <block id="40ef3fb23e015d9b4b46a16fa50f10d3" category="inline-link">Trident文件</block>
   <block id="210c5331ab46caa141e6ac9d5aeb1bee" category="paragraph">視需要調整名稱和命名空間。如果在此處進行變更、您應該在下列步驟中套用相同的變更。</block>
   <block id="605443509a67749999ab3b0d3ba43e8b" category="list-text">套用服務帳戶：</block>
   <block id="b29afe741178d8d4966c07c97f9892db" category="list-text">建立名為「astracontletil-clusterrolebind.yaml」的「ClusterRoeBinding」檔案。</block>
@@ -1028,17 +978,14 @@
   <block id="51269e2584d26b04961877ec77db6da7" category="paragraph">在雲端連線的環境中、Astra Control Center使用Cloud Insights 「資訊中心」來提供進階的監控和遙測功能。若缺乏Cloud Insights 支援鏈接、Astra Control Center可提供有限（7天數據）的監控與遙測功能、並透過開放式指標端點匯出至Kubernetes原生監控工具（例如Prometheus和Grafana）。</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra Control Center已完全整合AutoSupport 至整套的功能、可Active IQ 為使用者和NetApp支援人員提供疑難排解和使用資訊。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">需求</block>
-  <block id="e63cc3795b9216d59b085bd3111a248d" category="paragraph">若要安裝及使用Astra Control Center、您必須符合特定需求<block ref="bdde32b2c988689d803729c06660acb4" category="inline-link-rx"></block>。</block>
   <block id="6319f881d45c326a5f6222a746f50981" category="paragraph">Astra Control Center的高層級運作方式如下：</block>
   <block id="2cb07ff1146f3d6896d00ffdcea250ef" category="inline-link">安裝Astra Control Center</block>
-  <block id="0d08719ec11c87fa13ed3f09c281e77a" category="list-text">您可以在本機環境中安裝Astra Control Center。深入瞭解如何操作<block ref="a402644a33a8b2cb75883dcdaa5bea8c" category="inline-link-rx"></block>。</block>
   <block id="700b690f37b8bd2c5567e27f33a6ebc3" category="list-text">您可以完成以下設定工作：</block>
   <block id="7201cacbec2885cd7fb3b75613cca8c9" category="list-text">設定授權。</block>
   <block id="eb5c57b6e151d53821e4b23967e81377" category="list-text">新增第一個叢集。</block>
   <block id="6adefb23833ae29ed830d55a8a9ae713" category="list-text">新增新增叢集時發現的儲存後端。</block>
   <block id="71aa2846410bae740856b6176a203f5f" category="list-text">新增物件存放區儲存應用程式備份。</block>
   <block id="41d8c63c7f85077d4a2d906119683f17" category="inline-link">設定Astra控制中心</block>
-  <block id="8797309fdabab1846a95a0aa2a7562ca" category="paragraph">深入瞭解如何操作<block ref="76291acbbbed703f1210502e4bd01c93" category="inline-link-rx"></block>。</block>
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="doc">架構與元件</block>
   <block id="f26ee8a93c95de7a50a14b73f85172c5" category="paragraph">瞭解Astra Control中的使用者角色和命名空間、以及如何使用這些角色和命名空間來控制組織中的資源存取。</block>
   <block id="f4040f71a7d553f2519487070892b115" category="section-title">使用者角色</block>
@@ -1051,8 +998,6 @@
   <block id="999cc42b236c7aee1157ff02d6f1bcd5" category="section-title">複製</block>
   <block id="1266a5a3fd194fe421f8d3d701b44de7" category="doc">儲存類別和持續Volume大小</block>
   <block id="2a48cd265597705926220f5e81d03941" category="paragraph">Astra Control Center支援下列項目：</block>
-  <block id="56a2a4029e73c469c307bf583648cd20" category="list-text">* ONTAP 以支援的Trident儲存類*：如果您使用ONTAP 的是支援支援支援功能的支援功能、Astra Control Center可匯入ONTAP 該功能的支援功能、以報告各種監控資訊。</block>
-  <block id="70e3c204bfcd6d0d484839b699e7653c" category="admonition">Trident儲存類別應預先設定在Astra Control Center之外。</block>
   <block id="7672a092783c4348b96b40ea2dcf6681" category="section-title">儲存類別</block>
   <block id="0ec24420f91223b35f271fb4a5f65f2f" category="summary">瞭解Astra Control Center可執行的行動、會因授權狀態而異、以及Astra Control Center的使用如何影響授權使用量。</block>
   <block id="b2492fb1fd7556ab678e6f20a0553c6b" category="section-title">如何計算授權使用量</block>
@@ -1221,7 +1166,6 @@
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">常見問題集</block>
   <block id="0b79795d3efc95b9976c7c5b933afce2" category="sidebar">簡介</block>
-  <block id="f28aaf8670a5d0a4f80f0bf5fccb4b1c" category="sidebar">Astra簡介</block>
   <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">概念</block>
   <block id="8d85c59d57ad2cafad4f894413219af0" category="sidebar">儲存類別和PV大小</block>
   <block id="ae5601e1a5453d0b5924098584b9c3f2" category="sidebar">此Astra Control Center版本的新功能</block>
@@ -1251,8 +1195,6 @@
   <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">瞭解Astra Control</block>
   <block id="4230b528c751be001043bf90304b82d6" category="list-text">選擇*中斷連線*。</block>
   <block id="cea7924acf8d3c8a75f4abdda00f5229" category="paragraph">只有在新認證已套用至庫位、或庫位已不再有效使用時、才應移除庫位認證。</block>
-  <block id="355508832b7eb5caa7423548e7222913" category="cell">儲存後端容量</block>
-  <block id="97eba840a0a254e76474a1a32d2f5634" category="cell">至少可提供500GB容量</block>
   <block id="3664703675e6ea0fab0e620eb7c74fb0" category="section-title">變更預設儲存類別</block>
   <block id="fbd3006b6ebcc4274d70339f0589cdf4" category="list-text">在Astra Control Center Web UI中、選取* Clusters*。</block>
   <block id="fe575e20478d6256f2449963730fd738" category="list-text">在「*叢集*」頁面上、選取您要變更的叢集。</block>
@@ -1306,7 +1248,6 @@
   <block id="05d2305253892d509045e8f0c3497ace" category="inline-link-macro">支援VMware Tanzu Kubernetes Grid整合版（TKGI）</block>
   <block id="c0a85ce872a49b700d02bd247127ab1e" category="inline-link-macro">支援Google Anthos</block>
   <block id="8614e6ee0f1155b4b418f8b634802110" category="inline-link">LDAP組態（透過Astra Control API）</block>
-  <block id="8fcf9eb4bfc0af14b202df6665aa55f3" category="list-text"><block ref="8fcf9eb4bfc0af14b202df6665aa55f3" category="inline-link-rx"></block></block>
   <block id="6b711ca63f3156860c2b2918a106b882" category="inline-link-macro">必要步驟</block>
   <block id="e13d4a668fc56237f39878bf668e8d7b" category="inline-link-macro">瞭解Pod安全性原則限制</block>
   <block id="008c400b59b77d7bf927c2a682a431e6" category="list-text">確保您打算使用的Astra FQDN可路由傳送至此叢集。這表示您在內部DNS伺服器中有DNS項目、或是使用已註冊的核心URL路由。</block>
@@ -1330,16 +1271,9 @@
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="cell">範例</block>
   <block id="27226c864bac7454a8504f8edb15d95b" category="cell">布林值</block>
   <block id="a4eae2eb04aaa73a5aa84743236715c2" category="cell">用來驗證映像登錄的Kubernetes機密名稱。</block>
-  <block id="b8b135c22936352c3cfdc9f8e3fd023b" category="list-text"><block ref="fb50e5d2336668b8d0662f52bcf85cbd" category="inline-xref-macro-rx"></block></block>
-  <block id="ba2f1a8ca4d338f475c569aac706f70d" category="list-text"><block ref="1e68754240d611736f4d693962b83649" category="inline-xref-macro-rx"></block></block>
-  <block id="fccc6a2f80c99556fc0a67d0bb45eed2" category="list-text"><block ref="4c1da4dfad9caa1797b7b20ff62bf3da" category="inline-xref-macro-rx"></block></block>
-  <block id="e3a85e26c656b1b334ff72a66fadb43b" category="list-text"><block ref="27fb980e2943c478fb113c16173bcfa3" category="inline-xref-macro-rx"></block></block>
   <block id="e78070da4709da2c60c1ca67fabf3b53" category="list-text"><block ref="2e8dbde48b101719f2a7b6df3dffac7d" category="inline-xref-macro-rx"></block></block>
   <block id="0a7f40f91397a5eeeb19668707d2c6b7" category="list-text"><block ref="7e4b46b50614bc35a27f671a88150520" category="inline-xref-macro-rx"></block></block>
   <block id="30a117e608bd33b41196b6d3d83d3021" category="list-text"><block ref="6d87e09e36e7d8cd8dd783774d2e075b" category="inline-xref-macro-rx"></block></block>
-  <block id="7834c130a8bc0fa6732acce5f0628edf" category="paragraph">Astra Control Center已在下列類型的作業環境中通過驗證：</block>
-  <block id="fdde69477d7744a19a4f85e9b68c8cd0" category="list-text">Rancher Kubernetes Engine（RKE）：</block>
-  <block id="1d19d2272c0454dbbb46dde582863537" category="section-title">Google Anthos叢集需求</block>
   <block id="d193cd9a2432eca22e5cf0d06dcee1e6" category="section-title">複寫先決條件</block>
   <block id="c44cedaf2d63c8d308691c23f6010413" category="paragraph">Astra Control應用程式複寫要求您在開始之前必須符合下列先決條件：</block>
   <block id="9fecd08b776fdfca7b33426363edf913" category="inline-link">叢集與SVM對等概觀</block>
@@ -1356,14 +1290,12 @@
   <block id="0606641f2b729119d7709942743b8888" category="section-title">叢集管理期間建立的PSPS</block>
   <block id="49df4bd07f95849b3ea34b77bd1bba1b" category="section-title">啟用命名空間之間的網路通訊</block>
   <block id="a67a954c56c3691d13b3a4dece634155" category="list-text">刪除Astra Control Center命名空間中的任何網路原則資源：</block>
-  <block id="dd7e0c99bff2ac5fe93a18d86bfab80d" category="list-text">對於上述命令傳回的每個網路原則物件、請使用下列命令加以刪除。以傳回物件的名稱取代&lt;object_name&gt;：</block>
   <block id="e562349c27811f1520b3c670e513cda3" category="section-title">移除資源限制</block>
   <block id="66abbc76b1b539a19eab77ac5f290859" category="paragraph">您可以使用下列步驟擷取及移除這些配額和限制。在這些範例中、命令輸出會在命令之後立即顯示。</block>
   <block id="6c999f1f4bd422b4305a76a527b7e862" category="list-text">依名稱刪除所有資源配額：</block>
   <block id="091880150353e9b5462ebfe9e5007deb" category="list-text">依名稱刪除限制範圍：</block>
   <block id="5fed03116ab579cfabba1dfd68c70bab" category="inline-link">NetApp Astra知識庫</block>
   <block id="62b48e6002e259d6c98b0960c375f121" category="paragraph"><block ref="62b48e6002e259d6c98b0960c375f121" category="inline-link-rx"></block></block>
-  <block id="892fd9033e9d018417cf4aeecbde816d" category="paragraph">您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端。有了此功能、您可以查看更多資訊。Cloud Insights請參閱<block ref="198b61e5b99df368eb36fb523ad3cce8" category="inline-link-rx"></block>。</block>
   <block id="721ed1f27b3163d26010e9d99872bd47" category="summary">將Kubernetes叢集新增至Astra Control之後、即可在該叢集（Astra Control以外）上安裝應用程式、然後前往Astra Control中的「應用程式」頁面開始管理應用程式。</block>
   <block id="456907dc64f076d8c8ed113ea6a4ac8f" category="list-text">*由業者部署的應用程式*：Astra Control支援以命名空間範圍運算子安裝的應用程式、這些運算子通常是以「傳遞值」而非「傳遞參照」架構設計。運算子及其安裝的應用程式必須使用相同的命名空間；您可能需要修改運算子的部署.yaml檔案、以確保情況如此。</block>
   <block id="be4629edbb6c58ee13cd278ee7ec5a4f" category="paragraph">以下是一些遵循這些模式的營運者應用程式：</block>
@@ -1372,7 +1304,6 @@
   <block id="6b0267a27d6b83f67b0cb07b5183cc0b" category="list-text">將Kubernetes叢集新增至Astra Control。</block>
   <block id="353a2534c54926ec1ffe91976eb0e182" category="inline-xref">深入瞭解支援的應用程式安裝方法</block>
   <block id="c3443c90c9a8c8ae70d0708cc778b7b2" category="list-text">叢集上已安裝一或多個應用程式。 <block ref="9a14b35f09704dd5c457f47f10cb55d6" category="inline-xref-macro-rx"></block>。</block>
-  <block id="c7ba9d64e9c385851048858df4e26ef6" category="list-text">一個或多個作用中的Pod。</block>
   <block id="6f2886ca9812fade1ff2d6197498a80b" category="inline-link-macro">支援的Kubernetes資源</block>
   <block id="a7d4d20683a8972d07170d4ce5f3329b" category="inline-link-macro">管理標準和系統命名空間</block>
   <block id="5c227ef4d58eed958f28dbf199bfbaad" category="paragraph">在開始之前、您也應該瞭解 <block ref="8168216ca124f830e0a917cd26a29d8e" category="inline-link-macro-rx"></block>。</block>
@@ -1407,7 +1338,6 @@
   <block id="78ce739c69215b7a8b54179394eea168" category="paragraph">此外、您也可以將應用程式複寫到遠端叢集、以便做好災難恢復的準備。</block>
   <block id="87c77d08f8cc9ba015bc277bf63171ec" category="inline-link-macro">複寫應用程式</block>
   <block id="e11f531afbfddcb2e626779912560475" category="paragraph">如果發生資料遺失、您可以透過進行恢復 <block ref="550aec8aa1d184571b143fbb368e4c54" category="inline-link-macro-rx"></block> 每個應用程式的第一名。然後您可以還原最新的快照（如果有）。或者、您也可以使用複寫功能來複寫到遠端系統。</block>
-  <block id="d77a72056cdc02124a845066bec0d946" category="paragraph">執行攔截是一種自訂動作、可設定搭配託管應用程式的資料保護作業一起執行。例如、如果您有資料庫應用程式、您可以使用執行掛勾來暫停快照之前的所有資料庫交易、並在快照完成後繼續交易。如此可確保應用程式一致的快照。</block>
   <block id="83fbf1604bedff410ea11872b40ab9f0" category="section-title">執行掛勾的類型</block>
   <block id="2e0239d0ab48ff8e287445ee24093e64" category="paragraph">Astra Control支援下列類型的執行掛勾、視執行時間而定：</block>
   <block id="9c6a9cc04a4d5840a5d237b232190a35" category="list-text">快照前</block>
@@ -1472,14 +1402,12 @@
   <block id="d3d9446802a44259755d38e6d163e820" category="cell">10.</block>
   <block id="6512bd43d9caa6e02c990b0a82652dca" category="cell">11.</block>
   <block id="d77b4a468fb488142be1db1cb4f3b30a" category="paragraph">您可以檢視應用程式的現有自訂執行掛勾。</block>
-  <block id="f8394306e8105b9804b880be5da4e874" category="paragraph">您可以在結果清單中檢視所有已啟用或已停用的執行掛勾。您可以查看某個掛機的狀態、來源、以及其執行時間（作業前或作業後）。若要檢視執行掛起的相關事件記錄、請前往左側導覽區域的*活動*頁面。</block>
   <block id="348d9142b6e812d430105231b6b22f7b" category="section-title">檢視現有的指令碼</block>
   <block id="9a25c0423497a3b78185a1dcbd83ee56" category="paragraph">您可以檢視現有上傳的指令碼。您也可以在此頁面上查看使用中的指令碼、以及使用這些指令碼的攔截器。</block>
   <block id="9847e9d0ad4bd0b4ebd33ef807c5de85" category="list-text">前往*帳戶*。</block>
   <block id="38f83cc7b29ed2a740a9c8456659a293" category="list-text">選取*指令碼*索引標籤。</block>
   <block id="8c9fd3633020b4d6c051241f7be9c138" category="paragraph">您可以在此頁面上看到現有上傳指令碼的清單。「*使用者*」欄會顯示每個指令碼使用的執行掛勾。</block>
   <block id="6efeb013da42bda9a0b005c8fb3d9e7b" category="section-title">新增指令碼</block>
-  <block id="52bf2b6b8ab697098c999c634d60de41" category="paragraph">您可以新增一個或多個執行掛勾可以參考的指令碼。許多執行掛勾可以參照相同的指令碼、只要變更一個指令碼、就能更新許多執行掛勾。</block>
   <block id="99df3a53037c83c9f94b22e58d038498" category="list-text">選取*儲存指令碼*。</block>
   <block id="8042bed5f5c475d75e2156137410d6a2" category="list-text">選取*貼上或類型*選項。</block>
   <block id="ac28cfa905d33e97edbf97ce98d2aa16" category="paragraph">新指令碼會出現在「*指令碼*」索引標籤的清單中。</block>
@@ -1488,7 +1416,6 @@
   <block id="85dd64e22968350ca681ba621d4bc560" category="list-text">選擇要移除的指令碼、然後在*「Actions」（動作）*欄中選取功能表。</block>
   <block id="9dd5d4388456b71f9b71c1021d390f06" category="admonition">如果指令碼與一個或多個執行掛勾相關聯、則無法使用*刪除*動作。若要刪除指令碼、請先編輯相關的執行掛勾、然後將其與其他指令碼建立關聯。</block>
   <block id="88cf147ac90a429c61c32e7ab09e79bd" category="admonition">當您建立自訂Shell指令碼作為執行掛勾時、請記得在檔案開頭指定適當的Shell、除非您執行特定命令或提供執行檔的完整路徑。</block>
-  <block id="646a0acc29f56871519ed10b81ce1989" category="list-text">在「*勾選詳細資料*」區域中、從*操作*下拉式功能表中選取作業類型、以決定掛機的執行時間。</block>
   <block id="be22134446ec0047c1f901e0ef639bba" category="list-text">新增指令碼。</block>
   <block id="8b7f83d064fa53247eb45928442a6628" category="list-text">從清單中選取現有的指令碼。</block>
   <block id="35517af1363cb45c60a97af004151365" category="paragraph">這會指示執行掛勾使用此指令碼。</block>
@@ -1527,9 +1454,7 @@
   <block id="77a8ae018cc954b27648a63ce067e4da" category="list-text">在「Data Protection（資料保護）」&gt;「Replication（複寫）」索引標籤中、選取「* Configure replReplication polici*或者、從「應用程式保護」方塊中選取「動作」選項、然後選取「設定複寫原則*」。</block>
   <block id="9096869593ba566150c482b51e0bc821" category="list-text">輸入或選取下列資訊：</block>
   <block id="27796f91061ed971808de961a27b094e" category="list-text">*目的地儲存類別*：選取或輸入使用目的地ONTAP 叢集上配對SVM的儲存類別。</block>
-  <block id="fbe70530f65069cb941948688190fbc9" category="list-text">*複寫類型*：「非同步」目前是唯一可用的複寫類型。 </block>
   <block id="2d2bbc8ef94620f328b67fdf2362dc45" category="list-text">*複寫頻率*：設定您希望Astra Control多久拍攝一次Snapshot並將其複寫到目的地。</block>
-  <block id="0817b64c90f84b097da8012610f5de11" category="list-text">*偏移*：設定您想要Astra Control拍攝Snapshot的小時數（分鐘）。您可能想要使用偏移、使其不與其他排程作業一致。例如、如果您想要從10：02開始每5分鐘拍攝一次Snapshot、請輸入「02」作為偏移分鐘數。結果為10：02、10：07、10：12等</block>
   <block id="e0db10b749c9a588a8dabc1a0e7e120e" category="list-text">選取*下一步*、檢閱摘要、然後選取*儲存*。</block>
   <block id="6d0200299494f68f69d2f529d8ca9132" category="admonition">一開始、狀態會在第一個排程發生之前顯示「app-mirror」（應用程式鏡射）。</block>
   <block id="9603a5bc7b3cf58a39dcd6d6c99576ed" category="paragraph">Astra Control會建立用於複寫的應用程式Snapshot。</block>
@@ -1548,7 +1473,6 @@
   <block id="ecfa3d1eba71f477f07cde7d354d8328" category="list-text">在Data Protection（資料保護）&gt; Replication（複寫）索引標籤的Actions（動作）功能表中、選取* Fail over（容錯移轉）*。</block>
   <block id="c26e877028668e42775a491c8f681271" category="list-text">在「容錯移轉」頁面中、檢閱資訊並選取*容錯移轉*。</block>
   <block id="a5d0d63d7b85fcb73dc67f729474c86d" category="paragraph">容錯移轉程序會導致下列動作：</block>
-  <block id="13b8b3b66a3c947e96ddc16fc5af02ff" category="list-text">在目的地叢集上、應用程式是根據最新複寫的Snapshot來啟動。</block>
   <block id="ef6c7c8b849aec0ce62a77701cfbdca2" category="list-text">來源叢集和應用程式（如果運作正常）不會停止、將會繼續執行。</block>
   <block id="9fa873e485bd560b94b1675bdb21b316" category="list-text">複寫狀態會變更為「容錯移轉」、並在完成後變更為「容錯移轉」。</block>
   <block id="69910201c138cc9d3c92ec1748a3c87b" category="list-text">來源應用程式的保護原則會根據容錯移轉時來源應用程式上的排程、複製到目的地應用程式。</block>
@@ -1635,8 +1559,6 @@
   <block id="3df43a986689c71190e7e91a132b254a" category="sidebar">Astra Control Service的新功能</block>
   <block id="9c55cf3bb8c415c1b4cf797d9fae1d67" category="sidebar">監控應用程式和叢集健全狀況</block>
   <block id="0adc618a9ad28f57db9328d47cf45165" category="sidebar">利用Cloud Insights 功能性和變動監控基礎架構</block>
-  <block id="3dc2f4e20c545bc208864c2f1c9ce93c" category="cell">總共至少3個工作節點、每個節點有4個CPU核心和12GB RAM</block>
-  <block id="7710790456945bed9a23fff9f934b8fd" category="paragraph">Astra Control Center需要安裝授權、才能啟用完整的應用程式資料管理功能。當您部署Astra Control Center時、若無授權、Web UI會顯示橫幅、警告系統功能有限。</block>
   <block id="64f97564a976931750ce87e0cc98894a" category="list-text">為您的Container引擎完成適當的步驟順序：</block>
   <block id="c5fd214cdd0d2b3b4272e73b022ba5c2" category="open-title">Docker</block>
   <block id="455cbd59356abfa16dcf7666d4ae6c2b" category="open-title">Podman</block>
@@ -1710,11 +1632,9 @@
   <block id="425fd91b4451257e5079173762463def" category="admonition">GCP使用通用S3儲存區類型。</block>
   <block id="9e7e41f010f82585ef3b0ebd3f1de902" category="list-text">產生Docker祕密以擷取Astra Control Center安裝的映像：</block>
   <block id="06e1b0116459bf681b32b65360e38671" category="list-text">如果使用OCP、Red Hat OpenShift Container Platform（OCP）4.8</block>
-  <block id="c2c28b59e21cbd4b3d6c78dbdf1db70f" category="list-text">* Astra Trident *：Trident是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。使用Astra Control Center進行部署時、Trident包含已設定ONTAP 的整套儲存後端。</block>
   <block id="4ab759267d2877902a521921e10f5f5b" category="list-text">建立名為「astracontilt-service-account.yaml」的服務帳戶檔案。</block>
   <block id="40c5eb63f5dc254aeb1e6c3a7b34d15d" category="inline-link-macro">支援的儲存後端</block>
   <block id="3e55b813dfc77f5a692ec8411b86bba6" category="paragraph">如需ONTAP 有關支援不支援的詳細資訊、請參閱 <block ref="dff615b80497dbcbaf9794a9900b6f10" category="inline-link-macro-rx"></block>。</block>
-  <block id="a26876e2ece0b6007cf03e315d57d9d2" category="admonition">您可以新增叢集、新增儲存庫、以及管理儲存後端、而無需授權。</block>
   <block id="c181d2df235b02fa4e6f49a0a5318793" category="paragraph">當您將新叢集新增至Astra Control Center時、除非至少有一個執行於叢集上的應用程式由Astra Control Center管理、否則它不會將使用的授權列入計算。</block>
   <block id="1a8fab43fd54631009166886f3f59682" category="paragraph">若要使用Astra Control Center、請視ONTAP 您需要完成的工作而定、確認您擁有下列各項的版次授權：</block>
   <block id="a701f5d044348085ee4f97fef6636845" category="list-text">FlexClone</block>
@@ -1723,32 +1643,12 @@
   <block id="12b8055741d62426337fd360f342bc4f" category="list-text">S3授權：選用。僅適用於SS3鏟斗ONTAP</block>
   <block id="af0e614701190854322a2cbf66479b6f" category="inline-link">管理ONTAP 不需購買的授權</block>
   <block id="f79830bec9b778f1cf3c950471bafb95" category="inline-link-macro">Astra Control Center功能</block>
-  <block id="ae49257ca8c170cdd9b892d435d60a14" category="paragraph">Astra Control Center需要Astra Control Center授權才能提供完整功能。向NetApp取得評估授權或完整授權。您需要授權來保護應用程式和資料。請參閱 <block ref="7fcc59b1843f920708fc18c7727f8745" category="inline-link-macro-rx"></block> 以取得詳細資料。</block>
-  <block id="32c2e315eb3384a5835e26a647684aec" category="paragraph">如需ONTAP 有關支援不支援的詳細資訊、請參閱 <block ref="8e7dadcc6edcd7a6649fd7bd3abadd5f" category="inline-link-macro-rx"></block>。</block>
-  <block id="34c08446234edc37b22fa4ed2230f6fe" category="paragraph">您可以使用Astra Control Center試用試用試用版授權、從下載授權之日起90天內即可使用Astra Control Center。您可以註冊以免費試用 <block ref="94c4952ff767dc7f2318bf778dfb79d4" category="inline-link-macro-rx"></block>。</block>
   <block id="6db4db93a9c2608b2abfc46bb675e283" category="paragraph">若要設定及管理Kubernetes應用程式、您可以使用Astra Control Center UI或Astra Control API。</block>
   <block id="c39526014b70f5854cf3c59ceb0b89d3" category="list-text"><block ref="c39526014b70f5854cf3c59ceb0b89d3" category="inline-link-macro-rx"></block></block>
   <block id="996ae349b503c8bd355d8986597a6d49" category="paragraph">對於URL、請在瀏覽器中輸入您在安裝Astra Control Center時、於Astra_control_center.yaml自訂資源（CR）檔案的SPEC.astraAddress欄位中所設定的完整網域名稱（FQDN）。電子郵件是您在Astra_control_center.yaml CR的spec.email*欄位中設定的值。</block>
   <block id="bda0a7ba5f9ad395d8fbd5eadadb95db" category="paragraph">*我的應用程式使用數個PV。Astra Control是否會擷取這些PV的快照與備份？*</block>
   <block id="f8f1ef03f08e7d1c3e62dd87dde91f57" category="paragraph">是的。Astra Control在應用程式上執行的快照作業包括繫結至應用程式PVCS的所有PV快照。</block>
   <block id="cd1986c9b8addd6e5c088515dd8691a6" category="list-text"><block ref="e9dd5ab103d181d6e6ae82aed951fd7d" category="inline-xref-macro-rx"></block></block>
-  <block id="038f35d39ca9f7d31edb22a6797e8bf0" category="list-text"><block ref="deb56d50eacbb42ab3c5ce7dcae5f267" category="inline-xref-macro-rx"></block></block>
-  <block id="d895e3cb03a62f67ba48a725cf15d03a" category="list-text"><block ref="8e498e321e573c43e91aac8ec465bb5b" category="inline-xref-macro-rx"></block></block>
-  <block id="9327ee17c2db23897f55eeee11a47397" category="list-text">Cisco IKS搭配Kubernetes 1.22</block>
-  <block id="b51710fdf59d9c26f844fd13582cb566" category="list-text">Google Anthos 1.11或1.12（請參閱 <block ref="deb56d50eacbb42ab3c5ce7dcae5f267" category="inline-xref-macro-rx"></block>）</block>
-  <block id="69c42e75351de19f55feb47e086671c3" category="list-text">上游Kubernetes 1.23至1.25（Kubernetes 1.25需要Astra Trident 22.10或更新版本）</block>
-  <block id="bcc3264f84b3099a6be0c17ae6a7cef8" category="list-text">RKE 1.3.12搭配Rancher 2.6.5和2.6.6</block>
-  <block id="c19f094ef8eea2beb5af07e9b3935e6f" category="list-text">RKE 1.3.13搭配Rancher 2.6.8</block>
-  <block id="e9850904ebf6acc88a5285fc784333e6" category="list-text">RKE 2（v1.23.6+ rke2r1）搭配Rancher 2.6.5和2.6.6</block>
-  <block id="968221badbdf40888b97f56ffb5a5375" category="list-text">RKE 2（v1.24.x）搭配Rancher 2.6.8</block>
-  <block id="1032ec23af342f130c76c7068e65f0c6" category="list-text">Red Hat OpenShift Container Platform 4.8至4.11</block>
-  <block id="86d38f7db1a65d860d44f98fc056d8d5" category="list-text">VMware Tanzu Kubernetes Grid：（請參閱 <block ref="8e498e321e573c43e91aac8ec465bb5b" category="inline-xref-macro-rx"></block>）</block>
-  <block id="21bce8a6162408172bbbf437f6b12754" category="list-text">VMware Tanzu Kubernetes Grid 1.5</block>
-  <block id="1823a1f9cbf0c87616d37378841add36" category="list-text">VMware Tanzu Kubernetes Grid整合版1.13和1.14</block>
-  <block id="f5aba264ffaed2de43e06bc0d6ef2f46" category="cell">CPU擴充</block>
-  <block id="e5128f36ef89f86c752de54682c8e3c0" category="cell">託管環境中所有節點的CPU都必須啟用AVX擴充功能。</block>
-  <block id="425ed23cbd62eeb05cc8f2c2c11fa72b" category="paragraph">Astra Trident 22.01或更新版本已安裝並設定Astra Trident 22.07或更新版本、以供SnapMirror型應用程式複寫Astra Trident 22.10或更新版本安裝於Kubernetes 1.25叢集（您必須在升級至Kubernetes之前升級至Astra Trident 22.10）</block>
-  <block id="188a76b2699abe04bd8f364305ffa5fb" category="list-text">ONTAP-san經濟型（不支援應用程式複寫）</block>
   <block id="4ea6bce9d2ccc400d97dbda9dbdd1e62" category="paragraph">若要檢查ONTAP 您的不實系統是否有必要的授權、請參閱<block ref="8ad9b3553a563c3930ce9a2b06714e72" category="inline-link-rx"></block>。</block>
   <block id="fbd7f511b2e75e5ab019b2450e398c1d" category="inline-link-macro">使用90天試用版授權</block>
   <block id="1e2f75107607c5e3bfcc7e3630d82429" category="paragraph">若要設定授權、請參閱 <block ref="b408be4b55ed2e536117aae7e58ee5e3" category="inline-link-macro-rx"></block>。</block>
@@ -1764,7 +1664,6 @@
   <block id="9e4ede61dd0a24114a7bb2542c2af758" category="list-text">*應用程式叢集需求*： <block ref="6829af24c0361d941de7c8d905281d56" category="inline-link-macro-rx"></block></block>
   <block id="6cb130c6d28872b66cbcd0bcdd296d6f" category="list-text">*受管理的應用程式需求*： <block ref="03ed8d5edcddc18d90f1abc9b8a675a8" category="inline-link-macro-rx"></block></block>
   <block id="16971a7b30300745266670fd11a9fdca" category="list-text">*應用程式複寫的其他需求*： <block ref="d445bcc1fd4e59834793d5cb3f655d5a" category="inline-link-macro-rx"></block></block>
-  <block id="6381f5974412109762c7c0b54cdf6f30" category="paragraph">在Google Anthos叢集上裝載Astra Control Center時、請注意、Google Anthos預設包含MetalLB負載平衡器和Istio入口閘道服務、讓您在安裝期間只需使用Astra Control Center的一般入口功能即可。請參閱 <block ref="cfdb0a3ba609f2fa25b168afc22748d3" category="inline-link-macro-rx"></block> 以取得詳細資料。</block>
   <block id="6f2e84a8cc83bea678c051eedf03eda5" category="admonition">預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過期。如果您使用Tanzu產品組合產品、則必須產生一個含有非過期權杖的Tanzu Kubernetes叢集組態檔、以避免Astra Control Center與託管應用程式叢集之間發生連線問題。如需相關指示、請造訪<block ref="8b2a2640d5e94aaf0de3bd3373313f4b" category="inline-link-rx"></block></block>
   <block id="3a42870ce3d29e1095c37076fe6c6815" category="paragraph">檢視 <block ref="74def782ae5baa10e738e0c5d17d2d09" category="inline-link-macro-rx"></block> 總覽：</block>
   <block id="0865e3e3a3839a597542d410b4de9778" category="paragraph">若要安裝Astra Control Center、請從NetApp 支援網站 下列網址下載安裝套件、並執行下列步驟。您可以使用此程序、在連線網際網路或無線環境中安裝Astra Control Center。</block>
@@ -1772,7 +1671,6 @@
   <block id="187f2749a6d296ffe4b566bb9bb5e4e7" category="list-text">*使用RedHat OpenShift操作員中樞*安裝：請使用此功能 <block ref="3070b96c53dc6268c37367db253e962f" category="inline-link-macro-rx"></block> 使用作業系統集線器在OpenShift上安裝Astra Control Center。</block>
   <block id="7c90d436f62a080a98e02874957865e0" category="inline-link-macro">這些程序</block>
   <block id="41bdd90cead20f2dddf0647e2f48fc13" category="list-text">*以Cloud Volumes ONTAP 支援功能的方式在公有雲上安裝*：使用 <block ref="cdbba4f6294205e74dc04d0ee99d1d1f" category="inline-link-macro-rx"></block> 若要在Amazon Web Services（AWS）、Google Cloud Platform（GCP）或Microsoft Azure中安裝Astra Control Center、並提供Cloud Volumes ONTAP 一套支援整合式儲存後端的功能。</block>
-  <block id="5a53c718e9d33a9f0110cd7ae90b34e1" category="list-text">如果您已設定或想要在環境中設定Pod安全性原則、請熟悉Pod安全性原則、以及這些原則如何影響Astra Control Center安裝。請參閱 <block ref="2fd5062be02d918e79a909cf2044d6fc" category="inline-link-macro-rx"></block>。</block>
   <block id="3795639eaa5204f6fa15e47a15bca2f1" category="paragraph">Astra Control Center安裝程序可協助您執行下列作業：</block>
   <block id="590bbfe0321f70c378c20713e420c00e" category="list-text">將Astra元件安裝至<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> （或自訂命名）命名空間。</block>
   <block id="3f1d8d05f833ab76251fa849e383328e" category="list-text">建立預設的Astra Control擁有者管理帳戶。</block>
@@ -1780,7 +1678,6 @@
   <block id="0a95083609256f37336e12a9bcf2e463" category="list-text">確定所有Astra Control Center Pod都在執行中。</block>
   <block id="b9c8db9ede8046f6b37500c8dbd6bff3" category="list-text">安裝Astra Control Center UI。</block>
   <block id="d73f4cd3ed09d80212f766964fd60d2b" category="admonition">請勿刪除Astra Control Center運算子（例如、<block ref="dfe54be7b1dbab0ff279802517dca055" prefix=" " category="inline-code"></block>）在Astra Control Center安裝或操作期間、隨時避免刪除Pod。</block>
-  <block id="1bde686a3d07054e85d48421d9a23fe0" category="paragraph">NetApp Astra kubectl命令列外掛程式可在執行與部署及升級Astra Control Center相關的一般工作時節省時間。</block>
   <block id="23a38036ff7df90ffe338fd68ee89bb1" category="paragraph">NetApp為不同的CPU架構和作業系統提供外掛程式二進位檔。執行此工作之前、您必須先瞭解您的CPU和作業系統。</block>
   <block id="18f40e403e21c47db1d640c681eb60c1" category="list-text">列出可用的NetApp Astra kubectl外掛程式二進位檔、並記下作業系統和CPU架構所需的檔案名稱：</block>
   <block id="04663e125a4b7af87fb04b1c90f3981c" category="admonition">KECBECTl外掛程式庫是tar套件的一部分、會擷取到資料夾中<block ref="90432a9da14d46e4d20c4b841576b1ee" prefix=" " category="inline-code"></block>。</block>
@@ -1788,7 +1685,6 @@
   <block id="f65f53e091cb29cf07faf1ce22c7b7af" category="list-text">以&lt;MY_REGISTRY_USER&gt; 使用者名稱取代。</block>
   <block id="942beacf5a707600cdbf9c51118da46f" category="list-text">以&lt;MY_REGISTRY_TOKEN&gt; 登錄的授權權杖取代。</block>
   <block id="739ad756d2571ec4c01ae0e2a5a259ff" category="admonition">完成安裝之前、請確定KUBECCONFIG指向您要安裝Astra Control Center的叢集。KUBECCONFIG只能包含一個內容。</block>
-  <block id="1caf9e57734551bfab1c84942bc3f401" category="admonition">預留位置<block ref="facf912114e23f5e3f2192e508b5894a" prefix=" " category="inline-code"></block> 應與您先前上傳的影像位置相符（例如、<block ref="3b56f768ca502428f05027707649e095" prefix=" " category="inline-code"></block>）。</block>
   <block id="fba3b8edc8af9a70acd65d8e7cf9463f" category="admonition">如果在產生機密之後刪除命名空間、請重新建立命名空間、然後重新產生命名空間的機密。</block>
   <block id="d9cf54d120e6c7828718763a08f6c1dc" category="list-text">建立<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> （或自訂命名）命名空間。</block>
   <block id="e8ef4881e3a5b5ed524203e110c2189c" category="list-text">為建立秘密<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> （或自訂命名）命名空間。新增Docker資訊並執行下列命令：</block>
@@ -1797,7 +1693,6 @@
   <block id="b50b94a0232dbff69a41914d331d9609" category="paragraph">Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace688122fb01922cde69e1e3df1d5" prefix="(" category="inline-code"></block> （在Astra Control Center命名空間中）、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。</block>
   <block id="24f8b619456c925b397f91e62d1630d3" category="paragraph">您可以使用kubectl命令來驗證系統狀態。如果您偏好使用OpenShift、您可以使用相似的相關命令來進行驗證步驟。</block>
   <block id="3228f21b07b2db77590b591150d404ae" category="inline-link-macro">在UI中新增叢集工作流程</block>
-  <block id="6bbfbaa82b9dc91033432e75f9e3c5db" category="admonition"><block ref="37f618faae7496528f2773837de1ccd9" prefix="" category="inline-code"></block> 叢集登錄是最後一項作業、如果失敗、也不會導致部署失敗。如果記錄中指出叢集登錄失敗、您可以透過再次嘗試登錄 <block ref="744a0ed51f366cced75ae1916f045434" category="inline-link-macro-rx"></block> 或API。</block>
   <block id="2de8b3f0e5e78c32f5685fa2a946bc2c" category="list-text">當所有Pod都在執行時、請確認安裝成功 <block ref="2baa69eafc7204f3bd8648eba580c489" prefix="(" category="inline-code"></block> 是<block ref="f827cf462f62848df37c5e1e94a4da74" prefix=" " category="inline-code"></block>）並取得您登入Astra Control Center時所使用的初始設定密碼：</block>
   <block id="448c755750fe91f2f9a84c5ebb6cad60" category="paragraph">您可以設定Kubernetes入口控制器來管理外部服務存取。如果您使用的預設值、這些程序會提供入口控制器的設定範例<block ref="70110d526a7afb77cc9b5240e79845c0" prefix=" " category="inline-code"></block> Astra Control Center自訂資源 <block ref="70b058e54d2bda749060070a7f9c4e5c" prefix="(" category="inline-code"></block>）。如果您指定、則不需要使用此程序<block ref="4388d54e87947748fc2ff08932daa51e" prefix=" " category="inline-code"></block> Astra Control Center自訂資源 <block ref="70b058e54d2bda749060070a7f9c4e5c" prefix="(" category="inline-code"></block>）。</block>
   <block id="86b42486fb30abe088119b9bdb8b37fe" category="paragraph">部署Astra Control Center之後、您需要設定入口控制器、以URL顯示Astra Control Center。</block>
@@ -1828,7 +1723,6 @@
   <block id="34c3595304dbc599de36bbc658dd1b51" category="paragraph">取代預設TLS憑證會取代用於驗證這些連線的憑證。</block>
   <block id="7153c603856f5a59f075bee1f8b0ddb7" category="section-title">使用命令列新增憑證</block>
   <block id="3b42d66041607d1a56d962e70158ea6c" category="list-text"><block ref="cf5204afdf6b61205c06db64ae1497b5" category="inline-xref-macro-rx"></block></block>
-  <block id="4388f70019f1cba1ecdff6645a60df61" category="paragraph">您可以使用Astra Control UI或新增授權<block ref="3f4eec2c2c841509295f8beef0b157bb" category="inline-link-rx"></block> 以獲得完整的Astra控制中心功能。若無授權、您使用Astra Control Center的使用僅限於管理使用者及新增叢集。</block>
   <block id="cba301059d075e3de72580da249d7de2" category="paragraph">Astra Control Center授權會使用Kubernetes CPU單元來測量CPU資源、並計算指派給所有受管理Kubernetes叢集之工作節點的CPU資源。授權是根據vCPU使用率而定。如需如何計算授權的詳細資訊、請參閱 <block ref="33517e0e170e068dfb6f5617810a0372" category="inline-link-macro-rx"></block>。</block>
   <block id="ef916ef8d81499a89cdc2814c463f993" category="admonition">若要更新現有的評估或完整授權、請參閱 <block ref="a906dd8f320988625224db0413c3cf7c" category="inline-link-macro-rx"></block>。</block>
   <block id="cb0451ca3cb7135f0689486953bd4790" category="list-text">存取新安裝的Astra Control Center執行個體。</block>
@@ -1839,15 +1733,10 @@
   <block id="e79045292ac242d3c1a91d2615c41ef8" category="section-title">使用Astra Control為環境做好叢集管理準備</block>
   <block id="6132f2e3160d1ae8e3e49b5a6aa9b6a7" category="paragraph">在新增叢集之前、您應確保符合下列先決條件。您也應該執行資格檢查、以確保叢集已準備好新增至Astra Control Center、並建立叢集管理的角色。</block>
   <block id="3e17df042697e2a64ecbfc71d4d4e143" category="inline-link-macro">營運環境需求</block>
-  <block id="8bb2e2ae3f5a11e762ceaabbdefc6d68" category="list-text">您的環境符合 <block ref="e1bade507bdca17e20fbb03f81ba5b64" category="inline-link-macro-rx"></block> 適用於Astra Trident與Astra Control Center。</block>
   <block id="7e40a4557bea1f340d7a61613c6c45ac" category="inline-link-macro">由Astra Control Center支援</block>
-  <block id="5ba50da57dc3bc9547d452874c68b506" category="list-text">這是Astra Trident的版本 <block ref="7441fb5b62c4231faca59c2ea91eb659" category="inline-link-macro-rx"></block> 已安裝：</block>
   <block id="f658d356d0697be75622e7d5d6d94798" category="inline-link">部署Astra Trident</block>
   <block id="e9f0d7eb2b9e30339763cb7819bdf45e" category="inline-link">支援的前端、後端及主機組態</block>
-  <block id="3c172a48713bf18882de70235bb9b4ee" category="admonition">您可以<block ref="ec89e21f8106b8624273185ce464dfb2" category="inline-link-rx"></block> 使用Trident運算子（手動或使用Helm圖表）或<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>。在安裝或升級Astra Trident之前、請先檢閱<block ref="c11537a174ec95a098cfff995b6e8b14" category="inline-link-rx"></block>。</block>
   <block id="48e54afcf03ca45bfe38f6b7ff58764a" category="inline-link">已設定</block>
-  <block id="a0129d46679c1e10fbee3d462fc52fa1" category="list-text">*已設定Trident儲存後端*：至少必須有一個Astra Trident儲存後端<block ref="5225aa45493862e8671db3c546f615ec" category="inline-link-rx"></block> 在叢集上。</block>
-  <block id="8d883e025b9985e402290ced5b9bc497" category="list-text">*已設定Trident儲存類別*：至少必須有一個Astra Trident儲存類別<block ref="56eee92baaddefbebda4bc1d0011f25b" category="inline-link-rx"></block> 在叢集上。如果已設定預設儲存類別、請確定它是唯一具有預設註釋的儲存類別。</block>
   <block id="73329564760013a7824ff9d5d1af91ff" category="inline-link">已安裝</block>
   <block id="d5158c215f75d40b3dc3a9efd519b60a" category="inline-link">設定</block>
   <block id="6e623f58f3de0088c1a5e9284fd0aba0" category="list-text">*已安裝並設定的Astra Trident Volume Snapshot控制器與Volume Snapshot類別*：Volume Snapshot控制器必須是<block ref="8c0af001953d4be1cc072658538e955b" category="inline-link-rx"></block> 以便在Astra Control中建立快照。至少有一個Astra Trident<block ref="19476662cd814e0aa085eca121de89b8" prefix=" " category="inline-code"></block> 過去了<block ref="75fbdf7a5c036fb3ab281101e48530be" category="inline-link-rx"></block> 由系統管理員執行。</block>
@@ -1856,9 +1745,7 @@
   <block id="b904d7fe23037b9f2584ad98638fab08" category="list-text">*《支援》認證*：您需要使用支援版的支援版支援系統上設定的支援認證和超級使用者與使用者ID、才能使用Astra Control Center來備份及還原應用程式ONTAP ONTAP ONTAP 。</block>
   <block id="912fa11d62b00e0a43abbc717e1243df" category="paragraph">在flexf2命令列中執行下列命令ONTAP ：</block>
   <block id="cf6c596a44d2e4c76a3a7da085c47495" category="list-text">*僅限Rancher *：在Rancher環境中管理應用程式叢集時、請在Rancher提供的Kusbeconfig檔案中修改應用程式叢集的預設內容、以使用控制面內容而非Rancher API伺服器內容。如此可減少Rancher API伺服器的負載、並改善效能。</block>
-  <block id="6452500ee546e6af0273acd7106530f5" category="admonition">如果未安裝Trident或安裝的版本不是最新版本、您必須先安裝最新版本的Trident、才能繼續進行。請參閱<block ref="8474ab2d25224ae0bbfced064ba57676" category="inline-link-rx"></block> 以取得相關指示。</block>
   <block id="6c8bc25bbb383bdd569b3a8b67462c4a" category="list-text">確保Pod正在執行：</block>
-  <block id="f738b66badd57176e661399711789a8b" category="list-text">判斷儲存類別是否使用支援的Trident驅動程式。置備程式名稱應為<block ref="08044207e9f63bb0fd474dab347a776c" prefix=" " category="inline-code"></block>。請參閱下列範例：</block>
   <block id="5233060de977a0ac38ed2b3fb9f19d5b" category="section-title">建立有限的叢集角色KECBEConfig</block>
   <block id="4dcbed7023122959ca7362e1bbe96489" category="paragraph">您可以選擇性地為Astra Control Center建立有限的系統管理員角色。這不是Astra Control Center設定所需的程序。此程序有助於建立獨立的Kbeconfig、以限制Astra Control在其管理的叢集上的權限。</block>
   <block id="2691c8d1f292681c444c4ccb255290d3" category="paragraph">在完成程序步驟之前、請確定您要管理的叢集具備下列項目：</block>
@@ -1882,18 +1769,13 @@
   <block id="6a705187c0e83d78cbe519ded63e1ee7" category="inline-xref">上述程序</block>
   <block id="76df310121b30393cfee6396f28e7abb" category="admonition">如果您自行建立<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 檔案中、您應該只定義*一個*內容元素。請參閱<block ref="54676762f2eb4e7149fe4e9996a20b1c" category="inline-link-rx"></block> 以取得有關建立的資訊<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 檔案：如果您使用為有限的叢集角色建立了Kbeconfig <block ref="7d245046a817e1339352d32f2a689297" category="inline-xref-macro-rx"></block>請務必在本步驟中上傳或貼上該KECBEConnfig。</block>
   <block id="2c2e7fe00f6284e8fe1d5912a2f0bace" category="list-text">選取要用於此Kubernetes叢集的預設儲存類別、然後選取* Next*。</block>
-  <block id="35fa2868df847f31d2ca065208c8a98d" category="admonition">您應該選擇以ONTAP 不受資料儲存設備支援的Trident儲存類別。</block>
   <block id="5977f222fbe997f9173cd7c29ba765bc" category="list-text">檢閱資訊、如果一切看起來都很好、請選取*新增*。</block>
   <block id="f152ec5ba865e7c8d2750571a4baa896" category="paragraph">叢集進入*探索*狀態、然後變更為*健全*。您現在正使用Astra Control Center來管理叢集。</block>
   <block id="ff9492d1695d9e5fe8ee2d412256cd28" category="paragraph">您可以將現有ONTAP 的不支援儲存後端新增至Astra Control Center、以管理其資源。</block>
   <block id="f458d757cde06889f0974a654df0a5b7" category="list-text">從左側導覽區域的儀表板中、選取*後端*。</block>
-  <block id="38fef031f56096d5232eea0462240ab2" category="list-text">*新後端*：選擇*「Add*」（新增*）以管理現有後端、選擇* ONTAP 「Send*」、然後選擇*「Next*」（下一步*）。</block>
-  <block id="3bb4ffb4a3044485b7773d925ef46fc1" category="list-text">*探索到的後端*：從「動作」功能表中、從受管理的叢集選取探索到的後端上的*管理*。</block>
-  <block id="601396045361b2a9257d321d906867eb" category="list-text">輸入ONTAP 「叢集管理IP位址」和「管理認證」。認證資料必須是整個叢集的認證資料。</block>
   <block id="6a64c1bcaf700e10eff83e4b3e6a72a0" category="inline-link">管理ONTAP 使用者帳戶、請參閱本文檔</block>
   <block id="801b71ec9b9ddb9cd61c5b2a99553262" category="admonition">您在此處輸入認證的使用者必須擁有<block ref="045ed0306c61104cb0777ccd31ce648b" prefix=" " category="inline-code"></block> 使用者登入存取方法已在ONTAP 支援的叢集上的「支援系統管理程式」中啟用ONTAP 。如果您打算使用SnapMirror複寫、請套用具有「admin」角色的使用者認證、該角色具有存取方法<block ref="045ed0306c61104cb0777ccd31ce648b" prefix=" " category="inline-code"></block> 和<block ref="80791b3ae7002cb88c246876d9faa8f8" prefix=" " category="inline-code"></block>、在來源ONTAP 和目的地等叢集上。請參閱<block ref="8a6bfa44d9bdad330c1959698c083f78" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="094888b3c75d89979aa1e343a8e5c119" category="list-text">確認後端詳細資料、然後選取*管理*。</block>
-  <block id="df60e9954a203d6d5457c282442f3d8a" category="paragraph">後端隨即出現在中<block ref="396d45b57c2fbe3318e7b93272a2686b" prefix=" " category="inline-code"></block> 列出摘要資訊。</block>
   <block id="aefb5fa4f0ce5b418c3cb318fd8586b1" category="paragraph">您可以使用Astra Control UI或來新增儲存區<block ref="3f4eec2c2c841509295f8beef0b157bb" category="inline-link-rx"></block>。如果您想要備份應用程式和持續儲存設備、或是想要跨叢集複製應用程式、則必須新增物件存放區資源庫供應商。Astra Control會將這些備份或複製儲存在您定義的物件存放區中。</block>
   <block id="e09f6210c0a089de2df41244f8b3502e" category="paragraph">如果您要將應用程式組態和持續儲存設備複製到同一個叢集、則無需使用Astra Control中的儲存庫。應用程式快照功能不需要儲存庫。</block>
   <block id="b78ba62ac90252cb2b4daf5136b7d4a5" category="list-text">可從由Astra Control Center管理的叢集存取的儲存庫。</block>
@@ -1960,14 +1842,12 @@
   <block id="c4d3bd82a4066f0e523ba618e438bc51" category="summary">Astra Control是Kubernetes應用程式資料生命週期管理服務、可簡化狀態應用程式的作業。輕鬆保護、備份及移轉Kubernetes工作負載、並立即建立可運作的應用程式複本。</block>
   <block id="450dcc356e2c75be5bfea7bc913558bb" category="list-text">對於高峰叢集、Astra Control Service使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 或Azure託管磁碟做為持續磁碟區的儲存後端。</block>
   <block id="181e1260b62d0667dd25d8e26eba83f5" category="paragraph">Astra Control的免費方案可讓您管理帳戶中最多10個命名空間。如果您想要管理10多個項目、則必須將「免費方案」升級為「優質方案」、以設定帳單。</block>
-  <block id="46d0a394f0b8bd48b4ad9f07551cc671" category="paragraph">您可以使用90天試用版授權試用Astra Control Center。評估版本可透過電子郵件和社群選項來支援。此外、您也可以從產品內的支援儀表板存取知識庫文章和文件。</block>
   <block id="624cfce99f1f72da4d8c5d67b46d357b" category="paragraph">在Astra Control Center安裝期間（如果您指定）<block ref="5ef3c13da1e4fcb9a76fc8f568eee144" prefix=" " category="inline-code"></block> 適用於<block ref="5398d7dab242bfea13c044912cacfd10" prefix=" " category="inline-code"></block> 在Astra Control Center自訂資源（CR）檔案中 <block ref="70b058e54d2bda749060070a7f9c4e5c" prefix="(" category="inline-code"></block>）、每日支援服務組合會自動上傳至<block ref="3725c06f412bedb14ffd610de312875d" category="inline-link-rx"></block>。</block>
   <block id="a62af64f81e65194efb6011308308c81" category="list-text">部署在一個或多個命名空間內的個別應用程式（本範例使用helm3）</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">一組資源、由一個或多個命名空間內的Kubernetes標籤識別</block>
   <block id="a2bbd5d6b932fb5a7f8ebfec6951f1f2" category="summary">Astra Control Center支援Trident儲存課程、以ONTAP 支援由支援的功能為後盾。您應該瞭解儲存類別和持續Volume大小如何協助您達成效能目標。</block>
   <block id="d1d53174cbfc08e37cf1ed526ec5e79a" category="paragraph">Astra Control Center支援ONTAP 以支援作為儲存後端的功能。</block>
   <block id="19739a1b4bb767473bb93e4b46857d21" category="paragraph">當您將叢集新增至Astra Control Center時、系統會提示您在該叢集上選取先前設定的儲存類別作為預設儲存類別。當持續磁碟區宣告（PVc）中未指定任何儲存類別時、就會使用此儲存類別。預設儲存類別可隨時在Astra Control Center內變更、而任何儲存類別都可隨時在PVc或Helm圖表中指定儲存類別名稱、以供使用。請確定您只為Kubernetes叢集定義單一預設儲存類別。</block>
-  <block id="307801a3a610e130bf13127102fa4468" category="paragraph">當您開始管理叢集上的應用程式時、該叢集的所有CPU單元都會包含在Astra Control Center授權使用量中。</block>
   <block id="f5e1d8b0770bb73b3dfb08ad39ded132" category="summary">安裝Astra Control Center之前、您必須先瞭解Pod安全功能的運作方式。</block>
   <block id="6b0fa39c831534ec56dc4961f42c32c5" category="doc">Pod安全性</block>
   <block id="8a0f5030dd9899e876c3e8a355890b18" category="paragraph">Astra Control Center透過pod安全性原則（ASP）和pod安全性許可（Ps）來支援權限限制。這些架構可讓您限制哪些使用者或群組能夠執行容器、以及這些容器可以擁有哪些權限。</block>
@@ -1999,7 +1879,6 @@
   <block id="432b09f47d1f21c47c9c27c092f6475a" category="inline-link">Astra Control Center 22.08文件</block>
   <block id="ab9b97a549065c3593d2144edfd022af" category="list-text"><block ref="ab9b97a549065c3593d2144edfd022af" category="inline-link-rx"></block></block>
   <block id="4f421b660c64894f7d47148b39311546" category="paragraph">若要升級Astra Control Center、請從NetApp 支援網站 下列網址下載安裝套裝軟體、並完成這些指示。您可以使用此程序、在連線網際網路或無線環境中升級Astra Control Center。</block>
-  <block id="7148d0646d4b0304da3f64cb8fe6f75b" category="list-text">升級前、請參閱 <block ref="d64be2e210e96a338f41f70b5780812d" category="inline-link-macro-rx"></block> 確保您的環境仍符合Astra Control Center部署的最低需求。您的環境應具備下列條件：</block>
   <block id="6563ecbace449da5ee88009b9a7f488c" category="list-text">支援的Astra Trident版本若要判斷您正在執行的版本、請針對現有的Astra Control Center執行下列命令：</block>
   <block id="2bec95ea41e3155e4ddfa49e64612471" category="paragraph">請參閱<block ref="237322f54b0d6cc402e718a72e7ba939" category="inline-link-rx"></block> 升級舊版。</block>
   <block id="0b681eba9dff7b5d953960b415b7a6d5" category="admonition">您必須升級至Astra Trident 22.10 * PRIOS*、才能升級至Kubernetes 1.25。</block>
@@ -2013,10 +1892,6 @@
   <block id="9cdaf3a6ae59eb2faabcb002cfc1bd4b" category="list-text">如果您使用需要驗證的登錄、請取代或編輯的預設行<block ref="e90e0b4a41dde5f038023d33ee45ad34" prefix=" " category="inline-code"></block> 提供下列功能：</block>
   <block id="ddfa64b94159cbde6c02f2aa3ae5598c" category="list-text">變更<block ref="a3d1b23e7abf0f3b3ca5fcf7e61860cd" prefix=" " category="inline-code"></block> 適用於<block ref="4b559e0a1b6f68f62c5edecea8c35c7e" prefix=" " category="inline-code"></block> 映像到您在中推入映像的登錄路徑 <block ref="7fe0e1ddcc2917e6a216033278119235" category="inline-xref-macro-rx"></block>。</block>
   <block id="49442a4bf304a6a24081fc054a06ba5e" category="list-text">編輯Astra Control Center自訂資源（CR）：</block>
-  <block id="7071599315adf7577b1a6cacf0e97eeb" category="list-text">變更Astra版本號碼 <block ref="bbdbf70444e48a34a4a7e7d708d85eec" prefix="(" category="inline-code"></block> 內部<block ref="85a2ca75f68bc7e596655dc20f3244a8" prefix=" " category="inline-code"></block>）升級至您要升級的版本：</block>
-  <block id="1dae7d05f28065a32f7e96ff1e757def" category="list-text">確認您的映像登錄路徑符合您在中推送映像的登錄路徑 <block ref="7fe0e1ddcc2917e6a216033278119235" category="inline-xref-macro-rx"></block>。更新<block ref="990dc1a09e10c7b5378e6bc8a1956cb8" prefix=" " category="inline-code"></block> 內部<block ref="85a2ca75f68bc7e596655dc20f3244a8" prefix=" " category="inline-code"></block> 如果登錄自上次安裝後有所變更。</block>
-  <block id="5a1b903858303085c8688af0ffb4bcc6" category="list-text">將下列項目新增至<block ref="9f9c14504350d9d92656623f108b5716" prefix=" " category="inline-code"></block> 的內部組態<block ref="85a2ca75f68bc7e596655dc20f3244a8" prefix=" " category="inline-code"></block>：</block>
-  <block id="75561cbd602b21f2fb8f22fad1d60be4" category="paragraph">儲存並結束檔案編輯器之後、將會套用變更並開始升級。</block>
   <block id="d554ef962e222f8e0b4c6f040c05abcc" category="admonition">若要在作業期間監控升級狀態、請執行下列命令：<block ref="5d533fda3d139dde32dc8b7d35483556" prefix=" " category="inline-code"></block></block>
   <block id="7b4c545e2ed086853dde2f7117a39ead" category="admonition">若要檢查Astra控制中心的操作員記錄、請執行下列命令：<block ref="dcbcfcb7193f45190ecbecbfdaca7662" prefix=" " category="inline-code"></block></block>
   <block id="e26a24f7c06add21717e1b7beaee23c6" category="list-text">確認版本已升級。請參閱UI中的* Support*頁面。</block>
@@ -2029,20 +1904,14 @@
   <block id="9f2575c7294e3dcf402f9b05eaa5de17" category="list-text">選取清單中雲端執行個體*「Actions」（動作）欄中的功能表。</block>
   <block id="071ef8ace6c74c9a1515550077974172" category="list-text">選擇*編輯*。</block>
   <block id="b85164189cdb62d5e96f45c18758496b" category="list-text">在* Bucket *清單中、選取您要做為預設值的儲存區。</block>
-  <block id="299e82dd2d75d6cc81cba2f45a567106" category="list-text">*先保護應用程式*：強烈建議您在還原應用程式之前、先擷取應用程式的快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。</block>
   <block id="dad130a6ad30a7802e5df566fbf9e7fc" category="list-text">*檢查目的地磁碟區*：如果還原至不同的叢集、請確定叢集使用相同的持續磁碟區存取模式（例如ReadWriteMany）。如果目的地持續磁碟區存取模式不同、還原作業將會失敗。</block>
   <block id="2c51b9df5322dddc1dfcfd7ef670ac07" category="list-text">*（僅限Openshift叢集）新增原則*：當您建立專案以在OpenShift叢集上裝載應用程式時、專案（或Kubernetes命名空間）會被指派一個安全性轉換唯一碼。若要啟用Astra Control Center來保護應用程式、並將應用程式移至OpenShift中的其他叢集或專案、您必須新增原則、讓應用程式以任何唯一識別碼的形式執行。例如、下列OpenShift CLI命令會將適當的原則授予WordPress應用程式。</block>
-  <block id="f1cf4d02378fa61bb8bd57679ffc6235" category="list-text">* Helm已部署應用程式*：完全支援使用Helm 3部署的複製應用程式（或從Helm 2升級至Helm 3）。不支援以Helm 2部署的應用程式。</block>
   <block id="8d7c216bc17d281838efafaa3704677b" category="list-text">選擇還原類型：</block>
   <block id="90d21d98503ddae05ddf0a1a34b7d790" category="list-text">*還原至原始命名空間*：使用此程序可將應用程式就地還原至原始叢集。</block>
-  <block id="eb543a53c7bc9830323c1e31b5a68dc4" category="list-text">選取要用來就地還原應用程式的快照、此快照會將應用程式還原為舊版本身。</block>
-  <block id="3b015c7e8b671c5a6b88a902ad59e853" category="list-text">檢閱還原動作的詳細資料、輸入「還原」、然後選取*還原*。</block>
   <block id="440c25a54f1d6be365d93551da3bc3f9" category="list-text">*還原至新命名空間*：使用此程序可將應用程式還原至其他叢集、或從來源還原具有不同命名空間的叢集。</block>
   <block id="5ffc80657fe4c0bd046f794a0b287613" category="list-text">針對您要還原的應用程式、選擇目的地叢集。</block>
   <block id="2e9b30622dd6f4053fb1f81819061361" category="list-text">為每個與應用程式相關聯的來源命名空間輸入目的地命名空間。</block>
   <block id="bc35b4ce5d7fa04a3a0b91c5621c2022" category="admonition">Astra Control會在此還原選項中建立新的目的地命名空間。您指定的目的地命名空間不得已存在於目的地叢集上。</block>
-  <block id="4530acd12e073624f4091c59320e2e43" category="list-text">選取要用來還原應用程式的快照。</block>
-  <block id="ff1dba7cd16a5cca25466d4e553c72b0" category="list-text">檢閱還原動作的詳細資料、然後選取*還原*。</block>
   <block id="8c3aa6db213154b6793114ebc6ac82b3" category="paragraph">Astra Control會根據您提供的資訊還原應用程式。如果您就地還原應用程式、現有持續磁碟區的內容會由還原應用程式的持續磁碟區內容取代。</block>
   <block id="fcf563d798547e273cb8589018998498" category="admonition">在資料保護作業（複製、備份或還原）及後續持續調整磁碟區大小之後、新的磁碟區大小會在網路UI中顯示、延遲最多20分鐘。資料保護作業只需幾分鐘就能成功完成、您可以使用儲存後端的管理軟體來確認磁碟區大小的變更。</block>
   <block id="aa07cf5ff032c48834d711715a6d35e5" category="admonition">任何具有命名空間限制的成員使用者、都可以使用命名空間名稱/ ID或命名空間標籤、將應用程式複製或還原到同一個叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者可以編輯成員使用者帳戶、並更新受影響使用者的角色限制、以便授予新命名空間的存取權。</block>
@@ -2157,7 +2026,6 @@
   <block id="a43c92b1987868b5e14cb513230d1758" category="list-text">如果您打算在Astra Control中使用多個命名空間搭配應用程式、 <block ref="1285c07b4a10103552b4ca251af3682f" category="inline-link-macro-rx"></block> 升級至Astra Control Center版本之後、即可支援多個命名空間。</block>
   <block id="c4cb46a2957e787f5e4e5299782270f6" category="inline-xref">請參閱範例以瞭解更多資訊。</block>
   <block id="e5d509b8ad96124cb3a6b0df8e2a6299" category="admonition">在定義應用程式時、請確保不將Kubernetes資源納入具有保護原則的多個應用程式中。Kubernetes資源上的保護原則重疊、可能會造成資料衝突。 <block ref="e641e59a56328c9fa4038a349ab4087c" category="inline-xref-macro-rx"></block></block>
-  <block id="23933fe5cfee8cef6dcf2e9c76674773" category="example-title">關於將叢集範圍的資源新增至應用程式命名空間的功能介紹&lt;/strong&gt; &lt;strong&gt; 。</block>
   <block id="86584cfcf6ac47eda80aaeeb3808d02b" category="paragraph">您無法排除由Astra Control自動包含的任何叢集範圍資源。</block>
   <block id="8b3aa3648af6fe384bf33e5384fcc7b4" category="paragraph">您可以新增下列項目<block ref="aec49c7ac598bde0d65853ea9807c58f" prefix=" " category="inline-code"></block> （與API版本結合的群組）：</block>
   <block id="3ba5d3eff61255f7c7727fb4ed8cdbc6" category="cell">資源種類</block>
@@ -2254,14 +2122,12 @@
   <block id="f789b438cbc1e82cd52918fc029eeb85" category="sidebar">利用Astra Control REST API實現自動化</block>
   <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">應用程式管理</block>
   <block id="27042a183bb69f835a160266dc686d7e" category="paragraph">某些環境使用資源配額和限制範圍物件、以防止命名空間中的資源消耗叢集上的所有可用CPU和記憶體。Astra Control Center並未設定上限、因此不符合這些資源。如果您的環境是以這種方式設定、則需要從您打算安裝Astra Control Center的命名空間中移除這些資源。</block>
-  <block id="3f62933ae548cb8f2c99d3836384cf69" category="list-text">取得中的資源配額<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> 命名空間：</block>
   <block id="75737555f299b5cf07ceed034f1ff8b6" category="list-text">套用下列資源檔案來設定<block ref="5cb8f4cd498c1f67715d95747bfe9d39" prefix=" " category="inline-code"></block> 允許Astra外掛程式服務向Astra Control Center服務提出要求的物件。將方括弧&lt;&gt;中的資訊取代為您環境中的資訊：</block>
   <block id="faaefdbaf8391a432c7a74564eda522f" category="list-text">套用下列資源檔案來設定<block ref="e2fb7408f897e481d4b7e94f3840f27c" prefix=" " category="inline-code"></block> 此物件可讓Astra Control Center營運者與Astra Control Center服務進行通訊。將方括弧&lt;&gt;中的資訊取代為您環境中的資訊：</block>
   <block id="b8d4d634b190031290c70773522846be" category="paragraph">在Astra Control Center安裝期間、Astra Control Center營運者會安裝自訂的Pod安全性原則A<block ref="bbbabdbe1b262f75d99d62880b953be1" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 用於支援Astra Control Center命名空間中Astra Control Center服務部署的物件。</block>
   <block id="8513cb080cab78ccf96de84f5f78e0bb" category="paragraph">在備份作業期間、Astra Control Center會建立動態Pod安全性原則<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 物件：這些支援在個別命名空間中執行的備份程序。</block>
   <block id="be8388c8f6217d1c42721f925d1fd7a9" category="paragraph">當您管理叢集時、Astra Control Center會在託管叢集中安裝NetApp監控操作員。這位營運者會建立一個Pod安全性原則、a<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 在Astra Control Center命名空間中部署遙測服務的物件。</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="section-title">下一步</block>
-  <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">您需要的產品</block>
   <block id="a4da44ef0ecd9d3734b7e2c7ba1db457" category="list-text">切換到tar檔案的根目錄。您應該會看到這個檔案和目錄：</block>
   <block id="d5096c7b79dfe1069ab6cc6deca5f992" category="paragraph"><block ref="1c505200729f6188430504adf03e42f9" prefix="" category="inline-code"></block><block ref="c7dd43fbfc8e7f6b24b6d78aa8c0d7f1" prefix=" " category="inline-code"></block></block>
   <block id="a5099f5631b11f07c52cbab5ff1c62db" category="list-text">將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行之前、請先進行下列替換<block ref="2957bfd514a0f16d8946142cd37400fd" prefix=" " category="inline-code"></block> 命令：</block>
@@ -2323,22 +2189,15 @@
   <block id="8ab08c3e81a1ee43c6b03a22403291db" category="section-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 發生災難時、請使用最新的備份或複寫功能、將應用程式還原至遠端系統</block>
   <block id="0370124d48bfc5af2def19c48f433283" category="inline-link">NetApp Verda GitHub專案</block>
   <block id="a59e4fa5cc01a3a4bdebbff4cec60b47" category="paragraph">請造訪<block ref="84d9961ef5a89731849bc2055780d0b6" category="inline-link-rx"></block> 可下載熱門應用程式的實際執行掛勾、例如Apache Cassandra和Elasticsearch。您也可以查看範例、瞭解如何建構您自己的自訂執行掛勾。</block>
-  <block id="1e24416e12dc76c10b1a5d91e4001b23" category="paragraph">您可以為應用程式建立自訂執行掛勾。請參閱 <block ref="17e166b6ef6242446312ff693caa559b" category="inline-xref-macro-rx"></block> 如需攔截範例、您需要擁有擁有擁有者、管理員或成員權限、才能建立執行掛勾。</block>
   <block id="9ad3989601b59e755170866a5329554c" category="list-text"><block ref="9ad3989601b59e755170866a5329554c" category="inline-link-rx"></block></block>
   <block id="53c5fac0ba78b08ca3f0a270b746c5d2" category="section-title">重設其他使用者的密碼</block>
-  <block id="d1141e4fbef627d770ba551621d0f9ba" category="list-text">如果您為參與Istio服務網格的應用程式建立執行掛勾、請確定掛勾是針對原始應用程式容器而非服務網格容器執行。您可以將篩選器regex套用至使用Istio服務網格的應用程式執行的每個執行掛勾、以排除Istio服務網格容器。</block>
-  <block id="6f0d5941d5a6edfad3a1597fae5c8340" category="list-text">由於執行掛勾通常會減少或完全停用執行中應用程式的功能、因此您應該一律盡量縮短自訂執行掛勾執行所需的時間。</block>
-  <block id="678c0d401fe58fc5c33f7d717ff8c970" category="list-text">如果您以相關的執行掛勾開始備份或快照作業、但隨後取消它、則如果備份或快照作業已經開始、仍允許掛勾執行。這表示備份後執行掛勾無法假設備份已完成。</block>
   <block id="f83cc958d14f90620b7ffdf9923fe440" category="list-text">複製*讀取/寫入*金鑰。您需要將其貼到Astra Control Center * Connect Cloud Insights S還原*視窗中。如需讀取/寫入API存取權杖金鑰權限、請選取：資料擷取、記錄擷取、擷取設備和資料收集。</block>
   <block id="a8a5da0c5d62ec5f7225e0ce27261da7" category="paragraph">確保您的環境符合這些要求。</block>
   <block id="b5233b1e8c04e10566734b9cecfc92b1" category="paragraph">* Kubernetes叢集*</block>
-  <block id="b3617c5929e3cf6406a5cdcd1eea0a9c" category="inline-link-macro">確保您的環境符合作業環境需求</block>
-  <block id="bfecfe81e9be380f98a1b727eff91614" category="list-text"><block ref="bfecfe81e9be380f98a1b727eff91614" category="inline-link-macro-rx"></block></block>
   <block id="9075e632fc6c099653c3c60ce5f635c5" category="inline-link-macro">設定內部部署Kubernetes叢集的負載平衡入口</block>
   <block id="737d5c48f1830eb81614b8f6e0e6b6cc" category="list-text"><block ref="737d5c48f1830eb81614b8f6e0e6b6cc" category="inline-link-macro-rx"></block></block>
   <block id="929a65ed5e1201f9d151e32a0971553d" category="paragraph">*儲存整合*</block>
   <block id="8ae57878720ba2997fde06ff1c140fe6" category="inline-link-macro">確保您的環境包含Astra Trident支援的版本</block>
-  <block id="d7c5adf06c7ad44232a4d1546865825c" category="list-text"><block ref="d7c5adf06c7ad44232a4d1546865825c" category="inline-link-macro-rx"></block></block>
   <block id="dd678a0b3a73cdc79d52e5a75a29712a" category="inline-link">設定Astra Trident儲存後端</block>
   <block id="6b836f0beaae8e5e5b3ee7da02492481" category="list-text"><block ref="6b836f0beaae8e5e5b3ee7da02492481" category="inline-link-rx"></block></block>
   <block id="8fa7c146eed93f49403e27757627c1de" category="inline-link">設定Astra Trident儲存類別</block>
@@ -2347,8 +2206,6 @@
   <block id="cff9e873ecc35abb358c9f43ad1d3dcf" category="inline-link-macro">設定ONTAP 驗證資料</block>
   <block id="27912e4366edb4ee86aa373395b590f5" category="list-text"><block ref="27912e4366edb4ee86aa373395b590f5" category="inline-link-macro-rx"></block></block>
   <block id="7ae94f3e29fb1789e466d68ff3b7719d" category="paragraph">完成這些安裝工作。</block>
-  <block id="81d47d4dec7b1222070eae27bb4310ee" category="inline-link-macro">如果您正在評估Astra Control Center、請下載試用版授權檔案</block>
-  <block id="1ac362ab549aa84c347d7d5271314ad6" category="list-text"><block ref="1ac362ab549aa84c347d7d5271314ad6" category="inline-link-macro-rx"></block></block>
   <block id="fbc059a4c4dca73352b8c2d2b522c031" category="inline-link-macro">如果您已購買Astra Control Center、請產生授權檔案</block>
   <block id="d3e8fd495d55bcc11d404a5401147b55" category="list-text"><block ref="d3e8fd495d55bcc11d404a5401147b55" category="inline-link-macro-rx"></block></block>
   <block id="28d87c90870047c51935e011ce5611a2" category="list-text"><block ref="28d87c90870047c51935e011ce5611a2" category="inline-link-macro-rx"></block></block>
@@ -2373,7 +2230,6 @@
   <block id="d562c4dd354cbcb5a399ecd947d57a28" category="list-text"><block ref="d562c4dd354cbcb5a399ecd947d57a28" category="inline-link-macro-rx"></block></block>
   <block id="749c18da581d94e0dd92db056f0ede8d" category="inline-link-macro">取得Astra Control的協助</block>
   <block id="8a06e7781d9c301da6075deb2bbbe145" category="list-text"><block ref="8a06e7781d9c301da6075deb2bbbe145" category="inline-link-macro-rx"></block></block>
-  <block id="4ca05a6d3d72f01a88f8a67a5c8cfac4" category="paragraph">在與其他應用程式共用資源的應用程式上執行就地還原作業、可能會產生非預期的結果。在其中一個應用程式上執行就地還原時、應用程式之間共享的任何資源都會被取代。例如、下列案例會在使用NetApp SnapMirror複寫時造成不理想的情況：</block>
   <block id="4b93bc85a66000cfca0c6e537323e417" category="list-text">您可以定義應用程式<block ref="f92ea1839dc16d7396db358365da7066" prefix=" " category="inline-code"></block> 使用命名空間<block ref="bfed25f845e5220adacaaf3b86228910" prefix=" " category="inline-code"></block>。</block>
   <block id="86b8799dbebc7080c1d4f349601f66d1" category="list-text">您可以設定的複寫關係<block ref="f92ea1839dc16d7396db358365da7066" prefix=" " category="inline-code"></block>。</block>
   <block id="2aabf9d19e05830c03047e81303050b7" category="list-text">您可以定義應用程式<block ref="ec8d838607528268a4e435628ea9f709" prefix=" " category="inline-code"></block> （在同一個叢集上）使用命名空間<block ref="bfed25f845e5220adacaaf3b86228910" prefix=" " category="inline-code"></block> 和<block ref="7b3f4e5e8a4b234605eb5c242254ab09" prefix=" " category="inline-code"></block>。</block>
@@ -2384,19 +2240,14 @@
   <block id="dd131b9996426baf36db91cd0e7d6281" category="list-text"><block ref="dd131b9996426baf36db91cd0e7d6281" category="inline-link-rx"></block></block>
   <block id="c4002b4ebee895edc6f5898ff73a5ad8" category="list-text">取得NetApp授權檔案：</block>
   <block id="e1d57bb99f6ac53ae4d1e4ead1d86a3c" category="paragraph">您可以使用下列其中一種方式取得授權：</block>
-  <block id="6004daa4ba0df7760d75bccaccd9cdeb" category="list-text"><block ref="1ac362ab549aa84c347d7d5271314ad6" category="inline-link-macro-rx"></block>。評估授權可讓您從下載授權之日起90天內使用Astra Control Center。</block>
   <block id="b5172acff46c1ccd4ef355f7c403ba48" category="inline-link-macro">如果您已購買Astra Control Center、請產生您的NetApp授權檔案（NLF）</block>
   <block id="89eae3d9e27253b30e1b76d62008b32d" category="inline-link-macro">第一次設定Astra Control Center時、請新增授權</block>
   <block id="117e62f8841c871dc009220d6b7e5401" category="list-text"><block ref="117e62f8841c871dc009220d6b7e5401" category="inline-link-macro-rx"></block></block>
   <block id="2f8cadf95c6d0e5ffc19921fb6fd5cca" category="doc">下載並擷取Astra Control Center</block>
-  <block id="a63179888ca7fc528404e8b4f6bab69a" category="inline-link">Astra Control Center評估下載頁面</block>
-  <block id="e7ba0480f7b95b8e2dba97abcd8511d1" category="list-text">前往<block ref="7d0bcaecb4c3439d264a801b59ac8770" category="inline-link-rx"></block> 於 NetApp 支援網站。</block>
   <block id="7bf65886a6daf176486ecc32f5736b33" category="list-text">下載包含Astra Control Center的套裝組合 <block ref="f38ca01b4c2fe15aa06076beb2ee98ff" prefix="(" category="inline-code"></block>）。</block>
   <block id="a5633748c6774da7b883a9fcf799a73e" category="list-text">（建議但可選）下載Astra Control Center的憑證與簽名套件 <block ref="7a63467f08b4d3ec454a0b66e2353d54" prefix="(" category="inline-code"></block>）若要驗證套件的簽名：</block>
   <block id="79204d6da69fa9c1924fe4edc28bd8c4" category="paragraph">隨即顯示輸出<block ref="33a9cc0739a5a17f65e28cf0b260007f" prefix=" " category="inline-code"></block> 驗證成功之後。</block>
   <block id="e05ea496750d85fb7d63c1d2952dc33e" category="list-text">從Astra Control Center套裝組合擷取映像：</block>
-  <block id="78fef5e4370c46736bde008c50f1c5ce" category="inline-link">請從NetApp 支援網站 《The》《The》《The》《The》《The》《The》《The》《The</block>
-  <block id="781315777416a8ea4df0544c1a15fab7" category="list-text"><block ref="781315777416a8ea4df0544c1a15fab7" category="inline-link-rx"></block></block>
   <block id="47fc3325fabe9d0cade728b90fbe622a" category="list-text"><block ref="182b6f14d78206b412277e5e36bb924f" category="inline-xref-macro-rx"></block></block>
   <block id="a73afd2c31b746ac34e3fec7590e3cfa" category="inline-link">Astra Control Center產品下載頁面</block>
   <block id="779308b02cace7345409bae24871be63" category="list-text">前往<block ref="463a64da5039ffbaa330e14a245ba287" category="inline-link-rx"></block> 於 NetApp 支援網站。您可以從下拉式功能表中選取所需的最新版本或其他版本。</block>
@@ -2404,7 +2255,6 @@
   <block id="93dcbf6be32efef5eec53e28c4ff8075" category="list-text"><block ref="93dcbf6be32efef5eec53e28c4ff8075" category="inline-link-rx"></block></block>
   <block id="93ad66a46b85e39a2b044839f8f2aa91" category="list-text">以&lt;MY_FULL_REGISTRY_PATH&gt; Docker儲存庫的URL取代支援；例如 <block ref="d7fe5bd4ab1ec72dd633a9f2fec43513" category="inline-link-rx"></block>。</block>
   <block id="cf2e3395153844dc4e8c51bf180f6521" category="list-text">針對您使用的Podman版本、準備並執行下列其中一個自訂指令碼。以包含任何子目錄的儲存庫URL取代&lt;MY_FULL_REGISTRY_PATH&gt; 。</block>
-  <block id="1c1c5c039da9639f08735d40aaf63a64" category="admonition">指令碼所建立的映像路徑應如下所示、視登錄組態而定：<block ref="8929bffa043dcda91696884d35eb8d51" prefix=" " category="inline-code"></block></block>
   <block id="638283958f0ae559c161db72d114108e" category="list-text"><block ref="2a51122d7bd0346abfa8c6be52c45cf7" category="inline-xref-macro-rx"></block></block>
   <block id="aedff9adaa71ff103bfa455b6a0fe7f0" category="section-title">移除NetApp Astra kubectl外掛程式、然後重新安裝</block>
   <block id="cc1f46f2f9e4a1afbedacc4d8ce3c2e3" category="list-text">確定是否安裝了外掛程式：</block>
@@ -2414,8 +2264,6 @@
   <block id="dab1a9c7ecb95d287fc412736d955975" category="list-text">安裝外掛程式：</block>
   <block id="51867b2a71ff7c3e5393cf8bb442defc" category="admonition">如果系統上已存在具有相同電子郵件地址的本機使用者、則無法新增遠端使用者。若要將使用者新增為遠端使用者、請先從系統中刪除本機使用者。</block>
   <block id="e6bc00cd8c52affb4292616facc440da" category="admonition">Astra Control Center使用LDAP「郵件」屬性中的電子郵件地址來搜尋及追蹤遠端使用者。此屬性可能是目錄中的選用欄位或空白欄位。您想要顯示在Astra Control Center中的任何遠端使用者、此欄位中都必須有電子郵件地址。此電子郵件地址是Astra Control Center中用於驗證的使用者名稱。</block>
-  <block id="a2c7a68a6d213a38c0c96fe34df9fe2e" category="list-text">* Astra Trident / ONTAP S161*：</block>
-  <block id="2a09fd1da71158929da8e53a8b3b41b7" category="list-text">確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：</block>
   <block id="d7dde07915bbe8056e6854c2b5e50480" category="inline-link">準備工作節點</block>
   <block id="2facff43cb177de168322dab6df7d48c" category="list-text"><block ref="2facff43cb177de168322dab6df7d48c" category="inline-link-rx"></block></block>
   <block id="8dcf3121a9c80a937dfc06bc5fd4e5e3" category="inline-image-macro">此影像顯示「連線」選項以啟用Proxy連線。</block>
@@ -2501,21 +2349,17 @@
   <block id="ec2e9418f579c84a41733c6bb0adb789" category="list-text"><block ref="ec2e9418f579c84a41733c6bb0adb789" category="inline-link-rx"></block></block>
   <block id="d55b05877d0dd6743f47d3442323323e" category="inline-link-macro">設定Amazon Web Services</block>
   <block id="87716101cfca255da11056a624dbce47" category="inline-link-macro">使用Azure託管磁碟來設定Microsoft Azure</block>
-  <block id="55a5776613a7a49b0fb7fc4800c3065f" category="list-text">如果您使用NetApp雲端服務儲存產品做為儲存後端、Astra Control Service會使用Astra Trident來為應用程式配置持續的磁碟區。如果您使用Amazon EBS或Azure託管磁碟做為儲存後端、則需要安裝供應商專屬的SCSI驅動程式。安裝說明請參閱 <block ref="ebf2a7f1b6295b0b8e4d97b888cb809e" category="inline-link-macro-rx"></block> 和 <block ref="1938f6af50a8259a0bb98bac4f34eeeb" category="inline-link-macro-rx"></block>。</block>
   <block id="18af682d6124dcb139b603177dd087c4" category="list-text">等待Astra Control狀態狀態顯示升級已完成且準備就緒 <block ref="f827cf462f62848df37c5e1e94a4da74" prefix="(" category="inline-code"></block>）：</block>
-  <block id="208783ce2eb5f03baf3ca821608eaf65" category="list-text">取得中的限制範圍<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> 命名空間：</block>
   <block id="e755142aeb1d3a2c6fcfa09fb3f80fb3" category="list-text">*已設定的憑證管理程式*：如果叢集中已存在憑證管理程式、您需要執行某些作業 <block ref="7f9e8cec8531f8660dfaaf382da03535" category="inline-link-macro-rx"></block> 因此Astra Control Center不會安裝自己的憑證管理程式。依預設、Astra Control Center會在安裝期間安裝自己的憑證管理程式。</block>
   <block id="6721c17f49a21ba95875cebca5d8a841" category="list-text"><block ref="8045a0a6c688b0635e3caccc408a1446" prefix="*" category="inline-code"></block>* <block ref="70110d526a7afb77cc9b5240e79845c0" prefix="(" category="inline-code"></block>）（預設）</block>
   <block id="bdf886544ef77311b7710f6d172f214f" category="list-text"><block ref="0a3e1793e4eaf6bd67bdf43d1bca1c74" prefix="*" category="inline-code"></block>* <block ref="4388d54e87947748fc2ff08932daa51e" prefix="(" category="inline-code"></block>）</block>
   <block id="110cc2f84b6e1647c3e08763a1a566c3" category="paragraph">如果您不想設定入口控制器、請使用此選項。這會部署Astra控制中心<block ref="3f624a80eb2012ebf5d970cedbdce2bc" prefix=" " category="inline-code"></block> 閘道即Kubernetes「負載平衡器」類型服務。</block>
-  <block id="16430518131c6e0ae6967a69fa9cd07b" category="list-text">如果叢集中已存在憑證管理程式、您需要執行某些作業 <block ref="1787bdbf8a8938a728c4bed68c77105f" category="inline-link-macro-rx"></block> 因此Astra Control Center不會嘗試安裝自己的憑證管理程式。依預設、Astra Control Center會在安裝期間安裝自己的憑證管理程式。</block>
   <block id="c365634fe298a182f5c686c7300f9bec" category="list-text">編輯Astra Control Center自訂資源（CR）檔案 <block ref="70b058e54d2bda749060070a7f9c4e5c" prefix="(" category="inline-code"></block>）進行帳戶、支援、登錄及其他必要設定：</block>
   <block id="eb5abbcca70bc9da2ade170860ad8909" category="example-title">產品資訊&lt;/code&gt; &lt;code&gt;</block>
   <block id="560411eea158be604867f1a41fa7c367" category="cell"><block ref="cd7a180ee2029176203abb971a5e5ed9" prefix="" category="inline-code"></block></block>
   <block id="7d84a3a65fb0587782566e6bb943a482" category="cell"><block ref="0a52730597fb4ffa01fc117d9e71e3a9" prefix="" category="inline-code"></block></block>
   <block id="0e55b95a4c5cb92e244e3bd0a238beb9" category="example-title">《》&lt;/code&gt; &lt;code&gt;</block>
   <block id="d13a274d958af22bed6e8d41f55d8555" category="cell"><block ref="bbdbf70444e48a34a4a7e7d708d85eec" prefix="" category="inline-code"></block></block>
-  <block id="a5aebaf297cd651e4a79e4cd380cb403" category="cell"><block ref="3208af68c7dea8493fa4cee605a96daf" prefix="" category="inline-code"></block></block>
   <block id="c7cf7bc0197d55fb58a764f376cee071" category="example-title">餐廳&lt;/code&gt; &lt;code&gt;</block>
   <block id="2768247a17baf82ba937b52168928c48" category="cell"><block ref="d27903c79b643b2f565c31e894abb568" prefix="" category="inline-code"></block></block>
   <block id="a35d697fca562fcd8adcc6a07880b3d5" category="cell"><block ref="51c3153f8b9ad8f3a27b28d6c8f95aab" prefix="" category="inline-code"></block></block>
@@ -2542,7 +2386,6 @@
   <block id="50232323f80e15a533d4f46ddce8e33c" category="cell"><block ref="d2522c50d2a3c9af9481f3e38f4f0822" prefix="" category="inline-code"></block></block>
   <block id="53f885f16119beba48214c8a333dcd30" category="example-title">產品資訊&lt;/code&gt; &lt;code&gt;</block>
   <block id="6eb82a822b962404b9694b93f2967679" category="cell"><block ref="78ec9b60245b46a4f05158076962ace9" prefix="" category="inline-code"></block></block>
-  <block id="500afee2ed201fc94dcacb20ac62d718" category="cell">變更<block ref="78ec9b60245b46a4f05158076962ace9" prefix=" " category="inline-code"></block> 價值來源<block ref="e3bccceaf53ea80a4685ac9b974016f3" prefix=" " category="inline-code"></block> 安裝所需的另一個Trident storageClass資源。執行命令<block ref="f7a6266d561ed7e94ff1f45bb43a2f5d" prefix=" " category="inline-code"></block> 以判斷您現有的已設定儲存類別。必須在資訊清單檔案中輸入其中一個Trident型儲存類別 <block ref="a18a8eda5e9ff8aa5e2094148dafbb33" prefix="(" category="inline-code"></block>）、並將用於Astra PV。如果未設定、則會使用預設的儲存類別。附註：如果已設定預設儲存類別、請確定它是唯一具有預設附註的儲存類別。</block>
   <block id="c60d9629b4df7e299152970fb66ff161" category="cell"><block ref="e3bccceaf53ea80a4685ac9b974016f3" prefix="" category="inline-code"></block></block>
   <block id="8bdca8e2a506e9e7c3ee3adce5f4affe" category="example-title">支援不整合的功能&lt;/code&gt; &lt;code&gt;</block>
   <block id="ae16b8609a16806d7003f724f38de023" category="cell"><block ref="c3c263fe360a73d45c030a672e1ad0c4" prefix="" category="inline-code"></block></block>
@@ -2572,7 +2415,6 @@
   <block id="09930d02b4263b689db66fae209a4662" category="list-text">確認<block ref="9811be5c3399611059862e90521bc73f" prefix=" " category="inline-code"></block> 已正確啟動。<block ref="e7d31fc0602fb2ede144d18cdffd816b" prefix=" " category="inline-code"></block> 必須是<block ref="f827cf462f62848df37c5e1e94a4da74" prefix=" " category="inline-code"></block> 在繼續之前：</block>
   <block id="7c6e61d3114053fdcbb584a6afb80f0b" category="list-text">完成 <block ref="4f6226316b347cad073b05d4198e6b67" category="inline-link-macro-rx"></block>。有 <block ref="b10b5b361802ada39ab534d37e156fb1" category="inline-link-macro-rx"></block> 您可在其中變更CRD值、以表示外部安裝了憑證管理程式。您必須在安裝期間完成此步驟、Astra Control Center才能辨識外部憑證管理程式。</block>
   <block id="9b180301de1547cfb79fd365792a5407" category="list-text">編輯您的<block ref="b9d73b065c599559f2852e4f2e265934" prefix=" " category="inline-code"></block> 組態對應：</block>
-  <block id="192a0e17e823e018d9d9b67cd6dbde3a" category="list-text">您需要在叢集上設定至少一個Astra Trident儲存類別。如果已設定預設儲存類別、請確定它是唯一具有預設指定的儲存類別。</block>
   <block id="f7dff2bfbfe240ed80ab3ffd13689474" category="list-text">確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。</block>
   <block id="3bc727baad8c93a8a96ecbe4208925cf" category="list-text">*儲存類別*：如果您安裝的應用程式已明確設定儲存類別、而且需要複製應用程式、則複製作業的目標叢集必須具有原本指定的儲存類別。將具有明確設定儲存類別的應用程式複製到沒有相同儲存類別的叢集、將會失敗。</block>
   <block id="e5de374e1d369bfc7e8ec51b5b744933" category="cell"><block ref="a941f8adb5ae079ebc739cb59407fd30" prefix="" category="inline-code"></block></block>
@@ -2632,8 +2474,6 @@
   <block id="6682f04aa7c63c9ce70d8bee0705612d" category="list-text">選取<block ref="13584fd5e974d4024107644d67fe0a1f" prefix=" " category="inline-code"></block> 並選擇*執行*。</block>
   <block id="4409c1c59948e2b1fc006b492343b77d" category="list-text">若要查看隨時間推移的擷取範例、請選取* Graph*。</block>
   <block id="4e86b3f4151280eb07fe543c3b9974f2" category="admonition">如果收集多個叢集資料、每個叢集的度量會以不同的色彩顯示。</block>
-  <block id="039788d35f35e7e6b801a37b1b602f56" category="paragraph">您可以將記錄（Kubernetes事件）從Astra Control Center所監控的系統傳送至您的Fluentd端點。Fluentd連線預設為停用。</block>
-  <block id="2fae9bf7af2c006788415b299aad1207" category="admonition">當您對使用NetApp ONTAP 還原的應用程式執行就地還原時、還原的應用程式所使用的空間可能會加倍。執行就地還原之後、請從還原的應用程式中移除任何不想要的快照、以釋放儲存空間。</block>
   <block id="cca8aaa6dccaa81bdbc26387b1f1bc63" category="paragraph">快照和備份都能保護下列類型的資料：</block>
   <block id="adac08ac006f9d65c559347c106461c7" category="list-text">應用程式本身</block>
   <block id="6c94a6e4d564092b6e6d44dbc8e77b07" category="list-text">與應用程式相關的任何持續資料磁碟區</block>
@@ -2642,19 +2482,7 @@
   <block id="d3472e0a53fc9484c0dd7ec15e76da1d" category="paragraph">備份_是以快照為基礎。它儲存在外部物件存放區中、因此相較於本機快照、拍攝速度可能較慢。您可以將應用程式備份還原至同一個叢集、也可以將應用程式備份還原至不同的叢集、藉此移轉應用程式。您也可以選擇較長的備份保留期間。由於備份儲存在外部物件存放區中、因此在伺服器故障或資料遺失的情況下、備份通常比快照提供更好的保護。</block>
   <block id="5becefddd70e438fb63cc4c816b5f6cc" category="paragraph">_protection policy_is是一種保護應用程式的方法、可根據您為該應用程式定義的排程、自動建立快照、備份或兩者。保護原則也可讓您選擇要在排程中保留多少個快照和備份、並設定不同的排程精細度層級。使用保護原則將備份與快照自動化、是確保每個應用程式都能根據組織和服務層級協議（SLA）需求來保護的最佳方式。</block>
   <block id="5d18a3d426ac931bca06d705d79d80cf" category="paragraph">_clon__是應用程式、其組態及其持續資料磁碟區的完全複製。您可以在相同的Kubernetes叢集或其他叢集上手動建立複本。如果您需要將應用程式和儲存設備從一個Kubernetes叢集移至另一個叢集、複製應用程式就很有用。</block>
-  <block id="f4830a7c07883165a7a5c8d341286873" category="list-text">NetApp ONTAP S9.5或更新AFF 版本的功能、包括ASA FAS</block>
-  <block id="a6c8aa58cced8f18c41300f47bec2c86" category="list-text">適用於ONTAP SnapMirror應用程式複寫的NetApp支援9.8或更新AFF 版本的功能、FAS 功能、功能及ASA 功能</block>
-  <block id="2f69a705b60cbc3d6bba3c41c6be8810" category="list-text">NetApp ONTAP Select S9.5或更新版本</block>
-  <block id="8ccf427f70709789c9c7a4f0ffd8f8cc" category="list-text">適用於ONTAP Select SnapMirror型應用程式複寫的NetApp更新版本9.8</block>
-  <block id="bfd904fc0dcf06a45fdb48323bd3a82d" category="list-text">NetApp Cloud Volumes ONTAP S9.5或更新版本</block>
   <block id="4fc529ce4bbbe2ecf321eba6f7365f40" category="list-text">不只是部分、不只是部分、更是部分ASA FAS ONTAP AFF 。作為儲存軟體與硬體平台ONTAP 、支援核心儲存服務、支援多種儲存存取傳輸協定、以及快照與鏡射等儲存管理功能。</block>
-  <block id="d632cd8f340d92fcafd80c6b61a50542" category="list-text"><block ref="d632cd8f340d92fcafd80c6b61a50542" category="inline-link-macro-rx"></block></block>
-  <block id="1ebc31fa7a8849742c47d0f9d885dc8e" category="list-text"><block ref="1ebc31fa7a8849742c47d0f9d885dc8e" category="inline-link-macro-rx"></block></block>
-  <block id="e665a2fb412abd2f1f21a5df837bd65c" category="list-text"><block ref="e665a2fb412abd2f1f21a5df837bd65c" category="inline-link-macro-rx"></block></block>
-  <block id="237b00b48ad0974d50020591d64ae968" category="list-text"><block ref="237b00b48ad0974d50020591d64ae968" category="inline-link-macro-rx"></block></block>
-  <block id="ee1bdf417dbf36493e18d2d62c34fa8d" category="list-text"><block ref="ee1bdf417dbf36493e18d2d62c34fa8d" category="inline-link-macro-rx"></block></block>
-  <block id="d42b75fe19dabf326e6063949f271820" category="list-text"><block ref="d42b75fe19dabf326e6063949f271820" category="inline-link-macro-rx"></block></block>
-  <block id="15f99de9fca4a87464f86c86d87cfca2" category="list-text"><block ref="15f99de9fca4a87464f86c86d87cfca2" category="inline-link-macro-rx"></block></block>
   <block id="d11334a18414233f19b9828396fe629d" category="list-text"><block ref="d11334a18414233f19b9828396fe629d" category="inline-link-rx"></block></block>
   <block id="65a61677f210f52793f3f0963b9747d8" category="list-text"><block ref="65a61677f210f52793f3f0963b9747d8" category="inline-link-rx"></block></block>
   <block id="c7156c6c9f73c50ec5b9713b2c7755d2" category="list-text"><block ref="c7156c6c9f73c50ec5b9713b2c7755d2" category="inline-link-rx"></block></block>
@@ -2674,7 +2502,372 @@
   <block id="259f3be9b6c8eefb44e844c2b70333dc" category="paragraph">如需Astra Control Center安裝程序的示範、請參閱<block ref="cbbdec23221803dc148346abe5a297c0" category="inline-link-rx"></block>。</block>
   <block id="f7173fff9a92f2bab2648f86282ab07c" category="list-text">使用 NetApp SnapMirror 技術（ Astra Control Center ）將應用程式複寫到遠端系統</block>
   <block id="631928ccc601c8e49976a8d73af28304" category="list-text">將應用程式從接移複製到正式作業</block>
-  <block id="469a0111714c5c9a6b3b013ec5fb5b82" category="paragraph">Astra Control Center 支援 Kubernetes 叢集、其具備 Trident 型儲存類別、以及 ONTAP 9.5 及更新版本的儲存後端。</block>
   <block id="71bf3827c9b969b454eaf3d5987aad95" category="list-text"><block ref="097c36d7e339c9c56e3325b9bd9b1890" category="inline-link-macro-rx"></block> 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。</block>
   <block id="6ae1ccb3dd6df141f3444a3da56ae986" category="list-text">在瀏覽器中、輸入 FQDN （包括<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> 字首）<block ref="d27903c79b643b2f565c31e894abb568" prefix=" " category="inline-code"></block> 在中<block ref="70b058e54d2bda749060070a7f9c4e5c" prefix=" " category="inline-code"></block> 請於何時進行 <block ref="356be5820e2645bace29d82a8018f43d" category="inline-xref-macro-rx"></block>。</block>
+  <block id="2af1f66f8f47d8339a96c1cd543cd3a8" category="list-text">* Astra Trident *：Astra Trident *是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。Astra Trident部署於Astra Control Center時、包含已設定ONTAP 的整套儲存後端。</block>
+  <block id="a779180fd0b24eabbab889560a1bd808" category="inline-link">Astra Control Center 下載頁面</block>
+  <block id="2cbce367b3410bd332af96c3f6df8640" category="list-text">前往<block ref="ad7a4184e43a3f62f1a8252e7d3ef71f" category="inline-link-rx"></block> 於 NetApp 支援網站。</block>
+  <block id="08aa38c1bafe9d645de9679abd0428e8" category="admonition">指令碼所建立的映像路徑應如下所示、視登錄組態而定：</block>
+  <block id="b3a251432f4f7fb7ae435e5ab5909f98" category="list-text">如果您使用NetApp雲端服務儲存產品做為儲存後端、Astra Control Service會使用Astra Trident來為應用程式配置持續的磁碟區。如果您使用Amazon EBS或Azure託管磁碟做為儲存後端、則需要安裝供應商專屬的SCSI驅動程式。安裝說明請參閱<block ref="2f14c0839a4ba055988d1f8f5b4045be" category="inline-link-rx"></block> 和<block ref="1bd9474283b73e0fe391dfa7d2f421f2" category="inline-link-rx"></block>。</block>
+  <block id="95936e8fb1e1f6bf4c0671f4ccc84fe7" category="paragraph">Astra Control Center 支援 Kubernetes 叢集、搭配 Astra Trident 型儲存類別、以及 ONTAP 9.5 以上的儲存後端。</block>
+  <block id="e4a6d61b6602f5e6d6468645b096f45e" category="paragraph">您可以使用 90 天內嵌評估授權、試用 Astra Control Center 。在評估 Astra Control Center 時、您可以透過電子郵件和社群選項獲得支援。此外、您也可以從產品內的支援儀表板存取知識庫文章和文件。</block>
+  <block id="ebd65e27e034512530c808d2d0aa364d" category="paragraph">若要安裝及使用Astra Control Center、您必須符合特定需求<block ref="0a14e0fc52cf8d6c6274f9c6e777d67d" category="inline-link-rx"></block>。</block>
+  <block id="141fef2285846990a6e6c770d3b66fd7" category="list-text">您可以在本機環境中安裝Astra Control Center。深入瞭解如何操作<block ref="f475345d677789f4d639982aa82b248b" category="inline-link-rx"></block>。</block>
+  <block id="55c39076648efeeb2b28246823b491a3" category="paragraph">深入瞭解如何操作<block ref="b22537ad7ca1637b212d8b0013023d5b" category="inline-link-rx"></block>。</block>
+  <block id="ab7846b4a542a3bfaa6fc7c001753517" category="paragraph">當您部署 Astra Control Center 時、系統會安裝內嵌式 90 天試用版授權、適用於 4 、 800 個 CPU 單元。如果您需要更多容量或更長的評估期、或想要升級至完整授權、您可以向 NetApp 取得不同的評估授權或完整授權。</block>
+  <block id="c1b35aa4ccf3dcbe22f0fdb4d91ea8ac" category="list-text">如果您正在評估 Astra Control Center 、並需要不同於內嵌評估授權所含的評估條款、請聯絡 NetApp 以申請不同的評估授權檔案。</block>
+  <block id="fb2915e19bd88ff351d90d64df0679fc" category="admonition">請確定您的授權至少能啟用所需的 CPU 單位。如果 Astra Control Center 目前所管理的 CPU 單位數量超過所套用新授權中的可用 CPU 單位、您將無法套用新授權。</block>
+  <block id="8674a6cb123940ff7765c4700dba637d" category="section-title">評估授權與完整授權</block>
+  <block id="8223d2607f57c2d525d692b7e2fa5f23" category="paragraph">內嵌評估授權隨附全新的 Astra Control Center 安裝。評估授權可在有限（ 90 天）期間內、提供與完整授權相同的功能與功能。評估期結束後、必須取得完整授權才能繼續使用完整功能。</block>
+  <block id="9e46ae67606bb59984f8428d1749a0ae" category="section-title">授權過期</block>
+  <block id="5b8fccdcfed9a4bc6de0a71d2cae3acf" category="paragraph">如果作用中的 Astra Control Center 授權過期、下列功能的 UI 和 API 功能將無法使用：</block>
+  <block id="7e1d1d261db0371b1cf7b5eaf406659a" category="list-text">手動本機快照與備份</block>
+  <block id="a382fd8057f155c8a3d51ab82ad28fca" category="list-text">排程的本機快照與備份</block>
+  <block id="e95ea6c9ba285675e3841a7a3e18a7e4" category="list-text">從快照或備份還原</block>
+  <block id="584ffe6d9c3d3b6838bd35dc4e360aa7" category="list-text">從快照或目前狀態複製</block>
+  <block id="866b10bb84f65c6e8641ad5e4d19560e" category="list-text">管理新應用程式</block>
+  <block id="7d008a15300802377dec025a7c3d1526" category="list-text">設定複寫原則</block>
+  <block id="02df35f0fcff33e77f357dd4528d6d9f" category="paragraph">當您開始管理叢集上的應用程式時、 Astra Control Center 的所有 CPU 單元都會包含在 Astra Control Center 授權使用量中、但 Red Hat OpenShift 叢集節點 CPU 單元則會使用標籤回報<block ref="10c74fc36336285a5b0a7e83581224b7" prefix=" " category="inline-code"></block>。</block>
+  <block id="6bc90abf5c663a84ba123ee81c4f462a" category="admonition">Red Hat OpenShift 基礎架構節點不會使用 Astra Control Center 中的授權。若要將節點標記為基礎架構節點、請套用標籤<block ref="10c74fc36336285a5b0a7e83581224b7" prefix=" " category="inline-code"></block> 至節點。</block>
+  <block id="96a79af6715c6314aa3c257cbac2f314" category="list-text">* Astra Trident 儲存類別以 ONTAP 儲存 * 為後盾：如果您使用的是 ONTAP 後端、 Astra 控制中心可以匯入 ONTAP 後端、以報告各種監控資訊。</block>
+  <block id="6b2f4144cb08013dcf2bcec8059919af" category="admonition">Astra Trident 儲存類別應在 Astra Control Center 之外預先設定。</block>
+  <block id="376f2cee8db0934296d141555a55714d" category="section-title">具有過期授權的備份、快照和複本</block>
+  <block id="cfe5e1d726f72f4d0b09655bc48ba2ca" category="paragraph">如果授權過期、您只能在新增或保護的應用程式是另一個 Astra Control Center 執行個體時、新增應用程式或執行應用程式保護作業（例如快照、備份、複本和還原作業）。</block>
+  <block id="3e0e35bf54bdf6b26ceedb15f501c409" category="list-text">如果您已設定或想要在環境中設定Pod安全性原則、請熟悉Pod安全性原則、以及這些原則如何影響Astra Control Center安裝。請參閱 <block ref="2a481a17dd103cf67632448be5755ab1" category="inline-link-macro-rx"></block>。</block>
+  <block id="93165e9b3ccd3bf4c8877d5fb149a96f" category="list-text">如果叢集中已存在憑證管理程式、您需要執行某些作業 <block ref="7f9e8cec8531f8660dfaaf382da03535" category="inline-link-macro-rx"></block> 因此Astra Control Center不會嘗試安裝自己的憑證管理程式。依預設、Astra Control Center會在安裝期間安裝自己的憑證管理程式。</block>
+  <block id="171433e2526efce8b1737d99d3009d01" category="paragraph">您可以使用 NetApp Astra kubectl 命令列外掛程式、將影像推送至本機 Docker 儲存庫。</block>
+  <block id="98016541b6bcbcde44d14e389d2de1c7" category="inline-link-macro">請確定您擁有最新版本</block>
+  <block id="facfdbaac18c6d5cc79696a2d9f83b3c" category="paragraph">如果您已從先前的安裝中安裝外掛程式、 <block ref="5204d923de32c2f85273b21668cccfc3" category="inline-link-macro-rx"></block> 完成這些步驟之前。</block>
+  <block id="26f4146beb059d78839181aff15a98e0" category="admonition">預留位置<block ref="facf912114e23f5e3f2192e508b5894a" prefix=" " category="inline-code"></block> 應與您先前上傳的影像位置相符（例如、<block ref="147d5bc425e907e8d0d5059c73d111dd" prefix=" " category="inline-code"></block>）。</block>
+  <block id="8ed96e019e1c613c2d6462c9d2df5228" category="cell"><block ref="fce24731ab09e877fbbef5b1b0c2f81f" prefix="" category="inline-code"></block></block>
+  <block id="9b04595717abfabfd6d1f300254ee46d" category="cell">變更<block ref="78ec9b60245b46a4f05158076962ace9" prefix=" " category="inline-code"></block> 價值來源<block ref="e3bccceaf53ea80a4685ac9b974016f3" prefix=" " category="inline-code"></block> 至安裝所需的另一個 Astra Trident storageClass 資源。執行命令<block ref="f7a6266d561ed7e94ff1f45bb43a2f5d" prefix=" " category="inline-code"></block> 以判斷您現有的已設定儲存類別。必須在資訊清單檔案中輸入其中一個 Astra Trident 型儲存類別 <block ref="a18a8eda5e9ff8aa5e2094148dafbb33" prefix="(" category="inline-code"></block>）、並將用於Astra PV。如果未設定、則會使用預設的儲存類別。附註：如果已設定預設儲存類別、請確定它是唯一具有預設附註的儲存類別。</block>
+  <block id="9bf855be9033b0de8f79fd169a65b189" category="example-title">&lt;code&gt;scaleSize&lt;/code&gt;</block>
+  <block id="990643f0b5bc141bd0437891aec59a8b" category="cell"><block ref="dc2f257f4eea1d3b6b3a1d35e1719508" prefix="" category="inline-code"></block></block>
+  <block id="ba9463b06991ea4cae6865cd33d8f546" category="cell">Astra 預設會使用高可用度（ HA ）<block ref="dc2f257f4eea1d3b6b3a1d35e1719508" prefix=" " category="inline-code"></block> 的<block ref="87f8a6ab85c9ced3702b4ea641ad4bb5" prefix=" " category="inline-code"></block>，用於在 HA 中部署大多數服務並部署多個複本以實現冗餘。與<block ref="dc2f257f4eea1d3b6b3a1d35e1719508" prefix=" " category="inline-code"></block> 做為<block ref="2660064e68655415da2628c2ae2f7592" prefix=" " category="inline-code"></block>、 Astra 將減少所有服務的複本數量、但基本服務除外、以減少使用量。秘訣：<block ref="87f8a6ab85c9ced3702b4ea641ad4bb5" prefix=" " category="inline-code"></block> 部署包含約 100 個 Pod （不包括暫時性工作負載）。100 個 Pod 以三個主節點和三個工作節點組態為基礎）。請注意、在您的環境中、每個 Pod 的網路限制可能是個問題、特別是在考慮災難恢復案例時。</block>
+  <block id="e9fc23321f08d60a9ed02045104afd02" category="list-text"><block ref="2660064e68655415da2628c2ae2f7592" prefix="" category="inline-code"></block></block>
+  <block id="573be8fbb9a435e600abee9477fd076c" category="list-text"><block ref="87f8a6ab85c9ced3702b4ea641ad4bb5" prefix="" category="inline-code"></block> （這是預設值）</block>
+  <block id="43a66fe149cc813877a6421d95308dd4" category="example-title">&lt;code&gt;additionalValues&lt;/code&gt;</block>
+  <block id="b186b9e3a762cbd8a1d43a450f8992db" category="list-text">對於 Astral Control Center 和 Cloud Insights 通訊、依預設會停用 TLS 憑證驗證。您可以在中新增下一節、以啟用 Cloud Insights 與 Astra 控制中心主機叢集和託管叢集之間通訊的 TLS 憑證驗證<block ref="9848fd54a26db3cbb32026fac4aa182a" prefix=" " category="inline-code"></block>。</block>
+  <block id="b14a0b4a4a4352b75591a559778738f0" category="admonition">在完成安裝之前、請務必為您的組態選擇正確的儲存類別和入口類型。</block>
+  <block id="cbad356d2a2c08e20ea2766c2d78305f" category="inline-xref">下一節</block>
+  <block id="a447dbddf2bae16f14ca2c1b03316a79" category="admonition">Astra Control Center 駕駛員將自動檢查環境需求。遺失 <block ref="0e41106baf8562df8aa8c294918bd8a6" category="inline-link-macro-rx"></block> 可能導致安裝失敗、或 Astra Control Center 無法正常運作。請參閱 <block ref="2a8073636fc04535a36dffc7e473358f" category="inline-xref-macro-rx"></block> 檢查與自動系統檢查相關的警告訊息。</block>
+  <block id="bd11c5d7132d8bcedc5f271a2f004c77" category="list-text">確認安裝程序未產生與驗證檢查相關的警告訊息：</block>
+  <block id="41a3989acf9fd153e97e802f67d84809" category="admonition">Astra Control Center 操作者記錄中也會報告其他警告訊息。</block>
+  <block id="bde704dc958bb35570c0bc5d0b87cbce" category="list-text">修正自動化需求檢查所回報的環境問題。</block>
+  <block id="501ea2055fc447cfed7d60b19490f83c" category="admonition">您可以確保環境符合、以修正問題 <block ref="0e41106baf8562df8aa8c294918bd8a6" category="inline-link-macro-rx"></block> 適用於 Astra Control Center 。</block>
+  <block id="52e1de7c764e266389e2c5c72efea08d" category="admonition"><block ref="37f618faae7496528f2773837de1ccd9" prefix="" category="inline-code"></block> 叢集登錄是最後一項作業、如果失敗、也不會導致部署失敗。如果記錄中指出叢集登錄失敗、您可以透過再次嘗試登錄 <block ref="9cc3245dae3fc74a68b81af7bfca78a2" category="inline-link-macro-rx"></block> 或API。</block>
+  <block id="e619014be4616b03deabf8a4747cae36" category="list-text">（選用）移除現有的自我簽署TLS憑證、並以取代 <block ref="8d08a5976cba277f6415edf9d5f49bb0" category="inline-link-macro-rx"></block>。</block>
+  <block id="65c5857b3b433f35d0ac583e6a7d8a2c" category="list-text">若要檢查 Astra Control Center CR 的輸出：</block>
+  <block id="5bca497d9ea6bf6eca3e17f4bc56928e" category="list-text">取得中的資源配額<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> （或自訂命名）命名空間：</block>
+  <block id="89235ec3307dc2b7bc36342060cec29b" category="list-text">取得中的限制範圍<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> （或自訂命名）命名空間：</block>
+  <block id="f6a3d39ded3dc2a43b37e0af1cc54e54" category="list-text">對於上述命令傳回的每個網路原則物件、請使用下列命令加以刪除。以傳回物件的名稱取代 [object_name ：</block>
+  <block id="2946ad5b585e25a6265a7c6cd68fddcf" category="list-text">請注意右上角的 Astra Trident 版本。</block>
+  <block id="0a8d6a85933f0f1967973d4753b4c395" category="paragraph">這會匯入您的Red Hat OpenShift叢集、並將其指派為預設儲存類別。您可以選取儲存類別。Astra Trident 會在匯入和探索程序中自動安裝。</block>
+  <block id="1e9270e08207b5c7936ac24a81e7b095" category="paragraph">請參閱 <block ref="f28f34e5e5f49b6efcb4b06ae1514632" category="inline-link-macro-rx"></block>。</block>
+  <block id="8cf442a8f3b56c7c3499cf63b521ae93" category="paragraph">這會匯入您的Red Hat OpenShift叢集、並指派預設的儲存類別。您可以選取儲存類別。Astra Trident 會在匯入和探索程序中自動安裝。</block>
+  <block id="95194bdb953452cf1caaea66c45550d2" category="paragraph">開始驗證作業環境、應用程式叢集、應用程式、授權和網頁瀏覽器的整備度。確保您的環境符合這些需求、以部署和操作 Astra Control Center 。</block>
+  <block id="be407666b46c45d6e81f1f55d83b1ebe" category="list-text"><block ref="ecfbbfdc2d87cbced20f30e05e0a78cc" category="inline-xref-macro-rx"></block></block>
+  <block id="2df8103ed02c2ff57f95dd0baa9f62d4" category="list-text"><block ref="a236b45bda1ffb990a9a89199862a5ae" category="inline-xref-macro-rx"></block></block>
+  <block id="99d4b9806ec937ec4d3a12175ac49b23" category="list-text"><block ref="1dfcce290699aec6bbcc43a31646cb50" category="inline-xref-macro-rx"></block></block>
+  <block id="16079ac96dcf8d069770e468ee66f07f" category="list-text"><block ref="f31dbcafb7875872c5332ef135ee7332" category="inline-xref-macro-rx"></block></block>
+  <block id="90bb1706249ce727796f119331d16b14" category="list-text"><block ref="542f632b24455143b85de49e5333e685" category="inline-xref-macro-rx"></block></block>
+  <block id="95cbcb6096c047dd1b873263eaf664ec" category="list-text"><block ref="8458f8a3ea6aa78b0364844d2897de98" category="inline-xref-macro-rx"></block></block>
+  <block id="48b165cfa4bb70ab388a297d16b76d60" category="list-text"><block ref="da659598b58e6bd2f5e7ade6e844996e" category="inline-xref-macro-rx"></block></block>
+  <block id="ed98a6283072b58590eb2be036949d63" category="section-title">支援的主機叢集 Kubernetes 環境</block>
+  <block id="1366d06f98d2e58cac1172fca802a36d" category="paragraph">Astra Control Center 已通過下列 Kubernetes 主機環境的驗證：</block>
+  <block id="15944f3e2a6c3ad4f91904a01bb4a97f" category="admonition">確保您選擇架設 Astra Control Center 的 Kubernetes 環境符合環境正式文件中所述的基本資源需求。</block>
+  <block id="976d83f1e830fe3993112a5b9e67324e" category="cell">Kubernetes 在主機叢集上的發佈</block>
+  <block id="2e5d14f7919ff3c6138e7845aec4f915" category="cell">支援的版本</block>
+  <block id="22ec69733e61456fac578b2f6fcc2856" category="cell">Azure Stack HCI 上的 Azure Kubernetes 服務</block>
+  <block id="cd96805b6007cc4c2282c90a414e97f3" category="cell">Azure Stack HCI 21H2 和 22H2 、含 aks 1.23 和 1.24</block>
+  <block id="1c4dff0a00340691e103ef63154df371" category="cell">Google Anthos</block>
+  <block id="bef5b58214b9cae906121ccd185ebdf5" category="cell">1.12 至 1.14 （請參閱 <block ref="ca85a59b7f183a96161fa125579f74e9" category="inline-xref-macro-rx"></block>）</block>
+  <block id="0770a54f3635e09a4e4ff53a035b9979" category="cell">Kubernetes （上游）</block>
+  <block id="4863c0e3b29248649240a69b9df08e1e" category="cell">1.24 至 1.26 （ Kubernetes 1.25 或更新版本需要 Astra Trident 22.10 或更新版本）</block>
+  <block id="8c95b632875261344eb6365459feffd0" category="cell">Rancher Kubernetes引擎（RKE）</block>
+  <block id="86742721bf4e412fd236371e22eea76b" category="cell">RKE 1.3 搭配 Rancher 2.6 RKE 1.4 搭配 Rancher 2.7 RKE 2 （ v1.23.x ）、搭配 Rancher 2.6 RKE 2 （ v1.24.x ）搭配 Rancher 2.7</block>
+  <block id="fd89bb4228981d3b22187eb451421cd6" category="cell">Red Hat OpenShift Container Platform</block>
+  <block id="2fc3e0590f5be49e12616e7785d1d1d8" category="cell">4.10 至 4.12</block>
+  <block id="a56837df79ae6671b6b511c330431135" category="cell">VMware Tanzu Kubernetes Grid</block>
+  <block id="c6865a8430878505b136faaaf2730f0d" category="cell">1.6 （請參閱 <block ref="a236b45bda1ffb990a9a89199862a5ae" category="inline-xref-macro-rx"></block>）</block>
+  <block id="a1c1bb4994628000cfe61563bf4ff4f5" category="cell">VMware Tanzu Kubernetes Grid整合版</block>
+  <block id="04de7660a0bbd7757f01fc8527051da4" category="cell">1.14 和 1.15 （請參閱 <block ref="a236b45bda1ffb990a9a89199862a5ae" category="inline-xref-macro-rx"></block>）</block>
+  <block id="da3ba513df86d149caebcbcedaa2f8c9" category="section-title">主機叢集資源需求</block>
+  <block id="0b145934590b9ed05cf63a628294d371" category="list-text">*CPU 擴充 * ：主機環境中所有節點的 CPU 都必須啟用 AVX 擴充功能。</block>
+  <block id="47303824eafa22af5698d5f414ed3e9c" category="list-text">* 工作節點 * ：總計至少 3 個工作節點、每個節點有 4 個 CPU 核心和 12GB RAM</block>
+  <block id="dfee63492fa418d45012f44e9efcecf3" category="list-text">* VMware Tanzu Kubernetes Grid 叢集需求 * ：在 VMware Tanzu Kubernetes Grid （ TKG ）或 Tanzu Kubernetes Grid 整合版（ TKGi ）叢集上代管 Astra Control Center 時、請謹記下列考量事項。</block>
+  <block id="71aeb6f089406bc5a9abfec5efe995cc" category="list-text">使用<block ref="3b7e746f7178ae60c65fc979bda0c36b" prefix=" " category="inline-code"></block> 命令以查看您是否已設定服務監視器以接受入口流量。如果存在、則不應安裝MetalLB、因為現有的服務監視器將會覆寫任何新的負載平衡器組態。</block>
+  <block id="0629fb104936d0fb60cc736b6cb01caa" category="section-title">Astra Trident的需求</block>
+  <block id="ccfd4911c3e4e3a1869bde34aee08213" category="paragraph">確保您符合下列特定環境需求的 Astra Trident 要求：</block>
+  <block id="018d3fe087f0a33b7f1628e615469601" category="list-text">* 與 Astra Control Center 搭配使用的最低版本 * ： Astra Trident 22.04 或更新版本已安裝及設定。</block>
+  <block id="4d0b052002df0c243c3533a5520c1007" category="list-text">* SnapMirror 複寫 * ： Astra Trident 22.07 或更新版本、安裝用於 SnapMirror 型應用程式複寫。</block>
+  <block id="efcd7847357fc4096fb4db5e47f79f17" category="list-text">* 對於 Kubernetes 1.25 或更新版本的支援 * ：針對 Kubernetes 1.25 或更新版本叢集安裝 Astra Trident 22.10 或更新版本（升級至 Kubernetes 1.25 或更新版本之前、您必須先升級至 Astra Trident 22.10 ）</block>
+  <block id="b040dd2ca7ada50da6252bec5fe83b03" category="list-text">*Astra Trident 的 ONTAP 組態 * ：</block>
+  <block id="531ade9aaa74479e00c195b314444616" category="list-text">* 儲存類別 * ：在叢集上至少設定一個 Astra Trident 儲存類別。如果已設定預設儲存類別、請確定它是唯一具有預設指定的儲存類別。</block>
+  <block id="a598685ef775d47701b1b297651c794f" category="list-text">* 儲存驅動程式和工作節點 * ：確保叢集中的工作節點已設定適當的儲存驅動程式、以便 Pod 與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：</block>
+  <block id="00055dac2ba112b87a95a368075b9561" category="list-text"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block></block>
+  <block id="cd17e7ed84c40a0ff5ecb8b625b1f186" category="list-text"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block></block>
+  <block id="3b7cc10179d4a03a32a20e501dfd5870" category="list-text"><block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix="" category="inline-code"></block> （此儲存類別類型無法使用應用程式複寫）</block>
+  <block id="64e73248ee4f8bc7259ec69c97e5b190" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block> （此儲存類別類型無法使用快照、複寫原則和保護原則）</block>
+  <block id="bd605fff7af6a2da2d78ab96c4c19217" category="section-title">儲存設備後端</block>
+  <block id="e1da14d4a8ef5675e8dac5e30712eaa1" category="paragraph">確保您擁有支援的後端、且具有足夠的容量。</block>
+  <block id="acc45c3104df8c76c1bca22e53694a49" category="list-text">* 支援的後端 * ： Astra Control Center 支援下列儲存後端：</block>
+  <block id="dae7a094b69a3c5805dc8b49715c8455" category="list-text">NetApp ONTAP 9.8 或更新版本的 AFF 、 FAS 和 ASA 系統</block>
+  <block id="8d29aa36787b41da1ecac3a793a0713b" category="list-text">NetApp ONTAP Select 9.8 或更新版本</block>
+  <block id="4a2c0c1435854c9939b38225e9f9e83c" category="list-text">NetApp Cloud Volumes ONTAP 9.8 或更新版本</block>
+  <block id="31381b559447818e5203ea5d8f227e41" category="list-text">* 所需的儲存後端容量 * ：可用容量至少 500 GB</block>
+  <block id="646e71de883359482601b2b06a9a799b" category="section-title">不需要授權ONTAP</block>
+  <block id="25f1b9b80430f180d844c37c0d1dd611" category="paragraph">您必須擁有現有的私有 Docker 映像登錄、才能將 Astra Control Center 建置映像推送至該登錄。您需要提供映像登錄的URL、以便上傳映像。</block>
+  <block id="315bffcf2d808a710c1be00a7f5890ca" category="section-title">Astra Control Center 授權</block>
+  <block id="c6cd6c471555bdf8c2b0cd993805ad22" category="paragraph">Astra Control Center 需要 Astra Control Center 授權。安裝 Astra Control Center 時、已啟動內嵌式 90 天試用版授權、可用於 4 、 800 個 CPU 單元。如果您需要更多容量或不同的評估條款、或想要升級至完整授權、您可以向 NetApp 取得不同的評估授權或完整授權。您需要授權來保護應用程式和資料。請參閱 <block ref="7fcc59b1843f920708fc18c7727f8745" category="inline-link-macro-rx"></block> 以取得詳細資料。</block>
+  <block id="00411e483ab00aafe1621b371178684f" category="paragraph">您可以報名免費試用 Astra Control Center 。您可以註冊註冊 <block ref="40bbeef53dcd6be322547bd3e190782a" category="inline-link-macro-rx"></block>。</block>
+  <block id="d0e9a63f3ba20cd7f503535539755175" category="paragraph">設定您的營運環境、確保 Astra Control Center 能夠正常通訊。需要下列網路組態：</block>
+  <block id="79583a5fa84815eb392bad180a875a7d" category="list-text">* FQDN 位址 * ：您必須擁有 Astra Control Center 的 FQDN 位址。</block>
+  <block id="33386b3ed5d2786b809a5a133ba0eef5" category="list-text">* 存取網際網路 * ：您應該判斷是否有外部存取網際網路的權限。如果您沒有、部分功能可能會受到限制、例如從NetApp Cloud Insights 接收監控和數據資料、或是將支援組合傳送至<block ref="3725c06f412bedb14ffd610de312875d" category="inline-link-rx"></block>。</block>
+  <block id="949798efaa7794349e8d8c37e5d0f7b8" category="list-text">* 連接埠存取 * ：裝載 Astra Control Center 的作業環境使用下列 TCP 連接埠進行通訊。您應確保這些連接埠可透過任何防火牆、並設定防火牆、以允許來自Astra網路的任何HTTPS輸出流量。有些連接埠需要在裝載Astra Control Center的環境與每個託管叢集之間進行連線（視情況而定）。</block>
+  <block id="a803bab107703d5f433a4c48c54e7f0d" category="section-title">Google Anthos 入口要求</block>
+  <block id="49a740983d657cdd0dac3244919d83a4" category="paragraph">在 Google Anthos 叢集上代管 Astra Control Center 時、請注意 Google Antos 預設包含 MetalLB 負載平衡器和 Istio 入口服務、讓您在安裝期間只需使用 Astra Control Center 的一般入口功能即可。請參閱 <block ref="cfdb0a3ba609f2fa25b168afc22748d3" category="inline-link-macro-rx"></block> 以取得詳細資料。</block>
+  <block id="5c63d9e047212174b3ab2a079bd56fcc" category="inline-link-macro">確保您的主機叢集符合作業環境需求</block>
+  <block id="8fd6de1dac44634a5c81e04c5bee26e5" category="list-text"><block ref="8fd6de1dac44634a5c81e04c5bee26e5" category="inline-link-macro-rx"></block></block>
+  <block id="3881c3bffcc8a7541f238ffd9bd110e8" category="list-text"><block ref="3881c3bffcc8a7541f238ffd9bd110e8" category="inline-link-macro-rx"></block></block>
+  <block id="f79c72229ccb3aeca03756bbe7324c9e" category="inline-link">從 NetApp 支援網站 下載頁面下載 Astra 控制中心</block>
+  <block id="15dc068a0743eecccf27c4a805c80f21" category="list-text"><block ref="15dc068a0743eecccf27c4a805c80f21" category="inline-link-rx"></block></block>
+  <block id="b73cdf72d6d55064ddff88092ae6133b" category="list-text">如果您正在評估 Astra Control Center 、則已包含內嵌評估授權。</block>
+  <block id="b076c1f761d0b92929621e81c3c931c3" category="summary">安裝 Astra Control Center 、登入 UI 並變更密碼之後、您將需要設定授權、新增叢集、啟用驗證、管理儲存設備及新增儲存區。</block>
+  <block id="9dff1d917a2ab55f9b011693f3edb2e6" category="list-text"><block ref="57bfe64ccef32c62c91778f81d22de6e" category="inline-xref-macro-rx"></block></block>
+  <block id="9b9a4bad5c62667ce507fae6527af6a1" category="paragraph">安裝 Astra Control Center 時、已安裝內嵌評估授權。如果您正在評估 Astra Control Center 、可以跳過此步驟。</block>
+  <block id="5309511b0ec14cc87505c408a2785d27" category="paragraph">您可以使用Astra Control UI或新增授權<block ref="3f4eec2c2c841509295f8beef0b157bb" category="inline-link-rx"></block>。</block>
+  <block id="005e1b50c910ec2acdc65d7425ba6e32" category="list-text">您的環境符合 <block ref="ccb0e0bd30b9675a77be4777ecce7ae0" category="inline-link-macro-rx"></block> 適用於Astra Trident與Astra Control Center。</block>
+  <block id="53672aeea1a1c5b1f615a3293aa968b9" category="list-text">這是Astra Trident的版本 <block ref="8a29465e9cc22369a19ca6cfb50905b9" category="inline-link-macro-rx"></block> 已安裝：</block>
+  <block id="b96eefd255ea3579d599300b9a9bc9b7" category="admonition">您可以<block ref="ec89e21f8106b8624273185ce464dfb2" category="inline-link-rx"></block> 使用 Astra Trident 運算子（手動或使用 Helm 圖表）或<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>。在安裝或升級Astra Trident之前、請先檢閱<block ref="c11537a174ec95a098cfff995b6e8b14" category="inline-link-rx"></block>。</block>
+  <block id="84333d7ff615717c719381f57406a949" category="list-text">* 已設定 Astra Trident 儲存後端 * ：至少必須有一個 Astra Trident 儲存後端<block ref="5225aa45493862e8671db3c546f615ec" category="inline-link-rx"></block> 在叢集上。</block>
+  <block id="534a370dd253d4fa5390f9ed6153dd16" category="list-text">* 已設定的 Astra Trident 儲存類別 * ：至少必須有一個 Astra Trident 儲存類別<block ref="56eee92baaddefbebda4bc1d0011f25b" category="inline-link-rx"></block> 在叢集上。如果已設定預設儲存類別、請確定它是唯一具有預設註釋的儲存類別。</block>
+  <block id="617eb1530b145e1d6b1e3a0d2ec1478d" category="list-text">檢查Astra Trident版本。</block>
+  <block id="6263d7bbf78ef23fba9ad7eb3807a9e8" category="paragraph">如果 Astra Trident 存在、您會看到類似下列的輸出：</block>
+  <block id="ffc060e501e99ab700e94e7632130be7" category="paragraph">如果 Astra Trident 不存在、您會看到類似下列的輸出：</block>
+  <block id="e87b39dbbd2e6cb480af560fa6ff00c5" category="admonition">如果未安裝 Astra Trident 、或安裝的版本不是最新版本、則必須先安裝 Astra Trident 的最新版本、才能繼續。請參閱<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 以取得相關指示。</block>
+  <block id="1b329383e0298ab6028e5467a107f6a3" category="list-text">判斷儲存類別是否使用支援的 Astra Trident 驅動程式。置備程式名稱應為<block ref="08044207e9f63bb0fd474dab347a776c" prefix=" " category="inline-code"></block>。請參閱下列範例：</block>
+  <block id="c0c45296351b186d7999d61397270d1b" category="admonition">您應該選取以 ONTAP 儲存設備為後盾的 Astra Trident 儲存類別。</block>
+  <block id="a968885436d41c4a5609b5d00dc9fc04" category="section-title">在 ONTAP 儲存後端啟用驗證</block>
+  <block id="2abefc330766738c24c4d12f75eea20e" category="paragraph">Astra Control Center 提供兩種驗證 ONTAP 後端的模式：</block>
+  <block id="481c67dbe17171a73cea7b830208e484" category="list-text">* 認證型驗證 * ：具有必要權限的 ONTAP 使用者的使用者名稱和密碼。您應該使用預先定義的安全登入角色、例如 admin 或 vsadmin 、以確保與 ONTAP 版本的最大相容性。</block>
+  <block id="e46f0df86ce1fddc02a162d6da1519d9" category="list-text">* 憑證型驗證 * ： Astra 控制中心也可以使用安裝在後端的憑證與 ONTAP 叢集通訊。您應該使用用戶端憑證、金鑰和信任的 CA 憑證（如果使用）（建議使用）。</block>
+  <block id="d74cc7790e4757a65a781809f0840578" category="paragraph">您可以稍後更新現有的後端、將某種驗證類型移至另一種方法。一次只支援一種驗證方法。</block>
+  <block id="a2f8f419bf420960ef8cca73e1999e09" category="section-title">啟用認證型驗證</block>
+  <block id="20ab20ede5c0f62fd9a67d62f8409d66" category="paragraph">Astra Control Center 需要具備叢集範圍的認證<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> 與 ONTAP 後端通訊。您應該使用預先定義的標準角色、例如<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block>。這可確保與未來 ONTAP 版本的前移相容性、這些版本可能會公開未來 Astra 控制中心版本所使用的功能 API 。</block>
+  <block id="9cca54dd5a1e620d5840300596c6fbd7" category="admonition">您可以建立自訂安全登入角色、並與 Astra Control Center 搭配使用、但不建議使用。</block>
+  <block id="1e6b3921c7fba3fea9298f469a6635ca" category="paragraph">後端定義範例如下：</block>
+  <block id="f9e5412b35f99d32ba7890d4d55d8890" category="paragraph">後端定義是唯一以純文字儲存認證的地方。建立或更新後端是唯一需要具備認證知識的步驟。因此、這是僅供管理員使用的操作、由 Kubernetes 或儲存管理員執行。</block>
+  <block id="7fbe6e40125b7d1b2f5c5c05044e7526" category="section-title">啟用憑證型驗證</block>
+  <block id="6013631358f5276cd8b1511270ac8047" category="paragraph">Astra 控制中心可以使用憑證與新的和現有的 ONTAP 後端通訊。您應該在後端定義中輸入下列資訊。</block>
+  <block id="9d48e5f783ab36637f7814a790bf5ffc" category="list-text"><block ref="79fffaff4013c1e8c508e76646eca77b" prefix="" category="inline-code"></block>：用戶端憑證。</block>
+  <block id="5fbdc54f459485aadb4826ea350551ad" category="list-text"><block ref="19dce7ac7f5290fc8fa218ad0c858df5" prefix="" category="inline-code"></block>：關聯的私鑰。</block>
+  <block id="5919883678758f4dc5b80acfcd101895" category="list-text"><block ref="8468461bca00a47ab5ddba2afc45f52c" prefix="" category="inline-code"></block>：可信 CA 證書。如果使用信任的CA、則必須提供此參數。如果未使用信任的CA、則可忽略此問題。</block>
+  <block id="5c0852f82897ec20c72dcf33dd439237" category="paragraph">您可以使用下列其中一種類型的憑證：</block>
+  <block id="f1695fd764c6379fb41449f6eb12d40e" category="list-text">自我簽署的憑證</block>
+  <block id="d1c7ddcb4abfc46d652901aed97bf970" category="list-text">協力廠商憑證</block>
+  <block id="4d2d5ab23fa0a9d032ce422cc91b0208" category="section-title">啟用自我簽署憑證的驗證</block>
+  <block id="6b634823c19ebc37c9e4fdbf08de1fff" category="paragraph">典型的工作流程包括下列步驟。</block>
+  <block id="286b6dd9df196475a1336ad261ad1853" category="list-text">產生用戶端憑證和金鑰。產生時、請將一般名稱（ CN ）設定為 ONTAP 使用者、以驗證為。</block>
+  <block id="653c3a5397796b915c7a92cdd753388f" category="list-text">安裝用戶端類型的憑證<block ref="0de990e6b0d56d21c4e2b5649fd6736b" prefix=" " category="inline-code"></block> 以及 ONTAP 叢集上的金鑰。</block>
+  <block id="2a0f515b2dfbed29aa67a2637e869e7d" category="list-text">確認 ONTAP 安全登入角色支援憑證驗證方法。</block>
+  <block id="bbb52e08171a78c60b9f01282a308b1f" category="list-text">使用產生的憑證測試驗證。以管理 LIF IP 和 SVM 名稱取代 ONTAP Management LIF&gt; 和 &lt;vserver name&gt; 。您必須確保LIF的服務原則設定為<block ref="1e2cb0c539a96182e302d676a4b791be" prefix=" " category="inline-code"></block>。</block>
+  <block id="2fd9acd37c529d6ccc0cc1cea8279ab3" category="list-text">使用從上一步取得的值、在 Astra Control Center UI 中新增儲存後端。</block>
+  <block id="51f28aafca2f5a06986097af7e727c5a" category="section-title">啟用協力廠商憑證的驗證</block>
+  <block id="1e68bf33b5c6ac446d22b5593dc0da20" category="paragraph">如果您有協力廠商憑證、您可以使用這些步驟來設定憑證型驗證。</block>
+  <block id="0b25a4bc5aa80c238f6ef683d3edd1c3" category="list-text">產生私密金鑰和 CSR ：</block>
+  <block id="6c076e9bba44b2f90567bd263df8db52" category="list-text">將 CSR 傳遞至 Windows CA （協力廠商 CA ）、然後核發簽署的憑證。</block>
+  <block id="322e847874912b4a68a26ef2b159274c" category="list-text">下載已簽署的憑證、並將其命名為「 ontap_signed_cert.crt 」</block>
+  <block id="71e2f93d997277a2320806929f5f647e" category="list-text">從 Windows CA （協力廠商 CA ）匯出根憑證。</block>
+  <block id="110dacc7883f827abda6ad019b51e317" category="list-text">命名此檔案<block ref="58c60d51af1795a6c28df0f1c736b89e" prefix=" " category="inline-code"></block></block>
+  <block id="3c6cc1e9975ff0484ada9ec8d52bcaca" category="paragraph">您現在有下列三個檔案：</block>
+  <block id="0c15a7bfe0cfcc8aaa8aeea54213270f" category="list-text">* 私密金鑰 * ：<block ref="01b9c1dfa115cc6c897c981e9a715cce" prefix=" " category="inline-code"></block> （這是 ONTAP 中伺服器憑證的對應金鑰。安裝伺服器憑證時需要此功能。）</block>
+  <block id="d6a7b1f1c6944950d31662cd6335cd32" category="list-text">* 簽署憑證 * ：<block ref="2a84f2965aaa57fb61e3627917c14a13" prefix=" " category="inline-code"></block> （這在 ONTAP 中也稱為伺服器憑證 _ 。）</block>
+  <block id="ce019945b9ff674652b841c7f3e139c6" category="list-text">* 根 CA 憑證 * ：<block ref="58c60d51af1795a6c28df0f1c736b89e" prefix=" " category="inline-code"></block> （這在 ONTAP 中也稱為 _server-ca 憑證 _ 。）</block>
+  <block id="9228340b5d92ff30ea7c7a93fc314ac9" category="list-text">在 ONTAP 中安裝這些憑證。產生及安裝<block ref="cf1e8c14e54505f60aa10ceb8d5d8ab3" prefix=" " category="inline-code"></block> 和<block ref="6506b3e1b1b650a5b2d470b53640bc72" prefix=" " category="inline-code"></block> ONTAP 上的憑證。</block>
+  <block id="62f298fc0bdc9e54e2931af5b3412ec3" category="paragraph">範例 .yaml 中的詳細資料</block>
+  <block id="3120b2976ef02a32272d42dfda8060ac" category="list-text">為同一主機建立用戶端憑證、以進行無密碼通訊。Astra 控制中心使用此程序與 ONTAP 通訊。</block>
+  <block id="8999b0469cf91e57a049576a5dd4875d" category="list-text">在 ONTAP 上產生及安裝用戶端憑證：</block>
+  <block id="a498ab5a31afbb7b47b9d0b23806d204" category="list-text">在 Astra Control Center UI 中新增儲存後端、並提供下列值：</block>
+  <block id="4f870cfbd1ec8f00a52914de7f598650" category="list-text">* 用戶端憑證 * ： ONTAP 測試用戶端 .pem</block>
+  <block id="1edd3b7b81002be4593d5c2b6cf83c17" category="list-text">* 私密金鑰 * ： ontap_test_client.key</block>
+  <block id="1aa96a4cac498e6b7421caf25f59fbaf" category="list-text">* 可信 CA 證書 * ： ONTAP 簽署的 _cert.crt</block>
+  <block id="e3a65d17d8453f02fd0934c0b4b04285" category="paragraph">設定認證或憑證驗證資訊之後、您可以將現有的 ONTAP 儲存後端新增至 Astra 控制中心、以管理其資源。</block>
+  <block id="d5f1f77ae1c29798e2d9d300a6b2e5a0" category="list-text">在「新增儲存設備後端」頁面的「使用現有的」區段中、選取 * ONTAP * 。</block>
+  <block id="36ddaebda56a8c215a8dfff5eb57566d" category="list-text">選取下列其中一項：</block>
+  <block id="b80989470cc425228535bc99be74562e" category="list-text">* 使用管理員認證 * ：輸入 ONTAP 叢集管理 IP 位址和管理認證。認證資料必須是整個叢集的認證資料。</block>
+  <block id="9a64e7c308b15e4a664bdb4c23870806" category="list-text">* 使用憑證 * ：上傳憑證<block ref="bdf46f9562b038d0163af0feba0b1dfa" prefix=" " category="inline-code"></block> 檔案、憑證金鑰<block ref="ed920f773cac3db0499e1ae2cf4df449" prefix=" " category="inline-code"></block> 檔案、以及選擇性的憑證授權單位檔案。</block>
+  <block id="a487ff8cfcbd6271ea37126b1f9a7d45" category="paragraph">後端隨即出現在中<block ref="7f46165474d11ee5836777d85df2cdab" prefix=" " category="inline-code"></block> 列出摘要資訊。</block>
+  <block id="5bd6f51db053df4de553551b8cf9fa83" category="list-text"><block ref="5bd6f51db053df4de553551b8cf9fa83" category="inline-link-macro-rx"></block></block>
+  <block id="b95f25e52dab12822cd50293b72cd299" category="paragraph">* 我正在使用試用版授權。如何變更為完整授權？ *</block>
+  <block id="f12591a32788d5d1257e2ed5eb6294c2" category="paragraph">您可以從 NetApp 取得 NetApp 授權檔案（ NLF ）、輕鬆變更為完整授權。</block>
+  <block id="b630af6f03c85ad51ef7307e7d57ee06" category="list-text">在授權總覽中、於授權資訊右側、選取選項功能表。</block>
+  <block id="cb108e519d1f31ecbd41ae4d12645d6d" category="list-text">選取 * 取代 * 。</block>
+  <block id="358cdb2a62658ca41dde3545b61102db" category="paragraph">* 我正在使用試用版授權。我還能管理應用程式嗎？*</block>
+  <block id="448e6c24da61f19f223333099def4861" category="paragraph">是的、您可以使用評估授權（包括預設安裝的內嵌評估授權）來測試管理應用程式功能。試用版授權與完整版授權之間的功能或功能並無差異；試用版授權的使用壽命更短。請參閱 <block ref="33517e0e170e068dfb6f5617810a0372" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="2ffc1b9c31ec02503b31e837127256d6" category="inline-link">請遵循Astra Trident文件中的下列步驟</block>
+  <block id="bd5bd693096363c197fea38bed64ef75" category="paragraph">* 當我取消管理叢集時、 NetApp Astra Trident 是否會自動從叢集解除安裝？ * 當您從 Astra Control Center 取消管理叢集時、 Astra Trident 不會自動從叢集解除安裝。若要解除安裝Astra Trident、您需要<block ref="63f898d0a9f06a9c415a80b9d724603c" category="inline-link-rx"></block>。</block>
+  <block id="74014f44bc5ee9e79cd2adb1167b2d8a" category="paragraph">* 我應該自行管理 Astra Control 嗎？ *</block>
+  <block id="88db3f54bc3210b4b8ffbd67967f6c75" category="paragraph">否、您不應自行管理 Astra Control 、因為它是「系統應用程式」。</block>
+  <block id="9a37b9eea91cad57070a6757b200a6fa" category="paragraph">不健康的 Pod 會影響應用程式管理嗎？ *</block>
+  <block id="122340512db23eef4128af6d9fd5a597" category="paragraph">否、 Pod 的健全狀況不會影響應用程式管理。</block>
+  <block id="d2faa00dfc4d5ba6c178aa8b88ae8916" category="list-text"><block ref="4ba22f2be55f31cf96117b0c6ad9fd5c" category="inline-xref-macro-rx"></block></block>
+  <block id="6874b0a5b35035f4e7f333af29657cae" category="section-title">某些 Pod 在升級至 Astra Control Center 23.04 之後無法啟動</block>
+  <block id="965eb6e78a54ca093665c8c7b7807dc6" category="paragraph">升級至 Astra Control Center 23.04 之後、部分 Pod 可能無法啟動。因應措施是使用下列步驟手動重新啟動受影響的 Pod ：</block>
+  <block id="3dcb6bd2a75a7b9a62d751043941b325" category="list-text">尋找受影響的 Pod 、以目前命名空間取代 &lt;namespace&gt; ：</block>
+  <block id="d5b30331f9bdfd0e0a4b9cc299f4bcf0" category="paragraph">受影響的 Pod 會有類似下列的結果：</block>
+  <block id="86119fd83e8fcb2c30d9e626fe86e19a" category="list-text">重新啟動每個受影響的 Pod 、以目前的命名空間取代 &lt;namespace&gt; ：</block>
+  <block id="5f19a159b98db30779660d8624ef7fc4" category="section-title">2023 年 4 月 25 日（ 23.04.0 ）</block>
+  <block id="b176bb567ff7d20bac0cf1796c175044" category="inline-link-macro">根據預設、新 Astra Control Center 安裝會啟用 90 天試用版授權</block>
+  <block id="9ae9913e7bfea4beccbe107b83f21df5" category="list-text"><block ref="9ae9913e7bfea4beccbe107b83f21df5" category="inline-link-macro-rx"></block></block>
+  <block id="dc76043b82b478d28285ae514fece7b7" category="inline-link-macro">更強大的執行掛勾功能、提供更多篩選選項</block>
+  <block id="846a7e14007c3c26ac57947eaedc4c61" category="list-text"><block ref="846a7e14007c3c26ac57947eaedc4c61" category="inline-link-macro-rx"></block></block>
+  <block id="25f2cff6a812654b1394f53034bcf564" category="inline-link-macro">現在可以在使用 Astra Control Center 進行複寫容錯移轉後執行執行攔截程式</block>
+  <block id="6d60c4f196979c4b445f94bc2daa72b2" category="list-text"><block ref="6d60c4f196979c4b445f94bc2daa72b2" category="inline-link-macro-rx"></block></block>
+  <block id="051b353228cf5818b61e6086ed61834f" category="inline-link-macro">支援 NAS 經濟效益、成為儲存等級類型</block>
+  <block id="a96e178908b7562b4e8dd9a107d4bb3b" category="list-text"><block ref="a96e178908b7562b4e8dd9a107d4bb3b" category="inline-link-macro-rx"></block></block>
+  <block id="e230abda83cb11e7b7ac9992ed62766e" category="inline-link-macro">支援在還原作業期間包含或排除應用程式資源</block>
+  <block id="c615097b74f61376d422e9fa5af786b5" category="list-text"><block ref="c615097b74f61376d422e9fa5af786b5" category="inline-link-macro-rx"></block></block>
+  <block id="b909803838dd775bd8b8dcfbaf82fb87" category="inline-link-macro">支援管理純資料應用程式</block>
+  <block id="4db832ff5f281acffc08296d3bbdd651" category="list-text"><block ref="4db832ff5f281acffc08296d3bbdd651" category="inline-link-macro-rx"></block></block>
+  <block id="3ff8baa90fbc4031f87ca3e1cf5c3622" category="list-text"><block ref="3ff8baa90fbc4031f87ca3e1cf5c3622" category="inline-link-rx"></block></block>
+  <block id="df79a655be206b6ec06f2bb9abec76b0" category="list-text"><block ref="df79a655be206b6ec06f2bb9abec76b0" category="inline-link-rx"></block></block>
+  <block id="350c3f5200386ba1099a1a57a2ef15ff" category="list-text"><block ref="350c3f5200386ba1099a1a57a2ef15ff" category="inline-link-rx"></block></block>
+  <block id="1a997a23b8c8148cacaba83f6a22232d" category="list-text"><block ref="1a997a23b8c8148cacaba83f6a22232d" category="inline-link-rx"></block></block>
+  <block id="e8aa3b7bc82e27aaf09dd5e8fe34af69" category="list-text"><block ref="e8aa3b7bc82e27aaf09dd5e8fe34af69" category="inline-link-rx"></block></block>
+  <block id="034a65c82e96dfaa18a31d81aebb4d6e" category="list-text"><block ref="034a65c82e96dfaa18a31d81aebb4d6e" category="inline-link-rx"></block></block>
+  <block id="264731ba981e94a69774b60469394abb" category="list-text"><block ref="264731ba981e94a69774b60469394abb" category="inline-link-rx"></block></block>
+  <block id="9b851474b7a11191f7c7c3f4527dbe06" category="list-text"><block ref="9b851474b7a11191f7c7c3f4527dbe06" category="inline-link-rx"></block></block>
+  <block id="14d00b766289611c8b24e20d70ee5f18" category="list-text"><block ref="56fa2c12ee64f725e22e81b9cfe9a196" category="inline-xref-macro-rx"></block></block>
+  <block id="1cb08cc65f3cc745b6fb702c0b15365e" category="section-title">「活動」頁面最多可顯示 100000 個事件</block>
+  <block id="676bd50e0f10e6725dc7a68e3041cfed" category="inline-link-macro">Astra Control REST API</block>
+  <block id="474be14e965990f35641a82fd1940bd1" category="paragraph">Astra Control 活動頁面最多可顯示 100,000 個事件。若要檢視所有記錄的事件、請使用擷取事件 <block ref="65b0251af1492433290d52a893eea83e" category="inline-link-macro-rx"></block>。</block>
+  <block id="3eb6e57cf84a8302b4b922f25ea2ea39" category="admonition">當 Astra 控制中心與 Cloud Insights 配對時、您不應使用 Cloud Insights 中的 * 修改部署 * 選項。 </block>
+  <block id="320e95fd9e1aa20ab2198f9eaf237d3f" category="admonition">啟用 Cloud Insights 連線之後、您可以在 *Backends* 頁面上檢視處理量資訊、並在選取儲存後端後端之後連線至 Cloud Insights 。您也可以在「叢集」區段的 * 儀表板 * 上找到相關資訊、然後從該處連線至 Cloud Insights 。</block>
+  <block id="f4ab41f5fc2122a64e7d7389423854ee" category="paragraph">您可以將記錄（ Kubernetes 事件）從 Astra Control Center 監控的系統傳送至 Fluentd 端點。Fluentd連線預設為停用。</block>
+  <block id="05818fc1e904f78a9f4562f4d9f4e890" category="list-text">ONTAP NAS 經濟型（此儲存等級無法使用 SnapMirror 複寫功能搭配 Astra Control ）</block>
+  <block id="5b02c27dbb0caca9b20a736fed788fe5" category="list-text">*複寫類型*：「非同步」目前是唯一可用的複寫類型。</block>
+  <block id="8865b45a34f33f3189143bbc3c61c00c" category="list-text">*偏移*：設定您想要Astra Control拍攝Snapshot的小時數（分鐘）。您可能想要使用偏移、使其不與其他排程作業一致。</block>
+  <block id="69f7fefc112d0cd0af937e058f3df889" category="admonition">偏移備份和複寫排程、以避免排程重疊。例如、在每小時的最長時間執行備份、並排程複寫以 5 分鐘偏移和 10 分鐘間隔開始。</block>
+  <block id="d81002a868da6107b0af9529861aeb57" category="list-text">在目的地叢集上、應用程式會根據最新的複寫快照來啟動。</block>
+  <block id="b696280e6a5119acc8b4e3b32b66f483" category="list-text">如果來源應用程式已啟用一或多個還原後執行掛勾、則會為目的地應用程式執行這些執行掛勾。</block>
+  <block id="cb6cf888925c59b5c1490a88703bc34c" category="inline-link-macro">取消管理所有應用程式</block>
+  <block id="2f429e20a4e4d7a4cabcce989a2c2916" category="list-text"><block ref="43a61e5564eee1552db29a874774ce4f" category="inline-link-macro-rx"></block> 在叢集上。</block>
+  <block id="550efb370009b16cfe94ccec4851a4bc" category="inline-link-macro">取消管理所有叢集</block>
+  <block id="4397a746c05f7315b8d600f02c2f9547" category="list-text"><block ref="744f54fefb9af50404a437aa8192d5fa" category="inline-link-macro-rx"></block>。</block>
+  <block id="d351665923d8d6b0764f7cc8d2878a21" category="list-text">使用下列命令刪除<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> （或自訂命名）命名空間：</block>
+  <block id="e6cd046e3064b2ac3beb88a9de47d686" category="paragraph">範例結果：</block>
+  <block id="ccd62d676165e34c2e9c6d088c06e70f" category="paragraph">執行攔截是一種自訂動作、可設定搭配託管應用程式的資料保護作業一起執行。例如、如果您有資料庫應用程式、您可以使用執行掛勾來暫停快照之前的所有資料庫交易、並在快照完成後繼續交易。如此可確保應用程式一致的快照。</block>
+  <block id="99dc882fc0f61d1db87631ed9f156913" category="section-title">執行攔截篩選器</block>
+  <block id="d335f82eb07728e66330e5d345123e4e" category="paragraph">當您新增或編輯應用程式的執行掛勾時、可以將篩選器新增至執行掛勾、以管理掛勾將相符的容器。篩選器對於在所有容器上使用相同容器映像的應用程式來說非常實用、但可能會將每個映像用於不同的用途（例如Elasticsearch）。篩選器可讓您建立執行掛鉤在部分相同容器上執行的案例、但不一定全部執行。如果您為單一執行掛勾建立多個篩選器、這些篩選器會與邏輯和運算子結合使用。每個執行掛機最多可有10個作用中篩選器。</block>
+  <block id="1f7268b251b886be0fbed048e85fcbae" category="paragraph">您新增至執行掛勾的每個篩選器都會使用規則運算式來比對叢集中的容器。當掛機符合容器時、掛機會在該容器上執行其相關的指令碼。</block>
+  <block id="8f00b1ba5cf1b5159598a4201b24c485" category="admonition">篩選器的規則運算式使用規則運算式2（RE2）語法、不支援建立篩選器、將容器從相符項目清單中排除。</block>
+  <block id="7caae75448dbc59fcadd621099e170b3" category="inline-link">規則運算式2（RE2）語法支援</block>
+  <block id="348be7b5ea322b3d9f3cc7f3638347e8" category="paragraph">如需Astra Control在執行攔截篩選器中支援規則運算式的語法資訊、請參閱<block ref="d4d0dd655d04b2dc5b031206e1febd50" category="inline-link-rx"></block>。</block>
+  <block id="a00c0d5dc029d521b5d82eba2c9f84ec" category="paragraph">由於執行掛勾通常會減少或完全停用執行中應用程式的功能、因此您應該一律盡量縮短自訂執行掛勾執行所需的時間。如果您以相關的執行掛勾開始備份或快照作業、但隨後取消它、則如果備份或快照作業已經開始、仍允許掛勾執行。這表示備份後執行掛勾中使用的邏輯無法假設備份已完成。</block>
+  <block id="4615b89d43551952b2c71aed9b7e7f6a" category="list-text">如果 Astra Control Center 將複寫的來源應用程式容錯移轉至目的地應用程式、則在容錯移轉完成後、會為目的地應用程式執行啟用的任何還原後執行攔截。</block>
+  <block id="4c004df391027b81952b788a3802e37c" category="list-text">如果您將命名空間篩選器新增至執行掛勾、而執行還原或複製作業之後執行、且還原或複製來源與目的地位於不同的命名空間、則命名空間篩選器只會套用至目的地命名空間。</block>
+  <block id="ad06e01fed5c441edb22a5ad730a28c4" category="paragraph">您可以在結果清單中檢視所有已啟用或已停用的執行掛勾。您可以查看某個掛機的狀態、相符的容器數量、建立時間、以及何時執行（作業前或作業後）。您可以選取<block ref="26b17225b626fb9238849fd60eabdf60" prefix=" " category="inline-code"></block> 勾號名稱旁的圖示、可展開要執行的容器清單。若要檢視與此應用程式執行掛勾相關的事件記錄、請前往*活動*索引標籤。</block>
+  <block id="fdccfeac6686fcf9ef3545d27c98ebd9" category="paragraph">每個執行攔截都必須使用指令碼來執行動作。您可以新增一個或多個執行掛勾可以參考的指令碼。許多執行掛勾可以參照相同的指令碼、只要變更一個指令碼、就能更新許多執行掛勾。</block>
+  <block id="f7dab4c8b3608b84fa8e0c583d18f33a" category="paragraph">您可以為應用程式建立自訂執行掛勾。請參閱 <block ref="17e166b6ef6242446312ff693caa559b" category="inline-xref-macro-rx"></block> 如需攔截範例、您需要擁有擁有擁有者、管理員或成員權限、才能建立執行掛勾。</block>
+  <block id="730e56f4151d257d4be9b69d500491b1" category="list-text">在「*勾號詳細資料*」區域中：</block>
+  <block id="754306132541c264b899699072715a8d" category="list-text">從「*作業*」下拉式功能表中選取作業類型、以判斷掛機應在何時執行。</block>
+  <block id="b3bf4b7c4fe4ab9fd4c927146b958c29" category="list-text">（可選）在*勾選篩選器詳細資料*區域中、您可以新增篩選器來控制執行勾點所在的容器：</block>
+  <block id="26e5ad6aeb15088310dc7f5f94ac6b1c" category="list-text">選取*新增篩選器*。</block>
+  <block id="046bbeb096523a6c2a52a82b7a1a144a" category="list-text">在*勾選篩選類型*欄中、從下拉式功能表中選擇要篩選的屬性。</block>
+  <block id="7f5c33cf7bc03894aef7093b46c50ba3" category="inline-link">規則運算式2（RE2）regex語法</block>
+  <block id="40bf80a4152341fe23b78ee81bdae830" category="list-text">在* Regex*欄中、輸入要做為篩選器的規則運算式。Astra Control使用<block ref="5a0c17cee4b408e519a995b1f313a559" category="inline-link-rx"></block>。</block>
+  <block id="f3ed8a73ba34dec99a6dc46c809c190b" category="admonition">如果您篩選的是屬性的確切名稱（例如pod名稱）、而規則運算式欄位中沒有其他文字、則會執行子字串比對。若要完全符合名稱及名稱、請使用確切的字串相符語法（例如、<block ref="008d171d630f0108aa5ebd55b36c9d01" prefix=" " category="inline-code"></block>）。</block>
+  <block id="f587a978a9522295d00811bafac25b74" category="list-text">若要新增更多篩選條件、請選取*新增篩選條件*。</block>
+  <block id="e45aa7d1b7841e860b561b3f17ed3626" category="admonition">執行掛勾的多個篩選器會與邏輯和運算子結合使用。每個執行掛機最多可有10個作用中篩選器。</block>
+  <block id="d3b15dd314c60647e826dddaf876252c" category="list-text">完成後、選取*下一步*。</block>
+  <block id="245ac12acb7bc3829b2f5656f25ce8f9" category="list-text">檢閱執行掛機組態。</block>
+  <block id="e7e278b27ed2ba8a9f0a89cea227a0aa" category="section-title">編輯執行掛勾</block>
+  <block id="48077e8945995c9af9cf3beb5a95e222" category="paragraph">如果您想要變更執行掛勾的屬性、篩選器或所使用的指令碼、您可以編輯執行掛勾。您需要擁有擁有擁有者、管理員或成員權限、才能編輯執行掛勾。</block>
+  <block id="1dbaed14db949844ab67cca7fa804ec9" category="list-text">在「*動作*」欄中選取「選項」功能表、以選取您要編輯的掛勾。</block>
+  <block id="d6b31513755644b14ff0352ed78ee5d0" category="list-text">完成每個區段後、請選擇*下一步*進行任何必要的變更。</block>
+  <block id="4c5848fdf558a402deead01b3a7267ca" category="list-text">在產生的對話方塊中、輸入「DELETE」進行確認。</block>
+  <block id="4bc73956dcf3b9d92b687a0e41330027" category="list-text">選擇*是、刪除執行勾點*。</block>
+  <block id="d609930de7bbf116e48c59d16544b92b" category="list-text">* 授權 * ：若要使用 Astra Control Center 管理應用程式、您需要內嵌 Astra Control Center 評估授權或完整授權。</block>
+  <block id="dcb9a5ddd39d8514ddcd5a64c129a6b0" category="example-title">深入瞭解如何將叢集範圍的資源新增至應用程式命名空間。</block>
+  <block id="ecea927620c87b1d617cd9e86ada1f21" category="list-text">* ONTAP NAS 經濟型儲存等級 * ：如果您的應用程式使用的是以為後盾的儲存等級<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、複製作業的備份部分會中斷運作。在備份完成之前、來源應用程式無法使用。複製作業的還原部分不會中斷營運。</block>
+  <block id="63d526831e75bdfe2a1b18d7e1752ca3" category="list-text">選擇保留與應用程式相關的原始儲存類別、或選擇不同的儲存類別。</block>
+  <block id="5f116b62082ad46b96d2b6d9abbcf0ec" category="admonition">如果您選取不同的儲存類別、而此儲存類別在還原時並不存在、則會傳回錯誤。</block>
+  <block id="c8f51750761cfb5d9ed1f009407abc09" category="inline-link">瞭解如何解除安裝Astra Trident</block>
+  <block id="e1f711a0f8692f3d19fa623e09b24909" category="list-text">Astra Trident不會從叢集解除安裝。<block ref="3c0339a1ad9f8347feaea25bac6a0a15" category="inline-link-rx"></block>。</block>
+  <block id="85fcb9615339f8f8ea462bcc5faea0c9" category="list-text">* 請先保護應用程式 * ：強烈建議您在還原應用程式之前、先拍攝快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。</block>
+  <block id="4250100f234fe7960272e070cd21fe6e" category="list-text">* 空間需求規劃 * ：當您對使用 NetApp ONTAP 儲存設備的應用程式執行原位還原時、還原的應用程式所使用的空間可能加倍。執行就地還原之後、請從還原的應用程式中移除任何不想要的快照、以釋放儲存空間。</block>
+  <block id="2611ebd9367164deaedb3ccfee6e4ded" category="list-text">* Helm 部署的應用程式 * ：完全支援使用 Helm 3 部署的應用程式（或從 Helm 2 升級至 Helm 3 ）。不支援以Helm 2部署的應用程式。</block>
+  <block id="87e2bee05713f9f1c2cff05a4eca5437" category="inline-xref">此範例</block>
+  <block id="8a2c238a25485b819bdaa309d2b8e5ea" category="paragraph">在與其他應用程式共用資源的應用程式上執行就地還原作業、可能會產生非預期的結果。在其中一個應用程式上執行就地還原時、應用程式之間共享的任何資源都會被取代。如需詳細資訊、請參閱 <block ref="145dfba9ccfdb9b7ef8211816362b9ff" category="inline-xref-macro-rx"></block>。</block>
+  <block id="fd09da9cdc1a428192d0b1e00adcc181" category="list-text">從「動作」欄的「選項」功能表中、選取 * 還原 * 。</block>
+  <block id="d830d69424f05433158d32a752640dac" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、您必須使用原始儲存類別還原應用程式。如果您要將應用程式還原至相同的命名空間、則無法指定不同的儲存類別。</block>
+  <block id="fb43cf9ce5f31c6de66316a29725099b" category="list-text">選取要用來還原應用程式的快照或備份、此應用程式會將應用程式還原為其舊版。</block>
+  <block id="4899d7ecf589e53c080532b2c2b0c6f8" category="inline-xref">從儲存類別支援的 &lt;block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category='inline-code'/&gt; 移轉應用程式</block>
+  <block id="003b56b840a43087353dc9e03d3c589e" category="admonition">您可以使用此程序來執行其中一項 <block ref="741d8c654be5934eff2e23ae5e745f34" category="inline-xref-macro-rx"></block> 以作為後盾的儲存類別<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 在同一個叢集 * 或 * 上、將應用程式複製到另一個叢集、並以儲存類別為後盾<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式：</block>
+  <block id="45e20b859ef908c43b3e94787a84c70c" category="list-text">指定還原的應用程式名稱。</block>
+  <block id="06b5275353f1f881db6cdab3c0022af8" category="list-text">選取要用來還原應用程式的快照或備份。</block>
+  <block id="a7a08622ee5c8019b57354b99b7693b2" category="list-text">請選擇下列其中一項：</block>
+  <block id="42f6c62242bb567ac4a309a82717d6e9" category="list-text">* 使用原始儲存類別還原 * ：除非目標叢集上不存在、否則應用程式會使用原本關聯的儲存類別。在這種情況下、將會使用叢集的預設儲存類別。</block>
+  <block id="cc9916e812cf950bc0992213a1e5cc57" category="list-text">* 使用不同的儲存類別還原 * ：選取目標叢集上存在的儲存類別。所有應用程式磁碟區、無論其最初關聯的儲存類別為何、都會移轉到這個不同的儲存類別、作為還原的一部分。</block>
+  <block id="f543c57bda6d8b605def95f1284987d5" category="list-text">選擇要篩選的任何資源：</block>
+  <block id="9ff8a7661af853aca27e6c1ab87f36e8" category="list-text">* 還原所有資源 * ：還原與原始應用程式相關的所有資源。</block>
+  <block id="5f555088b60321f77a3129856230b170" category="list-text">* 篩選資源 * ：指定還原原始應用程式資源子集的規則：</block>
+  <block id="be4cd390b872f16cfabc13d07539fd53" category="list-text">選擇從還原的應用程式中包含或排除資源。</block>
+  <block id="037a185ba384d88f8e580ab70df825a5" category="list-text">選取 * 新增包含規則 * 或 * 新增排除規則 * 、然後設定規則、在應用程式還原期間篩選正確的資源。您可以編輯或移除規則、然後再次建立規則、直到組態正確為止。</block>
+  <block id="889e0879e35da85d2fa7a2f2d1c5faf4" category="admonition">若要瞭解如何設定 INCLUDE 及 EXCLUDE 規則、請參閱 <block ref="d95b34247fe432ab8e2cd9b865da84ef" category="inline-xref-macro-rx"></block>。</block>
+  <block id="77e10aacbaacde5feb20b931483aa483" category="list-text">仔細檢閱還原動作的詳細資料、輸入「還原」（如有提示）、然後選取 * 還原 * 。</block>
+  <block id="a15cd5bb4e51612a5f115c3a8944c786" category="section-title">在應用程式還原期間篩選資源</block>
+  <block id="78368183ca89472e89be5c8bb443ac4e" category="paragraph">您可以將篩選規則新增至 <block ref="ade375e828882781f654729e54a482ee" category="inline-link-macro-rx"></block> 將指定要從還原的應用程式中包含或排除的現有應用程式資源的作業。您可以根據指定的命名空間、標籤或 GVK （ GroupVersionKind ）來包含或排除資源。</block>
+  <block id="13f8f7db9cb20dc7064b63d9b2a9da6d" category="example-title">深入瞭解納入和排除案例</block>
+  <block id="75b97781a9a8e81bcc6c6bd760f0d4d6" category="list-text">* 您選擇包含原始命名空間的 INCLUDE 規則（原地還原） * ：您在規則中定義的現有應用程式資源將會刪除、並由您用於還原的選定快照或備份中的資源取代。您未在「包括」規則中指定的任何資源將保持不變。</block>
+  <block id="122751a1cdad4f81e9738e1aaee57fa5" category="list-text">* 您選擇包含新命名空間的 INCLUDE 規則 * ：使用該規則在還原的應用程式中選取所需的特定資源。您未在「包括」規則中指定的任何資源將不會包含在還原的應用程式中。</block>
+  <block id="2d19e5ef70897677691c8274e0c86202" category="list-text">* 您選擇具有原始命名空間的排除規則（就地還原） * ：您指定要排除的資源將不會還原、並保持不變。您未指定排除的資源將會從快照或備份還原。如果對應的 StateSetSet 是篩選資源的一部分、則持續磁碟區上的所有資料都會被刪除並重新建立。</block>
+  <block id="436e17b05ad04b93d139868e0d72042f" category="list-text">* 您選取含有新命名空間的排除規則 * ：使用規則選取您要從還原的應用程式中移除的特定資源。您未指定排除的資源將會從快照或備份還原。</block>
+  <block id="9ea5b61a88cc8be3130f59f62ae90a28" category="paragraph">規則可以是「包含」或「排除」類型。合併資源包容與排除的規則無法使用。</block>
+  <block id="c67a6482f1fb53d2cbb9318b19d6c4d3" category="list-text">在您選擇篩選資源並在「還原應用程式」精靈中選取「包含」或「排除」選項之後、請選取 * 新增「包括」規則 * 或 * 新增排除規則 * 。</block>
+  <block id="56e4cd0a21a9c6a429bc606e03e489fa" category="admonition">您無法排除 Astra Control 自動包含的任何叢集範圍資源。</block>
+  <block id="4c10c6a72c891aab806613b109d22be3" category="list-text">設定篩選規則：</block>
+  <block id="e4fc982dc3a7a04c608c7d3da530e692" category="admonition">您必須指定至少一個命名空間、標籤或 GVK 。請確保套用篩選規則後保留的任何資源、足以讓還原的應用程式保持正常狀態。</block>
+  <block id="d35194965c9f1580186ad982838e5eb4" category="list-text">選取規則的特定命名空間。如果您沒有進行選擇、篩選器將會使用所有命名空間。</block>
+  <block id="73929c0667caa357c2601028455b9ea5" category="admonition">如果您的應用程式原本包含多個命名空間、而您將其還原至新命名空間、則即使所有命名空間不包含資源、也會建立這些命名空間。</block>
+  <block id="2ca3397d5b1cc345ea0c048d705acb43" category="list-text">（選用）輸入資源名稱。</block>
+  <block id="06e9157028c3f558c5ea3b4990e83436" category="inline-link">標籤選取器</block>
+  <block id="a03060b04d956deb78c9f806ee24f8ab" category="list-text">（選用） * 標籤選取器 * ：包含 A<block ref="b4faaeb15a83d39d5c051e9dff75711f" category="inline-link-rx"></block> 新增至規則。標籤選取器僅用於篩選符合所選標籤的資源。</block>
+  <block id="190f49515750e7067bcca2e80a75e1ed" category="list-text">（選用）選取 * 使用設定為篩選資源 * 的 GVK （ GroupVersionKind ）、以取得其他篩選選項。</block>
+  <block id="23549ea7e8538a2adf68e469a2d20d2b" category="admonition">如果您使用的是 GVK 篩選器、則必須指定版本和種類。</block>
+  <block id="c59d755303cea05e0e094f29eab0a5b6" category="list-text">（選用） * 群組 * ：從下拉式清單中選取 Kubernetes API 群組。</block>
+  <block id="0a7a7f4a53adc5b0553b40b1e29b0ba0" category="list-text">* 種類 * ：從下拉式清單中、選取要在篩選器中使用的 Kubernetes 資源類型的物件架構。</block>
+  <block id="8267e7bf8eea35734f6959fde07b17d9" category="list-text">* 版本 * ：選取 Kubernetes API 版本。</block>
+  <block id="e9f8a964cfe8d148cfb0e30848e5fa69" category="admonition">您可以根據需要建立任意數量的資源、包括和排除規則。這些規則會在您開始作業之前顯示在還原應用程式摘要中。</block>
+  <block id="c54289096cda6c9fdce6630f9c6f8915" category="section-title">從 ONTAP NAS 經濟型儲存設備移轉至 ONTAP NAS 儲存設備</block>
+  <block id="4b2c74380ba4764db896a5663121f69c" category="inline-link-macro">應用程式還原</block>
+  <block id="b92759a8cbd45e95d0289536b80bbf56" category="paragraph">您可以使用 Astra Control <block ref="8a5873c85b30e3ecf46411b2e0542bf9" category="inline-link-macro-rx"></block> 從以作為後盾的儲存類別移轉應用程式磁碟區的作業<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>（允許有限的應用程式保護選項）、以作為後盾的儲存類別<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 提供完整的 Astra Control 保護選項。還原作業會移轉使用的 Qtree 型磁碟區<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 後端到標準磁碟區的備份<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>。Volume 、無論它們是否存在<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 僅備份或混合、將移轉至目標儲存類別。移轉完成後、保護選項不再受到限制。</block>
+  <block id="5ca4648f1bb1157edc69a1a2d478b1ec" category="section-title">應用程式與其他應用程式共用資源的就地還原複雜度</block>
+  <block id="b9c5aa5f0760c46a33739ee66fcb84b7" category="paragraph">您可以在與其他應用程式共用資源的應用程式上執行就地還原作業、並產生非預期的結果。在其中一個應用程式上執行就地還原時、應用程式之間共享的任何資源都會被取代。</block>
+  <block id="76d6e00a16a4b5b026bf5cd77e765048" category="paragraph">以下是使用 NetApp SnapMirror 複寫進行還原時、造成不必要情況的範例案例：</block>
+  <block id="777c563672cb7cb950e79c65b8b7eed7" category="list-text">升級前、請參閱 <block ref="ccb0e0bd30b9675a77be4777ecce7ae0" category="inline-link-macro-rx"></block> 確保您的環境仍符合Astra Control Center部署的最低需求。您的環境應具備下列條件：</block>
+  <block id="4bc1d1c42f12d420fb373e1a8d345a2d" category="list-text">變更Astra版本號碼 <block ref="bbdbf70444e48a34a4a7e7d708d85eec" prefix="(" category="inline-code"></block> 內部<block ref="b979c2934ac0b4ba3f08dabfdd1b2299" prefix=" " category="inline-code"></block>）升級至您要升級的版本：</block>
+  <block id="41ff704de5d4377c40831a45f37b2f9c" category="list-text">確認您的映像登錄路徑符合您在中推送映像的登錄路徑 <block ref="7fe0e1ddcc2917e6a216033278119235" category="inline-xref-macro-rx"></block>。更新<block ref="990dc1a09e10c7b5378e6bc8a1956cb8" prefix=" " category="inline-code"></block> 內部<block ref="b979c2934ac0b4ba3f08dabfdd1b2299" prefix=" " category="inline-code"></block> 如果登錄自上次安裝後有所變更。</block>
+  <block id="0721a4ab2e84ecf070923858d32930ec" category="list-text">將下列項目新增至<block ref="c16ae51f09d668b952e5ab23072ad64e" prefix=" " category="inline-code"></block> 的內部組態<block ref="b979c2934ac0b4ba3f08dabfdd1b2299" prefix=" " category="inline-code"></block>：</block>
+  <block id="0f04760e138c3f7be6f489f1347dbf8c" category="list-text">在中新增下列行<block ref="9848fd54a26db3cbb32026fac4aa182a" prefix=" " category="inline-code"></block> 內部<block ref="b979c2934ac0b4ba3f08dabfdd1b2299" prefix=" " category="inline-code"></block> 在Astra Control Center CR：</block>
+  <block id="f3dbb8f4f18a15b1e8e6363e5037b1a9" category="list-text">儲存並結束檔案編輯器。將套用變更、並開始升級。</block>
+  <block id="d005a355f734ce53cfac787b73690ad8" category="list-text"><block ref="a2fb4c62dc2b860b7c29a7105cf5e153" category="inline-xref-macro-rx"></block></block>
+  <block id="fe5d8210d543fc432244bc1b8437697d" category="list-text"><block ref="dac1aa544b3fe40a234c632b961545e1" category="inline-xref-macro-rx"></block></block>
+  <block id="4f8439c96d155b69d39a8d99998f34d0" category="paragraph">您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端。有了此功能、您可以查看更多資訊。Cloud Insights請參閱<block ref="58c5925e5196942f30b30cb2d55d4ec2" category="inline-link-rx"></block>。</block>
+  <block id="f9c75a0a19f0ce3d1b6302419166cb54" category="section-title">編輯儲存後端驗證詳細資料</block>
+  <block id="719dda0818a1a86219525e9dd0dff96d" category="paragraph">Astra Control Center 提供兩種驗證 ONTAP 後端的模式。</block>
+  <block id="1dd1e082d46d0903a851b6bedaeb1d68" category="list-text">* 認證型驗證 * ：具有必要權限的 ONTAP 使用者的使用者名稱和密碼。您應該使用預先定義的安全登入角色、例如 admin 、以確保與 ONTAP 版本的最大相容性。</block>
+  <block id="3b7d1e2c64df6913fa8ec4a53079799f" category="paragraph">您可以更新現有的後端、以從一種驗證類型移至另一種方法。一次只支援一種驗證方法。</block>
+  <block id="6d0cc5a27126982cdc5ece01bf6b2c20" category="paragraph">如需啟用憑證型驗證的詳細資訊、請參閱 <block ref="1443af3d14571d6e73a5d485f2cf6ddf" category="inline-link-macro-rx"></block>。</block>
+  <block id="baffd84454b0b9a7d101b6235c3b7182" category="list-text">在「認證」欄位中、選取 * 編輯 * 圖示。</block>
+  <block id="12daf4dd3a4208a206163c739abbe1c1" category="list-text">在「編輯」頁面中、選取下列其中一項。</block>
+  <block id="6eb8d4fb09a9b715a16f70e17cb51a1b" category="section-title">管理探索到的儲存後端</block>
+  <block id="e5fcfdcf19a3bd137f434e58fef5ae01" category="paragraph">您可以選擇管理未受管理但已探索到的儲存後端。當您管理儲存後端時、 Astra Control 會指出驗證憑證是否已過期。</block>
+  <block id="c8db55f1f82b638cb7198b184e6e5928" category="list-text">選取 * 探索 * 選項。</block>
+  <block id="e7fc419034767a406f96771bc7baa569" category="list-text">從 * 動作 * 欄的選項功能表中、選取 * 管理 * 。</block>
+  <block id="99ba824432d96de1a57be0f8b681d518" category="list-text">進行變更。</block>
+  <block id="4b81f371a950b4164e976fd95ff29363" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、無法使用保護原則。如果您想要保護原則、請使用替代的儲存類別。</block>
+  <block id="c1a51552670bd89a555dfc498d58f040" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、無法使用快照。使用替代的儲存類別來執行快照。</block>
+  <block id="d340b669a21181fdcdf79c308ba61ea9" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 在備份作業完成之前、驅動程式、備份會中斷運作、應用程式將無法使用。</block>
 </blocks>

@@ -108,7 +108,7 @@ Astra Control Service的高層級運作方式如下：
 
 ** 在叢集上建立新的管理員角色和Kubernetes服務帳戶。
 ** 使用新的管理員角色進行安裝 https://docs.netapp.com/us-en/trident/index.html["Astra Trident"^] 在叢集上建立一個或多個儲存類別。
-** 如果您使用NetApp雲端服務儲存產品做為儲存後端、Astra Control Service會使用Astra Trident來為應用程式配置持續的磁碟區。如果您使用Amazon EBS或Azure託管磁碟做為儲存後端、則需要安裝供應商專屬的SCSI驅動程式。安裝說明請參閱 link:set-up-amazon-web-services.html["設定Amazon Web Services"^] 和 link:set-up-microsoft-azure-with-amd.html["使用Azure託管磁碟來設定Microsoft Azure"^]。
+** 如果您使用NetApp雲端服務儲存產品做為儲存後端、Astra Control Service會使用Astra Trident來為應用程式配置持續的磁碟區。如果您使用Amazon EBS或Azure託管磁碟做為儲存後端、則需要安裝供應商專屬的SCSI驅動程式。安裝說明請參閱 https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-amazon-web-services.html["設定Amazon Web Services"^] 和 https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html["使用Azure託管磁碟來設定Microsoft Azure"^]。
 
 
 * 此時、您可以將應用程式新增至叢集。將在新的預設儲存類別上配置持續磁碟區。
@@ -123,19 +123,19 @@ Astra Control的免費方案可讓您管理帳戶中最多10個命名空間。�
 
 Astra Control Center可在您自己的私有雲端本機執行。
 
-Astra Control Center 支援 Kubernetes 叢集、其具備 Trident 型儲存類別、以及 ONTAP 9.5 及更新版本的儲存後端。
+Astra Control Center 支援 Kubernetes 叢集、搭配 Astra Trident 型儲存類別、以及 ONTAP 9.5 以上的儲存後端。
 
 在雲端連線的環境中、Astra Control Center使用Cloud Insights 「資訊中心」來提供進階的監控和遙測功能。若缺乏Cloud Insights 支援鏈接、Astra Control Center可提供有限（7天數據）的監控與遙測功能、並透過開放式指標端點匯出至Kubernetes原生監控工具（例如Prometheus和Grafana）。
 
 Astra Control Center已完全整合AutoSupport 至整套的功能、可Active IQ 為使用者和NetApp支援人員提供疑難排解和使用資訊。
 
-您可以使用90天試用版授權試用Astra Control Center。評估版本可透過電子郵件和社群選項來支援。此外、您也可以從產品內的支援儀表板存取知識庫文章和文件。
+您可以使用 90 天內嵌評估授權、試用 Astra Control Center 。在評估 Astra Control Center 時、您可以透過電子郵件和社群選項獲得支援。此外、您也可以從產品內的支援儀表板存取知識庫文章和文件。
 
-若要安裝及使用Astra Control Center、您必須符合特定需求 https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html["需求"]。
+若要安裝及使用Astra Control Center、您必須符合特定需求 https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html["需求"^]。
 
 Astra Control Center的高層級運作方式如下：
 
-* 您可以在本機環境中安裝Astra Control Center。深入瞭解如何操作 https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html["安裝Astra Control Center"]。
+* 您可以在本機環境中安裝Astra Control Center。深入瞭解如何操作 https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html["安裝Astra Control Center"^]。
 * 您可以完成以下設定工作：
 +
 ** 設定授權。
@@ -146,7 +146,7 @@ Astra Control Center的高層級運作方式如下：
 
 
 
-深入瞭解如何操作 https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["設定Astra控制中心"]。
+深入瞭解如何操作 https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["設定Astra控制中心"^]。
 
 您可以將應用程式新增至叢集。或者、如果叢集中已有一些應用程式正在管理中、您可以使用Astra Control Center來管理這些應用程式。然後、使用Astra Control Center建立快照、備份、複製及複寫關係。
 

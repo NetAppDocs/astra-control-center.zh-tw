@@ -20,11 +20,11 @@ Astra Control Center支援ONTAP 以支援作為儲存後端的功能。
 
 Astra Control Center支援下列項目：
 
-* * ONTAP 以支援的Trident儲存類*：如果您使用ONTAP 的是支援支援支援功能的支援功能、Astra Control Center可匯入ONTAP 該功能的支援功能、以報告各種監控資訊。
+* * Astra Trident 儲存類別以 ONTAP 儲存 * 為後盾：如果您使用的是 ONTAP 後端、 Astra 控制中心可以匯入 ONTAP 後端、以報告各種監控資訊。
 
 
 
-NOTE: Trident儲存類別應預先設定在Astra Control Center之外。
+NOTE: Astra Trident 儲存類別應在 Astra Control Center 之外預先設定。
 
 
 

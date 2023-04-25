@@ -1,0 +1,65 @@
+---
+indexpage:
+  lead: Astra Control Center軟體可在內部部署環境中、為Kubernetes叢集提供應用程式感知資料管理功能。輕鬆備份Kubernetes應用程式、將資料移轉至不同的叢集、並即時建立可運作的應用程式複本。如果您需要管理在公有雲上執行的Kubernetes應用程式、請前往Astra
+    Control Service的文件。
+  tiles:
+  - title: Astra Control Center入門
+    links:
+    - title: 深入瞭解Astra Control Center
+      url: "/get-started/intro.html"
+    - title: Astra Control Center的新功能
+      url: "/release-notes/whats-new.html"
+    - title: 版本資訊
+      url: "/release-notes/rn_overview.html"
+    - title: 歡迎試用
+      url: "/get-started/quick-start.html"
+    - title: 安裝Astra Control Center
+      url: "/get-started/install_acc.html"
+  - title: 使用Astra控制中心
+    links:
+    - title: 管理帳戶
+      url: "/use/manage-local-users-and-roles.html"
+    - title: 管理應用程式
+      url: "/use/manage-apps.html"
+    - title: 保護應用程式
+      url: "/use/protect-apps.html"
+    - title: 複製及移轉應用程式
+      url: "/use/clone-apps.html"
+    - title: 將應用程式複寫到遠端系統
+      url: "/use/replicate_snapmirror.html"
+  - title: 使用Astra Control REST API
+    links:
+    - title: 開始使用Astra Control API
+      url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
+    - title: API 參考
+      url: https://docs.netapp.com/us-en/astra-automation/reference/overview.html
+    - title: API工作流程
+      url: https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html
+  - title: 使用Astra Control Service
+    links:
+    - title: 瞭解Astra Control Service
+      url: https://docs.netapp.com/us-en/astra/get-started/intro.html
+    - title: Astra Control Service的新功能
+      url: https://docs.netapp.com/us-en/astra/release-notes/whats-new.html
+    - title: Astra Control Service快速入門
+      url: https://docs.netapp.com/us-en/astra/get-started/quick-start.html
+  - title: 解決方案簡介
+    links:
+    - title: 具備Astra Control的PostgreSQL DBaaS
+      url: https://cloud.netapp.com/hubfs/SB-4122-0221-PostgresSQL-DBaaS-with-Astra%20(2).pdf
+    - title: MySQL DBaaas搭配Astra Control
+      url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
+    - title: 簡化Jenkins生命週期管理
+      url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
+  - title: 部落格社群
+    links:
+    - title: 不和通路
+      url: https://discord.gg/NetApp
+    - title: Astra Control部落格
+      url: https://cloud.netapp.com/blog/topic/astra
+    - title: NetApp社群
+      url: https://community.netapp.com/
+    - title: Kubernetes Hub
+      url: https://cloud.netapp.com/kubernetes-hub
+    - title: 取得協助的地方
+      url: "/support/get-help.html"

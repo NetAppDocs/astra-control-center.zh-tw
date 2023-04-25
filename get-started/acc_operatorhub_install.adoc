@@ -16,7 +16,7 @@ summary: 如果您使用Red Hat OpenShift、可以使用操作員安裝Astra Con
 
 完成此程序之後、您必須返回安裝程序、才能完成 link:../get-started/install_acc.html#verify-system-status["剩餘步驟"^] 以驗證安裝是否成功並登入。
 
-.您需要的產品
+.開始之前
 * *符合環境先決條件*： link:requirements.html["開始安裝之前、請先準備好環境以進行Astra Control Center部署"^]。
 * *健全的叢集運算子與API服務*：
 +
@@ -63,7 +63,7 @@ oc create namespace netapp-acc-operator
 
 == 下載並擷取Astra Control Center
 
-. 前往 https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Astra Control Center評估下載頁面"^] 於 NetApp 支援網站。
+. 前往 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center 下載頁面"^] 於 NetApp 支援網站。
 . 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
 . （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
 +
@@ -91,9 +91,9 @@ tar -vxzf astra-control-center-[version].tar.gz
 
 == 安裝NetApp Astra kubecl外掛程式
 
-NetApp Astra kubectl命令列外掛程式可在執行與部署及升級Astra Control Center相關的一般工作時節省時間。
+您可以使用 NetApp Astra kubectl 命令列外掛程式、將影像推送至本機 Docker 儲存庫。
 
-.您需要的產品
+.開始之前
 NetApp為不同的CPU架構和作業系統提供外掛程式二進位檔。執行此工作之前、您必須先瞭解您的CPU和作業系統。
 
 .步驟
@@ -171,7 +171,7 @@ podman login <YOUR_REGISTRY>
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=22.11.0-82
+export PACKAGEVERSION=23.04.0-22
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -190,7 +190,7 @@ done
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=22.11.0-82
+export PACKAGEVERSION=23.04.0-22
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -201,8 +201,13 @@ done
 ----
 +
 
-NOTE: 指令碼所建立的映像路徑應如下所示、視登錄組態而定： `https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/22.11.0-82/image:version`
+NOTE: 指令碼所建立的映像路徑應如下所示、視登錄組態而定：
 
++
+[listing]
+----
+https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.04.0-22/image:version
+----
 
 
 --

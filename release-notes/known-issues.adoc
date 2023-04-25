@@ -27,6 +27,7 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 .叢集
 * <<使用Astra Control Center管理叢集失敗、因為預設的Kbeconfig檔案包含多個內容>>
+* <<某些 Pod 在升級至 Astra Control Center 23.04 之後無法啟動>>
 
 
 .其他問題
@@ -69,6 +70,34 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 == 使用Astra Control Center管理叢集失敗、因為預設的Kbeconfig檔案包含多個內容
 
 您無法在其中使用多個叢集和內容的Kbeconfig。請參閱 link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Managing_cluster_with_Astra_Control_Center_may_fail_when_using_default_kubeconfig_file_contains_more_than_one_context["知識庫文章"^] 以取得更多資訊。
+
+
+
+== 某些 Pod 在升級至 Astra Control Center 23.04 之後無法啟動
+
+升級至 Astra Control Center 23.04 之後、部分 Pod 可能無法啟動。因應措施是使用下列步驟手動重新啟動受影響的 Pod ：
+
+. 尋找受影響的 Pod 、以目前命名空間取代 <namespace> ：
++
+[listing]
+----
+kubectl get pods -n <namespace> | grep au-pod
+----
++
+受影響的 Pod 會有類似下列的結果：
+
++
+[listing]
+----
+pcloud-astra-control-center-au-pod-0 0/1 CreateContainerConfigError 0 13s
+----
+. 重新啟動每個受影響的 Pod 、以目前的命名空間取代 <namespace> ：
++
+[listing]
+----
+kubectl delete pod pcloud-astra-control-center-au-pod-0 -n <namespace>
+----
+
 
 
 

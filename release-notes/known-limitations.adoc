@@ -39,6 +39,7 @@ summary: 已知限制指出本產品版本不支援的平台、裝置或功能�
 * <<現有連線至Postgres Pod會導致故障>>
 * <<在移除Astra Control Center執行個體期間、可能無法保留備份與快照>>
 * <<LDAP使用者和群組限制>>
+* <<「活動」頁面最多可顯示 100000 個事件>>
 
 
 
@@ -180,6 +181,12 @@ Astra Control Center不支援使用叢集範圍的運算子進行應用程式管
 == LDAP使用者和群組限制
 
 Astra Control Center支援最多5、000個遠端群組和10、000個遠端使用者。
+
+
+
+== 「活動」頁面最多可顯示 100000 個事件
+
+Astra Control 活動頁面最多可顯示 100,000 個事件。若要檢視所有記錄的事件、請使用擷取事件 link:../rest-api/api-intro.html["Astra Control REST API"^]。
 
 
 

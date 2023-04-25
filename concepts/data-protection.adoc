@@ -65,3 +65,9 @@ image:acc-backup_4in.png["此映像顯示使用S3儲存區在兩個Kubernetes叢
 另一方面、複寫作業則是透過複寫至ONTAP esq/然後進行容錯移轉來建立Kubernetes資源：
 
 image:acc-replication_4in.png["此影像顯示兩個Kubernetes叢集與兩ONTAP 個支援叢集之間的複寫和容錯移轉"]
+
+
+
+== 具有過期授權的備份、快照和複本
+
+如果授權過期、您只能在新增或保護的應用程式是另一個 Astra Control Center 執行個體時、新增應用程式或執行應用程式保護作業（例如快照、備份、複本和還原作業）。

@@ -34,20 +34,21 @@ Astra Control Center使用本機驗證和每個環境的專屬URL。
 
 == 授權
 
-*我正在使用評估授權。如何變更為完整授權？*
+* 我正在使用試用版授權。如何變更為完整授權？ *
 
-您可以取得NetApp授權檔案（NLF）、輕鬆變更為完整授權。
+您可以從 NetApp 取得 NetApp 授權檔案（ NLF ）、輕鬆變更為完整授權。
 
 *步驟*
 
 . 從左側導覽中、選取*帳戶*>*授權*。
-. 選擇*新增授權*。
+. 在授權總覽中、於授權資訊右側、選取選項功能表。
+. 選取 * 取代 * 。
 . 瀏覽至您下載的授權檔案、然後選取*「Add*（新增*）」。
 
 
-*我正在使用評估授權。我還能管理應用程式嗎？*
+* 我正在使用試用版授權。我還能管理應用程式嗎？*
 
-是的、您可以使用評估授權測試管理應用程式功能。
+是的、您可以使用評估授權（包括預設安裝的內嵌評估授權）來測試管理應用程式功能。試用版授權與完整版授權之間的功能或功能並無差異；試用版授權的使用壽命更短。請參閱 link:../concepts/licensing.html["授權"^] 以取得更多資訊。
 
 
 
@@ -70,7 +71,7 @@ Astra Control Center使用本機驗證和每個環境的專屬URL。
 
 WARNING: 透過任何其他方法刪除叢集之前、請務必先從Astra Control移除叢集。使用另一個工具刪除叢集時、如果叢集仍由Astra Control進行管理、可能會對Astra Control帳戶造成問題。
 
-*當我取消管理叢集時、NetApp Trident是否會自動從叢集解除安裝？*當您從Astra Control Center取消管理叢集時、Trident不會自動從叢集解除安裝。若要解除安裝Trident、您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["請遵循Trident文件中的下列步驟"^]。
+* 當我取消管理叢集時、 NetApp Astra Trident 是否會自動從叢集解除安裝？ * 當您從 Astra Control Center 取消管理叢集時、 Astra Trident 不會自動從叢集解除安裝。若要解除安裝Astra Trident、您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["請遵循Astra Trident文件中的下列步驟"^]。
 
 
 
@@ -88,9 +89,13 @@ Astra Control不會部署應用程式。應用程式必須部署在Astra Control
 
 不可以雖然Astra Control可以探索使用非NetApp儲存設備的應用程式、但它無法管理使用非NetApp儲存設備的應用程式。
 
-*我應該自行管理Astra Control嗎？*不、您不應該自行管理Astra Control、因為它是「系統應用程式」。
+* 我應該自行管理 Astra Control 嗎？ *
 
-*不良的Pod是否會影響應用程式管理？*如果託管應用程式的Pod處於不良狀態、Astra Control將無法建立新的備份與複製。
+否、您不應自行管理 Astra Control 、因為它是「系統應用程式」。
+
+不健康的 Pod 會影響應用程式管理嗎？ *
+
+否、 Pod 的健全狀況不會影響應用程式管理。
 
 
 

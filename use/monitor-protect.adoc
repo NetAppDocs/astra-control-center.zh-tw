@@ -85,9 +85,12 @@ image:proxy-new.png["此影像顯示Proxy伺服器已成功連線。"]
 當Astra Control Center連線Cloud Insights 至不實時、就會建立一個擷取單元Pod。此Pod可從Astra Control Center管理的儲存後端收集資料、並將資料推送到Cloud Insights此Pod需要8 GB RAM和2個CPU核心。
 
 
-NOTE: 啟用Cloud Insights 完「支援不中斷連線」後、您可以在*後端*頁面上檢視處理量資訊、Cloud Insights 並在選取儲存後端後端後、從此處連線至「支援不中斷連線」。您也可以在「叢集」區段的*儀表板*上找到相關資訊、也可以從Cloud Insights 這裡連線至。
+NOTE: 當 Astra 控制中心與 Cloud Insights 配對時、您不應使用 Cloud Insights 中的 * 修改部署 * 選項。 
 
-.您需要的產品
+
+NOTE: 啟用 Cloud Insights 連線之後、您可以在 *Backends* 頁面上檢視處理量資訊、並在選取儲存後端後端之後連線至 Cloud Insights 。您也可以在「叢集」區段的 * 儀表板 * 上找到相關資訊、然後從該處連線至 Cloud Insights 。
+
+.開始之前
 * 具有*管理*/*擁有者*權限的Astra Control Center帳戶。
 * 有效的Astra Control Center授權。
 * 如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、則為Proxy伺服器。
@@ -272,14 +275,14 @@ NOTE: 如果收集多個叢集資料、每個叢集的度量會以不同的色�
 
 == 連接至Flud
 
-您可以將記錄（Kubernetes事件）從Astra Control Center所監控的系統傳送至您的Fluentd端點。Fluentd連線預設為停用。
+您可以將記錄（ Kubernetes 事件）從 Astra Control Center 監控的系統傳送至 Fluentd 端點。Fluentd連線預設為停用。
 
 image:fluentbit.png["這是從Astra到Fluentd的事件記錄概念圖。"]
 
 
 NOTE: 只有來自託管叢集的事件記錄會轉送至Fluentd。
 
-.您需要的產品
+.開始之前
 * 具有*管理*/*擁有者*權限的Astra Control Center帳戶。
 * Astra Control Center安裝並在Kubernetes叢集上執行。
 

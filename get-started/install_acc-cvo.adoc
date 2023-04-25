@@ -197,10 +197,10 @@ image:acc-cvo-aws2.png["此影像顯示Astra Control Center的範例Cloud Volume
 . 匯入OpenShift叢集。叢集將連線至您剛建立的工作環境。
 +
 .. 選擇* K8s*>*叢集清單*>*叢集詳細資料*、即可檢視NetApp叢集詳細資料。
-.. 請注意右上角的Trident版本。
+.. 請注意右上角的 Astra Trident 版本。
 .. 請注意Cloud Volumes ONTAP 、顯示NetApp為資源配置程式的叢集儲存類別。
 +
-這會匯入您的Red Hat OpenShift叢集、並將其指派為預設儲存類別。您可以選取儲存類別。Trident會在匯入和探索程序中自動安裝。
+這會匯入您的Red Hat OpenShift叢集、並將其指派為預設儲存類別。您可以選取儲存類別。Astra Trident 會在匯入和探索程序中自動安裝。
 
 
 
@@ -403,7 +403,7 @@ done < astra-control-center-22.04.41.manifest
 
 請遵循BlueXP文件完成下列步驟。請參閱 https://docs.netapp.com/us-en/occm/task_getting_started_gcp.html["從GCP開始使用Cloud Volumes ONTAP"^]。
 
-.您需要的產品
+.開始之前
 * 以所需的IAM權限和角色存取GCP服務帳戶
 
 
@@ -428,7 +428,7 @@ done < astra-control-center-22.04.41.manifest
 .. 請注意右上角的Trident版本。
 .. 請注意Cloud Volumes ONTAP 、顯示「NetApp」為資源配置程式的叢集儲存類別。
 +
-這會匯入您的Red Hat OpenShift叢集、並將其指派為預設儲存類別。您可以選取儲存類別。Trident會在匯入和探索程序中自動安裝。
+這會匯入您的Red Hat OpenShift叢集、並將其指派為預設儲存類別。您可以選取儲存類別。Astra Trident 會在匯入和探索程序中自動安裝。
 
 
 
@@ -483,7 +483,7 @@ kubectl create secret docker-registry <secret name> --docker-server=<Registry lo
 
 除了環境的資源需求之外、Astra Control Center還需要下列資源：
 
-請參閱 link:../get-started/requirements.html#operational-environment-requirements["Astra Control Center營運環境需求"]。
+請參閱 link:../get-started/requirements.html["Astra Control Center營運環境需求"]。
 
 [cols="1h,2a"]
 |===
@@ -636,7 +636,7 @@ done < astra-control-center-22.04.41.manifest
 
 請遵循BlueXP文件完成下列步驟。請參閱 https://docs.netapp.com/us-en/occm/task_getting_started_azure.html["Azure中的BlueXP入門指南"^]。
 
-.您需要的產品
+.開始之前
 以所需的IAM權限和角色存取Azure帳戶
 
 .步驟
@@ -669,12 +669,12 @@ image:acc-cvo-azure-working-environment.png["此圖顯示了BlueXP中的工作�
 +
 image:acc-cvo-azure-connected.png["此影像顯示在BlueXP中匯入的叢集"]
 
-.. 請注意右上角的Trident版本。
+.. 請注意右上角的 Astra Trident 版本。
 .. 請注意Cloud Volumes ONTAP 、顯示NetApp為資源配置程式的叢集儲存類別。
 
 
 +
-這會匯入您的Red Hat OpenShift叢集、並指派預設的儲存類別。您可以選取儲存類別。Trident會在匯入和探索程序中自動安裝。
+這會匯入您的Red Hat OpenShift叢集、並指派預設的儲存類別。您可以選取儲存類別。Astra Trident 會在匯入和探索程序中自動安裝。
 
 . 請注意此Cloud Volumes ONTAP 功能部署中的所有持續磁碟區和磁碟區。
 . 可作為單一節點或高可用度運作。Cloud Volumes ONTAP如果已啟用HA、請記下Azure中執行的HA狀態和節點部署狀態。

@@ -16,19 +16,32 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
+== 2023 年 4 月 25 日（ 23.04.0 ）
+
+.新功能與支援
+* link:../concepts/licensing.html["根據預設、新 Astra Control Center 安裝會啟用 90 天試用版授權"^]
+* link:../use/execution-hooks.html["更強大的執行掛勾功能、提供更多篩選選項"^]
+* link:../use/execution-hooks.html["現在可以在使用 Astra Control Center 進行複寫容錯移轉後執行執行攔截程式"^]
+* link:../get-started/requirements.html["支援 NAS 經濟效益、成為儲存等級類型"^]
+* link:../use/restore-apps.html#filter-resources-during-an-application-restore["支援在還原作業期間包含或排除應用程式資源"^]
+* link:../use/manage-apps.html["支援管理純資料應用程式"]
+
+
+
+
 == 2022年11月22日（22.11.0）
 
 .新功能與支援
-* link:../use/manage-apps.html#define-apps["支援橫跨多個命名空間的應用程式"^]
-* link:../use/manage-apps.html#define-apps["支援將叢集資源納入應用程式定義"^]
-* link:../use/manage-remote-authentication.html["透過角色型存取控制（RBAC）整合、強化LDAP驗證"^]
-* link:../get-started/requirements.html["新增對Kubernetes 1.25和Pod安全許可（PSA）的支援"^]
-* link:../use/monitor-running-tasks.html["增強備份、還原及複製作業的進度報告功能"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["支援橫跨多個命名空間的應用程式"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["支援將叢集資源納入應用程式定義"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-remote-authentication.html["透過角色型存取控制（RBAC）整合、強化LDAP驗證"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/get-started/requirements.html["新增對Kubernetes 1.25和Pod安全許可（PSA）的支援"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/monitor-running-tasks.html["增強備份、還原及複製作業的進度報告功能"^]
 
 
 .已知問題與限制
-* link:../release-notes/known-issues.html["此版本的已知問題"^]
-* link:../release-notes/known-limitations.html["此版本的已知限制"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-issues.html["此版本的已知問題"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
 
@@ -54,7 +67,7 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 
 * https://docs.netapp.com/us-en/astra-control-center-2208/get-started/requirements.html["支援VMware Tanzu Kubernetes Grid整合版（TKGI）"^]
 * https://docs.netapp.com/us-en/astra-control-center-2208/get-started/requirements.html#operational-environment-requirements["支援Google Anthos"^]
-* https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["LDAP組態（透過Astra Control API）"^]
+* https://docs.netapp.com/us-en/astra-automation-2208/workflows_infra/ldap_prepare.html["LDAP組態（透過Astra Control API）"^]
 
 
 .已知問題與限制
