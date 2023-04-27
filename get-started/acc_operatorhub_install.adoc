@@ -278,9 +278,14 @@ NOTE: 如果您選擇手動核准策略、系統會提示您核准此操作員�
 .. 新增Astra Control Center的標籤。
 .. 啟用或停用自動支援。建議保留「自動支援」功能。
 .. 輸入Astra Control Center FQDN或IP位址。請勿進入 `http://` 或 `https://` 在「地址」欄位中。
-.. 輸入Astra Control Center版本、例如22.04.1。
+.. 輸入 Astra Control Center 版本、例如 23.04.0-22 。
 .. 輸入帳戶名稱、電子郵件地址和管理員姓氏。
 .. 選擇的Volume回收原則 `Retain`、 `Recycle`或 `Delete`。預設值為 `Retain`。
+.. 選取安裝的 scaleSize 。
++
+
+NOTE: Astra 預設會使用高可用度（ HA ） `scaleSize` 的 `Medium`，用於在 HA 中部署大多數服務並部署多個複本以實現冗餘。與 `scaleSize` 做為 `Small`、 Astra 將減少所有服務的複本數量、但基本服務除外、以減少使用量。
+
 .. 選取入口類型：
 +
 *** *`Generic`* (`ingressType: "Generic"`）（預設）
