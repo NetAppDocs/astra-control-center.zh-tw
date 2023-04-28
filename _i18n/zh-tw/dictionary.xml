@@ -2500,7 +2500,6 @@
   <block id="259f3be9b6c8eefb44e844c2b70333dc" category="paragraph">如需Astra Control Center安裝程序的示範、請參閱<block ref="cbbdec23221803dc148346abe5a297c0" category="inline-link-rx"></block>。</block>
   <block id="f7173fff9a92f2bab2648f86282ab07c" category="list-text">使用 NetApp SnapMirror 技術（ Astra Control Center ）將應用程式複寫到遠端系統</block>
   <block id="631928ccc601c8e49976a8d73af28304" category="list-text">將應用程式從接移複製到正式作業</block>
-  <block id="71bf3827c9b969b454eaf3d5987aad95" category="list-text"><block ref="097c36d7e339c9c56e3325b9bd9b1890" category="inline-link-macro-rx"></block> 來自整個NetApp 支援網站購買產品後、您會收到序號和授權、並可在支援網站上使用。</block>
   <block id="6ae1ccb3dd6df141f3444a3da56ae986" category="list-text">在瀏覽器中、輸入 FQDN （包括<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> 字首）<block ref="d27903c79b643b2f565c31e894abb568" prefix=" " category="inline-code"></block> 在中<block ref="70b058e54d2bda749060070a7f9c4e5c" prefix=" " category="inline-code"></block> 請於何時進行 <block ref="356be5820e2645bace29d82a8018f43d" category="inline-xref-macro-rx"></block>。</block>
   <block id="2af1f66f8f47d8339a96c1cd543cd3a8" category="list-text">* Astra Trident *：Astra Trident *是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。Astra Trident部署於Astra Control Center時、包含已設定ONTAP 的整套儲存後端。</block>
   <block id="a779180fd0b24eabbab889560a1bd808" category="inline-link">Astra Control Center 下載頁面</block>
@@ -2874,4 +2873,5 @@
   <block id="8275cc29d67faf18fe540b46358fde84" category="list-text">輸入 Astra Control Center 版本、例如 23.04.0-22 。</block>
   <block id="9c71eb65f92b7f4fbb85f88f644c6613" category="list-text">選取安裝的 scaleSize 。</block>
   <block id="f8ac7e69f7496989a600589a0a35ce94" category="admonition">Astra 預設會使用高可用度（ HA ）<block ref="dc2f257f4eea1d3b6b3a1d35e1719508" prefix=" " category="inline-code"></block> 的<block ref="87f8a6ab85c9ced3702b4ea641ad4bb5" prefix=" " category="inline-code"></block>，用於在 HA 中部署大多數服務並部署多個複本以實現冗餘。與<block ref="dc2f257f4eea1d3b6b3a1d35e1719508" prefix=" " category="inline-code"></block> 做為<block ref="2660064e68655415da2628c2ae2f7592" prefix=" " category="inline-code"></block>、 Astra 將減少所有服務的複本數量、但基本服務除外、以減少使用量。</block>
+  <block id="9b846b7f30a8509224caa21eb61515be" category="list-text"><block ref="097c36d7e339c9c56e3325b9bd9b1890" category="inline-link-macro-rx"></block> 登入 NetApp 支援網站 並瀏覽至系統功能表下的軟體授權。</block>
 </blocks>
