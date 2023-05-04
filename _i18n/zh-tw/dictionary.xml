@@ -2721,8 +2721,6 @@
   <block id="846a7e14007c3c26ac57947eaedc4c61" category="list-text"><block ref="846a7e14007c3c26ac57947eaedc4c61" category="inline-link-macro-rx"></block></block>
   <block id="25f2cff6a812654b1394f53034bcf564" category="inline-link-macro">現在可以在使用 Astra Control Center 進行複寫容錯移轉後執行執行攔截程式</block>
   <block id="6d60c4f196979c4b445f94bc2daa72b2" category="list-text"><block ref="6d60c4f196979c4b445f94bc2daa72b2" category="inline-link-macro-rx"></block></block>
-  <block id="051b353228cf5818b61e6086ed61834f" category="inline-link-macro">支援 NAS 經濟效益、成為儲存等級類型</block>
-  <block id="a96e178908b7562b4e8dd9a107d4bb3b" category="list-text"><block ref="a96e178908b7562b4e8dd9a107d4bb3b" category="inline-link-macro-rx"></block></block>
   <block id="e230abda83cb11e7b7ac9992ed62766e" category="inline-link-macro">支援在還原作業期間包含或排除應用程式資源</block>
   <block id="c615097b74f61376d422e9fa5af786b5" category="list-text"><block ref="c615097b74f61376d422e9fa5af786b5" category="inline-link-macro-rx"></block></block>
   <block id="b909803838dd775bd8b8dcfbaf82fb87" category="inline-link-macro">支援管理純資料應用程式</block>
@@ -2874,4 +2872,6 @@
   <block id="9c71eb65f92b7f4fbb85f88f644c6613" category="list-text">選取安裝的 scaleSize 。</block>
   <block id="f8ac7e69f7496989a600589a0a35ce94" category="admonition">Astra 預設會使用高可用度（ HA ）<block ref="dc2f257f4eea1d3b6b3a1d35e1719508" prefix=" " category="inline-code"></block> 的<block ref="87f8a6ab85c9ced3702b4ea641ad4bb5" prefix=" " category="inline-code"></block>，用於在 HA 中部署大多數服務並部署多個複本以實現冗餘。與<block ref="dc2f257f4eea1d3b6b3a1d35e1719508" prefix=" " category="inline-code"></block> 做為<block ref="2660064e68655415da2628c2ae2f7592" prefix=" " category="inline-code"></block>、 Astra 將減少所有服務的複本數量、但基本服務除外、以減少使用量。</block>
   <block id="9b846b7f30a8509224caa21eb61515be" category="list-text"><block ref="097c36d7e339c9c56e3325b9bd9b1890" category="inline-link-macro-rx"></block> 登入 NetApp 支援網站 並瀏覽至系統功能表下的軟體授權。</block>
+  <block id="385a524cc6007fc04ac1f61b90b72fa0" category="inline-link-macro">支援將磁碟區從 &lt;block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category='inline-code'/&gt; 儲存類別移轉至「 ONTAP - NAS 」儲存類別</block>
+  <block id="30070e59814ec1fda4c30c1c31eefb74" category="list-text"><block ref="8b33402cf5fbcddbe249556483cf0cc5" category="inline-link-macro-rx"></block></block>
 </blocks>

@@ -22,7 +22,7 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 * link:../concepts/licensing.html["根據預設、新 Astra Control Center 安裝會啟用 90 天試用版授權"^]
 * link:../use/execution-hooks.html["更強大的執行掛勾功能、提供更多篩選選項"^]
 * link:../use/execution-hooks.html["現在可以在使用 Astra Control Center 進行複寫容錯移轉後執行執行攔截程式"^]
-* link:../get-started/requirements.html["支援 NAS 經濟效益、成為儲存等級類型"^]
+* 
 * link:../use/restore-apps.html#filter-resources-during-an-application-restore["支援在還原作業期間包含或排除應用程式資源"^]
 * link:../use/manage-apps.html["支援管理純資料應用程式"]
 
