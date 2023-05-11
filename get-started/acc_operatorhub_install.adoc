@@ -12,7 +12,7 @@ summary: 如果您使用Red Hat OpenShift、可以使用操作員安裝Astra Con
 
 
 [role="lead"]
-如果您使用Red Hat OpenShift、可以使用Red Hat認證的操作員來安裝Astra Control Center。請使用此程序從安裝Astra Control Center https://catalog.redhat.com/software/operators/explore["Red Hat生態系統目錄"^] 或使用Red Hat OpenShift Container Platform。
+如果您使用Red Hat OpenShift、可以使用Red Hat認證的操作員來安裝Astra Control Center。請使用此程序從安裝Astra Control Center https://["Red Hat生態系統目錄"^] 或使用Red Hat OpenShift Container Platform。
 
 完成此程序之後、您必須返回安裝程序、才能完成 link:../get-started/install_acc.html#verify-system-status["剩餘步驟"^] 以驗證安裝是否成功並登入。
 
@@ -63,7 +63,7 @@ oc create namespace netapp-acc-operator
 
 == 下載並擷取Astra Control Center
 
-. 前往 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center 下載頁面"^] 於 NetApp 支援網站。
+. 前往 https://["Astra Control Center 下載頁面"^] 於 NetApp 支援網站。
 . 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
 . （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
 +
@@ -134,7 +134,7 @@ cp kubectl-astra/<binary-name> /usr/local/bin/kubectl-astra
 . 將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行之前、請先進行下列替換 `push-images` 命令：
 +
 ** 以<BUNDLE_FILE> Astra Control套裝組合檔案的名稱取代 (`acc.manifest.bundle.yaml`）。
-** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 "https://<docker-registry>"[]。
+** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 "https://[]。
 ** 以<MY_REGISTRY_USER> 使用者名稱取代。
 ** 以<MY_REGISTRY_TOKEN> 登錄的授權權杖取代。
 +
@@ -230,7 +230,7 @@ image:openshift_operatorhub.png["此影像顯示OpenShift Container Platform UI�
 
 ** 從Red Hat生態系統目錄：
 +
-... 選擇NetApp Astra Control Center https://catalog.redhat.com/software/operators/detail/611fd22aaf489b8bb1d0f274["營運者"^]。
+... 選擇NetApp Astra Control Center https://["營運者"^]。
 ... 選擇*部署和使用*。
 
 

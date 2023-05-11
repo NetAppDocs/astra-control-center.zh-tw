@@ -36,5 +36,5 @@ NOTE: Astra Trident 儲存類別應在 Astra Control Center 之外預先設定�
 
 == 以取得更多資訊
 
-* https://docs.netapp.com/us-en/trident/index.html["Astra Trident文件"^]
+* https://["Astra Trident文件"^]
 

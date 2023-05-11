@@ -53,7 +53,7 @@ summary: 將Astra Control中的儲存叢集管理為儲存後端、可讓您在�
 
 檢視後端健全狀況、容量和效能（IOPS處理量和/或延遲）的相關資訊。
 
-您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端。有了此功能、您可以查看更多資訊。Cloud Insights請參閱 https://docs.netapp.com/us-en/cloudinsights/["本文檔 Cloud Insights"^]。
+您可以看到Kubernetes應用程式所使用的磁碟區、這些磁碟區儲存在選定的儲存後端。有了此功能、您可以查看更多資訊。Cloud Insights請參閱 https://["本文檔 Cloud Insights"^]。
 
 .步驟
 . 在左側導覽區域中、選取*後端*。
@@ -91,7 +91,7 @@ Astra Control Center 提供兩種驗證 ONTAP 後端的模式。
 ** * 使用管理員認證 * ：輸入 ONTAP 叢集管理 IP 位址和管理認證。認證資料必須是整個叢集的認證資料。
 +
 
-NOTE: 您在此處輸入認證的使用者必須擁有 `ontapi` 使用者登入存取方法已在ONTAP 支援的叢集上的「支援系統管理程式」中啟用ONTAP 。如果您打算使用SnapMirror複寫、請套用具有「admin」角色的使用者認證、該角色具有存取方法 `ontapi` 和 `http`、在來源ONTAP 和目的地等叢集上。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
+NOTE: 您在此處輸入認證的使用者必須擁有 `ontapi` 使用者登入存取方法已在ONTAP 支援的叢集上的「支援系統管理程式」中啟用ONTAP 。如果您打算使用SnapMirror複寫、請套用具有「admin」角色的使用者認證、該角色具有存取方法 `ontapi` 和 `http`、在來源ONTAP 和目的地等叢集上。請參閱 https://["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
 
 ** * 使用憑證 * ：上傳憑證 `.pem` 檔案、憑證金鑰 `.key` 檔案、以及選擇性的憑證授權單位檔案。
 
@@ -164,5 +164,5 @@ NOTE: 您在此處輸入認證的使用者必須擁有 `ontapi` 使用者登入�
 
 == 如需詳細資訊、請參閱
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+* https://["使用Astra Control API"^]
 

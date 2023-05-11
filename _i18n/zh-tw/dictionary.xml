@@ -16,7 +16,6 @@
   <block id="e9f9b053971e4cd8cce3a402331a125b" category="paragraph">您可以從主功能表選取* Support*索引標籤、從Astra Control Center UI存取支援選項。</block>
   <block id="9d795eb350d2c42a03b181a4bc513987" category="paragraph">這些選項全年無休免費提供：</block>
   <block id="68f269105158a82f8e06dd324631610e" category="inline-link">*知識庫*（需要登入）</block>
-  <block id="3ce7820e1a8dcaf1b20e89638e9eb65c" category="list-text"><block ref="c21c91b055ef6d38b9e7473e1602e44f" category="inline-link-rx"></block>：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。</block>
   <block id="54fb836d65dfa963fa159aa13bf9fe60" category="list-text">*文件中心*：這是您目前正在檢視的文件網站。</block>
   <block id="2d1cdbb35250ece1f1e88fdafee9d683" category="list-text">*建立支援案例*：產生支援套裝組合、以提供給NetApp支援人員進行疑難排解。</block>
   <block id="5a7e155bd663e7d6145fbd05e0908d7e" category="list-text">*針對Astra Control提供意見回饋*：傳送電子郵件至astra.feedback@netapp.com、讓我們知道您的想法、想法或疑慮。</block>
@@ -254,7 +253,6 @@
   <block id="9814d372a97a81b36a132ad2cacfdff7" category="paragraph">儲存庫可以位於下列其中一種狀態：</block>
   <block id="42a0d288cadd6192424c03a28590c9fd" category="list-text">擱置中：已排定要探索的儲存區。</block>
   <block id="fac51c0a7c720a76e584ea5b21dc752a" category="list-text">可用：鏟斗可供使用。</block>
-  <block id="7f5b082de7160fe4d88fcb73b137ef12" category="list-text">已移除：目前無法存取儲存貯體。</block>
   <block id="2670ea2abab7233a3fe9b29dabc0e86c" category="paragraph">如需如何使用Astra Control API管理儲存區的指示、請參閱 <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>。</block>
   <block id="39ee41fd712c4d72dd841699443ac03f" category="paragraph">您可以執行與管理儲存庫相關的工作：</block>
   <block id="b2e5388a257b4977b3f119a349e21dc1" category="inline-link-macro">新增儲存庫</block>
@@ -1180,7 +1178,6 @@
   <block id="f8be12e25cfcab7e808ca98f80a56433" category="section-title">移除庫位認證資料</block>
   <block id="a31d0ea55a51bfbd5a603a8f5fa7a37a" category="admonition">您新增至Astra Control的第一組認證資料一律使用中、因為Astra Control使用認證資料來驗證備份儲存區。如果儲存區正在使用中、請勿移除這些認證資料、因為這會導致備份失敗和備份不可用。</block>
   <block id="b2b8741126a8674edc86e6286a85c804" category="inline-link">移除庫位認證疑難排解</block>
-  <block id="983be0b26fa308ee99003c55cac37fb5" category="admonition">如果您確實移除作用中的儲存區認證、請參閱<block ref="939cc867881057c221247142d6425e0a" category="inline-link-rx"></block>。</block>
   <block id="576924ceb67cb5e87c15acdcb112c47d" category="paragraph">如需如何使用Astra Control API移除S3認證的指示、請參閱 <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>。</block>
   <block id="aa702244278ce9224bdf493dbd836fcf" category="inline-link-macro">支援Cloud Volumes ONTAP 功能</block>
   <block id="8752cd76f7db37e4826aaa5b11f2a007" category="paragraph">接下來、設定AWS以建立虛擬網路、設定EC2運算執行個體、建立AWS S3儲存區、建立彈性容器登錄（ECR）以裝載Astra Control Center映像、然後將映像推送至此登錄。</block>
@@ -1234,10 +1231,8 @@
   <block id="3ec365dd533ddb7ef3d1c111186ce872" category="example-title">詳細資料</block>
   <block id="e0eeb7ea73f045b4fbf1d7eebde63020" category="paragraph">我們很高興在此發表最新版的Astra Control Center。</block>
   <block id="f4c36c8148a1c2baf23d917e226d50fa" category="list-text"><block ref="703e5962f4e6c982183fbea5d4a0ed0f" category="inline-xref-macro-rx"></block></block>
-  <block id="e6accc2a7c1df4a7d754d698ff720755" category="paragraph">如果在OpenShift Container Platform叢集的命名空間中、於服務帳戶層級設定原始的安全性內容限制、則應用程式複製可能會失敗。當應用程式複製失敗時、它會出現在Astra Control Center的「託管應用程式」區域、狀態為「移除」。請參閱<block ref="9fa49b796d4996efbeb6cfe9ed39c95e" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="3460be97ad18de8f927ac029b73aea1e" category="section-title">如果在管理叢集之後新增volumesnapshotClass、則應用程式備份和快照將會失敗</block>
   <block id="4640bdf0aa8bd9424ced0104155962b8" category="paragraph">在此情況下、備份和快照會失敗、並顯示「UI 500錯誤」。因應措施是重新整理應用程式清單。</block>
-  <block id="520978df3f125bf15af9a3b4c1e17a9e" category="paragraph">您無法在其中使用多個叢集和內容的Kbeconfig。請參閱 <block ref="f42e06683377be6f7c68a4e8b05a16c0" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">任何具有命名空間名稱/ID之RBAC限制的「成員」使用者、都可以將應用程式複製或還原到同一個叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者可以編輯「成員」使用者帳戶、並更新受影響使用者的角色限制、以授予新命名空間的存取權。</block>
   <block id="d5aedbc082e54ed66f533aea75c374f6" category="paragraph">Astra Control可能無法複製以「傳遞參考」架構設計的操作員（例如CockroachDB操作員）。在這些類型的複製作業中、複製的操作員會嘗試從來源操作員參考Kubernetes機密、儘管在複製程序中有自己的新秘密。由於Astra Control不知道來源營運者的Kubernetes機密資料、因此複製作業可能會失敗。</block>
   <block id="8903edbd1d0463471f5590d10a85b600" category="section-title">2022年8月10日（22.08.0）</block>
@@ -1295,7 +1290,6 @@
   <block id="6c999f1f4bd422b4305a76a527b7e862" category="list-text">依名稱刪除所有資源配額：</block>
   <block id="091880150353e9b5462ebfe9e5007deb" category="list-text">依名稱刪除限制範圍：</block>
   <block id="5fed03116ab579cfabba1dfd68c70bab" category="inline-link">NetApp Astra知識庫</block>
-  <block id="62b48e6002e259d6c98b0960c375f121" category="paragraph"><block ref="62b48e6002e259d6c98b0960c375f121" category="inline-link-rx"></block></block>
   <block id="721ed1f27b3163d26010e9d99872bd47" category="summary">將Kubernetes叢集新增至Astra Control之後、即可在該叢集（Astra Control以外）上安裝應用程式、然後前往Astra Control中的「應用程式」頁面開始管理應用程式。</block>
   <block id="456907dc64f076d8c8ed113ea6a4ac8f" category="list-text">*由業者部署的應用程式*：Astra Control支援以命名空間範圍運算子安裝的應用程式、這些運算子通常是以「傳遞值」而非「傳遞參照」架構設計。運算子及其安裝的應用程式必須使用相同的命名空間；您可能需要修改運算子的部署.yaml檔案、以確保情況如此。</block>
   <block id="be4629edbb6c58ee13cd278ee7ec5a4f" category="paragraph">以下是一些遵循這些模式的營運者應用程式：</block>
@@ -2874,4 +2868,10 @@
   <block id="9b846b7f30a8509224caa21eb61515be" category="list-text"><block ref="097c36d7e339c9c56e3325b9bd9b1890" category="inline-link-macro-rx"></block> 登入 NetApp 支援網站 並瀏覽至系統功能表下的軟體授權。</block>
   <block id="385a524cc6007fc04ac1f61b90b72fa0" category="inline-link-macro">支援將磁碟區從 &lt;block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category='inline-code'/&gt; 儲存類別移轉至「 ONTAP - NAS 」儲存類別</block>
   <block id="30070e59814ec1fda4c30c1c31eefb74" category="list-text"><block ref="8b33402cf5fbcddbe249556483cf0cc5" category="inline-link-macro-rx"></block></block>
+  <block id="8dd1f225c8914473641273beab27cfb5" category="list-text"><block ref="48b751d095184607defa7b45448cfbd4" category="inline-link-rx"></block>：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。</block>
+  <block id="a1e431f4eeaf20669c6a323a70204f3b" category="paragraph"><block ref="a1e431f4eeaf20669c6a323a70204f3b" category="inline-link-rx"></block></block>
+  <block id="192aebb6811705e0e43946e8f3c7ee31" category="paragraph">如果在OpenShift Container Platform叢集的命名空間中、於服務帳戶層級設定原始的安全性內容限制、則應用程式複製可能會失敗。當應用程式複製失敗時、它會顯示在Astra Control Center的「託管應用程式」區域中、狀態為<block ref="93f07b720ebf7d1246512569761a5804" prefix=" " category="inline-code"></block>。請參閱<block ref="664cdc6e32eb2b8d6157f7f7774ed5d3" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="150c473dfbcbc21128b1b0163082e277" category="paragraph">您無法在其中使用多個叢集和內容的Kbeconfig。請參閱 <block ref="a221b9db35a895d6b52e9dd52f69851e" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="17aaff3db5ad600ae90d1c45f82a9ce8" category="list-text">已移除：目前無法存取貯體。</block>
+  <block id="a5e4709506a688389ca2ed37bb81ac98" category="admonition">如果您確實移除作用中的儲存區認證、請參閱<block ref="8270c6fae649ca696475ea8dc76c4710" category="inline-link-rx"></block>。</block>
 </blocks>

@@ -24,7 +24,7 @@ summary: 若要升級Astra Control Center、您必須依照所述步驟下載套
 kubectl get tridentversion -n trident
 ----
 +
-請參閱 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html#determine-the-version-to-upgrade-to["Astra Trident文件"] 升級舊版。
+請參閱 https://["Astra Trident文件"] 升級舊版。
 
 +
 
@@ -72,7 +72,7 @@ TIP: 當排程、備份和快照未執行時、請在維護期間執行升級。
 
 == 下載並擷取Astra Control Center
 
-. 前往 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center產品下載頁面"^] 於 NetApp 支援網站。您可以從下拉式功能表中選取所需的最新版本或其他版本。
+. 前往 https://["Astra Control Center產品下載頁面"^] 於 NetApp 支援網站。您可以從下拉式功能表中選取所需的最新版本或其他版本。
 . 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
 . （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
 +
@@ -155,7 +155,7 @@ cp kubectl-astra/<binary-name> /usr/local/bin/kubectl-astra
 . 將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行之前、請先進行下列替換 `push-images` 命令：
 +
 ** 以<BUNDLE_FILE> Astra Control套裝組合檔案的名稱取代 (`acc.manifest.bundle.yaml`）。
-** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 "https://<docker-registry>"[]。
+** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 "https://[]。
 ** 以<MY_REGISTRY_USER> 使用者名稱取代。
 ** 以<MY_REGISTRY_TOKEN> 登錄的授權權杖取代。
 +

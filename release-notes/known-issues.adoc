@@ -51,7 +51,7 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 == 使用服務帳戶層級OCP安全內容限制（SCC）時、應用程式複製失敗
 
-如果在OpenShift Container Platform叢集的命名空間中、於服務帳戶層級設定原始的安全性內容限制、則應用程式複製可能會失敗。當應用程式複製失敗時、它會出現在Astra Control Center的「託管應用程式」區域、狀態為「移除」。請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Application_clone_is_failing_for_an_application_in_Astra_Control_Center["知識庫文章"^] 以取得更多資訊。
+如果在OpenShift Container Platform叢集的命名空間中、於服務帳戶層級設定原始的安全性內容限制、則應用程式複製可能會失敗。當應用程式複製失敗時、它會顯示在Astra Control Center的「託管應用程式」區域中、狀態為 `Removed`。請參閱 https://["知識庫文章"^] 以取得更多資訊。
 
 
 
@@ -69,7 +69,7 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 == 使用Astra Control Center管理叢集失敗、因為預設的Kbeconfig檔案包含多個內容
 
-您無法在其中使用多個叢集和內容的Kbeconfig。請參閱 link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Managing_cluster_with_Astra_Control_Center_may_fail_when_using_default_kubeconfig_file_contains_more_than_one_context["知識庫文章"^] 以取得更多資訊。
+您無法在其中使用多個叢集和內容的Kbeconfig。請參閱 link:https://kb.netapp.com/Cloud/Astra/Control/Managing_cluster_with_Astra_Control_Center_may_fail_when_using_default_kubeconfig_file_contains_more_than_one_context["知識庫文章"^] 以取得更多資訊。
 
 
 

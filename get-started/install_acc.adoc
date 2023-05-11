@@ -22,7 +22,7 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 
 
 ====
-如需Astra Control Center安裝程序的示範、請參閱 https://www.youtube.com/watch?v=eurMV80b0Ks&list=PLdXI3bZJEw7mJz13z7YdiGCS6gNQgV_aN&index=5["這段影片"^]。
+如需Astra Control Center安裝程序的示範、請參閱 https://["這段影片"^]。
 
 .開始之前
 * link:requirements.html["開始安裝之前、請先準備好環境以進行Astra Control Center部署"]。
@@ -69,7 +69,7 @@ IMPORTANT: 請勿刪除Astra Control Center運算子（例如、 `kubectl delete
 
 == 下載並擷取Astra Control Center
 
-. 前往 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center 下載頁面"^] 於 NetApp 支援網站。
+. 前往 https://["Astra Control Center 下載頁面"^] 於 NetApp 支援網站。
 . 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
 . （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
 +
@@ -142,7 +142,7 @@ cp kubectl-astra/<binary-name> /usr/local/bin/kubectl-astra
 . 將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行之前、請先進行下列替換 `push-images` 命令：
 +
 ** 以<BUNDLE_FILE> Astra Control套裝組合檔案的名稱取代 (`acc.manifest.bundle.yaml`）。
-** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 "https://<docker-registry>"[]。
+** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 "https://[]。
 ** 以<MY_REGISTRY_USER> 使用者名稱取代。
 ** 以<MY_REGISTRY_TOKEN> 登錄的授權權杖取代。
 +
@@ -917,8 +917,8 @@ IMPORTANT: 複製UUID值。密碼為「ACC-」、後面接著UUID值（「ACC-[U
 
 
 .開始之前
-* 必要的 https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/["入口控制器"] 應已部署。
-* 。 https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class["入口等級"] 應已建立對應於入口控制器的。
+* 必要的 https://["入口控制器"] 應已部署。
+* 。 https://["入口等級"] 應已建立對應於入口控制器的。
 
 
 .Istio入侵步驟
@@ -1011,7 +1011,7 @@ ingress istio astra.example.com 172.16.103.248  80, 443 1h
 
 
 .適用於Nginvin像 控制器的步驟
-. 建立類型的秘密 `kubernetes.io/tls` 中的TLS私密金鑰和憑證 `netapp-acc` （或自訂命名）命名空間、如所述 https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets["TLS機密"]。
+. 建立類型的秘密 `kubernetes.io/tls` 中的TLS私密金鑰和憑證 `netapp-acc` （或自訂命名）命名空間、如所述 https://["TLS機密"]。
 . 在中部署入口資源 `netapp-acc` （或自訂命名）命名空間、使用v1資源類型作為架構 (`nginx-Ingress.yaml` 在本例中使用）：
 +
 [source, yaml]
@@ -1082,7 +1082,7 @@ NOTE: 如果您輸入錯誤密碼三次、系統將鎖定管理員帳戶15分鐘
 . 出現提示時變更密碼。
 +
 
-NOTE: 如果這是您第一次登入、但您忘記密碼、而且尚未建立其他管理使用者帳戶、請聯絡 https://mysupport.netapp.com/site/["NetApp支援"] 以取得密碼恢復協助。
+NOTE: 如果這是您第一次登入、但您忘記密碼、而且尚未建立其他管理使用者帳戶、請聯絡 https://["NetApp支援"] 以取得密碼恢復協助。
 
 . （選用）移除現有的自我簽署TLS憑證、並以取代 link:../get-started/configure-after-install.html#add-a-custom-tls-certificate["由憑證授權單位（CA）簽署的自訂TLS憑證"^]。
 

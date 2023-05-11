@@ -47,11 +47,11 @@ Astra Control應用程式複寫要求您在開始之前必須符合下列先決�
 
 * 為了實現無縫的災難恢復、建議您在第三個故障網域或次要站台部署Astra Control Center。
 * 應用程式的主機Kubernetes叢集和目的地Kubernetes叢集必須與ONTAP 它們的支援中心叢集一起管理、理想情況是在不同的故障網域或站台上。
-* 必須配對叢集和主機SVM。ONTAP請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["叢集與SVM對等概觀"^]。
+* 必須配對叢集和主機SVM。ONTAP請參閱 https://["叢集與SVM對等概觀"^]。
 * 配對的遠端SVM必須可供目的地叢集上的Astra Trident使用。
 * 來源ONTAP 叢集和目的地叢集上都必須有Astra Trident版本22.07或更新版本。
-* 使用資料保護套裝組合的SnapMirror非同步授權必須同時在來源和目的地的叢集上啟用。ONTAP ONTAP請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^]。
-* 當您將ONTAP 某個不支援的儲存後端新增至Astra Control Center時、請套用具有「admin」角色（具有存取方法）的使用者認證 `http` 和 `ontapi` 同時在ONTAP 來源叢集和目的地叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
+* 使用資料保護套裝組合的SnapMirror非同步授權必須同時在來源和目的地的叢集上啟用。ONTAP ONTAP請參閱 https://["SnapMirror授權概述ONTAP"^]。
+* 當您將ONTAP 某個不支援的儲存後端新增至Astra Control Center時、請套用具有「admin」角色（具有存取方法）的使用者認證 `http` 和 `ontapi` 同時在ONTAP 來源叢集和目的地叢集上啟用。請參閱 https://["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
 * 來源和目的地Kubernetes叢集和ONTAP 非功能性叢集都必須由Astra Control管理。
 +
 

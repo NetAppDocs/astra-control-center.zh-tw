@@ -6,7 +6,7 @@
 
 == 下載並擷取Astra Control Center
 
-. 前往 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center 下載頁面"^] 於 NetApp 支援網站。
+. 前往 https://["Astra Control Center 下載頁面"^] 於 NetApp 支援網站。
 . 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
 . （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
 +

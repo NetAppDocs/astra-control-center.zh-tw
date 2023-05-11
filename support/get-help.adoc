@@ -27,9 +27,9 @@ IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得�
 
 這些選項全年無休免費提供：
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["*知識庫*（需要登入）"^]：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。
+* https://["*知識庫*（需要登入）"^]：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。
 * *文件中心*：這是您目前正在檢視的文件網站。
-* https://discord.gg/NetApp["*透過不和*取得協助"^]：前往酒吧類別的Astra、與同儕和專家交流。
+* https://["*透過不和*取得協助"^]：前往酒吧類別的Astra、與同儕和專家交流。
 * *建立支援案例*：產生支援套裝組合、以提供給NetApp支援人員進行疑難排解。
 * *針對Astra Control提供意見回饋*：傳送電子郵件至astra.feedback@netapp.com、讓我們知道您的想法、想法或疑慮。
 
@@ -38,7 +38,7 @@ IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得�
 
 == 啟用每日排程支援服務套件上傳至NetApp支援
 
-在Astra Control Center安裝期間（如果您指定） `enrolled: true` 適用於 `autoSupport` 在Astra Control Center自訂資源（CR）檔案中 (`astra_control_center.yaml`）、每日支援服務組合會自動上傳至 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
+在Astra Control Center安裝期間（如果您指定） `enrolled: true` 適用於 `autoSupport` 在Astra Control Center自訂資源（CR）檔案中 (`astra_control_center.yaml`）、每日支援服務組合會自動上傳至 https://["NetApp 支援網站"^]。
 
 
 
@@ -98,7 +98,7 @@ TIP: UI右上角的通知圖示提供與支援服務組合相關的事件資訊�
 您可以使用下列其中一種方法來執行此作業：
 
 +
-** 使用 https://upload.netapp.com/sg["NetApp驗證檔案上傳（需要登入）"^]。
+** 使用 https://["NetApp驗證檔案上傳（需要登入）"^]。
 ** 將套裝組合直接附加至nss.
 ** 使用NetApp Active IQ 解決方案。
 
@@ -108,6 +108,6 @@ TIP: UI右上角的通知圖示提供與支援服務組合相關的事件資訊�
 [discrete]
 == 如需詳細資訊、請參閱
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/How_to_upload_a_file_to_NetApp["如何將檔案上傳至NetApp（需要登入）"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_manually_upload_AutoSupport_messages_to_NetApp_in_ONTAP_9["如何手動上傳檔案至NetApp（需要登入）"^]
+* https://["如何將檔案上傳至NetApp（需要登入）"^]
+* https://["如何手動上傳檔案至NetApp（需要登入）"^]
 
