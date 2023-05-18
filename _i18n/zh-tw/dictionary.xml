@@ -2858,7 +2858,6 @@
   <block id="99ba824432d96de1a57be0f8b681d518" category="list-text">進行變更。</block>
   <block id="4b81f371a950b4164e976fd95ff29363" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、無法使用保護原則。如果您想要保護原則、請使用替代的儲存類別。</block>
   <block id="c1a51552670bd89a555dfc498d58f040" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、無法使用快照。使用替代的儲存類別來執行快照。</block>
-  <block id="d340b669a21181fdcdf79c308ba61ea9" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 在備份作業完成之前、驅動程式、備份會中斷運作、應用程式將無法使用。</block>
   <block id="070b3d3a153094a5ee57ed5e75530780" category="inline-link">Astra Control Center 22.11文件</block>
   <block id="58f23be5f86622d0993f8478be889f05" category="list-text"><block ref="58f23be5f86622d0993f8478be889f05" category="inline-link-rx"></block></block>
   <block id="f4431fb507c16341e3a99f8f031779bc" category="list-text"><block ref="f4431fb507c16341e3a99f8f031779bc" category="inline-link-macro-rx"></block></block>
@@ -2874,4 +2873,6 @@
   <block id="150c473dfbcbc21128b1b0163082e277" category="paragraph">您無法在其中使用多個叢集和內容的Kbeconfig。請參閱 <block ref="a221b9db35a895d6b52e9dd52f69851e" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="17aaff3db5ad600ae90d1c45f82a9ce8" category="list-text">已移除：目前無法存取貯體。</block>
   <block id="a5e4709506a688389ca2ed37bb81ac98" category="admonition">如果您確實移除作用中的儲存區認證、請參閱<block ref="8270c6fae649ca696475ea8dc76c4710" category="inline-link-rx"></block>。</block>
+  <block id="c90437e103f3b6c1db9096cab99fff62" category="inline-link">Kubernetes 儲存物件</block>
+  <block id="299a4cd5c8c701fdb940ed995eb4a9c9" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、請確定您已定義<block ref="55b56fb238360663afa6230ad82e74a0" prefix=" " category="inline-code"></block> 中的參數<block ref="b0adeee9b2f75fa024a8a1ac8b9bfc07" category="inline-link-rx"></block> 值為<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 執行任何保護作業之前。備份以支援的應用程式<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 在備份作業完成之前、應用程式會中斷運作、且無法使用。</block>
 </blocks>

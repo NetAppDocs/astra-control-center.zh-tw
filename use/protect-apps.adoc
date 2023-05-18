@@ -100,7 +100,7 @@ IMPORTANT: 如果您的應用程式使用以作為後盾的儲存類別 `ontap-n
 NOTE: Astra Control Center中的S3鏟斗未報告可用容量。在備份或複製由Astra Control Center管理的應用程式之前、請先查看ONTAP 資訊庫（英文）或StorageGRID 資訊庫（英文）管理系統中的庫位資訊。
 
 
-IMPORTANT: 如果您的應用程式使用以作為後盾的儲存類別 `ontap-nas-economy` 在備份作業完成之前、驅動程式、備份會中斷運作、應用程式將無法使用。
+IMPORTANT: 如果您的應用程式使用以作為後盾的儲存類別 `ontap-nas-economy` 驅動程式、請確定您已定義 `backendType` 中的參數 https://["Kubernetes 儲存物件"^] 值為 `ontap-nas-economy` 執行任何保護作業之前。備份以支援的應用程式 `ontap-nas-economy` 在備份作業完成之前、應用程式會中斷運作、且無法使用。
 
 .步驟
 . 選擇*應用程式*。
