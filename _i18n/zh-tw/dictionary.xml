@@ -2875,4 +2875,11 @@
   <block id="a5e4709506a688389ca2ed37bb81ac98" category="admonition">如果您確實移除作用中的儲存區認證、請參閱<block ref="8270c6fae649ca696475ea8dc76c4710" category="inline-link-rx"></block>。</block>
   <block id="c90437e103f3b6c1db9096cab99fff62" category="inline-link">Kubernetes 儲存物件</block>
   <block id="299a4cd5c8c701fdb940ed995eb4a9c9" category="admonition">如果您的應用程式使用以作為後盾的儲存類別<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驅動程式、請確定您已定義<block ref="55b56fb238360663afa6230ad82e74a0" prefix=" " category="inline-code"></block> 中的參數<block ref="b0adeee9b2f75fa024a8a1ac8b9bfc07" category="inline-link-rx"></block> 值為<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 執行任何保護作業之前。備份以支援的應用程式<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 在備份作業完成之前、應用程式會中斷運作、且無法使用。</block>
+  <block id="672a898ea2ff8533b54b52b8ed49d298" category="list-text"><block ref="16d4b0ca4c46803f596a68e64d0175cc" category="inline-xref-macro-rx"></block></block>
+  <block id="ce9d37f91ae54e8362095f98b2e47bb4" category="section-title">監控 Pod 可能會在 Istio 環境中當機</block>
+  <block id="b5eee9c0eea4be22ace4e567a7e6bf87" category="paragraph">如果您在 Istio 環境中將 Astra Control Center 與 Cloud Insights 配對<block ref="8173539a88f18f158400179e3041d2d0" prefix=" " category="inline-code"></block> Pod 可能當機。因應措施是執行下列步驟：</block>
+  <block id="36a48857c84b065878da5c6f8e3e7397" category="list-text">尋找當機的 Pod ：</block>
+  <block id="d0848afd8553c34945705222a97a4553" category="paragraph">您應該會看到類似下列的輸出：</block>
+  <block id="a01baa463ac1e6fef15fc9bb46970008" category="list-text">重新啟動當機的 Pod 、更換<block ref="4e9cb364ac6a8e38c717de332e5ab544" prefix=" " category="inline-code"></block> 使用受影響 Pod 的名稱：</block>
+  <block id="8698a79136323b081bc992e5c4a76411" category="list-text">確認 Pod 已重新啟動、且未處於錯誤狀態：</block>
 </blocks>

@@ -28,6 +28,7 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 .叢集
 * <<使用Astra Control Center管理叢集失敗、因為預設的Kbeconfig檔案包含多個內容>>
 * <<某些 Pod 在升級至 Astra Control Center 23.04 之後無法啟動>>
+* <<監控 Pod 可能會在 Istio 環境中當機>>
 
 
 .其他問題
@@ -96,6 +97,58 @@ pcloud-astra-control-center-au-pod-0 0/1 CreateContainerConfigError 0 13s
 [listing]
 ----
 kubectl delete pod pcloud-astra-control-center-au-pod-0 -n <namespace>
+----
+
+
+
+
+== 監控 Pod 可能會在 Istio 環境中當機
+
+如果您在 Istio 環境中將 Astra Control Center 與 Cloud Insights 配對 `telegraf-rs` Pod 可能當機。因應措施是執行下列步驟：
+
+. 尋找當機的 Pod ：
++
+[listing]
+----
+kubectl -n netapp-monitoring get pod | grep Error
+----
++
+您應該會看到類似下列的輸出：
+
++
+[listing]
+----
+NAME READY STATUS RESTARTS AGE
+telegraf-rs-fhhrh 1/2 Error 2 (26s ago) 32s
+----
+. 重新啟動當機的 Pod 、更換 `<pod_name_from_output>` 使用受影響 Pod 的名稱：
++
+[listing]
+----
+kubectl -n netapp-monitoring delete pod <pod_name_from_output>
+----
++
+您應該會看到類似下列的輸出：
+
++
+[listing]
+----
+pod "telegraf-rs-fhhrh" deleted
+----
+. 確認 Pod 已重新啟動、且未處於錯誤狀態：
++
+[listing]
+----
+kubectl -n netapp-monitoring get pod
+----
++
+您應該會看到類似下列的輸出：
+
++
+[listing]
+----
+NAME READY STATUS RESTARTS AGE
+telegraf-rs-rrnsb 2/2 Running 0 11s
 ----
 
 
