@@ -14,9 +14,9 @@ image:astra-architecture-diagram-v5.png["說明Astra Control架構及其元件�
 +
 ** Astra Control Service使用下列儲存後端：
 +
-*** https://["適用於Cloud Volumes Service Google Cloud的NetApp解決方案"^] 或Google持續磁碟做為GKE叢集的儲存後端
-*** https://["Azure NetApp Files"^] 或Azure託管磁碟做為高效能叢集的儲存後端。
-*** https://["Amazon彈性區塊儲存區（EBS）"^] 或 https://["Amazon FSX for NetApp ONTAP 產品"^] 作為EKS叢集的後端儲存選項。
+*** https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["適用於Cloud Volumes Service Google Cloud的NetApp解決方案"^] 或Google持續磁碟做為GKE叢集的儲存後端
+*** https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] 或Azure託管磁碟做為高效能叢集的儲存後端。
+*** https://docs.aws.amazon.com/ebs/["Amazon彈性區塊儲存區（EBS）"^] 或 https://docs.aws.amazon.com/fsx/["Amazon FSX for NetApp ONTAP 產品"^] 作為EKS叢集的後端儲存選項。
 
 
 ** Astra Control Center使用下列儲存後端：
@@ -46,10 +46,10 @@ Astra Control Center也能讓您管理、移轉及保護在VM環境中執行的K
 
 == 以取得更多資訊
 
-* https://["Astra Control Service文件"^]
-* https://["Astra Control Center文件"^]
-* https://["Astra Trident文件"^]
-* https://["使用Astra Control API"^]
-* https://["本文檔 Cloud Insights"^]
-* https://["本文檔 ONTAP"^]
+* https://docs.netapp.com/us-en/astra/index.html["Astra Control Service文件"^]
+* https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center文件"^]
+* https://docs.netapp.com/us-en/trident/index.html["Astra Trident文件"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+* https://docs.netapp.com/us-en/cloudinsights/["本文檔 Cloud Insights"^]
+* https://docs.netapp.com/us-en/ontap/index.html["本文檔 ONTAP"^]
 

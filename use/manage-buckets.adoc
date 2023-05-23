@@ -116,7 +116,7 @@ Astra Control使用儲存區認證來取得S3儲存區的存取權、並提供�
 TIP: 您新增至Astra Control的第一組認證資料一律使用中、因為Astra Control使用認證資料來驗證備份儲存區。如果儲存區正在使用中、請勿移除這些認證資料、因為這會導致備份失敗和備份不可用。
 
 
-NOTE: 如果您確實移除作用中的儲存區認證、請參閱 https://["移除庫位認證疑難排解"]。
+NOTE: 如果您確實移除作用中的儲存區認證、請參閱 https://kb.netapp.com/Cloud/Astra/Control/Deleting_active_S3_bucket_credentials_leads_to_spurious_500_errors_reported_in_the_UI["移除庫位認證疑難排解"]。
 
 如需如何使用Astra Control API移除S3認證的指示、請參閱 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation和API資訊"^]。
 
@@ -151,5 +151,5 @@ NOTE: Astra Control會先確保不會有使用儲存庫進行備份的排程原�
 
 == 如需詳細資訊、請參閱
 
-* https://["使用Astra Control API"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
 

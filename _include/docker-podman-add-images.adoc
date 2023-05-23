@@ -21,7 +21,7 @@
 . 將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行之前、請先進行下列替換 `push-images` 命令：
 +
 ** 以<BUNDLE_FILE> Astra Control套裝組合檔案的名稱取代 (`acc.manifest.bundle.yaml`）。
-** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 "https://[]。
+** 以<MY_FULL_REGISTRY_PATH> Docker儲存庫的URL取代支援；例如 "https://<docker-registry>"[]。
 ** 以<MY_REGISTRY_USER> 使用者名稱取代。
 ** 以<MY_REGISTRY_TOKEN> 登錄的授權權杖取代。
 +

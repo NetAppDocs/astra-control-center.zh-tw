@@ -73,10 +73,10 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 * * 工作節點 * ：總計至少 3 個工作節點、每個節點有 4 個 CPU 核心和 12GB RAM
 * * VMware Tanzu Kubernetes Grid 叢集需求 * ：在 VMware Tanzu Kubernetes Grid （ TKG ）或 Tanzu Kubernetes Grid 整合版（ TKGi ）叢集上代管 Astra Control Center 時、請謹記下列考量事項。
 +
-** 預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過期。如果您使用Tanzu產品組合產品、則必須產生一個含有非過期權杖的Tanzu Kubernetes叢集組態檔、以避免Astra Control Center與託管應用程式叢集之間發生連線問題。如需相關指示、請造訪 https://["VMware NSxT-T資料中心產品文件。"^]
+** 預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過期。如果您使用Tanzu產品組合產品、則必須產生一個含有非過期權杖的Tanzu Kubernetes叢集組態檔、以避免Astra Control Center與託管應用程式叢集之間發生連線問題。如需相關指示、請造訪 https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.2/nsx-application-platform/GUID-52A52C0B-9575-43B6-ADE2-E8640E22C29F.html["VMware NSxT-T資料中心產品文件。"^]
 ** 使用 `kubectl get nsxlbmonitors -A` 命令以查看您是否已設定服務監視器以接受入口流量。如果存在、則不應安裝MetalLB、因為現有的服務監視器將會覆寫任何新的負載平衡器組態。
 ** 停用要由Astra Control管理的任何應用程式叢集上的TKG或TKGi預設儲存類別強制。您可以編輯命名空間叢集上的「TanzuKubernetesCluster」資源來執行此作業。
-** 在TKG或TKGi環境中部署Astra Control Center時、請注意Astra Trident的特定需求。如需詳細資訊、請參閱 https://["Astra Trident文件"^]。
+** 在TKG或TKGi環境中部署Astra Control Center時、請注意Astra Trident的特定需求。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#other-known-configuration-options["Astra Trident文件"^]。
 
 
 
@@ -128,11 +128,11 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 若要使用Astra Control Center、請視ONTAP 您需要完成的工作而定、確認您擁有下列各項的版次授權：
 
 * FlexClone
-* SnapMirror：選用。僅使用SnapMirror技術複寫至遠端系統時才需要。請參閱 https://["SnapMirror授權資訊"^]。
+* SnapMirror：選用。僅使用SnapMirror技術複寫至遠端系統時才需要。請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權資訊"^]。
 * S3授權：選用。僅適用於SS3鏟斗ONTAP
 
 
-若要檢查ONTAP 您的不實系統是否有必要的授權、請參閱 https://["管理ONTAP 不需購買的授權"^]。
+若要檢查ONTAP 您的不實系統是否有必要的授權、請參閱 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理ONTAP 不需購買的授權"^]。
 
 
 
@@ -159,12 +159,12 @@ Astra Control Center 需要 Astra Control Center 授權。安裝 Astra Control C
 設定您的營運環境、確保 Astra Control Center 能夠正常通訊。需要下列網路組態：
 
 * * FQDN 位址 * ：您必須擁有 Astra Control Center 的 FQDN 位址。
-* * 存取網際網路 * ：您應該判斷是否有外部存取網際網路的權限。如果您沒有、部分功能可能會受到限制、例如從NetApp Cloud Insights 接收監控和數據資料、或是將支援組合傳送至 https://["NetApp 支援網站"^]。
+* * 存取網際網路 * ：您應該判斷是否有外部存取網際網路的權限。如果您沒有、部分功能可能會受到限制、例如從NetApp Cloud Insights 接收監控和數據資料、或是將支援組合傳送至 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
 * * 連接埠存取 * ：裝載 Astra Control Center 的作業環境使用下列 TCP 連接埠進行通訊。您應確保這些連接埠可透過任何防火牆、並設定防火牆、以允許來自Astra網路的任何HTTPS輸出流量。有些連接埠需要在裝載Astra Control Center的環境與每個託管叢集之間進行連線（視情況而定）。
 
 
 
-NOTE: 您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra Control Center則可管理已設定為雙堆疊作業的應用程式和儲存後端。如需雙堆疊叢集需求的詳細資訊、請參閱 https://["Kubernetes文件"^]。
+NOTE: 您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra Control Center則可管理已設定為雙堆疊作業的應用程式和儲存後端。如需雙堆疊叢集需求的詳細資訊、請參閱 https://kubernetes.io/docs/concepts/services-networking/dual-stack/["Kubernetes文件"^]。
 
 |===
 | 來源 | 目的地 | 連接埠 | 傳輸協定 | 目的 

@@ -71,7 +71,7 @@ Astra Control Center使用本機驗證和每個環境的專屬URL。
 
 WARNING: 透過任何其他方法刪除叢集之前、請務必先從Astra Control移除叢集。使用另一個工具刪除叢集時、如果叢集仍由Astra Control進行管理、可能會對Astra Control帳戶造成問題。
 
-* 當我取消管理叢集時、 NetApp Astra Trident 是否會自動從叢集解除安裝？ * 當您從 Astra Control Center 取消管理叢集時、 Astra Trident 不會自動從叢集解除安裝。若要解除安裝Astra Trident、您需要 https://["請遵循Astra Trident文件中的下列步驟"^]。
+* 當我取消管理叢集時、 NetApp Astra Trident 是否會自動從叢集解除安裝？ * 當您從 Astra Control Center 取消管理叢集時、 Astra Trident 不會自動從叢集解除安裝。若要解除安裝Astra Trident、您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["請遵循Astra Trident文件中的下列步驟"^]。
 
 
 

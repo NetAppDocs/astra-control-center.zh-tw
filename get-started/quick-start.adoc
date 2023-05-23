@@ -26,11 +26,11 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 *儲存整合*
 
 * link:../get-started/requirements.html#astra-trident-requirements["確保您的環境包含Astra Trident支援的版本"^]
-* https://["準備工作節點"^]
-* https://["設定Astra Trident儲存後端"^]
-* https://["設定Astra Trident儲存類別"^]
-* https://["安裝Astra Trident Volume Snapshot控制器"^]
-* https://["建立Volume Snapshot類別"^]
+* https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html["準備工作節點"^]
+* https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["設定Astra Trident儲存後端"^]
+* https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["設定Astra Trident儲存類別"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安裝Astra Trident Volume Snapshot控制器"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["建立Volume Snapshot類別"^]
 
 
 *不包含認證資料* ONTAP
@@ -41,7 +41,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 下載並安裝Astra Control Center
 完成這些安裝工作。
 
-* https://["從 NetApp 支援網站 下載頁面下載 Astra 控制中心"^]
+* https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["從 NetApp 支援網站 下載頁面下載 Astra 控制中心"^]
 * 取得NetApp授權檔案：
 +
 ** 如果您正在評估 Astra Control Center 、則已包含內嵌評估授權。
@@ -63,7 +63,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 使用Astra控制中心
-完成Astra Control Center的設定之後、接下來您可以做什麼。您可以使用Astra Control使用者介面（UI）或 https://["Astra Control API"^]。
+完成Astra Control Center的設定之後、接下來您可以做什麼。您可以使用Astra Control使用者介面（UI）或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^]。
 
 * link:../use/manage-apps.html["管理應用程式"^]
 * link:../use/protection-overview.html["保護應用程式"^]：設定保護原則、並複寫、複製及移轉應用程式。
@@ -75,7 +75,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 == 以取得更多資訊
 
-* https://["Astra Control API"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^]
 * link:../use/upgrade-acc.html["升級Astra Control Center"^]
 * link:../support/get-help.html["取得Astra Control的協助"^]
 

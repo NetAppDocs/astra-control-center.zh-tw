@@ -12,7 +12,7 @@ summary: 管理Astra Control Center系統上的使用者和角色。
 
 
 [role="lead"]
-您可以使用Astra Control UI來新增、移除及編輯Astra Control Center安裝的使用者。您可以使用Astra Control UI或 https://["Astra Control API"^] 管理使用者：
+您可以使用Astra Control UI來新增、移除及編輯Astra Control Center安裝的使用者。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 管理使用者：
 
 您也可以使用LDAP為選取的使用者執行驗證。
 
@@ -22,7 +22,7 @@ summary: 管理Astra Control Center系統上的使用者和角色。
 
 LDAP是存取分散式目錄資訊的業界標準傳輸協定、也是企業驗證的熱門選擇。您可以將Astra Control Center連線至LDAP伺服器、為選取的Astra Control使用者執行驗證。在高層級上、組態包括將Astra與LDAP整合、以及定義與LDAP定義對應的Astra Control使用者和群組。您可以使用Astra Control API或Web UI來設定LDAP驗證、以及LDAP使用者和群組。如需詳細資訊、請參閱下列文件：
 
-* https://["使用Astra Control API來管理遠端驗證和使用者"^]
+* https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["使用Astra Control API來管理遠端驗證和使用者"^]
 * link:manage-remote-users-groups.html["使用Astra Control UI來管理遠端使用者和群組"]
 * link:manage-remote-authentication.html["使用Astra Control UI來管理遠端驗證"]
 
@@ -119,7 +119,7 @@ Astra Control Center會將使用者從帳戶中移除。
 
 == 管理角色
 
-您可以新增命名空間限制、並將使用者角色限制在這些限制中、藉此管理角色。這可讓您控制組織內資源的存取。您可以使用Astra Control UI或 https://["Astra Control API"^] 以管理角色。
+您可以新增命名空間限制、並將使用者角色限制在這些限制中、藉此管理角色。這可讓您控制組織內資源的存取。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 以管理角色。
 
 
 

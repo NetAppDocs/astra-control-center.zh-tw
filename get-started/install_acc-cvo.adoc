@@ -135,7 +135,7 @@ NOTE: AWS登錄權杖會在12小時內過期、之後您必須更新Docker映像
 
 確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp BlueXP（前身為Cloud Manager）Connector。
 
-請參閱 https://["初始 AWS 認證資料"^]。
+請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html#initial-aws-credentials["初始 AWS 認證資料"^]。
 
 
 
@@ -143,7 +143,7 @@ NOTE: AWS登錄權杖會在12小時內過期、之後您必須更新Docker映像
 
 在AWS上安裝RedHat OpenShift Container Platform叢集。
 
-如需安裝指示、請參閱 https://["在OpenShift Container Platform的AWS上安裝叢集"^]。
+如需安裝指示、請參閱 https://docs.openshift.com/container-platform/4.8/installing/installing_aws/installing-aws-default.html["在OpenShift Container Platform的AWS上安裝叢集"^]。
 
 
 
@@ -151,7 +151,7 @@ NOTE: AWS登錄權杖會在12小時內過期、之後您必須更新Docker映像
 
 接下來、設定AWS以建立虛擬網路、設定EC2運算執行個體、建立AWS S3儲存區、建立彈性容器登錄（ECR）以裝載Astra Control Center映像、然後將映像推送至此登錄。
 
-請遵循AWS文件完成下列步驟。請參閱 https://["AWS安裝文件"^]。
+請遵循AWS文件完成下列步驟。請參閱 https://docs.openshift.com/container-platform/4.8/installing/installing_aws/installing-aws-default.html["AWS安裝文件"^]。
 
 . 建立AWS虛擬網路。
 . 檢閱EC2運算執行個體。這可以是AWS中的裸機伺服器或VM。
@@ -180,8 +180,8 @@ image:acc-cvo-aws2.png["此影像顯示Astra Control Center的範例Cloud Volume
 
 請遵循BlueXP文件完成下列步驟。請參閱下列內容：
 
-* https://["開始使用Cloud Volumes ONTAP AWS的功能"^]。
-* https://["使用BlueXP在AWS中建立連接器"^]
+* https://docs.netapp.com/us-en/occm/task_getting_started_aws.html["開始使用Cloud Volumes ONTAP AWS的功能"^]。
+* https://docs.netapp.com/us-en/occm/task_creating_connectors_aws.html#create-a-connector["使用BlueXP在AWS中建立連接器"^]
 
 
 .步驟
@@ -323,8 +323,8 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 如需安裝指示、請參閱下列內容：
 
-* https://["在GCP中安裝OpenShift叢集"^]
-* https://["建立GCP服務帳戶"^]
+* https://access.redhat.com/documentation/en-us/openshift_container_platform/4.10/html-single/installing/index#installing-on-gcp["在GCP中安裝OpenShift叢集"^]
+* https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["建立GCP服務帳戶"^]
 
 
 
@@ -344,7 +344,7 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp BlueXP（前身為Cloud Manager）Connector。
 
-請參閱 https://["初始GCP認證與權限"^]。
+請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#setting-up-permissions["初始GCP認證與權限"^]。
 
 
 
@@ -401,18 +401,18 @@ done < astra-control-center-22.04.41.manifest
 
 使用NetApp BlueXP（前身為Cloud Manager）建立工作區、將連接器新增至GCP、建立工作環境、以及匯入叢集。
 
-請遵循BlueXP文件完成下列步驟。請參閱 https://["從GCP開始使用Cloud Volumes ONTAP"^]。
+請遵循BlueXP文件完成下列步驟。請參閱 https://docs.netapp.com/us-en/occm/task_getting_started_gcp.html["從GCP開始使用Cloud Volumes ONTAP"^]。
 
 .開始之前
 * 以所需的IAM權限和角色存取GCP服務帳戶
 
 
 .步驟
-. 將您的認證資料新增至BlueXP。請參閱 https://["新增GCP帳戶"^]。
+. 將您的認證資料新增至BlueXP。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html["新增GCP帳戶"^]。
 . 新增GCP的連接器。
 +
 .. 選擇「GCP」作為供應商。
-.. 輸入GCP認證。請參閱 https://["從BlueXP在GCP中建立連接器"^]。
+.. 輸入GCP認證。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["從BlueXP在GCP中建立連接器"^]。
 .. 確認連接器正在執行、並切換至該連接器。
 
 
@@ -560,8 +560,8 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 如需安裝指示、請參閱下列內容：
 
-* https://["在Azure上安裝OpenShift叢集"^]。
-* https://["安裝Azure帳戶"^]。
+* https://docs.openshift.com/container-platform/4.8/installing/installing_azure/preparing-to-install-on-azure.html["在Azure上安裝OpenShift叢集"^]。
+* https://docs.openshift.com/container-platform/4.8/installing/installing_azure/installing-azure-account.html#installing-azure-account["安裝Azure帳戶"^]。
 
 
 
@@ -581,7 +581,7 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 確保您擁有足夠的IAM角色和權限、可讓您安裝RedHat OpenShift叢集和NetApp BlueXP Connector。
 
-請參閱 https://["Azure 認證與權限"^]。
+請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure 認證與權限"^]。
 
 
 
@@ -589,7 +589,7 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 接下來、設定Azure以建立虛擬網路、設定運算執行個體、建立Azure Blob容器、建立Azure Container Register（ACR）來裝載Astra Control Center映像、然後將映像推送至此登錄。
 
-請依照Azure文件完成下列步驟。請參閱 https://["在Azure上安裝OpenShift叢集"^]。
+請依照Azure文件完成下列步驟。請參閱 https://docs.openshift.com/container-platform/4.8/installing/installing_azure/preparing-to-install-on-azure.html["在Azure上安裝OpenShift叢集"^]。
 
 . 建立Azure虛擬網路。
 . 檢閱運算執行個體。這可以是Azure中的裸機伺服器或VM。
@@ -634,19 +634,19 @@ done < astra-control-center-22.04.41.manifest
 
 使用BlueXP（前身為Cloud Manager）建立工作區、將連接器新增至Azure、建立工作環境、以及匯入叢集。
 
-請遵循BlueXP文件完成下列步驟。請參閱 https://["Azure中的BlueXP入門指南"^]。
+請遵循BlueXP文件完成下列步驟。請參閱 https://docs.netapp.com/us-en/occm/task_getting_started_azure.html["Azure中的BlueXP入門指南"^]。
 
 .開始之前
 以所需的IAM權限和角色存取Azure帳戶
 
 .步驟
 . 將您的認證資料新增至BlueXP。
-. 新增Azure連接器。請參閱 https://["BlueXP原則"^]。
+. 新增Azure連接器。請參閱 https://mysupport.netapp.com/site/info/cloud-manager-policies["BlueXP原則"^]。
 +
 .. 選擇* Azure *作為供應商。
 .. 輸入Azure認證資料、包括應用程式ID、用戶端機密和目錄（租戶）ID。
 +
-請參閱 https://["從BlueXPr在Azure中建立連接器"^]。
+請參閱 https://docs.netapp.com/us-en/occm/task_creating_connectors_azure.html["從BlueXPr在Azure中建立連接器"^]。
 
 
 

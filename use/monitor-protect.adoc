@@ -200,12 +200,12 @@ NOTE: 您只能編輯API金鑰。若要變更Cloud Insights 此URL、我們建�
 
 您可以使用Prometheus監控Astra Control Center資料。您可以設定Prometheus從Kubernetes叢集度量端點收集度量、也可以使用Prometheus將度量資料視覺化。
 
-如需使用Prometheus的詳細資訊、請參閱其文件、網址為 https://["Prometheus入門"]。
+如需使用Prometheus的詳細資訊、請參閱其文件、網址為 https://prometheus.io/docs/prometheus/latest/getting_started/["Prometheus入門"]。
 
 .您的需求
 請確定您已在Astra Control Center叢集或其他可與Astra Control Center叢集通訊的叢集上下載並安裝Prometheus套件。
 
-請依照正式文件中的指示進行 https://["安裝Prometheus"]。
+請依照正式文件中的指示進行 https://prometheus.io/docs/prometheus/latest/installation/["安裝Prometheus"]。
 
 Prometheus需要能夠與Astra Control Center Kubernetes叢集通訊。如果未在Astra Control Center叢集上安裝Prometheus、您必須確保它們能與Astra Control Center叢集上執行的度量服務通訊。
 
