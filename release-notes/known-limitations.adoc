@@ -40,6 +40,7 @@ summary: 已知限制指出本產品版本不支援的平台、裝置或功能�
 * <<在移除Astra Control Center執行個體期間、可能無法保留備份與快照>>
 * <<LDAP使用者和群組限制>>
 * <<「活動」頁面最多可顯示 100000 個事件>>
+* <<具有特定快照控制器版本的 Kubernetes 1.25 或更新版本叢集快照可能會失敗>>
 
 
 
@@ -187,6 +188,21 @@ Astra Control Center支援最多5、000個遠端群組和10、000個遠端使用
 == 「活動」頁面最多可顯示 100000 個事件
 
 Astra Control 活動頁面最多可顯示 100,000 個事件。若要檢視所有記錄的事件、請使用擷取事件 link:../rest-api/api-intro.html["Astra Control REST API"^]。
+
+
+
+== 具有特定快照控制器版本的 Kubernetes 1.25 或更新版本叢集快照可能會失敗
+
+如果叢集上安裝 Snapshot 控制器 API 的 v1beta1 版、執行 1.25 版或更新版本的 Kubernetes 叢集快照可能會失敗。
+
+因應措施是在升級現有 Kubernetes 1.25 或更新版本的安裝時執行下列動作：
+
+. 移除任何現有的 Snapshot CRD 和任何現有的 Snapshot 控制器。
+. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["解除安裝Astra Trident"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安裝 Snapshot CRD 和 Snapshot 控制器"^]。
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["安裝最新的 Astra Trident 版本"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["建立 Volume SnapshotClass"^]。
+
 
 
 

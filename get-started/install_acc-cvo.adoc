@@ -37,8 +37,8 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 
 在AWS中部署Astra Control Center之前、您需要下列項目：
 
-* Astra Control Center授權。請參閱 link:../get-started/requirements.html["Astra Control Center授權要求"]。
-* link:../get-started/requirements.html["符合Astra Control Center的要求"]。
+* Astra Control Center授權。請參閱 link:../get-started/requirements.html["Astra Control Center授權要求"^]。
+* link:../get-started/requirements.html["符合Astra Control Center的要求"^]。
 * NetApp Cloud Central帳戶
 * 如果使用OCP、則Red Hat OpenShift Container Platform（OCP）權限（位於命名空間層級以建立Pod）
 * AWS認證資料、存取ID和秘密金鑰、具備可讓您建立儲存區和連接器的權限
@@ -155,7 +155,7 @@ NOTE: AWS登錄權杖會在12小時內過期、之後您必須更新Docker映像
 
 . 建立AWS虛擬網路。
 . 檢閱EC2運算執行個體。這可以是AWS中的裸機伺服器或VM。
-. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在AWS中變更執行個體類型以符合Astra需求。請參閱 link:../requirements.html["Astra Control Center需求"]。
+. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在AWS中變更執行個體類型以符合Astra需求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
 . 建立至少一個AWS S3儲存區來儲存備份。
 . 建立AWS彈性Container登錄（ECR）、以裝載所有的主動定速控制系統映像。
 +
@@ -214,7 +214,7 @@ TIP: 可作為單一節點或高可用度運作。Cloud Volumes ONTAP如果已�
 
 === 安裝AWS的Astra Control Center
 
-遵循標準 link:../get-started/install_acc.html["Astra Control Center安裝說明"]。
+遵循標準 link:../get-started/install_acc.html["Astra Control Center安裝說明"^]。
 
 
 NOTE: AWS使用一般S3儲存區類型。
@@ -231,8 +231,8 @@ NOTE: AWS使用一般S3儲存區類型。
 
 在GCP中部署Astra Control Center之前、您需要下列項目：
 
-* Astra Control Center授權。請參閱 link:../get-started/requirements.html["Astra Control Center授權要求"]。
-* link:../get-started/requirements.html["符合Astra Control Center的要求"]。
+* Astra Control Center授權。請參閱 link:../get-started/requirements.html["Astra Control Center授權要求"^]。
+* link:../get-started/requirements.html["符合Astra Control Center的要求"^]。
 * NetApp Cloud Central帳戶
 * 如果使用OCP、Red Hat OpenShift Container Platform（OCP）4．10
 * 如果使用OCP、則Red Hat OpenShift Container Platform（OCP）權限（位於命名空間層級以建立Pod）
@@ -356,7 +356,7 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 . 在您計畫用於具有CVO後端的OCP叢集的GCP中建立GCP專案和VPC。
 . 檢閱運算執行個體。這可以是GCP中的裸機伺服器或VM。
-. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在GCP中變更執行個體類型以符合Astra需求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"]。
+. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在GCP中變更執行個體類型以符合Astra需求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
 . 建立至少一個GCP雲端儲存庫來儲存備份。
 . 建立儲存貯體存取所需的機密。
 . 建立Google Container登錄、以裝載所有Astra Control Center映像。
@@ -442,7 +442,7 @@ TIP: 可作為單一節點或高可用度（HA）運作。Cloud Volumes ONTAP如
 
 === 安裝Astra Control Center for GCP
 
-遵循標準 link:../get-started/install_acc.html["Astra Control Center安裝說明"]。
+遵循標準 link:../get-started/install_acc.html["Astra Control Center安裝說明"^]。
 
 
 NOTE: GCP使用通用S3儲存區類型。
@@ -467,8 +467,8 @@ kubectl create secret docker-registry <secret name> --docker-server=<Registry lo
 
 在Azure中部署Astra Control Center之前、您需要下列項目：
 
-* Astra Control Center授權。請參閱 link:../get-started/requirements.html["Astra Control Center授權要求"]。
-* link:../get-started/requirements.html["符合Astra Control Center的要求"]。
+* Astra Control Center授權。請參閱 link:../get-started/requirements.html["Astra Control Center授權要求"^]。
+* link:../get-started/requirements.html["符合Astra Control Center的要求"^]。
 * NetApp Cloud Central帳戶
 * 如果使用OCP、Red Hat OpenShift Container Platform（OCP）4.8
 * 如果使用OCP、則Red Hat OpenShift Container Platform（OCP）權限（位於命名空間層級以建立Pod）
@@ -483,7 +483,7 @@ kubectl create secret docker-registry <secret name> --docker-server=<Registry lo
 
 除了環境的資源需求之外、Astra Control Center還需要下列資源：
 
-請參閱 link:../get-started/requirements.html["Astra Control Center營運環境需求"]。
+請參閱 link:../get-started/requirements.html["Astra Control Center營運環境需求"^]。
 
 [cols="1h,2a"]
 |===
@@ -593,7 +593,7 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 . 建立Azure虛擬網路。
 . 檢閱運算執行個體。這可以是Azure中的裸機伺服器或VM。
-. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請變更Azure中的執行個體類型以符合Astra要求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"]。
+. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請變更Azure中的執行個體類型以符合Astra要求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
 . 建立至少一個Azure Blob容器來儲存備份。
 . 建立儲存帳戶。您需要儲存帳戶來建立容器、以便在Astra Control Center中作為儲存庫。
 . 建立儲存貯體存取所需的機密。
@@ -684,6 +684,6 @@ image:acc-cvo-azure-connected.png["此影像顯示在BlueXP中匯入的叢集"]
 
 === 安裝及設定Azure的Astra Control Center
 
-使用標準安裝Astra Control Center link:../get-started/install_acc.html["安裝說明"]。
+使用標準安裝Astra Control Center link:../get-started/install_acc.html["安裝說明"^]。
 
-使用Astra Control Center新增Azure儲存庫。請參閱 link:../get-started/setup_overview.html["設定Astra Control Center並新增鏟斗"]。
+使用Astra Control Center新增Azure儲存庫。請參閱 link:../get-started/setup_overview.html["設定Astra Control Center並新增鏟斗"^]。

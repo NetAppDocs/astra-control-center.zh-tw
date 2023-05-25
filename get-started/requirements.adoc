@@ -144,7 +144,7 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 == Astra Control Center 授權
 
-Astra Control Center 需要 Astra Control Center 授權。安裝 Astra Control Center 時、已啟動內嵌式 90 天試用版授權、可用於 4 、 800 個 CPU 單元。如果您需要更多容量或不同的評估條款、或想要升級至完整授權、您可以向 NetApp 取得不同的評估授權或完整授權。您需要授權來保護應用程式和資料。請參閱 link:../concepts/intro.html["Astra Control Center功能"] 以取得詳細資料。
+Astra Control Center 需要 Astra Control Center 授權。安裝 Astra Control Center 時、已啟動內嵌式 90 天試用版授權、可用於 4 、 800 個 CPU 單元。如果您需要更多容量或不同的評估條款、或想要升級至完整授權、您可以向 NetApp 取得不同的評估授權或完整授權。您需要授權來保護應用程式和資料。
 
 您可以報名免費試用 Astra Control Center 。您可以註冊註冊 link:https://bluexp.netapp.com/astra-register["請按這裡"^]。
 

@@ -179,7 +179,7 @@ podman login <YOUR_REGISTRY>
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.0-22
+export PACKAGEVERSION=23.04.2-7
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -198,7 +198,7 @@ done
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.0-22
+export PACKAGEVERSION=23.04.2-7
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -214,7 +214,7 @@ NOTE: 指令碼所建立的映像路徑應如下所示、視登錄組態而定�
 +
 [listing]
 ----
-https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.04.0-22/image:version
+https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.04.2-7/image:version
 ----
 
 
@@ -253,7 +253,7 @@ namespace/netapp-acc-operator created
 .. 建立「NetApp-acc operator」命名空間的秘密。新增Docker資訊並執行下列命令：
 +
 
-NOTE: 預留位置 `your_registry_path` 應與您先前上傳的影像位置相符（例如、 `[Registry_URL]/netapp/astra/astracc/23.04.0-22`）。
+NOTE: 預留位置 `your_registry_path` 應與您先前上傳的影像位置相符（例如、 `[Registry_URL]/netapp/astra/astracc/23.04.2-7`）。
 
 +
 [source, console]
@@ -380,7 +380,7 @@ spec:
           value: "2"
         - name: ACCOP_HELM_INSTALLTIMEOUT
           value: 5m
-        *image: [your_registry_path]/acc-operator:23.04.21*
+        *image: [your_registry_path]/acc-operator:23.04.36*
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -478,7 +478,7 @@ NOTE: 附註的Y反 洗錢範例遵循下列步驟。
 | 設定 | 指導 | 類型 | 範例 
 
 
-| `astraVersion` | 要部署的Astra Control Center版本。此設定不需要任何動作、因為此值將預先填入。 | 字串 | `23.04.0-22` 
+| `astraVersion` | 要部署的Astra Control Center版本。此設定不需要任何動作、因為此值將預先填入。 | 字串 | `23.04.2-7` 
 |===
 ====
 +
@@ -893,7 +893,7 @@ kubectl get AstraControlCenter -n [netapp-acc or custom namespace]
 [listing]
 ----
 NAME    UUID                                  VERSION     ADDRESS         READY
-astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f  23.04.0-22  10.111.111.111  True
+astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f  23.04.2-7   10.111.111.111  True
 ----
 +
 

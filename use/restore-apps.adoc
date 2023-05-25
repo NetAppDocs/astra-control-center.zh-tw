@@ -169,7 +169,7 @@ TIP: 您可以根據需要建立任意數量的資源、包括和排除規則。
 
 == 從 ONTAP NAS 經濟型儲存設備移轉至 ONTAP NAS 儲存設備
 
-您可以使用 Astra Control link:../use/restore-apps.html["應用程式還原"] 從以作為後盾的儲存類別移轉應用程式磁碟區的作業 `ontap-nas-economy`（允許有限的應用程式保護選項）、以作為後盾的儲存類別 `ontap-nas` 提供完整的 Astra Control 保護選項。還原作業會移轉使用的 Qtree 型磁碟區 `ontap-nas-economy` 後端到標準磁碟區的備份 `ontap-nas`。Volume 、無論它們是否存在 `ontap-nas-economy` 僅備份或混合、將移轉至目標儲存類別。移轉完成後、保護選項不再受到限制。
+您可以使用 Astra Control link:../use/restore-apps.html["應用程式還原"] 或 link:../use/clone-apps.html["應用程式複製"^] 從以作為後盾的儲存類別移轉應用程式磁碟區的作業 `ontap-nas-economy`（允許有限的應用程式保護選項）、以作為後盾的儲存類別 `ontap-nas` 提供完整的 Astra Control 保護選項。複製或還原作業會移轉使用的 Qtree 型磁碟區 `ontap-nas-economy` 後端到標準磁碟區的備份 `ontap-nas`。Volume 、無論它們是否存在 `ontap-nas-economy` 僅備份或混合、將移轉至目標儲存類別。移轉完成後、保護選項不再受到限制。
 
 
 

@@ -28,6 +28,7 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 .叢集
 * <<使用Astra Control Center管理叢集失敗、因為預設的Kbeconfig檔案包含多個內容>>
 * <<某些 Pod 在升級至 Astra Control Center 23.04 之後無法啟動>>
+* <<某些 Pod 在從 23.04 升級到 23.04.2 的清除階段之後會顯示錯誤狀態>>
 * <<監控 Pod 可能會在 Istio 環境中當機>>
 
 
@@ -100,6 +101,24 @@ kubectl delete pod pcloud-astra-control-center-au-pod-0 -n <namespace>
 ----
 
 
+
+
+== 某些 Pod 在從 23.04 升級到 23.04.2 的清除階段之後會顯示錯誤狀態
+
+升級至 Astra Control Center 23.04.2 之後、部分 Pod 可能會在相關記錄中顯示錯誤 `task-service-task-purge`：
+
+[listing]
+----
+kubectl get all -n netapp-acc -o wide|grep purge
+
+pod/task-service-task-purge-28282828-ab1cd     0/1     Error       0             48m     10.111.0.111   openshift-clstr-ol-07-zwlj8-worker-jhp2b   <none>           <none>
+----
+此錯誤狀態表示清理步驟未正確執行。整體升級至 23.04.2 成功。執行下列命令以清理工作並移除錯誤狀態：
+
+[listing]
+----
+kubectl delete job task-service-task-purge-[system-generated task ID] -n <netapp-acc or custom namespace>
+----
 
 
 == 監控 Pod 可能會在 Istio 環境中當機
