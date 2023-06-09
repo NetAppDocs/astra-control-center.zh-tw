@@ -37,6 +37,9 @@ kubectl get apiservices
 * 如果叢集中已存在憑證管理程式、您需要執行某些作業 link:../get-started/cert-manager-prereqs.html["必要步驟"^] 因此Astra Control Center不會嘗試安裝自己的憑證管理程式。依預設、Astra Control Center會在安裝期間安裝自己的憑證管理程式。
 
 
+
+TIP: 在第三個故障網域或次要站台中部署 Astra Control Center 。這是應用程式複寫和無縫災難恢復的建議。
+
 .關於這項工作
 Astra Control Center安裝程序可協助您執行下列作業：
 
@@ -593,7 +596,17 @@ IMPORTANT: If you are using a registry that does not require authorization, you 
 | 設定 | 指導 | 類型 | 選項 
 
 
-| `ingressType` | 使用下列其中一種入口類型：*`Generic`* (`ingressType: "Generic"`）（預設）當您使用另一個入口控制器、或偏好使用自己的入口控制器時、請使用此選項。部署Astra Control Center之後、您需要設定 link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["入口控制器"^] 使用URL公開Astra Control Center。*`AccTraefik`* (`ingressType: "AccTraefik"`）如果您不想設定入口控制器、請使用此選項。這會部署Astra控制中心 `traefik` 作為Kubernetes負載平衡器類型服務的閘道。Astra Control Center使用「負載平衡器」類型的服務 (`svc/traefik` （在Astra Control Center命名空間中）、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。附註：如需有關「負載平衡器」和入口的服務類型詳細資訊、請參閱 link:../get-started/requirements.html["需求"^]。 | 字串  a| 
+| `ingressType` | 使用下列其中一種入口類型：
+
+*`Generic`* (`ingressType: "Generic"`）（預設）
+如果您使用另一個入口控制器、或偏好使用自己的入口控制器、請使用此選項。部署Astra Control Center之後、您需要設定 link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["入口控制器"^] 使用URL公開Astra Control Center。
+
+*`AccTraefik`* (`ingressType: "AccTraefik"`）
+如果您不想設定入口控制器、請使用此選項。這會部署Astra控制中心 `traefik` 作為Kubernetes負載平衡器類型服務的閘道。
+
+Astra Control Center使用「負載平衡器」類型的服務 (`svc/traefik` （在Astra Control Center命名空間中）、並要求指派可存取的外部IP位址。如果您的環境允許負載平衡器、但您尚未設定負載平衡器、則可以使用MetalLB或其他外部服務負載平衡器、將外部IP位址指派給服務。在內部DNS伺服器組態中、您應該將Astra Control Center所選的DNS名稱指向負載平衡的IP位址。
+
+附註：如需「負載平衡器」和入口服務類型的詳細資訊、請參閱 link:../get-started/requirements.html["需求"^]。 | 字串  a| 
 ** `Generic` （這是預設值）
 ** `AccTraefik`
 

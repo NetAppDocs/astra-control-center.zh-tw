@@ -14,7 +14,7 @@ summary: Astra可從快照或備份還原應用程式組態和持續儲存設備
 [role="lead"]
 使用Astra Control、您可以利用NetApp SnapMirror技術的非同步複寫功能、利用低RPO（恢復點目標）和低RTO（恢復時間目標）、為應用程式建立營運不中斷。設定完成後、您的應用程式就能將資料和應用程式變更從一個叢集複寫到另一個叢集。
 
-如需備份/還原與複寫之間的比較、請參閱 link:../concepts/data-protection.html["資料保護概念"]。
+如需備份 / 還原與複寫之間的比較、請參閱 link:../concepts/data-protection.html["資料保護概念"]。
 
 您可以在不同的案例中複寫應用程式、例如下列僅限內部部署、混合式和多雲端的案例：
 
@@ -32,7 +32,7 @@ NOTE: 您可以同時以相反方向複寫不同的應用程式（在其他叢�
 使用Astra Control、您可以執行下列與複寫應用程式相關的工作：
 
 * <<設定複寫關係>>
-* <<在目的地叢集上使複寫的應用程式上線（容錯移轉）>>
+* <<將複寫的應用程式上線至目的地叢集（容錯移轉）>>
 * <<重新同步複寫失敗的情況>>
 * <<反轉應用程式複寫>>
 * <<將應用程式容錯移轉至原始來源叢集>>
@@ -43,36 +43,47 @@ NOTE: 您可以同時以相反方向複寫不同的應用程式（在其他叢�
 
 == 複寫先決條件
 
-Astra Control應用程式複寫要求您在開始之前必須符合下列先決條件：
+Astra Control 應用程式複寫需要先滿足下列先決條件、才能開始進行：
 
-* 為了實現無縫的災難恢復、建議您在第三個故障網域或次要站台部署Astra Control Center。
-* 應用程式的主機Kubernetes叢集和目的地Kubernetes叢集必須與ONTAP 它們的支援中心叢集一起管理、理想情況是在不同的故障網域或站台上。
-* 必須配對叢集和主機SVM。ONTAP請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["叢集與SVM對等概觀"^]。
-* 配對的遠端SVM必須可供目的地叢集上的Astra Trident使用。
-* 來源ONTAP 叢集和目的地叢集上都必須有Astra Trident版本22.07或更新版本。
-* 使用資料保護套裝組合的SnapMirror非同步授權必須同時在來源和目的地的叢集上啟用。ONTAP ONTAP請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^]。
-* 當您將ONTAP 某個不支援的儲存後端新增至Astra Control Center時、請套用具有「admin」角色（具有存取方法）的使用者認證 `http` 和 `ontapi` 同時在ONTAP 來源叢集和目的地叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
-* 來源和目的地Kubernetes叢集和ONTAP 非功能性叢集都必須由Astra Control管理。
+* * ONTAP 叢集 * ：
++
+** * Trident * ： Astra Trident 版本 22.07 或更新版本必須同時存在於使用 ONTAP 作為後端的來源叢集和目的地 Kubernetes 叢集上。
+** * 授權 * ：使用資料保護套件的 ONTAP SnapMirror 非同步授權必須同時在來源和目的地 ONTAP 叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^] 以取得更多資訊。
+
+
+* * 配對 * ：
++
+** * 叢集與 SVM* ： ONTAP 叢集與主機 SVM 必須配對。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["叢集與SVM對等概觀"^] 以取得更多資訊。
+** * Trident 與 SVM* ：配對的遠端 SVM 必須可用於目的地叢集上的 Astra Trident 。
+
+
+* * Astra 控制中心 * ：
 +
 
-NOTE: 您可以同時以相反方向複寫不同的應用程式（在其他叢集或站台上執行）。例如、應用程式A、B、C可以從資料中心1複寫到資料中心2、而應用程式X、Y、Z可以從資料中心2複寫到資料中心1。
+TIP: link:../get-started/install_acc.html["部署 Astra Control Center"^] 在第三個故障網域或次要站台中進行無縫災難恢復。
 
-* * Astra Trident / ONTAP S基 類組態*：Astra Control Center需要建立儲存類別、並將其設為預設儲存類別。Astra Control Center支援ONTAP Astra Trident提供的下列支援資料驅動程式、以供複寫：
 +
-** ONTAP-NAS
-** ONTAP NAS 經濟型（此儲存等級無法使用 SnapMirror 複寫功能搭配 Astra Control ）
-** ONTAP-SAN
+** * 託管叢集 * ：下列叢集必須新增至 Astra Control 、並由 Astra Control 加以管理、最適合在不同的故障網域或站台：
++
+*** 來源 Kubernetes 叢集
+*** 目的地 Kubernetes 叢集
+*** 相關的 ONTAP 叢集
+
+
+** * 使用者帳戶 * ：當您將 ONTAP 儲存後端新增至 Astra 控制中心時、請套用具有「 admin 」角色的使用者認證。此角色具有存取方法 `http` 和 `ontapi` 同時在ONTAP 來源叢集和目的地叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
+
+
+* *Astra Trident / ONTAP 組態 * ： Astra 控制中心要求您至少設定一個儲存類別、以支援來源叢集和目的地叢集的複寫。
 
 
 
-
-瞭解操作方法 link:../use/replicate_snapmirror.html["使用SnapMirror技術將應用程式複寫到遠端系統"^]。
+IMPORTANT: Astra Control 複寫支援使用單一儲存類別的應用程式。當您將應用程式新增至命名空間時、請確定該應用程式與命名空間中的其他應用程式具有相同的儲存類別。將 PVC 新增至複寫的應用程式時、請確定新的 PVC 與命名空間中的其他 PVC 具有相同的儲存類別。
 
 
 
 == 設定複寫關係
 
-設定複寫關係時、會涉及複寫原則的下列項目；
+設定複寫關係涉及下列事項：
 
 * 選擇您希望Astra Control執行應用程式Snapshot的頻率（包括應用程式的Kubernetes資源、以及每個應用程式磁碟區的Volume Snapshot）
 * 選擇複寫排程（包括Kubernetes資源及持續磁碟區資料）
@@ -108,7 +119,7 @@ Astra Control會建立用於複寫的應用程式Snapshot。
 
 . 若要查看應用程式Snapshot狀態、請選取* Applications*>* Snapshot*索引標籤。
 +
-Snapshot名稱使用「repl複 寫排程-」格式。Astra Control保留上次用於複寫的Snapshot。複寫成功完成後、會刪除任何舊版複寫Snapshot。
+Snapshot 名稱使用的格式 `replication-schedule-<string>`。Astra Control保留上次用於複寫的Snapshot。複寫成功完成後、會刪除任何舊版複寫Snapshot。
 
 
 
@@ -131,9 +142,9 @@ Astra Control在建立關係後完成下列行動：
 
 
 
-== 在目的地叢集上使複寫的應用程式上線（容錯移轉）
+== 將複寫的應用程式上線至目的地叢集（容錯移轉）
 
-使用Astra Control、您可以將複寫的應用程式「容錯移轉」到目的地叢集。此程序會停止複寫關係、並在目的地叢集上使應用程式上線。此程序不會停止來源叢集上的應用程式（如果運作正常）。
+使用 Astra Control 、您可以將複寫的應用程式容錯移轉至目的地叢集。此程序會停止複寫關係、並在目的地叢集上使應用程式上線。此程序不會停止來源叢集上的應用程式（如果運作正常）。
 
 .步驟
 . 從Astra Control左側導覽中、選取* Applications*。
@@ -143,7 +154,7 @@ Astra Control在建立關係後完成下列行動：
 
 
 .結果
-容錯移轉程序會導致下列動作：
+容錯移轉程序會執行下列動作：
 
 * 在目的地叢集上、應用程式會根據最新的複寫快照來啟動。
 * 來源叢集和應用程式（如果運作正常）不會停止、將會繼續執行。
@@ -215,7 +226,7 @@ CAUTION: 請謹慎選擇重新同步來源、因為目的地上的資料將被�
 
 == 將應用程式容錯移轉至原始來源叢集
 
-使用Astra Control、您可以使用下列作業順序、在「容錯移轉」作業之後達到「容錯移轉」。在此工作流程中、為了還原原始複寫方向、Astra Control會在反轉複寫方向之前、將任何應用程式變更複寫回原始來源叢集。
+使用 Astra Control 、您可以在容錯移轉作業之後、使用下列作業順序來達成「容錯回復」。在此工作流程中、為了還原原始複寫方向、Astra Control會在反轉複寫方向之前、將任何應用程式變更複寫回原始來源叢集。
 
 此程序從已完成容錯移轉至目的地的關係開始、並涉及下列步驟：
 
@@ -228,7 +239,7 @@ CAUTION: 請謹慎選擇重新同步來源、因為目的地上的資料將被�
 . 從Astra Control左側導覽中、選取* Applications*。
 . 在「應用程式」頁面中、選取「*資料保護*>*複寫*」索引標籤。
 . 在「Data Protection（資料保護）」>「Replication（複寫）」索引標籤中、從「Actions（動作）」功能表中選取* Resyn美食*。
-. 若要執行故障恢復作業、請選擇容錯移轉應用程式作為重新同步作業的來源（保留任何在容錯移轉後寫入的資料）。
+. 針對容錯回復作業、請選擇容錯移轉應用程式做為重新同步作業的來源（保留任何在容錯移轉後寫入的資料）。
 . 輸入「resSync」以確認。
 . 選取*是、重新同步*以完成。
 . 重新同步完成後、請在「Data Protection（資料保護）」>「Replication（複寫）」索引標籤的「Actions（動作）」功能表中、選取* Reverse replection*（反轉複寫）。

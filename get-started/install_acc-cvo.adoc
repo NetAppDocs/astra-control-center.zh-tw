@@ -155,7 +155,7 @@ NOTE: AWS登錄權杖會在12小時內過期、之後您必須更新Docker映像
 
 . 建立AWS虛擬網路。
 . 檢閱EC2運算執行個體。這可以是AWS中的裸機伺服器或VM。
-. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在AWS中變更執行個體類型以符合Astra需求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
+. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在AWS中變更執行個體類型以符合Astra需求。  請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
 . 建立至少一個AWS S3儲存區來儲存備份。
 . 建立AWS彈性Container登錄（ECR）、以裝載所有的主動定速控制系統映像。
 +
@@ -356,7 +356,7 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 . 在您計畫用於具有CVO後端的OCP叢集的GCP中建立GCP專案和VPC。
 . 檢閱運算執行個體。這可以是GCP中的裸機伺服器或VM。
-. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請在GCP中變更執行個體類型以符合Astra需求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
+. 如果執行個體類型尚未符合主要節點和工作節點的 Astra 最低資源需求、請在 GCP 中變更執行個體類型、以符合 Astra 需求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
 . 建立至少一個GCP雲端儲存庫來儲存備份。
 . 建立儲存貯體存取所需的機密。
 . 建立Google Container登錄、以裝載所有Astra Control Center映像。
@@ -593,7 +593,7 @@ NOTE: OpenShift可能會建立自己的資源群組。此外、您也應該定�
 
 . 建立Azure虛擬網路。
 . 檢閱運算執行個體。這可以是Azure中的裸機伺服器或VM。
-. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請變更Azure中的執行個體類型以符合Astra要求。請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
+. 如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請變更Azure中的執行個體類型以符合Astra要求。  請參閱 link:../get-started/requirements.html["Astra Control Center需求"^]。
 . 建立至少一個Azure Blob容器來儲存備份。
 . 建立儲存帳戶。您需要儲存帳戶來建立容器、以便在Astra Control Center中作為儲存庫。
 . 建立儲存貯體存取所需的機密。
