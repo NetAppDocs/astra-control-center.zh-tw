@@ -15,7 +15,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 以下是使用Astra Control Center所需的步驟總覽。每個步驟中的連結都會帶您前往提供更多詳細資料的頁面。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 檢閱Kubernetes叢集需求
-確保您的環境符合這些要求。
+確保您的環境符合下列需求：
 
 * Kubernetes叢集*
 
@@ -39,12 +39,12 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 下載並安裝Astra Control Center
-完成這些安裝工作。
+完成下列安裝工作：
 
 * https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["從 NetApp 支援網站 下載頁面下載 Astra 控制中心"^]
 * 取得NetApp授權檔案：
 +
-** 如果您正在評估 Astra Control Center 、則已包含內嵌評估授權。
+** 如果您正在評估 Astra Control Center 、則已包含內嵌評估授權
 ** link:../concepts/licensing.html["如果您已購買Astra Control Center、請產生授權檔案"^]
 
 
@@ -53,7 +53,7 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 完成一些初始設定工作
-完成一些基本工作以開始使用。
+完成一些基本工作以開始：
 
 * link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["新增授權"^]
 * link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["為叢集管理做好準備"^]
@@ -63,11 +63,11 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 使用Astra控制中心
-完成Astra Control Center的設定之後、接下來您可以做什麼。您可以使用Astra Control使用者介面（UI）或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^]。
+完成 Astra Control Center 設定後、請使用 Astra Control UI 或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 若要開始管理及保護應用程式：
 
-* link:../use/manage-apps.html["管理應用程式"^]
+* link:../use/manage-apps.html["管理應用程式"^]：定義要管理的資源。
 * link:../use/protection-overview.html["保護應用程式"^]：設定保護原則、並複寫、複製及移轉應用程式。
-* link:../use/manage-local-users-and-roles.html["管理帳戶"^]：使用者、角色、LDAP、認證等
+* link:../use/manage-local-users-and-roles.html["管理帳戶"^]：使用者、角色、 LDAP 、認證等。
 * link:../use/monitor-protect.html#connect-to-cloud-insights["也可以連接Cloud Insights 到"^]：查看系統健全狀況的指標。
 
 

@@ -197,7 +197,6 @@
   <block id="b8f3bc1c4097cf013ff9bb82ec30af2e" category="section-title">支援的應用程式安裝方法</block>
   <block id="a90a8c7f23b615986d59344298e29223" category="paragraph">Astra Control支援下列應用程式安裝方法：</block>
   <block id="1633320139361ee32414ab0910725238" category="list-text">*資訊清單檔案*：Astra Control支援使用KUbectl從資訊清單檔案安裝的應用程式。例如：</block>
-  <block id="a117e5ae155bb69285242a4c89875dd6" category="list-text">* Helm 3*：如果您使用Helm來安裝應用程式、Astra Control需要Helm版本3。完全支援使用Helm 3（或從Helm 2升級至Helm 3）來管理及複製應用程式。不支援管理以Helm 2安裝的應用程式。</block>
   <block id="489435e765db57e2156b5a11839b6533" category="inline-link">Apache K8ssandra</block>
   <block id="3440b7c2bc625432a7948e390eab90ab" category="list-text"><block ref="3440b7c2bc625432a7948e390eab90ab" category="inline-link-rx"></block></block>
   <block id="6bf4ab292e1934fbd766550b2286a71d" category="inline-link">Jenkins CI</block>
@@ -1269,7 +1268,6 @@
   <block id="091880150353e9b5462ebfe9e5007deb" category="list-text">依名稱刪除限制範圍：</block>
   <block id="5fed03116ab579cfabba1dfd68c70bab" category="inline-link">NetApp Astra知識庫</block>
   <block id="721ed1f27b3163d26010e9d99872bd47" category="summary">將Kubernetes叢集新增至Astra Control之後、即可在該叢集（Astra Control以外）上安裝應用程式、然後前往Astra Control中的「應用程式」頁面開始管理應用程式。</block>
-  <block id="456907dc64f076d8c8ed113ea6a4ac8f" category="list-text">*由業者部署的應用程式*：Astra Control支援以命名空間範圍運算子安裝的應用程式、這些運算子通常是以「傳遞值」而非「傳遞參照」架構設計。運算子及其安裝的應用程式必須使用相同的命名空間；您可能需要修改運算子的部署.yaml檔案、以確保情況如此。</block>
   <block id="be4629edbb6c58ee13cd278ee7ec5a4f" category="paragraph">以下是一些遵循這些模式的營運者應用程式：</block>
   <block id="8cff84c3972d27d6ae049edd6c88a417" category="inline-link-macro">新增叢集</block>
   <block id="b925c8597a323502e4cdfe7a75f013d4" category="admonition">舉例來說、您可能想要為每週有節奏的「Maria」設定備份原則、但您可能需要比這更頻繁地備份「MariaDB」（位於同一個命名空間中）。根據這些需求、您需要分別管理應用程式、而非單一命名空間應用程式。</block>
@@ -2134,7 +2132,6 @@
   <block id="9ad3989601b59e755170866a5329554c" category="list-text"><block ref="9ad3989601b59e755170866a5329554c" category="inline-link-rx"></block></block>
   <block id="53c5fac0ba78b08ca3f0a270b746c5d2" category="section-title">重設其他使用者的密碼</block>
   <block id="f83cc958d14f90620b7ffdf9923fe440" category="list-text">複製*讀取/寫入*金鑰。您需要將其貼到Astra Control Center * Connect Cloud Insights S還原*視窗中。如需讀取/寫入API存取權杖金鑰權限、請選取：資料擷取、記錄擷取、擷取設備和資料收集。</block>
-  <block id="a8a5da0c5d62ec5f7225e0ce27261da7" category="paragraph">確保您的環境符合這些要求。</block>
   <block id="b5233b1e8c04e10566734b9cecfc92b1" category="paragraph">* Kubernetes叢集*</block>
   <block id="9075e632fc6c099653c3c60ce5f635c5" category="inline-link-macro">設定內部部署Kubernetes叢集的負載平衡入口</block>
   <block id="737d5c48f1830eb81614b8f6e0e6b6cc" category="list-text"><block ref="737d5c48f1830eb81614b8f6e0e6b6cc" category="inline-link-macro-rx"></block></block>
@@ -2147,13 +2144,11 @@
   <block id="ae0a6f81e3ab19bb5bb4cc16ba804b6d" category="paragraph">*不包含認證資料* ONTAP</block>
   <block id="cff9e873ecc35abb358c9f43ad1d3dcf" category="inline-link-macro">設定ONTAP 驗證資料</block>
   <block id="27912e4366edb4ee86aa373395b590f5" category="list-text"><block ref="27912e4366edb4ee86aa373395b590f5" category="inline-link-macro-rx"></block></block>
-  <block id="7ae94f3e29fb1789e466d68ff3b7719d" category="paragraph">完成這些安裝工作。</block>
   <block id="fbc059a4c4dca73352b8c2d2b522c031" category="inline-link-macro">如果您已購買Astra Control Center、請產生授權檔案</block>
   <block id="d3e8fd495d55bcc11d404a5401147b55" category="list-text"><block ref="d3e8fd495d55bcc11d404a5401147b55" category="inline-link-macro-rx"></block></block>
   <block id="28d87c90870047c51935e011ce5611a2" category="list-text"><block ref="28d87c90870047c51935e011ce5611a2" category="inline-link-macro-rx"></block></block>
   <block id="50fd68f173baa5875cfb4c4f956ed966" category="inline-link-macro">執行其他選用的組態步驟</block>
   <block id="8a2d0b5d3ae0c64a9bbd6f907fdd49a9" category="list-text"><block ref="8a2d0b5d3ae0c64a9bbd6f907fdd49a9" category="inline-link-macro-rx"></block></block>
-  <block id="fc902c0e2ec2761be704bc86d6da6195" category="paragraph">完成一些基本工作以開始使用。</block>
   <block id="ec01ce5d7a75843507cddc0f1e980f6a" category="inline-link-macro">新增授權</block>
   <block id="9cd5bd1af078069458de7df94bbb3c5a" category="list-text"><block ref="9cd5bd1af078069458de7df94bbb3c5a" category="inline-link-macro-rx"></block></block>
   <block id="e615e4db7ab4de24645d9fa039b73e02" category="inline-link-macro">為叢集管理做好準備</block>
@@ -2162,10 +2157,7 @@
   <block id="3020dd08728680c8a3e10602b33cd923" category="list-text"><block ref="3020dd08728680c8a3e10602b33cd923" category="inline-link-macro-rx"></block></block>
   <block id="8316c4ee552ed64f43cc8c5453b6dc90" category="list-text"><block ref="8316c4ee552ed64f43cc8c5453b6dc90" category="inline-link-macro-rx"></block></block>
   <block id="9e263ce7e6d16d802d4f5fdb961973cb" category="list-text"><block ref="9e263ce7e6d16d802d4f5fdb961973cb" category="inline-link-macro-rx"></block></block>
-  <block id="a06e11c328de2e8797a5126bacc41f4a" category="paragraph">完成Astra Control Center的設定之後、接下來您可以做什麼。您可以使用Astra Control使用者介面（UI）或<block ref="c076c843349c85837d82b7f2e26fe2bf" category="inline-link-rx"></block>。</block>
-  <block id="6fe79d58f8a8b720433194a3efe0f398" category="list-text"><block ref="6fe79d58f8a8b720433194a3efe0f398" category="inline-link-macro-rx"></block></block>
   <block id="ea0df431e9a218f5a0629b3821a462af" category="list-text"><block ref="a31feca3886e9400a923ff8b2642373f" category="inline-link-macro-rx"></block>：設定保護原則、並複寫、複製及移轉應用程式。</block>
-  <block id="a17247e8a3b531331724f69e1e71949a" category="list-text"><block ref="442a8ba322bd53d625de068878060461" category="inline-link-macro-rx"></block>：使用者、角色、LDAP、認證等</block>
   <block id="d9379e355ade43c04f76c0b075ef6732" category="inline-link-macro">也可以連接Cloud Insights 到</block>
   <block id="cd0049b5789664729fdfe7d5fc0b4f40" category="list-text"><block ref="bf4c77b3020a0bd5cc9fb63a5d3fb351" category="inline-link-macro-rx"></block>：查看系統健全狀況的指標。</block>
   <block id="e84bb7e947a5b25481546110f575734a" category="list-text"><block ref="e84bb7e947a5b25481546110f575734a" category="inline-link-rx"></block></block>
@@ -2566,7 +2558,6 @@
   <block id="3881c3bffcc8a7541f238ffd9bd110e8" category="list-text"><block ref="3881c3bffcc8a7541f238ffd9bd110e8" category="inline-link-macro-rx"></block></block>
   <block id="f79c72229ccb3aeca03756bbe7324c9e" category="inline-link">從 NetApp 支援網站 下載頁面下載 Astra 控制中心</block>
   <block id="15dc068a0743eecccf27c4a805c80f21" category="list-text"><block ref="15dc068a0743eecccf27c4a805c80f21" category="inline-link-rx"></block></block>
-  <block id="b73cdf72d6d55064ddff88092ae6133b" category="list-text">如果您正在評估 Astra Control Center 、則已包含內嵌評估授權。</block>
   <block id="b076c1f761d0b92929621e81c3c931c3" category="summary">安裝 Astra Control Center 、登入 UI 並變更密碼之後、您將需要設定授權、新增叢集、啟用驗證、管理儲存設備及新增儲存區。</block>
   <block id="9dff1d917a2ab55f9b011693f3edb2e6" category="list-text"><block ref="57bfe64ccef32c62c91778f81d22de6e" category="inline-xref-macro-rx"></block></block>
   <block id="9b9a4bad5c62667ce507fae6527af6a1" category="paragraph">安裝 Astra Control Center 時、已安裝內嵌評估授權。如果您正在評估 Astra Control Center 、可以跳過此步驟。</block>
@@ -2924,4 +2915,13 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="ef13295b074595a0d0b8611526c15d76" category="list-text">如果執行個體類型尚未符合主節點和工作節點的Astra最低資源需求、請變更Azure中的執行個體類型以符合Astra要求。  請參閱 <block ref="09f78935ac7c88e2178fe1d6a911634a" category="inline-link-macro-rx"></block>。</block>
   <block id="e8322268b8f0ad7381af9899d339e2ff" category="paragraph">使用Astra Control Center新增Azure儲存庫。請參閱 <block ref="89e4f3ed5a430daa461d5b5082fe9398" category="inline-link-macro-rx"></block>。</block>
   <block id="94c24f2fdb5fcc8ac662287d8f22040b" category="admonition">如需「負載平衡器」和入口服務類型的詳細資訊、請參閱 <block ref="f326683052260ae8ea69adae62a4336c" category="inline-link-macro-rx"></block>。</block>
+  <block id="d029da9201b0669cba4f3b93daf90afe" category="list-text">* Helm 3*：如果您使用Helm來安裝應用程式、Astra Control需要Helm版本3。完全支援使用Helm 3（或從Helm 2升級至Helm 3）來管理及複製安裝的應用程式。不支援管理以Helm 2安裝的應用程式。</block>
+  <block id="fda2313c80662faccdf8a7b0c8a9d3a5" category="list-text">* 由操作員部署的應用程式 * ： Astra Control 支援以命名空間範圍運算子安裝的應用程式、這些應用程式通常是以「依值傳遞」而非「依參照傳遞」架構設計。營運者及其安裝的應用程式必須使用相同的命名空間；您可能需要修改部署 YAML 檔案、讓營運者確保這種情況發生。</block>
+  <block id="ebe354daa850c07255922b36c38442da" category="paragraph">確保您的環境符合下列需求：</block>
+  <block id="48b5d328b123f4e05f5a4f65f897189d" category="paragraph">完成下列安裝工作：</block>
+  <block id="838fcb8e71dcfbd66a61fc27b2cfb4cc" category="list-text">如果您正在評估 Astra Control Center 、則已包含內嵌評估授權</block>
+  <block id="2c6dff9a92bbcef6a5083cd35891c541" category="paragraph">完成一些基本工作以開始：</block>
+  <block id="0c39f9a137a0a9c47a6f520e25815ae4" category="paragraph">完成 Astra Control Center 設定後、請使用 Astra Control UI 或<block ref="c076c843349c85837d82b7f2e26fe2bf" category="inline-link-rx"></block> 若要開始管理及保護應用程式：</block>
+  <block id="a104969737461afdb4fd0f2b1121cbf5" category="list-text"><block ref="6fe79d58f8a8b720433194a3efe0f398" category="inline-link-macro-rx"></block>：定義要管理的資源。</block>
+  <block id="caffc5ba1163dd0a5508fd1eae34a69c" category="list-text"><block ref="442a8ba322bd53d625de068878060461" category="inline-link-macro-rx"></block>：使用者、角色、 LDAP 、認證等。</block>
 </blocks>
