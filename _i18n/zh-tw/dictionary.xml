@@ -1855,7 +1855,6 @@
   <block id="9f2575c7294e3dcf402f9b05eaa5de17" category="list-text">選取清單中雲端執行個體*「Actions」（動作）欄中的功能表。</block>
   <block id="071ef8ace6c74c9a1515550077974172" category="list-text">選擇*編輯*。</block>
   <block id="b85164189cdb62d5e96f45c18758496b" category="list-text">在* Bucket *清單中、選取您要做為預設值的儲存區。</block>
-  <block id="dad130a6ad30a7802e5df566fbf9e7fc" category="list-text">*檢查目的地磁碟區*：如果還原至不同的叢集、請確定叢集使用相同的持續磁碟區存取模式（例如ReadWriteMany）。如果目的地持續磁碟區存取模式不同、還原作業將會失敗。</block>
   <block id="2c51b9df5322dddc1dfcfd7ef670ac07" category="list-text">*（僅限Openshift叢集）新增原則*：當您建立專案以在OpenShift叢集上裝載應用程式時、專案（或Kubernetes命名空間）會被指派一個安全性轉換唯一碼。若要啟用Astra Control Center來保護應用程式、並將應用程式移至OpenShift中的其他叢集或專案、您必須新增原則、讓應用程式以任何唯一識別碼的形式執行。例如、下列OpenShift CLI命令會將適當的原則授予WordPress應用程式。</block>
   <block id="8d7c216bc17d281838efafaa3704677b" category="list-text">選擇還原類型：</block>
   <block id="90d21d98503ddae05ddf0a1a34b7d790" category="list-text">*還原至原始命名空間*：使用此程序可將應用程式就地還原至原始叢集。</block>
@@ -2924,4 +2923,7 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="0c39f9a137a0a9c47a6f520e25815ae4" category="paragraph">完成 Astra Control Center 設定後、請使用 Astra Control UI 或<block ref="c076c843349c85837d82b7f2e26fe2bf" category="inline-link-rx"></block> 若要開始管理及保護應用程式：</block>
   <block id="a104969737461afdb4fd0f2b1121cbf5" category="list-text"><block ref="6fe79d58f8a8b720433194a3efe0f398" category="inline-link-macro-rx"></block>：定義要管理的資源。</block>
   <block id="caffc5ba1163dd0a5508fd1eae34a69c" category="list-text"><block ref="442a8ba322bd53d625de068878060461" category="inline-link-macro-rx"></block>：使用者、角色、 LDAP 、認證等。</block>
+  <block id="30136395f01879792198317c11831ea4" category="inline-link">Kubernetes</block>
+  <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">* 檢查目的地 Volume * ：如果您還原至不同的儲存類別、請確定儲存類別使用相同的持續磁碟區存取模式（例如 ReadWriteMany ）。如果目的地持續磁碟區存取模式不同、還原作業將會失敗。例如、如果來源持續性磁碟區使用 rwx 存取模式、請選取無法提供 rwx 的目的地儲存類別、例如 Azure Managed Disks 、 AWS EBS 、 Google Persistent Disk 或<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>將導致還原作業失敗。如需持續磁碟區存取模式的詳細資訊、請參閱<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 文件。</block>
+  <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">* 檢查目的地 Volume * ：如果您複製到不同的儲存類別、請確定儲存類別使用相同的持續磁碟區存取模式（例如 ReadWriteMany ）。如果目的地持續磁碟區存取模式不同、則複製作業將會失敗。例如、如果來源持續性磁碟區使用 rwx 存取模式、請選取無法提供 rwx 的目的地儲存類別、例如 Azure Managed Disks 、 AWS EBS 、 Google Persistent Disk 或<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>，將導致克隆操作失敗。如需持續磁碟區存取模式的詳細資訊、請參閱<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 文件。</block>
 </blocks>

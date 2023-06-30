@@ -19,7 +19,7 @@ NOTE: 如果您將命名空間篩選器新增至執行掛勾、而執行還原�
 
 .關於這項工作
 * * 請先保護應用程式 * ：強烈建議您在還原應用程式之前、先拍攝快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。
-* *檢查目的地磁碟區*：如果還原至不同的叢集、請確定叢集使用相同的持續磁碟區存取模式（例如ReadWriteMany）。如果目的地持續磁碟區存取模式不同、還原作業將會失敗。
+* * 檢查目的地 Volume * ：如果您還原至不同的儲存類別、請確定儲存類別使用相同的持續磁碟區存取模式（例如 ReadWriteMany ）。如果目的地持續磁碟區存取模式不同、還原作業將會失敗。例如、如果來源持續性磁碟區使用 rwx 存取模式、請選取無法提供 rwx 的目的地儲存類別、例如 Azure Managed Disks 、 AWS EBS 、 Google Persistent Disk 或 `ontap-san`將導致還原作業失敗。如需持續磁碟區存取模式的詳細資訊、請參閱 https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes["Kubernetes"^] 文件。
 * * 空間需求規劃 * ：當您對使用 NetApp ONTAP 儲存設備的應用程式執行原位還原時、還原的應用程式所使用的空間可能加倍。執行就地還原之後、請從還原的應用程式中移除任何不想要的快照、以釋放儲存空間。
 * *（僅限Openshift叢集）新增原則*：當您建立專案以在OpenShift叢集上裝載應用程式時、專案（或Kubernetes命名空間）會被指派一個安全性轉換唯一碼。若要啟用Astra Control Center來保護應用程式、並將應用程式移至OpenShift中的其他叢集或專案、您必須新增原則、讓應用程式以任何唯一識別碼的形式執行。例如、下列OpenShift CLI命令會將適當的原則授予WordPress應用程式。
 +
