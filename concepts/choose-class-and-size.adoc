@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concepts/choose-class-and-size.html 
 keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance, persistent, volume, kubernetes, containers 
-summary: Astra Control Center支援Trident儲存課程、以ONTAP 支援由支援的功能為後盾。您應該瞭解儲存類別和持續Volume大小如何協助您達成效能目標。 
+summary: Astra Control Center 支援各種儲存後端。  您應該瞭解儲存類別和持續Volume大小如何協助您達成效能目標。 
 ---
 = 儲存類別和持續Volume大小
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Astra Control Center支援Trident儲存課程、以ONTAP 支援由支�
 
 
 [role="lead"]
-Astra Control Center支援ONTAP 以支援作為儲存後端的功能。
+Astra Control Center 支援 NetApp ONTAP 和 Longhorn 作為儲存後端。
 
 
 
@@ -21,6 +21,7 @@ Astra Control Center支援ONTAP 以支援作為儲存後端的功能。
 Astra Control Center支援下列項目：
 
 * * Astra Trident 儲存類別以 ONTAP 儲存 * 為後盾：如果您使用的是 ONTAP 後端、 Astra 控制中心可以匯入 ONTAP 後端、以報告各種監控資訊。
+* * 以 Longhorn* 為後盾的 CSI 型儲存類別：您可以搭配 Longhorn Container Storage Interface （ CSI ）驅動程式使用 Longhorn 。
 
 
 

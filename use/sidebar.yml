@@ -12,7 +12,7 @@ entries:
     url: "/use/protect-apps.html"
   - title: 還原應用程式
     url: "/use/restore-apps.html"
-  - title: 將應用程式複寫到遠端系統
+  - title: 在儲存設備後端之間複寫應用程式
     url: "/use/replicate_snapmirror.html"
   - title: 複製及移轉應用程式
     url: "/use/clone-apps.html"

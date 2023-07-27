@@ -15,44 +15,90 @@ summary: 若要升級Astra Control Center、您必須依照所述步驟下載套
 若要升級Astra Control Center、請從NetApp 支援網站 下列網址下載安裝套裝軟體、並完成這些指示。您可以使用此程序、在連線網際網路或無線環境中升級Astra Control Center。
 
 .開始之前
-* 升級前、請參閱 link:../get-started/requirements.html["營運環境需求"^] 確保您的環境仍符合Astra Control Center部署的最低需求。您的環境應具備下列條件：
+升級之前、請確保您的環境仍符合 link:../get-started/requirements.html["Astra Control Center 部署的最低需求"^]。您的環境應具備下列條件：
+
+* 支援的 Astra Trident 版本
 +
-** 支援的Astra Trident版本若要判斷您正在執行的版本、請針對現有的Astra Control Center執行下列命令：
-+
-[listing]
+[%collapsible]
+====
+判斷您正在執行的 Trident 版本：
+
+[source, console]
 ----
 kubectl get tridentversion -n trident
 ----
-+
 請參閱 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html#determine-the-version-to-upgrade-to["Astra Trident文件"] 升級舊版。
 
-+
 
 WARNING: 您必須升級至Astra Trident 22.10 * PRIOS*、才能升級至Kubernetes 1.25。
 
-** 支援的Kubernetes發佈版本若要判斷您正在執行的版本、請針對現有的Astra Control Center執行下列命令： `kubectl get nodes -o wide`
-** 足夠的叢集資源來判斷叢集資源、請在現有的Astra Control Center叢集中執行下列命令： `kubectl describe node <node name>`
-** 您可以用來推送和上傳Astra Control Center映像的登錄
-** 預設儲存類別若要判斷您的預設儲存類別、請針對現有的Astra Control Center執行下列命令： `kubectl get storageclass`
-
-
-* （僅限OpenShift）確保所有叢集操作員都處於健全狀態且可用。
+====
+* 支援的 Kubernetes 發佈
 +
-[listing]
+[%collapsible]
+====
+判斷您執行的 Kubernetes 版本：
+
+[source, console]
 ----
-kubectl get clusteroperators
+kubectl get nodes -o wide
 ----
-* 確保所有API服務都處於健全狀態且可用。
+====
+* 足夠的叢集資源
 +
-[listing]
+[%collapsible]
+====
+判斷可用的叢集資源：
+
+[source, console]
+----
+kubectl describe node <node name>
+----
+====
+* 您可以用來推送和上傳Astra Control Center映像的登錄
+* 預設儲存類別
++
+[%collapsible]
+====
+判斷您的預設儲存類別：
+
+[source, console]
+----
+kubectl get storageclass
+----
+====
+* 健全且可用的 API 服務
++
+[%collapsible]
+====
+確保所有API服務均處於健全狀態且可供使用：
+
+[source, console]
 ----
 kubectl get apiservices
 ----
-* 在開始升級之前、請先登出Astra Control Center UI。
+====
+* （僅限 OpenShift ）健全且可用的叢集操作員
++
+[%collapsible]
+====
+確保所有叢集操作員都處於健全狀態且可用。
 
+[source, console]
+----
+kubectl get clusteroperators
+----
+====
+
+
+
+IMPORTANT: 在本程序中、您需要  如果您要升級 Astra Control Center 。您無法使用此更新的運算子升級至舊版 Astra Control Center 。
 
 .關於這項工作
 Astra Control Center升級程序會引導您完成下列高層級步驟：
+
+
+NOTE: 在開始升級之前、請先登出Astra Control Center UI。
 
 * <<下載並擷取Astra Control Center>>
 * <<移除NetApp Astra kubectl外掛程式、然後重新安裝>>
@@ -73,21 +119,22 @@ TIP: 當排程、備份和快照未執行時、請在維護期間執行升級。
 == 下載並擷取Astra Control Center
 
 . 前往 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center產品下載頁面"^] 於 NetApp 支援網站。您可以從下拉式功能表中選取所需的最新版本或其他版本。
-. 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）。
-. （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）若要驗證套件的簽名：
+. （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）驗證套件的簽名。
 +
+.展開以取得詳細資料
+[%collapsible]
+====
 [source, console]
 ----
 tar -vxzf astra-control-center-certs-[version].tar.gz
 ----
-+
 [source, console]
 ----
 openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
-+
 隨即顯示輸出 `Verified OK` 驗證成功之後。
 
+====
 . 從Astra Control Center套裝組合擷取映像：
 +
 [source, console]
@@ -104,13 +151,13 @@ tar -vxzf astra-control-center-[version].tar.gz
 
 . 確定是否安裝了外掛程式：
 +
-[listing]
+[source, console]
 ----
 kubectl astra
 ----
 . 請採取下列其中一項行動：
 +
-** 如果已安裝外掛程式、則命令應傳回KECBECtl外掛程式說明。若要移除現有版本的kubecl-Astra、請執行下列命令： `delete /usr/local/bin/kubectl-astra`。
+** 如果已安裝外掛程式、則命令應傳回 kubectl 外掛程式說明、您可以移除現有版本的 kubectl-Astra ： `delete /usr/local/bin/kubectl-astra`。
 ** 如果命令傳回錯誤、表示外掛程式尚未安裝、您可以繼續下一步進行安裝。
 
 
@@ -192,7 +239,7 @@ podman login <YOUR_REGISTRY>
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.2-7
+export PACKAGEVERSION=23.07.0-24
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -211,7 +258,7 @@ done
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.2-7
+export PACKAGEVERSION=23.07.0-24
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -227,7 +274,7 @@ NOTE: 指令碼所建立的映像路徑應如下所示、視登錄組態而定�
 +
 [listing]
 ----
-https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.04.2-7/image:version
+https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.07.0-24/image:version
 ----
 
 
@@ -239,33 +286,38 @@ https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.0
 
 . 變更目錄：
 +
-[listing]
+[source, console]
 ----
 cd manifests
 ----
 . 編輯Astra Control Center營運者部署yaml（「Astra _control_center_operer_deploy」、以參照您的本機登錄和機密。
 +
-[listing]
+[source, console]
 ----
 vim astra_control_center_operator_deploy.yaml
 ----
 +
 .. 如果您使用需要驗證的登錄、請取代或編輯的預設行 `imagePullSecrets: []` 提供下列功能：
 +
-[listing]
+[source, console]
 ----
 imagePullSecrets: [{name: astra-registry-cred}]
 ----
-.. 變更 `[your_registry_path]` 適用於 `kube-rbac-proxy` 映像到您在中推入映像的登錄路徑 <<將映像新增至本機登錄,上一步>>。
-.. 變更 `[your_registry_path]` 適用於 `acc-operator` 映像到您在中推入映像的登錄路徑 <<將映像新增至本機登錄,上一步>>。
+.. 變更 `ASTRA_IMAGE_REGISTRY` 適用於 `kube-rbac-proxy` 映像到您在中推入映像的登錄路徑 <<將映像新增至本機登錄,上一步>>。
+.. 變更 `ASTRA_IMAGE_REGISTRY` 適用於 `acc-operator` 映像到您在中推入映像的登錄路徑 <<將映像新增至本機登錄,上一步>>。
 .. 將下列值新增至「env」區段：
 +
-[listing]
+[source, console]
 ----
 - name: ACCOP_HELM_UPGRADETIMEOUT
   value: 300m
 ----
+
+
 +
+.Astra 控制中心運算子部署 .yaml 範例：
+[%collapsible]
+====
 [listing, subs="+quotes"]
 ----
 apiVersion: apps/v1
@@ -293,7 +345,7 @@ spec:
         - --upstream=http://127.0.0.1:8080/
         - --logtostderr=true
         - --v=10
-        *image: [your_registry_path]/kube-rbac-proxy:v4.8.0*
+        *image: ASTRA_IMAGE_REGISTRY/kube-rbac-proxy:v4.8.0*
         name: kube-rbac-proxy
         ports:
         - containerPort: 8443
@@ -307,7 +359,7 @@ spec:
           value: "2"
         *- name: ACCOP_HELM_UPGRADETIMEOUT*
           *value: 300m*
-        *image: [your_registry_path]/acc-operator:23.04.36*
+        *image: ASTRA_IMAGE_REGISTRY/acc-operator:23.07.24*
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -336,18 +388,17 @@ spec:
         runAsUser: 65532
       terminationGracePeriodSeconds: 10
 ----
-
-
+====
 . 安裝更新的Astra Control Center操作員：
 +
-[listing]
+[source, console]
 ----
 kubectl apply -f astra_control_center_operator_deploy.yaml
 ----
 +
-回應範例：
-
-+
+.回應範例：
+[%collapsible]
+====
 [listing]
 ----
 namespace/netapp-acc-operator unchanged
@@ -363,9 +414,10 @@ configmap/acc-operator-manager-config unchanged
 service/acc-operator-controller-manager-metrics-service unchanged
 deployment.apps/acc-operator-controller-manager configured
 ----
+====
 . 確認Pod正在執行：
 +
-[listing]
+[source, console]
 ----
 kubectl get pods -n netapp-acc-operator
 ----
@@ -377,7 +429,7 @@ kubectl get pods -n netapp-acc-operator
 
 . 編輯Astra Control Center自訂資源（CR）：
 +
-[listing]
+[source, console]
 ----
 kubectl edit AstraControlCenter -n [netapp-acc or custom namespace]
 ----
@@ -398,14 +450,14 @@ spec:
 ----
 . 將下列項目新增至 `crds` 的內部組態 `spec`：
 +
-[listing]
+[source, console]
 ----
 crds:
   shouldUpgrade: true
 ----
 . 在中新增下列行 `additionalValues` 內部 `spec` 在Astra Control Center CR：
 +
-[listing]
+[source, console]
 ----
 additionalValues:
     nautilus:
@@ -416,13 +468,13 @@ additionalValues:
 . 儲存並結束檔案編輯器。將套用變更、並開始升級。
 . （可選）驗證Pod是否終止並再次可用：
 +
-[listing]
+[source, console]
 ----
 watch kubectl get pods -n [netapp-acc or custom namespace]
 ----
 . 等待Astra Control狀態狀態顯示升級已完成且準備就緒 (`True`）：
 +
-[listing]
+[source, console]
 ----
 kubectl get AstraControlCenter -n [netapp-acc or custom namespace]
 ----
@@ -433,7 +485,7 @@ kubectl get AstraControlCenter -n [netapp-acc or custom namespace]
 [listing]
 ----
 NAME    UUID                                      VERSION     ADDRESS         READY
-astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f      23.04.2-7   10.111.111.111  True
+astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f      23.07.0-24   10.111.111.111  True
 ----
 +
 

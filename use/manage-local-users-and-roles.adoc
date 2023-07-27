@@ -12,7 +12,7 @@ summary: 管理Astra Control Center系統上的使用者和角色。
 
 
 [role="lead"]
-您可以使用Astra Control UI來新增、移除及編輯Astra Control Center安裝的使用者。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 管理使用者：
+您可以使用Astra Control UI來新增、移除及編輯Astra Control Center安裝的使用者。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^] 管理使用者：
 
 您也可以使用LDAP為選取的使用者執行驗證。
 
@@ -119,7 +119,7 @@ Astra Control Center會將使用者從帳戶中移除。
 
 == 管理角色
 
-您可以新增命名空間限制、並將使用者角色限制在這些限制中、藉此管理角色。這可讓您控制組織內資源的存取。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 以管理角色。
+您可以新增命名空間限制、並將使用者角色限制在這些限制中、藉此管理角色。這可讓您控制組織內資源的存取。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^] 以管理角色。
 
 
 

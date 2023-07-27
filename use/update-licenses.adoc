@@ -12,7 +12,7 @@ summary: 您可以將試用版授權轉換為完整授權、也可以使用新�
 
 
 [role="lead"]
-您可以將試用版授權轉換為完整授權、也可以使用新授權來更新現有的試用版或完整授權。如果您沒有完整授權、請與NetApp銷售聯絡人聯絡、以取得完整授權與序號。您可以使用Astra Control Center UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 以更新現有授權。
+您可以將試用版授權轉換為完整授權、也可以使用新授權來更新現有的試用版或完整授權。如果您沒有完整授權、請與NetApp銷售聯絡人聯絡、以取得完整授權與序號。您可以使用Astra Control Center UI或 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^] 以更新現有授權。
 
 .步驟
 . 登入 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。

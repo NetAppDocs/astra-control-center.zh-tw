@@ -151,5 +151,5 @@ NOTE: Astra Control會先確保不會有使用儲存庫進行備份的排程原�
 
 == 如需詳細資訊、請參閱
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+* https://docs.netapp.com/us-en/astra-automation["使用Astra Control API"^]
 

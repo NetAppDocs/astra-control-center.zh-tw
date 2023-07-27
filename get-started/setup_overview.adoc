@@ -29,7 +29,7 @@ summary: 安裝 Astra Control Center 、登入 UI 並變更密碼之後、您將
 
 安裝 Astra Control Center 時、已安裝內嵌評估授權。如果您正在評估 Astra Control Center 、可以跳過此步驟。
 
-您可以使用Astra Control UI或新增授權 https://docs.netapp.com/us-en/astra-automation/index.html["API"^]。
+您可以使用Astra Control UI或新增授權 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^]。
 
 Astra Control Center授權會使用Kubernetes CPU單元來測量CPU資源、並計算指派給所有受管理Kubernetes叢集之工作節點的CPU資源。授權是根據vCPU使用率而定。如需如何計算授權的詳細資訊、請參閱 link:../concepts/licensing.html["授權"^]。
 
@@ -78,7 +78,7 @@ NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubern
 ** *已安裝並設定的Astra Trident Volume Snapshot控制器與Volume Snapshot類別*：Volume Snapshot控制器必須是 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["已安裝"^] 以便在Astra Control中建立快照。至少有一個Astra Trident `VolumeSnapshotClass` 過去了 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["設定"^] 由系統管理員執行。
 
 
-* *可存取的Kubeconfig *：您可以存取 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["叢集管理圖"^] 這只包含一個內容元素。
+* *可存取的Kubeconfig *：您可以存取 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["預設叢集 kubeconfig"^] 那 link:../get-started/install_acc.html#set-up-namespace-and-secret-for-registries-with-auth-requirements["您已在安裝期間進行設定"^]。
 * *《支援》認證*：您需要使用支援版的支援版支援系統上設定的支援認證和超級使用者與使用者ID、才能使用Astra Control Center來備份及還原應用程式ONTAP ONTAP ONTAP 。
 +
 在flexf2命令列中執行下列命令ONTAP ：
@@ -112,7 +112,7 @@ kubectl get tridentversions -n trident
 [listing]
 ----
 NAME      VERSION
-trident   22.10.0
+trident   23.XX.X
 ----
 +
 如果 Astra Trident 不存在、您會看到類似下列的輸出：
@@ -151,9 +151,15 @@ ontap-gold (default)  csi.trident.netapp.io  Delete         Immediate          t
 
 
 
-=== 建立有限的叢集角色KECBEConfig
+=== 建立叢集角色庫比諾圖
 
-您可以選擇性地為Astra Control Center建立有限的系統管理員角色。這不是Astra Control Center設定所需的程序。此程序有助於建立獨立的Kbeconfig、以限制Astra Control在其管理的叢集上的權限。
+您可以選擇性地為 Astra Control Center 建立有限權限或擴充權限管理員角色。這不是 Astra Control Center 設定的必要程序、因為您已將 Kribeconfig 設定為的一部分 link:../get-started/install_acc.html#set-up-namespace-and-secret-for-registries-with-auth-requirements["安裝程序"^]。
+
+如果下列任一情況適用於您的環境、本程序可協助您建立個別的 Kubleconfig ：
+
+* 您想要限制其管理叢集的 Astra Control 權限
+* 您使用多個內容範圍、無法使用安裝期間設定的預設 Astra Control Kbeconfig 、或是具有單一內容的受限角色、都無法在您的環境中運作
+
 
 .開始之前
 在完成程序步驟之前、請確定您要管理的叢集具備下列項目：
@@ -168,8 +174,6 @@ NOTE: 在此程序中、您不需要透過KECBECVL存取執行Astra Control Cent
 
 
 .步驟
-[%collapsible]
-====
 . 建立服務帳戶：
 +
 .. 建立名為「astracontilt-service-account.yaml」的服務帳戶檔案。
@@ -198,9 +202,14 @@ kubectl apply -f astracontrol-service-account.yaml
 ----
 
 
-. 建立具有由Astra Control管理叢集所需最低權限的有限叢集角色：
+. 為要由 Astra Control 管理的叢集建立具有足夠權限的下列叢集角色之一：
 +
-.. 建立 `ClusterRole` 檔案已呼叫 `astra-admin-account.yaml`。
+** * 有限叢集角色 * ：此角色包含由 Astra Control 管理叢集所需的最低權限：
++
+.展開步驟
+[%collapsible]
+====
+... 建立 `ClusterRole` 例如、 `astra-admin-account.yaml`。
 +
 視需要調整名稱和命名空間。如果在此處進行變更、您應該在下列步驟中套用相同的變更。
 
@@ -310,12 +319,73 @@ rules:
   verbs:
   - use
 ----
-.. 套用叢集角色：
+... （僅限 OpenShift 叢集）在的結尾處附加下列項目 `astra-admin-account.yaml` 檔案或之後 `# Use PodSecurityPolicies` 區段：
++
+[source, console]
+----
+# OpenShift security
+- apiGroups:
+  - security.openshift.io
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use
+----
+... 套用叢集角色：
 +
 [source, console]
 ----
 kubectl apply -f astra-admin-account.yaml
 ----
+
+
+====
+** * 擴充叢集角色 * ：此角色包含 Astra Control 所管理叢集的擴充權限。如果您使用多個內容範圍、且無法使用安裝期間設定的預設 Astra Control Kbeconfig 、或是具有單一內容的有限角色無法在您的環境中運作、則可以使用此角色：
++
+
+NOTE: 以下內容 `ClusterRole` 步驟是 Kubernetes 的一般範例。請參閱 Kubernetes 散佈文件、以取得特定於您環境的指示。
+
++
+.展開步驟
+[%collapsible]
+====
+... 建立 `ClusterRole` 例如、 `astra-admin-account.yaml`。
++
+視需要調整名稱和命名空間。如果在此處進行變更、您應該在下列步驟中套用相同的變更。
+
++
+[source, subs="specialcharacters,quotes"]
+----
+*astra-admin-account.yaml*
+----
++
+[source, yaml]
+----
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: astra-admin-account
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- nonResourceURLs:
+  - '*'
+  verbs:
+  - '*'
+----
+... 套用叢集角色：
++
+[source, console]
+----
+kubectl apply -f astra-admin-account.yaml
+----
+
+
+====
 
 
 . 建立叢集角色與服務帳戶的叢集角色繫結：
@@ -353,6 +423,60 @@ kubectl apply -f astracontrol-clusterrolebinding.yaml
 ----
 
 
+. 建立並套用權杖密碼：
++
+.. 建立一個稱為的權杖秘密檔案 `secret-astracontrol-service-account.yaml`。
++
+[source, subs="specialcharacters,quotes"]
+----
+*secret-astracontrol-service-account.yaml*
+----
++
+[source, yaml]
+----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-astracontrol-service-account
+  namespace: default
+  annotations:
+    kubernetes.io/service-account.name: "astracontrol-service-account"
+type: kubernetes.io/service-account-token
+----
+.. 套用權杖密碼：
++
+[source, console]
+----
+kubectl apply -f secret-astracontrol-service-account.yaml
+----
+
+
+. 將權杖密碼新增至服務帳戶、將其名稱新增至 `secrets` Array （以下範例中的最後一行）：
++
+[source, console]
+----
+kubectl edit sa astracontrol-service-account
+----
++
+[source, subs="verbatim,quotes"]
+----
+apiVersion: v1
+imagePullSecrets:
+- name: astracontrol-service-account-dockercfg-48xhx
+kind: ServiceAccount
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"name":"astracontrol-service-account","namespace":"default"}}
+  creationTimestamp: "2023-06-14T15:25:45Z"
+  name: astracontrol-service-account
+  namespace: default
+  resourceVersion: "2767069"
+  uid: 2ce068c4-810e-4a96-ada3-49cbf9ec3f89
+secrets:
+- name: astracontrol-service-account-dockercfg-48xhx
+*- name: secret-astracontrol-service-account*
+----
 . 列出服務帳戶機密、將「<內容>」取代為正確的安裝內容：
 +
 [source, console]
@@ -366,12 +490,12 @@ kubectl get serviceaccount astracontrol-service-account --context <context> --na
 [listing]
 ----
 "secrets": [
-{ "name": "astracontrol-service-account-dockercfg-vhz87"},
-{ "name": "astracontrol-service-account-token-r59kr"}
+{ "name": "astracontrol-service-account-dockercfg-48xhx"},
+{ "name": "secret-astracontrol-service-account"}
 ]
 ----
 +
-"secretts "陣列中每個元素的索引以0開頭。在上述範例中、「astracontlivter-service-account-dockercfg-vhz87」的索引為0、而「astracontlive-service-account-toke-r59kr"的索引則為1。在輸出中、記下含有「權杖」一詞的服務帳戶名稱索引。
+中每個元素的索引 `secrets` 陣列開頭為0。在上述範例中、索引為 `astracontrol-service-account-dockercfg-48xhx` 將為0、索引則為 `secret-astracontrol-service-account` 應該是1。在輸出中、記下服務帳戶密碼的索引編號。您在下一個步驟中需要此索引編號。
 
 . 產生以下的Kbeconfig：
 +
@@ -460,7 +584,6 @@ mv kubeconfig-sa YOUR_CLUSTER_NAME_kubeconfig
 ----
 
 
-====
 
 
 === 接下來呢？
@@ -494,7 +617,7 @@ NOTE: 「kubeconfig．yaml」檔案應包含*一個叢集*的叢集認證資料�
 
 +
 
-IMPORTANT: 如果您自行建立 `kubeconfig` 檔案中、您應該只定義*一個*內容元素。請參閱 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes文件"^] 以取得有關建立的資訊 `kubeconfig` 檔案：如果您使用為有限的叢集角色建立了Kbeconfig <<建立有限的叢集角色KECBEConfig,上述程序>>請務必在本步驟中上傳或貼上該KECBEConnfig。
+IMPORTANT: 如果您自行建立 `kubeconfig` 檔案中、您應該只定義*一個*內容元素。請參閱 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes文件"^] 以取得有關建立的資訊 `kubeconfig` 檔案：如果您使用為有限的叢集角色建立了Kbeconfig <<建立叢集角色庫比諾圖,上述程序>>請務必在本步驟中上傳或貼上該KECBEConnfig。
 
 . 提供認證名稱。根據預設、認證名稱會自動填入為叢集名稱。
 . 選擇*下一步*。
@@ -631,9 +754,7 @@ openssl req -new -newkey rsa:4096 -nodes -sha256 -subj "/" -outform pem -out ont
 
 . 在 ONTAP 中安裝這些憑證。產生及安裝 `server` 和 `server-ca` ONTAP 上的憑證。
 +
-範例 .yaml 中的詳細資料
-
-+
+.展開 SAMPLE.Yaml
 [%collapsible]
 ====
 [listing]
@@ -716,9 +837,7 @@ Certificate chain
 . 為同一主機建立用戶端憑證、以進行無密碼通訊。Astra 控制中心使用此程序與 ONTAP 通訊。
 . 在 ONTAP 上產生及安裝用戶端憑證：
 +
-範例 .yaml 中的詳細資料
-
-+
+.展開 SAMPLE.Yaml
 [%collapsible]
 ====
 [listing]
@@ -838,7 +957,7 @@ NOTE: 您可能需要重新整理頁面、以便顯示後端。
 
 == 新增儲存庫
 
-您可以使用Astra Control UI或來新增儲存區 https://docs.netapp.com/us-en/astra-automation/index.html["API"^]。如果您想要備份應用程式和持續儲存設備、或是想要跨叢集複製應用程式、則必須新增物件存放區資源庫供應商。Astra Control會將這些備份或複製儲存在您定義的物件存放區中。
+您可以使用Astra Control UI或來新增儲存區 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^]。如果您想要備份應用程式和持續儲存設備、或是想要跨叢集複製應用程式、則必須新增物件存放區資源庫供應商。Astra Control會將這些備份或複製儲存在您定義的物件存放區中。
 
 如果您要將應用程式組態和持續儲存設備複製到同一個叢集、則無需使用Astra Control中的儲存庫。應用程式快照功能不需要儲存庫。
 
@@ -915,6 +1034,6 @@ NOTE: 當您新增貯體時、Astra Control會使用預設的貯體指標來標�
 [discrete]
 == 如需詳細資訊、請參閱
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+* https://docs.netapp.com/us-en/astra-automation["使用Astra Control API"^]
 * link:../release-notes/known-issues.html["已知問題"]
 

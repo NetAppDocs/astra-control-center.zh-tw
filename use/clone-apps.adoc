@@ -14,10 +14,7 @@ summary: 複製現有的應用程式、在相同的Kubernetes叢集或其他叢�
 [role="lead"]
 您可以複製現有的應用程式、在相同的Kubernetes叢集或其他叢集上建立複製的應用程式。當Astra Control複製應用程式時、會建立應用程式組態和持續儲存的複本。
 
-如果您需要將應用程式和儲存設備從一個Kubernetes叢集移至另一個叢集、複製作業將有助於您。例如、您可能想要透過CI/CD傳輸途徑和Kubernetes命名空間來移動工作負載。您可以使用Astra Control Center UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 複製及移轉應用程式。
-
-
-NOTE: 如果您將命名空間篩選器新增至執行掛勾、而執行還原或複製作業之後執行、且還原或複製來源與目的地位於不同的命名空間、則命名空間篩選器只會套用至目的地命名空間。
+如果您需要將應用程式和儲存設備從一個Kubernetes叢集移至另一個叢集、複製作業將有助於您。例如、您可能想要透過CI/CD傳輸途徑和Kubernetes命名空間來移動工作負載。您可以使用Astra Control Center UI或 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^] 複製及移轉應用程式。
 
 .開始之前
 * * 檢查目的地 Volume * ：如果您複製到不同的儲存類別、請確定儲存類別使用相同的持續磁碟區存取模式（例如 ReadWriteMany ）。如果目的地持續磁碟區存取模式不同、則複製作業將會失敗。例如、如果來源持續性磁碟區使用 rwx 存取模式、請選取無法提供 rwx 的目的地儲存類別、例如 Azure Managed Disks 、 AWS EBS 、 Google Persistent Disk 或 `ontap-san`，將導致克隆操作失敗。如需持續磁碟區存取模式的詳細資訊、請參閱 https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes["Kubernetes"^] 文件。
@@ -41,6 +38,7 @@ NOTE: 如果您將命名空間篩選器新增至執行掛勾、而執行還原�
 * * Clones使用預設值區段*：在應用程式備份或應用程式還原期間、您可以選擇性地指定區段ID。不過、應用程式複製作業一律會使用已定義的預設儲存區。沒有選項可變更實體複本的儲存區。如果您想要控制所使用的儲存桶、您也可以選擇 link:../use/manage-buckets.html#edit-a-bucket["變更庫位預設值"] 或執行 link:../use/protect-apps.html#create-a-backup["備份"] 接著是A link:../use/restore-apps.html["還原"] 獨立提供。
 * *使用Jenkins CI*：如果您複製由操作人員部署的Jenkins CI執行個體、則必須手動還原持續性資料。這是應用程式部署模式的限制。
 * *使用S3鏟斗*：Astra Control Center中的S3鏟斗不會報告可用容量。在備份或複製由Astra Control Center管理的應用程式之前、請先查看ONTAP 資訊庫（英文）或StorageGRID 資訊庫（英文）管理系統中的庫位資訊。
+* * 使用特定版本的 PostgreSQL * ：同一個叢集中的應用程式複製作業、會以 Bitnami PostgreSQL 11.5.0 圖表持續失敗。若要成功複製、請使用舊版或更新版本的圖表。
 
 
 .OpenShift考量
@@ -68,12 +66,6 @@ NOTE: 如果您將命名空間篩選器新增至執行掛勾、而執行還原�
 +
 
 NOTE: Astra Control會在複製作業中建立新的目的地命名空間。您指定的目的地命名空間不得已存在於目的地叢集上。
-
-** 選擇*下一步*。
-** 選擇是要從現有的快照或備份建立複本。如果您未選取此選項、Astra Control Center會從應用程式的目前狀態建立複本。
-+
-*** 如果您選擇從現有的快照或備份複製、請選擇您要使用的快照或備份。
-
 
 ** 選擇*下一步*。
 ** 選擇保留與應用程式相關的原始儲存類別、或選擇不同的儲存類別。

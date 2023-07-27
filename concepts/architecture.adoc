@@ -61,7 +61,7 @@ Astra Control Center也能讓您管理、移轉及保護在VM環境中執行的K
 * https://docs.netapp.com/us-en/astra/index.html["Astra Control Service文件"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center文件"^]
 * https://docs.netapp.com/us-en/trident/index.html["Astra Trident文件"^]
-* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+* https://docs.netapp.com/us-en/astra-automation["使用Astra Control API"^]
 * https://docs.netapp.com/us-en/cloudinsights/["本文檔 Cloud Insights"^]
 * https://docs.netapp.com/us-en/ontap/index.html["本文檔 ONTAP"^]
 

@@ -164,5 +164,5 @@ NOTE: 您在此處輸入認證的使用者必須擁有 `ontapi` 使用者登入�
 
 == 如需詳細資訊、請參閱
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["使用Astra Control API"^]
+* https://docs.netapp.com/us-en/astra-automation["使用Astra Control API"^]
 

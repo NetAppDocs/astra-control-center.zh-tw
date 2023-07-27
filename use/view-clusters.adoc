@@ -25,7 +25,7 @@ summary: 將叢集新增至Astra Control Center之後、即可檢視叢集的詳
 . 在「*叢集*」頁面上、選取您要檢視其詳細資料的叢集。
 +
 
-NOTE: 如果叢集處於「移除」狀態、但叢集和網路連線狀況良好（外部使用Kubernetes API存取叢集的嘗試成功）、則您提供給Astra Control的Kubeconfig可能不再有效。這可能是因為叢集上的憑證輪替或過期。若要修正此問題、請使用更新Astra Control中與叢集相關的認證資料 link:https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"]。
+NOTE: 如果叢集位於 `removed` 狀態但叢集和網路連線似乎正常（外部使用Kubernetes API存取叢集的嘗試成功）、您提供給Astra Control的Kubeconfig可能不再有效。這可能是因為叢集上的憑證輪替或過期。若要修正此問題、請使用更新Astra Control中與叢集相關的認證資料 https://docs.netapp.com/us-en/astra-automation["Astra Control API"]。
 
 . 查看*概述*、*儲存設備*和*活動*索引標籤上的資訊、以尋找您要尋找的資訊。
 +

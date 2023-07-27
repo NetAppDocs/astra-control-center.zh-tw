@@ -12,10 +12,7 @@ summary: Astra可從快照或備份還原應用程式組態和持續儲存設備
 
 
 [role="lead"]
-Astra Control可以從快照或備份還原應用程式。將應用程式還原至同一個叢集時、從現有的快照還原速度會更快。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 以還原應用程式。
-
-
-NOTE: 如果您將命名空間篩選器新增至執行掛勾、而執行還原或複製作業之後執行、且還原或複製來源與目的地位於不同的命名空間、則命名空間篩選器只會套用至目的地命名空間。
+Astra Control可以從快照或備份還原應用程式。將應用程式還原至同一個叢集時、從現有的快照還原速度會更快。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^] 以還原應用程式。
 
 .關於這項工作
 * * 請先保護應用程式 * ：強烈建議您在還原應用程式之前、先拍攝快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。
@@ -113,7 +110,7 @@ IMPORTANT: 任何具有命名空間限制的成員使用者、都可以使用命
 
 您可以將篩選規則新增至 link:../use/restore-apps.html["還原"] 將指定要從還原的應用程式中包含或排除的現有應用程式資源的作業。您可以根據指定的命名空間、標籤或 GVK （ GroupVersionKind ）來包含或排除資源。
 
-.深入瞭解納入和排除案例
+.展開以深入瞭解納入和排除案例
 [%collapsible]
 ====
 * * 您選擇包含原始命名空間的 INCLUDE 規則（原地還原） * ：您在規則中定義的現有應用程式資源將會刪除、並由您用於還原的選定快照或備份中的資源取代。您未在「包括」規則中指定的任何資源將保持不變。

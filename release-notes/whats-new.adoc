@@ -16,25 +16,15 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
-== 2023 年 5 月 18 日（ 23.04.2 ）
-
-此適用於 Astra Control Center （ 23.04.0 ）的修補程式版本（ 23.04.2 ）可提供支援 https://newreleases.io/project/github/kubernetes-csi/external-snapshotter/release/v6.1.0["Kubernetes CSI 外部快照器 v6.1.0"^] 並修正下列問題：
-
-* 使用執行掛鉤時、就地應用程式還原的錯誤
-* 貯體服務的連線問題
-
-
-
-
-== 2023 年 4 月 25 日（ 23.04.0 ）
+== 2023 年 7 月 26 日（ 23.07.0 ）
 
 .新功能與支援
-* link:../concepts/licensing.html["根據預設、新 Astra Control Center 安裝會啟用 90 天試用版授權"^]
-* link:../use/execution-hooks.html["更強大的執行掛勾功能、提供更多篩選選項"^]
-* link:../use/execution-hooks.html["現在可以在使用 Astra Control Center 進行複寫容錯移轉後執行執行攔截程式"^]
-* link:../use/restore-apps.html#migrate-from-ontap-nas-economy-storage-to-ontap-nas-storage["支援將 Volume 從「 ONTAP NAS 經濟型儲存」等級移轉至「 ONTAP NAS 」儲存等級"^]
-* link:../use/restore-apps.html#filter-resources-during-an-application-restore["支援在還原作業期間包含或排除應用程式資源"^]
-* link:../use/manage-apps.html["支援管理純資料應用程式"]
+* link:../get-started/requirements.html#storage-backends["支援在擴充組態中使用 NetApp MetroCluster 做為儲存後端"^]
+* link:../get-started/requirements.html#storage-backends["支援使用 Longhorn 做為儲存後端"^]
+* link:../use/replicate_snapmirror.html#delete-an-application-replication-relationship["應用程式現在可以從同一個 Kubernetes 叢集在 ONTAP 後端之間複寫"]
+* link:../use/manage-remote-authentication.html["Astra Control Center 現在支援「 userPrincipalName 」做為遠端（ LDAP ）使用者的替代登入屬性"^]
+* link:../use/execution-hooks.html["使用 Astra Control Center 進行複寫容錯移轉後、可以執行新的執行掛鉤類型「容錯移轉後」"^]
+* Clone 工作流程現在僅支援即時複製（託管應用程式的目前狀態）。若要從快照或備份複製、請使用 link:../use/restore-apps.html["還原工作流程"^]。
 
 
 .已知問題與限制
@@ -44,8 +34,47 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
+== 2023 年 5 月 18 日（ 23.04.2 ）
+
+.詳細資料
+[%collapsible]
+====
+此適用於 Astra Control Center （ 23.04.0 ）的修補程式版本（ 23.04.2 ）可提供支援 https://newreleases.io/project/github/kubernetes-csi/external-snapshotter/release/v6.1.0["Kubernetes CSI 外部快照器 v6.1.0"^] 並修正下列問題：
+
+* 使用執行掛鉤時、就地應用程式還原的錯誤
+* 貯體服務的連線問題
+
+
+====
+
+
+== 2023 年 4 月 25 日（ 23.04.0 ）
+
+.詳細資料
+[%collapsible]
+====
+.新功能與支援
+* https://docs.netapp.com/us-en/astra-control-center-2304/concepts/licensing.html["根據預設、新 Astra Control Center 安裝會啟用 90 天試用版授權"^]
+* https://docs.netapp.com/us-en/astra-control-center-2304/use/execution-hooks.html["更強大的執行掛勾功能、提供更多篩選選項"^]
+* https://docs.netapp.com/us-en/astra-control-center-2304/use/execution-hooks.html["現在可以在使用 Astra Control Center 進行複寫容錯移轉後執行執行攔截程式"^]
+* https://docs.netapp.com/us-en/astra-control-center-2304/use/restore-apps.html#migrate-from-ontap-nas-economy-storage-to-ontap-nas-storage["支援將 Volume 從「 ONTAP NAS 經濟型儲存」等級移轉至「 ONTAP NAS 」儲存等級"^]
+* https://docs.netapp.com/us-en/astra-control-center-2304/use/restore-apps.html#filter-resources-during-an-application-restore["支援在還原作業期間包含或排除應用程式資源"^]
+* https://docs.netapp.com/us-en/astra-control-center-2304/use/manage-apps.html["支援管理純資料應用程式"]
+
+
+.已知問題與限制
+* https://docs.netapp.com/us-en/astra-control-center-2304/release-notes/known-issues.html["此版本的已知問題"^]
+* https://docs.netapp.com/us-en/astra-control-center-2304/release-notes/known-limitations.html["此版本的已知限制"^]
+
+
+====
+
+
 == 2022年11月22日（22.11.0）
 
+.詳細資料
+[%collapsible]
+====
 .新功能與支援
 * https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["支援橫跨多個命名空間的應用程式"^]
 * https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["支援將叢集資源納入應用程式定義"^]
@@ -59,12 +88,17 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 * https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
+====
 
 
 == 2022年9月8日（22.08.1）
 
+.詳細資料
+[%collapsible]
+====
 此適用於Astra Control Center（22.08.0）的修補程式版本（22.08.1）可利用NetApp SnapMirror修正應用程式複寫中的小錯誤。
 
+====
 
 
 == 2022年8月10日（22.08.0）
