@@ -2829,7 +2829,6 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="2b751178c5ccb62da62318c7ba67bcb7" category="list-text">下載包含Astra Control Center的套裝組合 <block ref="f38ca01b4c2fe15aa06076beb2ee98ff" prefix="(" category="inline-code"></block>）<block ref="ad7a4184e43a3f62f1a8252e7d3ef71f" category="inline-link-rx"></block>。</block>
   <block id="56a360133c3f49b082fb3e559dc6c359" category="paragraph">Astra Control 不支援具有 DN 的 LDAP 實體（使用者或群組）、該 DN 包含具有結尾空格或結尾空格的 RDN 。</block>
   <block id="3b4c39fc71daebe02ce601e0e52cb002" category="paragraph">Astra Control 活動頁面最多可顯示 100,000 個事件。若要檢視所有記錄的事件、請使用擷取事件 <block ref="cc52bf3aaccbc518b140a6ab7d8d53a9" category="inline-link-macro-rx"></block>。</block>
-  <block id="342146f49f3dbf04f3f41cdd047ee611" category="section-title">2023 年 7 月 26 日（ 23.07.0 ）</block>
   <block id="00f23e3f73f2ff6910e3c1c923caed3b" category="inline-link-macro">支援在擴充組態中使用 NetApp MetroCluster 做為儲存後端</block>
   <block id="d8ff8e6d69947f9d7ee57077dfe0e3ee" category="list-text"><block ref="d8ff8e6d69947f9d7ee57077dfe0e3ee" category="inline-link-macro-rx"></block></block>
   <block id="7857e72e296955e1be96bd0c04406cbe" category="inline-link-macro">支援使用 Longhorn 做為儲存後端</block>
@@ -2885,7 +2884,6 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="24c356496f4f777434b1554b8c1ce87e" category="list-text">為所有 Astra Control Center 影像設定 Docker 推 / 拉存取。</block>
   <block id="80647e7e0bb86f8566d4cda7efd6ba2b" category="list-text">使用下列指令碼將 Astra Control Center 影像推入此登錄：</block>
   <block id="e9e74ff4b7d306a6d494267203d879d8" category="admonition">您只能使用此運算子升級至 Astra Control Center 的目前版本。</block>
-  <block id="6f9a41c50e286a2a3eb1249e34e3b034" category="list-text">輸入 Astra Control Center 版本、例如 23.07.0-24 。</block>
   <block id="ce75759d9f826b61ea1a10ccd4fec6c4" category="paragraph">完成 Astra Control Center 設定後、請使用 Astra Control UI 或<block ref="bd25eec94181cb8a1c6322299b11a4e5" category="inline-link-rx"></block> 若要開始管理及保護應用程式：</block>
   <block id="ce0f35f37592c103c45f7f61252c9305" category="paragraph">您可以使用Astra Control UI或新增授權<block ref="bd25eec94181cb8a1c6322299b11a4e5" category="inline-link-rx"></block>。</block>
   <block id="1fc721e2d5dd058eff74433a513547f9" category="inline-link-macro">您已在安裝期間進行設定</block>
@@ -2944,11 +2942,9 @@ RKE 2 （ v1.5.x ）搭配 Rancher 2.7</block>
   <block id="0e4c628a5a8957cfc5bfe05ab3d4cade" category="list-text">將作業系統和 CPU 架構所需的檔案移至目前路徑、並將其重新命名為<block ref="90432a9da14d46e4d20c4b841576b1ee" prefix=" " category="inline-code"></block>：</block>
   <block id="509e9a9c4ddecec71646527fad155699" category="list-text">匯出 Astra Control Center 主機叢集的 Kribeconfig ：</block>
   <block id="4757e8443e86513707f05c0d519574c8" category="admonition">完成安裝之前、請確定您的 Kupeconfig 指向您要安裝 Astra Control Center 的叢集。</block>
-  <block id="eb4ae875392779932df9d5d2fbb9ccaf" category="admonition">預留位置<block ref="facf912114e23f5e3f2192e508b5894a" prefix=" " category="inline-code"></block> 應與您先前上傳的影像位置相符（例如、<block ref="fb729bc0081792c3577384b3c4b3710a" prefix=" " category="inline-code"></block>）。</block>
   <block id="6a81830068d10bff560d62bc97f3c053" category="list-text">變更<block ref="e7fbb61ffc587682a801796b46db408a" prefix=" " category="inline-code"></block> 適用於<block ref="83f93b05da174976bd534cc67ad9f7b4" prefix=" " category="inline-code"></block> 映像到您在中推入映像的登錄路徑 <block ref="7fe0e1ddcc2917e6a216033278119235" category="inline-xref-macro-rx"></block>。</block>
   <block id="87b9501fe070f005832572ffd2aba4ae" category="example-title">展開範例 Astra 控制 center_operer_deploy.yaml</block>
   <block id="a8f13cd419087c3fb4f7d66dde9dadda" category="example-title">展開範例回應：</block>
-  <block id="98908576b345537859881e0fbe16b44a" category="cell"><block ref="141b2e73605e12a2ae1bb4fb0b4221ca" prefix="" category="inline-code"></block></block>
   <block id="3297ea664e090716a24f598d90bc398c" category="example-title">展開範例 Astra 控制中心 .yaml</block>
   <block id="d3e309a143a3ce8e127ce3e32a113e5d" category="example-title">展開以取得範例回應</block>
   <block id="980370488ee5e5166f21d62e451f7039" category="list-text">（選用）觀看<block ref="4b559e0a1b6f68f62c5edecea8c35c7e" prefix=" " category="inline-code"></block> 監控進度的記錄：</block>
@@ -2957,4 +2953,8 @@ RKE 2 （ v1.5.x ）搭配 Rancher 2.7</block>
   <block id="692bef51c3cefb709496e672979fafda" category="list-text"><block ref="c3444bf1f6ccff644809494fcfe68216" category="inline-xref-macro-rx"></block></block>
   <block id="8164f139371aabdbe264f5f85a178858" category="section-title">具有命名空間限制的成員必須先將命名空間新增至限制、才能存取複製或還原的應用程式</block>
   <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">任何<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 具有命名空間名稱/ID之RBAC限制的使用者、可以將應用程式複製或還原至同一叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者即可編輯<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 使用者帳戶和更新角色限制、讓受影響的使用者能夠授予新命名空間的存取權。</block>
+  <block id="0cb712ec711a0ca7c7b006e073338a3f" category="section-title">2023 年 7 月 31 日（ 23.07.0 ）</block>
+  <block id="fa7403eec50d35b5a484623b60ab5bdd" category="list-text">輸入 Astra Control Center 版本、例如 23.07.0-25 。</block>
+  <block id="a35ec6e52d1ea46e15e5890b9f04b338" category="admonition">預留位置<block ref="facf912114e23f5e3f2192e508b5894a" prefix=" " category="inline-code"></block> 應與您先前上傳的影像位置相符（例如、<block ref="ed714721ea39215dfe5e8dfa919a906a" prefix=" " category="inline-code"></block>）。</block>
+  <block id="fa202cf5d815f8dd19123dbdb19b51e6" category="cell"><block ref="c0004ca895ff57b100007a4b52125d05" prefix="" category="inline-code"></block></block>
 </blocks>

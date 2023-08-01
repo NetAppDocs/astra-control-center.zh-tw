@@ -172,7 +172,7 @@ podman login <YOUR_REGISTRY>
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.07.0-24
+export PACKAGEVERSION=23.07.0-25
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -191,7 +191,7 @@ done
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.07.0-24
+export PACKAGEVERSION=23.07.0-25
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -207,7 +207,7 @@ NOTE: 指令碼所建立的映像路徑應如下所示、視登錄組態而定�
 +
 [listing]
 ----
-https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.07.0-24/image:version
+https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.07.0-25/image:version
 ----
 
 
@@ -283,7 +283,7 @@ NOTE: 如果您選擇手動核准策略、系統會提示您核准此操作員�
 .. 新增Astra Control Center的標籤。
 .. 啟用或停用自動支援。建議保留「自動支援」功能。
 .. 輸入Astra Control Center FQDN或IP位址。請勿進入 `http://` 或 `https://` 在「地址」欄位中。
-.. 輸入 Astra Control Center 版本、例如 23.07.0-24 。
+.. 輸入 Astra Control Center 版本、例如 23.07.0-25 。
 .. 輸入帳戶名稱、電子郵件地址和管理員姓氏。
 .. 選擇的Volume回收原則 `Retain`、 `Recycle`或 `Delete`。預設值為 `Retain`。
 .. 選取安裝的 scaleSize 。

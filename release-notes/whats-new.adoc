@@ -16,7 +16,7 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
-== 2023 年 7 月 26 日（ 23.07.0 ）
+== 2023 年 7 月 31 日（ 23.07.0 ）
 
 .新功能與支援
 * link:../get-started/requirements.html#storage-backends["支援在擴充組態中使用 NetApp MetroCluster 做為儲存後端"^]
