@@ -464,6 +464,11 @@ additionalValues:
       startupProbe:
         periodSeconds: 30
         failureThreshold: 600
+    polaris-keycloak:
+      livenessProbe:
+        initialDelaySeconds: 180
+      readinessProbe:
+        initialDelaySeconds: 180
 ----
 . 儲存並結束檔案編輯器。將套用變更、並開始升級。
 . （可選）驗證Pod是否終止並再次可用：
