@@ -143,7 +143,6 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 * https://docs.netapp.com/us-en/trident/trident-use/ontap-san-examples.html["SAN"^]
 * https://docs.netapp.com/us-en/trident/trident-use/ontap-nas-examples.html["NAS"^]
-* https://docs.netapp.com/us-en/trident/trident-use/trident-fsx-examples.html["FSX"^]
 
 
 
