@@ -2929,8 +2929,6 @@ RKE 2 （ v1.5.x ）搭配 Rancher 2.7</block>
   <block id="cd786c4b13b844b729ea4f82b35fb73e" category="list-text"><block ref="cd786c4b13b844b729ea4f82b35fb73e" category="inline-link-rx"></block></block>
   <block id="c07ee5debf5f3a3fef16c1ee5e8e4942" category="inline-link">NAS</block>
   <block id="a5c314c9c3a96fcd331ae9d454b5c305" category="list-text"><block ref="a5c314c9c3a96fcd331ae9d454b5c305" category="inline-link-rx"></block></block>
-  <block id="a0a52206040050c3a34065fd49730c39" category="inline-link">FSX</block>
-  <block id="2ba7db7ca1a2e1b174e10db2105a534d" category="list-text"><block ref="2ba7db7ca1a2e1b174e10db2105a534d" category="inline-link-rx"></block></block>
   <block id="8cf3b51c0706caf62937352ed2233eb9" category="example-title">展開以進行其他安裝程序</block>
   <block id="da34d7b3ad82100be38c4bc4758b9a28" category="inline-link-macro">Pod 安全限制</block>
   <block id="4e054390471dfb4ee3f141d1a5b6a77e" category="list-text">如果您已設定或想要在環境中設定Pod安全性原則、請熟悉Pod安全性原則、以及這些原則如何影響Astra Control Center安裝。請參閱 <block ref="d77e6e5f0b1b5e8f15429de2d058f94b" category="inline-link-macro-rx"></block>。</block>
@@ -2962,4 +2960,5 @@ RKE 2 （ v1.5.x ）搭配 Rancher 2.7</block>
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="dce58385777428b5d9a30460fe36730a" category="list-text">如果您要使用參考私有憑證授權單位（ CA ）的 kubeconfig 檔案來新增叢集、請將下列行新增至<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfig 檔案的一節。這可讓 Astra Control 新增叢集：</block>
 </blocks>
