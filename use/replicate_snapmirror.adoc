@@ -55,6 +55,10 @@ Astra Control 應用程式複寫需要先滿足下列先決條件、才能開始
 * * 對等 * ：
 +
 ** * 叢集與 SVM* ：必須對 ONTAP 儲存設備的後端進行對等處理。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["叢集與SVM對等概觀"^] 以取得更多資訊。
++
+
+IMPORTANT: 確保兩個 ONTAP 叢集之間複寫關係中使用的 SVM 名稱是唯一的。
+
 ** *Astra Trident 與 SVM* ：對等的遠端 SVM 必須可用於目的地叢集上的 Astra Trident 。
 
 

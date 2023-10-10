@@ -2961,4 +2961,5 @@ RKE 2 （ v1.5.x ）搭配 Rancher 2.7</block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">如果您要使用參考私有憑證授權單位（ CA ）的 kubeconfig 檔案來新增叢集、請將下列行新增至<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfig 檔案的一節。這可讓 Astra Control 新增叢集：</block>
   <block id="6a73c62ec3ca96f8f08220eeac3380d9" category="list-text"><block ref="6a73c62ec3ca96f8f08220eeac3380d9" category="inline-link-rx"></block></block>
+  <block id="94ac6b3955eab183cb88ab17c91000eb" category="admonition">確保兩個 ONTAP 叢集之間複寫關係中使用的 SVM 名稱是唯一的。</block>
 </blocks>
