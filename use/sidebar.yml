@@ -18,6 +18,8 @@ entries:
     url: "/use/clone-apps.html"
   - title: 管理應用程式執行掛勾
     url: "/use/execution-hooks.html"
+  - title: 使用 Astra Control Center 保護 Astra Control Center
+    url: "/use/protect-acc-with-acc.html"
 - title: 監控應用程式和叢集健全狀況
   entries:
   - title: 儀表板摘要
