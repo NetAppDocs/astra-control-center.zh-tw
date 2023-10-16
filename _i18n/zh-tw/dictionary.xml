@@ -3109,4 +3109,6 @@ RKE 2 （ v1.5.x ）搭配 Rancher 2.7</block>
   <block id="04f941910085f8a8e8c42f056eff9594" category="list-text">* 確認部署狀態 * ：顯示 Astra Control Center 部署資訊以確認<block ref="5e157d538e3ec1b01bf3ba3bd8b358f5" prefix=" " category="inline-code"></block> 是<block ref="ea9823706636090045090bd57654debb" prefix=" " category="inline-code"></block>。</block>
   <block id="42f792b9c26a4fc874c76169d7b73cf2" category="inline-xref">TRAefik 客戶需求日</block>
   <block id="24af7920af161c9a7731c3eb37db9d88" category="list-text">* 已還原的 Astra Control Center UI 會傳回 404 錯誤 * ：如果您已選取此選項、則會傳回此錯誤 *<block ref="0a3e1793e4eaf6bd67bdf43d1bca1c74" prefix=" " category="inline-code"></block> 作為入口選項、請檢查 <block ref="192695547ed338030dabb8777268a730" category="inline-xref-macro-rx"></block> 確保全部安裝完畢。</block>
+  <block id="eccd068ac5b12e3f94d95cd6dee8f5a5" category="list-text">切換到tar檔案的根目錄。您應該會看到<block ref="1c505200729f6188430504adf03e42f9" prefix=" " category="inline-code"></block> 檔案與這些目錄：</block>
+  <block id="e6cb4c76250bf1066b942b12cc3881ce" category="paragraph"><block ref="c7dd43fbfc8e7f6b24b6d78aa8c0d7f1" prefix="" category="inline-code"></block><block ref="23e7180d10f1836f68812ac6480f53d1" prefix=" " category="inline-code"></block><block ref="1c505200729f6188430504adf03e42f9" prefix=" " category="inline-code"></block></block>
 </blocks>
