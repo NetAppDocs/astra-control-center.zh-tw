@@ -6,12 +6,18 @@
 
 == 下載並擷取Astra Control Center
 
-. 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`） https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center 下載頁面"^]。
+您可以選擇從 NetApp 支援網站 下載 Astra Control Center 套件、或使用 Docker 從 Astra Control Service 映像登錄中提取套件。
+
+[role="tabbed-block"]
+====
+.NetApp 支援網站
+--
+. 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）從 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center 下載頁面"^]。
 . （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）驗證套件的簽名。
 +
 .展開以取得詳細資料
 [%collapsible]
-====
+=====
 [source, console]
 ----
 tar -vxzf astra-control-center-certs-[version].tar.gz
@@ -22,7 +28,7 @@ openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature cert
 ----
 隨即顯示輸出 `Verified OK` 驗證成功之後。
 
-====
+=====
 . 從Astra Control Center套裝組合擷取映像：
 +
 [source, console]
@@ -30,3 +36,14 @@ openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature cert
 tar -vxzf astra-control-center-[version].tar.gz
 ----
 
+
+--
+.Astra Control 影像登錄
+--
+. 登入 Astra Control Service 。
+. 在儀表板上、選取 * 部署自動管理的 Astra Control* 執行個體。
+. 依照指示登入 Astra Control 影像登錄、拉出 Astra Control Center 安裝映像、並擷取映像。
+
+
+--
+====

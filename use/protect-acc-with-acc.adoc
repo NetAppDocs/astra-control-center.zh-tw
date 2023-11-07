@@ -63,7 +63,7 @@ NOTE: 理想情況下、應用程式叢集應位於上述影像中 Kubernetes �
 圖中未說明：
 
 * 所有叢集都有安裝 Trident 的 ONTAP 後端。
-* 在此組態中、 Openshift 叢集使用 MetalLB 做為負載平衡器。
+* 在此組態中、 OpenShift 叢集使用 MetalLB 做為負載平衡器。
 * Snapshot 控制器和 Volume SnapshotClass 也會安裝在所有叢集上、如中所述 link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["先決條件"^]。
 
 
@@ -156,7 +156,7 @@ kubectl get acc -n netapp-acc
 [listing]
 ----
 NAME  UUID                                 VERSION    ADDRESS                             READY
-astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.07.0-24 ocp-cluster-1.company.com           True
+astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.10.0-68 ocp-cluster-1.company.com           True
 ----
 .. 如果是 `ADDRESS` 上述回應中的欄位沒有主要 Astra Control Center 執行個體的 FQDN 、請更新組態以參考 Astra Control Center DNS ：
 +
@@ -379,7 +379,7 @@ kubectl get acc -n netapp-acc
 [listing]
 ----
 NAME  UUID                                 VERSION    ADDRESS                             READY
-astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.07.0-24 ocp-cluster-1.company.com           True
+astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.10.0-68 ocp-cluster-1.company.com           True
 ----
 * * 確認部署狀態 * ：顯示 Astra Control Center 部署資訊以確認 `Deployment State` 是 `Deployed`。
 +

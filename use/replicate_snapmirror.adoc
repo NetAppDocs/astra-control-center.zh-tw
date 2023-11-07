@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/replicate_snapmirror.html 
 keywords: replicate, replication, disaster, recovery 
-summary: Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將能最快完成。 
+summary: Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將會完成最快的速度。 
 ---
 = 使用 SnapMirror 技術在儲存設備後端之間複寫應用程式
 :hardbreaks:
@@ -46,40 +46,46 @@ NOTE: 您可以在相反方向同時複寫不同的應用程式。例如、應�
 
 Astra Control 應用程式複寫需要先滿足下列先決條件、才能開始進行：
 
-* * ONTAP 叢集 * ：
-+
-** * Astra Trident * ： Astra Trident 版本 22.10 或更新版本必須同時存在於使用 ONTAP 作為後端的來源叢集和目的地 Kubernetes 叢集上。
-** * 授權 * ：使用資料保護套件的 ONTAP SnapMirror 非同步授權必須同時在來源和目的地 ONTAP 叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^] 以取得更多資訊。
+.叢集 ONTAP
+* * Astra Trident * ： Astra Trident 版本 22.10 或更新版本必須同時存在於使用 ONTAP 作為後端的來源叢集和目的地 Kubernetes 叢集上。
+* * 授權 * ：使用資料保護套件的 ONTAP SnapMirror 非同步授權必須同時在來源和目的地 ONTAP 叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^] 以取得更多資訊。
 
 
-* * 對等 * ：
-+
-** * 叢集與 SVM* ：必須對 ONTAP 儲存設備的後端進行對等處理。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["叢集與SVM對等概觀"^] 以取得更多資訊。
+.對等關係
+* * 叢集與 SVM* ：必須對 ONTAP 儲存設備的後端進行對等處理。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["叢集與SVM對等概觀"^] 以取得更多資訊。
 +
 
 IMPORTANT: 確保兩個 ONTAP 叢集之間複寫關係中使用的 SVM 名稱是唯一的。
 
-** *Astra Trident 與 SVM* ：對等的遠端 SVM 必須可用於目的地叢集上的 Astra Trident 。
+* *Astra Trident 與 SVM* ：對等的遠端 SVM 必須可用於目的地叢集上的 Astra Trident 。
 
 
-* * Astra 控制中心 * ：
+.Astra控制中心
+* * 託管後端 * ：您需要在 Astra 控制中心新增及管理 ONTAP 儲存後端、才能建立複寫關係。
 +
+*_Astra Control Provisioner_* ：如果您已啟用 Astra Control Center 23.10 或更新版本的 Astra Control Provisioner 、則可選用 Astra Control Center 中的 ONTAP 儲存後端新增及管理。
+
+* * 託管叢集 * ：使用 Astra Control 新增及管理下列叢集、最適合用於不同的故障網域或站台：
++
+** 來源 Kubernetes 叢集
+** 目的地 Kubernetes 叢集
+** 相關的 ONTAP 叢集
+
+
+* * 使用者帳戶 * ：當您將 ONTAP 儲存後端新增至 Astra 控制中心時、請套用具有「 admin 」角色的使用者認證。此角色具有存取方法 `http` 和 `ontapi` 同時在ONTAP 來源叢集和目的地叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
++
+*_Astra Control Provisioner only_* ：如果您已啟用 Astra Control Provisioner 功能、則不再需要特別定義「管理員」角色來管理 Astra Control Center 中的叢集、因為 Astra Control Center 不再需要這些認證。
+
+
+
 
 TIP: link:../get-started/install_acc.html["部署 Astra Control Center"^] 在第三個故障網域或次要站台中進行無縫災難恢復。
 
-+
-** * 託管叢集 * ：下列叢集必須新增至 Astra Control 、並由 Astra Control 加以管理、最適合在不同的故障網域或站台：
-+
-*** 來源 Kubernetes 叢集
-*** 目的地 Kubernetes 叢集
-*** 相關的 ONTAP 叢集
 
+NOTE: Astra Control Center 不支援 NetApp SnapMirror 複寫、用於使用 NVMe over TCP 傳輸協定的儲存後端。
 
-** * 使用者帳戶 * ：當您將 ONTAP 儲存後端新增至 Astra 控制中心時、請套用具有「 admin 」角色的使用者認證。此角色具有存取方法 `http` 和 `ontapi` 同時在ONTAP 來源叢集和目的地叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
-
-
-* *Astra Trident / ONTAP 組態 * ： Astra 控制中心要求您至少設定一個儲存後端、以支援來源叢集和目的地叢集的複寫。如果來源叢集和目的地叢集相同、則目的地應用程式應使用不同於來源應用程式的儲存後端、以獲得最佳恢復能力。
-
+.Astra Trident / ONTAP Estra組態
+Astra Control Center 要求您至少設定一個儲存後端、以支援來源叢集和目的地叢集的複寫。如果來源叢集和目的地叢集相同、則目的地應用程式應使用不同於來源應用程式的儲存後端、以獲得最佳恢復能力。
 
 
 IMPORTANT: Astra Control 複寫支援使用單一儲存類別的應用程式。當您將應用程式新增至命名空間時、請確定該應用程式與命名空間中的其他應用程式具有相同的儲存類別。將 PVC 新增至複寫的應用程式時、請確定新的 PVC 與命名空間中的其他 PVC 具有相同的儲存類別。

@@ -43,7 +43,7 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 * 如果使用OCP、則Red Hat OpenShift Container Platform（OCP）權限（位於命名空間層級以建立Pod）
 * AWS認證資料、存取ID和秘密金鑰、具備可讓您建立儲存區和連接器的權限
 * AWS帳戶彈性容器登錄（ECR）存取與登入
-* 存取Astra Control UI所需的AWS託管區域和Route 53項目
+* 存取 Astra Control UI 需要 AWS 託管區域和 Amazon Route 53 項目
 
 
 
@@ -86,7 +86,7 @@ NOTE: 確保您選擇裝載Astra Control Center的作業環境符合環境正式
 
 
 | Astra Trident（安裝於NetApp BlueXP（前身為Cloud Manager）的Kubernetes叢集探索中）  a| 
-Astra Trident 22.10 或更新版本已安裝及設定、 NetApp ONTAP 9.8 或更新版本則做為儲存後端 [[AWS-register]]
+Astra Trident 23.01 或更新版本已安裝及設定、 NetApp ONTAP 9.9.1 或更新版本則做為儲存後端 [[AWS-register]]
 
 
 
@@ -282,7 +282,7 @@ NOTE: 確保您選擇裝載Astra Control Center的作業環境符合環境正式
 
 
 | Astra Trident（安裝於NetApp BlueXP（前身為Cloud Manager）的Kubernetes叢集探索中）  a| 
-Astra Trident 22.10 或更新版本已安裝及設定、 NetApp ONTAP 9.8 或更新版本則做為儲存後端 [[GCP-register]]
+Astra Trident 23.01 或更新版本已安裝及設定、 NetApp ONTAP 9.9.1 或更新版本則做為儲存後端 [[GCP-register]]
 
 
 
@@ -385,15 +385,7 @@ gcloud auth activate-service-account <service account email address>
 --key-file=<GCP Service Account JSON file>
 ----
 +
-此指令碼需要Astra Control Center資訊清單檔案和Google Image登錄位置。
-
-
-
-+
-範例：
-
-+
-+
+此指令碼需要Astra Control Center資訊清單檔案和Google Image登錄位置。範例：
 
 +
 [listing]
@@ -411,6 +403,8 @@ while IFS= read -r image; do
     docker push $GCP_CR_REGISTRY/$image
 done < astra-control-center-22.04.41.manifest
 ----
+
+
 . 設定DNS區域。
 
 
@@ -530,7 +524,7 @@ kubectl create secret docker-registry <secret name> --docker-server=<Registry lo
 
 
 | Astra Trident（安裝於NetApp BlueXP的Kubernetes叢集探索中）  a| 
-Astra Trident 22.10 或更新版本已安裝及設定、 NetApp ONTAP 9.8 或更新版本將用作儲存後端 [[azure-register]]
+Astra Trident 23.01 或更新版本已安裝及設定、 NetApp ONTAP 9.9.1 或更新版本將用作儲存後端 [[azure-register]]
 
 
 

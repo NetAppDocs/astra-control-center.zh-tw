@@ -65,26 +65,28 @@ NOTE: 如果您擁有評估授權、但並未將資料傳送AutoSupport 至效�
 在新增叢集之前、您應確保符合下列先決條件。您也應該執行資格檢查、以確保叢集已準備好新增至Astra Control Center、並建立叢集管理的角色。
 
 .開始之前
-* 確保叢集中的工作節點已設定適當的儲存驅動程式、以便Pod與後端儲存設備互動。
-* 您的環境符合 link:../get-started/requirements.html["營運環境需求"^] 適用於Astra Trident與Astra Control Center。
-* 如果您要使用參考私有憑證授權單位（ CA ）的 kubeconfig 檔案來新增叢集、請將下列行新增至 `cluster` kubeconfig 檔案的一節。這可讓 Astra Control 新增叢集：
+* * 符合環境先決條件 * ：您的環境符合 link:../get-started/requirements.html["營運環境需求"^] 適用於Astra Trident與Astra Control Center。
+* * 設定工作節點 * ：請務必使用適當的儲存驅動程式來設定叢集中的工作節點、以便 Pod 與後端儲存設備互動。
+* * 讓 kubeconfig 可存取 * ：您可以存取 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["預設叢集 kubeconfig"^] 那 link:../get-started/install_acc.html#set-up-namespace-and-secret-for-registries-with-auth-requirements["您已在安裝期間進行設定"^]。
+* * 憑證授權單位考量 * ：如果您要使用參考私有憑證授權單位（ CA ）的 kubeconfig 檔案來新增叢集、請在中新增下列一行 `cluster` kubeconfig 檔案的一節。這可讓 Astra Control 新增叢集：
 +
 [listing]
 ----
 insecure-skip-tls-verify: true
 ----
-* 這是Astra Trident的版本 link:../get-started/requirements.html#astra-trident-requirements["由Astra Control Center支援"^] 已安裝：
+* * Astra Trident 要求 * ：
++
+** * 安裝支援的版本 * ： Astra Trident 的版本 link:../get-started/requirements.html#astra-trident-requirements["由Astra Control Center支援"^] 已安裝：
 +
 
 NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["部署Astra Trident"^] 使用 Astra Trident 運算子（手動或使用 Helm 圖表）或 `tridentctl`。在安裝或升級Astra Trident之前、請先檢閱 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["支援的前端、後端及主機組態"^]。
 
-+
-** * 已設定 Astra Trident 儲存後端 * ：至少必須有一個 Astra Trident 儲存後端 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["已設定"^] 在叢集上。
-** * 已設定的 Astra Trident 儲存類別 * ：至少必須有一個 Astra Trident 儲存類別 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["已設定"^] 在叢集上。如果已設定預設儲存類別、請確定它是唯一具有預設註釋的儲存類別。
-** *已安裝並設定的Astra Trident Volume Snapshot控制器與Volume Snapshot類別*：Volume Snapshot控制器必須是 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["已安裝"^] 以便在Astra Control中建立快照。至少有一個Astra Trident `VolumeSnapshotClass` 過去了 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["設定"^] 由系統管理員執行。
+** * 設定 Astra Trident 儲存後端 * ：至少必須有一個 Astra Trident 儲存後端 https://docs.netapp.com/us-en/trident/trident-use/backends.html["已設定"^] 在叢集上。
+** * 設定 Astra Trident 儲存類別 * ：至少必須有一個 Astra Trident 儲存類別 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["已設定"^] 在叢集上。如果已設定預設儲存類別、請確定它是唯一具有預設註釋的儲存類別。
+** * 設定 Astra Trident Volume Snapshot 控制器並安裝 Volume Snapshot 類別 * ： Volume Snapshot 控制器必須為 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["已安裝"^] 以便在Astra Control中建立快照。至少有一個Astra Trident `VolumeSnapshotClass` 過去了 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["設定"^] 由系統管理員執行。
 
 
-* *可存取的Kubeconfig *：您可以存取 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["預設叢集 kubeconfig"^] 那 link:../get-started/install_acc.html#set-up-namespace-and-secret-for-registries-with-auth-requirements["您已在安裝期間進行設定"^]。
+* * Astra Control Provisioner* ：若要使用 Astra Control Provisioner 進階管理和儲存資源配置功能、而 Astra Control 使用者只能存取這些功能、您必須安裝 Astra Trident 23.10 或更新版本並啟用 link:../use/enable-acp.html["Astra Control Provisioner 功能"]。
 * *《支援》認證*：您需要使用支援版的支援版支援系統上設定的支援認證和超級使用者與使用者ID、才能使用Astra Control Center來備份及還原應用程式ONTAP ONTAP ONTAP 。
 +
 在flexf2命令列中執行下列命令ONTAP ：
@@ -607,6 +609,7 @@ TIP: 我們建議Astra Control Center先管理部署於上的叢集、再將其�
 
 .開始之前
 * 新增叢集之前、請先檢閱並執行必要的 <<使用Astra Control為環境做好叢集管理準備,必要工作>>。
+* 如果您使用的是 ONTAP SAN 驅動程式、請務必在所有 Kubernetes 叢集上啟用多重路徑。
 
 
 .步驟
@@ -861,11 +864,11 @@ Please enter Certificate: Press <Enter> when done
 -----END CERTIFICATE-----
 
 You should keep a copy of the CA-signed digital certificate for future reference.
-The installed certificate’s CA and serial number for reference:
+The installed certificate's CA and serial number for reference:
 
 CA:
 serial:
-The certificate’s generated name for reference:
+The certificate's generated name for reference:
 
 
 ==
@@ -968,9 +971,9 @@ NOTE: 您可能需要重新整理頁面、以便顯示後端。
 如果您要將應用程式組態和持續儲存設備複製到同一個叢集、則無需使用Astra Control中的儲存庫。應用程式快照功能不需要儲存庫。
 
 .開始之前
-* 可從由Astra Control Center管理的叢集存取的儲存庫。
-* 庫位認證資料。
-* 下列類型的儲存桶：
+* 確保您擁有一個可從 Astra Control Center 所管理的叢集存取的貯體。
+* 確保您擁有貯體的認證。
+* 確認貯體為下列其中一種類型：
 +
 ** NetApp ONTAP 產品S3
 ** NetApp StorageGRID 產品S3

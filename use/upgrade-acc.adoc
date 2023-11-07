@@ -14,11 +14,14 @@ summary: 若要升級Astra Control Center、您必須依照所述步驟下載套
 [role="lead"]
 若要升級Astra Control Center、請從NetApp 支援網站 下列網址下載安裝套裝軟體、並完成這些指示。您可以使用此程序、在連線網際網路或無線環境中升級Astra Control Center。
 
+這些指示說明 Astra Control Center 從最新版本升級至目前版本的程序。您無法直接從目前版本之後的兩個或更多版本升級。如果您安裝的 Astra Control Center 版本比最新版本落後許多版本、您可能需要執行鏈結升級至最新版本、直到安裝的 Astra Control Center 僅比最新版本落後一個版本為止。如需已發行版本的完整清單、請參閱 link:../release-notes/whats-new.html["版本資訊"^]。
+
 .開始之前
 升級之前、請確保您的環境仍符合 link:../get-started/requirements.html["Astra Control Center 部署的最低需求"^]。您的環境應具備下列條件：
 
-* 支援的 Astra Trident 版本
+* * 答 link:../get-started/requirements.html#astra-trident-requirements["支援"] Astra Trident 版本 *
 +
+.展開步驟
 [%collapsible]
 ====
 判斷您正在執行的 Trident 版本：
@@ -27,14 +30,18 @@ summary: 若要升級Astra Control Center、您必須依照所述步驟下載套
 ----
 kubectl get tridentversion -n trident
 ----
-請參閱 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html#determine-the-version-to-upgrade-to["Astra Trident文件"] 升級舊版。
 
-
-WARNING: 您必須升級至Astra Trident 22.10 * PRIOS*、才能升級至Kubernetes 1.25。
+NOTE: 如有需要、請使用這些工具升級 Astra Trident https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["說明"^]。
 
 ====
-* 支援的 Kubernetes 發佈
+
+
+
+IMPORTANT: 23.10 版本是 Astra Control Center 的最後版本、可支援 Astra Trident 。強烈建議您 link:../use/enable-acp.html["啟用 Astra Control Provisioner"] 存取 Astra Trident 提供的進階管理與儲存資源配置功能。您必須同時升級至 Astra Control Center 23.10 、並啟用 Astra Control Provisioner 以使用此延伸功能。Astra Control Provisioner 無法搭配 Astra Control Center 的舊版使用。
+
+* * 支援的 Kubernetes 發佈 *
 +
+.展開步驟
 [%collapsible]
 ====
 判斷您執行的 Kubernetes 版本：
@@ -44,8 +51,9 @@ WARNING: 您必須升級至Astra Trident 22.10 * PRIOS*、才能升級至Kuberne
 kubectl get nodes -o wide
 ----
 ====
-* 足夠的叢集資源
+* * 足夠的叢集資源 *
 +
+.展開步驟
 [%collapsible]
 ====
 判斷可用的叢集資源：
@@ -55,9 +63,10 @@ kubectl get nodes -o wide
 kubectl describe node <node name>
 ----
 ====
-* 您可以用來推送和上傳Astra Control Center映像的登錄
-* 預設儲存類別
+* * 可用於推送和上傳 Astra Control Center Images 的登錄 *
+* * 預設儲存類別 *
 +
+.展開步驟
 [%collapsible]
 ====
 判斷您的預設儲存類別：
@@ -67,8 +76,9 @@ kubectl describe node <node name>
 kubectl get storageclass
 ----
 ====
-* 健全且可用的 API 服務
+* * 健全且可用的 API 服務 *
 +
+.展開步驟
 [%collapsible]
 ====
 確保所有API服務均處於健全狀態且可供使用：
@@ -78,8 +88,9 @@ kubectl get storageclass
 kubectl get apiservices
 ----
 ====
-* （僅限 OpenShift ）健全且可用的叢集操作員
+* * （僅限 OpenShift ）健全且可用的叢集操作員 *
 +
+.展開步驟
 [%collapsible]
 ====
 確保所有叢集操作員都處於健全狀態且可用。
@@ -89,10 +100,27 @@ kubectl get apiservices
 kubectl get clusteroperators
 ----
 ====
+* * 存取 NetApp Astra 控制影像登錄 * ：
+您可以選擇從 NetApp 映像登錄取得 Astra Control 的安裝映像和功能增強功能、例如 Astra Control Provisioner 。
++
+.展開步驟
+[%collapsible]
+====
+.. 記錄您登入登錄所需的 Astra Control 帳戶 ID 。
++
+您可以在 Astra Control Service 網頁 UI 中看到您的帳戶 ID 。選取頁面右上角的圖示、選取 * API access* 、然後寫下您的帳戶 ID 。
+
+.. 從同一頁面選取 * 產生 API 權杖 * 、然後將 API 權杖字串複製到剪貼簿、並將其儲存在編輯器中。
+.. 登入 Astra Control 登錄：
++
+[source, console]
+----
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
 
 
+====
 
-IMPORTANT: 在本程序中、您需要  如果您要升級 Astra Control Center 。您無法使用此更新的運算子升級至舊版 Astra Control Center 。
 
 .關於這項工作
 Astra Control Center升級程序會引導您完成下列高層級步驟：
@@ -118,12 +146,18 @@ TIP: 當排程、備份和快照未執行時、請在維護期間執行升級。
 
 == 下載並擷取Astra Control Center
 
-. 前往 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center產品下載頁面"^] 於 NetApp 支援網站。您可以從下拉式功能表中選取所需的最新版本或其他版本。
+您可以選擇從 NetApp 支援網站 下載 Astra Control Center 套件、或使用 Docker 從 Astra Control Service 映像登錄中提取套件。
+
+[role="tabbed-block"]
+====
+.NetApp 支援網站
+--
+. 下載包含Astra Control Center的套裝組合 (`astra-control-center-[version].tar.gz`）從 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center 下載頁面"^]。
 . （建議但可選）下載Astra Control Center的憑證與簽名套件 (`astra-control-center-certs-[version].tar.gz`）驗證套件的簽名。
 +
 .展開以取得詳細資料
 [%collapsible]
-====
+=====
 [source, console]
 ----
 tar -vxzf astra-control-center-certs-[version].tar.gz
@@ -134,7 +168,7 @@ openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature cert
 ----
 隨即顯示輸出 `Verified OK` 驗證成功之後。
 
-====
+=====
 . 從Astra Control Center套裝組合擷取映像：
 +
 [source, console]
@@ -143,6 +177,16 @@ tar -vxzf astra-control-center-[version].tar.gz
 ----
 
 
+--
+.Astra Control 影像登錄
+--
+. 登入 Astra Control Service 。
+. 在儀表板上、選取 * 部署自動管理的 Astra Control* 執行個體。
+. 依照指示登入 Astra Control 影像登錄、拉出 Astra Control Center 安裝映像、並擷取映像。
+
+
+--
+====
 
 
 == 移除NetApp Astra kubectl外掛程式、然後重新安裝
@@ -220,8 +264,9 @@ kubectl astra packages push-images -m <BUNDLE_FILE> -r <MY_FULL_REGISTRY_PATH> -
 --
 . 切換到tar檔案的根目錄。您應該會看到這個檔案和目錄：
 +
-`acc.manifest.bundle.yaml`
 `acc/`
+`kubectl-astra/`
+`acc.manifest.bundle.yaml`
 
 . 登入您的登錄：
 +
@@ -240,7 +285,7 @@ podman login <YOUR_REGISTRY>
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.07.0-25
+export PACKAGEVERSION=23.10.0-68
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -259,7 +304,7 @@ done
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.07.0-25
+export PACKAGEVERSION=23.10.0-68
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -275,7 +320,7 @@ NOTE: 指令碼所建立的映像路徑應如下所示、視登錄組態而定�
 +
 [listing]
 ----
-https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.07.0-25/image:version
+https://downloads.example.io/docker-astra-control-prod/netapp/astra/acc/23.10.0-68/image:version
 ----
 
 
@@ -360,7 +405,7 @@ spec:
           value: "2"
         *- name: ACCOP_HELM_UPGRADETIMEOUT*
           *value: 300m*
-        *image: ASTRA_IMAGE_REGISTRY/acc-operator:23.07.25*
+        *image: ASTRA_IMAGE_REGISTRY/acc-operator:23.10.72*
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -491,7 +536,7 @@ kubectl get AstraControlCenter -n [netapp-acc or custom namespace]
 [listing]
 ----
 NAME    UUID                                      VERSION     ADDRESS         READY
-astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f      23.07.0-25   10.111.111.111  True
+astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f      23.10.0-68   10.111.111.111  True
 ----
 +
 

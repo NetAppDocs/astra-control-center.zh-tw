@@ -25,7 +25,8 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 *儲存整合*
 
-* link:../get-started/requirements.html#astra-trident-requirements["確保您的環境包含Astra Trident支援的版本"^]
+* link:../get-started/requirements.html#astra-trident-requirements["確保您的環境包含 Astra Trident 支援的版本"^]
+* link:../use/enable-acp.html["啟用 Astra Control Provisioner 進階管理和儲存資源配置功能"^]
 * https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html["準備工作節點"^]
 * https://docs.netapp.com/us-en/trident/trident-use/backends.html["設定Astra Trident儲存後端"^]
 * https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["設定Astra Trident儲存類別"^]

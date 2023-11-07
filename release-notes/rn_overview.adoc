@@ -19,4 +19,4 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 * link:../release-notes/known-limitations.html["已知限制"]
 
 
-歡迎前往Twitter @NetAppDoc追蹤我們的動態。請透過成為來傳送有關文件的意見反應 link:https://docs.netapp.com/us-en/contribute/["GitHub貢獻者"^] 或傳送電子郵件至doccomments@netapp.com。
+請透過成為來傳送有關文件的意見反應 link:https://docs.netapp.com/us-en/contribute/["GitHub貢獻者"^] 或傳送電子郵件至doccomments@netapp.com。

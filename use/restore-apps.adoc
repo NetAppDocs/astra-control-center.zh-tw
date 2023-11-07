@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/restore-apps.html 
-keywords: restore app, restoring an app, restore, migrate nas-economy 
-summary: Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將能最快完成。 
+keywords: restore app, restoring an app, restore, ontap-nas-economy, disruptive, migration 
+summary: Astra可從快照或備份還原應用程式組態和持續儲存設備。持續儲存備份會從物件存放區傳輸、因此從現有備份還原將會完成最快的速度。 
 ---
 = 還原應用程式
 :hardbreaks:
@@ -14,14 +14,15 @@ summary: Astra可從快照或備份還原應用程式組態和持續儲存設備
 [role="lead"]
 Astra Control可以從快照或備份還原應用程式。將應用程式還原至同一個叢集時、從現有的快照還原速度會更快。您可以使用Astra Control UI或 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^] 以還原應用程式。
 
-.關於這項工作
-* * 請先保護應用程式 * ：強烈建議您在還原應用程式之前、先拍攝快照或備份應用程式。這可讓您在還原失敗時、從快照或備份進行複製。
+.開始之前
+* * 請先保護應用程式 * ：強烈建議您在還原應用程式之前、先拍攝快照或備份應用程式。這可讓您在還原失敗時、從快照或備份複製。
 * * 檢查目的地 Volume * ：如果您還原至不同的儲存類別、請確定儲存類別使用相同的持續磁碟區存取模式（例如 ReadWriteMany ）。如果目的地持續磁碟區存取模式不同、還原作業將會失敗。例如、如果來源持續性磁碟區使用 rwx 存取模式、請選取無法提供 rwx 的目的地儲存類別、例如 Azure Managed Disks 、 AWS EBS 、 Google Persistent Disk 或 `ontap-san`將導致還原作業失敗。如需持續磁碟區存取模式的詳細資訊、請參閱 https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes["Kubernetes"^] 文件。
 * * 空間需求規劃 * ：當您對使用 NetApp ONTAP 儲存設備的應用程式執行原位還原時、還原的應用程式所使用的空間可能加倍。執行就地還原之後、請從還原的應用程式中移除任何不想要的快照、以釋放儲存空間。
-* *（僅限Openshift叢集）新增原則*：當您建立專案以在OpenShift叢集上裝載應用程式時、專案（或Kubernetes命名空間）會被指派一個安全性轉換唯一碼。若要啟用Astra Control Center來保護應用程式、並將應用程式移至OpenShift中的其他叢集或專案、您必須新增原則、讓應用程式以任何唯一識別碼的形式執行。例如、下列OpenShift CLI命令會將適當的原則授予WordPress應用程式。
+* * （僅限 Red Hat OpenShift 叢集）新增原則 * ：當您建立專案以在 OpenShift 叢集上裝載應用程式時、會將專案（或 Kubernetes 命名空間）指派為 SecurityContext UID 。若要啟用Astra Control Center來保護應用程式、並將應用程式移至OpenShift中的其他叢集或專案、您必須新增原則、讓應用程式以任何唯一識別碼的形式執行。例如、下列OpenShift CLI命令會將適當的原則授予WordPress應用程式。
 +
 「occ new－project worm新聞」（occ new－project wormPress）「ocadm policy add－scc to－group anyuid system:serviceaccounts：wormPress」（ocadm policy add－scc對使用者權限-z預設值-n wormPress）
 
+* * （僅限 ONTAP NAS 經濟型驅動程式）備份與還原 * ：備份或還原使用以作為備份之儲存類別的應用程式之前 `ontap-nas-economy` 請驗證驅動程式 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["ONTAP 儲存後端上的 Snapshot 目錄會隱藏"]。若未隱藏此目錄、可能會導致無法存取您的應用程式、尤其是在使用 NFSv3 的情況下。
 * * Helm 部署的應用程式 * ：完全支援使用 Helm 3 部署的應用程式（或從 Helm 2 升級至 Helm 3 ）。不支援以Helm 2部署的應用程式。
 
 
@@ -50,10 +51,6 @@ NOTE: 如果還原至先前刪除的命名空間、則會在還原程序中建�
 
 
 ** *還原至新命名空間*：使用此程序可將應用程式還原至其他叢集、或從來源還原具有不同命名空間的叢集。
-+
-
-NOTE: 您可以使用此程序來執行其中一項  以作為後盾的儲存類別 `ontap-nas` 在同一個叢集 * 或 * 上、將應用程式複製到另一個叢集、並以儲存類別為後盾 `ontap-nas-economy` 驅動程式：
-
 +
 ... 指定還原的應用程式名稱。
 ... 針對您要還原的應用程式、選擇目的地叢集。
@@ -102,7 +99,7 @@ Astra Control會根據您提供的資訊還原應用程式。如果您就地還�
 NOTE: 在資料保護作業（複製、備份或還原）及後續持續調整磁碟區大小之後、新的磁碟區大小會在網路UI中顯示、延遲最多20分鐘。資料保護作業只需幾分鐘就能成功完成、您可以使用儲存後端的管理軟體來確認磁碟區大小的變更。
 
 
-IMPORTANT: 任何具有命名空間限制的成員使用者、都可以使用命名空間名稱/ ID或命名空間標籤、將應用程式複製或還原到同一個叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員/擁有者可以編輯成員使用者帳戶、並更新受影響使用者的角色限制、以便授予新命名空間的存取權。
+IMPORTANT: 任何具有命名空間限制的成員使用者、都可以使用命名空間名稱/ ID或命名空間標籤、將應用程式複製或還原到同一個叢集上的新命名空間、或是組織帳戶中的任何其他叢集。不過、相同的使用者無法存取新命名空間中的複製或還原應用程式。在複製或還原作業建立新命名空間之後、帳戶管理員 / 擁有者可以編輯成員使用者帳戶、並更新受影響使用者的角色限制、以授予新命名空間的存取權。
 
 
 
@@ -161,12 +158,6 @@ NOTE: 如果您使用的是 GVK 篩選器、則必須指定版本和種類。
 TIP: 您可以根據需要建立任意數量的資源、包括和排除規則。這些規則會在您開始作業之前顯示在還原應用程式摘要中。
 
 
-
-
-
-== 從 ONTAP NAS 經濟型儲存設備移轉至 ONTAP NAS 儲存設備
-
-您可以使用 Astra Control link:../use/restore-apps.html["應用程式還原"] 或 link:../use/clone-apps.html["應用程式複製"^] 從以作為後盾的儲存類別移轉應用程式磁碟區的作業 `ontap-nas-economy`（允許有限的應用程式保護選項）、以作為後盾的儲存類別 `ontap-nas` 提供完整的 Astra Control 保護選項。複製或還原作業會移轉使用的 Qtree 型磁碟區 `ontap-nas-economy` 後端到標準磁碟區的備份 `ontap-nas`。Volume 、無論它們是否存在 `ontap-nas-economy` 僅備份或混合、將移轉至目標儲存類別。移轉完成後、保護選項不再受到限制。
 
 
 

@@ -56,5 +56,7 @@ entries:
   url: "/use/unmanage.html"
 - title: 升級Astra Control Center
   url: "/use/upgrade-acc.html"
+- title: 啟用 Astra Control Provisioner
+  url: "/use/enable-acp.html"
 - title: 解除安裝Astra Control Center
   url: "/use/uninstall_acc.html"

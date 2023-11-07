@@ -4,7 +4,7 @@ permalink: release-notes/whats-new.html
 keywords: 'what"s new, bugs, bug fixes, new features, enhancements' 
 summary: NetApp會定期更新Astra Control Center、為您提供新功能、增強功能及錯誤修復。 
 ---
-= Astra Control Center版本的新功能
+= 此Astra Control Center版本的新功能
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -16,15 +16,33 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
-== 2023 年 7 月 31 日（ 23.07.0 ）
+== 2023 年 11 月 7 日（ 23.10.0 ）
 
+[[nas-eco-backup-restore]]
 .新功能與支援
-* link:../get-started/requirements.html#storage-backends["支援在擴充組態中使用 NetApp MetroCluster 做為儲存後端"^]
-* link:../get-started/requirements.html#storage-backends["支援使用 Longhorn 做為儲存後端"^]
-* link:../use/replicate_snapmirror.html#delete-an-application-replication-relationship["應用程式現在可以從同一個 Kubernetes 叢集在 ONTAP 後端之間複寫"]
-* link:../use/manage-remote-authentication.html["Astra Control Center 現在支援「 userPrincipalName 」做為遠端（ LDAP ）使用者的替代登入屬性"^]
-* link:../use/execution-hooks.html["使用 Astra Control Center 進行複寫容錯移轉後、可以執行新的執行掛鉤類型「容錯移轉後」"^]
-* Clone 工作流程現在僅支援即時複製（託管應用程式的目前狀態）。若要從快照或備份複製、請使用 link:../use/restore-apps.html["還原工作流程"^]。
+* * 使用 ONTAP NAS 經濟型驅動程式備份儲存後端 * 為應用程式提供備份與還原功能：為啟用備份與還原作業 `ontap-nas-economy` 有些 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["簡單步驟"^]。
+* * 不可變備份 * ： Astra Control 現在支援 link:../concepts/data-protection.html#immutable-backups["不可更改的唯讀備份"^] 成為可抵禦惡意軟體和其他威脅的額外安全層。
+* * Astra Control Provisioner 簡介 *
++
+在 23.10 版本中、 Astra Control 引進了一種稱為 Astra Control Provisioner 的新軟體元件、可供所有獲授權的 Astra Control 使用者使用。Astra Control Provisioner 可存取 Astra Trident 所提供的進階管理和儲存資源配置功能。所有 Astra Control 客戶均可免費使用這些功能。
+
++
+** * 開始使用 Astra Control Provisioner*
+您可以 link:../use/enable-acp.html["啟用 Astra Control Provisioner"^] 如果您已安裝並設定環境以使用 Astra Trident 23.10 。
+** * Astra Control Provisioner 功能 *
++
+Astra Control Provisioner 23.10 版本提供下列功能：
+
++
+*** * 使用 Kerberos 5 加密技術增強儲存後端安全性 * ：您可以藉由改善儲存安全性 link:../use-acp/configure-storage-backend-encryption.html["啟用加密"^] 用於託管叢集與儲存後端之間的流量。Astra Control Provisioner 支援透過 NFSv4.1 連線、從 Red Hat OpenShift 叢集到 Azure NetApp Files 和內部部署 ONTAP 磁碟區的 Kerberos 5 加密
+*** * 使用 SnapShot 恢復資料 * ： Astra Control Provisioner 使用從快照提供快速的原位磁碟區還原 `TridentActionSnapshotRestore` （ TASR ） CR 。
+*** * SnapMirror 增強功能 * ：在 Astra Control 無法直接連線至 ONTAP 叢集或存取 ONTAP 認證的環境中使用應用程式複寫功能。此功能可讓您使用複寫、而無需在 Astra Control 中管理儲存後端或其認證。
+*** * 應用程式的備份與還原功能 `ontap-nas-economy` 驅動程式備份儲存後端 * ：如所述 <<nas-eco-backup-restore,以上>>。
+
+
+
+
+* * 依預設關閉執行攔截器 * ：從本版本開始、執行攔截器功能就可以 link:../use/execution-hooks.html#enable-the-execution-hooks-feature["已啟用"] 或停用以提高安全性（預設為停用）。如果您尚未建立用於 Astra Control 的執行攔截器、則需要 link:../use/execution-hooks.html#enable-the-execution-hooks-feature["啟用執行攔截功能"^] 開始建立攔截器。如果您在此版本之前建立了執行攔截器、則執行攔截器功能會保持啟用狀態、您可以像平常一樣使用攔截器。
 
 
 .已知問題與限制
@@ -32,6 +50,28 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 * link:../release-notes/known-limitations.html["此版本的已知限制"^]
 
 
+
+
+== 2023 年 7 月 31 日（ 23.07.0 ）
+
+.詳細資料
+[%collapsible]
+====
+.新功能與支援
+* https://docs.netapp.com/us-en/astra-control-center-2307/get-started/requirements.html#storage-backends["支援在擴充組態中使用 NetApp MetroCluster 做為儲存後端"^]
+* https://docs.netapp.com/us-en/astra-control-center-2307/get-started/requirements.html#storage-backends["支援使用 Longhorn 做為儲存後端"^]
+* https://docs.netapp.com/us-en/astra-control-center-2307/use/replicate_snapmirror.html#delete-an-application-replication-relationship["應用程式現在可以從同一個 Kubernetes 叢集在 ONTAP 後端之間複寫"]
+* https://docs.netapp.com/us-en/astra-control-center-2307/use/manage-remote-authentication.html["Astra Control Center 現在支援「 userPrincipalName 」做為遠端（ LDAP ）使用者的替代登入屬性"^]
+* https://docs.netapp.com/us-en/astra-control-center-2307/use/execution-hooks.html["使用 Astra Control Center 進行複寫容錯移轉後、可以執行新的執行掛鉤類型「容錯移轉後」"^]
+* Clone 工作流程現在僅支援即時複製（託管應用程式的目前狀態）。若要從快照或備份複製、請使用 https://docs.netapp.com/us-en/astra-control-center-2307/use/restore-apps.html["還原工作流程"^]。
+
+
+.已知問題與限制
+* https://docs.netapp.com/us-en/astra-control-center-2307/release-notes/known-issues.html["此版本的已知問題"^]
+* https://docs.netapp.com/us-en/astra-control-center-2307/release-notes/known-limitations.html["此版本的已知限制"^]
+
+
+====
 
 
 == 2023 年 5 月 18 日（ 23.04.2 ）

@@ -14,19 +14,6 @@ summary: 驗證Kubernetes叢集、應用程式和網頁瀏覽器的支援、開�
 [role="lead"]
 開始驗證作業環境、應用程式叢集、應用程式、授權和網頁瀏覽器的整備度。確保您的環境符合這些需求、以部署和操作 Astra Control Center 。
 
-* <<支援的主機叢集 Kubernetes 環境>>
-* <<主機叢集資源需求>>
-* <<Astra Trident的需求>>
-* <<儲存設備後端>>
-* <<映像登錄>>
-* <<Astra Control Center 授權>>
-* <<不需要授權ONTAP>>
-* <<網路需求>>
-* <<內部部署Kubernetes叢集的入口>>
-* <<支援的網頁瀏覽器>>
-* <<應用程式叢集的其他需求>>
-
-
 
 
 == 支援的主機叢集 Kubernetes 環境
@@ -43,19 +30,22 @@ NOTE: 確保您選擇架設 Astra Control Center 的 Kubernetes 環境符合環�
 | Azure Stack HCI 上的 Azure Kubernetes 服務 | Azure Stack HCI 21H2 和 22H2 、含 1.24.x 和 1.5.x 
 
 
-| Google Anthos | 1.14 至 1.16 （請參閱 <<Google Anthos 入口要求>>） 
+| Google Anthos | 1.15 至 1.16 （請參閱 <<Google Anthos 入口要求>>） 
 
 
-| Kubernetes （上游） | 1.25 至 1.27 （ Kubernetes 1.25 或更新版本需要 Astra Trident 22.10 或更新版本） 
+| Kubernetes （上游） | 1.26 至 1.28 
 
 
 | Rancher Kubernetes引擎（RKE） | RKE 1.3 搭配 Rancher Manager 2.6
 RKE 1.4 搭配 Rancher Manager 2.7
 RKE 2 （ v1.24.x ）搭配 Rancher 2.6
-RKE 2 （ v1.5.x ）搭配 Rancher 2.7 
+RKE 2 （ v1.26.x ）搭配 Rancher 2.7 
 
 
 | Red Hat OpenShift Container Platform | 4.11 至 4.13 
+
+
+| VMware Tanzu Kubernetes Grid整合版 | 1.16.x （請參閱 <<主機叢集資源需求>>） 
 |===
 
 
@@ -68,7 +58,26 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 * *CPU 擴充 * ：主機環境中所有節點的 CPU 都必須啟用 AVX 擴充功能。
 * * 工作節點 * ：總計至少 3 個工作節點、每個節點有 4 個 CPU 核心和 12GB RAM
+* * VMware Tanzu Kubernetes Grid 叢集需求 * ：在 VMware Tanzu Kubernetes Grid （ TKG ）或 Tanzu Kubernetes Grid 整合版（ TKGi ）叢集上代管 Astra Control Center 時、請謹記下列考量事項。
++
+** 預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過期。如果您使用Tanzu產品組合產品、則必須產生一個含有非過期權杖的Tanzu Kubernetes叢集組態檔、以避免Astra Control Center與託管應用程式叢集之間發生連線問題。如需相關指示、請造訪 https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.2/nsx-application-platform/GUID-52A52C0B-9575-43B6-ADE2-E8640E22C29F.html["VMware NSxT-T資料中心產品文件。"^]
+** 使用 `kubectl get nsxlbmonitors -A` 命令以查看您是否已設定服務監視器以接受入口流量。如果存在、則不應安裝MetalLB、因為現有的服務監視器將會覆寫任何新的負載平衡器組態。
+** 停用要由Astra Control管理的任何應用程式叢集上的TKG或TKGi預設儲存類別強制。您可以編輯來執行此作業 `TanzuKubernetesCluster` 命名空間叢集上的資源。
+** 在TKG或TKGi環境中部署Astra Control Center時、請注意Astra Trident的特定需求。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#other-known-configuration-options["Astra Trident文件"^]。
 
+
+
+
+
+
+== 服務網狀網路需求
+
+強烈建議在 Astra Control Center 主機叢集上安裝支援的 Istio 服務網格香草版本。請參閱 https://istio.io/latest/docs/releases/supported-releases/["支援版本"^] 適用於受支援版本的 Istio 。Istio 服務網格（例如 OpenShift Service Mesh ）的品牌版本未通過 Astra Control Center 驗證。
+
+若要將 Astra Control Center 與主機叢集上安裝的 Istio 服務網格整合、您必須將整合作為 Astra Control Center 的一部分 link:../get-started/install_acc.html["安裝"] 不受此程序影響。
+
+
+NOTE: 在主機叢集上安裝 Astra Control Service 而不設定服務網格、可能會對安全性造成嚴重影響。
 
 
 
@@ -76,13 +85,11 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 確保您符合下列特定環境需求的 Astra Trident 要求：
 
-* * 與 Astra Control Center 搭配使用的最低版本 * ： Astra Trident 22.10 或更新版本已安裝及設定。
-* * SnapMirror 複寫 * ：安裝 Astra Trident 22.10 或更新版本以進行 SnapMirror 型應用程式複寫。
-* * 對於 Kubernetes 1.25 或更新版本的支援 * ：針對 Kubernetes 1.25 或更新版本叢集安裝 Astra Trident 22.10 或更新版本（升級至 Kubernetes 1.25 或更新版本之前、您必須先升級至 Astra Trident 22.10 ）
+* * 與 Astra Control Center 搭配使用的最低版本 * ： Astra Trident 23.01 或更新版本已安裝及設定
 * *Astra Trident 的 ONTAP 組態 * ：
 +
 ** * 儲存類別 * ：在叢集上至少設定一個 Astra Trident 儲存類別。如果已設定預設儲存類別、請確定它是唯一具有預設指定的儲存類別。
-** * 儲存驅動程式和工作節點 * ：確保叢集中的工作節點已設定適當的儲存驅動程式、以便 Pod 與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：
+** * 儲存驅動程式與工作節點 * ：請務必使用適當的儲存驅動程式來設定叢集中的工作節點、以便 Pod 與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：
 +
 *** `ontap-nas`
 *** `ontap-san`
@@ -96,6 +103,12 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 
 
+== Astra Control 資源配置程式
+
+若要使用 Astra Control Provisioner 進階儲存功能、您必須安裝 Astra Trident 23.10 或更新版本並啟用 link:../use/enable-acp.html["Astra Control Provisioner 功能"]。
+
+
+
 == 儲存設備後端
 
 確保您擁有支援的後端、且具有足夠的容量。
@@ -103,9 +116,9 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 * * 所需的儲存後端容量 * ：可用容量至少 500 GB
 * * 支援的後端 * ： Astra Control Center 支援下列儲存後端：
 +
-** NetApp ONTAP 9.8 或更新版本的 AFF 、 FAS 和 ASA 系統
-** NetApp ONTAP Select 9.8 或更新版本
-** NetApp Cloud Volumes ONTAP 9.8 或更新版本
+** NetApp ONTAP 9.9.1 或更新版本的 AFF 、 FAS 和 ASA 系統
+** NetApp ONTAP Select 9.9.1 或更新版本
+** NetApp Cloud Volumes ONTAP 9.9.1 或更新版本
 ** Longhorn 1.5.0 或更新版本
 +
 *** 需要手動建立 Volume SnapshotClass 物件。請參閱 https://longhorn.io/docs/1.5.0/snapshots-and-backups/csi-snapshot-support/csi-volume-snapshot-associated-with-longhorn-snapshot/#create-a-csi-volumesnapshot-associated-with-longhorn-snapshot["Longhorn 文件"^] 以取得相關指示。
@@ -116,6 +129,7 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 *** 託管 Kubernetes 叢集必須採用彈性組態。
 
 
+** 支援的雲端供應商可提供儲存設備後端
 
 
 
@@ -137,7 +151,11 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 === NetApp MetroCluster
 
-當您使用 NetApp MetroCluster 做為儲存後端時、必須在您使用的 Astra Trident 驅動程式中、將 SVM 管理 LIF 指定為後端選項。
+當您使用 NetApp MetroCluster 作為儲存後端時、必須執行下列動作：
+
+* 在您使用的 Astra Trident 驅動程式中、將 SVM 管理 LIF 指定為後端選項
+* 請確定您擁有適當的 ONTAP 授權
+
 
 若要設定 MetroCluster LIF 、請參閱 Astra Trident 文件、以取得每個驅動程式的詳細資訊：
 
