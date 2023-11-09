@@ -42,6 +42,8 @@ Astra Control Provisioner 23.10 版本提供下列功能：
 
 
 
+* * 支援管理使用 NVMe / TCP 儲存設備的應用程式 *
+Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾的應用程式。
 * * 依預設關閉執行攔截器 * ：從本版本開始、執行攔截器功能就可以 link:../use/execution-hooks.html#enable-the-execution-hooks-feature["已啟用"] 或停用以提高安全性（預設為停用）。如果您尚未建立用於 Astra Control 的執行攔截器、則需要 link:../use/execution-hooks.html#enable-the-execution-hooks-feature["啟用執行攔截功能"^] 開始建立攔截器。如果您在此版本之前建立了執行攔截器、則執行攔截器功能會保持啟用狀態、您可以像平常一樣使用攔截器。
 
 
