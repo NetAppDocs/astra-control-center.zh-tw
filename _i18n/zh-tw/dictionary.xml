@@ -3358,7 +3358,6 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="77786aa5158c2dd5c43d9bc74844fffd" category="admonition">請勿使用 Helm 來啟用 Astra Control Provisioner 。如果您使用 Helm 進行原始安裝、並且要升級至 23.10 、則必須使用 Trident 運算子或 tridentctl 來執行 Astra Control Provisioner 啟用。</block>
   <block id="531dc1bead45003a393e1e227a07b0fa" category="list-text">編輯 TridentOrchestrator CR 並進行下列編輯：</block>
   <block id="1dc3b7297d43967b1df8cc5f4718d2b7" category="list-text">啟用 Astra Control Provisioner <block ref="b146a884950a14beaf7f7c32ccceea96" prefix="(" category="inline-code"></block>）</block>
-  <block id="0d93f0d7110c6fcd946df3239a7be503" category="list-text">設定 Astra Control Provisioner 映像的登錄位置 <block ref="334c0a9162c18d888fae4c3071edcbf0" prefix="(" category="inline-code"></block>）。</block>
   <block id="9f28a023f26c22c040e88a7f3791d0ed" category="inline-xref">影像拉出秘密</block>
   <block id="32c8b1c79820bf7dfd85518c9c748641" category="admonition">如果您已建立 <block ref="565c9dfc4921fbeccbde323bc8a44cad" category="inline-xref-macro-rx"></block> 在本程序稍早的部分、您可以在這裡使用它們 <block ref="ce73ad6af69d89f0704d72b9000c5650" prefix="(" category="inline-code"></block>）</block>
   <block id="aef1a8f8ac300bc418eb75e7e1e3c426" category="list-text">更新 Astra Trident 組態、讓新的<block ref="49c9f6c98d04c8c76aee7448fd9136ed" prefix=" " category="inline-code"></block> 已部署容器：</block>
@@ -3428,4 +3427,5 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="3c4db63c6115c69942c67f6b04d8e645" category="paragraph">如果您在貯體保留原則過期後刪除應用程式的不可變備份、則備份會從 Astra Control 刪除、但不會從貯體中刪除。此問題將在即將發行的版本中修正。</block>
   <block id="ac4da6c6894a7c36281036138b93deac" category="list-text">* 支援管理使用 NVMe / TCP 儲存設備的應用程式 *
 Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾的應用程式。</block>
+  <block id="e19d9fd02be50073f892bf959070ea25" category="list-text">設定 Astra Control Provisioner 映像的登錄位置 <block ref="20edfaac0850c3e3743b65fa227b6f0b" prefix="(" category="inline-code"></block>）。</block>
 </blocks>

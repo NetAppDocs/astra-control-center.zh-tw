@@ -229,7 +229,7 @@ WARNING: 請勿使用 Helm 來啟用 Astra Control Provisioner 。如果您使�
 . 編輯 TridentOrchestrator CR 並進行下列編輯：
 +
 ** 啟用 Astra Control Provisioner (`enableACP: true`）
-** 設定 Astra Control Provisioner 映像的登錄位置 (`acpImage: <my_custom_registry>/trident-acp:v23.10.0`）。
+** 設定 Astra Control Provisioner 映像的登錄位置 (`acpImage: <my_custom_registry>/trident-acp:23.10.0`）。
 +
 
 NOTE: 如果您已建立 <<pull-secrets,影像拉出秘密>> 在本程序稍早的部分、您可以在這裡使用它們 (`cr.astra.netapp.io/astra/trident-acp:23.10.0 imagePullSecrets: - <secret name>`）
@@ -247,7 +247,7 @@ spec:
   debug: true
   namespace: trident
   *enableACP: true*
-  *acpImage: <my_custom_registry>/trident-acp:v23.10.0*
+  *acpImage: <my_custom_registry>/trident-acp:23.10.0*
 ----
 . 套用變更：
 +
@@ -291,7 +291,7 @@ status:
   acpVersion: 23.10.0
   currentInstallationParams:
     ...
-    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    acpImage: <my_custom_registry>/trident-acp:23.10.0
     enableACP: "true"
     ...
   ...
@@ -307,7 +307,7 @@ status:
 +
 [listing]
 ----
-./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
+./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:23.10
 ----
 . 確認 Astra Control Provisioner 已啟用：
 +
