@@ -932,11 +932,11 @@ curl --cacert ontap_signed_cert.crt  --key ontap_test_client.key --cert ontap_te
 
 == 新增儲存後端
 
-您可以將現有ONTAP 的不支援儲存後端新增至Astra Control Center、以管理其資源。
+設定認證或憑證驗證資訊之後、您可以將現有的 ONTAP 儲存後端新增至 Astra 控制中心、以管理其資源。
 
 將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。
 
-設定認證或憑證驗證資訊之後、您可以將現有的 ONTAP 儲存後端新增至 Astra 控制中心、以管理其資源。
+*_Astra Control Provisioner_* ： NetApp 如果您已啟用 Astra Control Center 23.10 或更新版本的 Astra Control Provisioner 、則在 Astra Control Center 中新增及管理 ONTAP 儲存後端時、是選用的。
 
 .步驟
 . 從左側導覽區域的儀表板中、選取*後端*。

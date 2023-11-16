@@ -1581,7 +1581,6 @@
   <block id="2c2e7fe00f6284e8fe1d5912a2f0bace" category="list-text">選取要用於此Kubernetes叢集的預設儲存類別、然後選取* Next*。</block>
   <block id="5977f222fbe997f9173cd7c29ba765bc" category="list-text">檢閱資訊、如果一切看起來都很好、請選取*新增*。</block>
   <block id="f152ec5ba865e7c8d2750571a4baa896" category="paragraph">叢集進入*探索*狀態、然後變更為*健全*。您現在正使用Astra Control Center來管理叢集。</block>
-  <block id="ff9492d1695d9e5fe8ee2d412256cd28" category="paragraph">您可以將現有ONTAP 的不支援儲存後端新增至Astra Control Center、以管理其資源。</block>
   <block id="f458d757cde06889f0974a654df0a5b7" category="list-text">從左側導覽區域的儀表板中、選取*後端*。</block>
   <block id="6a64c1bcaf700e10eff83e4b3e6a72a0" category="inline-link">管理ONTAP 使用者帳戶、請參閱本文檔</block>
   <block id="801b71ec9b9ddb9cd61c5b2a99553262" category="admonition">您在此處輸入認證的使用者必須擁有<block ref="045ed0306c61104cb0777ccd31ce648b" prefix=" " category="inline-code"></block> 使用者登入存取方法已在ONTAP 支援的叢集上的「支援系統管理程式」中啟用ONTAP 。如果您打算使用SnapMirror複寫、請套用具有「admin」角色的使用者認證、該角色具有存取方法<block ref="045ed0306c61104cb0777ccd31ce648b" prefix=" " category="inline-code"></block> 和<block ref="80791b3ae7002cb88c246876d9faa8f8" prefix=" " category="inline-code"></block>、在來源ONTAP 和目的地等叢集上。請參閱<block ref="8a6bfa44d9bdad330c1959698c083f78" category="inline-link-rx"></block> 以取得更多資訊。</block>
@@ -3428,4 +3427,5 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
 Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾的應用程式。</block>
   <block id="e19d9fd02be50073f892bf959070ea25" category="list-text">設定 Astra Control Provisioner 映像的登錄位置 <block ref="20edfaac0850c3e3743b65fa227b6f0b" prefix="(" category="inline-code"></block>）。</block>
   <block id="2e307acdc1434ce81b546c869ac5d37c" category="list-text">標籤選擇器： &lt;label name&gt;</block>
+  <block id="aa22bb99bde532781940eb4a1e458758" category="paragraph">*_Astra Control Provisioner_* ： NetApp 如果您已啟用 Astra Control Center 23.10 或更新版本的 Astra Control Provisioner 、則在 Astra Control Center 中新增及管理 ONTAP 儲存後端時、是選用的。</block>
 </blocks>
