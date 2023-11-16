@@ -2879,7 +2879,6 @@
   <block id="5e0afc8490cb0f9aef8e7d6aa9c2a95b" category="list-text">選擇<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> 從 * 命名空間 * 下拉式清單中的 Astra Control Center 命名空間。</block>
   <block id="13728b663815d8b9b7f3110a0f6ae3d3" category="list-text">在「叢集資源」頁面上、勾選 * 包括其他叢集範圍的資源 * 。</block>
   <block id="de4566456b44943a73dbc9f1d5f4cfb5" category="list-text">選取這些項目、然後選取 * 新增 * ：</block>
-  <block id="25a653c17051ef3ca841d953bbc19608" category="list-text">標籤選擇器： ACC-crds</block>
   <block id="ece2d00e491a614dbc2abe1f851d18eb" category="list-text">群組： apiextensions.k8s.io</block>
   <block id="7ad0a964a0623e55a6f1d8cd78457694" category="list-text">版本： V1,</block>
   <block id="5b8e73d5fcf09db630648e42903cd2b0" category="list-text">種類： CustomResourceDefinition</block>
@@ -3428,4 +3427,5 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="ac4da6c6894a7c36281036138b93deac" category="list-text">* 支援管理使用 NVMe / TCP 儲存設備的應用程式 *
 Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾的應用程式。</block>
   <block id="e19d9fd02be50073f892bf959070ea25" category="list-text">設定 Astra Control Provisioner 映像的登錄位置 <block ref="20edfaac0850c3e3743b65fa227b6f0b" prefix="(" category="inline-code"></block>）。</block>
+  <block id="2e307acdc1434ce81b546c869ac5d37c" category="list-text">標籤選擇器： &lt;label name&gt;</block>
 </blocks>

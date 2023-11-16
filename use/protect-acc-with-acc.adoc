@@ -101,7 +101,7 @@ NOTE: 雖然未說明、 Astra Control Center 營運者也可以部署在與 Ast
 .. 選取*新增包含規則*。
 .. 選取這些項目、然後選取 * 新增 * ：
 +
-*** 標籤選擇器： ACC-crds
+*** 標籤選擇器： <label name>
 *** 群組： apiextensions.k8s.io
 *** 版本： V1,
 *** 種類： CustomResourceDefinition
