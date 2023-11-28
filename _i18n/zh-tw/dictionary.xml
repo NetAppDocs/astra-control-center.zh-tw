@@ -3313,11 +3313,9 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="cb902cabe05f2e75ccb2bfe8f46e3e1d" category="list-text">在儲存庫的雲端供應商保留期間到期之前、您無法移除一次寫入多次讀取（ WORM ）儲存庫。WORM 貯體名稱旁邊會以「鎖定」表示。</block>
   <block id="261f0b7f37f0dd290043aab033357d32" category="summary">啟用 Astra Control Provisioner 以存取進階儲存資源配置與管理功能。</block>
   <block id="bd748c545b83229576e1ff062aaacf08" category="paragraph">Astra Trident 版本 23.10 及更新版本包含使用 Astra Control Provisioner 的選項、可讓獲授權的 Astra Control 使用者存取進階儲存資源配置功能。Astra Control Provisioner 除了提供標準 Astra Trident CSI 型功能之外、還提供這項延伸功能。</block>
-  <block id="ea513a4deb2445ac25d1082dc1af99e1" category="paragraph">在即將推出的 Astra Control 更新中、 Astra Control 資源配置程式將取代 Astra Trident 、將其作為 Astra Control 架構中的儲存資源配置程式和 Orchestrator 。因此、強烈建議 Astra Control 使用者啟用 Astra Control Provisioner 。Astra Trident 將繼續保持開放原始碼、並以 NetApp 的新 CSI 和其他功能來發行、維護、支援及更新。</block>
   <block id="80bb20cedf78b8489265ff8e9b411cb2" category="paragraph">如果您是獲得授權的 Astra Control Center 使用者、且您想要使用 Astra Control Provisioner 功能、則應遵循此程序。如果您是 Astra Trident 使用者、而且想要使用 Astra Control Provisioner 所提供的額外功能、而不同時使用 Astra Control 、則也應遵循此程序。</block>
   <block id="16185b8c95bafd08c429f8e30bcc7054" category="paragraph">在每種情況下、 Astra Trident 23.10 預設不會啟用資源配置程式功能、但可以使用此程序來啟用。</block>
   <block id="aae97e973132b3157377d72e07afb848" category="paragraph">如果您要啟用 Astra Control Provisioner 、請先執行下列步驟：</block>
-  <block id="49c36796227bb74be6548ae6950546e0" category="list-title">Astra Control Provisioners 使用 Astra Control Center 的使用者</block>
   <block id="7005abad8b98fad0575f3c9af4fc49fa" category="list-text">* 取得 Astra Control Center 授權 * ：您需要 <block ref="d2e976b6271caffc0309faf092075998" category="inline-link-macro-rx"></block> 啟用 Astra Control Provisioner 並存取其所提供的功能。</block>
   <block id="b4ee3c2dba27e2f04db76cfd397012cb" category="list-text">* 安裝或升級至 Astra Control Center 23.10* ：如果您打算使用 Astra Control 的 Astra Control Provisioner 。</block>
   <block id="ad3dcfab7172a482308ac0917ba2ac42" category="list-text">* 確認您的叢集具有 AMD64 系統架構 * ： Astra Control Provisioner 影像同時在 AMD64 和 ARM64 CPU 架構中提供、但 Astra Control Center 僅支援 AMD64 。</block>
@@ -3428,4 +3426,6 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="e19d9fd02be50073f892bf959070ea25" category="list-text">設定 Astra Control Provisioner 映像的登錄位置 <block ref="20edfaac0850c3e3743b65fa227b6f0b" prefix="(" category="inline-code"></block>）。</block>
   <block id="2e307acdc1434ce81b546c869ac5d37c" category="list-text">標籤選擇器： &lt;label name&gt;</block>
   <block id="aa22bb99bde532781940eb4a1e458758" category="paragraph">*_Astra Control Provisioner_* ： NetApp 如果您已啟用 Astra Control Center 23.10 或更新版本的 Astra Control Provisioner 、則在 Astra Control Center 中新增及管理 ONTAP 儲存後端時、是選用的。</block>
+  <block id="4985a3b824e2fb63f86dcaa415a32c2d" category="paragraph">在即將推出的 Astra Control 更新中、 Astra Control 資源配置程式將取代 Astra Trident 、將其作為 Astra Control 架構中的儲存資源配置程式和 Orchestrator 。因此、強烈建議 Astra Control 使用者啟用 Astra Control Provisioner 。Astra Trident 將繼續保持開放原始碼、並以 NetApp 的新 CSI 和其他功能來發行、維護、支援及更新。</block>
+  <block id="8af227b0e0743a7dba6ed339a67722c9" category="list-title">Astra Control Provisioner 使用者使用 Astra Control Center</block>
 </blocks>

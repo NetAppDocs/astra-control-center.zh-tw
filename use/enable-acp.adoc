@@ -26,7 +26,7 @@ Astra Trident 版本 23.10 及更新版本包含使用 Astra Control Provisioner
 
 [role="tabbed-block"]
 ====
-.Astra Control Provisioners 使用 Astra Control Center 的使用者
+.Astra Control Provisioner 使用者使用 Astra Control Center
 * * 取得 Astra Control Center 授權 * ：您需要 link:../concepts/licensing.html["Astra Control Center 授權"] 啟用 Astra Control Provisioner 並存取其所提供的功能。
 * * 安裝或升級至 Astra Control Center 23.10* ：如果您打算使用 Astra Control 的 Astra Control Provisioner 。
 * * 確認您的叢集具有 AMD64 系統架構 * ： Astra Control Provisioner 影像同時在 AMD64 和 ARM64 CPU 架構中提供、但 Astra Control Center 僅支援 AMD64 。
