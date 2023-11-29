@@ -3428,4 +3428,8 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="aa22bb99bde532781940eb4a1e458758" category="paragraph">*_Astra Control Provisioner_* ： NetApp 如果您已啟用 Astra Control Center 23.10 或更新版本的 Astra Control Provisioner 、則在 Astra Control Center 中新增及管理 ONTAP 儲存後端時、是選用的。</block>
   <block id="4985a3b824e2fb63f86dcaa415a32c2d" category="paragraph">在即將推出的 Astra Control 更新中、 Astra Control 資源配置程式將取代 Astra Trident 、將其作為 Astra Control 架構中的儲存資源配置程式和 Orchestrator 。因此、強烈建議 Astra Control 使用者啟用 Astra Control Provisioner 。Astra Trident 將繼續保持開放原始碼、並以 NetApp 的新 CSI 和其他功能來發行、維護、支援及更新。</block>
   <block id="8af227b0e0743a7dba6ed339a67722c9" category="list-title">Astra Control Provisioner 使用者使用 Astra Control Center</block>
+  <block id="cd27a1715aac859bc2a48a86ed2000c0" category="inline-link">Longhorn</block>
+  <block id="1752f949f63eb1f41cea70be24a2a732" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block></block>
+  <block id="d5bd450a47d2497dc5f133703c0fab95" category="list-text">內部叢集：</block>
+  <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select</block>
 </blocks>

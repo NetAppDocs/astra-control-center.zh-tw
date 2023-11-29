@@ -85,14 +85,26 @@ Astra Control提供兩種部署模式：
 * 自我管理叢集：
 +
 ** Amazon EBS
-** Google持續磁碟
 ** Azure託管磁碟
+** Google持續磁碟
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+** NetApp MetroCluster
+** https://longhorn.io/["Longhorn"^]
+
+
+* 內部叢集：
++
+** NetApp MetroCluster
+** NetApp ONTAP AFF 的功能與FAS 功能
+** NetApp ONTAP Select
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+** https://longhorn.io/["Longhorn"^]
 
 
 
  a| 
 * NetApp ONTAP AFF 的功能與FAS 功能
+* NetApp ONTAP Select
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
