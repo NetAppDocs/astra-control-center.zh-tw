@@ -14,6 +14,8 @@ summary: 將Kubernetes叢集新增至Astra Control之後、即可在該叢集（
 [role="lead"]
 您先請 link:../get-started/setup_overview.html#add-cluster["將叢集新增至Astra Control管理"]、您可以在叢集上安裝應用程式（Astra Control之外）、然後前往Astra Control的「應用程式」頁面、定義應用程式及其資源。
 
+您可以定義和管理應用程式、包括含有執行 Pod 的儲存資源、或是不含任何執行 Pod 的儲存資源應用程式。沒有執行 Pod 的應用程式稱為純資料應用程式。
+
 
 
 == 應用程式管理需求

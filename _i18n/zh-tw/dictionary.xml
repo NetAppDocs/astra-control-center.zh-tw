@@ -3432,4 +3432,5 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="1752f949f63eb1f41cea70be24a2a732" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block></block>
   <block id="d5bd450a47d2497dc5f133703c0fab95" category="list-text">內部叢集：</block>
   <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select</block>
+  <block id="4aa0f8ba3923a0c903137a6f7e329b63" category="paragraph">您可以定義和管理應用程式、包括含有執行 Pod 的儲存資源、或是不含任何執行 Pod 的儲存資源應用程式。沒有執行 Pod 的應用程式稱為純資料應用程式。</block>
 </blocks>
