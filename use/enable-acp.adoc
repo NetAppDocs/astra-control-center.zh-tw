@@ -31,13 +31,13 @@ Astra Trident 版本 23.10 及更新版本包含使用 Astra Control Provisioner
 * * 安裝或升級至 Astra Control Center 23.10* ：如果您打算使用 Astra Control 的 Astra Control Provisioner 。
 * * 確認您的叢集具有 AMD64 系統架構 * ： Astra Control Provisioner 影像同時在 AMD64 和 ARM64 CPU 架構中提供、但 Astra Control Center 僅支援 AMD64 。
 * * 取得登錄存取的 Astra 控制服務帳戶 * ：如果您打算使用 Astra 控制登錄而非 NetApp 支援網站 來下載 Astra 控制項資源配置程式映像、請完成的登錄 https://bluexp.netapp.com/astra-register["Astra Control Service 帳戶"^]。完成並提交表單並建立 BlueXP 帳戶後、您會收到 Astra Control Service 歡迎電子郵件。
-* * 確認您的 Astra Trident 版本位於四個版本的視窗 * ：如果 Astra Trident 位於 23.10 版的四個版本視窗內、您可以使用 Astra Control Provisioner 直接升級至 Astra Trident 23.10 。例如、您可以直接從 Astra Trident 22.10 升級至 23.10 。
+* * 如果您已安裝 Astra Trident 、請確認其版本位於四個版本的視窗 * ：如果 Astra Trident 位於 23.10 版的四個版本視窗內、您可以使用 Astra Control Provisioner 直接升級至 Astra Trident 23.10 。例如、您可以直接從 Astra Trident 22.10 升級至 23.10 。
 
 
 .Astra Control Provisioner 僅限使用者
 --
 * * 取得 Astra Control Center 授權 * ：您需要 link:../concepts/licensing.html["Astra Control Center 授權"] 啟用 Astra Control Provisioner 並存取其所提供的功能。
-* * 確認您的 Astra Trident 版本位於四個版本的視窗 * ：如果 Astra Trident 位於 23.10 版的四個版本視窗內、您可以使用 Astra Control Provisioner 直接升級至 Astra Trident 23.10 。例如、您可以直接從 Astra Trident 22.10 升級至 23.10 。
+* * 如果您已安裝 Astra Trident 、請確認其版本位於四個版本的視窗 * ：如果 Astra Trident 位於 23.10 版的四個版本視窗內、您可以使用 Astra Control Provisioner 直接升級至 Astra Trident 23.10 。例如、您可以直接從 Astra Trident 22.10 升級至 23.10 。
 * * 取得登錄存取的 Astra Control Service 帳戶 * ：您需要存取登錄才能下載 Astra Control Provisioner 映像。若要開始使用、請完成的註冊 https://bluexp.netapp.com/astra-register["Astra Control Service 帳戶"^]。完成並提交表單並建立 BlueXP 帳戶後、您會收到 Astra Control Service 歡迎電子郵件。
 
 
@@ -194,21 +194,16 @@ WARNING: 請勿使用 Helm 來啟用 Astra Control Provisioner 。如果您使�
 ====
 .Astra Trident 運算子
 --
-. 如果您從原始部署中移除營運者、請再次建立 Astra Trident Orchestrator CRD ：
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["下載 Astra Trident 安裝程式並將其解壓縮"^]。
+. 如果您尚未安裝 Astra Trident 、或是從原始 Astra Trident 部署中移除運算子、請完成下列步驟：
 +
-.. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["下載並解壓縮安裝程式"^]。
-.. 再次建立客戶需求日：
+.. 建立客戶需求日：
 +
 [source, console]
 ----
 kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
 ----
-.. 建立 `trident` 如有需要、請重新命名空間：
-+
-[source, console]
-----
-kubectl create namespace trident
-----
+.. 建立 Trident 命名空間 (`kubectl create namespace trident`）或確認 Trident 命名空間仍然存在 (`kubectl get all -n trident`）。如果已移除命名空間、請重新建立。
 
 
 . 將 Astra Trident 更新為 23.10.0 ：
@@ -309,8 +304,9 @@ status:
 --
 .試用
 --
-. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["從主控 Astra Trident 的叢集上解除安裝 Astra Trident"^]。
-. 在啟用 Astra Control Provisioner 的情況下、再次安裝 Astra Trident (`--enable-acp=true`）：
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-tridentctl.html#step-1-download-the-trident-installer-package["下載 Astra Trident 安裝程式並將其解壓縮"^]。
+. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["如果您有現有的 Astra Trident 、請將其從裝載它的叢集上解除安裝"^]。
+. 在啟用 Astra Control Provisioner 的情況下安裝 Astra Trident (`--enable-acp=true`）：
 +
 [source, console]
 ----

@@ -3318,7 +3318,6 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="ad3dcfab7172a482308ac0917ba2ac42" category="list-text">* 確認您的叢集具有 AMD64 系統架構 * ： Astra Control Provisioner 影像同時在 AMD64 和 ARM64 CPU 架構中提供、但 Astra Control Center 僅支援 AMD64 。</block>
   <block id="31ce0f414eb8b0690f188e7aa0716c96" category="inline-link">Astra Control Service 帳戶</block>
   <block id="e0694043c7f6e5063494306ca40b3df8" category="list-text">* 取得登錄存取的 Astra 控制服務帳戶 * ：如果您打算使用 Astra 控制登錄而非 NetApp 支援網站 來下載 Astra 控制項資源配置程式映像、請完成的登錄<block ref="cf864c072d1048cae524e38c5ef5abf2" category="inline-link-rx"></block>。完成並提交表單並建立 BlueXP 帳戶後、您會收到 Astra Control Service 歡迎電子郵件。</block>
-  <block id="96970ad8b13f688668233173a243a6d7" category="list-text">* 確認您的 Astra Trident 版本位於四個版本的視窗 * ：如果 Astra Trident 位於 23.10 版的四個版本視窗內、您可以使用 Astra Control Provisioner 直接升級至 Astra Trident 23.10 。例如、您可以直接從 Astra Trident 22.10 升級至 23.10 。</block>
   <block id="e1dd38c578cdf03c7c481360f647f70a" category="open-title">Astra Control Provisioner 僅限使用者</block>
   <block id="c9632f0f2e11340862991a16d1732db4" category="list-text">* 取得登錄存取的 Astra Control Service 帳戶 * ：您需要存取登錄才能下載 Astra Control Provisioner 映像。若要開始使用、請完成的註冊<block ref="cf864c072d1048cae524e38c5ef5abf2" category="inline-link-rx"></block>。完成並提交表單並建立 BlueXP 帳戶後、您會收到 Astra Control Service 歡迎電子郵件。</block>
   <block id="3b27c0fc29df608254712f333092caa6" category="section-title">（步驟 1 ）下載並擷取 Astra Control Provisioner</block>
@@ -3348,9 +3347,6 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="531dc1bead45003a393e1e227a07b0fa" category="list-text">編輯 TridentOrchestrator CR 並進行下列編輯：</block>
   <block id="9f28a023f26c22c040e88a7f3791d0ed" category="inline-xref">影像拉出秘密</block>
   <block id="84b3a17dd4da0cadee9516d2c742e8e1" category="admonition">對於執行 Kubernetes 1.24 或更早版本的叢集、請使用<block ref="bd2cc8575fe69c7f775292759380c838" prefix=" " category="inline-code"></block>。對於執行 Kubernetes 1.25 或更新版本的叢集、請使用<block ref="5a02ebff4889c2de0379a0fb10bed282" prefix=" " category="inline-code"></block>。</block>
-  <block id="1257262228f3dbf25c74f93d6a909b66" category="inline-link">從主控 Astra Trident 的叢集上解除安裝 Astra Trident</block>
-  <block id="950c9e864a976ae66bddc56b29094b99" category="list-text"><block ref="996278c098e8e1003fc70dc3df897bb1" category="inline-link-rx"></block>。</block>
-  <block id="5dcdd9d11fd62dd1ee60a5366592f2c7" category="list-text">在啟用 Astra Control Provisioner 的情況下、再次安裝 Astra Trident <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
   <block id="e1e016d44c99ff12155d4c6ec97b954b" category="paragraph">Astra Control Provisioner 功能已啟用、您可以使用任何適用於所執行版本的功能。</block>
   <block id="f2ab5216beef52c8c1b01cede67e2704" category="paragraph">（僅適用於 Astra Control Center 使用者）安裝 Astra Control Provisioner 之後、在 Astra Control Center UI 中裝載置備程式的叢集將會顯示<block ref="47f79829be244bd727d1881108343390" prefix=" " category="inline-code"></block> 而非<block ref="f1112223b41fddc71fd6a626582dfb78" prefix=" " category="inline-code"></block> 欄位和目前安裝的版本號碼。</block>
   <block id="298c14088e0ed4580971821ac46240ba" category="paragraph"><block ref="298c14088e0ed4580971821ac46240ba" category="inline-image-macro-rx" type="image"></block></block>
@@ -3427,11 +3423,6 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="7ad80befa0338511c04f74508bd4ae90" category="list-text">* 請參閱產品文件 * ：這是您目前正在檢視的文件網站。</block>
   <block id="977fd3ce7eb29010ea4e3dc0d7208e35" category="list-text">如果您有自訂登錄、請依照下列步驟、將映像移至自訂登錄。如果您未使用登錄 , 請遵循中的 Trident 運算子步驟 <block ref="01fbfb5dd1fa78257a7d2545aa849232" category="inline-link-macro-rx"></block>。</block>
   <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">範例：</block>
-  <block id="05a850d8b9bbf8f985d56783d24b4ef8" category="list-text">如果您從原始部署中移除營運者、請再次建立 Astra Trident Orchestrator CRD ：</block>
-  <block id="c5ef2e8ef77f84391fa266f923ba567f" category="inline-link">下載並解壓縮安裝程式</block>
-  <block id="bfae990a3fa05e9fc309d9270c1b0bdf" category="list-text"><block ref="1762ff5119022dd6aa9e3a3693ff4c9a" category="inline-link-rx"></block>。</block>
-  <block id="6dfb05d57e00d495a2626742c5794d45" category="list-text">再次建立客戶需求日：</block>
-  <block id="74e1b3ec60a1e85ea67710e2dc1cd343" category="list-text">建立<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> 如有需要、請重新命名空間：</block>
   <block id="f2b891f09ee711b58bdd7005fd757210" category="list-text">將 Astra Trident 更新為 23.10.0 ：</block>
   <block id="4cf0920f58032b65295d4d0255354879" category="list-text">確認 Astra Trident 正在執行：</block>
   <block id="70da7fdb746f99191502821d5d3b6d53" category="list-text">[[Pull 機密 ]] 如果您有使用機密的登錄、請建立秘密來拉出 Astra Control Provisioner 映像：</block>
@@ -3442,4 +3433,14 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="aa3ae8b6c1e4a29f9314a8bbc401330f" category="list-text">儲存並結束檔案。部署程序將會自動開始。</block>
   <block id="4f27e6f7f8f95f32f55540801c5f6db0" category="list-text">確認已建立運算子、部署和複本集。</block>
   <block id="6849b59104c35075b063cf35570fde13" category="admonition">Kubernetes叢集中只應有*一個運算子執行個體*。請勿建立 Astra Trident 運算子的多個部署。</block>
+  <block id="bae6bc3f0a28e1dbcf10ba23c43f14bc" category="list-text">* 如果您已安裝 Astra Trident 、請確認其版本位於四個版本的視窗 * ：如果 Astra Trident 位於 23.10 版的四個版本視窗內、您可以使用 Astra Control Provisioner 直接升級至 Astra Trident 23.10 。例如、您可以直接從 Astra Trident 22.10 升級至 23.10 。</block>
+  <block id="b88c081e2a4b249f94292c6f7bf16bdc" category="inline-link">下載 Astra Trident 安裝程式並將其解壓縮</block>
+  <block id="f1f44f407a364d092b4a3b446d6593b5" category="list-text"><block ref="5512264baa78f7d10bb082092407833c" category="inline-link-rx"></block>。</block>
+  <block id="b53ea1f6729ee2c1c5dc303c5e9bb360" category="list-text">如果您尚未安裝 Astra Trident 、或是從原始 Astra Trident 部署中移除運算子、請完成下列步驟：</block>
+  <block id="1802fc07d2de18110ae52621540f337e" category="list-text">建立客戶需求日：</block>
+  <block id="b19df824e7baecb971d0fdd39542c6d6" category="list-text">建立 Trident 命名空間 <block ref="a40796e67d7096bdb1a461d9369987ae" prefix="(" category="inline-code"></block>）或確認 Trident 命名空間仍然存在 <block ref="929ac53a7aaa18d0ab7bfd29e3b89c45" prefix="(" category="inline-code"></block>）。如果已移除命名空間、請重新建立。</block>
+  <block id="6942401e8cfb1a0fc7b82ec1dcda7d32" category="list-text"><block ref="b0e92e3807bd982cc8fd58230062a04f" category="inline-link-rx"></block>。</block>
+  <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">如果您有現有的 Astra Trident 、請將其從裝載它的叢集上解除安裝</block>
+  <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
+  <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">在啟用 Astra Control Provisioner 的情況下安裝 Astra Trident <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
 </blocks>
