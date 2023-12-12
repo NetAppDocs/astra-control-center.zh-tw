@@ -27,8 +27,8 @@ IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得�
 
 這些選項全年無休免費提供：
 
-* https://kb.netapp.com/Cloud/Astra/Control["*知識庫*（需要登入）"^]：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。
-* *文件中心*：這是您目前正在檢視的文件網站。
+* https://kb.netapp.com/Cloud/Astra/Control["* 使用知識庫 * （需要登入）"^]：搜尋與Astra Control相關的文章、常見問題集或中斷修復資訊。
+* * 請參閱產品文件 * ：這是您目前正在檢視的文件網站。
 * https://discord.gg/NetApp["*透過不和*取得協助"^]：前往酒吧類別的Astra、與同儕和專家交流。
 * *建立支援案例*：產生支援套裝組合、以提供給NetApp支援人員進行疑難排解。
 * *針對Astra Control提供意見回饋*：傳送電子郵件至astra.feedback@netapp.com、讓我們知道您的想法、想法或疑慮。
