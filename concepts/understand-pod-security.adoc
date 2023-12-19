@@ -22,11 +22,11 @@ Astra Control Center透過pod安全性原則（ASP）和pod安全性許可（Ps�
 
 == 由Astra Control Center執行的SSA
 
-Astra Control Center 可將下列標籤新增至安裝 Astra 的命名空間（ NetApp-acc 或自訂命名空間）、以及為備份建立的命名空間、藉此強制執行 Pod 安全許可。
+Astra Control Center 可讓您 link:../get-started/setup_overview.html#enable-psa["啟用強制"] 將下列標籤新增至、以取得 Pod 安全許可 `netapp-acc-operator` 和 `netapp-monitoring` Astra 命名空間：
 
 [listing]
 ----
-pod-security.kubernetes.io/enforce: privileged
+pod-security.kubernetes.io/enforce=privileged
 ----
 
 

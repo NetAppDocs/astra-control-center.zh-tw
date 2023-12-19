@@ -74,6 +74,24 @@ NOTE: 如果您擁有評估授權、但並未將資料傳送AutoSupport 至效�
 ----
 insecure-skip-tls-verify: true
 ----
+
+
+* [[enable - psa]]*Enable PSA restrictions * ：如果叢集已啟用 Pod 安全許可強制（ Kubernetes 1.25 及更新叢集的標準）、則您必須啟用 PSA 對這些命名空間的限制：
++
+** `netapp-acc-operator` 命名空間：
++
+[listing]
+----
+kubectl label --overwrite ns netapp-acc-operator pod-security.kubernetes.io/enforce=privileged
+----
+** `netapp monitoring` 命名空間：
++
+[listing]
+----
+kubectl label --overwrite ns netapp-monitoring pod-security.kubernetes.io/enforce=privileged
+----
+
+
 * * Astra Trident 要求 * ：
 +
 ** * 安裝支援的版本 * ： Astra Trident 的版本 link:../get-started/requirements.html#astra-trident-requirements["由Astra Control Center支援"^] 已安裝：

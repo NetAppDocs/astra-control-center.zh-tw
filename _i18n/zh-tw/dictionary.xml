@@ -2699,7 +2699,6 @@
   <block id="3355b77143abcc47ad763361c0a24b74" category="paragraph">您可以將試用版授權轉換為完整授權、也可以使用新授權來更新現有的試用版或完整授權。如果您沒有完整授權、請與NetApp銷售聯絡人聯絡、以取得完整授權與序號。您可以使用Astra Control Center UI或<block ref="bd25eec94181cb8a1c6322299b11a4e5" category="inline-link-rx"></block> 以更新現有授權。</block>
   <block id="e2345475f657a83bdb89f0d758173706" category="inline-link">Astra Control Center 23.04 文件</block>
   <block id="331507753b11b0196d31031604e3a720" category="list-text"><block ref="331507753b11b0196d31031604e3a720" category="inline-link-rx"></block></block>
-  <block id="9fb980f4590b677cdb520d20933d84f4" category="paragraph">Astra Control Center 可將下列標籤新增至安裝 Astra 的命名空間（ NetApp-acc 或自訂命名空間）、以及為備份建立的命名空間、藉此強制執行 Pod 安全許可。</block>
   <block id="3e2c006717cc8b00761751de7e11d362" category="summary">Astra Control Center 支援各種儲存後端。  您應該瞭解儲存類別和持續Volume大小如何協助您達成效能目標。</block>
   <block id="8cbd2767e7cb5131483f14b9f5693a7c" category="paragraph">Astra Control Center 支援 NetApp ONTAP 和 Longhorn 作為儲存後端。</block>
   <block id="0e1a55abe469167871f67cf77d4a08a7" category="list-text">* Astra Trident 儲存類別以 ONTAP 儲存 * 為後盾：如果您使用的是 ONTAP 後端、 Astra 控制中心可以匯入 ONTAP 後端、以報告各種監控資訊。</block>
@@ -3443,4 +3442,9 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">如果您有現有的 Astra Trident 、請將其從裝載它的叢集上解除安裝</block>
   <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
   <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">在啟用 Astra Control Provisioner 的情況下安裝 Astra Trident <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
+  <block id="591fd31287d2fc729bd2ed59d856b1e2" category="inline-link-macro">啟用強制</block>
+  <block id="07d347dcf19fe0ea209afdba6b2c1488" category="paragraph">Astra Control Center 可讓您 <block ref="5957daf8ac28c5997f77f7cbb0504148" category="inline-link-macro-rx"></block> 將下列標籤新增至、以取得 Pod 安全許可<block ref="cadbba5231afda9b003503d57805b87d" prefix=" " category="inline-code"></block> 和<block ref="aadb900c6eaeed8ade58660fe972acec" prefix=" " category="inline-code"></block> Astra 命名空間：</block>
+  <block id="76356ba85ed09ac1c7a6d1fbf72a3bfe" category="list-text">[[enable - psa]]*Enable PSA restrictions * ：如果叢集已啟用 Pod 安全許可強制（ Kubernetes 1.25 及更新叢集的標準）、則您必須啟用 PSA 對這些命名空間的限制：</block>
+  <block id="6ec7da0a465c6f281367f7b3cc204a04" category="list-text"><block ref="cadbba5231afda9b003503d57805b87d" prefix="" category="inline-code"></block> 命名空間：</block>
+  <block id="6e9af694d79083d4bda3f226db24b704" category="list-text"><block ref="ab22b85c122f9a24c4ad6781f066be29" prefix="" category="inline-code"></block> 命名空間：</block>
 </blocks>
