@@ -199,7 +199,7 @@ NOTE: 您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra
 | 來源 | 目的地 | 連接埠 | 傳輸協定 | 目的 
 
 
-| 用戶端PC | Astra控制中心 | 443.. | HTTPS | UI / API存取：確保此連接埠在裝載Astra Control Center的叢集與每個受管理叢集之間都開啟 
+| 用戶端PC | Astra控制中心 | 443.. | HTTPS | UI / API 存取 - 確保 Astra Control Center 和用於存取 Astra Control Center 的系統之間雙向開啟此連接埠 
 
 
 | 度量使用者 | Astra Control Center工作節點 | 9090 | HTTPS | 度量資料通訊：確保每個託管叢集都能存取裝載Astra Control Center的叢集上的此連接埠（需要雙向通訊） 
@@ -212,6 +212,10 @@ NOTE: 您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra
 
 
 | Astra控制中心 | NetApp AutoSupport  | 443.. | HTTPS | NetApp AutoSupport 通訊 
+
+
+| Astra控制中心 | 託管 Kubernetes 叢集 | 443/643.
+* 注意 * ：受管理叢集使用的連接埠可能會因叢集而異。請參閱叢集軟體廠商提供的文件。 | HTTPS | 與託管叢集通訊：確保此連接埠在託管 Astra Control Center 的叢集和每個託管叢集之間都是開放的 
 |===
 
 

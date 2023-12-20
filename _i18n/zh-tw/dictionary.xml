@@ -565,7 +565,6 @@
   <block id="9c634046a90a62883b122e76b9afcef2" category="cell">Astra控制中心</block>
   <block id="13f3cf8c531952d72e5847c4183e6910" category="cell">443..</block>
   <block id="0e8433f9a404f1f3ba601c14b026d321" category="cell">HTTPS</block>
-  <block id="2d9fec261b12bd71da19f847d4e58d8d" category="cell">UI / API存取：確保此連接埠在裝載Astra Control Center的叢集與每個受管理叢集之間都開啟</block>
   <block id="24efa4ba853cd9af293a840b0bf27678" category="cell">度量使用者</block>
   <block id="c2b9f54ff75ba870e024a0704429b5a7" category="cell">Astra Control Center工作節點</block>
   <block id="38f629170ac3ab74b9d6d2cc411c2f3c" category="cell">9090</block>
@@ -3447,4 +3446,9 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="76356ba85ed09ac1c7a6d1fbf72a3bfe" category="list-text">[[enable - psa]]*Enable PSA restrictions * ：如果叢集已啟用 Pod 安全許可強制（ Kubernetes 1.25 及更新叢集的標準）、則您必須啟用 PSA 對這些命名空間的限制：</block>
   <block id="6ec7da0a465c6f281367f7b3cc204a04" category="list-text"><block ref="cadbba5231afda9b003503d57805b87d" prefix="" category="inline-code"></block> 命名空間：</block>
   <block id="6e9af694d79083d4bda3f226db24b704" category="list-text"><block ref="ab22b85c122f9a24c4ad6781f066be29" prefix="" category="inline-code"></block> 命名空間：</block>
+  <block id="6d26bffa3f2c51cba98a836beaa92f94" category="cell">UI / API 存取 - 確保 Astra Control Center 和用於存取 Astra Control Center 的系統之間雙向開啟此連接埠</block>
+  <block id="95a19d64e8d86d082c85e6f6ffc78968" category="cell">託管 Kubernetes 叢集</block>
+  <block id="1351c5abff1fb0f0f349af5e26b94ac5" category="cell">443/643.
+* 注意 * ：受管理叢集使用的連接埠可能會因叢集而異。請參閱叢集軟體廠商提供的文件。</block>
+  <block id="3f55106e32511a9a3d0948154923bc88" category="cell">與託管叢集通訊：確保此連接埠在託管 Astra Control Center 的叢集和每個託管叢集之間都是開放的</block>
 </blocks>
