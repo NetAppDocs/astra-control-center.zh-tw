@@ -2782,7 +2782,6 @@
   <block id="96e0534a032f957fed03525ccf5af5e8" category="paragraph">客戶需求日：</block>
   <block id="d471227530b356aec7c6fbcaee9e9319" category="list-text">編輯 TLS 儲存 CRD 以使用下列命令和範例指向您的新憑證密碼名稱、以適當的資訊取代括弧 &lt;&gt; 中的預留位置值</block>
   <block id="61790943e1aa3906439ccf28814ccf38" category="cell">Azure Stack HCI 21H2 和 22H2 、含 1.24.x 和 1.5.x</block>
-  <block id="7a1e78fd1adb53e6f4397fb295df4f23" category="cell">4.11 至 4.13</block>
   <block id="d7946d05be60978f2368ce8e5ce14e28" category="list-text">Longhorn 1.5.0 或更新版本</block>
   <block id="37cc34ea0413475a49903662efbf2810" category="inline-link">Longhorn 文件</block>
   <block id="44d4c1083bf8b94adeda91dc8c74c6a4" category="list-text">需要手動建立 Volume SnapshotClass 物件。請參閱<block ref="51655f668612f34d87bb8550343c1042" category="inline-link-rx"></block> 以取得相關指示。</block>
@@ -3451,4 +3450,5 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="1351c5abff1fb0f0f349af5e26b94ac5" category="cell">443/643.
 * 注意 * ：受管理叢集使用的連接埠可能會因叢集而異。請參閱叢集軟體廠商提供的文件。</block>
   <block id="3f55106e32511a9a3d0948154923bc88" category="cell">與託管叢集通訊：確保此連接埠在託管 Astra Control Center 的叢集和每個託管叢集之間都是開放的</block>
+  <block id="89de75d28b7402eb7cc9790aa9e4f669" category="cell">4.11 至 4.14</block>
 </blocks>
