@@ -30,7 +30,8 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 
 TIP: 在第三個故障網域或次要站台中部署 Astra Control Center 。這是應用程式複寫和無縫災難恢復的建議。
 
-* * 請考慮 Pod 安全性原則 * ：如果您已在環境中設定或想要設定 Pod 安全性原則、請熟悉 Pod 安全性原則、以及它們對 Astra Control Center 安裝的影響。請參閱 link:../concepts/understand-pod-security.html["Pod 安全限制"^]。
+
+
 * * 確保健康服務 * ：檢查所有 API 服務是否均處於健全狀態且可用：
 +
 [source, console]
