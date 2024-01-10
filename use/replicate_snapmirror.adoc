@@ -47,7 +47,12 @@ NOTE: 您可以在相反方向同時複寫不同的應用程式。例如、應�
 Astra Control 應用程式複寫需要先滿足下列先決條件、才能開始進行：
 
 .叢集 ONTAP
-* * Astra Trident * ： Astra Trident 版本 22.10 或更新版本必須同時存在於使用 ONTAP 作為後端的來源叢集和目的地 Kubernetes 叢集上。
+* * Astra Trident * ： Astra Trident 版本 22.10 或更新版本必須同時存在於使用 ONTAP 作為後端的來源叢集和目的地 Kubernetes 叢集上。Astra Control 使用下列驅動程式所支援的儲存類別、以 NetApp SnapMirror 技術支援複寫：
++
+** `ontap-nas`
+** `ontap-san`
+
+
 * * 授權 * ：使用資料保護套件的 ONTAP SnapMirror 非同步授權必須同時在來源和目的地 ONTAP 叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^] 以取得更多資訊。
 
 

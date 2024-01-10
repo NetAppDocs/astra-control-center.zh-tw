@@ -1176,11 +1176,6 @@
   <block id="d193cd9a2432eca22e5cf0d06dcee1e6" category="section-title">複寫先決條件</block>
   <block id="9fecd08b776fdfca7b33426363edf913" category="inline-link">叢集與SVM對等概觀</block>
   <block id="ba84728ffba482ceb12371a53be2f636" category="inline-link">SnapMirror授權概述ONTAP</block>
-  <block id="52913e7a98da14ff1b85bfe6ade5baae" category="section-title">由Astra Control Center安裝的PSPS</block>
-  <block id="441bc72de0516ac10b182a0da6d92ddc" category="section-title">在安裝期間建立PSPS</block>
-  <block id="fa8501fe06bb26b6d228be2795ca7ab7" category="paragraph">新原則和物件具有下列屬性：</block>
-  <block id="f489543943b835018355a7f98551ed7e" category="section-title">在備份作業期間建立PSPS</block>
-  <block id="0606641f2b729119d7709942743b8888" category="section-title">叢集管理期間建立的PSPS</block>
   <block id="e562349c27811f1520b3c670e513cda3" category="section-title">移除資源限制</block>
   <block id="66abbc76b1b539a19eab77ac5f290859" category="paragraph">您可以使用下列步驟擷取及移除這些配額和限制。在這些範例中、命令輸出會在命令之後立即顯示。</block>
   <block id="6c999f1f4bd422b4305a76a527b7e862" category="list-text">依名稱刪除所有資源配額：</block>
@@ -1646,12 +1641,6 @@
   <block id="a62af64f81e65194efb6011308308c81" category="list-text">部署在一個或多個命名空間內的個別應用程式（本範例使用helm3）</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">一組資源、由一個或多個命名空間內的Kubernetes標籤識別</block>
   <block id="19739a1b4bb767473bb93e4b46857d21" category="paragraph">當您將叢集新增至Astra Control Center時、系統會提示您在該叢集上選取先前設定的儲存類別作為預設儲存類別。當持續磁碟區宣告（PVc）中未指定任何儲存類別時、就會使用此儲存類別。預設儲存類別可隨時在Astra Control Center內變更、而任何儲存類別都可隨時在PVc或Helm圖表中指定儲存類別名稱、以供使用。請確定您只為Kubernetes叢集定義單一預設儲存類別。</block>
-  <block id="f5e1d8b0770bb73b3dfb08ad39ded132" category="summary">安裝Astra Control Center之前、您必須先瞭解Pod安全功能的運作方式。</block>
-  <block id="6b0fa39c831534ec56dc4961f42c32c5" category="doc">Pod安全性</block>
-  <block id="8a0f5030dd9899e876c3e8a355890b18" category="paragraph">Astra Control Center透過pod安全性原則（ASP）和pod安全性許可（Ps）來支援權限限制。這些架構可讓您限制哪些使用者或群組能夠執行容器、以及這些容器可以擁有哪些權限。</block>
-  <block id="76c76b3c18290cf8627af11b8fe7962a" category="paragraph">部分Kubernetes發佈版本的預設Pod安全性組態可能過於嚴加限制、因此在安裝Astra Control Center時會發生問題。</block>
-  <block id="cafa60baff264721b406c2ce9d383fd5" category="paragraph">您可以使用此處提供的資訊和範例來瞭解Astra Control Center所做的Pod安全性變更、並使用pod安全方法來提供所需的保護、而不會干擾Astra Control Center功能。</block>
-  <block id="c90727acfbbc4ca587a6b933b72e196f" category="section-title">由Astra Control Center執行的SSA</block>
   <block id="7e5d4de008d007916f8abfe6f4459cae" category="list-text"><block ref="70d71fa7fe570d7c6b4b91fbffb2fddd" category="inline-xref-macro-rx"></block></block>
   <block id="d0b3f89887aa2260c450d3669d7213e0" category="list-text"><block ref="956543f3ee60c60903e04dc51898ac93" category="inline-xref-macro-rx"></block></block>
   <block id="fa9d4c270a108ea9b1d4bf38e8af0f1b" category="list-text"><block ref="cfdaae948ee545174f8ac3955e092c2a" category="inline-xref-macro-rx"></block></block>
@@ -1879,9 +1868,6 @@
   <block id="f789b438cbc1e82cd52918fc029eeb85" category="sidebar">利用Astra Control REST API實現自動化</block>
   <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">應用程式管理</block>
   <block id="27042a183bb69f835a160266dc686d7e" category="paragraph">某些環境使用資源配額和限制範圍物件、以防止命名空間中的資源消耗叢集上的所有可用CPU和記憶體。Astra Control Center並未設定上限、因此不符合這些資源。如果您的環境是以這種方式設定、則需要從您打算安裝Astra Control Center的命名空間中移除這些資源。</block>
-  <block id="b8d4d634b190031290c70773522846be" category="paragraph">在Astra Control Center安裝期間、Astra Control Center營運者會安裝自訂的Pod安全性原則A<block ref="bbbabdbe1b262f75d99d62880b953be1" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 用於支援Astra Control Center命名空間中Astra Control Center服務部署的物件。</block>
-  <block id="8513cb080cab78ccf96de84f5f78e0bb" category="paragraph">在備份作業期間、Astra Control Center會建立動態Pod安全性原則<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 物件：這些支援在個別命名空間中執行的備份程序。</block>
-  <block id="be8388c8f6217d1c42721f925d1fd7a9" category="paragraph">當您管理叢集時、Astra Control Center會在託管叢集中安裝NetApp監控操作員。這位營運者會建立一個Pod安全性原則、a<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 物件和<block ref="ec7eab019566cfca91934ab1e0073511" prefix=" " category="inline-code"></block> 在Astra Control Center命名空間中部署遙測服務的物件。</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="section-title">下一步</block>
   <block id="a4da44ef0ecd9d3734b7e2c7ba1db457" category="list-text">切換到tar檔案的根目錄。您應該會看到這個檔案和目錄：</block>
   <block id="a5099f5631b11f07c52cbab5ff1c62db" category="list-text">將Astra Control Center映像目錄中的套件映像推送到本機登錄。執行之前、請先進行下列替換<block ref="2957bfd514a0f16d8946142cd37400fd" prefix=" " category="inline-code"></block> 命令：</block>
@@ -2636,7 +2622,6 @@
   <block id="d79b6655a940561714d550a1c8160ab1" category="paragraph">使用Astra Control、您可以利用NetApp SnapMirror技術的非同步複寫功能、利用低RPO（恢復點目標）和低RTO（恢復時間目標）、為應用程式建立營運不中斷。設定完成後、您的應用程式就能將資料和應用程式變更從一個儲存後端複寫到另一個儲存後端、在同一個叢集或不同叢集之間複寫。</block>
   <block id="9b680dd780b9b2f23b7b82214b8ac6cb" category="list-text">內部站台 A 到內部站台 A</block>
   <block id="feb06739d88af83f802d1d27e9957a4f" category="admonition">您可以在相反方向同時複寫不同的應用程式。例如、應用程式A、B、C可以從資料中心1複寫到資料中心2、而應用程式X、Y、Z可以從資料中心2複寫到資料中心1。</block>
-  <block id="91e72b9550cecc5282265dceea3825e2" category="list-text">* Astra Trident * ： Astra Trident 版本 22.10 或更新版本必須同時存在於使用 ONTAP 作為後端的來源叢集和目的地 Kubernetes 叢集上。</block>
   <block id="02b05cdd8f0a8c426f307085cc1004f7" category="list-text">* 叢集與 SVM* ：必須對 ONTAP 儲存設備的後端進行對等處理。請參閱<block ref="60333a598df416e49fbceb5a88dce370" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="7a9bb8c391edea6ea22cd61c24a950c5" category="list-text">*Astra Trident 與 SVM* ：對等的遠端 SVM 必須可用於目的地叢集上的 Astra Trident 。</block>
   <block id="45a50040e8d78cff10f199bb2d56942f" category="list-text">選擇 Astra Control 拍攝應用程式快照的頻率（包括應用程式的 Kubernetes 資源、以及每個應用程式磁碟區的磁碟區快照）</block>
@@ -2793,7 +2778,6 @@
   <block id="c07ee5debf5f3a3fef16c1ee5e8e4942" category="inline-link">NAS</block>
   <block id="a5c314c9c3a96fcd331ae9d454b5c305" category="list-text"><block ref="a5c314c9c3a96fcd331ae9d454b5c305" category="inline-link-rx"></block></block>
   <block id="8cf3b51c0706caf62937352ed2233eb9" category="example-title">展開以進行其他安裝程序</block>
-  <block id="da34d7b3ad82100be38c4bc4758b9a28" category="inline-link-macro">Pod 安全限制</block>
   <block id="91c27887bf935546865c646ae339197c" category="list-text">列出可用的 NetApp Astra Kubectl 外掛程式二進位檔：</block>
   <block id="0e4c628a5a8957cfc5bfe05ab3d4cade" category="list-text">將作業系統和 CPU 架構所需的檔案移至目前路徑、並將其重新命名為<block ref="90432a9da14d46e4d20c4b841576b1ee" prefix=" " category="inline-code"></block>：</block>
   <block id="509e9a9c4ddecec71646527fad155699" category="list-text">匯出 Astra Control Center 主機叢集的 Kribeconfig ：</block>
@@ -3048,7 +3032,6 @@ RKE 2 （ v1.26.x ）搭配 Rancher 2.7</block>
   <block id="77d0972678b1443a036216745289ebfe" category="paragraph">Astra Trident 23.01 或更新版本已安裝及設定、 NetApp ONTAP 9.9.1 或更新版本將用作儲存後端 [[azure-register]]</block>
   <block id="7c8b38b671e18a6ca924f7b2dfeb5b29" category="list-text">* 安裝 Red Hat OpenShift OperatorHub * ：請使用此選項 <block ref="3070b96c53dc6268c37367db253e962f" category="inline-link-macro-rx"></block> 使用 OperatorHub 在 OpenShift 上安裝 Astra Control Center 。</block>
   <block id="748a7a1711b184c4e02102a84264406d" category="list-text">* 符合環境先決條件 * ： <block ref="689b20f2e0a9cb0a12bc48475b3f81ee" category="inline-link-macro-rx"></block>。</block>
-  <block id="734271f586009a9dcb0721580301649c" category="list-text">* 請考慮 Pod 安全性原則 * ：如果您已在環境中設定或想要設定 Pod 安全性原則、請熟悉 Pod 安全性原則、以及它們對 Astra Control Center 安裝的影響。請參閱 <block ref="d77e6e5f0b1b5e8f15429de2d058f94b" category="inline-link-macro-rx"></block>。</block>
   <block id="4c6af79913263c3d336738d84e09cdce" category="list-text">* 確保健康服務 * ：檢查所有 API 服務是否均處於健全狀態且可用：</block>
   <block id="ce77f4b2ceb95d91648d61c8dd5817d5" category="list-text">* 確保可路由的 FQDN* ：您打算使用的 Astra FQDN 可路由至叢集。這表示您在內部DNS伺服器中有DNS項目、或是使用已註冊的核心URL路由。</block>
   <block id="437d0026f569b2af39f38c878b425f04" category="list-text">* 設定憑證管理員 * ：如果叢集中已存在憑證管理員、您需要執行一些動作 <block ref="7f9e8cec8531f8660dfaaf382da03535" category="inline-link-macro-rx"></block> 因此Astra Control Center不會嘗試安裝自己的憑證管理程式。依預設、Astra Control Center會在安裝期間安裝自己的憑證管理程式。</block>
@@ -3357,7 +3340,6 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="2068f70db106b56bd996eac3699fdfcf" category="list-text">NetApp StorageGRID 使用已設定 S3 物件鎖定的 S3 儲存區</block>
   <block id="81a25fa8f10fc7cec301084797002d71" category="paragraph">使用不可變備份時請注意下列事項：</block>
   <block id="046b0dc975ab97773b3ec3307b750bf6" category="list-text">Astra Control 不支援資料生命週期管理原則、也不支援手動刪除用於不可變備份的貯體上的物件。請確定您的儲存後端並未設定為管理 Astra Control 快照或備份資料的生命週期。</block>
-  <block id="7568249152714205d217e48a3ef0bb10" category="paragraph">當您在 Kubernetes 1.24 上安裝 Astra Control Center 時、會在安裝期間建立數個 Pod 安全性原則。其中有些是永久性的、有些是在特定作業期間建立、一旦作業完成、就會移除。當主機叢集執行Kubernetes 1.25或更新版本時、Astra Control Center不會嘗試安裝ASP、因為這些版本不支援這些應用程式。</block>
   <block id="99d812e9a37f17344dd9e9d894e9cb39" category="paragraph">請透過成為來傳送有關文件的意見反應 <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> 或傳送電子郵件至doccomments@netapp.com。</block>
   <block id="ab04bf08161dfce9831a1c265d0260fb" category="section-title">2023 年 11 月 7 日（ 23.10.0 ）</block>
   <block id="d19668a1d8d1bd385693755af3a4d795" category="inline-link-macro">簡單步驟</block>
@@ -3438,8 +3420,6 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">如果您有現有的 Astra Trident 、請將其從裝載它的叢集上解除安裝</block>
   <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
   <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">在啟用 Astra Control Provisioner 的情況下安裝 Astra Trident <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
-  <block id="591fd31287d2fc729bd2ed59d856b1e2" category="inline-link-macro">啟用強制</block>
-  <block id="07d347dcf19fe0ea209afdba6b2c1488" category="paragraph">Astra Control Center 可讓您 <block ref="5957daf8ac28c5997f77f7cbb0504148" category="inline-link-macro-rx"></block> 將下列標籤新增至、以取得 Pod 安全許可<block ref="cadbba5231afda9b003503d57805b87d" prefix=" " category="inline-code"></block> 和<block ref="aadb900c6eaeed8ade58660fe972acec" prefix=" " category="inline-code"></block> Astra 命名空間：</block>
   <block id="76356ba85ed09ac1c7a6d1fbf72a3bfe" category="list-text">[[enable - psa]]*Enable PSA restrictions * ：如果叢集已啟用 Pod 安全許可強制（ Kubernetes 1.25 及更新叢集的標準）、則您必須啟用 PSA 對這些命名空間的限制：</block>
   <block id="6ec7da0a465c6f281367f7b3cc204a04" category="list-text"><block ref="cadbba5231afda9b003503d57805b87d" prefix="" category="inline-code"></block> 命名空間：</block>
   <block id="6e9af694d79083d4bda3f226db24b704" category="list-text"><block ref="ab22b85c122f9a24c4ad6781f066be29" prefix="" category="inline-code"></block> 命名空間：</block>
@@ -3452,4 +3432,10 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
   <block id="e04a358cba8d50694f1716ff3cdb4c21" category="paragraph">不可變備份是指在指定期間內無法變更或刪除的備份。當您建立不可變的備份時、 Astra Control 會檢查您所使用的貯體是否為一次寫入多次讀取（ WORM ）貯體、如果是、則可確保從 Astra Control 中進行不可變的備份。
 Astra Control Center 支援使用下列平台和貯體類型建立不可變的備份：</block>
   <block id="2d0336a0c7896d90ad095dbc30578198" category="list-text">如果您在不受支援的平台上備份至 WORM 儲存庫、或是備份至不受支援的儲存庫類型、則可能會產生無法預測的結果、例如即使保留時間已過、備份刪除也會失敗。</block>
+  <block id="2b298e0fe3f26bd15bd0a6fde1cc37ca" category="paragraph">Astra Control 支援使用下列驅動程式所支援的儲存類別來建立快照：</block>
+  <block id="73b781a615cea2647a87ff2035e296b1" category="list-text"><block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix="" category="inline-code"></block></block>
+  <block id="7699a29541e69341e6490b2f436f651b" category="paragraph">Astra Control 支援使用下列驅動程式所支援的儲存類別來建立備份：</block>
+  <block id="cecdaed309330a9e7dea16b2076957ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block></block>
+  <block id="66d6ba69ab917e04e877d01c6a07fb15" category="list-text">* Astra Trident * ： Astra Trident 版本 22.10 或更新版本必須同時存在於使用 ONTAP 作為後端的來源叢集和目的地 Kubernetes 叢集上。Astra Control 使用下列驅動程式所支援的儲存類別、以 NetApp SnapMirror 技術支援複寫：</block>
+  <block id="d5011d1ec3e5cf71761411134c41a9cd" category="list-text">* 支援的儲存類別驅動程式 * ： Astra Control 支援使用下列驅動程式所支援的儲存類別還原備份：</block>
 </blocks>

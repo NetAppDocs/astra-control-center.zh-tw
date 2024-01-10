@@ -22,6 +22,14 @@ Astra Control可以從快照或備份還原應用程式。將應用程式還原�
 +
 「occ new－project worm新聞」（occ new－project wormPress）「ocadm policy add－scc to－group anyuid system:serviceaccounts：wormPress」（ocadm policy add－scc對使用者權限-z預設值-n wormPress）
 
+* * 支援的儲存類別驅動程式 * ： Astra Control 支援使用下列驅動程式所支援的儲存類別還原備份：
++
+** `ontap-nas`
+** `ontap-nas-economy`
+** `ontap-san`
+** `ontap-san-economy`
+
+
 * * （僅限 ONTAP NAS 經濟型驅動程式）備份與還原 * ：備份或還原使用以作為備份之儲存類別的應用程式之前 `ontap-nas-economy` 請驗證驅動程式 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["ONTAP 儲存後端上的 Snapshot 目錄會隱藏"]。若未隱藏此目錄、可能會導致無法存取您的應用程式、尤其是在使用 NFSv3 的情況下。
 * * Helm 部署的應用程式 * ：完全支援使用 Helm 3 部署的應用程式（或從 Helm 2 升級至 Helm 3 ）。不支援以Helm 2部署的應用程式。
 
