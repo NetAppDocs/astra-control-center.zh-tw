@@ -318,7 +318,7 @@ kubectl apply -f <file name>
 +
 [listing]
 ----
-kubectl get pods -n netapp-acc | grep -e "traefik" | awk '{print $1}' | xargs kubectl delete pod -n netapp-acc"
+kubectl get pods -n netapp-acc | grep -e "traefik" | awk '{print $1}' | xargs kubectl delete pod -n netapp-acc
 ----
 
 
