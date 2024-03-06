@@ -2288,7 +2288,6 @@
   <block id="00055dac2ba112b87a95a368075b9561" category="list-text"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block></block>
   <block id="cd17e7ed84c40a0ff5ecb8b625b1f186" category="list-text"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block></block>
   <block id="3b7cc10179d4a03a32a20e501dfd5870" category="list-text"><block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix="" category="inline-code"></block> （此儲存類別類型無法使用應用程式複寫）</block>
-  <block id="64e73248ee4f8bc7259ec69c97e5b190" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block> （此儲存類別類型無法使用快照、複寫原則和保護原則）</block>
   <block id="bd605fff7af6a2da2d78ab96c4c19217" category="section-title">儲存設備後端</block>
   <block id="e1da14d4a8ef5675e8dac5e30712eaa1" category="paragraph">確保您擁有支援的後端、且具有足夠的容量。</block>
   <block id="acc45c3104df8c76c1bca22e53694a49" category="list-text">* 支援的後端 * ： Astra Control Center 支援下列儲存後端：</block>
@@ -3508,4 +3507,5 @@ Astra Control Center 支援使用下列平台和貯體類型建立不可變的�
   <block id="4eecab048a7c90cfb92e0f04884686e8" category="section-title">當 ONTAP 離線時更新鏡射關係</block>
   <block id="e3b68b1c19a14af5fcb94e147290aec6" category="paragraph">您可以使用 CRD 來執行 SnapMirror 更新、而無需 Astra Control 直接連線至 ONTAP 叢集。請參閱下列 TridentActionMirrorUpdate 範例格式：</block>
   <block id="bc08468157c4a9e3a30eed7ba64cc309" category="paragraph"><block ref="1f9dfae8a369525bce4996df40963532" prefix="" category="inline-code"></block> 反映 TridentActionMirrorUpdate CRD 的狀態。它可以取自 _sued_ 、 _in progress_ 或 _Failed_ 的值。</block>
+  <block id="458f5933715ee2e27d64e6d1f508b6ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block> （此儲存類別類型無法使用快照和複寫原則）</block>
 </blocks>

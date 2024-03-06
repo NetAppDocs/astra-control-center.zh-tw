@@ -94,7 +94,7 @@ NOTE: 在主機叢集上安裝 Astra Control Service 而不設定服務網格、
 *** `ontap-nas`
 *** `ontap-san`
 *** `ontap-san-economy` （此儲存類別類型無法使用應用程式複寫）
-*** `ontap-nas-economy` （此儲存類別類型無法使用快照、複寫原則和保護原則）
+*** `ontap-nas-economy` （此儲存類別類型無法使用快照和複寫原則）
 
 
 
