@@ -32,7 +32,7 @@ Astra Control Provisioner 支援兩種儲存後端的 Kerberos 加密：
 NOTE: 內部部署 ONTAP 儲存後端的 NFS 流量 Kerberos 加密僅支援使用 `ontap-nas` 儲存驅動程式：
 
 .開始之前
-* 請確定您已在託管叢集上啟用 Astra Control Provisioner 。請參閱 link:../use/enable-acp.html["啟用 Astra Control Provisioner"^] 以取得相關指示。
+* 確保您擁有 link:../get-started/enable-acp.html["已啟用 Astra Control Provisioner"] 在託管叢集上。
 * 請確定您可以存取 `tridentctl` 公用程式：
 * 確保您具有 ONTAP 儲存後端的管理員存取權。
 * 確保您知道將從 ONTAP 儲存後端共用的磁碟區名稱。
@@ -195,7 +195,7 @@ kubectl get sc ontap-nas-sc
 +
 [listing]
 ----
-NAME         PROVISIONER             AGE
+NAME            PROVISIONER             AGE
 ontap-nas-sc    csi.trident.netapp.io   15h
 ----
 
@@ -204,7 +204,7 @@ ontap-nas-sc    csi.trident.netapp.io   15h
 
 === 配置 Volume
 
-建立儲存後端和儲存類別之後、您現在可以配置 Volume 。如需相關指示、請參閱 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["配置 Volume"^]。
+建立儲存後端和儲存類別之後、您現在可以配置 Volume 。請參閱以下說明 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["資源配置"^]。
 
 
 
@@ -213,7 +213,7 @@ ontap-nas-sc    csi.trident.netapp.io   15h
 您可以在託管叢集與單一 Azure NetApp Files 儲存後端或 Azure NetApp Files 儲存後端的虛擬集區之間的儲存流量上啟用 Kerberos 加密。
 
 .開始之前
-* 確保您已在託管的 Red Hat OpenShift 叢集上啟用 Astra Control Provisioner 。請參閱 link:../use/enable-acp.html["啟用 Astra Control Provisioner"^] 以取得相關指示。
+* 確保您已在託管的 Red Hat OpenShift 叢集上啟用 Astra Control Provisioner 。請參閱 link:../get-started/enable-acp.html["啟用 Astra Control Provisioner"] 以取得相關指示。
 * 請確定您可以存取 `tridentctl` 公用程式：
 * 請注意中的要求並遵循中的指示、以確保您已準備好 Azure NetApp Files 儲存後端進行 Kerberos 加密 https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-kerberos-encryption["本文檔 Azure NetApp Files"^]。
 * 請確定您使用 Kerberos 加密的任何 NFSv4 磁碟區都已正確設定。請參閱的「 NetApp NFSv4 網域組態」一節（第 13 頁） https://www.netapp.com/media/16398-tr-3580.pdf["NetApp NFSv4 增強與最佳實務指南"^]。
@@ -389,4 +389,4 @@ anf-sc-nfs    csi.trident.netapp.io   15h
 
 === 配置 Volume
 
-建立儲存後端和儲存類別之後、您現在可以配置 Volume 。如需相關指示、請參閱 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["配置 Volume"^]。
+建立儲存後端和儲存類別之後、您現在可以配置 Volume 。請參閱以下說明 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["資源配置"^]。

@@ -62,9 +62,9 @@ NOTE: 理想情況下、應用程式叢集應位於上述影像中 Kubernetes �
 
 圖中未說明：
 
-* 所有叢集都有安裝 Trident 的 ONTAP 後端。
+* 所有叢集都安裝 ONTAP 後端與 Astra Trident 或 Astra Control Provisioner 。
 * 在此組態中、 OpenShift 叢集使用 MetalLB 做為負載平衡器。
-* Snapshot 控制器和 Volume SnapshotClass 也會安裝在所有叢集上、如中所述 link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["先決條件"^]。
+* Snapshot 控制器和 Volume SnapshotClass 也會安裝在所有叢集上、如中所述 link:../get-started/prep-for-cluster-management.html["先決條件"]。
 
 
 
@@ -87,8 +87,8 @@ NOTE: 雖然未說明、 Astra Control Center 營運者也可以部署在與 Ast
 . 從次要 Astra Control Center 執行個體（在上執行）管理主要 Astra Control Center 應用程式和目的地叢集 `ocp-cluster-2` 叢集）：
 +
 .. 登入次要 Astra Control Center 執行個體。
-.. link:../get-started/setup_overview.html#add-cluster["新增主要 Astra Control Center 叢集"] (`ocp-cluster-1`）。
-.. link:../get-started/setup_overview.html#add-cluster["新增目的地第三叢集"] (`ocp-cluster-3`）用於還原。
+.. link:../get-started/add-cluster.html["新增主要 Astra Control Center 叢集"] (`ocp-cluster-1`）。
+.. link:../get-started/add-cluster.html["新增目的地第三叢集"] (`ocp-cluster-3`）用於還原。
 
 
 . 在次要 Astra Control Center 上管理 Astra Control Center 和 Astra Control Center 營運者：
@@ -117,16 +117,16 @@ NOTE: 雖然未說明、 Astra Control Center 營運者也可以部署在與 Ast
 . 備份 Astra Control Center 和駕駛員：
 +
 .. 在次要 Astra Control Center 上、選取應用程式索引標籤、瀏覽至應用程式頁面。
-.. link:../use/protect-apps.html#create-a-backup["備份"^] Astra Control Center 應用程式 (`netapp-acc`）。
-.. link:../use/protect-apps.html#create-a-backup["備份"^] 營運者 (`netapp-acc-operator`）。
+.. link:../use/protect-apps.html#create-a-backup["備份"] Astra Control Center 應用程式 (`netapp-acc`）。
+.. link:../use/protect-apps.html#create-a-backup["備份"] 營運者 (`netapp-acc-operator`）。
 
 
-. 在您備份 Astra Control Center 和營運者之後、請透過模擬災難恢復（ DR ）案例 link:../use/uninstall_acc.html["解除安裝 Astra Control Center"^] 從主叢集。
+. 在您備份 Astra Control Center 和營運者之後、請透過模擬災難恢復（ DR ）案例 link:../use/uninstall_acc.html["解除安裝 Astra Control Center"] 從主叢集。
 +
 
-NOTE: 您將將 Astra Control Center 還原至新叢集（本程序所述的第三個 Kubernetes 叢集）、並將相同的 DNS 作為新安裝 Astra Control Center 的主要叢集。
+NOTE: 您可以將 Astra Control Center 還原至新叢集（本程序所述的第三個 Kubernetes 叢集）、並使用與新安裝的 Astra Control Center 主叢集相同的 DNS 。
 
-. 使用次要 Astra Control Center 、 link:../use/restore-apps.html["還原"^] Astra Control Center 應用程式從其備份中的主要執行個體：
+. 使用次要 Astra Control Center 、 link:../use/restore-apps.html["還原"] Astra Control Center 應用程式從其備份中的主要執行個體：
 +
 .. 選取 * 應用程式 * 、然後選取 Astra Control Center 應用程式的名稱。
 .. 從「動作」欄的「選項」功能表中、選取 * 還原 * 。
@@ -156,7 +156,7 @@ kubectl get acc -n netapp-acc
 [listing]
 ----
 NAME  UUID                                 VERSION    ADDRESS                             READY
-astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.10.0-68 ocp-cluster-1.company.com           True
+astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 24.02.0-65 ocp-cluster-1.company.com           True
 ----
 .. 如果是 `ADDRESS` 上述回應中的欄位沒有主要 Astra Control Center 執行個體的 FQDN 、請更新組態以參考 Astra Control Center DNS ：
 +
@@ -184,7 +184,7 @@ kubectl get acc -n netapp-acc
 
 == 步驟 1 選項：使用複寫保護 Astra Control Center
 
-本程序說明設定所需的步驟 link:../use/replicate_snapmirror.html["Astra Control Center 複寫"^] 保護主要 Astra Control Center 執行個體。
+本程序說明設定所需的步驟 link:../use/replicate_snapmirror.html["Astra Control Center 複寫"] 保護主要 Astra Control Center 執行個體。
 
 在此範例中、 Astra Control Center 一律安裝在 `netapp-acc` 命名空間和運算子會安裝在 `netapp-acc-operator` 命名空間。
 
@@ -197,8 +197,8 @@ kubectl get acc -n netapp-acc
 . 從次要 Astra Control Center 執行個體管理主要 Astra Control Center 應用程式和目的地叢集：
 +
 .. 登入次要 Astra Control Center 執行個體。
-.. link:../get-started/setup_overview.html#add-cluster["新增主要 Astra Control Center 叢集"] (`ocp-cluster-1`）。
-.. link:../get-started/setup_overview.html#add-cluster["新增目的地第三叢集"] (`ocp-cluster-3`）用於複寫。
+.. link:../get-started/add-cluster.html["新增主要 Astra Control Center 叢集"] (`ocp-cluster-1`）。
+.. link:../get-started/add-cluster.html["新增目的地第三叢集"] (`ocp-cluster-3`）用於複寫。
 
 
 . 在次要 Astra Control Center 上管理 Astra Control Center 和 Astra Control Center 營運者：
@@ -217,8 +217,8 @@ NOTE: 複寫需要主要 Astra Control Center 叢集和目的地叢集 (`ocp-clu
 在每個後端被逐一偵測並新增至 Astra Control 之後、後端會出現在「後端」頁面的 * 探索 * 標籤中。
 
 +
-.. link:../get-started/setup_overview.html#add-a-storage-backend["新增對等後端"^] 至主叢集上的 Astra Control Center 。
-.. link:../get-started/setup_overview.html#add-a-storage-backend["新增對等後端"^] 至目的地叢集上的 Astra Control Center 。
+.. link:../get-started/add-storage-backend.html["新增對等後端"] 至主叢集上的 Astra Control Center 。
+.. link:../get-started/add-storage-backend.html["新增對等後端"] 至目的地叢集上的 Astra Control Center 。
 
 
 . 設定複寫：
@@ -379,7 +379,7 @@ kubectl get acc -n netapp-acc
 [listing]
 ----
 NAME  UUID                                 VERSION    ADDRESS                             READY
-astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.10.0-68 ocp-cluster-1.company.com           True
+astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 24.02.0-65 ocp-cluster-1.company.com           True
 ----
 * * 確認部署狀態 * ：顯示 Astra Control Center 部署資訊以確認 `Deployment State` 是 `Deployed`。
 +

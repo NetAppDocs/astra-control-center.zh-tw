@@ -1,0 +1,436 @@
+---
+sidebar: sidebar 
+permalink: get-started/enable-acp.html 
+keywords: Astra Control Provisioner install, acp, enable, astra trident upgrade, upgrade trident 
+summary: 啟用 Astra Control Provisioner 以存取進階儲存資源配置與管理功能。 
+---
+= 啟用 Astra Control Provisioner
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Trident 版本 23.10 及更新版本包含使用 Astra Control Provisioner 的選項、可讓獲授權的 Astra Control 使用者存取進階儲存資源配置功能。Astra Control Provisioner 除了提供標準 Astra Trident CSI 型功能之外、還提供這項延伸功能。
+
+Astra Control 的更新將取代 Astra Trident 做為儲存資源配置程式和 Orchestrator 、並成為 Astra Control 使用的必要項目。因此、強烈建議 Astra Control 使用者啟用 Astra Control Provisioner 。Astra Trident 將繼續保持開放原始碼、並以 NetApp 的新 CSI 和其他功能來發行、維護、支援及更新。
+
+.關於這項工作
+如果您是獲得授權的 Astra Control Center 使用者、且您想要使用 Astra Control Provisioner 功能、則應遵循此程序。如果您是 Astra Trident 使用者、而且想要使用 Astra Control Provisioner 所提供的額外功能、而不同時使用 Astra Control 、則也應遵循此程序。
+
+在每種情況下、 Astra Trident 24.02 預設不會啟用資源配置程式功能、而且必須啟用。
+
+.開始之前
+如果您要啟用 Astra Control Provisioner 、請先執行下列步驟：
+
+[role="tabbed-block"]
+====
+.Astra Control Provisioners 使用 Astra Control Center 的使用者
+* * 取得 Astra Control Center 授權 * ：您需要 link:../concepts/licensing.html["Astra Control Center 授權"] 啟用 Astra Control Provisioner 並存取其所提供的功能。
+* * 安裝或升級至 Astra Control Center 23.10 或更新版本 * ：如果您打算使用最新的 Astra Control Provisioner 功能（ 24.02 ）搭配 Astra Control 、您將需要最新的 Astra Control Center 版本（ 24.02 ）。
+* * 確認您的叢集具有 AMD64 系統架構 * ： Astra Control Provisioner 影像同時在 AMD64 和 ARM64 CPU 架構中提供、但 Astra Control Center 僅支援 AMD64 。
+* * 取得登錄存取的 Astra 控制服務帳戶 * ：如果您打算使用 Astra 控制登錄而非 NetApp 支援網站 來下載 Astra 控制項資源配置程式映像、請完成的登錄 https://bluexp.netapp.com/astra-register["Astra Control Service 帳戶"^]。完成並提交表單並建立 BlueXP 帳戶後、您會收到 Astra Control Service 歡迎電子郵件。
+* * 如果您已安裝 Astra Trident 、請確認其版本位於四個版本的視窗 * ：如果 Astra Trident 位於 24.02 版的四個版本視窗內、您可以使用 Astra Control Provisioner 直接升級至 Astra Trident 24.02 。例如、您可以直接從 Astra Trident 23.04 升級至 24.02 。
+
+
+.Astra Control Provisioner 僅限使用者
+--
+* * 取得 Astra Control Center 授權 * ：您需要 link:../concepts/licensing.html["Astra Control Center 授權"] 啟用 Astra Control Provisioner 並存取其所提供的功能。
+* * 如果您已安裝 Astra Trident 、請確認其版本位於四個版本的視窗 * ：如果 Astra Trident 位於 24.02 版的四個版本視窗內、您可以使用 Astra Control Provisioner 直接升級至 Astra Trident 24.02 。例如、您可以直接從 Astra Trident 23.04 升級至 24.02 。
+* * 取得登錄存取的 Astra Control Service 帳戶 * ：您需要存取登錄才能下載 Astra Control Provisioner 映像。若要開始使用、請完成的註冊 https://bluexp.netapp.com/astra-register["Astra Control Service 帳戶"^]。完成並提交表單並建立 BlueXP 帳戶後、您會收到 Astra Control Service 歡迎電子郵件。
+
+
+--
+====
+
+
+== （步驟 1 ）取得 Astra Control Provisioner 映像
+
+Astra Control Center 使用者可以使用 Astra Control 登錄或 NetApp 支援網站 方法取得 Astra Control Provisioner 映像。想要在不使用 Astra Control 的情況下使用 Astra Control Provisioner 的 Astra Trident 使用者、應使用登錄方法。
+
+[role="tabbed-block"]
+====
+.Astra Control 影像登錄
+--
+
+NOTE: 您可以在本程序中使用 Podman 而非 Docker 來執行命令。如果您使用的是 Windows 環境、建議您使用 PowerShell 。
+
+. 存取 NetApp Astra Control 影像登錄：
++
+.. 登入 Astra Control Service Web UI 、然後選取頁面右上角的圖示。
+.. 選擇* API存取*。
+.. 記下您的帳戶 ID 。
+.. 從同一頁面選取 * 產生 API 權杖 * 、然後將 API 權杖字串複製到剪貼簿、並將其儲存在編輯器中。
+.. 使用您偏好的方法登入 Astra Control 登錄：
++
+[source, docker]
+----
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
++
+[source, crane]
+----
+crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
+
+
+. （僅限自訂登錄）請依照下列步驟將映像移至自訂登錄。如果您未使用登錄 , 請遵循中的 Trident 運算子步驟 link:../get-started/enable-acp.html#step-2-enable-astra-control-provisioner-in-astra-trident["下一節"]。
++
+.. 從登錄中拉出 Astra Control Provisioner 映像：
++
+
+NOTE: 所擷取的映像不支援多個平台、而且僅支援與擷取映像的主機相同的平台、例如 Linux AMD64 。
+
++
+[source, console]
+----
+docker pull cr.astra.netapp.io/trident-acp:24.02.0 --platform <cluster platform>
+----
++
+範例：
+
++
+[listing]
+----
+docker pull cr.astra.netapp.io/trident-acp:24.02.0 --platform linux/amd64
+----
+.. 標記影像：
++
+[source, console]
+----
+docker tag cr.astra.netapp.io/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
+----
+.. 將映像推送至自訂登錄：
++
+[source, console]
+----
+docker push <my_custom_registry>/trident-acp:24.02.0
+----
+
+
+
+
+
+NOTE: 您可以使用 Crane 複本來取代執行下列 Docker 命令：
+`crane copy cr.astra.netapp.io/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0`
+
+--
+.NetApp 支援網站
+--
+. 下載 Astra Control Provisioner 套件 (`trident-acp-[version].tar`）從 https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Astra Control Center 下載頁面"^]。
+. （建議但為選用）下載 Astra Control Center （ Astra 控制中心）的憑證與簽名套件（ Astra 控制中心 - certs-[version].tar.gz ）、以驗證 Trident -ACP-[version] tar 套件的簽名。
++
+[source, console]
+----
+tar -vxzf astra-control-center-certs-[version].tar.gz
+----
++
+[source, console]
+----
+openssl dgst -sha256 -verify certs/AstraControlCenterDockerImages-public.pub -signature certs/trident-acp-[version].tar.sig trident-acp-[version].tar
+----
+. 載入 Astra Control Provisioner 映像：
++
+[source, console]
+----
+docker load < trident-acp-24.02.0.tar
+----
++
+回應：
+
++
+[listing]
+----
+Loaded image: trident-acp:24.02.0-linux-amd64
+----
+. 標記影像：
++
+[source, console]
+----
+docker tag trident-acp:24.02.0-linux-amd64 <my_custom_registry>/trident-acp:24.02.0
+----
+. 將映像推送至自訂登錄：
++
+[source, console]
+----
+docker push <my_custom_registry>/trident-acp:24.02.0
+----
+
+
+--
+====
+
+
+== （步驟 2 ）在 Astra Trident 中啟用 Astra Control Provisioner
+
+判斷原始安裝方法是否使用 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method["運算子（手動或使用 Helm ）或 tridentctl"^] 並根據您的原始方法完成適當的步驟。
+
+[role="tabbed-block"]
+====
+.Astra Trident 運算子
+--
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["下載 Astra Trident 安裝程式並將其解壓縮"^]。
+. 如果您尚未安裝 Astra Trident 、或是從原始 Astra Trident 部署中移除運算子、請完成下列步驟：
++
+.. 建立客戶需求日：
++
+[source, console]
+----
+kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
+----
+.. 建立 Trident 命名空間 (`kubectl create namespace trident`）或確認 Trident 命名空間仍然存在 (`kubectl get all -n trident`）。如果已移除命名空間、請重新建立。
+
+
+. 將 Astra Trident 更新為 24.02.0 ：
++
+
+NOTE: 對於執行 Kubernetes 1.24 或更早版本的叢集、請使用 `bundle_pre_1_25.yaml`。對於執行 Kubernetes 1.25 或更新版本的叢集、請使用 `bundle_post_1_25.yaml`。
+
++
+[source, console]
+----
+kubectl -n trident apply -f trident-installer/deploy/<bundle-name.yaml>
+----
+. 確認 Astra Trident 正在執行：
++
+[source, console]
+----
+kubectl get torc -n trident
+----
++
+回應：
+
++
+[listing]
+----
+NAME      AGE
+trident   21m
+----
+. [[Pull 機密 ]] 如果您有使用機密的登錄、請建立秘密來拉出 Astra Control Provisioner 映像：
++
+[source, console]
+----
+kubectl create secret docker-registry <secret_name> -n trident --docker-server=<my_custom_registry> --docker-username=<username> --docker-password=<token>
+----
+. 編輯 TridentOrchestrator CR 並進行下列編輯：
++
+[source, console]
+----
+kubectl edit torc trident -n trident
+----
++
+.. 為 Astra Trident 映像設定自訂登錄位置、或從 Astra Control 登錄中拉出 (`tridentImage: <my_custom_registry>/trident:24.02.0` 或 `tridentImage: netapp/trident:24.02.0`）。
+.. 啟用 Astra Control Provisioner (`enableACP: true`）。
+.. 設定 Astra Control Provisioner 映像的自訂登錄位置、或從 Astra Control 登錄中拉出映像 (`acpImage: <my_custom_registry>/trident-acp:24.02.0` 或 `acpImage: cr.astra.netapp.io/trident-acp:24.02.0`）。
+.. 如果您已建立 <<pull-secrets,影像拉出秘密>> 在本程序稍早的部分、您可以在此設定 (`imagePullSecrets: - <secret_name>`）。請使用您在先前步驟中建立的相同名稱密碼名稱。
+
+
++
+[listing, subs="+quotes"]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  *tridentImage: <registry>/trident:24.02.0*
+  *enableACP: true*
+  *acpImage: <registry>/trident-acp:24.02.0*
+  *imagePullSecrets:
+  - <secret_name>*
+----
+. 儲存並結束檔案。部署程序將會自動開始。
+. 確認已建立運算子、部署和複本集。
++
+[source, console]
+----
+kubectl get all -n trident
+----
++
+
+IMPORTANT: Kubernetes叢集中只應有*一個運算子執行個體*。請勿建立 Astra Trident 運算子的多個部署。
+
+. 驗證 `trident-acp` 容器正在執行 `acpVersion` 是 `24.02.0` 狀態為 `Installed`：
++
+[source, console]
+----
+kubectl get torc -o yaml
+----
++
+回應：
+
++
+[listing]
+----
+status:
+  acpVersion: 24.02.0
+  currentInstallationParams:
+    ...
+    acpImage: <registry>/trident-acp:24.02.0
+    enableACP: "true"
+    ...
+  ...
+  status: Installed
+----
+
+
+--
+.試用
+--
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-tridentctl.html#step-1-download-the-trident-installer-package["下載 Astra Trident 安裝程式並將其解壓縮"^]。
+. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["如果您有現有的 Astra Trident 、請將其從裝載它的叢集上解除安裝"^]。
+. 在啟用 Astra Control Provisioner 的情況下安裝 Astra Trident (`--enable-acp=true`）：
++
+[source, console]
+----
+./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:24.02
+----
+. 確認 Astra Control Provisioner 已啟用：
++
+[source, console]
+----
+./tridentctl -n trident version
+----
++
+回應：
+
++
+[listing]
+----
++----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 24.02.0 | 24.02.0 | 24.02.0. | +----------------+----------------+-------------+
+----
+
+
+--
+.掌舵
+--
+. 如果您已安裝 Astra Trident 23.07.1 或更早版本、 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#uninstall-a-trident-operator-installation["解除安裝"^] 操作員和其他元件。
+. 如果 Kubernetes 叢集執行 1.24 或更早版本、請刪除 PSP ：
++
+[listing]
+----
+kubectl delete psp tridentoperatorpod
+----
+. 新增Astra Trident Helm儲存庫：
++
+[listing]
+----
+helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
+----
+. 更新 Helm 圖表：
++
+[listing]
+----
+helm repo update netapp-trident
+----
++
+回應：
+
++
+[listing]
+----
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "netapp-trident" chart repository
+Update Complete. ⎈Happy Helming!⎈
+----
+. 列出影像：
++
+[listing]
+----
+./tridentctl images -n trident
+----
++
+回應：
+
++
+[listing]
+----
+| v1.28.0            | netapp/trident:24.02.0|
+|                    | docker.io/netapp/trident-autosupport:24.02|
+|                    | registry.k8s.io/sig-storage/csi-provisioner:v4.0.0|
+|                    | registry.k8s.io/sig-storage/csi-attacher:v4.5.0|
+|                    | registry.k8s.io/sig-storage/csi-resizer:v1.9.3|
+|                    | registry.k8s.io/sig-storage/csi-snapshotter:v6.3.3|
+|                    | registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.10.0 |
+|                    | netapp/trident-operator:24.02.0 (optional)
+----
+. 確保 Trident 操作員 24.02.0 可用：
++
+[listing]
+----
+helm search repo netapp-trident/trident-operator --versions
+----
++
+回應：
+
++
+[listing]
+----
+NAME                            CHART VERSION   APP VERSION     DESCRIPTION
+netapp-trident/trident-operator 100.2402.0      24.02.0         A
+----
+. 使用 `helm install` 然後執行下列其中一個選項、其中包括這些設定：
++
+** 部署位置的名稱
+** Astra Trident 版本
+** Astra Control Provisioner 映像的名稱
+** 啟用資源配置程式的旗標
+** （選用）本機登錄路徑。如果您使用的是本機登錄 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html#container-images-and-corresponding-kubernetes-versions["Trident 影像"^] 可以位於一個登錄或不同的登錄中、但所有的SCSI映像都必須位於同一個登錄中。
+** Trident 命名空間
+
+
+
+
+.選項
+* 沒有登錄的映像
+
+
+[listing]
+----
+helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=cr.astra.netapp.io/trident-acp:24.02.0 --set enableACP=true --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
+----
+* 一個登錄中的映像
+
+
+[listing]
+----
+helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=<your-registry>:<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
+----
+* 不同登錄中的映像
+
+
+[listing]
+----
+helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=<your-registry>:<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
+----
+您可以使用 `helm list` 若要檢閱安裝詳細資料、例如名稱、命名空間、圖表、狀態、應用程式版本、和修訂編號。
+
+[NOTE]
+====
+如果您在使用 Helm 部署 Trident 時遇到任何問題、請執行此命令以完全解除安裝 Astra Trident ：
+
+[listing]
+----
+./tridentctl uninstall -n trident
+----
+* 請勿 * https://docs.netapp.com/us-en/trident/troubleshooting.html#completely-remove-astra-trident-and-crds["完全移除 Astra Trident 客戶需求日"^] 在嘗試再次啟用 Astra Control Provisioner 之前、請先將其作為解除安裝的一部分。
+
+====
+--
+====
+
+
+== 結果
+
+Astra Control Provisioner 功能已啟用、您可以使用任何適用於所執行版本的功能。
+
+（僅適用於 Astra Control Center 使用者）安裝 Astra Control Provisioner 之後、在 Astra Control Center UI 中裝載置備程式的叢集將會顯示 `ACP version` 而非 `Trident version` 欄位和目前安裝的版本號碼。
+
+image:ac-acp-version.png["在 UI 中描繪 Astra Control Provisioner 版本位置的螢幕擷取畫面"]
+
+.以取得更多資訊
+* https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-operator-overview.html["Astra Trident 升級文件"^]
+

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concepts/architecture.html 
-keywords: what is astra, astra control, astra control architecture, astra control center, astra control service, kubernetes, netapp, clusters, astra trident 
+keywords: what is astra, astra control, astra control architecture, astra control center, astra control service, kubernetes, netapp, clusters, astra trident, astra control provisioner 
 summary: 以下概述Astra Control環境的各個元件。 
 ---
 = 架構與元件
@@ -14,14 +14,14 @@ summary: 以下概述Astra Control環境的各個元件。
 [role="lead"]
 以下概述Astra Control環境的各個元件。
 
-image:astra-architecture-diagram-v5.png["說明Astra Control架構及其元件的概念性映像"]
+image:astra-architecture-diagram-v6.png["說明Astra Control架構及其元件的概念性映像"]
 
 
 
 == Astra控制元件
 
 * * Kubernetes叢集*：Kubernetes是可攜式、可擴充的開放原始碼平台、可用於管理容器化工作負載與服務、同時促進宣告式組態與自動化。Astra為Kubernetes叢集中託管的應用程式提供管理服務。
-* * Astra Trident *：Astra Trident *是完全受支援的開放原始碼儲存資源配置程式、由NetApp維護、可讓您為Docker和Kubernetes所管理的容器化應用程式建立儲存磁碟區。Astra Trident部署於Astra Control Center時、包含已設定ONTAP 的整套儲存後端。
+* * Astra Control Provisioner* ： Astra Control Provisioner* 是由 NetApp 維護的完全支援的儲存資源配置程式與協調程式、其中包含 Astra Trident CSI 功能、以及延伸的儲存管理功能、因此 Astra Control Provisioner 可讓您為由 Docker 和 Kubernetes 管理的容器化應用程式建立儲存磁碟區。當與 Astra Control Center 部署時、 Astra Control Provisioner 會包含已設定的 ONTAP 儲存後端。
 * *儲存後端*：
 +
 ** Astra Control Service使用下列儲存後端：
@@ -39,7 +39,6 @@ image:astra-architecture-diagram-v5.png["說明Astra Control架構及其元件�
 
 
 
-* *《NetApp雲端基礎架構監控工具》《支援VMware技術》*《支援架構監控工具》、可讓您監控由Astra Control Center管理的Kubernetes叢集的效能與使用率。Cloud Insights Cloud Insights可將儲存使用量與工作負載建立關聯。Cloud Insights當您在Cloud Insights Astra控制中心啟用「支援不中斷連線」時、遙測資訊會顯示在Astra控制中心UI頁面中。
 
 
 
@@ -60,8 +59,6 @@ Astra Control Center也能讓您管理、移轉及保護在VM環境中執行的K
 
 * https://docs.netapp.com/us-en/astra/index.html["Astra Control Service文件"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center文件"^]
-* https://docs.netapp.com/us-en/trident/index.html["Astra Trident文件"^]
 * https://docs.netapp.com/us-en/astra-automation["使用Astra Control API"^]
-* https://docs.netapp.com/us-en/cloudinsights/["本文檔 Cloud Insights"^]
 * https://docs.netapp.com/us-en/ontap/index.html["本文檔 ONTAP"^]
 

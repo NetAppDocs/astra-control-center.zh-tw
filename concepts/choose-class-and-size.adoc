@@ -20,22 +20,15 @@ Astra Control Center 支援 NetApp ONTAP 和 Longhorn 作為儲存後端。
 
 Astra Control Center支援下列項目：
 
-* * Astra Trident 儲存類別以 ONTAP 儲存 * 為後盾：如果您使用的是 ONTAP 後端、 Astra 控制中心可以匯入 ONTAP 後端、以報告各種監控資訊。
+* * ONTAP 儲存設備支援的儲存類別 * ：如果您使用的是 ONTAP 後端、 Astra 控制中心可匯入 ONTAP 後端以報告監控資訊。
 * * 以 Longhorn* 為後盾的 CSI 型儲存類別：您可以搭配 Longhorn Container Storage Interface （ CSI ）驅動程式使用 Longhorn 。
 
 
 
-NOTE: Astra Trident 儲存類別應在 Astra Control Center 之外預先設定。
+NOTE: 儲存類別應為 https://docs.netapp.com/us-en/trident/trident-use/create-stor-class.html["已設定"^] 使用 Astra Control Provisioner 。
 
 
 
 == 儲存類別
 
 當您將叢集新增至Astra Control Center時、系統會提示您在該叢集上選取先前設定的儲存類別作為預設儲存類別。當持續磁碟區宣告（PVc）中未指定任何儲存類別時、就會使用此儲存類別。預設儲存類別可隨時在Astra Control Center內變更、而任何儲存類別都可隨時在PVc或Helm圖表中指定儲存類別名稱、以供使用。請確定您只為Kubernetes叢集定義單一預設儲存類別。
-
-
-
-== 以取得更多資訊
-
-* https://docs.netapp.com/us-en/trident/index.html["Astra Trident文件"^]
-

@@ -27,25 +27,21 @@ NOTE: 確保您選擇架設 Astra Control Center 的 Kubernetes 環境符合環�
 | Kubernetes 在主機叢集上的發佈 | 支援的版本 
 
 
-| Azure Stack HCI 上的 Azure Kubernetes 服務 | Azure Stack HCI 21H2 和 22H2 、含 1.24.x 和 1.5.x 
+| Azure Stack HCI 上的 Azure Kubernetes 服務 | Azure Stack HCI 21H2 和 22H2 、含 1.24.11 至 1.26.6 
 
 
 | Google Anthos | 1.15 至 1.16 （請參閱 <<Google Anthos 入口要求>>） 
 
 
-| Kubernetes （上游） | 1.26 至 1.28 
+| Kubernetes （上游） | 1.27 至 1.29 
 
 
-| Rancher Kubernetes引擎（RKE） | RKE 1.3 搭配 Rancher Manager 2.6
-RKE 1.4 搭配 Rancher Manager 2.7
-RKE 2 （ v1.24.x ）搭配 Rancher 2.6
-RKE 2 （ v1.26.x ）搭配 Rancher 2.7 
+| Rancher Kubernetes引擎（RKE） | RKE 1 ：採用 Rancher Manager 2.7.9 的版本 1.24.17 、 1.25.13 、 1.26.8
+RKE 2 ：版本 1.23.16 和 1.24.13 搭配 Rancher Manager 2.6.13
+RKE 2 ：採用 Rancher Manager 2.7.9 的版本 1.24.17 、 1.25.14 、 1.26.9 
 
 
-| Red Hat OpenShift Container Platform | 4.11 至 4.14 
-
-
-| VMware Tanzu Kubernetes Grid整合版 | 1.16.x （請參閱 <<主機叢集資源需求>>） 
+| Red Hat OpenShift Container Platform | 4.12 至 4.14 
 |===
 
 
@@ -63,7 +59,13 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 ** 預設的VMware TKG和TKGi組態檔案權杖會在部署後10小時內過期。如果您使用Tanzu產品組合產品、則必須產生一個含有非過期權杖的Tanzu Kubernetes叢集組態檔、以避免Astra Control Center與託管應用程式叢集之間發生連線問題。如需相關指示、請造訪 https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.2/nsx-application-platform/GUID-52A52C0B-9575-43B6-ADE2-E8640E22C29F.html["VMware NSxT-T資料中心產品文件。"^]
 ** 使用 `kubectl get nsxlbmonitors -A` 命令以查看您是否已設定服務監視器以接受入口流量。如果存在、則不應安裝MetalLB、因為現有的服務監視器將會覆寫任何新的負載平衡器組態。
 ** 停用要由Astra Control管理的任何應用程式叢集上的TKG或TKGi預設儲存類別強制。您可以編輯來執行此作業 `TanzuKubernetesCluster` 命名空間叢集上的資源。
-** 在TKG或TKGi環境中部署Astra Control Center時、請注意Astra Trident的特定需求。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#other-known-configuration-options["Astra Trident文件"^]。
+** 在 TKG 或 TKGi 環境中部署 Astra Control Center 時、請注意 Astra Control Provisioner 的特定需求：
++
+*** 叢集必須支援特殊權限的工作負載。
+*** 。 `--kubelet-dir` 旗標應設定為kubelet目錄的位置。依預設、這是 `/var/vcap/data/kubelet`。
+*** 使用指定kubelet位置 `--kubelet-dir` 已知適用於Trident運算子、Helm和 `tridentctl` 部署：
+
+
 
 
 
@@ -72,40 +74,42 @@ NOTE: 這些需求假設Astra Control Center是營運環境中唯一執行的應
 
 == 服務網狀網路需求
 
-強烈建議在 Astra Control Center 主機叢集上安裝支援的 Istio 服務網格香草版本。請參閱 https://istio.io/latest/docs/releases/supported-releases/["支援版本"^] 適用於受支援版本的 Istio 。Istio 服務網格（例如 OpenShift Service Mesh ）的品牌版本未通過 Astra Control Center 驗證。
+強烈建議您在 Astra Control Center 主機叢集上安裝支援的 Istio 服務網格香草版本。請參閱 https://istio.io/latest/docs/releases/supported-releases/["支援版本"^] 適用於受支援版本的 Istio 。Istio 服務網格（例如 OpenShift Service Mesh ）的品牌版本未通過 Astra Control Center 驗證。
 
-若要將 Astra Control Center 與主機叢集上安裝的 Istio 服務網格整合、您必須將整合作為 Astra Control Center 的一部分 link:../get-started/install_acc.html["安裝"] 不受此程序影響。
-
-
-NOTE: 在主機叢集上安裝 Astra Control Service 而不設定服務網格、可能會對安全性造成嚴重影響。
+若要將 Astra Control Center 與主機叢集上安裝的 Istio 服務網格整合、您必須將其整合為 Astra Control Center 的一部分 link:../get-started/install_acc.html["安裝"] 而且不受此程序的影響。
 
 
-
-== Astra Trident的需求
-
-確保您符合下列特定環境需求的 Astra Trident 要求：
-
-* * 與 Astra Control Center 搭配使用的最低版本 * ： Astra Trident 23.01 或更新版本已安裝及設定
-* *Astra Trident 的 ONTAP 組態 * ：
-+
-** * 儲存類別 * ：在叢集上至少設定一個 Astra Trident 儲存類別。如果已設定預設儲存類別、請確定它是唯一具有預設指定的儲存類別。
-** * 儲存驅動程式與工作節點 * ：請務必使用適當的儲存驅動程式來設定叢集中的工作節點、以便 Pod 與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：
-+
-*** `ontap-nas`
-*** `ontap-san`
-*** `ontap-san-economy` （此儲存類別類型無法使用應用程式複寫）
-*** `ontap-nas-economy` （此儲存類別類型無法使用快照和複寫原則）
+NOTE: 在主機叢集上安裝和使用 Astra Control Center 而不設定服務網格、可能會對安全性造成嚴重影響。
 
 
 
+== Astra Trident
 
-
+如果您打算在此版本中使用 Astra Trident 而非 Astra Control Provisioner 、則支援 Astra Trident 23.04 及更新版本。Astra Control Center 需要 <<Astra Control 資源配置程式>> 在未來版本中。
 
 
 
 == Astra Control 資源配置程式
 
-若要使用 Astra Control Provisioner 進階儲存功能、您必須安裝 Astra Trident 23.10 或更新版本並啟用 link:../use/enable-acp.html["Astra Control Provisioner 功能"]。
+若要使用 Astra Control Provisioner 進階儲存功能、您必須安裝 Astra Trident 23.10 或更新版本並啟用 link:../get-started/enable-acp.html["Astra Control Provisioner 功能"]。若要使用最新的 Astra Control Provisioner 功能、您需要最新版本的 Astra Trident 和 Astra Control Center 。
+
+* * 與 Astra Control Center 搭配使用的最低 Astra Control Provisioner 版本 * ： Astra Control Provisioner 23.10 或更新版本已安裝及設定。
+
+
+
+
+=== 採用 Astra Trident 的 ONTAP 組態
+
+* * 儲存類別 * ：在叢集上至少設定一個儲存類別。如果已設定預設儲存類別、請確定它是唯一具有預設指定的儲存類別。
+* * 儲存驅動程式與工作節點 * ：請務必使用適當的儲存驅動程式來設定叢集中的工作節點、以便 Pod 與後端儲存設備互動。Astra Control Center支援ONTAP Astra Trident提供的下列支援資訊驅動程式：
++
+** `ontap-nas`
+** `ontap-san`
+** `ontap-san-economy` （此儲存類別類型無法使用應用程式複寫）
+** `ontap-nas-economy` （此儲存類別類型無法使用快照和應用程式複寫原則）
+
+
+
 
 
 
@@ -119,6 +123,7 @@ NOTE: 在主機叢集上安裝 Astra Control Service 而不設定服務網格、
 ** NetApp ONTAP 9.9.1 或更新版本的 AFF 、 FAS 和 ASA 系統
 ** NetApp ONTAP Select 9.9.1 或更新版本
 ** NetApp Cloud Volumes ONTAP 9.9.1 或更新版本
+** （適用於 Astra Control Center 技術預覽） NetApp ONTAP 9.10.1 或更新版本、適用於技術預覽所提供的資料保護作業
 ** Longhorn 1.5.0 或更新版本
 +
 *** 需要手動建立 Volume SnapshotClass 物件。請參閱 https://longhorn.io/docs/1.5.0/snapshots-and-backups/csi-snapshot-support/csi-volume-snapshot-associated-with-longhorn-snapshot/#create-a-csi-volumesnapshot-associated-with-longhorn-snapshot["Longhorn 文件"^] 以取得相關指示。
@@ -157,17 +162,11 @@ NOTE: 在主機叢集上安裝 Astra Control Service 而不設定服務網格、
 * 請確定您擁有適當的 ONTAP 授權
 
 
-若要設定 MetroCluster LIF 、請參閱 Astra Trident 文件、以取得每個驅動程式的詳細資訊：
+若要設定 MetroCluster LIF 、請參閱每個驅動程式的下列選項和範例：
 
 * https://docs.netapp.com/us-en/trident/trident-use/ontap-san-examples.html["SAN"^]
 * https://docs.netapp.com/us-en/trident/trident-use/ontap-nas-examples.html["NAS"^]
 
-
-
-
-== 映像登錄
-
-您必須擁有現有的私有 Docker 映像登錄、才能將 Astra Control Center 建置映像推送至該登錄。您需要提供映像登錄的URL、以便上傳映像。
 
 
 
@@ -177,9 +176,9 @@ Astra Control Center 需要 Astra Control Center 授權。安裝 Astra Control C
 
 您可以報名免費試用 Astra Control Center 。您可以註冊註冊 link:https://bluexp.netapp.com/astra-register["請按這裡"^]。
 
-若要設定授權、請參閱 link:setup_overview.html["使用90天試用版授權"^]。
+若要設定授權、請參閱 link:add-license.html["使用90天試用版授權"]。
 
-若要深入瞭解授權的運作方式、請參閱 link:../concepts/licensing.html["授權"^]。
+若要深入瞭解授權的運作方式、請參閱 link:../concepts/licensing.html["授權"]。
 
 
 
@@ -188,7 +187,7 @@ Astra Control Center 需要 Astra Control Center 授權。安裝 Astra Control C
 設定您的營運環境、確保 Astra Control Center 能夠正常通訊。需要下列網路組態：
 
 * * FQDN 位址 * ：您必須擁有 Astra Control Center 的 FQDN 位址。
-* * 存取網際網路 * ：您應該判斷是否有外部存取網際網路的權限。如果您沒有、部分功能可能會受到限制、例如從NetApp Cloud Insights 接收監控和數據資料、或是將支援組合傳送至 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
+* * 存取網際網路 * ：您應該判斷是否有外部存取網際網路的權限。如果您不這麼做、某些功能可能會受到限制、例如將支援服務組合傳送至 https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
 * * 連接埠存取 * ：裝載 Astra Control Center 的作業環境使用下列 TCP 連接埠進行通訊。您應確保這些連接埠可透過任何防火牆、並設定防火牆、以允許來自Astra網路的任何HTTPS輸出流量。有些連接埠需要在裝載Astra Control Center的環境與每個託管叢集之間進行連線（視情況而定）。
 
 
@@ -203,9 +202,6 @@ NOTE: 您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra
 
 
 | 度量使用者 | Astra Control Center工作節點 | 9090 | HTTPS | 度量資料通訊：確保每個託管叢集都能存取裝載Astra Control Center的叢集上的此連接埠（需要雙向通訊） 
-
-
-| Astra控制中心 | 託管Cloud Insights 版的服務  | 443.. | HTTPS | 通訊Cloud Insights 
 
 
 | Astra控制中心 | Amazon S3儲存貯體供應商 | 443.. | HTTPS | Amazon S3儲存通訊 
@@ -226,13 +222,13 @@ NOTE: 您可以在雙堆疊Kubernetes叢集中部署Astra Control Center、Astra
 
 NOTE: 負載平衡器應使用與Astra Control Center工作節點IP位址位於同一子網路中的IP位址。
 
-如需詳細資訊、請參閱 link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["設定入口以進行負載平衡"^]。
+如需詳細資訊、請參閱 link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["設定入口以進行負載平衡"]。
 
 
 
 === Google Anthos 入口要求
 
-在 Google Anthos 叢集上代管 Astra Control Center 時、請注意 Google Antos 預設包含 MetalLB 負載平衡器和 Istio 入口服務、讓您在安裝期間只需使用 Astra Control Center 的一般入口功能即可。請參閱 link:install_acc.html#configure-astra-control-center["設定Astra控制中心"^] 以取得詳細資料。
+在 Google Anthos 叢集上代管 Astra Control Center 時、請注意 Google Antos 預設包含 MetalLB 負載平衡器和 Istio 入口服務、讓您在安裝期間只需使用 Astra Control Center 的一般入口功能即可。請參閱 link:install_acc.html#configure-astra-control-center["Astra Control Center 安裝文件"] 以取得詳細資料。
 
 
 
@@ -246,10 +242,10 @@ Astra Control Center支援最新版本的Firefox、Safari和Chrome、最低解�
 
 如果您打算使用這些Astra Control Center功能、請謹記以下要求：
 
-* *應用程式叢集需求*： link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["叢集管理需求"^]
+* *應用程式叢集需求*： link:../get-started/prep-for-cluster-management.html["叢集管理需求"]
 +
-** *受管理的應用程式需求*： link:../use/manage-apps.html#application-management-requirements["應用程式管理需求"^]
-** *應用程式複寫的其他需求*： link:../use/replicate_snapmirror.html#replication-prerequisites["複寫先決條件"^]
+** *受管理的應用程式需求*： link:../use/manage-apps.html#application-management-requirements["應用程式管理需求"]
+** * 應用程式複寫的其他需求 * ： link:../use/replicate_snapmirror.html#replication-prerequisites["複寫先決條件"]
 
 
 
@@ -258,4 +254,4 @@ Astra Control Center支援最新版本的Firefox、Safari和Chrome、最低解�
 
 == 下一步
 
-檢視 link:quick-start.html["快速入門"^] 總覽：
+檢視 link:quick-start.html["快速入門"] 總覽：

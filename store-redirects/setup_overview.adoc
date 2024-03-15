@@ -1,0 +1,8 @@
+---
+permalink: get-started/setup_overview.html 
+redirect: get-started/quick-start.html 
+---
+= 
+:allow-uri-read: 
+
+

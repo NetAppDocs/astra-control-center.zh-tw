@@ -1,0 +1,36 @@
+= 
+:allow-uri-read: 
+
+
+. （選用）如果您只需要選取應用程式的某些資源進行還原、請新增篩選功能、以包含或排除標記有特定標籤的資源：
++
+** 「 <INCLUDE-EXCLUDE> 」： _ （篩選所需） _ 使用 `include` 或 `exclude` 包括或排除在資源管理器中定義的資源。新增下列資源配置工具參數、以定義要納入或排除的資源：
++
+*** <GROUP> ： _ （選用） _ 要篩選的資源群組。
+*** <KIND> ： _ （選擇性） _ 要篩選的資源種類。
+*** <VERSION> ： _ （選用） _ 要篩選的資源版本。
+*** <NAMES> ：要篩選之資源的 Kubernetes metadata.name 欄位中的 _ （選用） _ 名稱。
+*** <NAMESPACES> ： _ （選用） _ 要篩選之資源的 Kubernetes metadata.name 欄位中的命名空間。
+*** <SELECTORS> ： _ （選擇性） _ 資源的 Kubernetes metadata.name 欄位中的標籤選取器字串、如中所定義 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Kubernetes文件"^]。範例： `"trident.netapp.io/os=linux"`。
++
+範例：
+
++
+[source, yaml]
+----
+spec:
+    resourceFilter:
+        resourceSelectionCriteria: "<INCLUDE-EXCLUDE>"
+        resourceMatchers:
+           group: <GROUP>
+           kind: <KIND>
+           version: <VERSION>
+           names: <NAMES>
+           namespaces: <NAMESPACES>
+           labelSelectors: <SELECTORS>
+----
+
+
+
+
+

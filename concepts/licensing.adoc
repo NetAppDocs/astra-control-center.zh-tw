@@ -17,7 +17,7 @@ summary: 瞭解Astra Control Center可執行的行動、會因授權狀態而異
 您可以使用下列其中一種方式取得授權：
 
 * 如果您正在評估 Astra Control Center 、並需要不同於內嵌評估授權所含的評估條款、請聯絡 NetApp 以申請不同的評估授權檔案。
-* link:https://mysupport.netapp.com/site/["如果您已購買Astra Control Center、請產生您的NetApp授權檔案（NLF）"^] 登入 NetApp 支援網站 並瀏覽至系統功能表下的軟體授權。
+* https://mysupport.netapp.com/site/["如果您已購買Astra Control Center、請產生您的NetApp授權檔案（NLF）"^] 登入 NetApp 支援網站 並瀏覽至系統功能表下的軟體授權。
 
 
 如需ONTAP 有關支援不支援的詳細資訊、請參閱 link:../get-started/requirements.html["支援的儲存後端"]。
@@ -60,6 +60,6 @@ NOTE: Red Hat OpenShift 基礎架構節點不會使用 Astra Control Center 中�
 
 == 如需詳細資訊、請參閱
 
-* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["第一次設定Astra Control Center時、請新增授權"]
+* link:../get-started/add-license.html["第一次設定Astra Control Center時、請新增授權"]
 * link:../use/update-licenses.html["更新現有授權"]
 

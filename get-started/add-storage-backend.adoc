@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-storage-backend.html 
+keywords: set up astra control, astra control license, add cluster, add storage backend, import storage, add bucket 
+summary: 啟用儲存後端驗證之後、您應該選取要管理的儲存後端。 
+---
+= 新增儲存後端
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+設定認證或憑證驗證資訊之後、您可以將現有的 ONTAP 儲存後端新增至 Astra 控制中心、以管理其資源。
+
+將Astra Control中的儲存叢集管理為儲存後端、可讓您在持續磁碟區（PV）與儲存後端之間建立連結、以及取得額外的儲存指標。
+
+如果您已啟用 Astra 控制資源配置程式、在 Astra 控制中心新增及管理 ONTAP 儲存設備後端、則使用 NetApp SnapMirror 技術時為選用功能。
+
+.步驟
+. 從左側導覽區域的儀表板中、選取*後端*。
+. 選取*「Add*」。
+. 在「新增儲存設備後端」頁面的「使用現有的」區段中、選取 * ONTAP * 。
+. 選取下列其中一項：
++
+** * 使用管理員認證 * ：輸入 ONTAP 叢集管理 IP 位址和管理認證。認證資料必須是整個叢集的認證資料。
++
+
+NOTE: 您在此處輸入認證的使用者必須擁有 `ontapi` 使用者登入存取方法已在ONTAP 支援的叢集上的「支援系統管理程式」中啟用ONTAP 。如果您打算使用SnapMirror複寫、請套用具有「admin」角色的使用者認證、該角色具有存取方法 `ontapi` 和 `http`、在來源ONTAP 和目的地等叢集上。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["管理ONTAP 使用者帳戶、請參閱本文檔"^] 以取得更多資訊。
+
+** * 使用憑證 * ：上傳憑證 `.pem` 檔案、憑證金鑰 `.key` 檔案、以及選擇性的憑證授權單位檔案。
+
+
+. 選擇*下一步*。
+. 確認後端詳細資料、然後選取*管理*。
+
+
+.結果
+後端隨即出現在中 `online` 列出摘要資訊。
+
+
+NOTE: 您可能需要重新整理頁面、以便顯示後端。

@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-license.html 
+keywords: set up astra control, astra control license 
+summary: 安裝 Astra Control Center 之後、請登入 UI 並變更密碼、您就會想要設定授權。 
+---
+= 新增Astra Control Center授權
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+安裝 Astra Control Center 時、已安裝內嵌評估授權。如果您正在評估 Astra Control Center 、可以跳過此步驟。
+
+您可以使用Astra Control UI或新增授權 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^]。
+
+Astra Control Center授權會使用Kubernetes CPU單元來測量CPU資源、並計算指派給所有受管理Kubernetes叢集之工作節點的CPU資源。授權是根據vCPU使用率而定。如需如何計算授權的詳細資訊、請參閱 link:../concepts/licensing.html["授權"]。
+
+
+NOTE: 如果您的安裝量成長到超過授權的CPU單元數量、Astra Control Center會防止您管理新的應用程式。超過容量時會顯示警示。
+
+
+NOTE: 若要更新現有的評估或完整授權、請參閱 link:../use/update-licenses.html["更新現有授權"]。
+
+.開始之前
+* 存取新安裝的Astra Control Center執行個體。
+* 系統管理員角色權限。
+* 答 link:../concepts/licensing.html["NetApp授權檔案"] （lf）。
+
+
+.步驟
+. 登入Astra Control Center UI。
+. 選擇*帳戶*>*授權*。
+. 選擇*新增授權*。
+. 瀏覽至您下載的授權檔案（NLF）。
+. 選擇*新增授權*。
+
+
+「*帳戶*>*授權*」頁面會顯示授權資訊、到期日、授權序號、帳戶ID及使用的CPU單位。
+
+
+NOTE: 如果您擁有評估授權、但並未將資料傳送AutoSupport 至效益分析系統、請務必儲存您的帳戶ID、以免發生Astra Control Center故障時發生資料遺失。

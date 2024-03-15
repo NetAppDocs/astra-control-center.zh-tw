@@ -16,25 +16,52 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
+== 2023 年 3 月 14 日（ 24.02.0 ）
+
+.新功能與支援
+* * 部署不含私人登錄的 Astra Control Center * ：您不再需要將 Astra Control Center 映像推送至私人登錄、或將其作為 Astra Control 環境的一部分使用。
+* * 小錯誤修正 *
+
+
+.已知問題與限制
+* link:../release-notes/known-issues.html["此版本的已知問題"]
+* link:../release-notes/known-limitations.html["此版本的已知限制"]
+
+
+.（技術預覽）聲明性 Kubernetes 工作流程
+此 Astra Control Center 版本包含宣告式 Kubernetes 功能、可讓您從原生 Kubernetes 自訂資源（ CR ）執行資料管理。
+
+安裝之後 link:../get-started/install-astra-connector.html["Astra Connector"] 在您要管理的叢集上、您可以在 UI 或 CR 中執行下列 CR 型叢集作業：
+
+* link:../use/manage-apps.html#tech-preview-define-an-application-using-a-kubernetes-custom-resource["使用自訂資源定義應用程式"]
+* link:../use/manage-buckets.html#tech-preview-manage-a-bucket-using-a-custom-resource["定義貯體"]
+* link:../use/protect-apps.html#create-a-backup["備份您的應用程式"]
+* link:../use/protect-apps.html#create-a-snapshot["建立快照"]
+* link:../use/protect-apps.html#configure-a-protection-policy["建立快照或備份排程"]
+* link:../use/restore-apps.html["從快照或備份還原應用程式"]
+
+
+
+
 == 2023 年 11 月 7 日（ 23.10.0 ）
 
 [[nas-eco-backup-restore]]
 .新功能與支援
-* * 使用 ONTAP NAS 經濟型驅動程式備份儲存後端 * 為應用程式提供備份與還原功能：為啟用備份與還原作業 `ontap-nas-economy` 有些 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["簡單步驟"^]。
-* * 不可變備份 * ： Astra Control 現在支援 link:../concepts/data-protection.html#immutable-backups["不可更改的唯讀備份"^] 成為可抵禦惡意軟體和其他威脅的額外安全層。
+* * 使用 ONTAP NAS 經濟型驅動程式備份儲存後端 * 為應用程式提供備份與還原功能：為啟用備份與還原作業 `ontap-nas-economy` 有些 https://docs.netapp.com/us-en/astra-control-center-2310/use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["簡單步驟"^]。
+* * 不可變備份 * ： Astra Control 現在支援 https://docs.netapp.com/us-en/astra-control-center-2310/concepts/data-protection.html#immutable-backups["不可更改的唯讀備份"^] 成為可抵禦惡意軟體和其他威脅的額外安全層。
 * * Astra Control Provisioner 簡介 *
 +
 在 23.10 版本中、 Astra Control 引進了一種稱為 Astra Control Provisioner 的新軟體元件、可供所有獲授權的 Astra Control 使用者使用。Astra Control Provisioner 可存取 Astra Trident 所提供的進階管理和儲存資源配置功能。所有 Astra Control 客戶均可免費使用這些功能。
 
 +
 ** * 開始使用 Astra Control Provisioner*
-您可以 link:../use/enable-acp.html["啟用 Astra Control Provisioner"^] 如果您已安裝並設定環境以使用 Astra Trident 23.10 。
+您可以 https://docs.netapp.com/us-en/astra-control-center-2310/use/enable-acp.html["啟用 Astra Control Provisioner"^] 如果您已安裝並設定環境以使用 Astra Trident 23.10 。
 ** * Astra Control Provisioner 功能 *
 +
 Astra Control Provisioner 23.10 版本提供下列功能：
 
 +
-*** * 使用 Kerberos 5 加密技術增強儲存後端安全性 * ：您可以藉由改善儲存安全性 link:../use-acp/configure-storage-backend-encryption.html["啟用加密"^] 用於託管叢集與儲存後端之間的流量。Astra Control Provisioner 支援透過 NFSv4.1 連線、從 Red Hat OpenShift 叢集到 Azure NetApp Files 和內部部署 ONTAP 磁碟區的 Kerberos 5 加密
+*** * 使用 Kerberos 5 加密技術增強儲存後端安全性 * ：您可以藉由改善儲存安全性 https://docs.netapp.com/us-en/astra-control-center-2310/use-acp/configure-storage-backend-encryption.html["啟用加密"^] 用於託管叢集與儲存後端之間的流量。Astra Control Provisioner 支援透過 NFSv4.1 連線、從 Red Hat OpenShift 叢集到 Azure NetApp Files 和內部部署 ONTAP 磁碟區的 Kerberos 5 加密
 *** * 使用 SnapShot 恢復資料 * ： Astra Control Provisioner 使用從快照提供快速的原位磁碟區還原 `TridentActionSnapshotRestore` （ TASR ） CR 。
 *** * SnapMirror 增強功能 * ：在 Astra Control 無法直接連線至 ONTAP 叢集或存取 ONTAP 認證的環境中使用應用程式複寫功能。此功能可讓您使用複寫、而無需在 Astra Control 中管理儲存後端或其認證。
 *** * 應用程式的備份與還原功能 `ontap-nas-economy` 驅動程式備份儲存後端 * ：如所述 <<nas-eco-backup-restore,以上>>。
@@ -44,21 +71,18 @@ Astra Control Provisioner 23.10 版本提供下列功能：
 
 * * 支援管理使用 NVMe / TCP 儲存設備的應用程式 *
 Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾的應用程式。
-* * 依預設關閉執行攔截器 * ：從本版本開始、執行攔截器功能就可以 link:../use/execution-hooks.html#enable-the-execution-hooks-feature["已啟用"] 或停用以提高安全性（預設為停用）。如果您尚未建立用於 Astra Control 的執行攔截器、則需要 link:../use/execution-hooks.html#enable-the-execution-hooks-feature["啟用執行攔截功能"^] 開始建立攔截器。如果您在此版本之前建立了執行攔截器、則執行攔截器功能會保持啟用狀態、您可以像平常一樣使用攔截器。
+* * 依預設關閉執行攔截器 * ：從本版本開始、執行攔截器功能就可以 https://docs.netapp.com/us-en/astra-control-center-2310/use/execution-hooks.html#enable-the-execution-hooks-feature["已啟用"^] 或停用以提高安全性（預設為停用）。如果您尚未建立用於 Astra Control 的執行攔截器、則需要 https://docs.netapp.com/us-en/astra-control-center-2310/use/execution-hooks.html#enable-the-execution-hooks-feature["啟用執行攔截功能"^] 開始建立攔截器。如果您在此版本之前建立了執行攔截器、則執行攔截器功能會保持啟用狀態、您可以像平常一樣使用攔截器。
 
 
 .已知問題與限制
-* link:../release-notes/known-issues.html["此版本的已知問題"^]
-* link:../release-notes/known-limitations.html["此版本的已知限制"^]
+* https://docs.netapp.com/us-en/astra-control-center-2310/release-notes/known-issues.html["此版本的已知問題"^]
+* https://docs.netapp.com/us-en/astra-control-center-2310/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
 
 
 == 2023 年 7 月 31 日（ 23.07.0 ）
 
-.詳細資料
-[%collapsible]
-====
 .新功能與支援
 * https://docs.netapp.com/us-en/astra-control-center-2307/get-started/requirements.html#storage-backends["支援在擴充組態中使用 NetApp MetroCluster 做為儲存後端"^]
 * https://docs.netapp.com/us-en/astra-control-center-2307/get-started/requirements.html#storage-backends["支援使用 Longhorn 做為儲存後端"^]
@@ -73,28 +97,20 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
 * https://docs.netapp.com/us-en/astra-control-center-2307/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
-====
 
 
 == 2023 年 5 月 18 日（ 23.04.2 ）
 
-.詳細資料
-[%collapsible]
-====
 此適用於 Astra Control Center （ 23.04.0 ）的修補程式版本（ 23.04.2 ）可提供支援 https://newreleases.io/project/github/kubernetes-csi/external-snapshotter/release/v6.1.0["Kubernetes CSI 外部快照器 v6.1.0"^] 並修正下列問題：
 
 * 使用執行掛鉤時、就地應用程式還原的錯誤
 * 貯體服務的連線問題
 
 
-====
 
 
 == 2023 年 4 月 25 日（ 23.04.0 ）
 
-.詳細資料
-[%collapsible]
-====
 .新功能與支援
 * https://docs.netapp.com/us-en/astra-control-center-2304/concepts/licensing.html["根據預設、新 Astra Control Center 安裝會啟用 90 天試用版授權"^]
 * https://docs.netapp.com/us-en/astra-control-center-2304/use/execution-hooks.html["更強大的執行掛勾功能、提供更多篩選選項"^]
@@ -109,14 +125,10 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
 * https://docs.netapp.com/us-en/astra-control-center-2304/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
-====
 
 
 == 2022年11月22日（22.11.0）
 
-.詳細資料
-[%collapsible]
-====
 .新功能與支援
 * https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["支援橫跨多個命名空間的應用程式"^]
 * https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["支援將叢集資源納入應用程式定義"^]
@@ -130,24 +142,16 @@ Astra Control 現在可以管理以 NVMe / TCP 連線的持續磁碟區為後盾
 * https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
-====
 
 
 == 2022年9月8日（22.08.1）
 
-.詳細資料
-[%collapsible]
-====
 此適用於Astra Control Center（22.08.0）的修補程式版本（22.08.1）可利用NetApp SnapMirror修正應用程式複寫中的小錯誤。
 
-====
 
 
 == 2022年8月10日（22.08.0）
 
-.詳細資料
-[%collapsible]
-====
 .新功能與支援
 * https://docs.netapp.com/us-en/astra-control-center-2208/use/replicate_snapmirror.html["使用NetApp SnapMirror技術進行應用程式複寫"^]
 * https://docs.netapp.com/us-en/astra-control-center-2208/use/manage-apps.html#define-apps["改善應用程式管理工作流程"^]
@@ -166,14 +170,10 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 * https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
-====
 
 
 == 2022年4月26日（22.04.0）
 
-.詳細資料
-[%collapsible]
-====
 .新功能與支援
 * https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["命名空間角色型存取控制（RBAC）"^]
 * https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["支援Cloud Volumes ONTAP 功能"^]
@@ -187,14 +187,10 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 * https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
-====
 
 
 == 2021年12月14日（21.12）
 
-.詳細資料
-[%collapsible]
-====
 .新功能與支援
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/restore-apps.html["應用程式還原"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/execution-hooks.html["執行掛勾"^]
@@ -213,14 +209,10 @@ NOTE: NetApp針對特定應用程式提供的預設快照前及後執行掛勾�
 * https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-limitations.html["此版本的已知限制"^]
 
 
-====
 
 
 == 2021年8月5日（21.08）
 
-.詳細資料
-[%collapsible]
-====
 Astra Control Center正式推出。
 
 * https://docs.netapp.com/us-en/astra-control-center-2108/concepts/intro.html["它是什麼"^]
@@ -233,7 +225,6 @@ Astra Control Center正式推出。
 * https://docs.netapp.com/us-en/astra-control-center-2108/rest-api/api-intro.html["利用API自動化"^]
 
 
-====
 
 
 == 如需詳細資訊、請參閱

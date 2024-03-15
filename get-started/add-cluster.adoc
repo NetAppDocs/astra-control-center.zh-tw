@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-cluster.html 
+keywords: set up astra control, add cluster 
+summary: 安裝 Astra Control Center 、設定授權並準備環境之後、您就可以將叢集新增至 Astra Control 管理。 
+---
+= 新增叢集
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+若要開始管理應用程式、請新增Kubernetes叢集、並將其當作運算資源來管理。您必須為Astra Control Center新增叢集、才能探索Kubernetes應用程式。
+
+
+TIP: 我們建議Astra Control Center先管理部署於上的叢集、再將其他叢集新增至Astra Control Center進行管理。需要管理初始叢集、才能傳送Kubmetrics資料和叢集相關資料、以供進行度量和疑難排解。
+
+.開始之前
+* 新增叢集之前、請先檢閱並執行必要的 link:../get-started/prep-for-cluster-management.html["必要工作"]。
+* 如果您使用的是 ONTAP SAN 驅動程式、請務必在所有 Kubernetes 叢集上啟用多重路徑。
+
+
+.步驟
+. 從儀表板或叢集功能表瀏覽：
++
+** 從「資源摘要」的*「儀表板」*中、從「叢集」窗格中選取*「新增*」。
+** 在左側導覽區域中、選取*叢集*、然後從「叢集」頁面選取*新增叢集*。
+
+
+. 在打開的* Add Cluster.yaml視窗中、上傳「kubeconfig．yaml」檔案、或貼上「kubeconfig．yaml」檔案的內容。
++
+
+NOTE: 「kubeconfig．yaml」檔案應包含*一個叢集*的叢集認證資料。
+
++
+
+IMPORTANT: 如果您自行建立 `kubeconfig` 檔案中、您應該只定義*一個*內容元素。請參閱 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes文件"^] 以取得有關建立的資訊 `kubeconfig` 檔案：如果您使用為有限的叢集角色建立了Kbeconfig link:../get-started/add-cluster.html["此程序"]請務必在本步驟中上傳或貼上該KECBEConnfig。
+
+. 提供認證名稱。根據預設、認證名稱會自動填入為叢集名稱。
+. 選擇*下一步*。
+. 選取要用於此Kubernetes叢集的預設儲存類別、然後選取* Next*。
++
+
+NOTE: 您應該選取在 Astra Control Provisioner 中設定並由 ONTAP 儲存設備備份的儲存類別。
+
+. 檢閱資訊、如果一切看起來都很好、請選取*新增*。
+
+
+.結果
+叢集進入*探索*狀態、然後變更為*健全*。您現在正使用Astra Control Center來管理叢集。
+
+
+IMPORTANT: 在Astra Control Center中新增要管理的叢集之後、可能需要幾分鐘的時間來部署監控操作員。在此之前、通知圖示會變成紅色、並記錄*監控代理程式狀態檢查失敗*事件。您可以忽略這一點、因為當Astra Control Center取得正確狀態時、問題就能解決。如果幾分鐘內仍無法解決問題、請前往叢集並執行 `oc get pods -n netapp-monitoring` 做為起點。您需要查看監控操作員記錄、以偵錯問題。

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/monitor-protect.html 
-keywords: proxy, cloud insights, connections, fluent bit, accounts, protect, security 
-summary: 您可以設定多項選用設定、以增強Astra Control Center體驗。如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、請在Astra Control Center中設定該Proxy伺服器。您可以使用NetApp Cloud Insights 解決方案來監控及深入瞭解完整的基礎架構。您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連線、設定Prometheus、或新增Fluentd連線。 
+keywords: proxy, connections, fluent bit, accounts, protect, security 
+summary: 您可以設定多項選用設定、以增強Astra Control Center體驗。如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、請在Astra Control Center中設定該Proxy伺服器。您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請設定 Prometheus 或新增 Fluentd 連線。 
 ---
-= 利用Cloud Insights 支援的鏈接功能來監控基礎架構
+= 使用 Prometheus 或 Fluentd 連線來監控基礎架構
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,20 +12,19 @@ summary: 您可以設定多項選用設定、以增強Astra Control Center體驗
 
 
 [role="lead"]
-您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請建立與NetApp Cloud Insights 的連線、設定Prometheus、或新增Fluentd連線。
+您可以設定多項選用設定、以增強Astra Control Center體驗。若要監控並深入瞭解您的完整基礎架構、請設定 Prometheus 或新增 Fluentd 連線。
 
-如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路（將支援套件上傳NetApp 支援網站 至靜態或建立Cloud Insights 連線至靜態）、您應該在Astra Control Center中設定Proxy伺服器。
+如果您執行 Astra Control Center 的網路需要 Proxy 才能連線至網際網路（將支援套件上傳至 NetApp 支援網站 ）、您應該在 Astra Control Center 中設定 Proxy 伺服器。
 
-* <<連線Cloud Insights 至>>
 * <<連線至Prometheus>>
 * <<連接至Flud>>
 
 
 
 
-== 新增Proxy伺服器以連線Cloud Insights 至指令集或NetApp 支援網站 到指令集
+== 新增 Proxy 伺服器以連線至 NetApp 支援網站
 
-如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路（將支援套件上傳NetApp 支援網站 至靜態或建立Cloud Insights 連線至靜態）、您應該在Astra Control Center中設定Proxy伺服器。
+如果您執行 Astra Control Center 的網路需要 Proxy 才能連線至網際網路（將支援套件上傳至 NetApp 支援網站 ）、您應該在 Astra Control Center 中設定 Proxy 伺服器。
 
 
 IMPORTANT: Astra Control Center不會驗證您為Proxy伺服器輸入的詳細資料。請確認輸入正確的值。
@@ -65,133 +64,13 @@ image:proxy-new.png["此影像顯示Proxy伺服器已成功連線。"]
 
 === 停用Proxy伺服器連線
 
-您可以停用Proxy伺服器連線。在停用之前、系統會先警告您、否則可能會對其他連線造成潛在的中斷。
+您可以停用Proxy伺服器連線。在停用之前、系統會先警告您可能會中斷其他連線。
 
 .步驟
 . 使用具有*管理*/*擁有者*權限的帳戶登入Astra Control Center。
 . 選擇*帳戶*>*連線*。
 . 從下拉式清單中選取*「Disconnect*（中斷連線）」以停用連線。
 . 在開啟的對話方塊中、確認作業。
-
-
-
-
-== 連線Cloud Insights 至
-
-若要監控並深入瞭解完整的基礎架構、請將NetApp Cloud Insights 知識與Astra Control Center執行個體連結起來。包含在您的Astra Control Center授權中。Cloud Insights
-
-應可從Astra Control Center使用的網路存取、或透過Proxy伺服器間接存取。Cloud Insights
-
-當Astra Control Center連線Cloud Insights 至不實時、就會建立一個擷取單元Pod。此Pod可從Astra Control Center管理的儲存後端收集資料、並將資料推送到Cloud Insights此Pod需要8 GB RAM和2個CPU核心。
-
-
-NOTE: 當 Astra 控制中心與 Cloud Insights 配對時、您不應使用 Cloud Insights 中的 * 修改部署 * 選項。 
-
-
-NOTE: 啟用 Cloud Insights 連線之後、您可以在 *Backends* 頁面上檢視處理量資訊、並在選取儲存後端後端之後連線至 Cloud Insights 。您也可以在「叢集」區段的 * 儀表板 * 上找到相關資訊、然後從該處連線至 Cloud Insights 。
-
-.開始之前
-* 具有*管理*/*擁有者*權限的Astra Control Center帳戶。
-* 有效的Astra Control Center授權。
-* 如果您執行Astra Control Center的網路需要Proxy才能連線至網際網路、則為Proxy伺服器。
-
-
-
-TIP: 如果您是Cloud Insights 不熟悉的人、請熟悉這些功能。請參閱 link:https://docs.netapp.com/us-en/cloudinsights/index.html["本文檔 Cloud Insights"^]。
-
-.步驟
-. 使用具有*管理*/*擁有者*權限的帳戶登入Astra Control Center。
-. 選擇*帳戶*>*連線*。
-. 在下拉式清單中選擇*「Connect*（連線*）」顯示*「Disconnected（中斷連線）」的位置、以新增連線。
-+
-image:ci-connect.png["此影像顯示下拉式清單中的「Connect（連線）」選項、以啟用Cloud Insights 「列舉」連線。"]
-
-. 輸入Cloud Insights 「不再使用API」權杖和租戶URL。租戶URL的格式如下：
-+
-[listing]
-----
-https://<environment-name>.c01.cloudinsights.netapp.com/
-----
-+
-當您取得Cloud Insights 不含功能的授權時、就會收到租戶URL。如果您沒有租戶URL、請參閱 link:https://docs.netapp.com/us-en/cloudinsights/task_cloud_insights_onboarding_1.html["本文檔 Cloud Insights"^]。
-
-+
-.. 以取得 link:https://docs.netapp.com/us-en/cloudinsights/API_Overview.html#api-access-tokens["API權杖"^]、登入Cloud Insights 您的URL。
-.. 在支援區中、按一下「*管理*」>「* API存取*」、即可產生*讀取/寫入*和*唯讀* API存取權杖。Cloud Insights
-+
-image:cloud-insights-api.png["此影像顯示Cloud Insights 「循環API權杖產生」頁面。"]
-
-.. 複製*唯讀*金鑰。您必須將其貼到Astra Control Center視窗中、才能啟用Cloud Insights 此功能的鏈路。如需讀取API存取權杖金鑰權限、請選取：資產、警示、擷取單位和資料收集。
-.. 複製*讀取/寫入*金鑰。您需要將其貼到Astra Control Center * Connect Cloud Insights S還原*視窗中。如需讀取/寫入API存取權杖金鑰權限、請選取：資料擷取、記錄擷取、擷取設備和資料收集。
-+
-
-NOTE: 我們建議您產生*唯讀*金鑰和*讀取/寫入*金鑰、而不要將相同的金鑰用於這兩種用途。根據預設、權杖過期期間設為一年。我們建議您保留預設選項、以便在權杖過期之前提供最長持續時間。如果您的權杖過期、遙測就會停止。
-
-.. 將您從Cloud Insights 整個過程中複製的金鑰貼到Astra Control Center。
-
-
-. 選擇*連接*。
-
-
-
-IMPORTANT: 在您選取*連線之後、* Cloud Insights 帳戶*>*連線*頁面的*更新*區段中、連線狀態會變更為*擱置*。啟用連線並將狀態變更為「*已連線*」可能需要幾分鐘的時間。
-
-
-NOTE: 若要在Astra Control Center和Cloud Insights UI之間輕鬆來回、請確定您已登入這兩個項目。
-
-
-
-=== 檢視Cloud Insights 資料
-
-如果連線成功、Cloud Insights 「*帳戶*>*連線*」頁面的* SURS*區段會指出連線狀態、並顯示租戶URL。您可以造訪Cloud Insights 景點、查看成功接收及顯示的資料。
-
-image:cloud-insights.png["此影像顯示Cloud Insights Astra Control Center UI中啟用的支援的支援功能。"]
-
-如果連線因為某種原因而失敗、狀態會顯示*失敗*。您可以在UI右上角的*通知*下找到失敗的原因。
-
-image:cloud-insights-notifications.png["此影像顯示Cloud Insights 當無法連線時的錯誤訊息。"]
-
-您也可以在*帳戶*>*通知*下找到相同的資訊。
-
-從Astra Control Center、您可以在*後端*頁面上檢視處理量資訊、Cloud Insights 並在選擇儲存後端後端後、從此處連線至image:throughput.png["此影像顯示Astra Control Center後端頁面的處理量資訊。"]
-
-若要直接移至Cloud Insights 「不顯示」、請選取Cloud Insights 「指標」影像旁的*「不顯示」圖示。
-
-您也可以在*儀表板*上找到相關資訊。
-
-image:dashboard-ci.png["此影像顯示Cloud Insights 儀表板上的「圖片」圖示。"]
-
-
-IMPORTANT: 啟用Cloud Insights 完「支援不支援」連線後、如果您移除Astra Control Center中新增的後端、後端會停止向Cloud Insights 「支援不支援」回報。
-
-
-
-=== 編輯Cloud Insights 鏈接
-
-您可以編輯Cloud Insights 此「不同步連線」。
-
-
-NOTE: 您只能編輯API金鑰。若要變更Cloud Insights 此URL、我們建議您中斷Cloud Insights 連接此鏈接、並使用新的URL進行連線。
-
-.步驟
-. 使用具有*管理*/*擁有者*權限的帳戶登入Astra Control Center。
-. 選擇*帳戶*>*連線*。
-. 從下拉式清單中選取 * 編輯 * 以編輯連線。
-. 編輯Cloud Insights 「還原連線」設定。
-. 選擇*保存*。
-
-
-
-
-=== 停用Cloud Insights 鏈接
-
-您可以停用Cloud Insights 由Astra Control Center管理的Kubernetes叢集的支援功能。停用Cloud Insights 此功能不會刪除已上傳至Cloud Insights 更新的遙測資料。
-
-.步驟
-. 使用具有*管理*/*擁有者*權限的帳戶登入Astra Control Center。
-. 選擇*帳戶*>*連線*。
-. 從下拉式清單中選取*「Disconnect*（中斷連線）」以停用連線。
-. 在開啟的對話方塊中、確認作業。在您確認操作之後、Cloud Insights 在*帳戶*>*連線*頁面上、顯示的「畫面」狀態會變更為*「待處理」*。狀態變更為*中斷連線*需要幾分鐘的時間。
 
 
 

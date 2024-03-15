@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: use/cr-manage-options.html 
+keywords: custom resource, cr, manage app, astra 
+summary: 使用 Kubernetes 自訂資源（ CR ）管理 Astra Control 應用程式。 
+---
+= [ 技術預覽 ] 使用 CRS 管理 Astra Control 應用程式
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+[role="lead"]
+使用 Kubernetes 自訂資源（ CR ）管理 Astra Control 應用程式。提供下列選項：
+
+* link:../use/manage-apps.html#define-an-application-using-a-kubernetes-custom-resource["使用 Kubernetes 自訂資源定義應用程式"]
+* link:../use/manage-buckets.html#manage-a-bucket-using-a-custom-resource["使用自訂資源管理貯體"]
+

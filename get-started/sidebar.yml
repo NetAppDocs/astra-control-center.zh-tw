@@ -23,6 +23,22 @@ entries:
   - title: 安裝後設定Astra Control Center
     url: "/get-started/configure-after-install.html"
 - title: 設定Astra控制中心
-  url: "/get-started/setup_overview.html"
+  entries:
+  - title: 新增授權
+    url: "/get-started/add-license.html"
+  - title: 啟用 Astra Control Provisioner
+    url: "/get-started/enable-acp.html"
+  - title: 使用 Astra Control 準備叢集管理
+    url: "/get-started/prep-for-cluster-management.html"
+  - title: 安裝 Astra Connector for Managed 叢集
+    url: "/get-started/install-astra-connector.html"
+  - title: 新增叢集
+    url: "/get-started/add-cluster.html"
+  - title: 啟用儲存後端驗證
+    url: "/get-started/enable-auth-ontap-backend.html"
+  - title: 新增儲存後端
+    url: "/get-started/add-storage-backend.html"
+  - title: 新增儲存庫
+    url: "/get-started/add-bucket.html"
 - title: 常見問題集
   url: "/get-started/faq.html"

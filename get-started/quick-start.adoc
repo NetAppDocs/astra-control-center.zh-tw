@@ -19,24 +19,24 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 
 * Kubernetes叢集*
 
-* link:../get-started/requirements.html#host-cluster-resource-requirements["確保您的主機叢集符合作業環境需求"^]
-* link:../get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["設定內部部署Kubernetes叢集的負載平衡入口"^]
+* link:../get-started/requirements.html#host-cluster-resource-requirements["確保您的主機叢集符合作業環境需求"]
+* link:../get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["設定內部部署Kubernetes叢集的負載平衡入口"]
 
 
 *儲存整合*
 
-* link:../get-started/requirements.html#astra-trident-requirements["確保您的環境包含 Astra Trident 支援的版本"^]
-* link:../use/enable-acp.html["啟用 Astra Control Provisioner 進階管理和儲存資源配置功能"^]
-* https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html["準備工作節點"^]
-* https://docs.netapp.com/us-en/trident/trident-use/backends.html["設定Astra Trident儲存後端"^]
-* https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["設定Astra Trident儲存類別"^]
-* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安裝Astra Trident Volume Snapshot控制器"^]
-* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["建立Volume Snapshot類別"^]
+* link:../get-started/requirements.html#astra-control-provisioner["確保您的環境包含 Astra Control Provisioner"]
+* link:../get-started/enable-acp.html["啟用 Astra Control Provisioner 進階管理和儲存資源配置功能"]
+* https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html["準備叢集工作者節點"^]
+* https://docs.netapp.com/us-en/trident/trident-use/backends.html["設定儲存設備後端"^]
+* https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["設定儲存類別"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["安裝 Volume Snapshot 控制器"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#create-a-volume-snapshot["建立Volume Snapshot類別"^]
 
 
 *不包含認證資料* ONTAP
 
-* link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["設定ONTAP 驗證資料"^]
+* link:../get-started/prep-for-cluster-management.html["設定ONTAP 驗證資料"]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 下載並安裝Astra Control Center
@@ -46,30 +46,30 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 * 取得NetApp授權檔案：
 +
 ** 如果您正在評估 Astra Control Center 、則已包含內嵌評估授權
-** link:../concepts/licensing.html["如果您已購買Astra Control Center、請產生授權檔案"^]
+** link:../concepts/licensing.html["如果您已購買Astra Control Center、請產生授權檔案"]
 
 
-* link:../get-started/install_overview.html["安裝Astra Control Center"^]
-* link:../get-started/configure-after-install.html["執行其他選用的組態步驟"^]
+* link:../get-started/install_overview.html["安裝Astra Control Center"]
+* link:../get-started/configure-after-install.html["執行其他選用的組態步驟"]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 完成一些初始設定工作
 完成一些基本工作以開始：
 
-* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["新增授權"^]
-* link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["為叢集管理做好準備"^]
-* link:../get-started/setup_overview.html#add-cluster["新增叢集"^]
-* link:../get-started/setup_overview.html#add-a-storage-backend["新增儲存後端"^]
-* link:../get-started/setup_overview.html#add-a-bucket["新增儲存庫"^]
+* link:../get-started/add-license.html["新增授權"]
+* link:../get-started/prep-for-cluster-management.html["為叢集管理做好準備"]
+* link:../get-started/add-cluster.html["新增叢集"]
+* link:../get-started/add-storage-backend.html["新增儲存後端"]
+* link:../get-started/add-bucket.html["新增儲存庫"]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 使用Astra控制中心
 完成 Astra Control Center 設定後、請使用 Astra Control UI 或 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^] 若要開始管理及保護應用程式：
 
-* link:../use/manage-apps.html["管理應用程式"^]：定義要管理的資源。
-* link:../use/protection-overview.html["保護應用程式"^]：設定保護原則、並複寫、複製及移轉應用程式。
-* link:../use/manage-local-users-and-roles.html["管理帳戶"^]：使用者、角色、 LDAP 、認證等。
-* link:../use/monitor-protect.html#connect-to-cloud-insights["也可以連接Cloud Insights 到"^]：查看系統健全狀況的指標。
+* link:../use/manage-local-users-and-roles.html["管理帳戶"]：使用者、角色、 LDAP 、認證等。
+* link:../use/manage-notifications.html["管理通知"]
+* link:../use/manage-apps.html["管理應用程式"]：定義要管理的資源。
+* link:../use/protection-overview.html["保護應用程式"]：設定保護原則、並複寫、複製及移轉應用程式。
 
 
 
@@ -77,6 +77,6 @@ summary: 只要幾個步驟、就能開始使用Astra Control。
 == 以取得更多資訊
 
 * https://docs.netapp.com/us-en/astra-automation["使用Astra Control API"^]
-* link:../use/upgrade-acc.html["升級Astra Control Center"^]
-* link:../support/get-help.html["取得Astra Control的協助"^]
+* link:../use/upgrade-acc.html["升級Astra Control Center"]
+* link:../support/get-help.html["取得Astra Control的協助"]
 

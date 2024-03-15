@@ -50,13 +50,13 @@ entries:
   url: "/use/manage-backend.html"
 - title: 監控執行中的工作
   url: "/use/monitor-running-tasks.html"
-- title: 利用Cloud Insights 功能性和變動監控基礎架構
+- title: 使用 CRS 管理 Astra Control 應用程式
+  url: "/use/cr-manage-options.html"
+- title: 使用 Prometheus 和 Fluentd 監控基礎架構
   url: "/use/monitor-protect.html"
 - title: 取消管理應用程式和叢集
   url: "/use/unmanage.html"
 - title: 升級Astra Control Center
   url: "/use/upgrade-acc.html"
-- title: 啟用 Astra Control Provisioner
-  url: "/use/enable-acp.html"
 - title: 解除安裝Astra Control Center
   url: "/use/uninstall_acc.html"

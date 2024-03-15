@@ -17,8 +17,8 @@ summary: 說明如何移除Astra控制中心和Astra控制中心操作員。
 如果您對解除安裝有任何問題、請參閱 <<疑難排解解除安裝問題>>。
 
 .開始之前
-. link:../use/unmanage.html#unmanage-an-app["取消管理所有應用程式"^] 在叢集上。
-. link:../use/unmanage.html#unmanage-a-cluster["取消管理所有叢集"^]。
+. link:../use/unmanage.html#unmanage-an-app["取消管理所有應用程式"] 在叢集上。
+. link:../use/unmanage.html#unmanage-a-cluster["取消管理所有叢集"]。
 
 
 .步驟

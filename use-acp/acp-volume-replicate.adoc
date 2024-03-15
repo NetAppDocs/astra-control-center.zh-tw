@@ -25,7 +25,7 @@ summary: Astra Control Provisioner 支援建立來源磁碟區和目的地磁碟
 在您開始之前、請確定符合下列先決條件：
 
 .叢集 ONTAP
-* * Astra Control Provisioner* ： Astra Control Provisioner 版本 22.10 或更新版本必須同時存在於使用 ONTAP 作為後端的來源叢集和目的地 Kubernetes 叢集上。
+* * Astra Control Provisioner* ： Astra Control Provisioner 版本 23.10 或更新版本、或 link:../get-started/requirements.html["支援的 Astra Trident"] 來源叢集和目的地 Kubernetes 叢集必須同時存在、並將 ONTAP 作為後端使用。
 * * 授權 * ：使用資料保護套件的 ONTAP SnapMirror 非同步授權必須同時在來源和目的地 ONTAP 叢集上啟用。請參閱 https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["SnapMirror授權概述ONTAP"^] 以取得更多資訊。
 
 

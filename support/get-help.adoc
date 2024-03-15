@@ -17,7 +17,7 @@ NetApp以多種方式支援Astra Control。我們全年無休提供豐富的免�
 
 IMPORTANT: 如果您擁有Astra Control Center的評估授權、您可以取得技術支援。不過、無法透過NetApp支援網站（NSS）建立案例。您可以透過意見回饋選項與Support聯絡、或使用不和管道進行自助服務。
 
-您必須優先 link:../get-started/setup_overview.html["啟動NetApp序號支援"] 以使用這些非自助服務支援選項。需要NetApp支援網站（NSS）SSO帳戶才能進行聊天和網路票證、以及案例管理。
+您必須優先 link:../get-started/add-license.html["啟動NetApp序號支援"] 以使用這些非自助服務支援選項。需有 NetApp 支援網站（NSS）SSO 帳戶，才能進行聊天和網路提交問題單，以及案例管理。
 
 
 

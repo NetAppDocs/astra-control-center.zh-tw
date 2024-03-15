@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-bucket.html 
+keywords: set up astra control, add bucket 
+summary: 安裝 Astra Control Center 之後、您應該考慮在設定時加入貯體。 
+---
+= 新增儲存庫
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+您可以使用Astra Control UI或來新增儲存區 https://docs.netapp.com/us-en/astra-automation["Astra Control API"^]。如果您想要備份應用程式和持續儲存設備、或是想要跨叢集複製應用程式、則必須新增物件存放區資源庫供應商。Astra Control會將這些備份或複製儲存在您定義的物件存放區中。
+
+如果您要將應用程式組態和持續儲存設備複製到同一個叢集、則無需使用Astra Control中的儲存庫。應用程式快照功能不需要儲存庫。
+
+.開始之前
+* 確保您擁有一個可從 Astra Control Center 所管理的叢集存取的貯體。
+* 確保您擁有貯體的認證。
+* 確認貯體為下列其中一種類型：
++
+** NetApp ONTAP 產品S3
+** NetApp StorageGRID 產品S3
+** Microsoft Azure
+** 一般S3
+
+
+
+
+
+NOTE: Amazon Web Services（AWS）和Google Cloud Platform（GCP）使用通用S3儲存區類型。
+
+
+NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商、但Astra Control Center可能不支援所有聲稱Amazon S3支援的物件儲存區廠商。
+
+.步驟
+. 在左側導覽區域中、選取*鏟斗*。
+. 選取*「Add*」。
+. 選取貯體類型。
++
+
+NOTE: 新增儲存庫時、請選擇正確的儲存庫供應商、並提供該供應商的適當認證資料。例如、UI接受NetApp ONTAP S3作為類型並接受StorageGRID 驗證、但這將導致所有未來使用此儲存庫的應用程式備份與還原失敗。
+
+. 輸入現有的庫位名稱和選用說明。
++
+
+TIP: 庫位名稱和說明會顯示為備份位置、您可以在建立備份時稍後選擇。此名稱也會在保護原則組態期間顯示。
+
+. 輸入S3端點的名稱或IP位址。
+. 在「*選取認證*」下、選擇「*新增*」或「*使用現有*」索引標籤。
++
+** 如果您選擇*新增*：
++
+... 在Astra Control中輸入認證與其他認證不同的名稱。
+... 從剪貼簿貼上內容、輸入存取ID和秘密金鑰。
+
+
+** 如果您選擇*使用現有*：
++
+... 選取您要搭配儲存區使用的現有認證資料。
+
+
+
+
+. 選取 `Add`。
++
+
+NOTE: 當您新增貯體時、Astra Control會使用預設的貯體指標來標記一個貯體。您建立的第一個儲存區會成為預設儲存區。當您新增儲存庫時、可以稍後決定 link:../use/manage-buckets.html#set-the-default-bucket["設定另一個預設儲存區"]。
+
+

@@ -83,7 +83,7 @@ kubectl delete limitrange cpu-limit-range -n [netapp-acc or custom namespace]
 
 == 新增自訂TLS憑證
 
-Astra Control Center預設使用自我簽署的TLS憑證來處理入站控制器流量（僅適用於特定組態）、以及使用網頁瀏覽器進行Web UI驗證。您可以移除現有的自我簽署TLS憑證、並以由憑證授權單位（CA）簽署的TLS憑證取代。
+Astra Control Center預設使用自我簽署的TLS憑證來處理入站控制器流量（僅適用於特定組態）、以及使用網頁瀏覽器進行Web UI驗證。若要正式作業、您應該移除現有的自我簽署 TLS 憑證、並以由憑證授權單位（ CA ）簽署的 TLS 憑證來取代。
 
 [NOTE]
 ====
@@ -181,6 +181,10 @@ Status:
 Events:                    <none>
 ----
 . 使用下列範例建立「create.yaml」檔案、並以適當的資訊取代括弧<>中的預留位置值：
++
+
+NOTE: 此範例使用 `dnsNames` 用於指定 Astra Control Center DNS 位址的內容。Astra Control Center 不支援使用 Common Name （ CN ）屬性來指定 DNS 位址。
+
 +
 [source, yaml, subs="+quotes"]
 ----

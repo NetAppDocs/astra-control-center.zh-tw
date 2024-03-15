@@ -19,7 +19,6 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 * <<如果在管理叢集之後新增volumesnapshotClass、則應用程式備份和快照將會失敗>>
 * <<使用 Astra Control Center 管理叢集時、如果 Kribeconfig 檔案包含多個內容、就會失敗>>
-* <<監控 Pod 可能會在 Istio 環境中當機>>
 * <<當Astra Trident離線時、應用程式資料管理作業會因內部服務錯誤（500）而失敗>>
 * <<ONTAP NAS 經濟型儲存類別的就地還原作業失敗>>
 * <<使用 Kerberos 進行中加密時、從備份還原可能會失敗>>
@@ -40,58 +39,6 @@ summary: 已知問題可識別可能導致您無法成功使用本產品版本�
 
 
 
-== 監控 Pod 可能會在 Istio 環境中當機
-
-如果您在 Istio 環境中將 Astra Control Center 與 Cloud Insights 配對 `telegraf-rs` Pod 可能當機。因應措施是執行下列步驟：
-
-. 尋找當機的 Pod ：
-+
-[listing]
-----
-kubectl -n netapp-monitoring get pod | grep Error
-----
-+
-您應該會看到類似下列的輸出：
-
-+
-[listing]
-----
-NAME READY STATUS RESTARTS AGE
-telegraf-rs-fhhrh 1/2 Error 2 (26s ago) 32s
-----
-. 重新啟動當機的 Pod 、更換 `<pod_name_from_output>` 使用受影響 Pod 的名稱：
-+
-[listing]
-----
-kubectl -n netapp-monitoring delete pod <pod_name_from_output>
-----
-+
-您應該會看到類似下列的輸出：
-
-+
-[listing]
-----
-pod "telegraf-rs-fhhrh" deleted
-----
-. 確認 Pod 已重新啟動、且未處於錯誤狀態：
-+
-[listing]
-----
-kubectl -n netapp-monitoring get pod
-----
-+
-您應該會看到類似下列的輸出：
-
-+
-[listing]
-----
-NAME READY STATUS RESTARTS AGE
-telegraf-rs-rrnsb 2/2 Running 0 11s
-----
-
-
-
-
 == 當Astra Trident離線時、應用程式資料管理作業會因內部服務錯誤（500）而失敗
 
 如果應用程式叢集上的Astra Trident離線（並重新連線）、而且在嘗試應用程式資料管理時遇到500個內部服務錯誤、請重新啟動應用程式叢集中的所有Kubernetes節點、以還原功能。
@@ -100,7 +47,7 @@ telegraf-rs-rrnsb 2/2 Running 0 11s
 
 == ONTAP NAS 經濟型儲存類別的就地還原作業失敗
 
-如果您執行應用程式的就地還原（將應用程式還原至其原始命名空間）、應用程式的儲存類別會使用 `ontap-nas-economy` 驅動程式、如果未隱藏快照目錄、還原作業可能會失敗。在就地還原之前、請遵循中的指示 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["啟用 ONTAP NAS 經濟營運的備份與還原"^] 可隱藏 Snapshot 目錄。
+如果您執行應用程式的就地還原（將應用程式還原至其原始命名空間）、應用程式的儲存類別會使用 `ontap-nas-economy` 驅動程式、如果未隱藏快照目錄、還原作業可能會失敗。在就地還原之前、請遵循中的指示 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["啟用 ONTAP NAS 經濟營運的備份與還原"] 可隱藏 Snapshot 目錄。
 
 
 
