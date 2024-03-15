@@ -16,7 +16,7 @@ summary: NetApp會定期更新Astra Control Center、為您提供新功能、增
 
 
 
-== 2023 年 3 月 14 日（ 24.02.0 ）
+== 2023 年 3 月 15 日（ 24.02.0 ）
 
 .新功能與支援
 * * 部署不含私人登錄的 Astra Control Center * ：您不再需要將 Astra Control Center 映像推送至私人登錄、或將其作為 Astra Control 環境的一部分使用。

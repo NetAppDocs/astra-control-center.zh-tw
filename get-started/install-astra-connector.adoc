@@ -38,7 +38,7 @@ NOTE: 如果叢集已設定 Pod 安全許可強制（ Kubernetes 1.25 及更新�
 +
 [source, console]
 ----
-kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/24.02.0-202403141622/astraconnector_operator.yaml
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/24.02.0-202403151353/astraconnector_operator.yaml
 ----
 . 確認操作員已安裝就緒：
 +

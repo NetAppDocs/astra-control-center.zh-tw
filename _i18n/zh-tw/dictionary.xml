@@ -753,10 +753,8 @@
   <block id="58042c65f3c67283f15325ab2febd22a" category="paragraph">*我可以直接透過不同的介面或物件儲存設備來管理Astra Control所拍攝的快照嗎？*</block>
   <block id="df17fddf226fe3399a8cb420856f3565" category="section-title">執行資格檢查</block>
   <block id="40152bf47b47316f99abeacf61572ddd" category="paragraph">執行下列資格檢查、確保您的叢集已準備好新增至Astra控制中心。</block>
-  <block id="210c5331ab46caa141e6ac9d5aeb1bee" category="paragraph">視需要調整名稱和命名空間。如果在此處進行變更、您應該在下列步驟中套用相同的變更。</block>
   <block id="605443509a67749999ab3b0d3ba43e8b" category="list-text">套用服務帳戶：</block>
   <block id="b29afe741178d8d4966c07c97f9892db" category="list-text">建立名為「astracontletil-clusterrolebind.yaml」的「ClusterRoeBinding」檔案。</block>
-  <block id="51980eaff0de60f578593fb8ae77f9b3" category="paragraph">視需要在建立服務帳戶時調整任何已修改的名稱和命名空間。</block>
   <block id="c6c2bc2133c73ae2516508de9a2b5869" category="list-text">套用叢集角色繫結：</block>
   <block id="b6e00a7dda090ccd5afd1c904d80548c" category="list-text">列出服務帳戶機密、將「&lt;內容&gt;」取代為正確的安裝內容：</block>
   <block id="f087976277d273660b942918b43af841" category="paragraph">輸出的結尾應類似於下列內容：</block>
@@ -3315,7 +3313,6 @@ Astra Control Center 支援使用下列平台和貯體類型建立不可變的�
   <block id="cafefc5f50506723aef36efe08228ac6" category="list-text"><block ref="cafefc5f50506723aef36efe08228ac6" category="inline-link-macro-rx"></block></block>
   <block id="ebbf8ab2cc98d2a82b96a1a2f7b5ae63" category="list-text">* ONTAP 儲存設備支援的儲存類別 * ：如果您使用的是 ONTAP 後端、 Astra 控制中心可匯入 ONTAP 後端以報告監控資訊。</block>
   <block id="8253c8b1a609f9ce1a02c4e2a504c939" category="admonition">儲存類別應為<block ref="77905d0564a40ee81ff9591499f11020" category="inline-link-rx"></block> 使用 Astra Control Provisioner 。</block>
-  <block id="14fe383b66664af3f619add4f5177375" category="section-title">2023 年 3 月 14 日（ 24.02.0 ）</block>
   <block id="d63699561e9e89b24f74267a42a43fcb" category="list-text">* 部署不含私人登錄的 Astra Control Center * ：您不再需要將 Astra Control Center 映像推送至私人登錄、或將其作為 Astra Control 環境的一部分使用。</block>
   <block id="2d34fffcd239d9123b41c19f296a8e34" category="list-text">* 小錯誤修正 *</block>
   <block id="52431bbd389e0fa547d3457c7623dfdb" category="paragraph-title">（技術預覽）聲明性 Kubernetes 工作流程</block>
@@ -3360,12 +3357,10 @@ Astra Control Center 支援使用下列平台和貯體類型建立不可變的�
   <block id="12547cb718bd5cdda0698d3425c2efd9" category="admonition">只有在 Astra Control Center 期間、才能將 Astra Control Center 與服務網格整合 <block ref="62b215247cb296dff8f12da472ca9c46" category="inline-link-macro-rx"></block> 而且不受此程序的影響。不支援從網格環境變更回無網格環境。</block>
   <block id="8eae7b52d2951fd68c2e610fc6a8003d" category="paragraph">完成這些步驟以安裝最新的 NetApp Astra Kubectl 命令列外掛程式。</block>
   <block id="fa221b4f0b04edab66e833af2ce3f2ef" category="paragraph">如果您已從先前的安裝中安裝外掛程式、 <block ref="2a7472047c8e1a767aa63b6d837cb04d" category="inline-link-macro-rx"></block> 完成這些步驟之前。</block>
-  <block id="93cd09cf13a63fbf73e885567e601af2" category="admonition">預留位置<block ref="facf912114e23f5e3f2192e508b5894a" prefix=" " category="inline-code"></block> 應與您先前上傳的影像位置相符（例如、<block ref="4bb7b95e87f41970aa8eeb1f4893161d" prefix=" " category="inline-code"></block>）。</block>
   <block id="5168e33647c31de13dabe5499c7ce89a" category="list-text">為建立秘密<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> （或自訂命名）命名空間。根據您的登錄偏好設定、新增 Docker 資訊並執行其中一個適當的命令：</block>
   <block id="1464e6df18144d722e7dceece5a6e602" category="list-text">變更<block ref="e7fbb61ffc587682a801796b46db408a" prefix=" " category="inline-code"></block> 適用於<block ref="83f93b05da174976bd534cc67ad9f7b4" prefix=" " category="inline-code"></block> 映像到您在中推入映像的登錄路徑 <block ref="354650eb3180bfec1ebeac2793978bb8" category="inline-xref-macro-rx"></block>。</block>
   <block id="cd7a180ee2029176203abb971a5e5ed9" category="example-title">帳戶名稱</block>
   <block id="bbdbf70444e48a34a4a7e7d708d85eec" category="example-title">astraVersion</block>
-  <block id="79f6e92153762d586d165283a990b5d3" category="cell"><block ref="5649416aab23d5e9c0991adb30326363" prefix="" category="inline-code"></block></block>
   <block id="d27903c79b643b2f565c31e894abb568" category="example-title">astraAddress</block>
   <block id="3b34fa10a1849149ef360d65f3b2584b" category="cell">變更<block ref="d27903c79b643b2f565c31e894abb568" prefix=" " category="inline-code"></block> 字串至您要在瀏覽器中使用的FQDN（建議）或IP位址、以存取Astra Control Center。此位址定義Astra Control Center在資料中心的找到方式、以及當您完成配置時、從負載平衡器配置的相同FQDN或IP位址 <block ref="474766b82367a3ec4c760e75a04081da" category="inline-link-macro-rx"></block>。
 
@@ -3426,7 +3421,6 @@ Astra Control Center使用「負載平衡器」類型的服務 <block ref="24ace
   <block id="ff8f3c1816620cf8943535a74e369c1e" category="list-text">使用<block ref="8045a0a6c688b0635e3caccc408a1446" prefix=" " category="inline-code"></block> <block ref="8787af0c37edaa1239d34c7f166a1210" category="inline-xref-macro-rx"></block> 並為提供替代入口 <block ref="e5cc4e9a9ac2da26f1059b40c2f5790a" category="inline-link-macro-rx"></block>。</block>
   <block id="783fbd40d340f1c6d7af1fab635a9cf5" category="open-title">Red Hat OpenShift Web 主控台</block>
   <block id="de70fb086d01bb5437ce1b74c04a3604" category="admonition">如果您選擇手動核准策略、系統會提示您核准此操作員的手動安裝計畫。</block>
-  <block id="4012f625d5dc882e710f5fd5f479e236" category="list-text">輸入 Astra Control Center 版本、例如 24.02.0-65 。</block>
   <block id="15105b1c130e1cdf07a5bcc7b4c2e25a" category="list-text">選取安裝的規模大小。</block>
   <block id="a56226948269f21e33c8cedc94f81f6e" category="list-text">*通用* <block ref="70110d526a7afb77cc9b5240e79845c0" prefix="(" category="inline-code"></block>）（預設）</block>
   <block id="bc56063dd5f901e8aacc233e02694865" category="paragraph">如果您使用另一個入口控制器、或偏好使用自己的入口控制器、請使用此選項。Astra Control Center 部署完成後、您需要設定 <block ref="d5e402858a9f759437c0ead0501ac799" category="inline-link-macro-rx"></block> 使用URL公開Astra Control Center。</block>
@@ -3556,7 +3550,6 @@ RKE 2 ：採用 Rancher Manager 2.7.9 的版本 1.24.17 、 1.25.14 、 1.26.9</
   <block id="8af6183c9bdfc7399cee2ffcfafecbd2" category="paragraph">中每個元素的索引<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 陣列開頭為0。在上述範例中、索引為<block ref="b91e4862bb487ade8bbd4f9eefe0618e" prefix=" " category="inline-code"></block> 將為0、索引則為<block ref="ce8dd462bb623b9902ba4f0151eb2f1b" prefix=" " category="inline-code"></block> 應該是1。在輸出中、記下服務帳戶密碼的索引編號。您在下一個步驟中需要此索引編號。</block>
   <block id="a40c084314b74a686572312dc71c4738" category="list-text">建立<block ref="3d3f9b7a5974a7898593a3d2f5549f15" prefix=" " category="inline-code"></block> 檔案：</block>
   <block id="23ed633c6130c18f08608b6efce84dc4" category="list-text">更換<block ref="089d02fba2ffcdb49a91320ff506dfa3" prefix=" " category="inline-code"></block> 在下列指令碼開頭、使用正確的值。</block>
-  <block id="8ef78cb986fb315aafc3d106d5e46291" category="list-text">更換<block ref="7347fe5a0f184f79ef064e92e3beb297" prefix=" " category="inline-code"></block> Astra Control Center 命名空間。</block>
   <block id="c103c1b613b979158e5cb38bf6ed5f16" category="inline-link">請依照下列步驟、解除安裝內含 Astra Control Provisioner 服務的 Astra Trident 執行個體</block>
   <block id="2c5e000851530d456765d6ad7069ee9a" category="paragraph">* 取消管理時 Astra Control Provisioner （或 Astra Trident ）是否會自動從叢集解除安裝？ *
 當您從 Astra Control Center 取消管理叢集時、 Astra Control Provisioner 或 Astra Trident 不會自動從叢集中解除安裝。若要解除安裝 Astra Control Provisioner 及其元件或 Astra Trident 、您需要<block ref="20ce5e359d2a1fb9fe63ec6fbc3432ca" category="inline-link-rx"></block>。</block>
@@ -3616,4 +3609,8 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="7742ba7740cead9fe565013f4bdb49ae" category="sidebar">使用 Astra Control 準備叢集管理</block>
   <block id="3b99b0d7fdee4b22f7669dcf30bd5137" category="sidebar">安裝 Astra Connector for Managed 叢集</block>
   <block id="bb46bb8b123b387689649bcd6e67f690" category="sidebar">啟用儲存後端驗證</block>
+  <block id="e9876a34f200453c5276db1bcd936066" category="section-title">2023 年 3 月 15 日（ 24.02.0 ）</block>
+  <block id="8eb0443b63cbd12e3161aa0214feb89c" category="admonition">預留位置<block ref="facf912114e23f5e3f2192e508b5894a" prefix=" " category="inline-code"></block> 應與您先前上傳的影像位置相符（例如、<block ref="69d1ad4e27c121d5699f0cde5eb5c93c" prefix=" " category="inline-code"></block>）。</block>
+  <block id="f768e6dcac13eb19534cf966f45963b6" category="cell"><block ref="f88ff30441dac38b9948d4f74cec7a17" prefix="" category="inline-code"></block></block>
+  <block id="a4d0aec7cffdaed0bf8e97e7c30b486b" category="list-text">輸入 Astra Control Center 版本、例如 24.02.0-69 。</block>
 </blocks>

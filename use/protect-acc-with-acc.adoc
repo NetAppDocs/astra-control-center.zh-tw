@@ -156,7 +156,7 @@ kubectl get acc -n netapp-acc
 [listing]
 ----
 NAME  UUID                                 VERSION    ADDRESS                             READY
-astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 24.02.0-65 ocp-cluster-1.company.com           True
+astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 24.02.0-69 ocp-cluster-1.company.com           True
 ----
 .. 如果是 `ADDRESS` 上述回應中的欄位沒有主要 Astra Control Center 執行個體的 FQDN 、請更新組態以參考 Astra Control Center DNS ：
 +
@@ -379,7 +379,7 @@ kubectl get acc -n netapp-acc
 [listing]
 ----
 NAME  UUID                                 VERSION    ADDRESS                             READY
-astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 24.02.0-65 ocp-cluster-1.company.com           True
+astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 24.02.0-69 ocp-cluster-1.company.com           True
 ----
 * * 確認部署狀態 * ：顯示 Astra Control Center 部署資訊以確認 `Deployment State` 是 `Deployed`。
 +
