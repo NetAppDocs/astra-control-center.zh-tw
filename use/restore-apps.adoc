@@ -143,7 +143,7 @@ metadata:
 spec:
   appVaultRef: <APPVAULT_NAME>
   appArchivePath: <BACKUP_PATH>
-  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "target": "<DESTINATION_NAMESPACE>"}]
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "destination": "<DESTINATION_NAMESPACE>"}]
 ----
 
 
