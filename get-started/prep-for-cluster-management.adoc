@@ -242,7 +242,6 @@ rules:
   - poddisruptionbudgets
   - pods
   - podtemplates
-  - podsecuritypolicies
   - replicasets
   - replicationcontrollers
   - replicationcontrollers/scale
@@ -284,17 +283,8 @@ rules:
   - imagetags
   verbs:
   - update
-
-# Use PodSecurityPolicies
-- apiGroups:
-  - extensions
-  - policy
-  resources:
-  - podsecuritypolicies
-  verbs:
-  - use
 ----
-.. （僅限 OpenShift 叢集）在的結尾處附加下列項目 `astra-admin-account.yaml` 檔案或之後 `# Use PodSecurityPolicies` 區段：
+.. （僅限 OpenShift 叢集）在的結尾處附加下列項目 `astra-admin-account.yaml` 檔案：
 +
 [source, console]
 ----
