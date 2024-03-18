@@ -122,7 +122,6 @@ NOTE: 若要瞭解如何設定 INCLUDE 及 EXCLUDE 規則、請參閱 <<在應�
 . 建立自訂資源（ CR ）檔案並命名 `astra-control-backup-restore-cr.yaml`。更新括弧 <> 中的值以符合 Astra Control 環境和叢集組態：
 +
 ** <CR_NAME> ：此 CR 作業的名稱；請為您的環境選擇合理的名稱。
-** <ASTRA_CONNECTOR_NAMESPACE> ：安裝 Astra Connector 的命名空間。
 ** <APPVAULT_NAME> ：儲存備份內容的 AppVault 名稱。
 ** <BACKUP_PATH> ：儲存備份內容的 AppVault 內部路徑。例如：
 +
@@ -139,7 +138,7 @@ apiVersion: astra.netapp.io/v1
 kind: BackupRestore
 metadata:
   name: <CR_NAME>
-  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+  namespace: astra-connector
 spec:
   appVaultRef: <APPVAULT_NAME>
   appArchivePath: <BACKUP_PATH>
@@ -193,7 +192,6 @@ kubectl apply -f astra-control-backup-restore-cr.yaml
 . 建立自訂資源（ CR ）檔案並命名 `astra-control-backup-ipr-cr.yaml`。更新括弧 <> 中的值以符合 Astra Control 環境和叢集組態：
 +
 ** <CR_NAME> ：此 CR 作業的名稱；請為您的環境選擇合理的名稱。
-** <ASTRA_CONNECTOR_NAMESPACE> ：安裝 Astra Connector 的命名空間。這應該是建立備份的命名空間。
 ** <APPVAULT_NAME> ：儲存備份內容的 AppVault 名稱。
 ** <BACKUP_PATH> ：儲存備份內容的 AppVault 內部路徑。例如：
 +
@@ -208,7 +206,7 @@ apiVersion: astra.netapp.io/v1
 kind: BackupInplaceRestore
 metadata:
   name: <CR_NAME>
-  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+  namespace: astra-connector
 spec:
   appVaultRef: <APPVAULT_NAME>
   appArchivePath: <BACKUP_PATH>
@@ -270,7 +268,6 @@ kubectl apply -f astra-control-backup-ipr-cr.yaml
 . 建立自訂資源（ CR ）檔案並命名 `astra-control-snapshot-restore-cr.yaml`。更新括弧 <> 中的值以符合 Astra Control 環境和叢集組態：
 +
 ** <CR_NAME> ：此 CR 作業的名稱；請為您的環境選擇合理的名稱。
-** <ASTRA_CONNECTOR_NAMESPACE> ：安裝 Astra Connector 的命名空間。
 ** <APPVAULT_NAME> ：儲存備份內容的 AppVault 名稱。
 ** <BACKUP_PATH> ：儲存備份內容的 AppVault 內部路徑。例如：
 +
@@ -287,7 +284,7 @@ apiVersion: astra.netapp.io/v1
 kind: SnapshotRestore
 metadata:
   name: <CR_NAME>
-  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+  namespace: astra-connector
 spec:
   appArchivePath: <BACKUP_PATH>
   appVaultRef: <APPVAULT_NAME>
@@ -341,7 +338,6 @@ kubectl apply -f astra-control-snapshot-restore-cr.yaml
 . 建立自訂資源（ CR ）檔案並命名 `astra-control-snapshot-ipr-cr.yaml`。更新括弧 <> 中的值以符合 Astra Control 環境和叢集組態：
 +
 ** <CR_NAME> ：此 CR 作業的名稱；請為您的環境選擇合理的名稱。
-** <ASTRA_CONNECTOR_NAMESPACE> ：安裝 Astra Connector 的命名空間。這應該是建立快照的命名空間。
 ** <APPVAULT_NAME> ：儲存備份內容的 AppVault 名稱。
 ** <BACKUP_PATH> ：儲存備份內容的 AppVault 內部路徑。例如：
 +
@@ -356,7 +352,7 @@ apiVersion: astra.netapp.io/v1
 kind: SnapshotInplaceRestore
 metadata:
   name: <CR_NAME>
-  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+  namespace: astra-connector
 spec:
   appArchivePath: <BACKUP_PATH>
   appVaultRef: <APPVAULT_NAME>
