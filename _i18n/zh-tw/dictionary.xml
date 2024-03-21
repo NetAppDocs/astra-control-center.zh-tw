@@ -624,7 +624,6 @@
   <block id="d23202f3a841766e7b5d6b37777fc6c3" category="list-text">從側功能表中、選取*運算子&gt;運算子中樞*。</block>
   <block id="6d20ba1f906a03b7657514dee48eb121" category="list-text">選擇*安裝*。</block>
   <block id="4b583376b2767b923c3e1da60d10de59" category="inline-link">營運者</block>
-  <block id="13191ff715c85f59fd2da330d31c4e9f" category="list-text">選擇*部署和使用*。</block>
   <block id="a961f7d3b56fe3f9b072af70813d6f82" category="section-title">安裝操作員</block>
   <block id="80c07a74abae733a8881dd926a32ef70" category="list-text">完成*安裝操作員*頁面並安裝操作員：</block>
   <block id="1d0cc3a3781d64cc680980dd96e982ab" category="admonition">此運算子可用於所有叢集命名空間。</block>
@@ -1750,7 +1749,6 @@
   <block id="e4f3253ab12e0c60faa03ce6ef1c9784" category="section-title">Azure的必備功能</block>
   <block id="060534066f9a22cabf451772f0daf58b" category="list-text">建立運算子命名空間：</block>
   <block id="8f70adb2eebdea2e00d5d57216cd59b5" category="inline-link-macro">完成設定</block>
-  <block id="eb5ffd4ef5a8aa98e9c36b2c79cea4ed" category="list-text">搜尋並選擇NetApp Astra Control Center營運者。</block>
   <block id="91ec9a89e3a33fa6bc118cf53ef60c2e" category="list-text">選擇NetApp Astra Control Center<block ref="e9d5520af4877fc40e9611f3ebf55be3" category="inline-link-rx"></block>。</block>
   <block id="20133d30eea258b6c1550d612eb75dfc" category="list-text">新增Astra Control Center的標籤。</block>
   <block id="a90dd656b7a6b8d695097aab7d876d0e" category="list-text">啟用或停用自動支援。建議保留「自動支援」功能。</block>
@@ -2679,7 +2677,6 @@
   <block id="0f31c8d4b3ae834c0062c8056c4cb5b7" category="inline-link">啟用嚴格的 MTLS</block>
   <block id="4c6c19221d15e9ceaf813bb76e0266f7" category="list-text">（建議）<block ref="bf40c5ba89ffee197f368678037a1b36" category="inline-link-rx"></block> 對於 Istio 服務網格：</block>
   <block id="842bb2b25b0ccc10b1fb3de7084fc991" category="list-text">* 確保健全的叢集操作員和 API 服務 * ：</block>
-  <block id="c2f6a0ef27a00211c21a249f0a3b79d5" category="list-text">* 取得 OpenShift 權限 * ：您需要所有必要的權限、並存取 Red Hat OpenShift Container Platform 、才能執行所述的安裝步驟。</block>
   <block id="1e49b9057d379a0d559e616836652580" category="list-text">新增<block ref="c0261c4509dcb52c25794852cf3367a6" prefix=" " category="inline-code"></block> 在部署 Astra Control Center 之前、請先將標籤貼到 Astra 命名空間。</block>
   <block id="4cc3351439de416fee936093cb5a065a" category="list-text">對於 Red Hat OpenShift 叢集、您需要定義<block ref="d4ee387f8cc8e4354b61e452ecbf6a15" prefix=" " category="inline-code"></block> 在所有相關的 Astra Control Center 命名空間上 <block ref="cadbba5231afda9b003503d57805b87d" prefix="(" category="inline-code"></block>、<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block>、<block ref="aadb900c6eaeed8ade58660fe972acec" prefix=" " category="inline-code"></block> 應用程式叢集或任何已取代的自訂命名空間）。</block>
   <block id="22851966368f7a8e3c0bf121d7203ca1" category="list-text">[[generic-grid]] 選取入口類型：</block>
@@ -3609,4 +3606,43 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="da65a49714e715e3103c6d4e4765ad79" category="section-title">2024 年 3 月 15 日（ 24.02.0 ）</block>
   <block id="3e10c4dd91af2dc1835b50343bc5fbd0" category="list-text">一個或多個登錄中的影像</block>
   <block id="03af53c262f33cd7a040764e24c068eb" category="list-text">（僅限 OpenShift 叢集）在的結尾處附加下列項目<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block> 檔案：</block>
+  <block id="652aa122a3c8a61f53fecfe7a2e38472" category="summary">如果您使用 Red Hat OpenShift 、可以使用 OperatorHub 升級 Astra Control Center 。</block>
+  <block id="d1810a7b7ece844661c0ebd3f6d6b734" category="doc">使用 OpenShift OperatorHub 升級 Astra Control Center</block>
+  <block id="d65f6afdd601abb375246f62e4d974af" category="paragraph">如果您使用 Red Hat 認證的操作員安裝 Astra Control Center 、則可以使用 OperatorHub 的更新操作員來升級 Astra Control Center 。使用此程序從升級 Astra Control Center<block ref="a0bebb9db4c42678b95afc86229a893d" category="inline-link-rx"></block> 或使用Red Hat OpenShift Container Platform。</block>
+  <block id="dba0214a5ff4087709345c59f18d5ecc" category="list-text">* 符合環境先決條件 * ：升級之前、請確保您的環境仍符合 <block ref="a5e730f4eb1e05ab5d051c5fbaad1711" category="inline-link-macro-rx"></block>。</block>
+  <block id="ee69e430ad6ce53b164d990d32171363" category="list-text">* 請確定您已啟用 <block ref="253c06b63fbdc34e8258634f6035573c" category="inline-link-macro-rx"></block> Astra Trident Running *</block>
+  <block id="9e7dceeac2c1b47a8a65fc5301cfbc97" category="list-text">* OpenShift 權限 * ：您擁有所有必要的權限、並可存取 Red Hat OpenShift Container Platform 以執行所述的升級步驟。</block>
+  <block id="14d39dcccbea7ad3c78e42b59aea8467" category="list-text"><block ref="ddb3eae04adcef55bc274001e6992ab5" category="inline-xref-macro-rx"></block></block>
+  <block id="7eb5c0427d3e2c95f7a7d55cb263dcad" category="list-text"><block ref="132acb99c1ed8179266ddab65ea75c5b" category="inline-xref-macro-rx"></block></block>
+  <block id="bcbf9322019433e2070bc9f950cdfaf9" category="list-text"><block ref="0ef2d18cbf3f0253133fb82832963633" category="inline-xref-macro-rx"></block></block>
+  <block id="1b36ea2dbec733bbc7b1bcf18df08b61" category="section-title">存取操作員安裝頁面</block>
+  <block id="c3c26a3600766eef19453ba36cab80bd" category="list-text">完成 Openshift Container 平台或生態系統目錄的對應程序：</block>
+  <block id="274eca9a1fdbeaf2cd7a241794769214" category="list-text">搜尋<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> 然後選取 NetApp Astra 控制中心操作員。</block>
+  <block id="b2a595165e0c0ce7d437b83d5749b051" category="inline-image-macro">此影像顯示操作員頁面上的解除安裝選項</block>
+  <block id="49ae0d594dc9a41982d54abc03e36805" category="paragraph"><block ref="49ae0d594dc9a41982d54abc03e36805" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="76fe74a55acaaea036adbcecca799a9c" category="list-text">選擇 * 部署與使用 * 。</block>
+  <block id="0c15ff02cb7be3c55794dcb6ef61a65e" category="section-title">解除安裝現有的運算子</block>
+  <block id="99fdc785f49075cddc07fa753a02366c" category="list-text">在 *NetApp-acc 操作者 * 頁面中、選取 * 解除安裝 * 以移除現有的操作者。</block>
+  <block id="0d1008fb06b7595c8715c6fbdbf7f070" category="list-text">確認作業。</block>
+  <block id="5ba5f5a565d608a4c86672b4c55d2884" category="admonition">此操作會刪除 NetApp-acc 操作員、但會保留原始的相關命名空間和資源、例如機密。</block>
+  <block id="e6143c3bb511918ab7bc7ab6a4c6313f" category="section-title">安裝最新的操作員</block>
+  <block id="49a6422574d0d2c657fdd914194af4bc" category="list-text">瀏覽至<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> 操作員頁面。</block>
+  <block id="41091ca348ff3c35ab2e0a3ca76978cb" category="list-text">完成 * 安裝操作員 * 頁面、並安裝最新的操作員：</block>
+  <block id="550520c6515847a3b49e4f21211149bf" category="paragraph"><block ref="550520c6515847a3b49e4f21211149bf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c15c094418b557ddfd8a322d12f0deda" category="list-text">選取運算子<block ref="cadbba5231afda9b003503d57805b87d" prefix=" " category="inline-code"></block> 保留在刪除的運算子先前安裝中的命名空間（或自訂命名空間）。</block>
+  <block id="48512efbd6cbb72ba05990b4a58edec2" category="inline-image-macro">此影像顯示原始 Astra Control Center 的編輯選項</block>
+  <block id="2c6460dd8a4dbbe1efa73f9ebeefd4ec" category="list-text">從 Astra Control Center 運算子索引標籤中、選取保留在先前安裝中的 Astra Control Center 、然後選取 * 編輯資訊管理中心 * 。
+<block ref="9897d0c5e439746e21018ef6131a3268" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fe17b9a46bce70651034916e5ecbcf12" category="list-text">更新<block ref="1980c0ae033e18fad473fcada20addbd" prefix=" " category="inline-code"></block> YAML ：</block>
+  <block id="aa3489d5761937b25dc8cd9ecbf228a7" category="list-text">輸入最新的 Astra Control Center 版本、例如 24.02.0-69 。</block>
+  <block id="7246877ec7577a15a569ab8756a799b5" category="list-text">在中<block ref="f141c732c6aae0fddd2afdfac3f75f3f" prefix=" " category="inline-code"></block>，請視需要更新映像登錄路徑：</block>
+  <block id="c89beb8febcc73c18bcf859e8544a034" category="list-text">如果您使用 Astra Control 登錄選項、請將路徑變更為<block ref="e943374c8f90757f171b7cd56af795fd" prefix=" " category="inline-code"></block>。</block>
+  <block id="c260a95d05bc62ad161afe8692c68c61" category="list-text">如果您已設定本機登錄、請變更或保留您在前一個步驟中推入映像的本機映像登錄路徑。</block>
+  <block id="8c7b7976b37ce7ebd902a92d017eecc8" category="admonition">請勿進入<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> 或<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> 在「地址」欄位中。</block>
+  <block id="790b293d8648860acef001057e8a9691" category="list-text">更新<block ref="c6fe3b36a104e3ea913f9a6b82389050" prefix=" " category="inline-code"></block> 視需要而定。</block>
+  <block id="e74609fc41a466140744e1cd3b6029c9" category="admonition">操作員解除安裝程序不會移除現有的機密資料。只有在建立與現有秘密不同名稱的新秘密時、才需要更新此欄位。</block>
+  <block id="3523d7bdfad5124dba6032cbc37814c8" category="list-text">將下列項目新增至<block ref="c16ae51f09d668b952e5ab23072ad64e" prefix=" " category="inline-code"></block> 組態：</block>
+  <block id="345e93a96b6e66cb9274dbad975c0db2" category="list-text">儲存您的變更。</block>
+  <block id="622f51a75f238bac126a4e3b58d91991" category="list-text">UI 確認升級成功。</block>
+  <block id="ecba1fa6966e7dffc085b7fc45ca2133" category="list-text">* 取得 OpenShift 權限 * ：您將需要所有必要的權限、以及對 Red Hat OpenShift Container Platform 的存取權限、才能執行所述的安裝步驟。</block>
 </blocks>

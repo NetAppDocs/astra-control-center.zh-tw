@@ -1,0 +1,199 @@
+---
+sidebar: sidebar 
+permalink: use/upgrade-acc-operatorhub.html 
+keywords: upgrade astra, upgrade operator, operatorhub, openshift, upgrade astra control center, service mesh 
+summary: 如果您使用 Red Hat OpenShift 、可以使用 OperatorHub 升級 Astra Control Center 。 
+---
+= 使用 OpenShift OperatorHub 升級 Astra Control Center
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+如果您使用 Red Hat 認證的操作員安裝 Astra Control Center 、則可以使用 OperatorHub 的更新操作員來升級 Astra Control Center 。使用此程序從升級 Astra Control Center https://catalog.redhat.com/software/operators/explore["Red Hat生態系統目錄"^] 或使用Red Hat OpenShift Container Platform。
+
+.開始之前
+* * 符合環境先決條件 * ：升級之前、請確保您的環境仍符合 link:requirements.html["Astra Control Center 部署的最低需求"]。
+* * 請確定您已啟用 link:../get-started/requirements.html#astra-control-provisioner["Astra Control 資源配置程式"] Astra Trident Running *
++
+.. 判斷您正在執行的 Astra Trident 版本：
++
+[source, console]
+----
+kubectl get tridentversion -n trident
+----
++
+
+NOTE: 如果您執行的是 Astra Trident 23.01 或更早版本、請使用這些項目 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["說明"^] 在升級至 Astra Control Provisioner 之前、先升級至較新版本的 Astra Trident 。如果您的 Astra Trident 位於 24.02 版的四個版本視窗內、您可以直接升級至 Astra Control Provisioner 24.02 。例如、您可以直接從 Astra Trident 23.04 升級至 Astra Control Provisioner 24.02 。
+
+.. 確認 Astra Control Provisioner 已完成 link:../get-started/faq.html#running-acp-check["已啟用"]。Astra Control Provisioner 無法搭配 23.10 之前的 Astra Control Center 版本使用。升級 Astra Control Provisioner 、使其與您升級的 Astra Control Center 版本相同、以便存取最新功能。
+
+
+* * 確保健全的叢集操作員和 API 服務 * ：
++
+** 從OpenShift叢集確保所有叢集操作員都處於健全狀態：
++
+[source, console]
+----
+oc get clusteroperators
+----
+** 從OpenShift叢集、確保所有API服務都處於健全狀態：
++
+[source, console]
+----
+oc get apiservices
+----
+
+
+* * OpenShift 權限 * ：您擁有所有必要的權限、並可存取 Red Hat OpenShift Container Platform 以執行所述的升級步驟。
+* * （僅限 ONTAP SAN 驅動程式）啟用多重路徑 * ：如果您使用的是 ONTAP SAN 驅動程式、請務必在所有 Kubernetes 叢集上啟用多重路徑。
+
+
+您也應該考慮下列事項：
+
+* * 取得 NetApp Astra 控制影像登錄的存取權限 * ：
++
+您可以選擇從 NetApp 映像登錄取得 Astra Control 的安裝映像和功能增強功能、例如 Astra Control Provisioner 。
+
++
+.. 記錄您登入登錄所需的 Astra Control 帳戶 ID 。
++
+您可以在 Astra Control Service 網頁 UI 中看到您的帳戶 ID 。選取頁面右上角的圖示、選取 * API access* 、然後寫下您的帳戶 ID 。
+
+.. 從同一頁面選取 * 產生 API 權杖 * 、然後將 API 權杖字串複製到剪貼簿、並將其儲存在編輯器中。
+.. 登入 Astra Control 登錄：
++
+[source, console]
+----
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
+
+
+
+
+.步驟
+* <<存取操作員安裝頁面>>
+* <<解除安裝現有的運算子>>
+* <<安裝最新的操作員>>
+* <<升級Astra Control Center>>
+
+
+
+
+== 存取操作員安裝頁面
+
+. 完成 Openshift Container 平台或生態系統目錄的對應程序：
++
+[role="tabbed-block"]
+====
+.Red Hat OpenShift Web 主控台
+--
+.. 登入OpenShift Container Platform UI。
+.. 從側功能表中、選取*運算子>運算子中樞*。
++
+
+NOTE: 您只能使用此運算子升級至 Astra Control Center 的目前版本。
+
+.. 搜尋 `netapp-acc` 然後選取 NetApp Astra 控制中心操作員。
++
+image:../use/operatorhub-upgrade-uninstall.png["此影像顯示操作員頁面上的解除安裝選項"]
+
+
+
+--
+.Red Hat生態系統目錄
+--
+.. 選擇NetApp Astra Control Center https://catalog.redhat.com/software/operators/detail/611fd22aaf489b8bb1d0f274["營運者"^]。
+.. 選擇 * 部署與使用 * 。
++
+image:red_hat_catalog.png["此影像顯示可從RedHat生態系統目錄取得的Astra Control Center總覽頁面"]
+
+
+
+--
+====
+
+
+
+
+== 解除安裝現有的運算子
+
+. 在 *NetApp-acc 操作者 * 頁面中、選取 * 解除安裝 * 以移除現有的操作者。
++
+image:../use/operatorhub-upgrade-uninstall.png["此影像顯示操作員頁面上的解除安裝選項"]
+
+. 確認作業。
++
+
+NOTE: 此操作會刪除 NetApp-acc 操作員、但會保留原始的相關命名空間和資源、例如機密。
+
+
+
+
+
+== 安裝最新的操作員
+
+. 瀏覽至 `netapp-acc` 操作員頁面。
+. 完成 * 安裝操作員 * 頁面、並安裝最新的操作員：
++
+image:../use/operatorhub-upgrade-install-page.png["此影像顯示操作員頁面上的解除安裝選項"]
+
++
+
+NOTE: 此運算子可用於所有叢集命名空間。
+
++
+.. 選取運算子 `netapp-acc-operator` 保留在刪除的運算子先前安裝中的命名空間（或自訂命名空間）。
+.. 選取手動或自動核准策略。
++
+
+NOTE: 建議手動核准。每個叢集只能執行單一運算子執行個體。
+
+.. 選擇*安裝*。
++
+
+NOTE: 如果您選擇手動核准策略、系統會提示您核准此操作員的手動安裝計畫。
+
+
+
+. 從主控台移至「作業系統集線器」功能表、確認操作員已成功安裝。
+
+
+
+
+== 升級Astra Control Center
+
+. 從 Astra Control Center 運算子索引標籤中、選取保留在先前安裝中的 Astra Control Center 、然後選取 * 編輯資訊管理中心 * 。
+image:../use/operatorhub-upgrade-yaml-edit.png["此影像顯示原始 Astra Control Center 的編輯選項"]
+. 更新 `AstraControlCenter` YAML ：
++
+.. 輸入最新的 Astra Control Center 版本、例如 24.02.0-69 。
+.. 在中 `imageRegistry.name`，請視需要更新映像登錄路徑：
++
+*** 如果您使用 Astra Control 登錄選項、請將路徑變更為 `cr.astra.netapp.io`。
+*** 如果您已設定本機登錄、請變更或保留您在前一個步驟中推入映像的本機映像登錄路徑。
++
+
+NOTE: 請勿進入 `http://` 或 `https://` 在「地址」欄位中。
+
+
+
+.. 更新 `imageRegistry.secret` 視需要而定。
++
+
+NOTE: 操作員解除安裝程序不會移除現有的機密資料。只有在建立與現有秘密不同名稱的新秘密時、才需要更新此欄位。
+
+.. 將下列項目新增至 `crds` 組態：
++
+[source, console]
+----
+crds:
+  shouldUpgrade: true
+----
+
+
+. 儲存您的變更。
+. UI 確認升級成功。
+

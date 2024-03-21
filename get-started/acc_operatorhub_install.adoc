@@ -39,7 +39,7 @@ oc get apiservices
 
 
 * * 確保可路由的 FQDN* ：您打算使用的 Astra FQDN 可路由至叢集。這表示您在內部DNS伺服器中有DNS項目、或是使用已註冊的核心URL路由。
-* * 取得 OpenShift 權限 * ：您需要所有必要的權限、並存取 Red Hat OpenShift Container Platform 、才能執行所述的安裝步驟。
+* * 取得 OpenShift 權限 * ：您將需要所有必要的權限、以及對 Red Hat OpenShift Container Platform 的存取權限、才能執行所述的安裝步驟。
 * * 設定憑證管理員 * ：如果叢集中已存在憑證管理員、您需要執行一些動作 link:../get-started/cert-manager-prereqs.html["必要步驟"] 因此Astra Control Center不會安裝自己的憑證管理程式。依預設、Astra Control Center會在安裝期間安裝自己的憑證管理程式。
 * * 設定 Kubernetes 入口控制器 * ：如果您的 Kubernetes 入口控制器負責管理外部服務存取、例如叢集中的負載平衡、則您必須將其設定為與 Astra Control Center 搭配使用：
 +
@@ -56,6 +56,24 @@ oc create namespace netapp-acc-operator
 
 
 您也應該考慮下列事項：
+
+* * 取得 NetApp Astra 控制影像登錄的存取權限 * ：
++
+您可以選擇從 NetApp 映像登錄取得 Astra Control 的安裝映像和功能增強功能、例如 Astra Control Provisioner 。
+
++
+.. 記錄您登入登錄所需的 Astra Control 帳戶 ID 。
++
+您可以在 Astra Control Service 網頁 UI 中看到您的帳戶 ID 。選取頁面右上角的圖示、選取 * API access* 、然後寫下您的帳戶 ID 。
+
+.. 從同一頁面選取 * 產生 API 權杖 * 、然後將 API 權杖字串複製到剪貼簿、並將其儲存在編輯器中。
+.. 登入 Astra Control 登錄：
++
+[source, console]
+----
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
+
 
 * * 安裝服務網格以進行安全通訊 * ：強烈建議使用來保護 Astra Control 主機叢集通訊通道 link:requirements.html#service-mesh-requirements["支援的服務網格"]。
 +
@@ -313,7 +331,7 @@ cd manifests
 
 NOTE: 您只能使用此運算子升級至 Astra Control Center 的目前版本。
 
-.. 搜尋並選擇NetApp Astra Control Center營運者。
+.. 搜尋 `netapp-acc` 然後選取 NetApp Astra 控制中心操作員。
 +
 image:openshift_operatorhub.png["此影像顯示OpenShift Container Platform UI的Astra Control Center安裝頁面"]
 
@@ -323,7 +341,7 @@ image:openshift_operatorhub.png["此影像顯示OpenShift Container Platform UI�
 .Red Hat生態系統目錄
 --
 .. 選擇NetApp Astra Control Center https://catalog.redhat.com/software/operators/detail/611fd22aaf489b8bb1d0f274["營運者"^]。
-.. 選擇*部署和使用*。
+.. 選擇 * 部署與使用 * 。
 +
 image:red_hat_catalog.png["此影像顯示可從RedHat生態系統目錄取得的Astra Control Center總覽頁面"]
 
