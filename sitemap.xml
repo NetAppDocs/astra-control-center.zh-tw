@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/acc-earlier-versions.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/acc_cluster_cr_options.html</loc>
+        
+      
+      <lastmod>2023-12-12T00:32:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/acc_operatorhub_install.html</loc>
+        
+      
+      <lastmod>2024-03-21T23:41:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use-acp/acp-snap-restore.html</loc>
+        
+      
+      <lastmod>2023-11-17T18:42:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use-acp/acp-volume-replicate.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/add-bucket.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/add-cluster.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/add-license.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/add-storage-backend.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/rest-api/api-intro.html</loc>
+        
+      
+      <lastmod>2023-05-23T16:27:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/concepts/app-management.html</loc>
+        
+      
+      <lastmod>2023-01-30T16:11:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/concepts/architecture.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/cert-manager-prereqs.html</loc>
+        
+      
+      <lastmod>2023-02-07T00:55:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/concepts/choose-class-and-size.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/clone-apps.html</loc>
+        
+      
+      <lastmod>2023-11-07T15:29:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/close-account.html</loc>
+        
+      
+      <lastmod>2022-11-22T17:31:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/configure-after-install.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use-acp/configure-storage-backend-encryption.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/cr-manage-options.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/concepts/data-protection.html</loc>
+        
+      
+      <lastmod>2024-01-09T16:53:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/define-custom-app.html</loc>
+        
+      
+      <lastmod>2023-12-12T00:32:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/enable-acp.html</loc>
+        
+      
+      <lastmod>2024-03-27T15:29:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/enable-acp.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/enable-auth-ontap-backend.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/execution-hooks.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/faq.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/support/get-help.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/install-astra-connector.html</loc>
+        
+      
+      <lastmod>2024-03-15T22:08:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/install_acc-cvo.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/install_acc.html</loc>
+        
+      
+      <lastmod>2024-03-15T22:08:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/install_overview.html</loc>
+        
+      
+      <lastmod>2022-11-22T17:31:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/intro.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/release-notes/known-issues.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/release-notes/known-limitations.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/legal-notices.html</loc>
+        
+      
+      <lastmod>2023-11-07T15:29:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/concepts/licensing.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-apps.html</loc>
+        
+      
+      <lastmod>2024-03-18T21:47:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-backend.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-buckets.html</loc>
+        
+      
+      <lastmod>2024-03-18T21:47:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-credentials.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-local-users-and-roles.html</loc>
+        
+      
+      <lastmod>2023-07-27T17:23:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-notifications.html</loc>
+        
+      
+      <lastmod>2022-05-03T06:05:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-remote-authentication.html</loc>
+        
+      
+      <lastmod>2023-07-27T17:23:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-remote-users-groups.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/manage-users.html</loc>
+        
+      
+      <lastmod>2023-12-12T00:32:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/monitor-protect.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/monitor-running-tasks.html</loc>
+        
+      
+      <lastmod>2023-05-23T16:27:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/prep-for-cluster-management.html</loc>
+        
+      
+      <lastmod>2024-03-18T23:14:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/protect-acc-with-acc.html</loc>
+        
+      
+      <lastmod>2024-03-15T22:08:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/protect-apps.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/protection-overview.html</loc>
+        
+      
+      <lastmod>2022-12-14T17:10:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/quick-start.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/replicate_snapmirror.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/requirements.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/restore-apps.html</loc>
+        
+      
+      <lastmod>2024-03-18T21:47:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/release-notes/rn_overview.html</loc>
+        
+      
+      <lastmod>2023-11-07T15:29:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center//search.html</loc>
+        
+      
+      <lastmod>2024-03-27T15:30:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/get-started/setup_overview.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/support/troubleshooting-acc.html</loc>
+        
+      
+      <lastmod>2023-11-07T15:29:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/uninstall_acc.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/unmanage.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/update-licenses.html</loc>
+        
+      
+      <lastmod>2023-07-27T17:23:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/upgrade-acc-operatorhub.html</loc>
+        
+      
+      <lastmod>2024-03-21T23:41:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/upgrade-acc.html</loc>
+        
+      
+      <lastmod>2024-03-15T22:08:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/concepts/user-roles-namespaces.html</loc>
+        
+      
+      <lastmod>2022-12-14T17:10:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/view-account-activity.html</loc>
+        
+      
+      <lastmod>2024-03-15T21:55:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/view-apps.html</loc>
+        
+      
+      <lastmod>2023-11-07T15:29:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/view-clusters.html</loc>
+        
+      
+      <lastmod>2023-07-27T17:23:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/use/view-dashboard.html</loc>
+        
+      
+      <lastmod>2022-05-03T06:05:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/astra-control-center/release-notes/whats-new.html</loc>
+        
+      
+      <lastmod>2024-03-18T16:50:07+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
