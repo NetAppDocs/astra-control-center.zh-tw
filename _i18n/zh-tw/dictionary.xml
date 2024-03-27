@@ -3078,7 +3078,6 @@ Astra Control Center 支援使用下列平台和貯體類型建立不可變的�
   <block id="8bdcf20b5d7c7cba89c4e9cdaba07ad2" category="list-text">* Astra Control Provisioner* ： Astra Control Provisioner* 是由 NetApp 維護的完全支援的儲存資源配置程式與協調程式、其中包含 Astra Trident CSI 功能、以及延伸的儲存管理功能、因此 Astra Control Provisioner 可讓您為由 Docker 和 Kubernetes 管理的容器化應用程式建立儲存磁碟區。當與 Astra Control Center 部署時、 Astra Control Provisioner 會包含已設定的 ONTAP 儲存後端。</block>
   <block id="f8eb25c26ac0064b456c26bd4bb1642b" category="list-text">將 Astra Trident 更新為 24.02.0 ：</block>
   <block id="c88d85553b81a72e9b28005772f27281" category="list-text">為 Astra Trident 映像設定自訂登錄位置、或從 Astra Control 登錄中拉出 <block ref="c063da0c4010a4b533407346a02dd83c" prefix="(" category="inline-code"></block> 或<block ref="cad26ce67501baab70dd72ffd03b01e6" prefix=" " category="inline-code"></block>）。</block>
-  <block id="1a94316615bc7bfa28020fb176113eb9" category="list-text">設定 Astra Control Provisioner 映像的自訂登錄位置、或從 Astra Control 登錄中拉出映像 <block ref="6fd47d0a38cf5afec555b659aaed6104" prefix="(" category="inline-code"></block> 或<block ref="3a419c3a7ea2390874c7e355a5180c2e" prefix=" " category="inline-code"></block>）。</block>
   <block id="faba39ec34eed502aea6d805d792a9ea" category="list-text">驗證<block ref="49c9f6c98d04c8c76aee7448fd9136ed" prefix=" " category="inline-code"></block> 容器正在執行<block ref="507c6bbca2ad57c69e89a97ee8714536" prefix=" " category="inline-code"></block> 是<block ref="50ce33a86e6915635518e9752cf0a12f" prefix=" " category="inline-code"></block> 狀態為<block ref="98dd43dfae05b11befe1f140e0ec787a" prefix=" " category="inline-code"></block>：</block>
   <block id="152090ff5e9a05ea7e1cf0c248449638" category="open-title">掌舵</block>
   <block id="fe98497efedbe156ecc4b953aea77e07" category="inline-link">解除安裝</block>
@@ -3588,7 +3587,6 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="b958ffb6ec0df501d8af8958e6e6886e" category="section-title">（步驟 1 ）取得 Astra Control Provisioner 映像</block>
   <block id="72e3bbaf3c42bb9392b29dab7f3c1fcd" category="paragraph">Astra Control Center 使用者可以使用 Astra Control 登錄或 NetApp 支援網站 方法取得 Astra Control Provisioner 映像。想要在不使用 Astra Control 的情況下使用 Astra Control Provisioner 的 Astra Trident 使用者、應使用登錄方法。</block>
   <block id="bb26b4631543d5a0abc8825972e08f98" category="list-text">（僅限自訂登錄）請依照下列步驟將映像移至自訂登錄。如果您未使用登錄 , 請遵循中的 Trident 運算子步驟 <block ref="2d2b9c949531b9f99c6a28a29b1f0f0f" category="inline-link-macro-rx"></block>。</block>
-  <block id="b15422fe6a04c1756d962ad1805ba054" category="admonition">您可以使用 Crane 複本來取代執行下列 Docker 命令：<block ref="eaad9c7eff5248ae539d1d15dc40f8dd" prefix=" " category="inline-code"></block></block>
   <block id="d1dfc89a8ef8bd6c9cec36534bb87719" category="inline-link">運算子（手動或使用 Helm ）或 tridentctl</block>
   <block id="283c6d5556e7b2c19a19454a5d839d84" category="paragraph">判斷原始安裝方法是否使用<block ref="239d7749678a5515d5ba8991e8dc37eb" category="inline-link-rx"></block> 並根據您的原始方法完成適當的步驟。</block>
   <block id="02a9d2702f20af4981fc27f25359bc43" category="paragraph"><block ref="02a9d2702f20af4981fc27f25359bc43" category="inline-image-macro-rx" type="image"></block></block>
@@ -3645,4 +3643,6 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="345e93a96b6e66cb9274dbad975c0db2" category="list-text">儲存您的變更。</block>
   <block id="622f51a75f238bac126a4e3b58d91991" category="list-text">UI 確認升級成功。</block>
   <block id="ecba1fa6966e7dffc085b7fc45ca2133" category="list-text">* 取得 OpenShift 權限 * ：您將需要所有必要的權限、以及對 Red Hat OpenShift Container Platform 的存取權限、才能執行所述的安裝步驟。</block>
+  <block id="4fb568c8c39da9ff518771b8039f3dac" category="admonition">您可以使用 Crane 複本來取代執行下列 Docker 命令：<block ref="db464ced3bc25798a8a58f345be6100d" prefix=" " category="inline-code"></block></block>
+  <block id="1e402f84b3c57afa8aaf19779147556d" category="list-text">設定 Astra Control Provisioner 映像的自訂登錄位置、或從 Astra Control 登錄中拉出映像 <block ref="6fd47d0a38cf5afec555b659aaed6104" prefix="(" category="inline-code"></block> 或<block ref="e419be77a3ebdbec678982ec1d2d40b2" prefix=" " category="inline-code"></block>）。</block>
 </blocks>
