@@ -3064,7 +3064,6 @@ Astra Control Center 支援使用下列平台和貯體類型建立不可變的�
   <block id="49684a471d9d2c3e43b0340cd823401d" category="list-text">*Astra Control Service 映像登錄 * ：如果您不將本機登錄與 Astra Control Center 映像搭配使用、或是您偏好從 NetApp 支援網站 下載套件時使用此方法、請使用此選項。</block>
   <block id="9ff8ac0cba71abefaef6a160e1bcd24c" category="list-text">* NetApp 支援網站 * ：如果您將本機登錄與 Astra 控制中心影像搭配使用、請使用此選項。</block>
   <block id="9e20715af8d716f80efc8ab273947db0" category="list-text">如果您打算將 Astra Control Center 套件推送至本機登錄、請為您的容器引擎完成適當的步驟順序：</block>
-  <block id="8e6cec5cb70fd73f642f611c0ae2f5f4" category="paragraph"><block ref="8e6cec5cb70fd73f642f611c0ae2f5f4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8bdcf20b5d7c7cba89c4e9cdaba07ad2" category="list-text">* Astra Control Provisioner* ： Astra Control Provisioner* 是由 NetApp 維護的完全支援的儲存資源配置程式與協調程式、其中包含 Astra Trident CSI 功能、以及延伸的儲存管理功能、因此 Astra Control Provisioner 可讓您為由 Docker 和 Kubernetes 管理的容器化應用程式建立儲存磁碟區。當與 Astra Control Center 部署時、 Astra Control Provisioner 會包含已設定的 ONTAP 儲存後端。</block>
   <block id="f8eb25c26ac0064b456c26bd4bb1642b" category="list-text">將 Astra Trident 更新為 24.02.0 ：</block>
   <block id="c88d85553b81a72e9b28005772f27281" category="list-text">為 Astra Trident 映像設定自訂登錄位置、或從 Astra Control 登錄中拉出 <block ref="c063da0c4010a4b533407346a02dd83c" prefix="(" category="inline-code"></block> 或<block ref="cad26ce67501baab70dd72ffd03b01e6" prefix=" " category="inline-code"></block>）。</block>
@@ -3645,4 +3644,5 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="ceb069762daa2570f1611c95b2775501" category="list-text">使用 Cloud Volumes ONTAP 將內部部署到雲端</block>
   <block id="0db934fe5d747898582ef7b2fe037806" category="list-text">透過 Cloud Volumes ONTAP 將雲端移轉至內部部署</block>
   <block id="e83e31033bbd8a95537d872ec339409c" category="list-text">* 使用 Kerberos 5 加密技術增強儲存後端安全性 * ：您可以藉由改善儲存安全性<block ref="0a6b595cfc16ab1c35e55d5e4c214ee8" category="inline-link-rx"></block> 用於託管叢集與儲存後端之間的流量。Astra Control Provisioner 支援透過 NFSv4.1 連線、從 Red Hat OpenShift 叢集到 Azure NetApp Files 和內部部署 ONTAP 磁碟區的 Kerberos 5 加密</block>
+  <block id="ac40c2ee060ee67bf0598e61daec4365" category="paragraph"><block ref="ac40c2ee060ee67bf0598e61daec4365" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
