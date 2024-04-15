@@ -18,10 +18,10 @@ summary: Astra可從快照或備份還原應用程式組態和持續儲存設備
 
 您可以在不同的案例中複寫應用程式、例如下列僅限內部部署、混合式和多雲端的案例：
 
-* 內部站台 A 到內部站台 A
-* 內部部署站台A到內部部署站台B
-* 內部部署至雲端、Cloud Volumes ONTAP 使用不整合技術
-* 將Cloud Volumes ONTAP 雲端技術整合至內部部署
+* 內部部署站台 A 至內部部署站台 A
+* 內部部署站台 A 至內部部署站台 B
+* 使用 Cloud Volumes ONTAP 將內部部署到雲端
+* 透過 Cloud Volumes ONTAP 將雲端移轉至內部部署
 * 雲端搭配從功能到雲端（在同一個雲端供應商的不同地區或不同的雲端供應商之間）Cloud Volumes ONTAP
 
 

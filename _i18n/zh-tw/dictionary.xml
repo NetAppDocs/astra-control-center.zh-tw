@@ -490,7 +490,6 @@
   <block id="6f99fa9b2e1f4893851a8aeb82d171f9" category="list-text">選擇*移除*。</block>
   <block id="bccfd21b5b2011bfe40a32ec6caf15e5" category="list-text">輸入「移除」一詞以確認刪除、然後選取*是、移除認證*。</block>
   <block id="19ecf1db6dfc5b50ce17298a3591b19a" category="paragraph">Astra Control Center會從帳戶移除認證資料。</block>
-  <block id="9318b0c96f2eb8cb846f9939d293ee5c" category="summary">Astra Control Center軟體可在內部部署環境中、為Kubernetes叢集提供應用程式感知資料管理功能。輕鬆備份Kubernetes應用程式、將資料移轉至不同的叢集、並即時建立可運作的應用程式複本。如果您需要管理在公有雲上執行的Kubernetes應用程式、請前往Astra Control Service的文件。</block>
   <block id="3a4b2c66d4bdac6ce0e3340c71a39eda" category="doc">Astra Control Center文件</block>
   <block id="d61a39ecf1d91497b3661f1969243d18" category="summary">只要幾個步驟、就能開始使用Astra Control。</block>
   <block id="a87da1b8e8afc29470ac85cf788e125c" category="doc">Astra Control Center快速入門</block>
@@ -531,7 +530,6 @@
   <block id="159b2efa467f3d1f53e7c16668353bf5" category="inline-link-macro">快速入門</block>
   <block id="254a18b3f13c4603a1e896ef9d067cab" category="summary">若要在解決某些環境先決條件之後安裝Astra Control Center、您必須下載套裝軟組、並依照所述步驟安裝。</block>
   <block id="4f8d010e860956031d20fa5be10bf6e6" category="doc">安裝Astra Control Center搭配Cloud Volumes ONTAP 一套功能性儲存後端</block>
-  <block id="5393a81971c7f6d5a2fe5f5a8e4bdf5c" category="paragraph">有了Astra Control Center、您就能在混合雲環境中使用自我管理的Kubernetes叢集和Cloud Volumes ONTAP 實例來管理應用程式。您可以在內部部署的Kubernetes叢集或雲端環境中的其中一個自我管理Kubernetes叢集上部署Astra Control Center。</block>
   <block id="c04013afca22f8891a14626d97030a38" category="paragraph">有了其中一項部署、您就能使用Cloud Volumes ONTAP 下列其中一項部署、以下列方式執行應用程式資料管理作業：將NetApp當成儲存後端。您也可以將S3儲存區設定為備份目標。</block>
   <block id="63a3ec0e0f90aa951a9bab60ae25b8f5" category="list-text"><block ref="71cd372809cfada10662b9cfa5c56473" category="inline-xref-macro-rx"></block></block>
   <block id="e276a2ae0c328a61a235ae7ba15f71a3" category="list-text"><block ref="afa82c5fe7ac560615325c4fdfba4b92" category="inline-xref-macro-rx"></block></block>
@@ -1216,9 +1214,6 @@
   <block id="b18219dab7be5884389e6f304e3231b1" category="paragraph">此時會出現更詳細的清單、其中包含使用指令碼的掛勾名稱、以及設定用來執行的作業類型。</block>
   <block id="364ab04d1aa557e4f86b621f9a20812d" category="inline-link-macro">資料保護概念</block>
   <block id="c170295a0b905bd80b3c72ce65ea5d28" category="paragraph">您可以在不同的案例中複寫應用程式、例如下列僅限內部部署、混合式和多雲端的案例：</block>
-  <block id="51029ad7c6735fea178760faed8233c6" category="list-text">內部部署站台A到內部部署站台B</block>
-  <block id="b4da4f09d2301e1617979887d3f30c57" category="list-text">內部部署至雲端、Cloud Volumes ONTAP 使用不整合技術</block>
-  <block id="1d554fcbd3f8dbb38781a4dd42e42e4a" category="list-text">將Cloud Volumes ONTAP 雲端技術整合至內部部署</block>
   <block id="7800fb08a17196dc2e9cbc18576fb99e" category="list-text">雲端搭配從功能到雲端（在同一個雲端供應商的不同地區或不同的雲端供應商之間）Cloud Volumes ONTAP</block>
   <block id="415e2f3ea57a28283d562681acd76c7d" category="paragraph">Astra Control可在內部部署叢集、內部部署到雲端（使用Cloud Volumes ONTAP 原地功能）或在雲端之間（Cloud Volumes ONTAP 從地到Cloud Volumes ONTAP 地）複寫應用程式。</block>
   <block id="1330af42b2c3a5ef4cf0841db0076733" category="paragraph">使用Astra Control、您可以執行下列與複寫應用程式相關的工作：</block>
@@ -2325,7 +2320,6 @@
   <block id="607dcd38e95d3d5e23d71235dd548c30" category="admonition">如果叢集位於<block ref="b07286ebbb5bc7aa91cc3eaa8bc19711" prefix=" " category="inline-code"></block> 狀態但叢集和網路連線似乎正常（外部使用Kubernetes API存取叢集的嘗試成功）、您提供給Astra Control的Kubeconfig可能不再有效。這可能是因為叢集上的憑證輪替或過期。若要修正此問題、請使用更新Astra Control中與叢集相關的認證資料<block ref="00457624a82a2b11b2efd3fe1cffa09b" category="inline-link-rx"></block>。</block>
   <block id="b479ef5fd7be9ad4a09aa3b2aa2d3788" category="doc">使用 SnapMirror 技術在儲存設備後端之間複寫應用程式</block>
   <block id="d79b6655a940561714d550a1c8160ab1" category="paragraph">使用Astra Control、您可以利用NetApp SnapMirror技術的非同步複寫功能、利用低RPO（恢復點目標）和低RTO（恢復時間目標）、為應用程式建立營運不中斷。設定完成後、您的應用程式就能將資料和應用程式變更從一個儲存後端複寫到另一個儲存後端、在同一個叢集或不同叢集之間複寫。</block>
-  <block id="9b680dd780b9b2f23b7b82214b8ac6cb" category="list-text">內部站台 A 到內部站台 A</block>
   <block id="feb06739d88af83f802d1d27e9957a4f" category="admonition">您可以在相反方向同時複寫不同的應用程式。例如、應用程式A、B、C可以從資料中心1複寫到資料中心2、而應用程式X、Y、Z可以從資料中心2複寫到資料中心1。</block>
   <block id="02b05cdd8f0a8c426f307085cc1004f7" category="list-text">* 叢集與 SVM* ：必須對 ONTAP 儲存設備的後端進行對等處理。請參閱<block ref="60333a598df416e49fbceb5a88dce370" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="45a50040e8d78cff10f199bb2d56942f" category="list-text">選擇 Astra Control 拍攝應用程式快照的頻率（包括應用程式的 Kubernetes 資源、以及每個應用程式磁碟區的磁碟區快照）</block>
@@ -2685,12 +2679,8 @@
   <block id="341784bc72164a9576c48141a8457786" category="doc">設定儲存後端加密</block>
   <block id="876580b79932af82226561f24b11688f" category="paragraph">使用 Astra Control Provisioner 、您可以為託管叢集與儲存後端之間的流量啟用加密、藉此改善資料存取安全性。</block>
   <block id="976a1386596f05796be42a064d0422a1" category="paragraph">Astra Control Provisioner 支援兩種儲存後端的 Kerberos 加密：</block>
-  <block id="c0e152193948fa32b98363da93fdd8ae" category="list-text">* 內部部署 ONTAP * ： Astra 控制備置程式支援透過 NFSv3 和 NFSv4 連線進行 Kerberos 加密、從 Red Hat OpenShift 和上游 Kubernetes 叢集到內部部署 ONTAP 磁碟區。</block>
   <block id="efd821ece7f5d1edb285cc1f077325d0" category="list-text">* Azure NetApp Files * - Astra 控制備置程式支援透過 NFSv4.1 連線進行 Kerberos 加密、從上游 Kubernetes 叢集到 Azure NetApp Files Volume 。</block>
   <block id="0a710c309a5f6dc65b056833a5208521" category="paragraph">您可以建立、刪除、調整大小、快照、複製、 唯讀複製及匯入使用 NFS 加密的磁碟區。</block>
-  <block id="2aff02c8ceb99a9445937af9d4d8f286" category="section-title">使用內部部署的 ONTAP 磁碟區來設定在線上 Kerberos 加密</block>
-  <block id="330282591e8caa9814eb88ec524b89cf" category="paragraph">您可以在託管叢集與內部部署 ONTAP 儲存後端之間的儲存流量上啟用 Kerberos 加密。</block>
-  <block id="daf34fb0fcb74d9bcf85abcebcc8e1f2" category="admonition">內部部署 ONTAP 儲存後端的 NFS 流量 Kerberos 加密僅支援使用<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 儲存驅動程式：</block>
   <block id="bf08e3747af8cdb14b7eaf98563b8d7e" category="inline-link-macro">啟用 Astra Control Provisioner</block>
   <block id="0ff02d27ae5cac1a12c6c403fd55443c" category="list-text">請確定您可以存取<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 公用程式：</block>
   <block id="bef890ed7cc869346d4b483cd3e3ab00" category="list-text">確保您具有 ONTAP 儲存後端的管理員存取權。</block>
@@ -3109,8 +3099,6 @@ Astra Control Center 支援使用下列平台和貯體類型建立不可變的�
   <block id="974030a30a48754684d05541fd5e96c9" category="list-text">Google Kubernetes Engine（GKE）</block>
   <block id="f28c5620810ae2a6961a1811277a7ff8" category="list-text">Azure Kubernetes服務（KS）</block>
   <block id="57c997cc6378705850c1e534b71a042d" category="list-text">* 自我管理叢集 *</block>
-  <block id="bab5ccef18c501c42d7cf94c7aaa84b3" category="list-text">* 內部叢集 *</block>
-  <block id="d1398a9488bb275cd91d0cb20ce8d256" category="list-text">內部部署 Red Hat OpenShift Container Platform</block>
   <block id="3b3d99efe942cab77775cbf85c351c15" category="list-text">使用該新的管理員角色在叢集上安裝 link./inics/architecture #Astra 控制元件 [Astra Control Provisioner^] 、並建立一或多個儲存類別。</block>
   <block id="7615be11d13368a4a1379dce09ca94d3" category="list-text">如果您使用 NetApp 雲端服務儲存產品作為儲存後端、 Astra Control Service 會使用 Astra Control Provisioner 為應用程式配置持續容量。如果您使用Amazon EBS或Azure託管磁碟做為儲存後端、則需要安裝供應商專屬的SCSI驅動程式。安裝說明請參閱<block ref="2f14c0839a4ba055988d1f8f5b4045be" category="inline-link-rx"></block> 和<block ref="1bd9474283b73e0fe391dfa7d2f421f2" category="inline-link-rx"></block>。</block>
   <block id="7488079e1972dae89a9c38dcd498fedf" category="paragraph">Astra Control Center 支援 Kubernetes 叢集、其中包含 Astra Control Provisioner 設定的儲存類別、以及 ONTAP 儲存後端。</block>
@@ -3324,7 +3312,6 @@ Astra Control Center 支援使用下列平台和貯體類型建立不可變的�
   <block id="aae1308d0322c69f8d0b93a94f28c18e" category="list-text">* 不可變備份 * ： Astra Control 現在支援<block ref="786ffba0f0000731ac5eb4c76cd6b83a" category="inline-link-rx"></block> 成為可抵禦惡意軟體和其他威脅的額外安全層。</block>
   <block id="f0df4ab942c213d0e98d0946d3c131c8" category="list-text">* 開始使用 Astra Control Provisioner*
 您可以<block ref="095384769efa0cb75b3680e52d8f483a" category="inline-link-rx"></block> 如果您已安裝並設定環境以使用 Astra Trident 23.10 。</block>
-  <block id="41523db89b6f080bbe8c7b06a18fe9fc" category="list-text">* 使用 Kerberos 5 加密技術增強儲存後端安全性 * ：您可以藉由改善儲存安全性<block ref="0a6b595cfc16ab1c35e55d5e4c214ee8" category="inline-link-rx"></block> 用於託管叢集與儲存後端之間的流量。Astra Control Provisioner 支援透過 NFSv4.1 連線、從 Red Hat OpenShift 叢集到 Azure NetApp Files 和內部部署 ONTAP 磁碟區的 Kerberos 5 加密</block>
   <block id="fed6711c19188eab44c0573d2e70105f" category="list-text">* 依預設關閉執行攔截器 * ：從本版本開始、執行攔截器功能就可以<block ref="90a0478f38e92626b4be90f9cbbe3706" category="inline-link-rx"></block> 或停用以提高安全性（預設為停用）。如果您尚未建立用於 Astra Control 的執行攔截器、則需要<block ref="8967d43e440bb88f72741b90a728bf7b" category="inline-link-rx"></block> 開始建立攔截器。如果您在此版本之前建立了執行攔截器、則執行攔截器功能會保持啟用狀態、您可以像平常一樣使用攔截器。</block>
   <block id="f47c1a3ac8af307826eb6e5bb1277af4" category="list-text"><block ref="f47c1a3ac8af307826eb6e5bb1277af4" category="inline-link-rx"></block></block>
   <block id="253c10d98058fd631f216b257d35bf49" category="list-text"><block ref="253c10d98058fd631f216b257d35bf49" category="inline-link-rx"></block></block>
@@ -3645,4 +3632,17 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="ecba1fa6966e7dffc085b7fc45ca2133" category="list-text">* 取得 OpenShift 權限 * ：您將需要所有必要的權限、以及對 Red Hat OpenShift Container Platform 的存取權限、才能執行所述的安裝步驟。</block>
   <block id="4fb568c8c39da9ff518771b8039f3dac" category="admonition">您可以使用 Crane 複本來取代執行下列 Docker 命令：<block ref="db464ced3bc25798a8a58f345be6100d" prefix=" " category="inline-code"></block></block>
   <block id="1e402f84b3c57afa8aaf19779147556d" category="list-text">設定 Astra Control Provisioner 映像的自訂登錄位置、或從 Astra Control 登錄中拉出映像 <block ref="6fd47d0a38cf5afec555b659aaed6104" prefix="(" category="inline-code"></block> 或<block ref="e419be77a3ebdbec678982ec1d2d40b2" prefix=" " category="inline-code"></block>）。</block>
+  <block id="2e5244cbbf532ac01347ad087f6e34e6" category="paragraph">有了Astra Control Center、您就能在混合雲環境中使用自我管理的Kubernetes叢集和Cloud Volumes ONTAP 實例來管理應用程式。您可以在內部部署的 Kubernetes 叢集或雲端環境中的自我管理 Kubernetes 叢集中部署 Astra Control Center 。</block>
+  <block id="8e9845a2b1617722638d4b2716d9e349" category="list-text">* 內部部署叢集 *</block>
+  <block id="fae11419c337e3427841a0c9b9d592f9" category="list-text">內部部署 Red Hat OpenShift Container Platform</block>
+  <block id="9a4846291979c7cb9d874345774822fb" category="summary">Astra Control Center 軟體可在內部環境中、為 Kubernetes 叢集提供應用程式感知資料管理功能。輕鬆備份Kubernetes應用程式、將資料移轉至不同的叢集、並即時建立可運作的應用程式複本。如果您需要管理在公有雲上執行的Kubernetes應用程式、請前往Astra Control Service的文件。</block>
+  <block id="ecfa4fd8274b3cb1b309e5a992dd3fe2" category="list-text">* 內部部署 ONTAP * ： Astra 控制備置程式支援透過 NFSv3 和 NFSv4 連線進行 Kerberos 加密、從 Red Hat OpenShift 和上游 Kubernetes 叢集到內部部署 ONTAP 磁碟區。</block>
+  <block id="0b660ae85d215a9e70834a4e745fe95b" category="section-title">使用內部部署的 ONTAP 磁碟區來設定在線上 Kerberos 加密</block>
+  <block id="7c139dfc85d7e4497d2109fff4d0893f" category="paragraph">您可以在託管叢集與內部部署 ONTAP 儲存後端之間的儲存流量上啟用 Kerberos 加密。</block>
+  <block id="4733fee3df7d4e6e25e68e5ad7d2adf0" category="admonition">內部部署 ONTAP 儲存後端的 NFS 流量 Kerberos 加密僅支援使用<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 儲存驅動程式：</block>
+  <block id="0f16735ccee9e1c01f2698a3ade7968c" category="list-text">內部部署站台 A 至內部部署站台 A</block>
+  <block id="776c56fffb130dcb9ee7333507f7f49a" category="list-text">內部部署站台 A 至內部部署站台 B</block>
+  <block id="ceb069762daa2570f1611c95b2775501" category="list-text">使用 Cloud Volumes ONTAP 將內部部署到雲端</block>
+  <block id="0db934fe5d747898582ef7b2fe037806" category="list-text">透過 Cloud Volumes ONTAP 將雲端移轉至內部部署</block>
+  <block id="e83e31033bbd8a95537d872ec339409c" category="list-text">* 使用 Kerberos 5 加密技術增強儲存後端安全性 * ：您可以藉由改善儲存安全性<block ref="0a6b595cfc16ab1c35e55d5e4c214ee8" category="inline-link-rx"></block> 用於託管叢集與儲存後端之間的流量。Astra Control Provisioner 支援透過 NFSv4.1 連線、從 Red Hat OpenShift 叢集到 Azure NetApp Files 和內部部署 ONTAP 磁碟區的 Kerberos 5 加密</block>
 </blocks>

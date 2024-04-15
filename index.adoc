@@ -2,7 +2,7 @@
 layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-summary: Astra Control Center軟體可在內部部署環境中、為Kubernetes叢集提供應用程式感知資料管理功能。輕鬆備份Kubernetes應用程式、將資料移轉至不同的叢集、並即時建立可運作的應用程式複本。如果您需要管理在公有雲上執行的Kubernetes應用程式、請前往Astra Control Service的文件。 
+summary: Astra Control Center 軟體可在內部環境中、為 Kubernetes 叢集提供應用程式感知資料管理功能。輕鬆備份Kubernetes應用程式、將資料移轉至不同的叢集、並即時建立可運作的應用程式複本。如果您需要管理在公有雲上執行的Kubernetes應用程式、請前往Astra Control Service的文件。 
 ---
 = Astra Control Center 24.02 文件
 :hardbreaks:
