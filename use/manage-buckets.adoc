@@ -48,7 +48,7 @@ NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商�
 * <<設定預設儲存區>>
 * <<旋轉或移除庫位認證資料>>
 * <<移除貯體>>
-* link:../use/manage-buckets.html#manage-a-bucket-using-a-custom-resource["（技術預覽）使用自訂資源管理貯體"]
+* link:["[ 技術預覽 ] 使用自訂資源管理貯體"]
 
 
 
@@ -179,19 +179,19 @@ Astra Control 的貯體自訂資源稱為 AppVault 。此 CR 包含用於保護�
 
 
 
-NOTE: Amazon Web Services（AWS）和Google Cloud Platform（GCP）使用通用S3儲存區類型。
+NOTE: Amazon Web Services （ AWS ）使用一般 S3 儲存庫類型。
 
 
 NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商、但Astra Control Center可能不支援所有聲稱Amazon S3支援的物件儲存區廠商。
 
 .步驟
-. 建立自訂資源（ CR ）檔案並命名（例如、 `astra_appvault.yaml`）。
+. 建立自訂資源（ CR ）檔案並命名（例如、 `astra-appvault.yaml`）。
 . 設定下列屬性：
 +
 ** * metadata.name*: _ （必要） _ AppVault 自訂資源的名稱。
 ** *spec.prefix* ： _ （選用） _ 以 AppVault 中儲存的所有實體名稱為前置的路徑。
 ** * spec.providerConfig*: _ （必要） _ 儲存使用指定供應商存取 AppVault 所需的組態。
-** * spec.providerCredentials*: _ （選用） _ 儲存使用指定供應商存取 AppVault 所需的任何認證資料。
+** * spec.providerCredentials*: _ （必要） _ 儲存使用指定供應商存取 AppVault 所需的任何認證資料。
 +
 *** * spec.providerCredentials.valueFromSecret*: _ （選用） _ 表示認證值應來自機密。
 +
@@ -201,7 +201,7 @@ NOTE: 雖然Astra Control Center支援Amazon S3做為通用S3儲存區供應商�
 
 
 
-** * spec.providerType*: _ （必要） _ 決定提供備份的內容、例如 S3 或檔案系統。
+** * spec.providerType*: _ （必要） _ 決定提供備份的內容、例如 NetApp ONTAP S3 或 Microsoft Azure 。
 +
 YAML 範例：
 
@@ -211,7 +211,7 @@ YAML 範例：
 apiVersion: astra.netapp.io/v1
 kind: AppVault
 metadata:
-  name: astra_appvault
+  name: astra-appvault
 spec:
   providerType: generic-s3
   providerConfig:
@@ -231,11 +231,11 @@ spec:
 ----
 
 
-. 填入之後 `astra_appvault.yaml` 使用正確值的檔案、請套用 CR ：
+. 填入之後 `astra-appvault.yaml` 使用正確值的檔案、請套用 CR ：
 +
 [source, console]
 ----
-kubectl apply -f astra_appvault.yaml -n astra-connector
+kubectl apply -f astra-appvault.yaml -n astra-connector
 ----
 +
 
