@@ -722,32 +722,23 @@
   <block id="a8681bd45866e0c10a164ee51191002e" category="paragraph">如果有任何服務處於「錯誤」狀態、您可以檢查記錄。尋找400到500範圍內的API回應代碼。這些都表示發生故障的地點。</block>
   <block id="dd8d7d6254d36a3ee23cd2f2b306ba57" category="list-text">若要檢查Astra控制中心的操作員記錄、請輸入下列內容：</block>
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">如果您只是想要快速回答問題、這個常見問題集就能幫上忙。</block>
-  <block id="cc8bd3e450e22f6551d9874a45cea432" category="doc">Astra Control Center的常見問題集</block>
   <block id="8a3564ec32ac0854b7c7c6d8e81aece8" category="paragraph">以下各節提供使用Astra Control Center時可能會遇到的其他問題解答。如需進一步的說明、請聯絡astra.feedback@netapp.com</block>
   <block id="beead3f133c7957f259792b82df7e44c" category="section-title">存取Astra Control Center</block>
-  <block id="d3999564a67aafe8d2dd2b3396394bf8" category="paragraph">*什麼是Astra Control URL？*</block>
   <block id="c7ce6cb4e4cd6690abeecb2f6c288964" category="paragraph">Astra Control Center使用本機驗證和每個環境的專屬URL。</block>
   <block id="4839d2f25cc35b249d5db15efa1afd75" category="paragraph">*步驟*</block>
   <block id="d113457c08b54c3464e7b9c49945bebd" category="list-text">瀏覽至您下載的授權檔案、然後選取*「Add*（新增*）」。</block>
   <block id="b892fe302a6a7df4519761ccd72b7c2f" category="section-title">正在登錄Kubernetes叢集</block>
-  <block id="92c3c3332b432034927e22150f418205" category="paragraph">*新增Astra Control之後、我需要將工作節點新增至Kubernetes叢集。我該怎麼辦？*</block>
   <block id="03ec374fbd6989f16559d4f96d74547e" category="paragraph">新的工作者節點可新增至現有的資源池。Astra Control會自動探索這些功能。如果在Astra Control中看不到新節點、請檢查新的工作節點是否執行支援的映像類型。您也可以使用「kubectl Get nodes」命令來驗證新工作節點的健全狀況。</block>
-  <block id="e35a675dc7fa715089327ba86baa9433" category="paragraph">*如何正確地取消管理叢集？*</block>
   <block id="cdb2726825d8ca6b1fbc495e1769be38" category="inline-link-macro">從Astra Control取消應用程式管理</block>
   <block id="bfde4228559e1dc730ccb3f1710371f6" category="list-text"><block ref="819731d94d9a0720df36a3fc1b85d024" category="inline-link-macro-rx"></block>。</block>
   <block id="e63154c624567c5cf9bd389230c703ee" category="inline-link-macro">從Astra Control取消管理叢集</block>
   <block id="532f06fc1e312d6659de4b8386cc2689" category="list-text"><block ref="fee7c2b0377fd57e3be010ddfbcf91f6" category="inline-link-macro-rx"></block>。</block>
-  <block id="bd9e39df2a4783068ac79eb1cbc3602b" category="paragraph">*從Astra Control移除Kubernetes叢集之後、應用程式和資料會發生什麼變化？*</block>
   <block id="8ce424856922443bb79c34a944daacaf" category="paragraph">從Astra Control移除叢集不會對叢集的組態（應用程式和持續儲存）進行任何變更。在該叢集上執行的任何Astra Control快照或應用程式備份都無法還原。由Astra Control所建立的持續儲存備份仍在Astra Control之內、但無法還原。</block>
   <block id="03d32d7daecae8d532e26e0c040b4ff0" category="admonition">透過任何其他方法刪除叢集之前、請務必先從Astra Control移除叢集。使用另一個工具刪除叢集時、如果叢集仍由Astra Control進行管理、可能會對Astra Control帳戶造成問題。</block>
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">管理應用程式</block>
-  <block id="eaeb56aabe324b7270ae7355bb58edcb" category="paragraph">* Astra Control是否能部署應用程式？*</block>
   <block id="48df7f09a242df239385ebae869133b8" category="paragraph">Astra Control不會部署應用程式。應用程式必須部署在Astra Control之外。</block>
-  <block id="44379fcc25f304b4401a09a7641dd567" category="paragraph">*停止從Astra Control管理應用程式之後、應用程式會發生什麼事？*</block>
   <block id="61cd231bb056b77c37c6a7acab17451a" category="paragraph">將刪除任何現有的備份或快照。應用程式與資料仍可繼續使用。資料管理作業無法用於未受管理的應用程式、或屬於它的任何備份或快照。</block>
-  <block id="b3d3212b84b66c52decacb83fca1191d" category="paragraph">* Astra Control能否管理非NetApp儲存設備上的應用程式？*</block>
   <block id="6b1a3a19f3f025ff9c844910c80c100e" category="section-title">資料管理作業</block>
-  <block id="58042c65f3c67283f15325ab2febd22a" category="paragraph">*我可以直接透過不同的介面或物件儲存設備來管理Astra Control所拍攝的快照嗎？*</block>
   <block id="df17fddf226fe3399a8cb420856f3565" category="section-title">執行資格檢查</block>
   <block id="40152bf47b47316f99abeacf61572ddd" category="paragraph">執行下列資格檢查、確保您的叢集已準備好新增至Astra控制中心。</block>
   <block id="605443509a67749999ab3b0d3ba43e8b" category="list-text">套用服務帳戶：</block>
@@ -1369,7 +1360,6 @@
   <block id="af0e614701190854322a2cbf66479b6f" category="inline-link">管理ONTAP 不需購買的授權</block>
   <block id="6db4db93a9c2608b2abfc46bb675e283" category="paragraph">若要設定及管理Kubernetes應用程式、您可以使用Astra Control Center UI或Astra Control API。</block>
   <block id="996ae349b503c8bd355d8986597a6d49" category="paragraph">對於URL、請在瀏覽器中輸入您在安裝Astra Control Center時、於Astra_control_center.yaml自訂資源（CR）檔案的SPEC.astraAddress欄位中所設定的完整網域名稱（FQDN）。電子郵件是您在Astra_control_center.yaml CR的spec.email*欄位中設定的值。</block>
-  <block id="bda0a7ba5f9ad395d8fbd5eadadb95db" category="paragraph">*我的應用程式使用數個PV。Astra Control是否會擷取這些PV的快照與備份？*</block>
   <block id="f8f1ef03f08e7d1c3e62dd87dde91f57" category="paragraph">是的。Astra Control在應用程式上執行的快照作業包括繫結至應用程式PVCS的所有PV快照。</block>
   <block id="4ea6bce9d2ccc400d97dbda9dbdd1e62" category="paragraph">若要檢查ONTAP 您的不實系統是否有必要的授權、請參閱<block ref="8ad9b3553a563c3930ce9a2b06714e72" category="inline-link-rx"></block>。</block>
   <block id="fbd7f511b2e75e5ab019b2450e398c1d" category="inline-link-macro">使用90天試用版授權</block>
@@ -2112,14 +2102,10 @@
   <block id="b80989470cc425228535bc99be74562e" category="list-text">* 使用管理員認證 * ：輸入 ONTAP 叢集管理 IP 位址和管理認證。認證資料必須是整個叢集的認證資料。</block>
   <block id="9a64e7c308b15e4a664bdb4c23870806" category="list-text">* 使用憑證 * ：上傳憑證<block ref="bdf46f9562b038d0163af0feba0b1dfa" prefix=" " category="inline-code"></block> 檔案、憑證金鑰<block ref="ed920f773cac3db0499e1ae2cf4df449" prefix=" " category="inline-code"></block> 檔案、以及選擇性的憑證授權單位檔案。</block>
   <block id="a487ff8cfcbd6271ea37126b1f9a7d45" category="paragraph">後端隨即出現在中<block ref="7f46165474d11ee5836777d85df2cdab" prefix=" " category="inline-code"></block> 列出摘要資訊。</block>
-  <block id="b95f25e52dab12822cd50293b72cd299" category="paragraph">* 我正在使用試用版授權。如何變更為完整授權？ *</block>
   <block id="f12591a32788d5d1257e2ed5eb6294c2" category="paragraph">您可以從 NetApp 取得 NetApp 授權檔案（ NLF ）、輕鬆變更為完整授權。</block>
   <block id="b630af6f03c85ad51ef7307e7d57ee06" category="list-text">在授權總覽中、於授權資訊右側、選取選項功能表。</block>
   <block id="cb108e519d1f31ecbd41ae4d12645d6d" category="list-text">選取 * 取代 * 。</block>
-  <block id="358cdb2a62658ca41dde3545b61102db" category="paragraph">* 我正在使用試用版授權。我還能管理應用程式嗎？*</block>
   <block id="448e6c24da61f19f223333099def4861" category="paragraph">是的、您可以使用評估授權（包括預設安裝的內嵌評估授權）來測試管理應用程式功能。試用版授權與完整版授權之間的功能或功能並無差異；試用版授權的使用壽命更短。請參閱 <block ref="33517e0e170e068dfb6f5617810a0372" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
-  <block id="74014f44bc5ee9e79cd2adb1167b2d8a" category="paragraph">* 我應該自行管理 Astra Control 嗎？ *</block>
-  <block id="9a37b9eea91cad57070a6757b200a6fa" category="paragraph">不健康的 Pod 會影響應用程式管理嗎？ *</block>
   <block id="122340512db23eef4128af6d9fd5a597" category="paragraph">否、 Pod 的健全狀況不會影響應用程式管理。</block>
   <block id="5f19a159b98db30779660d8624ef7fc4" category="section-title">2023 年 4 月 25 日（ 23.04.0 ）</block>
   <block id="b176bb567ff7d20bac0cf1796c175044" category="inline-link-macro">根據預設、新 Astra Control Center 安裝會啟用 90 天試用版授權</block>
@@ -2609,11 +2595,8 @@
   <block id="bc15f748aeda125acfe188da636ed3d7" category="paragraph">Astra Control Center 預設不會顯示為您可以管理的應用程式、但您可以 <block ref="f5ccadb0ade3a2532769193c6758d5b1" category="inline-link-macro-rx"></block> 使用另一個 Astra Control Center 執行個體的 Astra Control Center 執行個體。</block>
   <block id="da3896d1bd14d90f23119c4f4e1c15a3" category="paragraph">不可以Astra Control 所拍攝的快照和備份只能透過 Astra Control 進行管理。</block>
   <block id="4c58fde327564dd131d9bda17203e9c0" category="section-title">Astra Control 資源配置程式</block>
-  <block id="9a0966df6fce07aa3deb33fa2cd5da9f" category="paragraph">Astra Control Provisioner 的儲存資源配置功能與 Astra Trident 的儲存資源配置功能有何不同？ *</block>
   <block id="dc918830fd0bda72f7a7d0f6e208b17e" category="paragraph">Astra Control Provisioner 是 Astra Control 的一部分、支援開放原始碼 Astra Trident 中無法使用的儲存資源配置功能超集。這些功能是開放原始碼 Trident 所提供的所有功能之外的附加功能。</block>
   <block id="ad1ed8a22f0b210e932f280697114063" category="inline-link-macro">啟用 Astra Control Provisioner</block>
-  <block id="d4a584de43e0998448679fdc7be156af" category="paragraph">* 我必須支付 Astra Trident 的費用嗎？ *</block>
-  <block id="b8481a0cbd8ab968ce47b6bacfc1ad58" category="paragraph">* 我可以在 Astra Control 中使用儲存管理和資源配置功能、而無需安裝和使用所有 Astra Control 嗎？ *</block>
   <block id="293b9c34fcb89e2353c2b6e75d222693" category="inline-link-macro">啟用 Astra Control Provisioner 功能</block>
   <block id="6f04a726f4038aea2cb90f4951cba4a2" category="paragraph">安裝 Astra Control Provisioner 之後、 Astra Control UI 中的主機叢集會顯示<block ref="47f79829be244bd727d1881108343390" prefix=" " category="inline-code"></block> 而非<block ref="f1112223b41fddc71fd6a626582dfb78" prefix=" " category="inline-code"></block> 欄位和目前安裝的版本號碼。</block>
   <block id="77543cbe4b207b1c621cbf48a45b600b" category="paragraph">如果您無法存取 UI 、可以使用下列方法確認安裝成功：</block>
@@ -3521,15 +3504,9 @@ RKE 2 ：採用 Rancher Manager 2.7.9 的版本 1.24.17 、 1.25.14 、 1.26.9</
   <block id="a40c084314b74a686572312dc71c4738" category="list-text">建立<block ref="3d3f9b7a5974a7898593a3d2f5549f15" prefix=" " category="inline-code"></block> 檔案：</block>
   <block id="23ed633c6130c18f08608b6efce84dc4" category="list-text">更換<block ref="089d02fba2ffcdb49a91320ff506dfa3" prefix=" " category="inline-code"></block> 在下列指令碼開頭、使用正確的值。</block>
   <block id="c103c1b613b979158e5cb38bf6ed5f16" category="inline-link">請依照下列步驟、解除安裝內含 Astra Control Provisioner 服務的 Astra Trident 執行個體</block>
-  <block id="2c5e000851530d456765d6ad7069ee9a" category="paragraph">* 取消管理時 Astra Control Provisioner （或 Astra Trident ）是否會自動從叢集解除安裝？ *
-當您從 Astra Control Center 取消管理叢集時、 Astra Control Provisioner 或 Astra Trident 不會自動從叢集中解除安裝。若要解除安裝 Astra Control Provisioner 及其元件或 Astra Trident 、您需要<block ref="20ce5e359d2a1fb9fe63ec6fbc3432ca" category="inline-link-rx"></block>。</block>
-  <block id="2f5784fa29426b31f780f208859b21ff" category="paragraph">* Astra Control 資源配置程式是否取代 Astra Trident ？ *
-Astra Control Provisioner 取代 Astra Trident 做為 Astra Control 架構中的儲存資源配置程式和 Orchestrator 。Astra Control 使用者應該 <block ref="5dad9d2c063a3c9294af610763bbd8ba" category="inline-link-macro-rx"></block> 使用 Astra Control 。Astra Trident 將繼續在此版本中受到支援、但未來版本將不支援 Astra Trident 。Astra Trident 將維持開放原始碼、並以 NetApp 的新 CSI 和其他功能來發行、維護、支援及更新。不過、只有包含 Astra Trident CSI 功能和擴充儲存管理功能的 Astra Control Provisioner 、才能用於即將推出的 Astra Control 版本。</block>
   <block id="b2e63d361f13f7c7a6953e6d716921b8" category="paragraph">不可以Astra Trident 將繼續是開放原始碼、並可免費下載。Astra Control Provisioner 功能現在需要 Astra Control 授權。</block>
   <block id="f7674e11004b268d07981c0956e67fe1" category="paragraph">是的、即使您不想使用完整的 Astra Control 資料管理功能集、也可以升級至 Astra Control Provisioner 並使用其功能。</block>
-  <block id="0fce11b06ff8393942de14dffe7cfb30" category="paragraph">* 如何從現有的 Astra Trident 使用者移轉至 Astra Control 、以使用進階儲存管理與資源配置功能？ *</block>
   <block id="4819732dc0b6137f78875603196f15aa" category="paragraph">如果您是現有的 Astra Trident 使用者（這包括公有雲中 Astra Trident 的使用者）、您必須先取得 Astra Control 授權。完成後、您可以下載 Astra Control Provisioner 套件、升級 Astra Trident 、以及 <block ref="f398c28e822214b2c18876471cc0ff4c" category="inline-link-macro-rx"></block>。</block>
-  <block id="d8272a56355a60a1ca520a3d6649207f" category="paragraph">[Running （執行） -ACP 檢查 ] * 如何知道 Astra 控制項資源配置程式是否已取代叢集上的 Astra Trident ？ *</block>
   <block id="5c06389afe2ac88223b5ed747dc58668" category="inline-image-macro">在 UI 中描繪 Astra Control Provisioner 版本位置的螢幕擷取畫面</block>
   <block id="22e6ee07e818a86ee011191709d10c67" category="paragraph"><block ref="22e6ee07e818a86ee011191709d10c67" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bad9405dfa9ccda5f267eb3d116cc74e" category="paragraph">驗證<block ref="49c9f6c98d04c8c76aee7448fd9136ed" prefix=" " category="inline-code"></block> 容器正在執行<block ref="507c6bbca2ad57c69e89a97ee8714536" prefix=" " category="inline-code"></block> 是<block ref="84976609aebb6439476255d5ef8280bb" prefix=" " category="inline-code"></block> 或更新版本（ 23.10 為最低版本）、狀態為<block ref="98dd43dfae05b11befe1f140e0ec787a" prefix=" " category="inline-code"></block>：</block>
@@ -3677,4 +3654,27 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="2bda4ec158506a5cc3faac161d6d620d" category="list-text">* spec.providerCredentials*: _ （必要） _ 儲存使用指定供應商存取 AppVault 所需的任何認證資料。</block>
   <block id="9c20f9a97f5024f7f0cbeebb01127512" category="list-text">* spec.providerType*: _ （必要） _ 決定提供備份的內容、例如 NetApp ONTAP S3 或 Microsoft Azure 。</block>
   <block id="a7f829a367be9439add4237b61a50388" category="list-text">填入之後<block ref="056c513f9078872b92d07c3cc704b909" prefix=" " category="inline-code"></block> 使用正確值的檔案、請套用 CR ：</block>
+  <block id="af2a4d2810d86aa0169c117f82682f9a" category="doc">常見問題集</block>
+  <block id="67c6d74ef64f9532efda9283d05a0e68" category="paragraph-title">Astra Control URL 是什麼？</block>
+  <block id="277ea85dfda64f824780af7270d81481" category="paragraph-title">我使用的是評估版授權。如何變更為完整授權？</block>
+  <block id="865330b45a1c9c871718afa905811d8a" category="paragraph-title">我使用的是評估版授權。我仍可以管理應用程式嗎？</block>
+  <block id="41d21018ca5e24a29b1d862dfb21ce5d" category="paragraph-title">新增至 Astra Control 之後、我需要將工作節點新增至 Kubernetes 叢集。我該怎麼做？</block>
+  <block id="9d349fb570fda3488ed2c21f247861fd" category="list-title">如何正確地取消管理叢集？</block>
+  <block id="b2367a0a07b25f3a049fbc1ea89a3636" category="paragraph-title">從 Astra Control 移除 Kubernetes 叢集之後、我的應用程式和資料會發生什麼變化？</block>
+  <block id="c230e505256a08e1a2b2d1a6164970f4" category="paragraph-title">Astra Control Provisioner （或 Astra Trident ）在我取消管理時、是否會自動從叢集解除安裝？</block>
+  <block id="6e97758e2a7f18315bc2dd21ba2fb822" category="paragraph">當您從 Astra Control Center 取消管理叢集時、 Astra Control Provisioner 或 Astra Trident 不會自動從叢集中解除安裝。若要解除安裝 Astra Control Provisioner 及其元件或 Astra Trident 、您需要<block ref="20ce5e359d2a1fb9fe63ec6fbc3432ca" category="inline-link-rx"></block>。</block>
+  <block id="9c571c6fb937319efe65b3c9d020edc8" category="paragraph-title">Astra Control 是否能部署應用程式？</block>
+  <block id="a7fec8f073e339fb7794287e8e5663a0" category="paragraph-title">停止從 Astra Control 管理應用程式之後、應用程式會發生什麼事？</block>
+  <block id="75b31138dc7d08e2d4b0a691f1c387f5" category="paragraph-title">Astra Control 是否能管理非 NetApp 儲存設備上的應用程式？</block>
+  <block id="7ddaae6742fd05e4ca66e09897bbee6d" category="paragraph-title">我應該自行管理 Astra Control 嗎？</block>
+  <block id="df3897d7402bb4d935f0cad6b8e0b952" category="paragraph-title">不良 Pod 是否會影響應用程式管理？</block>
+  <block id="c901ec125a01599d47b36152b81787eb" category="paragraph-title">我的應用程式使用數個 PV 。Astra Control 是否會為這些 PV 拍攝快照和備份？</block>
+  <block id="ca664f9963c561ce6cdc123049835653" category="paragraph-title">我可以直接透過不同的介面或物件儲存來管理 Astra Control 所拍攝的快照嗎？</block>
+  <block id="ee8d37ab9ce413b000f7a6f1c6831e25" category="paragraph-title">Astra Control Provisioner 的儲存資源配置功能與 Astra Trident 的儲存資源配置功能有何不同？</block>
+  <block id="36057914e1173ce157bef770560c4d14" category="paragraph-title">Astra Control 資源配置程式是否取代 Astra Trident ？</block>
+  <block id="30d28fd95c3008723df823d63536e917" category="paragraph">Astra Control Provisioner 取代 Astra Trident 做為 Astra Control 架構中的儲存資源配置程式和 Orchestrator 。Astra Control 使用者應該 <block ref="5dad9d2c063a3c9294af610763bbd8ba" category="inline-link-macro-rx"></block> 使用 Astra Control 。Astra Trident 將繼續在此版本中受到支援、但未來版本將不支援 Astra Trident 。Astra Trident 將維持開放原始碼、並以 NetApp 的新 CSI 和其他功能來發行、維護、支援及更新。不過、只有包含 Astra Trident CSI 功能和擴充儲存管理功能的 Astra Control Provisioner 、才能用於即將推出的 Astra Control 版本。</block>
+  <block id="6080a9c8227972613444a9ebc88e3b3c" category="paragraph-title">我是否必須支付 Astra Trident 的費用？</block>
+  <block id="369842d22c436a81bf21800576abee8b" category="paragraph-title">我可以在 Astra Control 中使用儲存管理和資源配置功能、而無需安裝和使用所有 Astra Control 嗎？</block>
+  <block id="daab2094276c52a4b52a45f95303d09e" category="paragraph-title">如何從現有的 Astra Trident 使用者移轉至 Astra Control 、以使用進階儲存管理與資源配置功能？</block>
+  <block id="63bdba47639989b6e534ecb34c5f142e" category="paragraph-title">如何知道 Astra Control Provisioner 是否已取代叢集上的 Astra Trident ？</block>
 </blocks>

@@ -40,5 +40,3 @@ entries:
     url: "/get-started/add-storage-backend.html"
   - title: 新增儲存庫
     url: "/get-started/add-bucket.html"
-- title: 常見問題集
-  url: "/get-started/faq.html"

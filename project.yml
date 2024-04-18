@@ -40,6 +40,8 @@ sidebar:
   - section: support
   - title: 舊版
     url: "/acc-earlier-versions.html"
+  - title: 常見問題集
+    url: "/get-started/faq.html"
   - title: 法律聲明
     url: "/legal-notices.html"
 product-family:
