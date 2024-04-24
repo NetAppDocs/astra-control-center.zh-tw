@@ -1,17 +1,7 @@
----
-sidebar: sidebar 
-permalink: concepts/architecture.html 
-keywords: what is astra, astra control, astra control architecture, astra control center, astra control service, kubernetes, netapp, clusters, astra trident, astra control provisioner 
-summary: 以下概述Astra Control環境的各個元件。 
----
-= 架構與元件
-:hardbreaks:
+= 功能
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/concepts/
 
 
-[role="lead"]
 Astra Control 是 Kubernetes 應用程式資料生命週期管理解決方案、可簡化有狀態應用程式的作業、並協助您在混合式和多雲端環境中儲存、保護及移動 Kubernetes 工作負載。
 
 
