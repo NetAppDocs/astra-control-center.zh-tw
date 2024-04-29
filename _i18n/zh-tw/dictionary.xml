@@ -3716,4 +3716,5 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">本文檔 Cloud Insights</block>
   <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
   <block id="adeac59ad1862a3e0c4f40cfe863ae90" category="list-text"><block ref="adeac59ad1862a3e0c4f40cfe863ae90" category="inline-link-macro-rx"></block></block>
+  <block id="a8d3d65f332ebd25e2d0cd4a39fa56bb" category="admonition">使用宣告式 Kubernetes 工作流程管理的叢集不支援 Fluentd 連線。您只能將 Fluentd 連線至使用非 Kubernetes 原生工作流程管理的叢集。</block>
 </blocks>
