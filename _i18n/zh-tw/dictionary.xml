@@ -3564,7 +3564,6 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="652aa122a3c8a61f53fecfe7a2e38472" category="summary">如果您使用 Red Hat OpenShift 、可以使用 OperatorHub 升級 Astra Control Center 。</block>
   <block id="d1810a7b7ece844661c0ebd3f6d6b734" category="doc">使用 OpenShift OperatorHub 升級 Astra Control Center</block>
   <block id="d65f6afdd601abb375246f62e4d974af" category="paragraph">如果您使用 Red Hat 認證的操作員安裝 Astra Control Center 、則可以使用 OperatorHub 的更新操作員來升級 Astra Control Center 。使用此程序從升級 Astra Control Center<block ref="a0bebb9db4c42678b95afc86229a893d" category="inline-link-rx"></block> 或使用Red Hat OpenShift Container Platform。</block>
-  <block id="dba0214a5ff4087709345c59f18d5ecc" category="list-text">* 符合環境先決條件 * ：升級之前、請確保您的環境仍符合 <block ref="a5e730f4eb1e05ab5d051c5fbaad1711" category="inline-link-macro-rx"></block>。</block>
   <block id="ee69e430ad6ce53b164d990d32171363" category="list-text">* 請確定您已啟用 <block ref="253c06b63fbdc34e8258634f6035573c" category="inline-link-macro-rx"></block> Astra Trident Running *</block>
   <block id="9e7dceeac2c1b47a8a65fc5301cfbc97" category="list-text">* OpenShift 權限 * ：您擁有所有必要的權限、並可存取 Red Hat OpenShift Container Platform 以執行所述的升級步驟。</block>
   <block id="14d39dcccbea7ad3c78e42b59aea8467" category="list-text"><block ref="ddb3eae04adcef55bc274001e6992ab5" category="inline-xref-macro-rx"></block></block>
@@ -3717,4 +3716,5 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
   <block id="adeac59ad1862a3e0c4f40cfe863ae90" category="list-text"><block ref="adeac59ad1862a3e0c4f40cfe863ae90" category="inline-link-macro-rx"></block></block>
   <block id="a8d3d65f332ebd25e2d0cd4a39fa56bb" category="admonition">使用宣告式 Kubernetes 工作流程管理的叢集不支援 Fluentd 連線。您只能將 Fluentd 連線至使用非 Kubernetes 原生工作流程管理的叢集。</block>
+  <block id="a4c308fa75b477e34ffefe1e02628412" category="list-text">* 符合環境先決條件 * ：升級之前、請確保您的環境仍符合 <block ref="7b0354d91aa605027490ffc0bb4c260d" category="inline-link-macro-rx"></block>。</block>
 </blocks>

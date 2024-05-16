@@ -15,7 +15,7 @@ summary: 如果您使用 Red Hat OpenShift 、可以使用 OperatorHub 升級 As
 如果您使用 Red Hat 認證的操作員安裝 Astra Control Center 、則可以使用 OperatorHub 的更新操作員來升級 Astra Control Center 。使用此程序從升級 Astra Control Center https://catalog.redhat.com/software/operators/explore["Red Hat生態系統目錄"^] 或使用Red Hat OpenShift Container Platform。
 
 .開始之前
-* * 符合環境先決條件 * ：升級之前、請確保您的環境仍符合 link:requirements.html["Astra Control Center 部署的最低需求"]。
+* * 符合環境先決條件 * ：升級之前、請確保您的環境仍符合 link:../get-started/requirements.html["Astra Control Center 部署的最低需求"]。
 * * 請確定您已啟用 link:../get-started/requirements.html#astra-control-provisioner["Astra Control 資源配置程式"] Astra Trident Running *
 +
 .. 判斷您正在執行的 Astra Trident 版本：
