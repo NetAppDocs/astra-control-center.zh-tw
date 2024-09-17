@@ -100,7 +100,7 @@ TIP: UI右上角的通知圖示提供與支援服務組合相關的事件資訊�
 +
 ** 使用 https://upload.netapp.com/sg["NetApp驗證檔案上傳（需要登入）"^]。
 ** 將套裝組合直接附加至nss.
-** 使用NetApp Active IQ 解決方案。
+** 使用 Digital Advisor 。
 
 
 

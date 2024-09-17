@@ -45,7 +45,6 @@
   <block id="35f3a2f7a0f2c01d03afedb95ece66ab" category="inline-link">NetApp驗證檔案上傳（需要登入）</block>
   <block id="1c2989d4329c8aeec5e01506816fb04e" category="list-text">使用<block ref="4b0bc63f683ccbf4dcf0ba2a6a1b561f" category="inline-link-rx"></block>。</block>
   <block id="94bcffc8ff8a109a8267202d2aaa5526" category="list-text">將套裝組合直接附加至nss.</block>
-  <block id="4345f2150d39e38a6a11ee7ee57bed28" category="list-text">使用NetApp Active IQ 解決方案。</block>
   <block id="9d8f2c43275b418d0a8bb43287edc93a" category="summary">執行攔截是自訂指令碼、您可以在託管應用程式的快照之前或之後執行。</block>
   <block id="372ba25517e6092baf2e0abc0ae2ef65" category="doc">管理應用程式執行掛勾</block>
   <block id="f99748fb4b1cf592516b60937743c52d" category="section-title">關於自訂執行掛勾的重要注意事項</block>
@@ -814,7 +813,6 @@
   <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">然後使用Astra Control Service來管理這些應用程式、並開始建立快照、備份和複製。</block>
   <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Astra控制中心的運作方式</block>
   <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra Control Center可在您自己的私有雲端本機執行。</block>
-  <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra Control Center已完全整合AutoSupport 至整套的功能、可Active IQ 為使用者和NetApp支援人員提供疑難排解和使用資訊。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">需求</block>
   <block id="6319f881d45c326a5f6222a746f50981" category="paragraph">Astra Control Center的高層級運作方式如下：</block>
   <block id="2cb07ff1146f3d6896d00ffdcea250ef" category="inline-link">安裝Astra Control Center</block>
@@ -3319,7 +3317,6 @@ Astra Control Center 支援使用下列平台和貯體類型建立不可變的�
 
 附註：請勿使用<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> 或<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> 地址中。複製此FQDN以供在中使用 <block ref="39c8566ec35b62823c898c5e38a4b78c" category="inline-xref-macro-rx"></block>。</block>
   <block id="5398d7dab242bfea13c044912cacfd10" category="example-title">AutoSupport</block>
-  <block id="0ce9b2186063c7d6c825ba5631c6f471" category="paragraph">您在本節中的選擇決定您是否要參與 NetApp 的主動式支援應用程式 NetApp Active IQ 、以及資料的傳送位置。需要網際網路連線（連接埠4442）、所有支援資料都會匿名。</block>
   <block id="0c83f57c786a0b4a39efab23731c7ebc" category="example-title">電子郵件</block>
   <block id="ed89387bcd11937a7a92a99a2cbfb5d7" category="example-title">名字</block>
   <block id="539c5300bf48f8a3e3009ce33d49a240" category="example-title">姓氏</block>
@@ -3717,4 +3714,7 @@ Astra Control Provisioner 會自動安裝為匯入和探索程序的一部分。
   <block id="adeac59ad1862a3e0c4f40cfe863ae90" category="list-text"><block ref="adeac59ad1862a3e0c4f40cfe863ae90" category="inline-link-macro-rx"></block></block>
   <block id="a8d3d65f332ebd25e2d0cd4a39fa56bb" category="admonition">使用宣告式 Kubernetes 工作流程管理的叢集不支援 Fluentd 連線。您只能將 Fluentd 連線至使用非 Kubernetes 原生工作流程管理的叢集。</block>
   <block id="a4c308fa75b477e34ffefe1e02628412" category="list-text">* 符合環境先決條件 * ：升級之前、請確保您的環境仍符合 <block ref="7b0354d91aa605027490ffc0bb4c260d" category="inline-link-macro-rx"></block>。</block>
+  <block id="a9cf730f8ab04a5b52f1d19c74c1483c" category="paragraph">Astra Control Center 已完全整合至 AutoSupport 和 Active IQ 數位顧問（也稱為數位顧問）生態系統、為使用者和 NetApp 支援提供疑難排解和使用資訊。</block>
+  <block id="10c74eb5a029f34a100ad38aab60e5a3" category="paragraph">您在本節中所做的選擇、決定您是否要參與 NetApp 的主動式支援應用程式、數位顧問、以及資料的傳送位置。需要網際網路連線（連接埠4442）、所有支援資料都會匿名。</block>
+  <block id="3cf9bc07c0ae31018d3336b8f32de6c8" category="list-text">使用 Digital Advisor 。</block>
 </blocks>
