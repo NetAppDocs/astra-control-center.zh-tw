@@ -14,7 +14,7 @@ summary: 若要在解決某些環境先決條件之後安裝Astra Control Center
 [role="lead"]
 若要安裝 Astra Control Center 、請下載安裝映像並執行下列步驟。您可以使用此程序、在連線網際網路或無線環境中安裝Astra Control Center。
 
-如需Astra Control Center安裝程序的示範、請參閱 https://www.youtube.com/watch?v=eurMV80b0Ks&list=PLdXI3bZJEw7mJz13z7YdiGCS6gNQgV_aN&index=5["這段影片"^]。
+如需 Astra Control Center 安裝程序的示範，請參閱 https://www.youtube.com/watch?v=kfmQDqPi9fU&list=PLdXI3bZJEw7mJz13z7YdiGCS6gNQgV_aN&index=5["這段影片"^]。
 
 .開始之前
 * * 符合環境先決條件 * ： link:requirements.html["開始安裝之前、請先準備好環境以進行Astra Control Center部署"]。
